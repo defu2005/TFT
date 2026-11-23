@@ -1,0 +1,16 @@
+{
+  "refund": "normal",
+  "summary": {
+    "lobbies": 200,
+    "completed": 200,
+    "mean_placement_A": 3.2425,
+    "mean_placement_B": 5.7575,
+    "diff_A_minus_B": -2.515,
+    "ci95_diff": [
+      -2.6825,
+      -2.3324375
+    ],
+    "illegal_A": 0,
+    "illegal_B": 0
+  }
+}
