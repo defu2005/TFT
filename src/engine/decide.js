@@ -148,7 +148,7 @@ export function decide(state, out, trace = null) {
     for (let j = 0; j < bench.length; j++) {
       const u = bench[j]
       if (!u) continue
-      const inLine = u.priority > 0 || (!!target && target.id != null && u.id === target.id)
+      const inLine = u.priority > 0 || (!!target && target.id != null && u.id === target.id) || wantedInShop(shop, u.id)
       const value = typeof u.sellValue === "number" ? u.sellValue : -1
       const score = !inLine && value >= 0 ? blockedBuy : 0
       if (trace) {
@@ -171,7 +171,7 @@ export function decide(state, out, trace = null) {
   } else if (trace) {
     trace.push({ action: "sell", score: 0, note: "không có dữ liệu bench" })
   }
-  if (sellScore > bestBuy && sellScore >= xpScore && sellScore >= rollScore) {
+  if (bestBuy <= 0 && sellScore > 0 && sellScore >= xpScore && sellScore >= rollScore) {
     out.action = SELL
     out.bench = sellBench
     out.score = sellScore
@@ -202,6 +202,15 @@ export function decide(state, out, trace = null) {
 
 function POOL_FALLBACK(unit) {
   return unit.poolCopies ?? POOL_COPIES[unit.cost] ?? 0
+}
+
+function wantedInShop(shop, id) {
+  if (!shop) return false
+  for (let i = 0; i < 5; i++) {
+    const s = shop[i]
+    if (s && s.priority > 0 && s.id === id) return true
+  }
+  return false
 }
 
 function countCopies(list, id) {

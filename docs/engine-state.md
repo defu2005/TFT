@@ -68,6 +68,7 @@ Quy ước:
 
 ## 6. Lưu ý
 
+- Khi bench đầy, engine vẫn khuyến nghị mua tướng hoàn thành sao (không cần chỗ trên bench). Điều này chưa được đối chiếu với client.
 - Mọi logic mới chỉ được kiểm thử trên trạng thái tổng hợp. Hành vi trên game thật không đổi cho đến khi phiên ingest gửi các trường này.
 - Không dùng số liệu game từ trí nhớ. Bench size, hoàn tiền khi bán và XP mỗi lần mua phải lấy từ dữ liệu repo hoặc từ người dùng.
 - Tài liệu này chỉ có trên nhánh `claude/dazzling-feynman-g7a0b9`. Phiên ingest cần fetch nhánh này để đọc.

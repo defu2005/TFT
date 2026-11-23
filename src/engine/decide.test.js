@@ -215,7 +215,7 @@ test("a full bench blocks the buy and sells the most valuable bench unit that is
   assert.equal(sell.makesRoomFor, "core")
 })
 
-test("a buy that completes a 3-star is not blocked by a full bench", () => {
+test("a buy that completes a star is not blocked by a full bench", () => {
   const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
   decide({ ...CORE({ id: "core", cost: 3, copiesOwned: 2, priority: 5 }), bench: SELL_BENCH }, out)
   assert.equal(out.action, BUY)
@@ -253,4 +253,52 @@ test("without bench data the engine buys and records that the bench is unknown",
   decide(CORE({ id: "core", cost: 3, copiesOwned: 0, priority: 5 }), out, trace)
   assert.equal(out.action, BUY)
   assert.match(trace.find((c) => c.action === "sell").note, /không có dữ liệu bench/)
+})
+
+test("a buy with no slot needed is taken before a sell, even when the blocked buy scores higher", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  const trace = []
+  decide(
+    {
+      level: 7,
+      gold: 40,
+      hp: 80,
+      stage: 4,
+      shop: [
+        { id: "core", cost: 3, copiesOwned: 0, priority: 9 },
+        { id: "pair", cost: 1, copiesOwned: 2, priority: 1 },
+        null,
+        null,
+        null,
+      ],
+      target: null,
+      bench: SELL_BENCH,
+    },
+    out,
+    trace,
+  )
+  const core = trace.find((c) => c.action === "buy" && c.slot === 0)
+  const pair = trace.find((c) => c.action === "buy" && c.slot === 1)
+  assert.ok(core.score > pair.score)
+  assert.equal(out.action, BUY)
+  assert.equal(out.slot, 1)
+})
+
+test("a bench copy of a unit the shop wants is kept, not sold", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  const trace = []
+  decide(
+    {
+      ...CORE({ id: "core", cost: 3, copiesOwned: 0, priority: 5 }),
+      bench: [
+        { id: "core", star: 1, sellValue: 3 },
+        { id: "x", star: 1, sellValue: 1 },
+      ],
+    },
+    out,
+    trace,
+  )
+  assert.equal(out.action, SELL)
+  assert.equal(out.bench, 1)
+  assert.match(trace.find((c) => c.action === "sell" && c.bench === 0).note, /line/)
 })
