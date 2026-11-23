@@ -306,6 +306,22 @@ Khoa so sanh chon tren seed tinh chinh 20000-21999 (dev): value -3,48; star_cost
 
 Doc ket qua: doi unit lam teacher tot hon ro rang tren seed giu-lai, va null khong vuot 0. Day van la doi thu scripted trong mo phong, khong phai TFT that. Muc chenh voi scripted goc (~-3,5) gan toi da co the cua thang do.
 
+## Dong giai doan 1 va so seed (cap nhat)
+
+**Giai doan 1 dong:** nhieu eps=0,1 tren teacher v3 (doi unit, value), seed 70000-71999: +0,197 [+0,118, +0,273]. Nhieu gio lam hai teacher, nen teacher v3 duoc chap nhan la teacher cho giai doan 2.
+
+**So seed (cap nhat, da dung):**
+- 20000-21999: tinh chinh (cheapest, useless, hybrid, value).
+- 30000-31999: giu-lai hybrid.
+- 40000-41999: chon loai nhieu (trung seed thu BC 40000-40499 va 41000-41199).
+- 50000-51999: lap lai BENCH_BOARD va null.
+- 60000-61999: giu-lai teacher v3 (dong).
+- 70000-71999: dong giai doan 1 (eps tren v3).
+
+**Gioi han da sua:** board co the den 10 unit (cap = cap do, toi da 10). BENCH_BOARD chi co 9 hanh dong, nen quy tac doi unit chi xet 9 slot board dau. Truoc khi sua, o cap 10 quy tac co the tra ve EQUIP (35) do lech chi so; da sua va kiem tra 50 lobby cho 0 hanh dong bat hop le.
+
+**Giai doan 2 (dang chay):** uni2 = uni (85) + bench/board (94) = 179 chieu. Seed: train 80000-80399, val 80400-80499, test 81000-81199 (du lieu voi teacher v3 tren ca 8 ghe). Choi: 90000-91999 (chua dung).
+
 ## Trang thai cong viec
 
 - Test cua tft-sim: 9 pass (chay tren toy env, co loai tru seat). Toy env chi kiem chung harness.
