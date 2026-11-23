@@ -4,6 +4,8 @@ Chay TUNG THE NGHIEM mot (tranh het bo nho):
   python scripts/play_real.py random          # random vs scripted, + kiem tra replay cung seed (100 seed dau)
   python scripts/play_real.py clone           # universal clone (huan luyen tren Set 17) vs scripted
   python scripts/play_real.py eps01           # scripted co 10% hanh dong ngau nhien vs scripted
+  python scripts/play_real.py type:<LOAI>     # voi xac suat 0.1: chon deu mot hanh dong hop le loai LOAI
+                                              #   (neu co); nguoc lai scripted. Vi du type:BUY_XP
 Ghi: results/fixed/real/play_<name>.json gom tom tat + hieu hang tung lobby (A - B)."""
 import json, sys
 from pathlib import Path
@@ -11,7 +13,8 @@ import numpy as np
 import torch
 from tft_sim.bc_train import train
 from tft_sim.real_content import build_real
-from tft_sim.tftgoat import (make_env, play, random_policy, scripted_policy, summarize, universal_features)
+from tft_sim.tftgoat import (action_type, make_env, play, random_policy, scripted_policy, summarize,
+                             universal_features)
 
 NAME = sys.argv[1]
 R = Path("results/fixed/real"); R.mkdir(parents=True, exist_ok=True)
@@ -24,6 +27,16 @@ def eps_policy(eps):
     def pol(env_, agent, obs, mask, rng):
         if rng.random() < eps:
             return int(rng.choice(list(np.flatnonzero(mask))))
+        return scripted_policy(env_, agent, obs, mask, rng)
+    return pol
+
+
+def type_policy(t, p=0.1):
+    def pol(env_, agent, obs, mask, rng):
+        if rng.random() < p:
+            legal = [int(i) for i in np.flatnonzero(mask) if action_type(int(i)) == t]
+            if legal:
+                return int(rng.choice(legal))
         return scripted_policy(env_, agent, obs, mask, rng)
     return pol
 
@@ -54,6 +67,8 @@ elif NAME == "clone":
     pol_a, pol_b = clone_policy(), scripted_policy
 elif NAME == "eps01":
     pol_a, pol_b = eps_policy(0.1), scripted_policy
+elif NAME.startswith("type:"):
+    pol_a, pol_b = type_policy(NAME[5:]), scripted_policy
 else:
     raise SystemExit(f"unknown {NAME}")
 
@@ -77,6 +92,6 @@ if NAME == "random":
             break
     out["replay_check_100_seeds"] = replay_ok
 
-(R / f"play_{NAME}.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+(R / f"play_{NAME.replace(':', '_')}.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
 print("RESULT", NAME, {k: summ[k] for k in ("completed", "diff_A_minus_B", "ci95_diff", "illegal_A")},
       out.get("replay_check_100_seeds"), flush=True)
