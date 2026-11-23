@@ -1,0 +1,17 @@
+{
+  "set": "Set 18",
+  "unmodelled": [
+    "Reroll Subscription augment (10 lượt roll miễn phí rồi 3 ở level 9), Riot 18.1, verified",
+    "Opening Encounters: thêm Item Forge và Completed Item Anvil Start, bỏ Loot Subscription, Artifact Anvil và Reroll Start, Riot 18.1, verified"
+  ],
+  "patches": [
+    {
+      "version": "16.20",
+      "notes": "Chỉ đổi level 8 và 9 theo bảng Set 17 của docs/tft-knowledge.md và bảng xấp xỉ của metabot (cùng một site). Trang Set 18 chỉ xác nhận ba ô: level 8 tướng cost 4 là 30%, level 9 là 33% và 15%, level 10 là 40% và 25%. Các hàng khác giữ mặc định rules.js, chưa xác minh cho Set 18. Số bản pool và số tướng theo cost cũng là mặc định. Số 16.20 là nhãn của metabot, không phải số bản vá của Riot (18.x).",
+      "shopOdds": {
+        "8": [0.15, 0.20, 0.32, 0.30, 0.03],
+        "9": [0.10, 0.17, 0.25, 0.33, 0.15]
+      }
+    }
+  ]
+}

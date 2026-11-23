@@ -1,4 +1,5 @@
 import assert from "node:assert/strict"
+import fs from "node:fs"
 import test from "node:test"
 import { decide, ROLL } from "../engine/decide.js"
 import { hitChance } from "../engine/odds.js"
@@ -73,4 +74,19 @@ test("patch versions compare numerically, so 16.9 comes before 16.20", () => {
 test("a missing base table falls back to rules.js and says so in the caveats", () => {
   const profile = buildProfile({ set: "PARTIAL", base: { shopOdds: SHOP_17, poolCopies: DEFAULT_PROFILE.poolCopies } })
   assert.ok(profile.caveats.some((c) => /champsPerCost/.test(c)))
+})
+
+test("the Set 18 candidate loads: rows 8 and 9 change, every other row equals the default", () => {
+  const file = JSON.parse(fs.readFileSync(new URL("./profiles/set18.candidate.json", import.meta.url), "utf8"))
+  const profile = buildProfile(file, "16.20")
+  for (let level = 1; level < DEFAULT_PROFILE.shopOdds.length; level++) {
+    if (level === 8 || level === 9) {
+      assert.notDeepEqual([...profile.shopOdds[level]], [...DEFAULT_PROFILE.shopOdds[level]])
+    } else {
+      assert.deepEqual([...profile.shopOdds[level]], [...DEFAULT_PROFILE.shopOdds[level]], `level ${level}`)
+    }
+  }
+  assert.deepEqual([...profile.poolCopies], [...DEFAULT_PROFILE.poolCopies])
+  assert.deepEqual([...profile.champsPerCost], [...DEFAULT_PROFILE.champsPerCost])
+  assert.ok(profile.caveats.some((c) => /Reroll Subscription/.test(c)))
 })
