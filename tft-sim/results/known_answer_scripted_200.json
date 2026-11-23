@@ -1,0 +1,15 @@
+{
+  "lobbies": 200,
+  "completed": 200,
+  "mean_placement_A": 4.53625,
+  "mean_placement_B": 4.46375,
+  "diff_A_minus_B": 0.0725,
+  "ci95_diff": [
+    -0.14506249999999998,
+    0.2875
+  ],
+  "illegal_A": 0,
+  "illegal_B": 0,
+  "content": "synthetic (build_sample_content)",
+  "elapsed_s": 81.3
+}
