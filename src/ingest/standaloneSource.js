@@ -7,25 +7,11 @@ const DEFAULT_EXTRACTED = path.join(process.cwd(), "captures", "extracted-live.j
 const DEFAULT_HUD = path.join(process.cwd(), "captures", "hud-live.json")
 const HUD_MAX_AGE_MS = 2_000
 
-// Known Set 18 champion costs for accurate shop & economy calculations
-export const CHAMPION_COSTS = {
-  DA_18_Ornn: 1,
-  DA_Karma18: 1,
-  DA_18_Sentry: 1,
-  DA_18_Rakan: 1,
-  DA_18_Varus: 1,
-  DA_18_Yorick: 1,
-  DA_18_KhaZix: 1,
-  DA_18_Kayle: 1,
-  DA_18_Yunara: 2,
-  DA_Scuttlecrab18: 2,
-  DA_18_Sejuani: 2,
-  DA_18_Elise: 2,
-  DA_18_Alistar: 2,
-  DA_18_Warwick: 3,
-  DA_18_Xayah: 3,
-  DA_18_Diana: 4,
-}
+// Champion costs come from the set file, not a hand-typed table. An id missing from the set file has no cost, so its slot is unread.
+const SET18_FILE = path.join(import.meta.dirname, "..", "data", "set18.json")
+export const SET18_COSTS = Object.fromEntries(
+  (JSON.parse(fs.readFileSync(SET18_FILE, "utf8")).champions ?? []).map((c) => [c.id, c.cost]),
+)
 
 export function createStandaloneSource(options = {}) {
   const eogPath = options.eogPath || DEFAULT_EOG
@@ -57,6 +43,7 @@ export function createStandaloneSource(options = {}) {
         } catch {}
       }
 
+      const missing = []
       const players = snapshot?.statsBlock?.players || []
       const activePlayer = findPlayer(players, playerName)
       const gameLengthSeconds = Number(snapshot?.statsBlock?.gameLengthSeconds) || 0
@@ -73,7 +60,7 @@ export function createStandaloneSource(options = {}) {
 
       // Compute Stage from game duration
       const stage = computeStage(gameLengthSeconds)
-      const missing = []
+      if (!gameLengthSeconds) missing.push("stage")
       const partialHud = hud?.hudSchema === 2
 
       // Compute Level (board capacity gives minimum level)
@@ -83,7 +70,9 @@ export function createStandaloneSource(options = {}) {
       if (!levelKnown) missing.push("level")
 
       // Compute HP
-      const hp = typeof activePlayer?.health === "number" ? activePlayer.health : 100
+      const hpKnown = typeof activePlayer?.health === "number"
+  const hp = hpKnown ? activePlayer.health : 100
+  if (!hpKnown) missing.push("hp")
 
       // Compute Gold
       const goldKnown = Number.isInteger(hud?.gold) && hud.gold >= 0
@@ -104,7 +93,7 @@ export function createStandaloneSource(options = {}) {
           if (!slot?.id) return null
           return {
             id: slot.id,
-            cost: slot.cost || CHAMPION_COSTS[slot.id] || 1,
+            cost: unitCost(slot),
             ...(Object.hasOwn(slot, "price")
               ? { price: Number.isInteger(slot.price) && slot.price >= 0 && slot.price <= 999 ? slot.price : null }
               : {}),
@@ -114,7 +103,7 @@ export function createStandaloneSource(options = {}) {
         })
       }
       if (shopUnknownSlots.length === 5) shop = null
-      if (!shop || shopUnknownSlots.length) missing.push("shop")
+      if (!shop) missing.push("shop")
 
       if (!snapshot) {
         missing.push("snapshot")
@@ -126,8 +115,8 @@ export function createStandaloneSource(options = {}) {
         hp,
         stage,
         shop,
-        ...(partialHud && !goldKnown ? { hudGoldUnknown: true } : {}),
-        ...(partialHud && !levelKnown ? { hudLevelUnknown: true } : {}),
+        ...(!goldKnown ? { hudGoldUnknown: true } : {}),
+        ...(!levelKnown ? { hudLevelUnknown: true } : {}),
         ...(shop && shopUnknownSlots.length ? { shopUnknownSlots } : {}),
         target: null,
         missing,
@@ -152,9 +141,14 @@ function usableHud(hud) {
   return age >= 0 && age <= HUD_MAX_AGE_MS
 }
 
+function unitCost(slot) {
+  return slot?.cost ?? SET18_COSTS[slot?.id]
+}
+
 function validShopUnit(slot) {
+  const cost = unitCost(slot)
   return typeof slot?.id === "string" && slot.id.length > 0 &&
-    Number.isInteger(slot.cost) && slot.cost >= 1 && slot.cost <= 5
+    Number.isInteger(cost) && cost >= 1 && cost <= 5
 }
 
 function findPlayer(players, name) {

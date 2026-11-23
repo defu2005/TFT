@@ -511,3 +511,43 @@ test("the same frame without an unread-slot flag has no unread-slot caveat", asy
   assert.doesNotMatch(record.reason.text, /ô shop chưa đọc được/)
   assert.ok(!record.reason.caveats.some((c) => c.includes("ô shop chưa đọc")))
 })
+
+test("standalone HUD (schema 2, fresh): a buy lands on a readable catalog slot, the unread slot is named, shop is not missing", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-standalone-hud-"))
+  const hudPath = path.join(dir, "hud.json")
+  fs.writeFileSync(
+    hudPath,
+    JSON.stringify({
+      hudSchema: 2,
+      source: "window",
+      set: 18,
+      hudDetected: true,
+      capturedAtMs: Date.now(),
+      gold: 30,
+      level: 7,
+      shopSlots: [
+        { id: "DA_18_Ornn", cost: 1, price: 1 },
+        { id: "DA_Karma18", cost: 1, price: 1 },
+        { id: "DA_18_Elise", cost: 2, price: 2 },
+        { id: "DA_18_Varus", cost: 1, price: 1 },
+        {},
+      ],
+    }),
+  )
+  const config = {
+    ...replayConfig({}),
+    source: "standalone",
+    standaloneOptions: { eogPath: path.join(dir, "no-eog.json"), hudPath },
+  }
+  const { coach } = createApp(config)
+  coach.setTarget({ id: "DA_18_Ornn", cost: 1, copiesLeft: 9, champsAtCost: 13, priority: 5 })
+  coach.setLine("DA_18_Ornn", 4)
+  const record = await coach.tick()
+  assert.equal(record.decision.action, "buy")
+  assert.equal(record.decision.slot, 0)
+  assert.deepEqual(record.state.shopUnknownSlots, [4])
+  assert.ok(record.reason.text.includes("ô shop chưa đọc được: ô 5"))
+  assert.ok(!record.state.missing?.includes("shop"))
+  assert.equal(record.state.gold, 30)
+  assert.equal(record.state.level, 7)
+})

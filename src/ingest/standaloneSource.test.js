@@ -51,7 +51,7 @@ test("standaloneSource parses snapshot to extract player HP and board pieces", a
   assert.equal(state.hp, 84)
   // no HUD: level is unknown (null), not the board size (decision 2026-11-23)
   assert.equal(state.level, null)
-  assert.equal(state.hudLevelUnknown, undefined)
+  assert.equal(state.hudLevelUnknown, true)
   assert.ok(state.missing.includes("level"))
   assert.equal(state.stage, 4) // 430s is stage 4
   assert.equal(state.board.length, 5)
@@ -182,7 +182,7 @@ test("coach uses verified slots with observed gold while level and other slots a
   assert.ok(record.reason.candidates.find((candidate) => candidate.action === "buy" && candidate.slot === 0).unknown)
   assert.ok(record.reason.candidates.filter((candidate) => ["xp", "roll"].includes(candidate.action)).every((candidate) => candidate.score === 0))
   assert.ok(coach.getState().source.missing.includes("level"))
-  assert.ok(coach.getState().source.missing.includes("shop"))
+  assert.ok(!coach.getState().source.missing.includes("shop"), "unread slots have their own caveat; shop is missing only when null")
 
   fs.writeFileSync(hudPath, JSON.stringify({ ...hud, gold: null, level: 7 }))
   const missingGold = await coach.tick()
