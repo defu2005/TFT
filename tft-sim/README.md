@@ -152,6 +152,7 @@ Script: `scripts/big_eval.py`. Ket qua: `results/fixed/big_eval/big_eval.json`. 
 Doc ket qua:
 - Voi 2000 lobby, CI hep (~0.15). Ket luan 200 lobby truoc ("universal bang scripted") la sai: universal **kem hon scripted mot chut** (+0.08, CI khong chua 0).
 - Ngau nhien 10% va 30% deu **tot hon** scripted co y nghia thong ke. Teacher scripted yeu; placement khong phai do tot cua viec bat chuoc teacher.
+- **Kiem tra null** (scripted vs scripted, cung 2000 seed, `scripts/null_check.py`): diff **+0.034 [-0.040, 0.110]**. Harness lech nhe ve phia du (~+0.03) va CI rong ~0.15. Hieu clone +0.082 [0.005, 0.157] chi cao hon null ~0.05, KHONG tach ro. **Ket luan "clone kem hon scripted" CHUA duoc chung minh.** Chi noi duoc: clone khong tot hon scripted o muc nhieu do duoc.
 - Vi vay, chi tieu "placement" khong the xep hang clone voi teacher o muc nho. Metric chinh van la dong y theo hanh dong.
 
 Closed loop universal 40 epoch, 200 lobby (seed 10000-10199): 0 illegal tren A va B; dong y tren trang thai clone: PASS 99%, BUY_SHOP 98%, BUY_XP 99.8%, REROLL 97%, PICK_AUGMENT 61%, REROLL_AUGMENT 0% (n=48).

@@ -63,6 +63,21 @@ def teacher_action(env, agent) -> int:
     return scripted_policy(env, agent, None, None, None)
 
 
+_TIER_RANK = {"silver": 1, "gold": 2, "prismatic": 3}
+
+
+def augment_tiers(env, agent) -> np.ndarray:
+    """Tier cua 3 augment dang duoc chao (1 silver, 2 gold, 3 prismatic; 0 = khong co hoac khong ro).
+    Day la thong tin ma nguoi choi that nhin thay; khong nam trong observation cua TFT_GOAT."""
+    out = np.zeros(3, dtype=np.float32)
+    p = env._state.players[agent]
+    aug = env._state.set_content.augments
+    for i, name in enumerate(list(p.augment_offer)[:3]):
+        a = aug.get(name)
+        out[i] = _TIER_RANK.get(a.tier, 0) if a is not None else 0
+    return out
+
+
 def owned_counts(player) -> dict[str, int]:
     counts: dict[str, int] = {}
     for u in player.all_units():
@@ -112,6 +127,7 @@ class Lobby:
     type_hits: dict = field(default_factory=dict)  # clone vs teacher theo loai hanh dong (chi khi check_teacher)
     type_total: dict = field(default_factory=dict)
     rows: list = field(default_factory=list)  # (flat, slot_feat, mask, action, seed, seat, step)
+    tiers: list = field(default_factory=list)  # (3,) hang tuong ung, bang rows: tier augment dang duoc chao (0 = khong co)
 
 
 def play(env, seed: int, policy_a, policy_b, *, collect: bool = False, check_teacher: bool = False,
@@ -135,6 +151,7 @@ def play(env, seed: int, policy_a, policy_b, *, collect: bool = False, check_tea
                 lob.illegal[g] += 1
             if collect:
                 lob.rows.append((flat, aux, mask.copy(), int(act), seed, int(a.split("_")[1]), step))
+                lob.tiers.append(augment_tiers(env, a))
             if check_teacher and g == "A" and int(mask.sum()) >= 2:
                 t = teacher_action(env, a)
                 name = action_type(t)
