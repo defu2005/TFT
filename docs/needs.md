@@ -46,6 +46,6 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | 2026-11-23 | Bán trước khi roll khi việc bán vẫn để đủ vàng roll; sửa văn bản "Mua trước rồi mới roll" để chỉ hiện khi thật sự có roll sau đó | `87987bc` |
 | 2026-11-23 | Line tự động (`src/engine/autoline.js`) chỉ bật khi `TFT_AUTO_LINE=1`, mặc định tắt để giữ hành vi hiện tại; chấm điểm theo bàn, không theo toàn bộ tướng sở hữu, để quân bench không khớp vẫn bán được | `8ee5511` |
 
-| 2026-11-23 | Kiểm tra line tự động trên file set thật qua `createApp` (một khung replay, mua tướng cùng tộc với bàn). Chưa chuyển ngưỡng sang `rules.js` vì không đổi hành vi và chưa có gì để tinh chỉnh (xem U8) | (commit này) |
+| 2026-11-23 | Kiểm tra line tự động trên file set thật qua `createApp` (một khung replay, mua tướng cùng tộc với bàn). Chưa chuyển ngưỡng sang `rules.js` vì không đổi hành vi và chưa có gì để tinh chỉnh (xem U8) | `cad25e9` |
 
 Giới hạn đã biết: `tft_evaluate_state` không dùng line tự động; đặt priority 0 thủ công không loại được tướng đang có line tự động.
