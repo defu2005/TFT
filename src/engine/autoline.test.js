@@ -43,8 +43,12 @@ test("two shared traits that both hit a breakpoint add up to 4", () => {
   assert.deepEqual(rate(state), { a3: 4 })
 })
 
-test("a board with no usable ids gives an empty line", () => {
-  assert.deepEqual(rate({ board: [{ championName: "a1" }], shop: [unit("a2")] }), {})
+test("a board unit with neither id nor championName gives an empty line", () => {
+  assert.deepEqual(rate({ board: [{ star: 1 }], shop: [unit("a2")] }), {})
+})
+
+test("a board unit given only as championName is rated like one with an id", () => {
+  assert.deepEqual(rate({ board: [{ championName: "a1", starLevel: 1 }], shop: [unit("a2")] }), { a2: 2 })
 })
 
 test("bench units are rated against the board; units that do not fit get nothing", () => {

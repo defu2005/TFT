@@ -97,7 +97,7 @@ test("auto line reports shop or board ids that the set file does not know", asyn
   const config = replayConfig({ TFT_REPLAY: fixture, TFT_AUTO_LINE: "1", TFT_SET_FILE: SET17 })
   const { coach } = createApp(config)
   const record = await coach.tick()
-  assert.deepEqual(record.reason.factors.setMismatch, { count: 1, ids: ["DA_18_Xayah"], missingId: 0 })
+  assert.deepEqual(record.reason.factors.setMismatch, { count: 1, ids: ["DA_18_Xayah"], missingId: 0, boardMissing: false })
   assert.ok(record.reason.caveats.some((c) => c.includes("bỏ qua")))
 })
 
@@ -178,7 +178,7 @@ test("auto line reports board units that have no id at all", async () => {
           stage: 3,
           target: null,
           shop: [{ id: "TFT17_Briar", cost: 1, copiesOwned: 0, priority: 0 }, null, null, null, null],
-          board: [{ championName: "Belveth", star: 1 }],
+          board: [{ star: 1 }],
         },
       ],
     }),
@@ -188,4 +188,46 @@ test("auto line reports board units that have no id at all", async () => {
   const record = await coach.tick()
   assert.equal(record.reason.factors.setMismatch.missingId, 1)
   assert.ok(record.reason.caveats.some((c) => c.includes("không có id")))
+})
+
+test("auto line rates a shop unit against a standalone-shaped board (championName, starLevel)", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-standalone-"))
+  const fixture = path.join(dir, "frame.json")
+  fs.writeFileSync(
+    fixture,
+    JSON.stringify({
+      frames: [
+        {
+          level: 7,
+          gold: 20,
+          hp: 80,
+          stage: 3,
+          target: null,
+          shop: [{ id: "DA_18_Xayah", cost: 1, copiesOwned: 0, priority: 0 }, null, null, null, null],
+          board: [{ championName: "DA_18_Ornn", starLevel: 1, price: 1 }],
+        },
+      ],
+    }),
+  )
+  const config = replayConfig({ TFT_REPLAY: fixture, TFT_AUTO_LINE: "1", TFT_SET_FILE: path.join(import.meta.dirname, "data", "set18.json") })
+  const { coach } = createApp(config)
+  const record = await coach.tick()
+  assert.ok(record.reason.factors.autoLine.DA_18_Xayah >= 1)
+  assert.equal(record.reason.factors.setMismatch, undefined)
+})
+
+test("auto line says so when the source sends no board at all", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-noboard-"))
+  const fixture = path.join(dir, "frame.json")
+  fs.writeFileSync(
+    fixture,
+    JSON.stringify({
+      frames: [{ level: 7, gold: 20, hp: 80, stage: 3, target: null, shop: [{ id: "TFT17_Briar", cost: 1, copiesOwned: 0, priority: 0 }, null, null, null, null] }],
+    }),
+  )
+  const config = replayConfig({ TFT_REPLAY: fixture, TFT_AUTO_LINE: "1", TFT_SET_FILE: SET17 })
+  const { coach } = createApp(config)
+  const record = await coach.tick()
+  assert.equal(record.reason.factors.setMismatch.boardMissing, true)
+  assert.ok(record.reason.caveats.some((c) => c.includes("không gửi bàn đấu")))
 })

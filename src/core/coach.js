@@ -72,11 +72,12 @@ export function createCoach({
       const reason = explain(input, out, trace, profile ? `bảng tỉ lệ shop của set ${profile.set}, bản yêu cầu ${profile.requested ?? "mới nhất"}, bản áp dụng ${profile.applied ?? "không có"}, từ file hồ sơ, chưa xác minh` : undefined)
       if (auto && auto.size) reason.factors.autoLine = Object.fromEntries(auto)
       if (autoLineCheck) {
-        const { ids, missingId } = autoLineCheck(fields)
-        if (ids.length || missingId) {
-          reason.factors.setMismatch = { count: ids.length, ids: ids.slice(0, 5), missingId }
+        const { ids, missingId, boardMissing } = autoLineCheck(fields)
+        if (ids.length || missingId || boardMissing) {
+          reason.factors.setMismatch = { count: ids.length, ids: ids.slice(0, 5), missingId, boardMissing }
           if (ids.length) reason.caveats.push(`${ids.length} id không có trong file set, line tự động bỏ qua chúng`)
-          if (missingId) reason.caveats.push(`${missingId} tướng không có id, line tự động không xét được chúng`)
+          if (missingId) reason.caveats.push(`${missingId} tướng không có id hay championName, line tự động không xét được chúng`)
+          if (boardMissing) reason.caveats.push("nguồn không gửi bàn đấu, line tự động không có gì để xét")
         }
       }
       if (rules) reason.factors.rules = rules
