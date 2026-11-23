@@ -30,8 +30,8 @@ export function ramSource(statePath = DEFAULT_STATE_FILE) {
         const data = JSON.parse(text)
         const missing = []
 
-        if (data.gold === undefined) missing.push("gold")
-        if (data.level === undefined) missing.push("level")
+        if (data.gold == null) missing.push("gold")
+        if (data.level == null) missing.push("level")
         if (data.hp === undefined) missing.push("hp")
         if (data.stage === undefined) missing.push("stage")
         if (!Array.isArray(data.shop) || data.shop.every(s => s === null)) missing.push("shop")

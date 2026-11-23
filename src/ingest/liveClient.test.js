@@ -44,14 +44,16 @@ test("a payload with no gold or level gives null for both, not 0 or 1", () => {
   assert.ok(s.missing.includes("gold") && s.missing.includes("level"))
 })
 
-test("the coach flags a missing level and makes no xp or roll on it", async () => {
-  const p = { activePlayer: { currentGold: 50, championStats: { currentHealth: 40 } }, gameData: { round: 3 }, shop: [{ id: "DA_18_Varus", cost: 3, copiesOwned: 0, priority: 5 }, null, null, null, null] }
-  const src = { kind: "fake", read: async () => toState(p) }
+test("the coach flags a missing level and holds: no xp on a made-up level", async () => {
+  // Gold 50, a target not in the shop, no level in the payload: the old fallback (level 1) chose xp here.
+  const p = { activePlayer: { currentGold: 50, championStats: { currentHealth: 40 } }, gameData: { round: 3 }, shop: [null, null, null, null, null] }
+  const target = { id: "DA_18_Varus", cost: 3, copiesLeft: 9, champsAtCost: 13, priority: 5 }
+  const src = { kind: "fake", read: async () => ({ ...toState(p), target }) }
   const record = await createCoach({ source: src }).tick()
   assert.equal(record.state.hudLevelUnknown, true)
-  assert.notEqual(record.decision.action, 2)
-  assert.notEqual(record.decision.action, 3)
+  assert.equal(record.decision.action, "hold")
   assert.equal(record.reason.factors.level, null)
+  assert.match(record.reason.text, /level chưa biết/)
 })
 
 test("hp of 0 is kept, not replaced by the fallback", () => {

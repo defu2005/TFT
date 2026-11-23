@@ -39,8 +39,8 @@ export function getJson(path, timeoutMs) {
 
 // Maps a raw /allgamedata payload to the state shape used by decide().
 // Field paths below are NOT verified for TFT; they are the guessed locations.
-// Any field the payload lacks is listed in `missing` and gets a fallback value,
-// so the coach can report it instead of using the fallback silently.
+// Any field the payload lacks is listed in `missing`. hp and stage get a fallback value;
+// gold and level are null (unknown), so the coach flags them and decides nothing on them.
 export function toState(payload) {
   const player = payload?.activePlayer ?? {}
   const stats = payload?.gameData ?? payload?.gameStats ?? {}
@@ -51,8 +51,8 @@ export function toState(payload) {
   const shopRaw = payload?.shop ?? player.shop
 
   const missing = []
-  if (goldRaw === undefined) missing.push("gold")
-  if (levelRaw === undefined) missing.push("level")
+  if (goldRaw == null) missing.push("gold")
+  if (levelRaw == null) missing.push("level")
   if (hpRaw === undefined) missing.push("hp")
   if (stageRaw === undefined) missing.push("stage")
   if (!Array.isArray(shopRaw)) missing.push("shop")

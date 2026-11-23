@@ -98,7 +98,12 @@ export function createCoach({
         for (const note of profile.caveats) reason.caveats.push(note)
       }
       if (missing.length) {
-        const note = `thiếu trường từ nguồn: ${missing.join(", ")}; đang dùng giá trị mặc định cho các trường này`
+        // gold and level are unknown (null) when the source gives no value: no default is used for them.
+        const unknown = missing.filter((f) => (f === "gold" && fields.gold == null) || (f === "level" && fields.level == null))
+        const defaulted = missing.filter((f) => !unknown.includes(f))
+        const note = `thiếu trường từ nguồn: ${missing.join(", ")}`
+          + (defaulted.length ? `; đang dùng giá trị mặc định cho ${defaulted.join(", ")}` : "")
+          + (unknown.length ? `; ${unknown.join(", ")} chưa biết nên không quyết định mua, roll hay xp trên chúng` : "")
         reason.caveats.push(note)
         reason.text += ` (${note})`
       }
