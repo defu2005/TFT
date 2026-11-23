@@ -139,6 +139,23 @@ Doc ket qua:
 - Da thu 1 wrapper (PASS -> BUY_XP khi gold >= 40), seed 4000-4199: +0.18 [-0.05, 0.43]. Khong tot hon scripted; giu scripted.
 - Nguyen nhan chenh lech teacher-ngau nhien CHUA XAC DINH. Ngau nhien nang FIELD, BENCH_BOARD va SELL_BENCH (teacher khong lam BENCH_BOARD/SELL), roi FIELD lai. Co the la hoan doi bang board ma teacher khong bao gio thuc hien. Ghi "mot ung vien da thu, nguyen nhan mo".
 
+## Do phan giai placement (2000 lobby, seed 20000-21999, noi dung A)
+
+Script: `scripts/big_eval.py`. Ket qua: `results/fixed/big_eval/big_eval.json`. Hieu = A - scripted, CI95 theo lobby.
+
+| Dieu kien (A) | diff | CI95 | illegal |
+|---|---|---|---|
+| universal, 40 epoch, closed loop | +0.082 | [0.005, 0.157] | 0 |
+| scripted, 10% ngau nhien | -0.472 | [-0.547, -0.397] | 0 |
+| scripted, 30% ngau nhien | -0.167 | [-0.247, -0.088] | 0 |
+
+Doc ket qua:
+- Voi 2000 lobby, CI hep (~0.15). Ket luan 200 lobby truoc ("universal bang scripted") la sai: universal **kem hon scripted mot chut** (+0.08, CI khong chua 0).
+- Ngau nhien 10% va 30% deu **tot hon** scripted co y nghia thong ke. Teacher scripted yeu; placement khong phai do tot cua viec bat chuoc teacher.
+- Vi vay, chi tieu "placement" khong the xep hang clone voi teacher o muc nho. Metric chinh van la dong y theo hanh dong.
+
+Closed loop universal 40 epoch, 200 lobby (seed 10000-10199): 0 illegal tren A va B; dong y tren trang thai clone: PASS 99%, BUY_SHOP 98%, BUY_XP 99.8%, REROLL 97%, PICK_AUGMENT 61%, REROLL_AUGMENT 0% (n=48).
+
 ## Trang thai cong viec
 
 - Test cua tft-sim: 9 pass (chay tren toy env, co loai tru seat). Toy env chi kiem chung harness.
