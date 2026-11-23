@@ -116,6 +116,11 @@ export function createCoach({
         const note = `ô shop chưa đọc được: ô ${shown} (không mua được ô đó; quyết định trên các ô còn lại)`
         reason.caveats.push(note)
         reason.text += ` (${note})`
+        if (actionName(out.action) === "roll") {
+          const rollNote = `roll sẽ bỏ ô ${shown} chưa đọc được, có thể là tướng mua được; coach không chặn roll vì ô đó`
+          reason.caveats.push(rollNote)
+          reason.text += ` (${rollNote})`
+        }
       }
       const latencyMs = performance.now() - started
       const stateHash = hashState(input)

@@ -73,3 +73,23 @@ test("setTarget is used on the next tick", async () => {
   assert.equal(coach.getState().target.id, "T")
   assert.equal(coach.setTarget(null), null)
 })
+
+test("a roll with an unread shop slot says the roll discards that slot; a buy frame does not", async () => {
+  const state = {
+    level: 3, gold: 4, hp: 20, stage: 4, freeRolls: 0,
+    shop: [{ id: "DA_18_Ezreal", cost: 4, copiesOwned: 0, priority: 0, price: 4 }, { id: "DA_18_Xayah", cost: 1, copiesOwned: 0, priority: 0, price: 1 }, null, null, null],
+    shopUnknownSlots: [4],
+    target: { id: "DA_18_Zed", cost: 1, copiesLeft: 5, champsAtCost: 13, priority: 5 },
+  }
+  const coach = createCoach({ source: { kind: "live", read: async () => JSON.parse(JSON.stringify(state)) } })
+  await coach.tick()
+  const roll = coach.getState().reason
+  assert.equal(coach.getState().decision.action, "roll")
+  assert.match(roll.text, /roll sẽ bỏ ô 5 chưa đọc được/)
+  // the same frame with the roll not chosen (shop cost 4 target already in the shop, so no roll): no roll caveat
+  const buyState = { ...state, target: { id: "DA_18_Xayah", cost: 1, copiesLeft: 5, champsAtCost: 13, priority: 5 } }
+  const c2 = createCoach({ source: { kind: "live", read: async () => JSON.parse(JSON.stringify(buyState)) } })
+  await c2.tick()
+  assert.notEqual(c2.getState().decision.action, "roll")
+  assert.doesNotMatch(c2.getState().reason.text, /roll sẽ bỏ/)
+})
