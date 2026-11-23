@@ -15,6 +15,9 @@ test("standaloneSource handles missing files gracefully", async () => {
   assert.equal(state.hp, 100)
   assert.ok(state.missing.includes("snapshot"))
   assert.ok(state.missing.includes("shop"))
+  // Without a HUD, gold and level are estimates: they must be reported as missing, not passed as read values.
+  assert.ok(state.missing.includes("gold"))
+  assert.ok(state.missing.includes("level"))
 })
 
 test("standaloneSource parses snapshot to extract player HP and board pieces", async () => {

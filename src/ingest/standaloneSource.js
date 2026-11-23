@@ -76,12 +76,16 @@ export function createStandaloneSource(options = {}) {
       // Compute Stage from game duration
       const stage = computeStage(gameLengthSeconds)
 
+      // Missing fields are reported, so the coach can say what it used as a default.
+      const missing = []
+
       // Compute Level (board capacity gives minimum level)
       let level = Math.max(1, boardPieces.length)
       if (hud && typeof hud.level === "number" && hud.level > 0) {
         level = hud.level
-      } else if (stage > 1 && level < 3) {
-        level = stage >= 4 ? 6 : stage >= 3 ? 5 : 4
+      } else {
+        missing.push("level")
+        if (stage > 1 && level < 3) level = stage >= 4 ? 6 : stage >= 3 ? 5 : 4
       }
       lastKnownLevel = level
 
@@ -93,6 +97,7 @@ export function createStandaloneSource(options = {}) {
       if (hud && typeof hud.gold === "number" && hud.gold >= 0) {
         gold = hud.gold
       } else {
+        missing.push("gold")
         // Base gold estimation based on stage and interest
         const baseGoldForStage = Math.min(50, Math.max(5, (stage - 1) * 12 + 10))
         gold = baseGoldForStage
@@ -101,7 +106,6 @@ export function createStandaloneSource(options = {}) {
 
       // Compute Shop
       let shop = null
-      const missing = []
 
       if (hud && Array.isArray(hud.shop) && hud.shop.length === 5) {
         shop = hud.shop.map((slot) => {

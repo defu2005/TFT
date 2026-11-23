@@ -34,6 +34,15 @@ test("a seven-column table gives cost 7 a non-zero hit chance, in the roll decis
   assert.ok(trace.find((c) => c.action === "roll").hit > 0)
 })
 
+// The candidate's level-7 row is labelled 18.6: requests with a 16.x label do not get it (the file labels are metabot's).
+test("the candidate's level-7 hand-read row applies to 18.x requests and not to the 16.20 label", () => {
+  const file = JSON.parse(fs.readFileSync(new URL("./profiles/set18.candidate.json", import.meta.url), "utf8"))
+  const at = (req) => buildProfile(structuredClone(file), req).shopOdds[7].map((x) => Math.round(x * 100))
+  assert.deepEqual(at("18.6"), [16, 30, 43, 10, 1])
+  assert.deepEqual(at(null), [16, 30, 43, 10, 1])
+  assert.deepEqual(at("16.20"), [19, 30, 40, 10, 1])
+})
+
 test("a row that does not sum to 1 throws", () => {
   assert.throws(() => buildProfile(fileWith([{ version: "16.20", shopOdds: { 8: [0.5, 0.5, 0.5, 0, 0] } }])), /tổng/)
 })
