@@ -205,3 +205,44 @@ def summarize(lobbies: list[Lobby]) -> dict:
         "illegal_A": sum(l.illegal["A"] for l in lobbies),
         "illegal_B": sum(l.illegal["B"] for l in lobbies),
     }
+
+
+BENCH_SLOTS = 9
+BOARD_SLOTS = 9  # BENCH_BOARD chi co 9 hanh dong; board 10 (cap 10) khong duoc mo ta o day (xem README)
+
+
+def _unit_value(champs, u) -> float:
+    c = champs[u.champion_api]
+    return float(c.cost * 3 ** (u.star - 1))
+
+
+def bench_board_features(env, agent) -> np.ndarray:
+    """Dac trung bench/board cho v2 (uni2 = uni + phan nay). Moi slot: co unit, gia/5, sao/3, value/15.
+    Bench them: co ban sao khac, chung trait voi board. Tong: 4 + 9*6 + 9*4 = 94 chieu."""
+    p = env._state.players[agent]
+    champs = env._state.set_content.champions
+    board_traits = set(t for v in p.board for t in champs[v.champion_api].traits)
+    out = [len(p.bench) / BENCH_SLOTS, len(p.board) / max(1, p.board_cap),
+           float(len(p.bench) >= BENCH_SLOTS), float(len(p.board) >= p.board_cap)]
+    for i in range(BENCH_SLOTS):
+        if i < len(p.bench):
+            u = p.bench[i]
+            same = any(v.champion_api == u.champion_api for v in p.board) or any(
+                j != i and v.champion_api == u.champion_api for j, v in enumerate(p.bench))
+            shares = bool(set(champs[u.champion_api].traits) & board_traits)
+            out += [1.0, champs[u.champion_api].cost / 5, u.star / 3, _unit_value(champs, u) / 15,
+                    float(same), float(shares)]
+        else:
+            out += [0.0] * 6
+    for i in range(BOARD_SLOTS):
+        if i < len(p.board):
+            u = p.board[i]
+            out += [1.0, champs[u.champion_api].cost / 5, u.star / 3, _unit_value(champs, u) / 15]
+        else:
+            out += [0.0] * 4
+    return np.asarray(out, np.float32)
+
+
+def universal_features_v2(obs: dict, env, agent) -> np.ndarray:
+    """uni2 = universal_features (85) + bench_board_features (4 + 9*6 + 9*4 = 94) -> 179 chieu."""
+    return np.concatenate([universal_features(obs, env, agent), bench_board_features(env, agent)])

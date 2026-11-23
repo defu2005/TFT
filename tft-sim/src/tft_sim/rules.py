@@ -81,8 +81,12 @@ def make_swap_rule(sell: bool = True, floor: int = 54, key: str = "star_cost"):
                 return FIELD_BENCH_START + best
         if a in (PASS, BUY_XP, REROLL) and player.bench and len(player.board) >= player.board_cap and player.bench_has_room():
             best_b = max(_unit_key(champs, u, key) for u in player.bench)
-            worst_i = min(range(len(player.board)), key=lambda i: _unit_key(champs, player.board[i], key))
-            if best_b > _unit_key(champs, player.board[worst_i], key) and mask[BENCH_BOARD_START + worst_i]:
-                return BENCH_BOARD_START + worst_i
+            # Chi 9 slot board (BENCH_BOARD co 9 hanh dong). Board 10 unit (cap 10 o cap 10): slot 10 khong
+            # co hanh dong BENCH_BOARD, va index 9 se trung EQUIP (35) neu khong chan. Xem README.
+            cands = range(min(len(player.board), 9))
+            if cands:
+                worst_i = min(cands, key=lambda i: _unit_key(champs, player.board[i], key))
+                if best_b > _unit_key(champs, player.board[worst_i], key) and mask[BENCH_BOARD_START + worst_i]:
+                    return BENCH_BOARD_START + worst_i
         return a
     return pol
