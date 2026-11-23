@@ -12,6 +12,7 @@ export function createCoach({
   onTick = null,
   onError = null,
   autoLine = null,
+  autoLineCheck = null,
   rules = null,
   profile = null,
   now = () => Date.now(),
@@ -70,6 +71,13 @@ export function createCoach({
       decide(input, out, trace, rules, profile)
       const reason = explain(input, out, trace, profile ? `bảng tỉ lệ shop của set ${profile.set}, bản yêu cầu ${profile.requested ?? "mới nhất"}, bản áp dụng ${profile.applied ?? "không có"}, từ file hồ sơ, chưa xác minh` : undefined)
       if (auto && auto.size) reason.factors.autoLine = Object.fromEntries(auto)
+      if (autoLineCheck) {
+        const unknown = autoLineCheck(fields)
+        if (unknown.length) {
+          reason.factors.setMismatch = { count: unknown.length, ids: unknown.slice(0, 5) }
+          reason.caveats.push(`${unknown.length} id không có trong file set, line tự động bỏ qua chúng`)
+        }
+      }
       if (rules) reason.factors.rules = rules
       if (profile) {
         reason.factors.profile = { set: profile.set, requested: profile.requested, applied: profile.applied }

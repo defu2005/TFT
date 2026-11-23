@@ -75,6 +75,32 @@ test("the auto line on the Set 18 file rates a shop unit that shares a trait wit
   assert.ok(record.reason.factors.autoLine.DA_18_Xayah >= 1)
 })
 
+test("auto line reports shop or board ids that the set file does not know", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-mismatch-"))
+  const fixture = path.join(dir, "frame.json")
+  fs.writeFileSync(
+    fixture,
+    JSON.stringify({
+      frames: [
+        {
+          level: 7,
+          gold: 20,
+          hp: 80,
+          stage: 3,
+          target: null,
+          shop: [{ id: "DA_18_Xayah", cost: 1, copiesOwned: 0, priority: 0 }, null, null, null, null],
+          board: [{ id: "TFT17_Belveth", star: 1 }],
+        },
+      ],
+    }),
+  )
+  const config = replayConfig({ TFT_REPLAY: fixture, TFT_AUTO_LINE: "1", TFT_SET_FILE: SET17 })
+  const { coach } = createApp(config)
+  const record = await coach.tick()
+  assert.deepEqual(record.reason.factors.setMismatch, { count: 1, ids: ["DA_18_Xayah"] })
+  assert.ok(record.reason.caveats.some((c) => c.includes("bỏ qua")))
+})
+
 test("TFT_RULES parses names into flags, rejects unknown names, and is null when unset", () => {
   assert.equal(parseRules(undefined), null)
   assert.equal(parseRules(""), null)

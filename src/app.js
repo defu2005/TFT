@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url"
 import fs from "node:fs"
 import { createCoach } from "./core/coach.js"
 import { buildProfile } from "./data/profileFile.js"
-import { autoLine, createSetIndex } from "./engine/autoline.js"
+import { autoLine, createSetIndex, unknownIds } from "./engine/autoline.js"
 import { createDecisionLog } from "./log/decisionLog.js"
 import { captureSource, liveSource, replaySource, ramSource, standaloneSource } from "./ingest/sources.js"
 
@@ -75,10 +75,12 @@ export function errorLogger(write) {
 
 export function createApp(config = loadConfig(), { onTick = null, onError = null } = {}) {
   let auto = null
+  let autoCheck = null
   if (config.autoLine) {
     if (!config.setFile) throw new Error("TFT_AUTO_LINE=1 cần TFT_SET_FILE")
     const index = createSetIndex(JSON.parse(fs.readFileSync(config.setFile, "utf8")))
     auto = (state) => autoLine(index, state)
+    autoCheck = (state) => unknownIds(index, state)
   }
   if (config.patch && !config.profileFile) throw new Error("TFT_PATCH cần TFT_PROFILE_FILE")
   let profile = null
@@ -87,6 +89,6 @@ export function createApp(config = loadConfig(), { onTick = null, onError = null
   }
   const source = makeSource(config)
   const logger = createDecisionLog(config.logPath)
-  const coach = createCoach({ source, logger, intervalMs: config.intervalMs, onTick, onError, autoLine: auto, rules: config.rules ?? null, profile })
+  const coach = createCoach({ source, logger, intervalMs: config.intervalMs, onTick, onError, autoLine: auto, autoLineCheck: autoCheck, rules: config.rules ?? null, profile })
   return { coach, source, logger, config }
 }
