@@ -448,3 +448,24 @@ test("hitWithin equals 1 - (1 - hit) ** rolls, and is 0 when the target is alrea
   decide(TARGET_SHOP(40, 80), { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }, shopTrace)
   assert.equal(shopTrace.find((c) => c.action === "roll").hitWithin, 0)
 })
+
+// Pins today's behaviour at the three U9 points (docs/needs.md). Each test names the rule that would flip it.
+test("U9 rule 1 (roll only while gold stays at 50+): today a roll at 51 gold is taken", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  decide(ROLL_STATE(51, [null, null, null, null, null]), out)
+  assert.equal(out.action, ROLL)
+})
+
+test("U9 rule 2 (level only at 50+ gold early): today level 3 at 20 gold holds with the XP note", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  const trace = []
+  decide({ level: 3, stage: 2, gold: 20, hp: 80, shop: [null, null, null, null, null], target: null }, out, trace)
+  assert.equal(out.action, HOLD)
+  assert.match(trace.find((c) => c.action === "xp").note, /cần 50/)
+})
+
+test("U9 rule 3 (guide level targets): today level 7 at stage 4 with 50 gold levels up", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  decide({ level: 7, stage: 4, gold: 50, hp: 80, shop: [null, null, null, null, null], target: null }, out)
+  assert.equal(out.action, XP)
+})
