@@ -24,6 +24,7 @@ Tài liệu này liệt kê dữ liệu mà bước quyết định cần, dữ 
 | `gold`, `level` | thật khi có file HUD; **ước lượng** khi không có | HUD, hoặc công thức trong `standaloneSource.js` |
 | `stage` | **ước lượng** từ thời gian trận | `computeStage` |
 | `board` (`championName`, `starLevel`) | thật | `boardPieces` trong snapshot |
+| `setMismatch` (factors của coach, không phải trạng thái) | tính | `unknownIds` trong `src/engine/autoline.js`, khi line tự động bật |
 | `augments` đã chọn | thật, chỉ là lựa chọn đã có | snapshot |
 | bàn cờ đối thủ | có trong snapshot nhưng **chưa được chuyển tiếp** | snapshot |
 | `copiesOwned` | chỉ tính quân trên sàn, **thiếu bench** | `standaloneSource.js` |

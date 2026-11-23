@@ -82,7 +82,7 @@ Schema chưa phải chuẩn công khai, có thể thay đổi.
 
 Đăng ký: `.mcp.json` ở gốc repo. Agent khởi chạy `node src/mcp/server.js`.
 
-Các tool chấm điểm, xác suất và `tft_rules` dùng cùng `TFT_RULES` và hồ sơ như coach; `tft_rules` trả bảng level theo `guideLevels` và `maxCost` của hồ sơ. Giới hạn cost và level trong schema lấy từ hồ sơ đang dùng, không cố định 5 và 11. Line tự động chưa có trong các tool này.
+Khi line tự động bật, coach báo `reason.factors.setMismatch` (id không có trong file set, tướng không có id hay championName, nguồn không gửi bàn đấu) kèm caveat; line tự động đọc `championName` khi không có `id`. Các tool chấm điểm, xác suất và `tft_rules` dùng cùng `TFT_RULES` và hồ sơ như coach; `tft_rules` trả bảng level theo `guideLevels` và `maxCost` của hồ sơ. Giới hạn cost và level trong schema lấy từ hồ sơ đang dùng, không cố định 5 và 11. Line tự động chưa có trong các tool này.
 
 ## 6. Cấu hình
 
