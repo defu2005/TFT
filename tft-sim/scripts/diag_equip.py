@@ -2,10 +2,11 @@
 import collections
 from tft_goat.agent.scripted import scripted_action
 from tft_goat.data.sample import build_sample_content
+from tft_sim.content import build_full_recipe_content
 from tft_goat.env.actions import EQUIP
 from tft_goat.env.tft_env import TftEnv
 
-env = TftEnv(set_content=build_sample_content())
+env = TftEnv(set_content=build_full_recipe_content())
 noop = collections.Counter(); total = collections.Counter()
 for seed in range(20):
     obs, infos = env.reset(seed=seed)

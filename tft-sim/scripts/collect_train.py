@@ -1,11 +1,11 @@
 """Thu thap du lieu BC tu lobby toan scripted. Dai seed (README): train 200-499, val 800-849, test 1000-1199."""
 import sys, time
 import numpy as np
-from tft_goat.data.sample import build_sample_content
+from tft_sim.tftgoat import default_content
 from tft_sim.tftgoat import make_env, play, scripted_policy
 
 split, start, stop, out = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
-env = make_env(build_sample_content())
+env = make_env(default_content())
 t0 = time.time()
 flats, auxs, masks, acts, seeds, seats, steps = [], [], [], [], [], [], []
 for s in range(start, stop):

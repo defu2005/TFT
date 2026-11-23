@@ -1,0 +1,1 @@
+{'games': 20, 'equip_actions': 901, 'equip_without_consuming_components': 0}

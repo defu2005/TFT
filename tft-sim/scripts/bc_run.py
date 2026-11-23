@@ -3,15 +3,15 @@ import json, sys, time
 import numpy as np
 import torch
 from pathlib import Path
-from tft_goat.data.sample import build_sample_content
+from tft_sim.tftgoat import default_content
 from tft_sim.bc_train import features, policy_from, train, val_agreement
 from tft_sim.tftgoat import make_env, play, random_policy, scripted_policy, summarize
 
 S = Path(sys.argv[1]); R = Path(sys.argv[2]); R.mkdir(parents=True, exist_ok=True)
 tr = np.load(S / "train.npz"); va = np.load(S / "val.npz")
-res = {"content": "synthetic (build_sample_content)", "train_rows": int(len(tr["action"])),
+res = {"content": "synthetic (full-recipe content, tft_sim.content)", "train_rows": int(len(tr["action"])),
        "val_rows": int(len(va["action"])), "variants": {}}
-env = make_env(build_sample_content())
+env = make_env(default_content())
 for variant in ["flat", "flat+slot"]:
     t0 = time.time()
     Xtr, Xva = features(tr, variant), features(va, variant)

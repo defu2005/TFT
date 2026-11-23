@@ -33,6 +33,13 @@ def make_env(content):
     return TftEnv(set_content=content)  # luon truyen content: TftEnv() mac dinh se tai mang
 
 
+def default_content():
+    """Noi dung tong hop DA SUA cong thuc (xem tft_sim/content.py)."""
+    from tft_sim.content import build_full_recipe_content
+
+    return build_full_recipe_content()
+
+
 def seat_groups(seed: int) -> dict[str, str]:
     """Chia 4/4 bang shuffle co seed: khong phu thuoc thu tu ghe lien tiep."""
     rng = random.Random(seed)
@@ -128,7 +135,7 @@ def play(env, seed: int, policy_a, policy_b, *, collect: bool = False, check_tea
                 lob.illegal[g] += 1
             if collect:
                 lob.rows.append((flat, aux, mask.copy(), int(act), seed, int(a.split("_")[1]), step))
-            if check_teacher and g == "A":
+            if check_teacher and g == "A" and int(mask.sum()) >= 2:
                 t = teacher_action(env, a)
                 name = action_type(t)
                 lob.type_total[name] = lob.type_total.get(name, 0) + 1
