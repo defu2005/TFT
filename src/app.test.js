@@ -311,6 +311,22 @@ test("a frame with unknown gold holds and records the flag; a null price is not 
   assert.equal(record.state.hudGoldUnknown, true)
 })
 
+// Standalone source with no HUD and no snapshot: gold and level are estimates, and the record must say so in its caveats.
+test("standalone without a HUD reader: the record caveats name the estimated gold and level", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-nohud-"))
+  const config = {
+    ...replayConfig({}),
+    source: "standalone",
+    standaloneOptions: { eogPath: path.join(dir, "no-eog.json"), hudPath: path.join(dir, "no-hud.json") },
+  }
+  const { coach } = createApp(config)
+  const record = await coach.tick()
+  const caveat = record.reason.caveats.find((c) => c.startsWith("thiếu trường từ nguồn"))
+  assert.ok(caveat, "a missing-field caveat is present")
+  assert.ok(caveat.includes("gold") && caveat.includes("level"))
+  assert.ok(record.reason.text.includes("đang dùng giá trị mặc định"))
+})
+
 // Bare nulls from a source (no flags): the coach sets the flags, so nothing is rolled, bought or leveled on a zero.
 test("bare null gold and level (no flags) reach the record as unknown and decide nothing", async () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-barenull-"))
