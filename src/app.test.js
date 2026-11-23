@@ -359,8 +359,8 @@ test("bare null gold and level (no flags) reach the record as unknown and decide
 
 // Hand-read frames from third-party VOD 2924500482 (boxbox, patch 18.6), 1505 s, 2105 s, 2705 s. Names read from the
 // cards and matched to set18.json; the HUD shows the cost on each card, which equals the tier, so no price is given.
-// Gold, level, HP and stage are read from the HUD. The rightmost empty slot in frame 3 is an empty card, not a price.
-test("hand-read 18.6 frames replay: level, gold and shop are read; no decision is made on an empty slot", async () => {
+// Gold, level, HP and stage are read from the HUD. The rightmost slot in frame 3 is empty because a Wisp card was bought there (gold 14 to 10 at 2701 s), not a price.
+test("hand-read 18.6 frames replay: level, gold and shop are read; the buy is on a readable slot", async () => {
   const fixture = path.join(import.meta.dirname, "data", "fixtures", "handread-18-6.json")
   const { coach } = createApp(replayConfig({ TFT_REPLAY: fixture }))
   const first = await coach.tick()
@@ -374,8 +374,8 @@ test("hand-read 18.6 frames replay: level, gold and shop are read; no decision i
   assert.ok(second.state.shop.some((u) => u?.id === "DA_Brambleback18"))
   const third = await coach.tick()
   assert.equal(third.state.gold, 10)
-  assert.notEqual(third.decision.slot, 4)
-  assert.ok(third.decision.action === "hold" || third.decision.slot !== 4)
+  assert.equal(third.decision.action, "buy")
+  assert.equal(third.decision.slot, 0)
 })
 
 // Gold and level keys omitted (no flag, no null): no roll or xp on the coerced zero, even with free rolls. Gold 30 with level unknown still buys (the engine's contract), with hit null.
