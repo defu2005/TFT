@@ -109,3 +109,43 @@ test("without a trace the decision is the same", () => {
   const b = decide(state, { action: 0, slot: -1, score: 0, hit: 0 }, [])
   assert.deepEqual(a, b)
 })
+
+test("a unit with 9 copies (3 sao) is not bought again", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0 }
+  const trace = []
+  decide(
+    {
+      level: 7,
+      gold: 40,
+      hp: 80,
+      stage: 4,
+      shop: [{ id: "core", cost: 3, copiesOwned: 9, priority: 5 }, null, null, null, null],
+      target: null,
+    },
+    out,
+    trace,
+  )
+  assert.equal(out.action, HOLD)
+  const entry = trace.find((c) => c.action === "buy" && c.slot === 0)
+  assert.match(entry.note, /3 sao/)
+})
+
+test("a unit with 3 copies scores with priority times owned times odds, minus interest", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0 }
+  const trace = []
+  decide(
+    {
+      level: 7,
+      gold: 40,
+      hp: 80,
+      stage: 4,
+      shop: [null, { id: "core", cost: 3, copiesOwned: 3, priority: 5 }, null, null, null],
+      target: null,
+    },
+    out,
+    trace,
+  )
+  const entry = trace.find((c) => c.action === "buy" && c.slot === 1)
+  const expected = 5 * 4 * (0.4 + entry.hit) - entry.interestLoss * 0.35
+  assert.ok(Math.abs(entry.score - expected) < 1e-9)
+})

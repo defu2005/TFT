@@ -51,6 +51,11 @@ export function decide(state, out, trace = null) {
         if (trace) trace.push({ action: "buy", slot: i, unit: unit.id, cost: unit.cost, score: 0, note: `thiếu vàng (cần ${unit.cost}, có ${gold})` })
         continue
       }
+      const owned = unit.copiesOwned | 0
+      if (owned >= 9) {
+        if (trace) trace.push({ action: "buy", slot: i, unit: unit.id, cost: unit.cost, score: 0, note: "đã đủ 9 bản (3 sao)" })
+        continue
+      }
       // The target's copy count applies only to the target unit itself.
       const isTarget = !!target && target.id != null && unit.id === target.id
       const copiesFromTarget = isTarget ? target.copiesLeft ?? 0 : 0
@@ -61,7 +66,7 @@ export function decide(state, out, trace = null) {
       const interestLoss = interestGold(gold) - interestGold(gold - unit.cost)
       let score = unit.priority * (1 + (unit.copiesOwned | 0)) * (0.4 + hit)
       if (!urgent) score -= interestLoss * 0.35
-      if (unit.copiesOwned >= 2) score += 1.5
+      if (owned % 3 === 2) score += 1.5
       if (trace) {
         trace.push({
           action: "buy",
