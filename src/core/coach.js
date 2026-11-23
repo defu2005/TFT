@@ -68,15 +68,12 @@ export function createCoach({
       const trace = []
       const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
       decide(input, out, trace, rules, profile)
-      const reason = explain(input, out, trace, profile ? `bảng tỉ lệ shop của set ${profile.set}, bản ${profile.patch}, từ file hồ sơ, chưa xác minh` : undefined)
+      const reason = explain(input, out, trace, profile ? `bảng tỉ lệ shop của set ${profile.set}, bản yêu cầu ${profile.requested ?? "mới nhất"}, bản áp dụng ${profile.applied ?? "không có"}, từ file hồ sơ, chưa xác minh` : undefined)
       if (auto && auto.size) reason.factors.autoLine = Object.fromEntries(auto)
       if (rules) reason.factors.rules = rules
       if (profile) {
-        reason.factors.profile = { set: profile.set, patch: profile.patch }
-        for (const note of profile.caveats) {
-          reason.caveats.push(note)
-          reason.text += ` (${note})`
-        }
+        reason.factors.profile = { set: profile.set, requested: profile.requested, applied: profile.applied }
+        for (const note of profile.caveats) reason.caveats.push(note)
       }
       if (missing.length) {
         const note = `thiếu trường từ nguồn: ${missing.join(", ")}; đang dùng giá trị mặc định cho các trường này`
@@ -164,7 +161,7 @@ export function createCoach({
         intervalMs,
         autoLine: !!autoLine,
         rules: rules ?? null,
-        profile: profile ? { set: profile.set, patch: profile.patch } : null,
+        profile: profile ? { set: profile.set, requested: profile.requested, applied: profile.applied } : null,
       }
     },
 

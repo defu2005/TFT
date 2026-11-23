@@ -102,10 +102,11 @@ test("a profile file reaches the decision through createApp; TFT_PATCH picks the
   const newer = createApp(loadConfig({ ...base, TFT_PATCH: "16.20" }))
   const a = await older.coach.tick()
   const b = await newer.coach.tick()
-  assert.equal(newer.coach.getState().profile.patch, "16.20")
+  assert.equal(newer.coach.getState().profile.requested, "16.20")
+  assert.equal(newer.coach.getState().profile.applied, "16.20")
   assert.equal(b.reason.factors.profile.set, "TEST")
   assert.notEqual(a.decision.hit, b.decision.hit)
-  assert.ok(b.reason.caveats.some((c) => /set TEST, bản 16.20/.test(c)))
+  assert.ok(b.reason.caveats.some((c) => /set TEST, bản yêu cầu 16.20, bản áp dụng 16.20/.test(c)))
 
   assert.throws(() => createApp(loadConfig({ TFT_SOURCE: "replay", TFT_PATCH: "16.20", TFT_LOG: path.join(dir, "e.jsonl") })), /TFT_PROFILE_FILE/)
 })

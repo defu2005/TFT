@@ -88,5 +88,38 @@ test("the Set 18 candidate loads: rows 8 and 9 change, every other row equals th
   }
   assert.deepEqual([...profile.poolCopies], [...DEFAULT_PROFILE.poolCopies])
   assert.deepEqual([...profile.champsPerCost], [...DEFAULT_PROFILE.champsPerCost])
-  assert.ok(profile.caveats.some((c) => /Reroll Subscription/.test(c)))
+  assert.ok(profile.caveats.some((c) => /Opening Encounters/.test(c)))
+})
+
+test("a requested version between two overlays applies every overlay at or below it", () => {
+  const profile = buildProfile(fileWith([{ version: "16.9", shopOdds: { 8: [0.2, 0.2, 0.2, 0.2, 0.2] } }, { version: "16.20", shopOdds: { 9: [0.5, 0.2, 0.1, 0.1, 0.1] } }]), "16.21")
+  assert.equal(profile.requested, "16.21")
+  assert.equal(profile.applied, "16.20")
+  assert.deepEqual([...profile.shopOdds[8]], [0.2, 0.2, 0.2, 0.2, 0.2])
+  assert.deepEqual([...profile.shopOdds[9]], [0.5, 0.2, 0.1, 0.1, 0.1])
+})
+
+test("a requested version below every overlay applies none", () => {
+  const profile = buildProfile(fileWith([{ version: "16.9", shopOdds: { 8: [0.2, 0.2, 0.2, 0.2, 0.2] } }]), "16.5")
+  assert.equal(profile.applied, null)
+  assert.deepEqual([...profile.shopOdds[8]], SHOP_17[8])
+})
+
+test("a malformed requested version throws", () => {
+  assert.throws(() => buildProfile(fileWith([]), "16.x"), /phiên bản/)
+})
+
+test("a patch-level unmodelled list becomes a caveat", () => {
+  const profile = buildProfile(fileWith([{ version: "16.20", unmodelled: ["loot rounds"] }]))
+  assert.ok(profile.caveats.some((c) => /loot rounds/.test(c)))
+})
+
+test("a null or string pool entry throws, since it would skew the hit chance", () => {
+  assert.throws(() => buildProfile({ set: "X", base: { ...BASE, poolCopies: [0, 30, null, 18, 10, 9] } }), /poolCopies\[2\]/)
+  assert.throws(() => buildProfile({ set: "X", base: { ...BASE, champsPerCost: [0, 13, 13, "13", 12, 8] } }), /champsPerCost\[3\]/)
+})
+
+test("the inherited-table caveat names the levels that come from rules.js", () => {
+  const profile = buildProfile({ set: "PARTIAL", base: { poolCopies: BASE.poolCopies, champsPerCost: BASE.champsPerCost }, patches: [{ version: "16.20", shopOdds: { 8: [0.15, 0.2, 0.32, 0.3, 0.03] } }] })
+  assert.ok(profile.caveats.some((c) => /shopOdds ở level 1, 2, 3, 4, 5, 6, 7, 9, 10, 11 lấy từ mặc định/.test(c)))
 })

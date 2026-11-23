@@ -50,13 +50,14 @@ export function buildProfile(file, patchVersion = null) {
   if (!Number.isInteger(maxCost) || maxCost < 1) throw new Error("maxCost phải là số nguyên dương")
 
   const tables = {}
+  const fromDefault = new Set()
   for (const field of INHERITABLE) {
     if (base[field] !== undefined) {
       tables[field] = structuredClone(base[field])
     } else {
       if (maxCost !== DEFAULT_PROFILE.maxCost) throw new Error(`maxCost ${maxCost} cần ${field} trong base`)
       tables[field] = structuredClone(DEFAULT_PROFILE[field])
-      caveats.push(`${field} lấy từ mặc định (rules.js), không có trong file set`)
+      fromDefault.add(field)
     }
   }
 
@@ -70,21 +71,20 @@ export function buildProfile(file, patchVersion = null) {
   for (let i = 1; i < patches.length; i++) {
     if (compareVersions(patches[i - 1].version, patches[i].version) === 0) throw new Error(`trùng phiên bản: ${patches[i].version}`)
   }
-  let applied = patches
-  let selected = patches.length ? patches[patches.length - 1].version : null
-  if (patchVersion != null) {
-    if (!patches.some((p) => compareVersions(p.version, patchVersion) === 0)) throw new Error(`không có bản vá ${patchVersion} trong file set`)
-    applied = patches.filter((p) => compareVersions(p.version, patchVersion) <= 0)
-    selected = patchVersion
-  }
+  const requested = patchVersion ?? null
+  if (requested != null) parseVersion(requested)
+  const applied = requested == null ? patches : patches.filter((p) => compareVersions(p.version, requested) <= 0)
+  const newestApplied = applied.length ? applied[applied.length - 1].version : null
 
   let maxCostNow = maxCost
+  const overridden = new Set()
   for (const patch of applied) {
     if (patch.maxCost !== undefined) maxCostNow = patch.maxCost
     const where = `bản vá ${patch.version}`
     for (const [level, row] of Object.entries(patch.shopOdds ?? {})) {
       checkIndexKeys({ [level]: row }, 99, `${where} shopOdds`)
       tables.shopOdds[Number(level)] = row
+      overridden.add(Number(level))
     }
     checkIndexKeys(patch.poolCopies ?? {}, maxCostNow, `${where} poolCopies`)
     checkIndexKeys(patch.champsPerCost ?? {}, maxCostNow, `${where} champsPerCost`)
@@ -93,10 +93,23 @@ export function buildProfile(file, patchVersion = null) {
     for (const note of patch.unmodelled ?? []) caveats.push(`chưa mô hình (bản ${patch.version}): ${note}`)
   }
 
-  validate(tables, maxCostNow, caveats)
+  validate(tables, maxCostNow)
+  if (fromDefault.has("shopOdds")) {
+    const levels = []
+    for (let level = 1; level < tables.shopOdds.length; level++) if (!overridden.has(level)) levels.push(level)
+    if (levels.length) caveats.push(`shopOdds ở level ${levels.join(", ")} lấy từ mặc định (rules.js)`)
+  }
+  if (tables.shopOdds.length < DEFAULT_PROFILE.shopOdds.length) {
+    caveats.push(`bảng odds chỉ đến level ${tables.shopOdds.length - 1}; level cao hơn trả xác suất 0`)
+  }
+  for (const field of ["poolCopies", "champsPerCost"]) {
+    if (fromDefault.has(field)) caveats.push(`${field} lấy từ mặc định (rules.js)`)
+  }
   return Object.freeze({
     set: file.set,
-    patch: selected,
+    requested,
+    applied: newestApplied,
+    patch: requested ?? newestApplied,
     maxCost: maxCostNow,
     shopOdds: Object.freeze(tables.shopOdds),
     poolCopies: Object.freeze(tables.poolCopies),
@@ -105,9 +118,14 @@ export function buildProfile(file, patchVersion = null) {
   })
 }
 
-function validate(tables, maxCost, caveats) {
-  if (tables.poolCopies.length !== maxCost + 1) throw new Error(`poolCopies cần ${maxCost + 1} phần tử`)
-  if (tables.champsPerCost.length !== maxCost + 1) throw new Error(`champsPerCost cần ${maxCost + 1} phần tử`)
+function validate(tables, maxCost) {
+  for (const field of ["poolCopies", "champsPerCost"]) {
+    const table = tables[field]
+    if (table.length !== maxCost + 1) throw new Error(`${field} cần ${maxCost + 1} phần tử`)
+    table.forEach((value, i) => {
+      if (typeof value !== "number" || !Number.isFinite(value) || value < 0) throw new Error(`${field}[${i}] phải là số không âm`)
+    })
+  }
   const odds = tables.shopOdds
   for (let level = 1; level < odds.length; level++) {
     const row = odds[level]
@@ -115,9 +133,5 @@ function validate(tables, maxCost, caveats) {
     if (row.some((p) => typeof p !== "number" || p < 0 || p > 1)) throw new Error(`shopOdds level ${level} có giá trị ngoài [0, 1]`)
     const sum = row.reduce((a, b) => a + b, 0)
     if (Math.abs(sum - 1) > 1e-6) throw new Error(`shopOdds level ${level} có tổng ${sum}, cần 1`)
-  }
-  const top = odds.length - 1
-  if (top < DEFAULT_PROFILE.shopOdds.length - 1) {
-    caveats.push(`bảng odds chỉ đến level ${top}; level cao hơn trả xác suất 0`)
   }
 }
