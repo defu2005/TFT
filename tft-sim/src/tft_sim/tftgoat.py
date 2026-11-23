@@ -78,6 +78,18 @@ def augment_tiers(env, agent) -> np.ndarray:
     return out
 
 
+def universal_features(obs: dict, env, agent) -> np.ndarray:
+    """Dac trung 'universal' DUY NHAT dung cho ca thu thap, huan luyen va policy.
+    Gom theo KEY (khong cat theo offset): scalars, opponents, gods, slot (aux), tier augment."""
+    return np.concatenate([
+        np.asarray(obs["scalars"], np.float32).ravel(),
+        np.asarray(obs["opponents"], np.float32).ravel(),
+        np.asarray(obs["gods"], np.float32).ravel(),
+        slot_features(env, agent),
+        augment_tiers(env, agent),
+    ])
+
+
 def owned_counts(player) -> dict[str, int]:
     counts: dict[str, int] = {}
     for u in player.all_units():
@@ -127,6 +139,7 @@ class Lobby:
     type_hits: dict = field(default_factory=dict)  # clone vs teacher theo loai hanh dong (chi khi check_teacher)
     type_total: dict = field(default_factory=dict)
     rows: list = field(default_factory=list)  # (flat, slot_feat, mask, action, seed, seat, step)
+    uni: list = field(default_factory=list)  # universal_features cho moi dong (cung thu tu rows)
     tiers: list = field(default_factory=list)  # (3,) hang tuong ung, bang rows: tier augment dang duoc chao (0 = khong co)
 
 
@@ -152,6 +165,7 @@ def play(env, seed: int, policy_a, policy_b, *, collect: bool = False, check_tea
             if collect:
                 lob.rows.append((flat, aux, mask.copy(), int(act), seed, int(a.split("_")[1]), step))
                 lob.tiers.append(augment_tiers(env, a))
+                lob.uni.append(universal_features(obs[a], env, a))
             if check_teacher and g == "A" and int(mask.sum()) >= 2:
                 t = teacher_action(env, a)
                 name = action_type(t)

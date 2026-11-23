@@ -17,11 +17,43 @@ Ty le dong y o day la muc loai+chi so tren hang >=2 hop le, vs random; xem muc B
 | Dat tuong len board (FIELD) | co | co | co | 100% / 100% | chua |
 | Dat tuong xuong bench (BENCH_BOARD) | co | **khong** | - | - | chua |
 | Trang bi (EQUIP) | co | co | co (0 no-op tren noi dung synthetic) | 100% / 100% | chua |
-| Chon augment (PICK_AUGMENT) | co | co (dung privileged tier) | chua (59-60%) | 59% / 60% | chua |
+| Chon augment (PICK_AUGMENT) | co | co (dung privileged tier) | **co, khi co tier trong feature** (99,9% val, closed loop 99,99%) | 99,9% (co tier) | chua |
 | Chon god (PICK_GOD) | co | co | co | 100% / 100% | chua |
-| Reroll augment (REROLL_AUGMENT) | co | co, rat hiem (n=42-58) | chua (0%) | 0% / 0% | chua |
+| Reroll augment (REROLL_AUGMENT) | co | co, rat hiem (n=42-58) | **co, khi co tier** (96% val n=23, closed loop 97% n=524) | 96% (co tier, it mau) | chua |
 | Dinh vi trong tran (positioning) | **mo** (chua co trong 43 action cua TFT_GOAT) | - | - | - | - |
 | Nham muc tieu item | **mo** | - | - | - | - |
+
+## Dinh chinh (noi dung that, buoc 4)
+
+- **Rut lai nhan "134 EQUIP no-op" tren CDragon.** Chan doan truoc so sanh so thanh phan truoc va sau ca buoc env, nen tron lan cap thanh phan cuoi vong (PvE). Chan doan truc tiep (bao `_equip`, `scripts/diag_equip_real.py`): **134/134 EQUIP tieu thu dung 2 thanh phan.** Khong can dan xuat noi dung moi cho EQUIP tren CDragon.
+- Tren CDragon 18.7 Set 17: 10 thanh phan co so, 55/55 cap co cong thuc (`scripts/diag_real_items.py`). 622 item co so khac khong bao gio duoc cap (env chi cap thanh phan co trong cong thuc hoan chinh).
+- Kich thuoc block (nhan that): flat 168 (synthetic 126, khac do trait 44 so 2), uni 85 (giong synthetic). Flat khong chuyen duoc giua noi dung; uni chuyen duoc ve chieu.
+
+## Noi dung that: CDragon latest (18.7) (buoc 4)
+
+Nguon: `cdragon_latest_fetched-2026-11-23.json` (18.7). Nhan: "CDragon latest (18.7), Set 17 block" (TFTSet17) va "Set 18 roster" (TFTSet18, cung file). Dung `tft_sim/real_content.py`.
+
+**Dieu chinh EQUIP:**
+- Set 17: 10 thanh phan co so, 55/55 cap co cong thuc. 134/134 EQUIP tieu thu dung 2 thanh phan (`scripts/diag_equip_real.py`). Khong can sua noi dung.
+- Set 18: 20 thanh phan, **116/210 cap thieu cong thuc**. 34.433/34.456 EQUIP la no-op (cung loi nhu synthetic). Da them **cong thuc placeholder** `it_placeholder_<x>_<y>` (AD 0.1) cho 116 cap, nhan `-fullrecipe`. Sau khi sua: 135/135 EQUIP tieu thu (`scripts/diag_equip_real18.py`).
+- Ket qua Set 18 TRUOC khi sua (2,8 trieu dong test, 98% la EQUIP) KHONG dung; da luu thanh `s18_old_eqbug_*`.
+
+**Thu thap:** Set 17: train 40000-40399, val 40400-40499, test 41000-41199 (614k / 154k / 306k dong). Set 18 (da sua): train 40000-40399 (591k), test 41000-41199 (295k).
+Toc do: ~9 lobby/s tren noi dung that (scripted). Chay tuan tu: chay song song gay het bo nho.
+
+**Chuyen giao (uni 85 chieu, epoch 40, 5 seed, exact, >=2 hop le):**
+
+| dieu kien | overall | BUY_SHOP | BUY_XP | PASS | REROLL | PICK_AUGMENT | REROLL_AUGMENT |
+|---|---|---|---|---|---|---|---|
+| synthetic -> Set 17 | 67.4 [60.3, 77.2] | 82.9 | 62.7 [37.9, 99.6] | 68.7 [43.7, 88.3] | 0.0 | 92.2 | 34.4 [18.2, 73.6] |
+| Set 17 -> Set 17 | 100.0 | 99.8 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
+| Set 17 -> Set 18 (roster) | 99.3 [98.4, 99.9] | 99.7 | 99.6 | 97.9 [93.8, 100] | 100.0 | 100.0 | 100.0 |
+| Set 18 -> Set 18 | 100.0 [99.9, 100.0] | 99.7 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
+
+Doc ket qua:
+- **Synthetic khong chuyen sang noi dung that** (67%, REROLL 0%). Day la thong tin quan trong nhat: huan luyen tren 8 tuong va 2 trait khong phu duoc phan phoi that.
+- **Trong noi dung that, metric bao hoa** (~100%). Quyet dinh teacher gan nhu ham xac dinh cua dac trung; chi 1,5% dong test co dac trung trung voi train (khong phai ro ri lon). Vi vay phep so "Set 17 -> Set 18" (99,3%) **khong phan biet duoc** nhieu: no chi cho biet universal cua Set 17 gan nhu du cho roster Set 18 duoi cung quy tac.
+- Rut lai: "Set 18 tuong duong" khong duoc chung minh tren TFT that; day chi la teacher scripted tren ban dung tuong ung voi CDragon 18.7.
 
 ## Ket qua BC (noi dung synthetic da sua EQUIP, seed test 1000-1199, 200 lobby/bien the)
 

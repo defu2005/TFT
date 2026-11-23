@@ -1,0 +1,211 @@
+{
+  "label": "CDragon latest (18.7). Set 17 block: TFTSet17; Set 18 roster: TFTSet18",
+  "S17_syn_to_S17": {
+    "BUY_SHOP": {
+      "mean": 0.8287,
+      "min": 0.8131,
+      "max": 0.8408
+    },
+    "BUY_XP": {
+      "mean": 0.6272,
+      "min": 0.3793,
+      "max": 0.9959
+    },
+    "EQUIP": {
+      "mean": 1.0,
+      "min": 0.9999,
+      "max": 1.0
+    },
+    "FIELD": {
+      "mean": 0.9997,
+      "min": 0.9985,
+      "max": 1.0
+    },
+    "PASS": {
+      "mean": 0.6865,
+      "min": 0.4372,
+      "max": 0.8831
+    },
+    "PICK_AUGMENT": {
+      "mean": 0.9223,
+      "min": 0.7892,
+      "max": 0.9771
+    },
+    "PICK_GOD": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "REROLL": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "REROLL_AUGMENT": {
+      "mean": 0.3436,
+      "min": 0.1818,
+      "max": 0.7364
+    },
+    "overall": {
+      "mean": 0.6738,
+      "min": 0.6027,
+      "max": 0.7725
+    }
+  },
+  "S17_S17_to_S17": {
+    "BUY_SHOP": {
+      "mean": 0.9977,
+      "min": 0.9975,
+      "max": 0.9981
+    },
+    "BUY_XP": {
+      "mean": 0.9999,
+      "min": 0.9999,
+      "max": 1.0
+    },
+    "EQUIP": {
+      "mean": 1.0,
+      "min": 0.9999,
+      "max": 1.0
+    },
+    "FIELD": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "PASS": {
+      "mean": 0.9998,
+      "min": 0.9995,
+      "max": 1.0
+    },
+    "PICK_AUGMENT": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "PICK_GOD": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "REROLL": {
+      "mean": 0.9999,
+      "min": 0.9999,
+      "max": 0.9999
+    },
+    "REROLL_AUGMENT": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "overall": {
+      "mean": 0.9996,
+      "min": 0.9995,
+      "max": 0.9997
+    }
+  },
+  "S18_S17_to_S18": {
+    "BUY_SHOP": {
+      "mean": 0.9973,
+      "min": 0.9964,
+      "max": 0.998
+    },
+    "BUY_XP": {
+      "mean": 0.9955,
+      "min": 0.9776,
+      "max": 1.0
+    },
+    "EQUIP": {
+      "mean": 1.0,
+      "min": 0.9999,
+      "max": 1.0
+    },
+    "FIELD": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "PASS": {
+      "mean": 0.9793,
+      "min": 0.9378,
+      "max": 0.9999
+    },
+    "PICK_AUGMENT": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "PICK_GOD": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "REROLL": {
+      "mean": 0.9995,
+      "min": 0.9973,
+      "max": 1.0
+    },
+    "REROLL_AUGMENT": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "overall": {
+      "mean": 0.9928,
+      "min": 0.9844,
+      "max": 0.9991
+    }
+  },
+  "S18_S18_to_S18": {
+    "BUY_SHOP": {
+      "mean": 0.9972,
+      "min": 0.9969,
+      "max": 0.9974
+    },
+    "BUY_XP": {
+      "mean": 0.9999,
+      "min": 0.9999,
+      "max": 1.0
+    },
+    "EQUIP": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "FIELD": {
+      "mean": 0.9999,
+      "min": 0.9998,
+      "max": 1.0
+    },
+    "PASS": {
+      "mean": 0.9999,
+      "min": 0.9997,
+      "max": 1.0
+    },
+    "PICK_AUGMENT": {
+      "mean": 1.0,
+      "min": 0.9998,
+      "max": 1.0
+    },
+    "PICK_GOD": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "REROLL": {
+      "mean": 0.9999,
+      "min": 0.9998,
+      "max": 1.0
+    },
+    "REROLL_AUGMENT": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "overall": {
+      "mean": 0.9995,
+      "min": 0.9994,
+      "max": 0.9996
+    }
+  }
+}
