@@ -82,7 +82,7 @@ Ung vien teacher (1 wrapper, seed 4000-4199): scripted, nhung PASS -> BUY_XP khi
 
 **Du lieu**: A train 200-349, A val 800-849 (cu). B train 5000-5149, B val 7000-7049, B test 6000-6199 (moi). Diag seed 2000-2199, 3000-3199, 4000-4199 khong trung.
 
-**Bien the**: flat (day du); flat+slot (flat + aux); universal = scalars + opponents + gods + aux (82 chieu, bo shop, bench, board, traits). Epoch 10 (val on dinh; xem `results/fixed/transfer/transfer_prep_check.json`).
+**Bien the**: flat (day du); flat+slot (flat + aux); universal = scalars + opponents + gods + aux (82 chieu, bo shop, bench, board, traits). Epoch 10 la mac dinh cua lan chay dau, KHONG duoc chon tu val. Universal van tang o epoch 40 (93.7 -> 95.5 -> 98.2), nen can chon epoch tren A val hoac B val (chua lam).
 
 **Tieu chi (viet truoc khi chay)**: metric = dong y exact action tren hang >= 2 hop le, rieng BUY_SHOP.
 - L = flat, A -> B.  T = universal, A -> B.  U = bien the tot nhat, B -> B.
@@ -129,7 +129,7 @@ Moi o: trung binh [min, max] qua 5 seed. Nguon: `results/fixed/transfer/transfer
 
 Doc ket qua:
 - **universal**: penalty BUY_SHOP ~0 o ca 3 muc epoch (khoang -0.1 den 0.2). A->A va B->B gan bang nhau. Day la ket qua ky vong vi khoi slot duoc xay tu cac dau vao cua chinh teacher (owned, trait chung), nen dieu nay chi cho thay cai dat khong lam hong suy luan tren 8 tuong, KHONG phai bang chung model tong quat hoa.
-- **flat**: penalty tang theo epoch (2.0 -> 5.3 -> 9.7). Model hoc danh tinh tuong, khong hoc luat chung.
+- **flat**: penalty tang theo epoch (2.0 -> 5.3 -> 9.7), nhung do B->B tang (82.4 -> 88.9) trong khi A->B gan nhu khong doi (80.4 -> 79.1). Dung cho thay model hoc danh tinh tuong: moi bang chung la B->B tang, khong phai A->B giam.
 - **flat+slot**: penalty 1.1 den 1.7, nho nhung khac 0.
 - **REROLL**: khong on dinh. Penalty universal 6.4 diem o seed 0 khong lap lai; o epoch 40 khoang la [-1.8, 2.8] chua 0. Nen KHONG can thi nghiem bo cot aux.
 - **BUY_XP**: flat giam 3.5-6.1 diem o ca 3 epoch, do lech co he thong o nguong gold 54 (xem muc tren). Universal ~0.
