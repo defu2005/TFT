@@ -241,9 +241,28 @@ Ket qua quet quy tac (2000 lobby, seed tinh chinh 20000-21999, A-B; so am = quy 
 
 Ha nguong vang lam **te hon** (khong tot hon). Dong cac bien the nguong.
 
-Chan doan tran (200 lobby tinh chinh): 2,0% unit bi ban la 2 sao+; 21% co ban sao khac cua cung tuong;
-65% chung trait voi board. Tuc quy tac hien tai thuong ban unit con dung. Bien the "useless" (chi ban unit
-mot ban, khong chung trait voi board) duoc thu nghiem tren seed tinh chinh; ket qua o `results/fixed/real/rule_dev_useless.json`.
+Chan doan tran (200 lobby tinh chinh, quy tac "cheapest"): 1,7% unit bi ban la 2 sao+; 21% co ban sao khac cua
+cung tuong; 65% chung trait voi board. Tuc quy tac "cheapest" thuong ban unit con dung.
+
+Ba bien the (2000 lobby, seed tinh chinh 20000-21999, A-B; so am = tot hon):
+
+| Bien the | Hieu A-B | CI95 |
+|---|---|---|
+| cheapest: ban unit re nhat khi banc day | -2,42 | [-2,47, -2,36] |
+| useless: chi ban unit mot ban, khong chung trait voi board (khong co thi khong ban) | -0,66 | [-0,73, -0,59] |
+| hybrid: useless truoc, khong co thi cheapest | -2,58 | [-2,63, -2,52] |
+
+Quy tac **hybrid** duoc chon (tot nhat tren seed tinh chinh) va dong bang truoc khi kiem dinh tren seed moi.
+
+**Kiem dinh giu-lai (seed 30000-31999, chua dung de chon):**
+
+| Noi dung | Quy tac hybrid vs scripted | Null (scripted vs scripted) |
+|---|---|---|
+| CDragon 18.7, Set 17 block | -2,62 [-2,67, -2,56] | +0,047 [-0,03, +0,12] |
+| Set 18 roster (DA-only) | -3,02 [-3,07, -2,97] | chua chay |
+
+Chua giai thich duoc muc -2,6 den -3,0: so unit tren board gan bang nhau giua hai ben (6,8 so voi 6,6), nen
+co che can do them. Doi thu la bot scripted trong mo phong, khong phai TFT that.
 
 ## Trang thai cong viec
 
