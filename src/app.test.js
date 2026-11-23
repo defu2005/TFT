@@ -378,8 +378,8 @@ test("hand-read 18.6 frames replay: level, gold and shop are read; no decision i
   assert.ok(third.decision.action === "hold" || third.decision.slot !== 4)
 })
 
-// Gold and level keys omitted (no flag, no null): nothing is rolled, bought or leveled on a coerced zero, even with free rolls.
-test("omitted gold and level keys with free rolls decide nothing", async () => {
+// Gold and level keys omitted (no flag, no null): no roll or xp on the coerced zero, even with free rolls. Gold 30 with level unknown still buys (the engine's contract), with hit null.
+test("omitted gold and level keys: no roll or xp; a buy with known gold is allowed and carries no probability", async () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-omitted-"))
   const fixture = path.join(dir, "frame.json")
   fs.writeFileSync(
@@ -408,7 +408,8 @@ test("omitted gold and level keys with free rolls decide nothing", async () => {
   const first = await coach.tick()
   assert.equal(first.decision.action, "hold")
   const second = await coach.tick()
-  assert.notEqual(second.decision.action, 1)
+  assert.equal(second.decision.action, "buy")
+  assert.equal(second.decision.slot, 0)
   assert.equal(second.reason.factors.level, null)
   assert.equal(second.decision.hit, null)
 })
