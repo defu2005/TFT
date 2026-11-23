@@ -25,7 +25,7 @@ export function explain(state, out, trace) {
     text = `Lên level: level ${c?.level} dưới mục tiêu ${c?.wanted} của stage ${c?.stage}, vàng ${state.gold} đủ điều kiện.`
   } else if (chosen === ROLL) {
     const c = trace.find((t) => t.action === "roll")
-    text = `Roll để tìm ${state.target?.id ?? "mục tiêu"}: xác suất gặp ${((c?.hit ?? 0) * 100).toFixed(1)}%, điểm ${out.score.toFixed(2)}.` + (c?.free > 0 ? ` Dùng lượt roll miễn phí (còn ${c.free}).` : "")
+    text = `Roll để tìm ${state.target?.id ?? "mục tiêu"}: xác suất gặp ${((c?.hit ?? 0) * 100).toFixed(1)}%, điểm ${out.score.toFixed(2)}.` + (c?.free > 0 ? ` Dùng lượt roll miễn phí (còn ${c.free}).` : "") + budgetNote(c)
   } else if (chosen === SELL) {
     const c = trace.find((t) => t.action === "sell" && t.bench === out.bench)
     text = `Bán ô bench ${out.bench} (${c?.unit ?? "?"}) lấy ${c?.sellValue ?? "?"} vàng: bench đầy, cần chỗ để mua ${c?.makesRoomFor ?? "?"} (điểm ${out.score.toFixed(2)}).`
@@ -38,6 +38,7 @@ export function explain(state, out, trace) {
     if (reasons.length) text += " Mua: " + reasons.join("; ") + "."
     text += ` XP ${round(xp?.score ?? 0)} (ngưỡng 0.5)` + (xp?.note ? ` — ${xp.note}` : "") + "."
     text += ` Roll ${round(roll?.score ?? 0)} (ngưỡng 0.45)` + (roll?.note ? ` — ${roll.note}` : "") + "."
+    text += budgetNote(roll)
   }
 
   const candidates = trace.map((c) => ({ ...c, score: round(c.score) }))
@@ -55,6 +56,12 @@ export function explain(state, out, trace) {
     caveats,
     candidates,
   }
+}
+
+// Odds over the whole roll budget, shown only when it says more than one shop.
+function budgetNote(c) {
+  if (!c || !(c.rolls > 1) || !(c.hitWithin > 0)) return ""
+  return ` Roll hết ${c.rolls} lượt trong ngân sách: ${(c.hitWithin * 100).toFixed(1)}%.`
 }
 
 function round(value) {

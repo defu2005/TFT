@@ -90,3 +90,13 @@ test("explains a sell that makes room on a full bench", () => {
   assert.match(r.text, /Bán ô bench 1 \(y\) lấy 3 vàng/)
   assert.match(r.text, /mua core/)
 })
+
+test("a roll that spans several shops reports the budget chance in the reason", () => {
+  const trace = []
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  const state = { level: 8, gold: 30, hp: 80, stage: 5, shop: [null, null, null, null, null], target: { id: "Z", cost: 1, copiesLeft: 30, priority: 5, champsAtCost: 1 } }
+  decide(state, out, trace)
+  const reason = explain(state, out, trace)
+  assert.equal(out.action, 3)
+  assert.match(reason.text, /Roll hết 10 lượt/)
+})

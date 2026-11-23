@@ -1,5 +1,5 @@
 import { BUY_XP_COST, LEVEL_BY_STAGE, POOL_COPIES, REROLL_COST } from "../data/rules.js"
-import { hitChance, interestGold } from "./odds.js"
+import { hitChance, hitChanceOverRolls, interestGold } from "./odds.js"
 
 export const HOLD = 0
 export const BUY = 1
@@ -154,12 +154,17 @@ export function decide(state, out, trace = null) {
     if (!urgent && freeRolls === 0) rollScore -= 0.5
   }
   if (trace) {
+    const reserve = urgent ? 0 : 10
+    const rolls = freeRolls + (gold > reserve ? ((gold - reserve) / REROLL_COST) | 0 : 0)
+    const hitWithin = target && target.cost && !targetInShop ? hitChanceOverRolls(level, target.cost, target.copiesLeft, target.champsAtCost, rolls) : 0
     trace.push({
       action: "roll",
       score: rollScore,
       hit: rollHit,
       needs: rollNeeds,
       free: freeRolls,
+      rolls,
+      hitWithin,
       note: !target ? "không có mục tiêu (set_target chưa được gọi)" : targetInShop ? "mục tiêu đang có trong shop" : !rollAffordable ? `thiếu vàng để roll (cần ${rollNeeds})` : "",
     })
   }

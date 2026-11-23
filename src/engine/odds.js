@@ -16,6 +16,12 @@ export function hitChance(level, cost, copiesLeft, champsAtCost = CHAMPS_PER_COS
   return 1 - miss * miss * miss * miss * miss
 }
 
+// Chance of hitting the champion at least once in `rolls` independent shops.
+export function hitChanceOverRolls(level, cost, copiesLeft, champsAtCost, rolls) {
+  if (!(rolls > 0)) return 0
+  return 1 - Math.pow(1 - hitChance(level, cost, copiesLeft, champsAtCost), rolls)
+}
+
 export function interestGold(gold) {
   const stacks = (gold / 10) | 0
   return stacks > 5 ? 5 : stacks

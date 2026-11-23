@@ -421,3 +421,30 @@ test("a roll is kept when the sale would leave too little gold to roll", () => {
   )
   assert.equal(out.action, ROLL)
 })
+
+test("the roll trace reports the roll budget from gold and HP", () => {
+  const empty = [null, null, null, null, null]
+  let trace = []
+  decide(ROLL_STATE(30, empty), { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }, trace)
+  assert.equal(trace.find((c) => c.action === "roll").rolls, 10)
+
+  trace = []
+  decide(ROLL_STATE(30, empty, { hp: 20 }), { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }, trace)
+  assert.equal(trace.find((c) => c.action === "roll").rolls, 15)
+
+  trace = []
+  decide(ROLL_STATE(0, empty, { freeRolls: 2 }), { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }, trace)
+  assert.equal(trace.find((c) => c.action === "roll").rolls, 2)
+})
+
+test("hitWithin equals 1 - (1 - hit) ** rolls, and is 0 when the target is already in the shop", () => {
+  const trace = []
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  decide(ROLL_STATE(30, [null, null, null, null, null]), out, trace)
+  const roll = trace.find((c) => c.action === "roll")
+  assert.ok(Math.abs(roll.hitWithin - (1 - (1 - roll.hit) ** roll.rolls)) < 1e-9)
+
+  const shopTrace = []
+  decide(TARGET_SHOP(40, 80), { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }, shopTrace)
+  assert.equal(shopTrace.find((c) => c.action === "roll").hitWithin, 0)
+})
