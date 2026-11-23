@@ -4,9 +4,9 @@ export const CAVEAT_ODDS = "bảng tỉ lệ shop trong rules.js chưa xác minh
 
 // Builds a one-line Vietnamese reason and the factors behind it.
 // `trace` is the candidate list filled by decide(state, out, trace).
-export function explain(state, out, trace) {
+export function explain(state, out, trace, oddsCaveat = CAVEAT_ODDS) {
   const chosen = out.action
-  const caveats = [CAVEAT_ODDS]
+  const caveats = [oddsCaveat]
 
   let text
   if (chosen === BUY) {

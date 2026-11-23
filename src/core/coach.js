@@ -68,7 +68,7 @@ export function createCoach({
       const trace = []
       const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
       decide(input, out, trace, rules, profile)
-      const reason = explain(input, out, trace)
+      const reason = explain(input, out, trace, profile ? `bảng tỉ lệ shop của set ${profile.set}, bản ${profile.patch}, từ file hồ sơ, chưa xác minh` : undefined)
       if (auto && auto.size) reason.factors.autoLine = Object.fromEntries(auto)
       if (rules) reason.factors.rules = rules
       if (profile) {

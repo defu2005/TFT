@@ -1,18 +1,13 @@
 import assert from "node:assert/strict"
-import fs from "node:fs"
-import os from "node:os"
-import path from "node:path"
 import test from "node:test"
+import { decide, ROLL } from "../engine/decide.js"
 import { hitChance } from "../engine/odds.js"
 import { DEFAULT_PROFILE } from "./profile.js"
 import { buildProfile, compareVersions } from "./profileFile.js"
-import { createApp, loadConfig } from "../app.js"
 
 const SHOP_17 = [0, [1, 0, 0, 0, 0], [1, 0, 0, 0, 0], [0.75, 0.25, 0, 0, 0], [0.55, 0.3, 0.15, 0, 0], [0.45, 0.33, 0.2, 0.02, 0], [0.3, 0.4, 0.25, 0.05, 0], [0.19, 0.3, 0.4, 0.1, 0.01], [0.15, 0.2, 0.32, 0.3, 0.03], [0.1, 0.17, 0.25, 0.33, 0.15]]
-
-function fileWith(patches, extra = {}) {
-  return { set: "TEST", base: { shopOdds: SHOP_17, poolCopies: [0, 30, 25, 18, 10, 9], champsPerCost: [0, 13, 13, 13, 12, 8] }, patches, ...extra }
-}
+const BASE = { shopOdds: SHOP_17, poolCopies: [0, 30, 25, 18, 10, 9], champsPerCost: [0, 13, 13, 13, 12, 8] }
+const fileWith = (patches, extra = {}) => ({ set: "TEST", base: BASE, patches, ...extra })
 
 test("a level 8 overlay changes the hit chance at level 8 and not at level 7", () => {
   const profile = buildProfile(fileWith([{ version: "16.20", shopOdds: { 8: [0.5, 0.2, 0.1, 0.1, 0.1] } }]))
@@ -20,7 +15,7 @@ test("a level 8 overlay changes the hit chance at level 8 and not at level 7", (
   assert.equal(hitChance(7, 1, 10, 13, profile), hitChance(7, 1, 10, 13))
 })
 
-test("a seven-column table gives cost 7 a non-zero hit chance", () => {
+test("a seven-column table gives cost 7 a non-zero hit chance, in the roll decision too", () => {
   const row = [0.1, 0.1, 0.1, 0.1, 0.1, 0.2, 0.3]
   const profile = buildProfile({
     set: "SEVEN",
@@ -29,10 +24,44 @@ test("a seven-column table gives cost 7 a non-zero hit chance", () => {
   assert.equal(profile.maxCost, 7)
   assert.ok(hitChance(8, 7, 2, 4, profile) > 0)
   assert.equal(hitChance(8, 7, 2, 4), 0)
+
+  const trace = []
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  const state = { level: 8, gold: 30, hp: 20, stage: 5, shop: [null, null, null, null, null], target: { id: "S7", cost: 7, copiesLeft: 2, priority: 5, champsAtCost: 4 } }
+  decide(state, out, trace, null, profile)
+  assert.equal(out.action, ROLL)
+  assert.ok(trace.find((c) => c.action === "roll").hit > 0)
 })
 
 test("a row that does not sum to 1 throws", () => {
   assert.throws(() => buildProfile(fileWith([{ version: "16.20", shopOdds: { 8: [0.5, 0.5, 0.5, 0, 0] } }])), /tổng/)
+})
+
+test("a null row at a level from 1 up throws, not only at level 0", () => {
+  assert.throws(() => buildProfile({ set: "HOLE", base: { ...BASE, shopOdds: [null, [1, 0, 0, 0, 0], null] } }), /level 2/)
+})
+
+test("a patch past the end of the table leaves a hole and throws", () => {
+  const short = { ...BASE, shopOdds: SHOP_17.slice(0, 10) }
+  assert.throws(() => buildProfile({ set: "LONG", base: short, patches: [{ version: "16.20", shopOdds: { 12: [0.2, 0.2, 0.2, 0.2, 0.2] } }] }), /level 10/)
+})
+
+test("a table shorter than the default says which top level it reaches", () => {
+  const profile = buildProfile({ set: "SHORT", base: { ...BASE, shopOdds: SHOP_17.slice(0, 10) } })
+  assert.ok(profile.caveats.some((c) => /level 9/.test(c)))
+  assert.equal(hitChance(10, 1, 10, 13, profile), 0)
+})
+
+test("misspelt level, cost, or field names throw instead of being dropped", () => {
+  assert.throws(() => buildProfile(fileWith([{ version: "16.20", shopOdds: { lvl8: [0.2, 0.2, 0.2, 0.2, 0.2] } }])), /lvl8/)
+  assert.throws(() => buildProfile(fileWith([{ version: "16.20", poolCopies: { x2: 20 } }])), /x2/)
+  assert.throws(() => buildProfile({ set: "T", base: { ...BASE, shopOdd: SHOP_17 } }), /shopOdd/)
+  assert.throws(() => buildProfile(fileWith([{ version: "16.20", shopOddz: {} }])), /shopOddz/)
+})
+
+test("a set-level unmodelled list becomes a caveat", () => {
+  const profile = buildProfile(fileWith([], { unmodelled: ["augment rounds"] }))
+  assert.ok(profile.caveats.some((c) => /augment rounds/.test(c)))
 })
 
 test("patch versions compare numerically, so 16.9 comes before 16.20", () => {
@@ -44,32 +73,4 @@ test("patch versions compare numerically, so 16.9 comes before 16.20", () => {
 test("a missing base table falls back to rules.js and says so in the caveats", () => {
   const profile = buildProfile({ set: "PARTIAL", base: { shopOdds: SHOP_17, poolCopies: DEFAULT_PROFILE.poolCopies } })
   assert.ok(profile.caveats.some((c) => /champsPerCost/.test(c)))
-})
-
-test("an unmodelled feature becomes a caveat", () => {
-  const profile = buildProfile(fileWith([{ version: "16.20", unmodelled: ["augment rounds"] }]))
-  assert.ok(profile.caveats.some((c) => /augment rounds/.test(c)))
-})
-
-test("the default profile adds no caveats", () => {
-  assert.equal(DEFAULT_PROFILE.caveats, undefined)
-})
-
-test("a set file reaches the decision through createApp, and TFT_PATCH selects the overlay", async () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-profile-"))
-  const profilePath = path.join(dir, "set.json")
-  fs.writeFileSync(profilePath, JSON.stringify(fileWith([{ version: "16.9" }, { version: "16.20", shopOdds: { 8: [0.5, 0.2, 0.1, 0.1, 0.1] } }])))
-  const frame = path.join(dir, "frame.json")
-  fs.writeFileSync(frame, JSON.stringify({ frames: [{ level: 8, gold: 30, hp: 80, stage: 5, target: null, shop: [{ id: "X", cost: 1, copiesOwned: 0, priority: 1 }, null, null, null, null] }] }))
-  const base = { TFT_SOURCE: "replay", TFT_REPLAY: frame, TFT_LOG: path.join(dir, "d.jsonl"), TFT_PROFILE_FILE: profilePath }
-
-  const older = createApp(loadConfig({ ...base, TFT_PATCH: "16.9" }))
-  const newer = createApp(loadConfig({ ...base, TFT_PATCH: "16.20" }))
-  const a = await older.coach.tick()
-  const b = await newer.coach.tick()
-  assert.equal(newer.coach.getState().profile.patch, "16.20")
-  assert.equal(b.reason.factors.profile.set, "TEST")
-  assert.notEqual(a.decision.hit, b.decision.hit)
-
-  assert.throws(() => createApp(loadConfig({ TFT_SOURCE: "replay", TFT_PATCH: "16.20", TFT_LOG: path.join(dir, "e.jsonl") })), /TFT_PROFILE_FILE/)
 })

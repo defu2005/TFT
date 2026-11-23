@@ -81,3 +81,31 @@ test("with TFT_RULES=guideLevels the tick holds and reports the rule", async () 
   assert.equal(record.reason.factors.rules.guideLevels, true)
   assert.equal(coach.getState().rules.guideLevels, true)
 })
+
+test("a profile file reaches the decision through createApp; TFT_PATCH picks the overlay and the odds caveat names it", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-profile-"))
+  const profilePath = path.join(dir, "set.json")
+  const shop17 = [0, [1, 0, 0, 0, 0], [1, 0, 0, 0, 0], [0.75, 0.25, 0, 0, 0], [0.55, 0.3, 0.15, 0, 0], [0.45, 0.33, 0.2, 0.02, 0], [0.3, 0.4, 0.25, 0.05, 0], [0.19, 0.3, 0.4, 0.1, 0.01], [0.15, 0.2, 0.32, 0.3, 0.03], [0.1, 0.17, 0.25, 0.33, 0.15]]
+  fs.writeFileSync(
+    profilePath,
+    JSON.stringify({
+      set: "TEST",
+      base: { shopOdds: shop17, poolCopies: [0, 30, 25, 18, 10, 9], champsPerCost: [0, 13, 13, 13, 12, 8] },
+      patches: [{ version: "16.9" }, { version: "16.20", shopOdds: { 8: [0.5, 0.2, 0.1, 0.1, 0.1] } }],
+    }),
+  )
+  const frame = path.join(dir, "frame.json")
+  fs.writeFileSync(frame, JSON.stringify({ frames: [{ level: 8, gold: 30, hp: 80, stage: 5, target: null, shop: [{ id: "X", cost: 1, copiesOwned: 0, priority: 1 }, null, null, null, null] }] }))
+  const base = { TFT_SOURCE: "replay", TFT_REPLAY: frame, TFT_LOG: path.join(dir, "d.jsonl"), TFT_PROFILE_FILE: profilePath }
+
+  const older = createApp(loadConfig({ ...base, TFT_PATCH: "16.9" }))
+  const newer = createApp(loadConfig({ ...base, TFT_PATCH: "16.20" }))
+  const a = await older.coach.tick()
+  const b = await newer.coach.tick()
+  assert.equal(newer.coach.getState().profile.patch, "16.20")
+  assert.equal(b.reason.factors.profile.set, "TEST")
+  assert.notEqual(a.decision.hit, b.decision.hit)
+  assert.ok(b.reason.caveats.some((c) => /set TEST, bản 16.20/.test(c)))
+
+  assert.throws(() => createApp(loadConfig({ TFT_SOURCE: "replay", TFT_PATCH: "16.20", TFT_LOG: path.join(dir, "e.jsonl") })), /TFT_PROFILE_FILE/)
+})
