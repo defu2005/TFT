@@ -25,6 +25,19 @@
           0.15
         ]
       }
+    },
+    {
+      "version": "18.6",
+      "notes": "Đọc tay từ HUD trong video bên thứ ba, patch 18.6 hiện trên overlay: hai trận (boxbox 2924500482 và robinsongz 2925294495), cấp 7 là 16/30/43/10/1 ở cả hai. Chỉ thêm hàng 7; hàng 5, 6, 8, 9 đã khớp các bảng khác. Không phải nguồn chính thức.",
+      "shopOdds": {
+        "7": [
+          0.16,
+          0.3,
+          0.43,
+          0.1,
+          0.01
+        ]
+      }
     }
   ],
   "base": {
