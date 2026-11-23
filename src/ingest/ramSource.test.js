@@ -54,6 +54,6 @@ test("a missing RAM file makes the coach say gold and level are unknown, not def
   const record = await createCoach({ source: ramSource(fakePath) }).tick()
   assert.equal(record.state.hudGoldUnknown, true)
   assert.equal(record.state.hudLevelUnknown, true)
-  assert.match(record.reason.text, /gold, level chưa biết/)
+  assert.match(record.reason.text, /vàng chưa biết nên không mua, roll hay xp; cấp chưa biết nên không roll hay xp/)
   assert.equal(record.decision.action, "hold")
 })

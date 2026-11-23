@@ -412,6 +412,9 @@ test("omitted gold and level keys: no roll or xp; a buy with known gold is allow
   assert.equal(second.decision.slot, 0)
   assert.equal(second.reason.factors.level, null)
   assert.equal(second.decision.hit, null)
+  // Gold is known here, so the buy stands; the caveat must say only what is unknown.
+  assert.match(second.reason.text, /cấp chưa biết nên không roll hay xp/)
+  assert.doesNotMatch(second.reason.text, /vàng chưa biết/)
 })
 
 // Level unknown (HUD): the buy is still allowed, but no probability is reported or computed.

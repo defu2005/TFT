@@ -53,7 +53,7 @@ test("the coach flags a missing level and holds: no xp on a made-up level", asyn
   assert.equal(record.decision.action, "hold")
   assert.equal(record.state.hudLevelUnknown, true)
   assert.equal(record.reason.factors.level, null)
-  assert.match(record.reason.text, /level chưa biết/)
+  assert.match(record.reason.text, /cấp chưa biết nên không roll hay xp/)
 })
 
 test("hp of 0 is kept, not replaced by the fallback", () => {

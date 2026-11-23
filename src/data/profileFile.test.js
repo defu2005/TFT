@@ -41,6 +41,10 @@ test("the candidate's level-7 hand-read row applies to 18.x requests and not to 
   assert.deepEqual(at("18.6"), [16, 30, 43, 10, 1])
   assert.deepEqual(at(null), [16, 30, 43, 10, 1])
   assert.deepEqual(at("16.20"), [19, 30, 40, 10, 1])
+  // Levels 8 and 9 at 18.6 are inherited from the 16.20 overlay; they equal the HUD rows of item 8 (VOD 2924500482) and differ from rules.js.
+  const row = (req, lv) => buildProfile(structuredClone(file), req).shopOdds[lv].map((x) => Math.round(x * 100))
+  assert.deepEqual(row("18.6", 8), [15, 20, 32, 30, 3])
+  assert.deepEqual(row("18.6", 9), [10, 17, 25, 33, 15])
 })
 
 test("a row that does not sum to 1 throws", () => {

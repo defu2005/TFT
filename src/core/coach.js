@@ -104,7 +104,8 @@ export function createCoach({
         const parts = []
         if (missing.length) parts.push(`thiếu trường từ nguồn: ${missing.join(", ")}`)
         if (defaulted.length) parts.push(`đang dùng giá trị mặc định cho ${defaulted.join(", ")}`)
-        if (unknown.length) parts.push(`${unknown.join(", ")} chưa biết nên không quyết định mua, roll hay xp trên chúng`)
+        if (input.hudGoldUnknown) parts.push("vàng chưa biết nên không mua, roll hay xp")
+        if (input.hudLevelUnknown) parts.push("cấp chưa biết nên không roll hay xp")
         const note = parts.join("; ")
         reason.caveats.push(note)
         reason.text += ` (${note})`
