@@ -322,6 +322,23 @@ Doc ket qua: doi unit lam teacher tot hon ro rang tren seed giu-lai, va null kho
 
 **Giai doan 2 (dang chay):** uni2 = uni (85) + bench/board (94) = 179 chieu. Seed: train 80000-80399, val 80400-80499, test 81000-81199 (du lieu voi teacher v3 tren ca 8 ghe). Choi: 90000-91999 (chua dung).
 
+## Giai doan 2: clone v2 (uni2) ngang teacher v3
+
+**Du lieu:** teacher v3 tren ca 8 ghe. Train 80000-80399 (1,50 trieu dong), val 80400-80499 (375 nghin), test 81000-81199 (748 nghin). Dac trung uni2 = uni (85) + bench/board (94) = 179 chieu.
+
+**Do khop (test, 3 seed):** 99,6-99,7% tong; theo loai thap nhat la REROLL (94-97%) va BENCH_BOARD (96-97%). Do khop da bao hoa; quyet dinh bang choi.
+
+**Choi (seed 90000-91999, chua dung):**
+
+| Phep | Hieu A-B | CI 95% |
+|---|---|---|
+| null: v3 vs v3 | +0,013 | [-0,06, +0,09] |
+| clone vs v3 (Set 17) | +0,002 | [-0,07, +0,08] |
+| clone vs scripted goc (Set 17) | -3,46 | [-3,50, -3,43] |
+| clone (huan luyen Set 17) vs v3, Set 18 DA-only | -0,08 | [-0,16, +0,002] |
+
+**Ket luan:** clone ngang teacher v3 tren Set 17 (CI chua 0) va gan ngang tren Set 18 DA-only. Tran cua clone la teacher v3; de vuot can giai doan 3 (tim kiem hoac RL).
+
 ## Trang thai cong viec
 
 - Test cua tft-sim: 9 pass (chay tren toy env, co loai tru seat). Toy env chi kiem chung harness.
