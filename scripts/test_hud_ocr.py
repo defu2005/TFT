@@ -9,6 +9,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 
 from PIL import Image, ImageDraw, ImageFont, ImageOps
@@ -66,6 +67,22 @@ class HudParsingTests(unittest.TestCase):
         self.assertIsNone(reader.read_gold(("S2", 98), 60))
         self.assertEqual(reader.read_gold(("0", 93), 82), 0)
 
+    def test_gold_retry_confirms_a_low_confidence_number(self):
+        reader = HudReader()
+        self.addCleanup(reader.close)
+        region = Image.new("L", (23, 24))
+        weak = ("17", 57)
+        with patch.object(reader, "recognize", return_value=[("17", 40), ("17", 96), ("17", 94)]):
+            self.assertEqual(reader.retry_gold(region, weak), 17)
+        with patch.object(reader, "recognize", return_value=[("17", 40), ("17", 96), ("7", 96)]):
+            self.assertIsNone(reader.retry_gold(region, weak))
+        with patch.object(reader, "recognize", return_value=[("17", 95), ("7", 90), ("7", 90)]):
+            self.assertEqual(reader.retry_gold(region, weak), 17)
+        with patch.object(reader, "read_line", return_value=("", 0)), patch.object(
+                reader, "recognize", return_value=[("", 0), ("1", 96), ("1", 94)]):
+            self.assertIsNone(reader.retry_gold(region, ("J", 44)))
+            self.assertEqual(reader.retry_gold(region, ("J", 44), corroborated=True), 1)
+
     def test_price_uses_digit_width_and_resolves_conflicting_masks(self):
         reader = HudReader()
         self.assertEqual(reader.accept_price([("3", 96), ("3", 95), ("4", 83)], False, 75), 3)
@@ -73,6 +90,13 @@ class HudParsingTests(unittest.TestCase):
         self.assertIsNone(reader.accept_price([("5", 97)], True, 75))
         self.assertEqual(reader.accept_price([("15", 95)], True, 75), 15)
         self.assertEqual(reader.accept_price([("0", 95)], False, 75), 0)
+
+    def test_price_retry_requires_two_confident_votes(self):
+        reader = HudReader()
+        self.addCleanup(reader.close)
+        self.assertIsNone(reader.accept_price([("3", 97), ("3", 75)], False, 85, minimum_votes=2))
+        self.assertIsNone(reader.accept_price([("3", 97), ("4", 95)], False, 85, minimum_votes=2))
+        self.assertEqual(reader.accept_price([("3", 97), ("3", 95)], False, 85, minimum_votes=2), 3)
 
     def test_pale_coin_is_shorter_than_a_leading_price_digit(self):
         price = Image.new("RGB", (21, 10), "#14212b")
@@ -100,6 +124,7 @@ class HudImageTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.reader = HudReader()
+        cls.addClassCleanup(cls.reader.close)
         with zipfile.ZipFile(ART) as archive:
             cls.art = {}
             for name in SHOP_A + SHOP_B:
@@ -151,6 +176,7 @@ class HudImageTests(unittest.TestCase):
             profile = Path(directory) / "profile.json"
             profile.write_text(json.dumps({"viewport": [.125, 0, .875, 1]}))
             wide_reader = HudReader(profile)
+            self.addCleanup(wide_reader.close)
             image = self.render(7, 3, SHOP_A, "#456242", 440)
             self.check_hud(self.reader.read(image), 7, 3, SHOP_A)
             image = self.render(24, 6, SHOP_B, "#4c385f", 755, variant=1)
@@ -159,11 +185,31 @@ class HudImageTests(unittest.TestCase):
             wide = Image.new("RGB", (2560, 1080))
             wide.paste(self.render(50, 8, SHOP_A, "#8f734f", 1210, variant=2), (320, 0))
             self.check_hud(wide_reader.read(wide), 50, 8, SHOP_A)
+            bounds, boxes = wide_reader.video_crops(wide.size)
+            self.assertEqual(wide_reader.read_crops(wide.crop(bounds), boxes), wide_reader.read(wide))
+
+    def test_native_session_keeps_text_and_digits_separate(self):
+        if self.reader.native is None:
+            self.skipTest("requires the Linux system Tesseract library")
+        cli = HudReader(tesseract=shutil.which("tesseract"))
+        self.addCleanup(cli.close)
+        image = self.render(50, 8, SHOP_A, "#456242", 440)
+        expected = cli.read(image)
+        digits = Image.new("L", (150, 55), 255)
+        font = ImageFont.truetype("DejaVuSans-Bold.ttf", 32)
+        ImageDraw.Draw(digits).text((15, 1), "23", fill=0, font=font)
+        for _ in range(2):
+            self.assertEqual(self.reader.read_line(digits, digits=True)[0], "23")
+            self.assertEqual(self.reader.read(image), expected)
 
     def test_occlusion_and_empty_slot(self):
         names = ["Ornn", None, "Varus", "Yunara", "Warwick"]
         image = self.render(0, 4, names, "#448591", 1470)
-        self.check_hud(self.reader.read(image), 0, 4, names)
+        with patch.object(self.reader, "read_prices", return_value=[1, 1, 2, 2]) as prices:
+            result = self.reader.read(image)
+        self.check_hud(result, 0, 4, names)
+        self.assertEqual(len(prices.call_args.args[0]), 4)
+        self.assertEqual([slot["price"] if slot else None for slot in result["shopSlots"]], [1, None, 1, 2, 2])
         ImageDraw.Draw(image).rectangle((225, 875, 326, 929), fill="black")
         self.check_hud(self.reader.read(image), 0, None, names)
 
@@ -192,6 +238,12 @@ class HudImageTests(unittest.TestCase):
                 self.assertGreater(record["recognitionLatencyMs"], 0)
                 self.assertGreaterEqual(record["endToEndLatencyMs"], record["processingLatencyMs"])
             self.assertEqual(json.loads(output.read_text())["frame"], records[-1]["frame"])
+            first = subprocess.run([sys.executable, str(ROOT / "hud-reader.py"), "--video", str(video), "--once"],
+                                   capture_output=True, text=True, check=True, timeout=20)
+            first_record = json.loads(first.stdout)
+            self.assertEqual(first_record["frame"], 0)
+            self.assertEqual(first_record["resolution"], [1280, 720])
+            self.check_hud(first_record, 7, 3, SHOP_A)
             latencies = sorted(record["endToEndLatencyMs"] for record in records)
             print(f"4 Hz replay: {len(records)}/16 samples, p50={latencies[len(latencies)//2]} ms, "
                   f"p95={latencies[(95 * len(latencies) - 1) // 100]} ms, "

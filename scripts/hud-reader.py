@@ -2,6 +2,7 @@
 """Read the TFT HUD from the Windows client, an image, or a paced video replay."""
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import ctypes
 from ctypes import wintypes
 import json
@@ -110,7 +111,7 @@ def publish(path, record):
             staged.unlink(missing_ok=True)
 
 
-def sample(reader, capture, source, index, scheduled, interval, dropped):
+def sample(recognize, capture, source, index, scheduled, interval, dropped, *, source_size=None):
     start = time.perf_counter()
     captured_at = time.time_ns() // 1_000_000
     error = None
@@ -126,7 +127,7 @@ def sample(reader, capture, source, index, scheduled, interval, dropped):
             "shopSlots": [None] * 5}
     if image is not None:
         try:
-            data = reader.read(image)
+            data = recognize(image)
         except (subprocess.SubprocessError, OSError) as exc:
             error = f"OCR failed: {exc}"
     elif source == "window" and error is None:
@@ -137,7 +138,7 @@ def sample(reader, capture, source, index, scheduled, interval, dropped):
         "hudSchema": 2, "set": 18, "source": source, "frame": index,
         "capturedAtMs": captured_at,
         "mediaTimeMs": latency(index * interval) if source == "video" else None,
-        "resolution": list(image.size) if image is not None else None,
+        "resolution": list(source_size or image.size) if image is not None else None,
         "captureLatencyMs": latency(captured - start),
         "recognitionLatencyMs": latency(finished - captured),
         "processingLatencyMs": latency(finished - start),
@@ -156,7 +157,7 @@ def window_records(reader, interval, backend):
     index = dropped = 0
     while True:
         time.sleep(max(0, scheduled - time.perf_counter()))
-        record = sample(reader, window.read, "window", index, scheduled, interval, dropped)
+        record = sample(reader.read, window.read, "window", index, scheduled, interval, dropped)
         yield {**record, "captureBackend": backend}
         scheduled += interval
         index += 1
@@ -177,22 +178,42 @@ def video_records(reader, filename, interval):
         raise ValueError("input has no video stream")
     stream = streams[0]
     size = stream["width"], stream["height"]
-    frame_bytes = size[0] * size[1] * 3
+    (left, top, right, bottom), boxes = reader.video_crops(size)
+    hud_size = right - left, bottom - top
+    frame_bytes = hud_size[0] * hud_size[1] * 3
+    # Crop only after converting to RGB so subsampled chroma yields the same
+    # boundary pixels as decoding the full frame to RGB before cropping.
+    filters = f"fps={1 / interval:.9f}:start_time=0,format=rgb24,crop={hud_size[0]}:{hud_size[1]}:{left}:{top}:exact=1"
 
-    def capture():
-        data = decoder.stdout.read(frame_bytes)
-        if not data:
-            return None
-        if len(data) != frame_bytes:
-            raise ValueError("video decoder returned an incomplete frame")
-        return Image.frombytes("RGB", size, data)
+    def recognize(image):
+        return reader.read_crops(image, boxes)
 
     command = ["ffmpeg", "-nostdin", "-v", "error", "-threads", "2", "-noautorotate", "-i", filename,
-               "-map", "0:v:0", "-vf", f"fps={1 / interval:.9f}:start_time=0", "-threads", "2",
+               "-map", "0:v:0", "-vf", filters, "-threads", "2",
                "-pix_fmt", "rgb24", "-f", "rawvideo", "pipe:1"]
-    with subprocess.Popen(command, stdout=subprocess.PIPE) as decoder:
+    with subprocess.Popen(command, stdout=subprocess.PIPE) as decoder, ThreadPoolExecutor(max_workers=1) as prefetch:
+        def read_frame():
+            data = decoder.stdout.read(frame_bytes)
+            if data and len(data) != frame_bytes:
+                raise ValueError("video decoder returned an incomplete frame")
+            return data
+
+        pending = prefetch.submit(read_frame)
+
+        def take_frame():
+            nonlocal pending
+            data = pending.result()
+            if data:
+                # Keep just the next frame moving through the pipe during OCR.
+                pending = prefetch.submit(read_frame)
+            return data
+
+        def capture():
+            data = take_frame()
+            return Image.frombytes("RGB", hud_size, data) if data else None
+
         try:
-            first = sample(reader, capture, "video", 0, time.perf_counter(), interval, 0)
+            first = sample(recognize, capture, "video", 0, time.perf_counter(), interval, 0, source_size=size)
             if first["resolution"] is None:
                 if decoder.wait():
                     raise ValueError("ffmpeg could not decode the video")
@@ -205,16 +226,17 @@ def video_records(reader, filename, interval):
             while True:
                 skipped = max(0, math.floor((time.perf_counter() - started) / interval) - index)
                 if skipped:
-                    stale = decoder.stdout.read(frame_bytes * min(skipped, 8))
-                    if not stale:
-                        break
-                    count = len(stale) // frame_bytes
-                    index += count
-                    dropped += count
+                    for _ in range(min(skipped, 8)):
+                        if not take_frame():
+                            if decoder.wait():
+                                raise ValueError("ffmpeg could not decode the video")
+                            return
+                        index += 1
+                        dropped += 1
                     continue
                 scheduled = started + index * interval
                 time.sleep(max(0, scheduled - time.perf_counter()))
-                record = sample(reader, capture, "video", index, scheduled, interval, dropped)
+                record = sample(recognize, capture, "video", index, scheduled, interval, dropped, source_size=size)
                 if record["resolution"] is None:
                     break
                 yield record
@@ -248,11 +270,12 @@ def main():
         parser.error("--video requires ffmpeg and ffprobe")
     if (args.video or args.image) and args.capture != "window":
         parser.error("--capture screen is only for a live window")
+    reader = None
     try:
         reader = HudReader(args.profile, args.language, args.tesseract)
         if args.image:
             with Image.open(args.image) as image:
-                records = [sample(reader, image.copy, "image", 0, time.perf_counter(), args.interval, 0)]
+                records = [sample(reader.read, image.copy, "image", 0, time.perf_counter(), args.interval, 0)]
         elif args.video:
             records = video_records(reader, args.video, args.interval)
         else:
@@ -276,6 +299,9 @@ def main():
         return
     except (ValueError, OSError, ImportError, subprocess.SubprocessError) as exc:
         parser.exit(1, f"HUD reader: {exc}\n")
+    finally:
+        if reader is not None:
+            reader.close()
 
 
 if __name__ == "__main__":

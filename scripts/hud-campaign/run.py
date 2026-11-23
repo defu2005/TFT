@@ -25,7 +25,7 @@ CGROUP = Path('/sys/fs/cgroup')
 RESERVE_BYTES = 4 * 1024**3
 INTERVAL = .25
 MANIFESTS = (MEDIA / 'manifest.json', MEDIA / 'manifest-final4.json', ROOT / 'source-queue.json')
-SNAPSHOT_FILES = ('scripts/hud-reader.py', 'scripts/hud_ocr.py', 'src/data/set18-hud.json')
+SNAPSHOT_FILES = ('scripts/hud-reader.py', 'scripts/hud_ocr.py', 'scripts/hud_tesseract.py', 'src/data/set18-hud.json')
 
 
 def now():
@@ -127,6 +127,19 @@ def metrics(raw, duration):
         'accuracy': None}
 
 
+def source_profile(row):
+    name = row.get('profile')
+    if name is None:
+        return None
+    if not isinstance(name, str) or Path(name).name != name or not name.endswith('.json'):
+        raise ValueError('The source profile must be a JSON filename')
+    for directory in (ROOT, BUNDLED):
+        path = directory / name
+        if path.is_file():
+            return path
+    raise ValueError(f'Source profile {name} was not found')
+
+
 def test(row, reader, version):
     name = sample_key(row)
     part = ROOT / 'results' / f'{name}.part.jsonl'
@@ -134,12 +147,15 @@ def test(row, reader, version):
     output = ROOT / 'results' / f'{name}.jsonl.gz'
     started = now()
     started_clock = time.monotonic()
-    profile = ROOT / 'profile-1080p.json'
-    if not profile.is_file():
-        profile = BUNDLED / 'profile-1080p.json'
+    profile = source_profile(row)
+    profile_digest = None
     args = ['nice', '-n', '4', 'python3', str(reader), '--video', str(MEDIA / row['file']), '--interval', '0.25']
-    if row['height'] == 1080 and profile.is_file():
-        args.extend(['--profile', str(profile)])
+    if profile is not None:
+        profile_data = profile.read_bytes()
+        profile_digest = hashlib.sha256(profile_data).hexdigest()
+        frozen_profile = ROOT / 'results' / f'{name}.profile.json'
+        frozen_profile.write_bytes(profile_data)
+        args.extend(['--profile', str(frozen_profile)])
     with part.open('w') as data, log.open('w') as stderr:
         subprocess.run(args, stdout=data, stderr=stderr, check=True, timeout=row['duration'] + 180)
     with part.open() as data:
@@ -149,7 +165,8 @@ def test(row, reader, version):
         shutil.copyfileobj(data, compressed)
     stage.replace(output)
     part.unlink()
-    result = {'source': row, 'readerVersion': version, 'startedAtUtc': started, 'completedAtUtc': now(),
+    result = {'source': row, 'readerVersion': version, 'profileSha256': profile_digest,
+              'startedAtUtc': started, 'completedAtUtc': now(),
               'elapsedSeconds': round(time.monotonic() - started_clock, 1), 'concurrentLoadTest': True,
               'frameLog': str(output.relative_to(ROOT)), **numbers}
     atomic_json(ROOT / 'results' / f'{name}.json', result)

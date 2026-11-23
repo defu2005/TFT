@@ -38,9 +38,17 @@ Có thể dùng `--profile profile.json` để chỉnh vùng theo HUD của thi�
 
 Năm vùng `shop_price` bao quanh số giá ở bên phải mỗi thẻ. Khi chỉnh tọa độ `shop`, hãy khai báo cả `shop_price` để bộ đọc dùng đúng bố cục. `shop_price: null` tắt đọc giá cho bố cục đó.
 
+Hàng đợi dùng tọa độ mặc định khi nguồn không khai báo `profile`. Chỉ thêm tên tệp JSON vào `profile` sau khi kiểm tra vị trí trên ảnh gốc của nguồn. `scripts/hud-campaign/profile-1080p.json` là vùng giá đã hiệu chỉnh cho một bố cục BoxBox. Áp vùng đó cho video Setsuko 1080p sẽ cắt một phần chữ số. Báo cáo giữ mã băm và bản sao của profile đã dùng.
+
 ## Đo độ trễ và kiểm thử
 
+Trên Linux với `/usr/bin/tesseract` và thư viện `libtesseract`, bộ đọc dùng lại một phiên OCR cho mỗi luồng xử lý. Khi thư viện không sẵn sàng, bộ đọc gọi Tesseract qua dòng lệnh. Truyền `--tesseract /usr/bin/tesseract` để đo lại bằng tiến trình riêng cho mỗi lượt nhận dạng.
+
+Bộ đọc bỏ lượt OCR giá ở ô có mặt nạ tên trống và độ sáng dưới ngưỡng thử đọc lại tên. Giá của ô đó giữ `null`.
+
 - `captureLatencyMs` đo bước lấy ảnh hoặc đọc khung hình đã giải mã. `recognitionLatencyMs` đo tiền xử lý, OCR và đối chiếu danh mục.
+- Khi phát lại video, bộ đọc nhận trước tối đa một khung RGB để giảm thời gian chờ FFmpeg ở mốc lấy mẫu kế tiếp. Bộ OCR vẫn đọc theo lịch và ghép kết quả với `mediaTimeMs` của đúng khung.
+- FFmpeg chuyển khung sang RGB rồi chỉ gửi hình chữ nhật chứa các vùng OCR trong profile. `resolution` trong bản ghi giữ kích thước video gốc. Tọa độ OCR vẫn tính từ viewport gốc, kể cả khi có viền đen.
 - `endToEndLatencyMs` đo từ lịch dự kiến tới khi nhận dạng xong. `publishLatencyMs` trong stdout đo riêng thời gian ghi file khi bật đầu ra file. Hai số này không bao gồm thời gian coach chờ tick kế tiếp.
 - So sánh `deadlineMissed` và `droppedFrames` với chu kỳ. Với video, `mediaTimeMs` cho biết mốc cần đối chiếu với hình gốc. Nếu xử lý chậm, bộ đọc bỏ qua mẫu cũ để bắt kịp nhịp phát.
 - Mẫu video đầu tiên ghi nhận cả thời gian khởi động bộ giải mã. Đồng hồ phát bắt đầu sau kết quả đầu tiên để độ trễ khởi động không làm mất các mẫu kế tiếp.

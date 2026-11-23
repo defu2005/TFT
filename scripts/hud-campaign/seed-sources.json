@@ -559,6 +559,7 @@
     "patch": "18.6",
     "sampleType": "fullMatch",
     "file": "23-robinsongz-2927052824-13230.mp4",
+    "profile": "robinsongz-2927052824.json",
     "intendedStartSec": 13230,
     "intendedEndSec": 15920,
     "requestedHeight": 720,
