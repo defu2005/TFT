@@ -73,11 +73,20 @@ test("an unreadable shop slot is named as unknown and never bought", () => {
 const ROLL_TARGET = { id: "Z", cost: 1, copiesLeft: 30, priority: 5, champsAtCost: 1 }
 const ROLL_STATE = (gold, shop, extra = {}) => ({ level: 8, gold, hp: 80, stage: 5, shop, target: ROLL_TARGET, ...extra })
 
-test("a cheap price leaves the roll affordable and the roll is chosen (no flip claimed here)", () => {
-  const cheap = run(ROLL_STATE(12, [unit({ id: "a", price: 1 }), null, null, null, null]))
-  const dear = run(ROLL_STATE(12, [unit({ id: "a", price: 2 }), null, null, null, null]))
-  assert.equal(cheap.out.action, 3)
-  assert.equal(dear.out.action, 3)
+test("price flips the decision: at 13 gold a price 1 buys and a price 2 rolls", () => {
+  assert.equal(run(ROLL_STATE(13, [unit({ id: "a", price: 1 }), null, null, null, null])).out.action, 1)
+  assert.equal(run(ROLL_STATE(13, [unit({ id: "a", price: 2 }), null, null, null, null])).out.action, 3)
+})
+
+test("keepInterest: at 54 gold a price 2 buys and a price 4 rolls (roll need is 52)", () => {
+  const rules = { keepInterest: true, earlyLevel: false, guideLevels: false }
+  const run2 = (state) => {
+    const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+    decide(state, out, [], rules, null)
+    return out
+  }
+  assert.equal(run2(ROLL_STATE(54, [unit({ id: "a", price: 2 }), null, null, null, null])).action, 1)
+  assert.equal(run2(ROLL_STATE(54, [unit({ id: "a", price: 4 }), null, null, null, null])).action, 3)
 })
 
 test("a price that lets gold fall below the roll need is not kept", () => {

@@ -106,7 +106,7 @@ export function decide(state, out, trace = null, rules, profile) {
       const copiesSource = copiesFromTarget > 0 ? "target" : unit.poolCopies != null ? "poolCopies" : unit.takenByOthers != null ? "pool - copiesOwned - takenByOthers" : "pool - copiesOwned (ước lượng)"
       const copiesLeft = Math.max(0, copiesFromTarget || (POOL_FALLBACK(unit, p) - owned - taken))
       const champsAtCost = unit.champsAtCost
-      const hit = hitChance(level, unit.cost, copiesLeft, champsAtCost, p)
+      const hit = levelKnown ? hitChance(level, unit.cost, copiesLeft, champsAtCost, p) : 0
       const interestLoss = interestGold(gold) - interestGold(gold - price)
       let score = priority * (1 + owned) * (0.4 + hit)
       if (!urgent) score -= interestLoss * 0.35

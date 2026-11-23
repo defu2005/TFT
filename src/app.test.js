@@ -310,3 +310,32 @@ test("a frame with unknown gold holds and records the flag; a null price is not 
   assert.equal(record.decision.action, "hold")
   assert.equal(record.state.hudGoldUnknown, true)
 })
+
+// Level unknown (HUD): the buy is still allowed, but no probability is reported or computed.
+test("unknown level: decision.hit is null and the reason text states no probability", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-hudlevel-"))
+  const fixture = path.join(dir, "frame.json")
+  fs.writeFileSync(
+    fixture,
+    JSON.stringify({
+      frames: [
+        {
+          level: null,
+          hudLevelUnknown: true,
+          gold: 50,
+          hp: 80,
+          stage: 3,
+          target: { id: "DA_18_Ivern", cost: 5, copiesLeft: 10, priority: 1, champsAtCost: 13 },
+          shop: [{ id: "DA_18_Ornn", cost: 1, price: 1, copiesOwned: 0, priority: 1 }, null, null, null, null],
+          board: [{ id: "DA_18_Ornn", star: 1 }],
+        },
+      ],
+    }),
+  )
+  const { coach } = createApp(replayConfig({ TFT_REPLAY: fixture }))
+  const record = await coach.tick()
+  assert.equal(record.decision.action, "buy")
+  assert.equal(record.decision.hit, null)
+  assert.ok(!record.reason.text.includes("%"))
+  assert.ok(record.reason.text.includes("chưa đọc được cấp"))
+})

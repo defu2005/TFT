@@ -172,6 +172,10 @@ for (const [label, rules] of [["rules off", null], ["all U9 rules on", ALL_RULES
       assert.ok(![BUY, ROLL, 2].includes(noGold.action), `unknown gold acted in state ${n}: ${noGold.action}`)
       const noLevel = decideOf({ ...state, hudLevelUnknown: true }, rules)
       assert.ok(![2, ROLL].includes(noLevel.action), `unknown level acted in state ${n}: ${noLevel.action}`)
+      // With the level unknown, whatever number is sent must not change the output.
+      const a = decideOf({ ...state, level: 1, hudLevelUnknown: true }, rules)
+      const b = decideOf({ ...state, level: 11, hudLevelUnknown: true }, rules)
+      assert.deepEqual([b.action, b.slot, b.score], [a.action, a.slot, a.score], `level leaked in state ${n}`)
     }
   })
 }

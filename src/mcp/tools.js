@@ -49,8 +49,8 @@ const ownedSchema = z
   .nullable()
 
 const stateSchema = {
-  level: z.number().int().min(1).max(maxLevel),
-  gold: z.number().int().min(0),
+  level: z.number().int().min(1).max(maxLevel).nullable(),
+  gold: z.number().int().min(0).nullable(),
   hp: z.number().min(0),
   stage: z.number().int().min(1),
   shop: z.array(unitSchema).length(5).nullable().optional(),
@@ -240,9 +240,12 @@ export function registerTools(server, { coach, rules = null, profile = null }) {
 }
 
 function normalizeState(args) {
+  // null gold or level means unknown (HUD): the flag is set and the number is 0, so nothing is decided on it.
+  const hudGoldUnknown = args.gold === null || args.hudGoldUnknown === true
+  const hudLevelUnknown = args.level === null || args.hudLevelUnknown === true
   return {
-    level: args.level,
-    gold: args.gold,
+    level: args.level ?? 0,
+    gold: args.gold ?? 0,
     hp: args.hp,
     stage: args.stage,
     shop: args.shop ?? null,
@@ -250,6 +253,9 @@ function normalizeState(args) {
     board: args.board ?? null,
     freeRolls: args.freeRolls ?? 0,
     bench: args.bench ?? null,
+    ...(hudGoldUnknown ? { hudGoldUnknown: true } : {}),
+    ...(hudLevelUnknown ? { hudLevelUnknown: true } : {}),
+    ...(Array.isArray(args.shopUnknownSlots) ? { shopUnknownSlots: args.shopUnknownSlots } : {}),
   }
 }
 

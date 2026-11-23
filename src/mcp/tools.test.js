@@ -115,3 +115,25 @@ test("tft_evaluate_state takes a null price and the HUD flags, and never buys th
   assert.notEqual(out.action, "buy")
   assert.equal(out.action, "hold")
 })
+
+// Goes through the tool's own input schema (zod), the way the MCP host calls it.
+test("tft_evaluate_state accepts a HUD record with null level and gold, and reports no probability", async () => {
+  const server = fakeServer()
+  registerTools(server, { coach, rules: null, profile: null })
+  const parsed = z.object(server.configs.get("tft_evaluate_state").inputSchema).parse({
+    level: null,
+    gold: 50,
+    hp: 80,
+    stage: 3,
+    hudLevelUnknown: true,
+    shop: [{ id: "DA_18_Ornn", cost: 1, price: 1, copiesOwned: 0, priority: 1 }, null, null, null, null],
+    target: null,
+  })
+  const out = JSON.parse((await server.handlers.get("tft_evaluate_state")(parsed)).content[0].text)
+  assert.equal(out.action, "buy")
+  assert.equal(out.candidates.find((c) => c.action === "buy" && c.slot === 0).hit, null)
+  assert.ok(!out.text.includes("%"))
+  const nullGold = z.object(server.configs.get("tft_evaluate_state").inputSchema).parse({ level: 7, gold: null, hp: 80, stage: 3, shop: [null, null, null, null, null], target: null })
+  const held = JSON.parse((await server.handlers.get("tft_evaluate_state")(nullGold)).content[0].text)
+  assert.equal(held.action, "hold")
+})
