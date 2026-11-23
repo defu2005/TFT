@@ -475,3 +475,18 @@ test("partial HUD: level and unreadable shop slots are reported as unknown, not 
   assert.equal(record.decision.slot, 1)
   assert.equal(record.decision.hit, null)
 })
+
+test("a shop slot the reader could not read is named in the caveat, and the buy stays on a readable slot", async () => {
+  const fixture = JSON.parse(fs.readFileSync(path.join(import.meta.dirname, "data", "fixtures", "handread-18-6.json"), "utf8"))
+  fixture.frames = [{ ...fixture.frames[2], shopUnknownSlots: [4] }]
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-unk-"))
+  const file = path.join(dir, "unk.json")
+  fs.writeFileSync(file, JSON.stringify(fixture))
+  const { coach } = createApp(loadConfig({ TFT_SOURCE: "replay", TFT_REPLAY: file, TFT_LOG: path.join(dir, "d.jsonl") }))
+  const record = await coach.tick()
+  assert.equal(record.reason.factors.shopKnown, false)
+  assert.match(record.reason.text, /ô shop chưa đọc được: ô 5/)
+  assert.ok(record.reason.caveats.some((c) => c.includes("ô 5")))
+  assert.equal(record.decision.action, "buy")
+  assert.equal(record.decision.slot, 0)
+})

@@ -50,8 +50,8 @@ test("the coach flags a missing level and holds: no xp on a made-up level", asyn
   const target = { id: "DA_18_Varus", cost: 3, copiesLeft: 9, champsAtCost: 13, priority: 5 }
   const src = { kind: "fake", read: async () => ({ ...toState(p), target }) }
   const record = await createCoach({ source: src }).tick()
-  assert.equal(record.state.hudLevelUnknown, true)
   assert.equal(record.decision.action, "hold")
+  assert.equal(record.state.hudLevelUnknown, true)
   assert.equal(record.reason.factors.level, null)
   assert.match(record.reason.text, /level chưa biết/)
 })

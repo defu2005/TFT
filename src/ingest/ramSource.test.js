@@ -4,6 +4,7 @@ import fs from "node:fs"
 import path from "node:path"
 import os from "node:os"
 import { ramSource } from "./ramSource.js"
+import { createCoach } from "../core/coach.js"
 
 test("ramSource returns missing file error when state file does not exist", async () => {
   const fakePath = path.join(os.tmpdir(), `nonexistent-tft-${Date.now()}.json`)
@@ -46,4 +47,13 @@ test("ramSource correctly parses live RAM state file", async () => {
   assert.equal(state.missing.length, 0)
 
   fs.unlinkSync(tmpPath)
+})
+
+test("a missing RAM file makes the coach say gold and level are unknown, not default", async () => {
+  const fakePath = path.join(os.tmpdir(), `nonexistent-tft-cap-${Date.now()}.json`)
+  const record = await createCoach({ source: ramSource(fakePath) }).tick()
+  assert.equal(record.state.hudGoldUnknown, true)
+  assert.equal(record.state.hudLevelUnknown, true)
+  assert.match(record.reason.text, /gold, level chưa biết/)
+  assert.equal(record.decision.action, "hold")
 })

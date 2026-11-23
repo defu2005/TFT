@@ -97,13 +97,21 @@ export function createCoach({
         reason.factors.profile = { set: profile.set, requested: profile.requested, applied: profile.applied }
         for (const note of profile.caveats) reason.caveats.push(note)
       }
-      if (missing.length) {
-        // gold and level are unknown (null) when the source gives no value: no default is used for them.
-        const unknown = missing.filter((f) => (f === "gold" && fields.gold == null) || (f === "level" && fields.level == null))
+      // gold and level are unknown (null) when the source gives no value: their flags say so, whatever `missing` holds.
+      const unknown = [input.hudGoldUnknown ? "gold" : null, input.hudLevelUnknown ? "level" : null].filter(Boolean)
+      if (missing.length || unknown.length) {
         const defaulted = missing.filter((f) => !unknown.includes(f))
-        const note = `thiếu trường từ nguồn: ${missing.join(", ")}`
-          + (defaulted.length ? `; đang dùng giá trị mặc định cho ${defaulted.join(", ")}` : "")
-          + (unknown.length ? `; ${unknown.join(", ")} chưa biết nên không quyết định mua, roll hay xp trên chúng` : "")
+        const parts = []
+        if (missing.length) parts.push(`thiếu trường từ nguồn: ${missing.join(", ")}`)
+        if (defaulted.length) parts.push(`đang dùng giá trị mặc định cho ${defaulted.join(", ")}`)
+        if (unknown.length) parts.push(`${unknown.join(", ")} chưa biết nên không quyết định mua, roll hay xp trên chúng`)
+        const note = parts.join("; ")
+        reason.caveats.push(note)
+        reason.text += ` (${note})`
+      }
+      if (Array.isArray(input.shopUnknownSlots) && input.shopUnknownSlots.length) {
+        const shown = input.shopUnknownSlots.map((i) => i + 1).join(", ")
+        const note = `ô shop chưa đọc được: ô ${shown} (không mua được ô đó; quyết định trên các ô còn lại)`
         reason.caveats.push(note)
         reason.text += ` (${note})`
       }
