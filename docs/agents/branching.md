@@ -4,6 +4,7 @@
 
 - Nhánh agent: `claude/<mô-tả>-<hậu-tố-ngẫu-nhiên>` hoặc `codex/<mô-tả>`.
 - Nhánh tài liệu hoặc quy tắc: `docs/<mô-tả>`.
+- Phiên Claude cloud dùng đúng nhánh mà phiên được giao. Không đẩy lên nhánh nào khác nếu chưa được cho phép.
 - Mô tả bằng chữ thường, dùng `-`, ngắn gọn, nói rõ workstream. Ví dụ: `codex/hud-realtime-handoff`.
 - Không dùng nhánh tên chung chung như `main-work` hoặc `fix`.
 

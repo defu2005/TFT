@@ -1,19 +1,39 @@
 # Khai báo công việc (claim)
 
-Claim cho biết ai đang làm trên vùng nào. Các agent không chia sẻ bộ nhớ và thường chạy trên nhánh riêng hoặc cloud session riêng, nên claim phải nằm ở một nơi mà mọi agent đọc được **trước khi bắt đầu việc**.
+Claim cho biết ai đang làm trên vùng nào. Các agent không chia sẻ bộ nhớ và chạy trên nhánh hoặc cloud session riêng, nên bảng claim phải nằm ở một nơi mọi agent đọc được trước khi bắt đầu việc.
 
-## Kênh chung: nhánh `coordination`
+## Nơi đặt bảng
 
-- Claim sống trong `docs/agents/claims.md` trên nhánh **`coordination`**. Nhánh này chỉ chứa file đó, không chứa code.
-- Nhánh `coordination` **chỉ được merge, không rebase, không force-push**.
-- Mỗi agent phải chạy `git fetch origin coordination` và đọc bảng trước khi bắt đầu bất kỳ việc nào, và trước khi sửa vùng nóng.
-- Nhánh `coordination` chưa tồn tại trên remote. Việc tạo và đẩy nhánh này cần người dùng cho phép.
+- Bảng sống trong `docs/agents/claims.md` trên **`master`**.
+- **Chỉ người dùng (người điều phối) ghi bảng.** Người dùng thêm dòng khi giao workstream hoặc vùng nóng lúc khởi động phiên.
+- Agent **không sửa bảng**, kể cả khi thấy dòng sai. Báo trong handoff và chờ người điều phối.
 
-## Cách ghi claim
+## Agent đọc bảng thế nào
 
-- **Chỉ thêm dòng mới vào cuối bảng.** Không sửa dòng của người khác. Muốn đóng claim, thêm một dòng mới có trạng thái `xong` cho cùng vùng và cùng nhánh, không sửa dòng cũ.
-- Mỗi lần ghi là một commit riêng trên `coordination`, đẩy ngay.
-- Vì mọi người đều thêm dòng vào cuối bảng, xung đột sẽ xảy ra ở đúng cuối file. Nếu gặp xung đột, giữ cả hai dòng, sắp theo thời gian ghi.
+Trước khi bắt đầu bất kỳ việc nào, và trước khi sửa vùng nóng:
+
+```bash
+git fetch origin master
+git show origin/master:docs/agents/claims.md
+```
+
+## Khi cần vùng không được giao
+
+- Nếu việc cần sửa một vùng nóng không nằm trong claim của nhánh mình, **dừng và hỏi** người điều phối.
+- Không tự thêm claim, không sửa dòng của người khác.
+
+## Khi xong việc
+
+- Ghi "xong" trong handoff của nhánh (xem `handoff.md`).
+- Người điều phối đóng dòng trong bảng bằng trạng thái `xong` kèm nhánh và commit.
+
+## Quy tắc
+
+- Claim vùng nóng là độc quyền: không ai khác sửa vùng đó cho đến khi có dòng `xong`.
+- Claim vùng thường chỉ để thông báo, nhưng vẫn ghi để tránh trùng việc.
+- Claim không có commit mới quá 7 ngày: người điều phối có thể đóng và ghi lý do.
+- Claim không thay thế việc đọc code. Luôn `git fetch` và đọc commit mới trên `master` và nhánh liên quan trước khi sửa.
+- Hai việc trùng vùng: claim ghi trước thắng. Việc còn lại dừng và hỏi.
 
 ## Bảng
 
@@ -21,16 +41,4 @@ Claim cho biết ai đang làm trên vùng nào. Các agent không chia sẻ b�
 |---|---|---|---|---|
 | 2026-11-23 | (ví dụ) `src/engine/decide.js` | `codex/hud-realtime-handoff` | codex | đang làm |
 
-Dòng trên chỉ là ví dụ, không có hiệu lực. Xóa khi bảng có dòng thật.
-
-## Quy tắc
-
-- Claim vùng nóng là độc quyền. Agent khác không sửa vùng đó cho đến khi có dòng `xong` cho cùng vùng.
-- Claim vùng thường chỉ mang tính thông báo, nhưng vẫn ghi để tránh trùng việc.
-- Claim quá 7 ngày không có commit mới trên nhánh tương ứng: người điều phối có thể ghi dòng `giải phóng` và lý do.
-- Claim không thay thế việc đọc code. Trước khi sửa, luôn `git fetch` và đọc các commit mới trên `master` và nhánh liên quan.
-- Hai claim trùng vùng: claim ghi trước thắng. Người ghi sau dừng và ghi dòng `chờ` kèm tên nhánh đang giữ.
-
-## Nếu không đẩy được `coordination`
-
-Nếu agent không đọc hoặc ghi được nhánh `coordination` (thiếu quyền, offline), dừng việc trên vùng nóng. Ghi trong handoff của nhánh mình rằng claim chưa được xác nhận, và hỏi người điều phối.
+Dòng trên chỉ là ví dụ, không có hiệu lực. Người điều phối xóa khi có dòng thật.

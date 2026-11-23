@@ -7,6 +7,7 @@ Bộ tài liệu này áp dụng cho mọi agent (Claude, Codex, hoặc người
 1. [`ownership.md`](ownership.md): ai/cái gì được sở hữu, file nào là "vùng nóng".
 2. [`branching.md`](branching.md): đặt tên nhánh, tách từ đâu, khi nào rebase, thứ tự merge.
 3. [`claims.md`](claims.md): cách khai báo bắt đầu làm việc trên một vùng.
+   Bảng claim nằm trên `master` và chỉ người điều phối ghi. Agent đọc bằng `git show origin/master:docs/agents/claims.md`.
 4. [`conflict-protocol.md`](conflict-protocol.md): làm gì khi xung đột hoặc khi hai agent cùng sửa một file.
 5. [`handoff.md`](handoff.md): mẫu bàn giao và quy tắc tiếp quản.
 6. [`verification.md`](verification.md): lệnh test theo từng vùng và cách ghi kết quả.
