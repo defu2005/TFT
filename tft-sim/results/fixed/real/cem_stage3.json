@@ -1,0 +1,56 @@
+{
+  "seeds": "100000-100399 (dev)",
+  "history": [
+    {
+      "gen": 0,
+      "best_theta": [
+        7,
+        50,
+        1,
+        0
+      ],
+      "best_diff": -0.00625,
+      "mean_diff_pop": 0.10322916666666666
+    },
+    {
+      "gen": 1,
+      "best_theta": [
+        43,
+        50,
+        3,
+        0
+      ],
+      "best_diff": -0.02875,
+      "mean_diff_pop": 0.09625
+    },
+    {
+      "gen": 2,
+      "best_theta": [
+        34,
+        84,
+        4,
+        1
+      ],
+      "best_diff": -0.02,
+      "mean_diff_pop": 0.058125
+    },
+    {
+      "gen": 3,
+      "best_theta": [
+        34,
+        86,
+        0,
+        3
+      ],
+      "best_diff": 0.0325,
+      "mean_diff_pop": 0.09156249999999999
+    }
+  ],
+  "best_theta": [
+    34,
+    86,
+    0,
+    3
+  ],
+  "best_diff": 0.0325
+}
