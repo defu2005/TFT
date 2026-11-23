@@ -264,6 +264,33 @@ Quy tac **hybrid** duoc chon (tot nhat tren seed tinh chinh) va dong bang truoc 
 Chua giai thich duoc muc -2,6 den -3,0: so unit tren board gan bang nhau giua hai ben (6,8 so voi 6,6), nen
 co che can do them. Doi thu la bot scripted trong mo phong, khong phai TFT that.
 
+## Vong sua teacher lan 2 (teacher hybrid) va so seed
+
+**So seed (de khong dung lai):**
+- 20000-21999: tinh chinh quy tac (cheapest, useless, hybrid).
+- 30000-31999: kiem dinh giu-lai quy tac hybrid (Set 17 va Set 18, null Set 17).
+- 40000-41999: chon loai nhieu (dung seed thu BC tren 40000-40499 va 41000-41199, nen khong phai "chua dung" tuyet doi).
+- 50000-51999: lap lai BENCH_BOARD va null.
+- 60000-61999: giu-lai cho quy tac cuoi (chua dung).
+
+**Nhieu eps=0,1 tren teacher hybrid (seed 40000-41999):** -0,093 [-0,175, -0,013]. Sat do phan giai; teacher con sai o mot loai.
+
+**Tach nhieu theo 11 loai tren hybrid (seed 40000-41999, A-B; am = nhieu lam teacher tot hon):**
+
+| Loai | Hieu | CI 95% |
+|---|---|---|
+| BENCH_BOARD (board -> banc) | -0,36 | [-0,43, -0,28] |
+| BUY_SHOP | +0,04 | [-0,03, +0,12] |
+| FIELD, EQUIP, PICK_AUGMENT, PICK_GOD, REROLL_AUGMENT | -0,03 den +0,06 | chua 0 |
+| SELL_BENCH | +0,31 | [+0,24, +0,39] |
+| BUY_XP | +0,41 | [+0,33, +0,48] |
+| REROLL | +0,93 | [+0,86, +1,00] |
+| PASS | +0,93 | [+0,86, +1,00] |
+
+**Lap lai BENCH_BOARD tren seed moi 50000-51999:** nhieu BENCH_BOARD -0,35 [-0,43, -0,27]; null hybrid vs hybrid +0,03 [-0,05, +0,11]. Hieu ung lap lai, null khong vuot 0.
+
+Chua viet quy tac cho BENCH_BOARD: can chan doan co che truoc (`scripts/diag_bb.py`).
+
 ## Trang thai cong viec
 
 - Test cua tft-sim: 9 pass (chay tren toy env, co loai tru seat). Toy env chi kiem chung harness.
