@@ -69,7 +69,7 @@ Ghi chú: mục Income của wiki và bảng "Typical streak bonuses" của meta
 Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experience](https://wiki.leagueoflegends.com/en-us/TFT:Experience): `verified` cho số trong bảng, "4 gold = 4 XP" và "2 XP free at end of round". Trang đã lưu không có mục lịch sử bản vá, nên không xác định được bảng nào áp dụng cho Set 18. Kiểm tra chuỗi chính xác "48 XP", "76 XP", "84 XP": không có trong trang này; "60 XP" và "68 XP" có trong bảng. Trạng thái: **conflict** với đoạn tìm kiếm, cần xác nhận set (U1).
 
 **Mục tiêu level theo stage**
-- Metabot, Set 18 leveling guide (`single-source`, đăng 2026-10-24): "level 4 ở 2-1, 5 ở 2-5, 6 ở 3-2, 7 ở 4-1, 8 ở 4-5 hoặc 5-1 khi rolldown, 9 ở 5-5". Trang ghi số liệu theo patch 16.20; xem mục 3 về nhãn này.
+- Metabot, Set 18 leveling guide (`single-source`, đăng 2026-10-24): "level 4 ở 2-1, 5 ở 2-5, 6 ở 3-2, 7 ở 4-1, 8 ở 4-5 hoặc 5-1 khi rolldown, 9 ở 5-5". Trang ghi số liệu theo patch 16.20; xem mục xung đột 6 về nhãn này.
 - `LEVEL_BY_STAGE` trong `rules.js` đặt level 8 ở stage 4 (xem G11). Đây là điểm lệch với metabot.
 
 **Hiện tại engine làm gì**
