@@ -1,4 +1,4 @@
-import { BUY_XP_COST, LEVEL_BY_STAGE, LEVEL_BY_STAGE_GUIDE, POOL_COPIES, REROLL_COST } from "../data/rules.js"
+import { BUY_XP_COST, LEVEL_BY_STAGE, LEVEL_BY_STAGE_GUIDE, REROLL_COST, DEFAULT_PROFILE } from "../data/profile.js"
 import { hitChance, hitChanceOverRolls, interestGold } from "./odds.js"
 
 export const HOLD = 0
@@ -24,8 +24,9 @@ export function actionName(code) {
 //
 // When `trace` is an array, every candidate considered is pushed into it with the
 // numbers behind its score. The hot path passes no trace and allocates nothing extra.
-export function decide(state, out, trace = null, rules) {
+export function decide(state, out, trace = null, rules, profile) {
   const r = rules || NO_RULES
+  const p = profile || DEFAULT_PROFILE
   out.action = HOLD
   out.slot = -1
   out.score = 0
@@ -89,9 +90,9 @@ export function decide(state, out, trace = null, rules) {
       // The target's copy count applies only to the target unit itself.
       const copiesFromTarget = isTarget ? target.copiesLeft ?? 0 : 0
       const copiesSource = copiesFromTarget > 0 ? "target" : unit.poolCopies != null ? "poolCopies" : unit.takenByOthers != null ? "pool - copiesOwned - takenByOthers" : "pool - copiesOwned (ước lượng)"
-      const copiesLeft = Math.max(0, copiesFromTarget || (POOL_FALLBACK(unit) - owned - taken))
+      const copiesLeft = Math.max(0, copiesFromTarget || (POOL_FALLBACK(unit, p) - owned - taken))
       const champsAtCost = unit.champsAtCost
-      const hit = hitChance(level, unit.cost, copiesLeft, champsAtCost)
+      const hit = hitChance(level, unit.cost, copiesLeft, champsAtCost, p)
       const interestLoss = interestGold(gold) - interestGold(gold - unit.cost)
       let score = priority * (1 + owned) * (0.4 + hit)
       if (!urgent) score -= interestLoss * 0.35
@@ -156,13 +157,13 @@ export function decide(state, out, trace = null, rules) {
   const rollAffordable = !!target?.cost && gold >= rollNeeds
   let rollHit = 0
   if (target && target.cost && rollAffordable && !targetInShop) {
-    rollHit = hitChance(level, target.cost, target.copiesLeft, target.champsAtCost)
+    rollHit = hitChance(level, target.cost, target.copiesLeft, target.champsAtCost, p)
     rollScore = rollHit * target.priority * (urgent ? 2 : 0.8)
     if (!urgent && freeRolls === 0) rollScore -= 0.5
   }
   if (trace) {
     const rolls = freeRolls + (gold > reserve ? ((gold - reserve) / REROLL_COST) | 0 : 0)
-    const hitWithin = target && target.cost && !targetInShop ? hitChanceOverRolls(level, target.cost, target.copiesLeft, target.champsAtCost, rolls) : 0
+    const hitWithin = target && target.cost && !targetInShop ? hitChanceOverRolls(level, target.cost, target.copiesLeft, target.champsAtCost, rolls, p) : 0
     trace.push({
       action: "roll",
       score: rollScore,
@@ -250,8 +251,8 @@ export function decide(state, out, trace = null, rules) {
   return out
 }
 
-function POOL_FALLBACK(unit) {
-  return unit.poolCopies ?? POOL_COPIES[unit.cost] ?? 0
+function POOL_FALLBACK(unit, p) {
+  return unit.poolCopies ?? p.poolCopies[unit.cost] ?? 0
 }
 
 function wantedInShop(shop, id) {

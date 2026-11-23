@@ -1,14 +1,16 @@
-import { CHAMPS_PER_COST, POOL_COPIES, SHOP_ODDS } from "../data/rules.js"
+import { DEFAULT_PROFILE } from "../data/profile.js"
 
 // Chance a 5-slot shop shows a specific champion at least once.
 // Slot rolls are treated as independent, which matches the usual TFT calculator.
-export function hitChance(level, cost, copiesLeft, champsAtCost = CHAMPS_PER_COST[cost] ?? 1) {
-  if (level < 1 || level >= SHOP_ODDS.length) return 0
-  if (cost < 1 || cost > 5 || copiesLeft <= 0) return 0
-  const pCost = SHOP_ODDS[level][cost - 1]
+export function hitChance(level, cost, copiesLeft, champsAtCost, profile) {
+  const p = profile || DEFAULT_PROFILE
+  const champs = champsAtCost === undefined ? (p.champsPerCost[cost] ?? 1) : champsAtCost
+  if (level < 1 || level >= p.shopOdds.length) return 0
+  if (cost < 1 || cost > p.maxCost || copiesLeft <= 0) return 0
+  const pCost = p.shopOdds[level][cost - 1]
   if (pCost <= 0) return 0
-  const pool = POOL_COPIES[cost]
-  const others = Math.max(0, champsAtCost - 1) * pool
+  const pool = p.poolCopies[cost]
+  const others = Math.max(0, champs - 1) * pool
   const total = copiesLeft + others
   if (total <= 0) return 0
   const pSlot = pCost * (copiesLeft / total)
@@ -17,9 +19,9 @@ export function hitChance(level, cost, copiesLeft, champsAtCost = CHAMPS_PER_COS
 }
 
 // Chance of hitting the champion at least once in `rolls` independent shops.
-export function hitChanceOverRolls(level, cost, copiesLeft, champsAtCost, rolls) {
+export function hitChanceOverRolls(level, cost, copiesLeft, champsAtCost, rolls, profile) {
   if (!(rolls > 0)) return 0
-  return 1 - Math.pow(1 - hitChance(level, cost, copiesLeft, champsAtCost), rolls)
+  return 1 - Math.pow(1 - hitChance(level, cost, copiesLeft, champsAtCost, profile), rolls)
 }
 
 export function interestGold(gold) {

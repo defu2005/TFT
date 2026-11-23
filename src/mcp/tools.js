@@ -5,7 +5,7 @@ import { z } from "zod"
 import { decide } from "../engine/decide.js"
 import { explain, CAVEAT_ODDS } from "../engine/reason.js"
 import { hitChance, interestGold } from "../engine/odds.js"
-import * as rules from "../data/rules.js"
+import * as rules from "../data/profile.js"
 
 const HERE = path.dirname(fileURLToPath(import.meta.url))
 const SET_FILE = path.join(HERE, "..", "data", "set17.json")

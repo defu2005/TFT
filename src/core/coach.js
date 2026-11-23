@@ -13,6 +13,7 @@ export function createCoach({
   onError = null,
   autoLine = null,
   rules = null,
+  profile = null,
   now = () => Date.now(),
 } = {}) {
   if (!source) throw new Error("createCoach needs a source")
@@ -66,7 +67,7 @@ export function createCoach({
       if (Array.isArray(fields.bench)) input.bench = applyLines(fields.bench, lines, auto)
       const trace = []
       const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
-      decide(input, out, trace, rules)
+      decide(input, out, trace, rules, profile)
       const reason = explain(input, out, trace)
       if (auto && auto.size) reason.factors.autoLine = Object.fromEntries(auto)
       if (rules) reason.factors.rules = rules
