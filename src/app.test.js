@@ -490,3 +490,16 @@ test("a shop slot the reader could not read is named in the caveat, and the buy 
   assert.equal(record.decision.action, "buy")
   assert.equal(record.decision.slot, 0)
 })
+
+test("the same frame without an unread-slot flag has no unread-slot caveat", async () => {
+  const fixture = JSON.parse(fs.readFileSync(path.join(import.meta.dirname, "data", "fixtures", "handread-18-6.json"), "utf8"))
+  fixture.frames = [fixture.frames[2]]
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-noflag-"))
+  const file = path.join(dir, "noflag.json")
+  fs.writeFileSync(file, JSON.stringify(fixture))
+  const { coach } = createApp(loadConfig({ TFT_SOURCE: "replay", TFT_REPLAY: file, TFT_LOG: path.join(dir, "d.jsonl") }))
+  const record = await coach.tick()
+  assert.equal(record.reason.factors.shopKnown, true)
+  assert.doesNotMatch(record.reason.text, /ô shop chưa đọc được/)
+  assert.ok(!record.reason.caveats.some((c) => c.includes("ô shop chưa đọc")))
+})
