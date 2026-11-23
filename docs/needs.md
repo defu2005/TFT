@@ -18,6 +18,7 @@ File này ghi mọi thứ engine cần từ người dùng hoặc phiên ingest,
 
 **Đề xuất từ nghiên cứu (`docs/tft-strategy.md`), chờ người dùng xác nhận. Chưa đóng mục nào:**
 - **U1 (đề xuất):** bảng XP theo level từ wiki Riot, TFT:Experience (`verified`, không ghi set): 2→3 = 2 XP, 3→4 = 6, 4→5 = 10, 5→6 = 20, 6→7 = 36, 7→8 = 60, 8→9 = 68, 9→10 = 68. Đoạn tìm kiếm cho Set 14 ghi khác (7→8 = 48, 8→9 = 76). Cần xác nhận bảng nào áp dụng cho Set 18.
+- **U2 (kiểm tra lại, bảng dữ liệu):** trang metabot Set 18 leveling (đăng 2026-10-24) không có bảng đầy đủ. Chỉ có câu "on patch 16.20, level 8 shows 4-costs 30%", "level 9 shows 4-costs 33% and 5-costs 15%", "level 10 shows 4-costs 40% and 5-costs 25%". Các số này khớp `rules.js` ở level 10 và 11 và khớp metabot ở level 9. Bảng Set 17 trong `docs/tft-knowledge.md` chỉ có level 6–11; level 1–5 không có nguồn trong file đó. Seemeta ghi odds của Set 18 chưa có trong client data. Cùng một site nên các số của metabot không độc lập.
 - **U2 (đề xuất):** bảng odds của metabot (`single-source`, không ghi set) khớp Set 17 trong `docs/tft-knowledge.md` ở level 8 (15/20/32/30/3) và level 9 (10/17/25/33/15). `rules.js` lệch ở hai level này và khớp ở level 4–7. Trang metabot ghi rõ đây là "Approximate shop odds by level... use them as a map, not a precise contract" (xấp xỉ, dùng như bản đồ, không phải hợp đồng chính xác). Ô 4 vàng ở level 8: `rules.js` 24% (khớp số Set 14 trong đoạn tìm kiếm), metabot 30%. Đề xuất: dùng bảng của metabot cho level 8 và 9 sau khi xác nhận set.
 - **U4 (đề xuất):** chưa có nguồn xác nhận. Trạng thái `pending`.
 - **U5 (đề xuất):** chưa có nguồn. Trạng thái `pending`.
@@ -54,6 +55,7 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | I5 | Đánh dấu giá trị ước lượng trong `missing` (gold, level, stage khi không có HUD), và cho biết tướng shop không rõ cost đang được gán cost 1 mặc định (`standaloneSource.js`) | Tránh khuyến nghị lên level dựa trên vàng bịa; tránh mua/bán sai giá | **mở** |
 | I7 | Gửi `freeRolls` (số lượt roll miễn phí còn lại) | Engine đã hỗ trợ nhưng không nguồn nào gửi | **mở** |
 | I6 | Tên tướng trong `championName` và `id` của HUD shop khớp nhau | Nếu khác, `copiesOwned` luôn bằng 0 | **mở** |
+| I8 | Nguồn gửi `set` và `patch` (phiên bản bản vá đang chạy) | Không có nó, engine không biết đang dùng đúng hồ sơ; `TFT_PROFILE_FILE` và `TFT_PATCH` chọn bằng tay | **mở** |
 
 ## 3. Quyết định đã tự đưa ra
 
@@ -74,5 +76,6 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | 2026-11-23 | Kiểm tra line tự động trên file set thật qua `createApp` (một khung replay, mua tướng cùng tộc với bàn). Chưa chuyển ngưỡng sang `rules.js` vì không đổi hành vi và chưa có gì để tinh chỉnh (xem U8) | `cad25e9` |
 | 2026-11-23 | Hiển thị xác suất trong toàn bộ ngân sách roll (`rolls`, `hitWithin`) trong trace và lý do; không đổi điểm, nên không đổi quyết định | `fdabca4` |
 | 2026-11-23 | Thêm ba quy tắc U9 sau `TFT_RULES`, mặc định tắt; test ghim hành vi hiện tại và kiểm tra từng quy tắc bật | `eba636a` |
+| 2026-11-23 | Đưa bảng dữ liệu vào `profile` (mặc định từ `rules.js`), thêm `TFT_PROFILE_FILE` và `TFT_PATCH` với bản vá chồng lên nhau; mặc định tắt | `7494f0b`, `2f50e6c` |
 
-Giới hạn đã biết: `tft_evaluate_state` không dùng `TFT_RULES` và line tự động; đặt priority 0 thủ công không loại được tướng đang có line tự động.
+Giới hạn đã biết: `tft_evaluate_state` và các công cụ `tft_rules`, `tft_hit_chance` không dùng `TFT_RULES`, `TFT_PROFILE_FILE`, `TFT_PATCH` và line tự động; chúng đọc bảng mặc định của `rules.js`; đặt priority 0 thủ công không loại được tướng đang có line tự động.

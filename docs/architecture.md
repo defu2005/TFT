@@ -78,6 +78,8 @@ Schema chưa phải chuẩn công khai, có thể thay đổi.
 | `TFT_INTERVAL_MS` | `250` | chu kỳ vòng lặp |
 | `TFT_AUTO_LINE` | `0` | `1` bật line tự động từ bàn và tộc; cần `TFT_SET_FILE` |
 | `TFT_SET_FILE` | (trống) | file dữ liệu set (cùng cấu trúc `src/data/set17.json`) cho line tự động |
+| `TFT_PROFILE_FILE` | (trống) | file hồ sơ set (bảng odds, pool, số tướng theo cost, `maxCost`, danh sách bản vá chồng lên nhau). Trống thì dùng `rules.js` |
+| `TFT_PATCH` | (trống, cần `TFT_PROFILE_FILE`) | phiên bản bản vá để áp dụng từ file hồ sơ; trống thì lấy bản mới nhất (so số theo thứ tự, 16.9 trước 16.20) |
 | `TFT_RULES` | (trống) | danh sách tên, cách nhau bằng dấu phẩy, bật quy tắc U9: `keepInterest`, `earlyLevel`, `guideLevels`. Tên lạ làm app báo lỗi. `tft_evaluate_state` không dùng quy tắc này |
 
 
