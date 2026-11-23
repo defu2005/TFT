@@ -390,15 +390,27 @@ test("omitted gold and level keys with free rolls decide nothing", async () => {
           hp: 80,
           stage: 3,
           freeRolls: 2,
-          target: { id: "DA_18_Ivern", cost: 1, copiesLeft: 10, priority: 1, champsAtCost: 13 },
+          target: { id: "DA_18_Zed", cost: 1, copiesLeft: 10, priority: 1, champsAtCost: 13 },
+          shop: [{ id: "DA_18_Ivern", cost: 1, copiesOwned: 0, priority: 1 }, null, null, null, null],
+        },
+        {
+          hp: 80,
+          stage: 3,
+          gold: 30,
+          freeRolls: 0,
+          target: { id: "DA_18_Zed", cost: 1, copiesLeft: 10, priority: 1, champsAtCost: 13 },
           shop: [{ id: "DA_18_Ivern", cost: 1, copiesOwned: 0, priority: 1 }, null, null, null, null],
         },
       ],
     }),
   )
   const { coach } = createApp(replayConfig({ TFT_REPLAY: fixture }))
-  const record = await coach.tick()
-  assert.equal(record.decision.action, "hold")
+  const first = await coach.tick()
+  assert.equal(first.decision.action, "hold")
+  const second = await coach.tick()
+  assert.notEqual(second.decision.action, 1)
+  assert.equal(second.reason.factors.level, null)
+  assert.equal(second.decision.hit, null)
 })
 
 // Level unknown (HUD): the buy is still allowed, but no probability is reported or computed.

@@ -66,10 +66,10 @@ export function createCoach({
         shop: applyLines(fields.shop, lines, auto),
         target: target ?? fields.target ?? null,
       }
-      // A null gold or level from the source is unknown (HUD): the flag is set and the value stays null in the record.
+      // A null or omitted gold or level from the source is unknown (HUD): the flag is set and the value stays as sent in the record.
       // decide reads null as 0 only behind the flag, so nothing is decided on it.
-      if (fields.gold === null) input.hudGoldUnknown = true
-      if (fields.level === null) input.hudLevelUnknown = true
+      if (fields.gold == null) input.hudGoldUnknown = true
+      if (fields.level == null) input.hudLevelUnknown = true
       if (Array.isArray(fields.bench)) input.bench = applyLines(fields.bench, lines, auto)
       const trace = []
       const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
