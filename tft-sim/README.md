@@ -157,6 +157,19 @@ Doc ket qua:
 
 Closed loop universal 40 epoch, 200 lobby (seed 10000-10199): 0 illegal tren A va B; dong y tren trang thai clone: PASS 99%, BUY_SHOP 98%, BUY_XP 99.8%, REROLL 97%, PICK_AUGMENT 61%, REROLL_AUGMENT 0% (n=48).
 
+## Tier augment (buoc 3)
+
+Them tier 3 augment dang duoc chao (truong `tiers`, ngoai `aux`, 20 cot giu nguyen). Du lieu thu lai bang `scripts/collect_tiers.py`, so dong khop lan truoc.
+
+| Chi so (A) | Truoc | Sau |
+|---|---|---|
+| PICK_AUGMENT dong y (val, >=2 hop le) | 61% | 99,9% |
+| REROLL_AUGMENT dong y (val, n=23) | 0% | 96% (rat it mau) |
+| Closed loop 2000 lobby, diff vs scripted | +0,082 [0,005; 0,157] | +0,085 [0,011; 0,160] |
+| Closed loop, dong y PICK_AUGMENT / REROLL_AUGMENT tren trang thai clone | 61% / 0% | 99,99% / 97% (n=524) |
+
+**Ket luan:** tier augment sua duoc hanh vi augment, nhung KHONG thay doi chenh lech so voi scripted. Chenh lech nay khong do thieu augment. Null (scripted vs scripted) la +0,034, nen phan con lai khong ro nguyen nhan.
+
 ## Trang thai cong viec
 
 - Test cua tft-sim: 9 pass (chay tren toy env, co loai tru seat). Toy env chi kiem chung harness.
