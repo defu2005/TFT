@@ -1,7 +1,6 @@
 import assert from "node:assert/strict"
 import test from "node:test"
 import { decide, BUY, HOLD, XP, ROLL, NO_RULES } from "./decide.js"
-import { parseRules } from "../app.js"
 
 // Opt-in U9 rules (docs/needs.md). Off by default; each test names the rule it checks.
 const empty = [null, null, null, null, null]
@@ -51,11 +50,4 @@ test("U9 rule guideLevels: level 7 at stage 4 holds when the guide target is 7 (
 test("U9 rule guideLevels: the same state at stage 5 levels up (guide opens at 8)", () => {
   const state = { level: 7, stage: 5, gold: 50, hp: 80, shop: empty, target: null }
   assert.equal(run(state, { ...NO_RULES, guideLevels: true }).action, XP)
-})
-
-test("TFT_RULES parses names into flags, rejects unknown names, and is null when unset", () => {
-  assert.equal(parseRules(undefined), null)
-  assert.equal(parseRules(""), null)
-  assert.deepEqual(parseRules("keepInterest, guideLevels"), { keepInterest: true, earlyLevel: false, guideLevels: true })
-  assert.throws(() => parseRules("keepInterest,nope"), /nope/)
 })

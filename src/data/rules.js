@@ -25,7 +25,9 @@ export const CHAMPS_PER_COST = [0, 13, 13, 13, 12, 8]
 export const LEVEL_BY_STAGE = [0, 2, 4, 6, 8, 8, 9, 9]
 
 // Opening level per stage from the metabot Set 18 guide (single-source, patch 16.20).
-// The guide gives level 7 at 4-1 and 8 at 5-1; no source here sends `round`, so the stage's opening level stands in.
+// The guide gives level 7 at 4-1, 8 at 4-5 or 5-1, and 5 at 2-5 and 6 at 3-2.
+// Stage 3 uses 6, the 3-2 level, not the opening level (5 at 2-5); the table reads 8 as stage 5.
+// No source here sends `round`, so the stage's opening level stands in.
 // Used only when TFT_RULES includes guideLevels.
 export const LEVEL_BY_STAGE_GUIDE = [0, 2, 4, 6, 7, 8, 9, 9]
 
