@@ -2,6 +2,7 @@ import path from "node:path"
 import { fileURLToPath } from "node:url"
 import fs from "node:fs"
 import { createCoach } from "./core/coach.js"
+import { buildProfile } from "./data/profileFile.js"
 import { autoLine, createSetIndex } from "./engine/autoline.js"
 import { createDecisionLog } from "./log/decisionLog.js"
 import { captureSource, liveSource, replaySource, ramSource, standaloneSource } from "./ingest/sources.js"
@@ -16,6 +17,8 @@ const SOURCES = ["live", "replay", "capture", "ram", "standalone", "hybrid"]
 //   TFT_LOG          decision log path (default: logs/decisions.jsonl)
 //   TFT_INTERVAL_MS  tick interval (default: 250)
 //   TFT_RULES        comma list of opt-in U9 rules: keepInterest, earlyLevel, guideLevels (default: none)
+//   TFT_PROFILE_FILE set file with base tables and patch overlays (default: rules.js)
+//   TFT_PATCH        patch version to apply from that file (default: the latest)
 const KNOWN_RULES = ["keepInterest", "earlyLevel", "guideLevels"]
 
 // Returns null when unset; otherwise flags for the named rules. Unknown names throw.
@@ -45,6 +48,8 @@ export function loadConfig(env = process.env) {
     autoLine: env.TFT_AUTO_LINE === "1",
     setFile: env.TFT_SET_FILE || null,
     rules: parseRules(env.TFT_RULES),
+    profileFile: env.TFT_PROFILE_FILE || null,
+    patch: env.TFT_PATCH || null,
   }
 }
 
@@ -75,8 +80,13 @@ export function createApp(config = loadConfig(), { onTick = null, onError = null
     const index = createSetIndex(JSON.parse(fs.readFileSync(config.setFile, "utf8")))
     auto = (state) => autoLine(index, state)
   }
+  if (config.patch && !config.profileFile) throw new Error("TFT_PATCH cần TFT_PROFILE_FILE")
+  let profile = null
+  if (config.profileFile) {
+    profile = buildProfile(JSON.parse(fs.readFileSync(config.profileFile, "utf8")), config.patch)
+  }
   const source = makeSource(config)
   const logger = createDecisionLog(config.logPath)
-  const coach = createCoach({ source, logger, intervalMs: config.intervalMs, onTick, onError, autoLine: auto, rules: config.rules ?? null })
+  const coach = createCoach({ source, logger, intervalMs: config.intervalMs, onTick, onError, autoLine: auto, rules: config.rules ?? null, profile })
   return { coach, source, logger, config }
 }

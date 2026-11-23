@@ -71,6 +71,13 @@ export function createCoach({
       const reason = explain(input, out, trace)
       if (auto && auto.size) reason.factors.autoLine = Object.fromEntries(auto)
       if (rules) reason.factors.rules = rules
+      if (profile) {
+        reason.factors.profile = { set: profile.set, patch: profile.patch }
+        for (const note of profile.caveats) {
+          reason.caveats.push(note)
+          reason.text += ` (${note})`
+        }
+      }
       if (missing.length) {
         const note = `thiếu trường từ nguồn: ${missing.join(", ")}; đang dùng giá trị mặc định cho các trường này`
         reason.caveats.push(note)
@@ -157,6 +164,7 @@ export function createCoach({
         intervalMs,
         autoLine: !!autoLine,
         rules: rules ?? null,
+        profile: profile ? { set: profile.set, patch: profile.patch } : null,
       }
     },
 
