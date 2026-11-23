@@ -26,14 +26,34 @@ def test_seat_rotation_balances_groups():
 
 
 def test_placements_form_a_permutation_per_lobby():
-    res, _ = play_lobby(ToyEnv(), random_policy, random_policy, lobby_seed=3)
-    assert sorted(res.placements_a + res.placements_b) == [1, 2, 3, 4, 5, 6, 7, 8] or len(res.placements_a) == 4
-    # chi kiem tren tong: moi lobby xep hang 1..8 dung mot lan
     env = ToyEnv()
     env.reset(3)
     while not env.done():
-        env.step({i: random.Random(i).choice(env.legal(i)) for i in range(8)})
+        env.step({i: random.Random(i).choice(env.legal(i)) for i in env.alive()})
     assert sorted(env.placements().values()) == list(range(1, 9))
+
+
+def test_eliminated_seats_get_no_actions_and_are_ranked_last():
+    env = ToyEnv()
+    env.reset(11)
+    seen_dead = False
+    while not env.done():
+        # seat chan (0,2,4,6) mua de song; seat le (1,3,5,7) bo luot nen bi loai
+        actions = {}
+        for i in env.alive():
+            actions[i] = ACT_BUY if (i % 2 == 0 and ACT_BUY in env.legal(i)) else ACT_PASS
+        env.step(actions)
+        dead = set(range(8)) - set(env.alive())
+        if dead:
+            seen_dead = True
+            for i in dead:
+                assert env.legal(i) == []
+    assert seen_dead, "tran kiem tra phai co it nhat mot seat bi loai"
+    pl = env.placements()
+    assert sorted(pl.values()) == list(range(1, 9))
+    survivors = set(env.alive())
+    for dead_seat in set(range(8)) - survivors:
+        assert pl[dead_seat] > len(survivors)
 
 
 def test_identical_policies_give_no_difference():

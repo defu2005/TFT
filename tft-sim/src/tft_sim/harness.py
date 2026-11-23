@@ -47,7 +47,7 @@ def play_lobby(env: Env, policy_a: Policy, policy_b: Policy, lobby_seed: int) ->
     obs = env.reset(lobby_seed)
     trace: list = []
     while not env.done():
-        actions = {i: policies[i](obs[i], rngs[i]) for i in range(env.n_seats)}
+        actions = {i: policies[i](obs[i], rngs[i]) for i in env.alive()}
         trace.append(tuple(sorted(actions.items())))
         obs = env.step(actions)
     pl = env.placements()

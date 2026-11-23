@@ -16,7 +16,7 @@ def collect(env: Env, teacher: Policy, lobby_seeds: list[int]) -> list[dict]:
         obs = env.reset(ls)
         while not env.done():
             actions = {}
-            for i in range(env.n_seats):
+            for i in env.alive():
                 o = obs[i]
                 a = teacher(o, rngs[i])
                 rows.append({"lobby": ls, "seat": i, "group": groups[i], "obs": o, "action": a})
