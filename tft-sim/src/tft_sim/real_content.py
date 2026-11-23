@@ -38,3 +38,18 @@ def build_real_fullrecipe(mutator: str):
     out = content.model_copy(update={"items": items, "patch": f"CDragon-latest-18.7-{mutator}-fullrecipe"})
     out._placeholder_added = added  # ghi lai so cong thuc placeholder
     return out
+
+
+def build_real_set18_clean():
+    """Set 18 that, KHONG placeholder. Bo cac item co thanh phan 'TFT_Item_*' (vat pham Set 17 con sot trong
+    bo item cua file, lam thanh phan pha tron). Con lai: 10 thanh phan DA_Component_* va 55 cap, moi cap co cong thuc that.
+    Nhan: 'CDragon latest (18.7), Set 18 roster (TFTSet18), DA components only'."""
+    from tft_goat.env.items import components_and_recipes
+    content = build_real("TFTSet18")
+    items = {k: v for k, v in content.items.items()
+             if not any(c.startswith("TFT_Item_") for c in v.composition)
+             and not (k.startswith("TFT_Item_") and not v.composition)}
+    out = content.model_copy(update={"items": items, "patch": "CDragon-latest-18.7-TFTSet18-DAonly"})
+    comps, rec = components_and_recipes(out)
+    assert all(c.startswith("DA_") for c in comps), comps
+    return out

@@ -3,10 +3,10 @@ Giu nguyen flat (126), aux (20); them truong tiers (3) = tier 3 augment dang duo
 import sys, time
 import numpy as np
 from tft_sim.tftgoat import default_content, make_env, play, scripted_policy
-from tft_sim.real_content import build_real_fullrecipe
+from tft_sim.real_content import build_real, build_real_set18_clean
 
 which, start, stop, out = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
-content = build_real_fullrecipe(which)
+content = build_real_set18_clean() if which == "TFTSet18" else build_real(which)
 env = make_env(content)
 t0 = time.time()
 flats, auxs, masks, acts, seeds, seats, steps, tiers, unis = [], [], [], [], [], [], [], [], []

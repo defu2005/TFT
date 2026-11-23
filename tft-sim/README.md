@@ -35,23 +35,26 @@ Nguon: `cdragon_latest_fetched-2026-11-23.json` (18.7). Nhan: "CDragon latest (1
 
 **Dieu chinh EQUIP:**
 - Set 17: 10 thanh phan co so, 55/55 cap co cong thuc. 134/134 EQUIP tieu thu dung 2 thanh phan (`scripts/diag_equip_real.py`). Khong can sua noi dung.
-- Set 18: 20 thanh phan, **116/210 cap thieu cong thuc**. 34.433/34.456 EQUIP la no-op (cung loi nhu synthetic). Da them **cong thuc placeholder** `it_placeholder_<x>_<y>` (AD 0.1) cho 116 cap, nhan `-fullrecipe`. Sau khi sua: 135/135 EQUIP tieu thu (`scripts/diag_equip_real18.py`).
-- Ket qua Set 18 TRUOC khi sua (2,8 trieu dong test, 98% la EQUIP) KHONG dung; da luu thanh `s18_old_eqbug_*`.
+- Set 18: roster CDragon 18.7 tron hai ho thanh phan: `DA_Component_*` (Set 18) va `TFT_Item_*` (con sot tu Set 17). Ban goc co 20 thanh phan, 116/210 cap thieu cong thuc, 34.433/34.456 EQUIP la no-op. **Cach sua ban dau (them cong thuc placeholder `it_placeholder_<x>_<y>`, AD 0.1) bi RUT LAI**: do la noi dung bia, khong phai du lieu that. Cach dung (`build_real_set18_clean`, `scripts/diag_real_items.py`): loai item co thanh phan `TFT_Item_*` va item co so `TFT_Item_*`; chi giu thanh phan `DA_*`. Ket qua: 10 thanh phan, 55/55 cap co cong thuc that, 135/135 EQUIP tieu thu dung 2 thanh phan, khong placeholder.
+- Cac ket qua Set 18 TRUOC khi sua (2,8 trieu dong test, 98% la EQUIP) va ket qua dung placeholder **KHONG dung**; da luu thanh `s18_old_eqbug_*` va `s18fp_*`.
+- Bo chuan hoa: cot hang (sd < 1e-6) bi chia cho ~0. Cot `gods` hang tren synthetic nhung co do lech chuan ~0,5 tren noi dung that, gay z ~ 1e6 va sap REROLL xuong 0%. Da sua trong `bc_train.train` (sd = 1 cho cot hang). Ket qua 67% o ban cu la **artifact cua bo chuan hoa, da rut lai**.
 
-**Thu thap:** Set 17: train 40000-40399, val 40400-40499, test 41000-41199 (614k / 154k / 306k dong). Set 18 (da sua): train 40000-40399 (591k), test 41000-41199 (295k).
+**Thu thap:** Set 17: train 40000-40399, val 40400-40499, test 41000-41199 (614k / 154k / 306k dong). Set 18 (DA-only): train 40000-40399 (591k), test 41000-41199 (295k).
 Toc do: ~9 lobby/s tren noi dung that (scripted). Chay tuan tu: chay song song gay het bo nho.
 
 **Chuyen giao (uni 85 chieu, epoch 40, 5 seed, exact, >=2 hop le):**
 
-| dieu kien | overall | BUY_SHOP | BUY_XP | PASS | REROLL | PICK_AUGMENT | REROLL_AUGMENT |
+| dieu kien (5 seed, min-max) | overall | BUY_SHOP | BUY_XP | PASS | REROLL | PICK_AUGMENT | REROLL_AUGMENT |
 |---|---|---|---|---|---|---|---|
-| synthetic -> Set 17 | 67.4 [60.3, 77.2] | 82.9 | 62.7 [37.9, 99.6] | 68.7 [43.7, 88.3] | 0.0 | 92.2 | 34.4 [18.2, 73.6] |
-| Set 17 -> Set 17 | 100.0 | 99.8 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
-| Set 17 -> Set 18 (roster) | 99.3 [98.4, 99.9] | 99.7 | 99.6 | 97.9 [93.8, 100] | 100.0 | 100.0 | 100.0 |
-| Set 18 -> Set 18 | 100.0 [99.9, 100.0] | 99.7 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
+| synthetic -> Set 17 | 90.0 (89.4-91.0) | 88.8 | 94.8 | 80.5 | 82.0 | 92.2 | 33.8 |
+| Set 17 -> Set 17 | 99.95 | 99.8 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
+| Set 17 -> Set 18 (DA-only roster) | 99.3 (98.5-99.9) | 99.7 | 99.7 | 97.9 | 100.0 | 100.0 | 100.0 |
+| Set 18 -> Set 18 (DA-only) | 99.95 | 99.7 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
+
+Ten hang: "Set 17 -> Set 18" nghia la huan luyen tren Set 17, kiem tra tren Set 18 (DA-only). Ket qua file: `results/fixed/real/transfer_real.json`.
 
 Doc ket qua:
-- **Synthetic khong chuyen sang noi dung that** (67%, REROLL 0%). Day la thong tin quan trong nhat: huan luyen tren 8 tuong va 2 trait khong phu duoc phan phoi that.
+- **Synthetic chuyen sang Set 17 o muc ~90%** (sau khi sua bo chuan hoa), nhung REROLL_AUGMENT chi ~34% va PASS/REROLL ~80%. Synthetic 8 tuong va 2 trait khong phu duoc phan phoi that, nen hanh vi kho chuyen nhat la REROLL_AUGMENT va PASS.
 - **Trong noi dung that, metric bao hoa** (~100%). Quyet dinh teacher gan nhu ham xac dinh cua dac trung; chi 1,5% dong test co dac trung trung voi train (khong phai ro ri lon). Vi vay phep so "Set 17 -> Set 18" (99,3%) **khong phan biet duoc** nhieu: no chi cho biet universal cua Set 17 gan nhu du cho roster Set 18 duoi cung quy tac.
 - Rut lai: "Set 18 tuong duong" khong duoc chung minh tren TFT that; day chi la teacher scripted tren ban dung tuong ung voi CDragon 18.7.
 

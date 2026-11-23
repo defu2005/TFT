@@ -28,7 +28,8 @@ def features(npz, variant: str) -> np.ndarray:
 def train(X: np.ndarray, M: np.ndarray, y: np.ndarray, epochs: int = 3, batch: int = 4096, lr: float = 1e-3,
           seed: int = 0) -> MaskedMLP:
     torch.manual_seed(seed)
-    mu, sd = X.mean(0), X.std(0) + 1e-6
+    mu, sd = X.mean(0), X.std(0)
+    sd = np.where(sd < 1e-6, 1.0, sd)  # cot hang so: khong chia cho ~0 (xem README, muc noi dung that)
     Xt = torch.from_numpy(((X - mu) / sd).astype(np.float32))
     Mt = torch.from_numpy(np.asarray(M).astype(bool))
     yt = torch.from_numpy(y)

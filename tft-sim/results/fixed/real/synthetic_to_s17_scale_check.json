@@ -1,0 +1,56 @@
+{
+  "seed0_floor_sd": {
+    "overall": 0.9086072716533632,
+    "BUY_SHOP": 0.8907,
+    "BUY_XP": 0.9403,
+    "PASS": 0.8566,
+    "REROLL": 0.7973,
+    "PICK_AUGMENT": 0.9498,
+    "REROLL_AUGMENT": 0.2364
+  },
+  "seed0_floor_sd_zero_constant_cols": {
+    "overall": 0.8754767837013805,
+    "BUY_SHOP": 0.8123,
+    "BUY_XP": 0.952,
+    "PASS": 0.7825,
+    "REROLL": 0.6944,
+    "PICK_AUGMENT": 0.9548,
+    "REROLL_AUGMENT": 0.2
+  },
+  "seed1_floor_sd": {
+    "overall": 0.8933543527180311,
+    "BUY_SHOP": 0.8788,
+    "BUY_XP": 0.9478,
+    "PASS": 0.7969,
+    "REROLL": 0.7654,
+    "PICK_AUGMENT": 0.9623,
+    "REROLL_AUGMENT": 0.7364
+  },
+  "seed1_floor_sd_zero_constant_cols": {
+    "overall": 0.7763307308672992,
+    "BUY_SHOP": 0.7236,
+    "BUY_XP": 0.772,
+    "PASS": 0.8561,
+    "REROLL": 0.2759,
+    "PICK_AUGMENT": 0.911,
+    "REROLL_AUGMENT": 0.7818
+  },
+  "seed2_floor_sd": {
+    "overall": 0.8948933709907534,
+    "BUY_SHOP": 0.8869,
+    "BUY_XP": 0.9785,
+    "PASS": 0.7139,
+    "REROLL": 0.9172,
+    "PICK_AUGMENT": 0.7892,
+    "REROLL_AUGMENT": 0.3727
+  },
+  "seed2_floor_sd_zero_constant_cols": {
+    "overall": 0.8791413109939978,
+    "BUY_SHOP": 0.8083,
+    "BUY_XP": 0.9623,
+    "PASS": 0.702,
+    "REROLL": 0.9816,
+    "PICK_AUGMENT": 0.7946,
+    "REROLL_AUGMENT": 0.3
+  }
+}
