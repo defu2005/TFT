@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import test from "node:test"
-import { decide, actionName, BUY, SELL, ROLL } from "./decide.js"
+import { decide, actionName, BUY, SELL, ROLL, HOLD } from "./decide.js"
 
 // Seeded generator so every run checks the same 2,000 states.
 function mulberry32(seed) {
@@ -86,6 +86,14 @@ test("engine invariants hold on 2,000 seeded states", () => {
       assert.ok(!(unit.priority > 0), `SELL of a line unit: ${where()}`)
     }
     counts[actionName(out.action)]++
+    if (out.action === HOLD) {
+      for (const c of trace) {
+        if (c.action === "buy" && c.score > 0 && c.note === "") assert.fail(`HOLD while a buy is available: ${where()}`)
+        if (c.action === "sell") assert.ok(!(c.score > 0), `HOLD while a sell is available: ${where()}`)
+        if (c.action === "xp") assert.ok(c.score <= 0.5, `HOLD while xp is above threshold: ${where()}`)
+        if (c.action === "roll") assert.ok(c.score <= 0.45, `HOLD while roll is above threshold: ${where()}`)
+      }
+    }
     if (out.action === ROLL) {
       const roll = trace.find((c) => c.action === "roll")
       for (const c of trace) {

@@ -14,7 +14,9 @@ export function actionName(code) {
 }
 
 // Fills `out` and returns it. No network, no model call.
-// state.shop is a 5-slot array of { id, cost, copiesOwned, priority, poolCopies? } or null.
+// state.shop is a 5-slot array of { id, cost, copiesOwned, priority, poolCopies?, takenByOthers? } or null.
+// state.board, state.bench (fixed length, null = empty) and state.freeRolls are optional; absent means unknown.
+// state.bench units may carry sellValue; a sell needs it.
 // priority > 0 means the unit is in the line we are playing.
 //
 // When `trace` is an array, every candidate considered is pushed into it with the
@@ -160,6 +162,9 @@ export function decide(state, out, trace = null) {
     })
   }
 
+  const xpLive = xpScore > 0.5 ? xpScore : 0
+  const rollLive = rollScore > 0.45 ? rollScore : 0
+
   let sellScore = 0
   let sellBench = -1
   let sellGold = -1
@@ -190,26 +195,26 @@ export function decide(state, out, trace = null) {
   } else if (trace) {
     trace.push({ action: "sell", score: 0, note: "không có dữ liệu bench" })
   }
-  if (bestBuy <= 0 && sellScore > 0 && sellScore >= xpScore && sellScore >= rollScore) {
+  if (bestBuy <= 0 && sellScore > 0 && sellScore >= xpLive && sellScore >= rollLive) {
     out.action = SELL
     out.bench = sellBench
     out.score = sellScore
     return out
   }
 
-  if (bestBuy >= xpScore && bestBuy >= rollScore && bestBuy > 0) {
+  if (bestBuy > 0 && bestBuy >= xpLive && bestBuy >= rollLive) {
     out.action = BUY
     out.slot = bestSlot
     out.score = bestBuy
     out.hit = bestHit
     return out
   }
-  if (xpScore >= rollScore && xpScore > 0.5) {
+  if (xpLive > 0 && xpLive >= rollLive) {
     out.action = XP
     out.score = xpScore
     return out
   }
-  if (rollScore > 0.45) {
+  if (rollLive > 0) {
     if (keepSlot >= 0) {
       out.action = BUY
       out.slot = keepSlot
