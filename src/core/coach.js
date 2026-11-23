@@ -101,7 +101,7 @@ export function createCoach({
       const unknown = [input.hudGoldUnknown ? "gold" : null, input.hudLevelUnknown ? "level" : null].filter(Boolean)
       if (missing.length || unknown.length) {
         // Source errors (ram-*) are not fields: they are reported as missing, not as defaulted values.
-        const defaulted = missing.filter((f) => !unknown.includes(f) && !/^ram-/.test(f))
+        const defaulted = missing.filter((f) => !unknown.includes(f) && !/^ram-/.test(f) && f !== "shop" && f !== "snapshot")
         const parts = []
         if (missing.length) parts.push(`thiếu trường từ nguồn: ${missing.join(", ")}`)
         if (defaulted.length) parts.push(`đang dùng giá trị mặc định cho ${defaulted.join(", ")}`)

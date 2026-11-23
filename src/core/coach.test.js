@@ -94,3 +94,19 @@ test("a roll with an unread shop slot says the roll discards that slot; a buy on
   assert.equal(c2.getState().decision.slot, 1)
   assert.doesNotMatch(c2.getState().reason.text, /roll sẽ bỏ/)
 })
+
+test("a shop with an unread slot is reported as unread, not as a defaulted field; a missing snapshot is a missing source", async () => {
+  const state = {
+    level: 7, gold: 30, hp: 80, stage: 4, freeRolls: 0,
+    shop: [{ id: "DA_18_Ornn", cost: 1, copiesOwned: 0, priority: 1, price: 1 }, null, null, null, null],
+    shopUnknownSlots: [4],
+    missing: ["shop", "snapshot"],
+    target: { id: "DA_18_Ornn", cost: 1, copiesLeft: 9, champsAtCost: 13, priority: 5 },
+  }
+  const coach = createCoach({ source: { kind: "standalone", read: async () => JSON.parse(JSON.stringify(state)) } })
+  await coach.tick()
+  const text = coach.getState().reason.text
+  assert.match(text, /thiếu trường từ nguồn: shop, snapshot/)
+  assert.doesNotMatch(text, /mặc định cho shop/)
+  assert.match(text, /ô shop chưa đọc được: ô 5/)
+})
