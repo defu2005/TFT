@@ -30,9 +30,13 @@ File này ghi mọi thứ engine cần từ người dùng hoặc phiên ingest,
 **U9 (đề xuất, tắt mặc định, chờ người dùng đồng ý).** Ba quy tắc sau đã được triển khai, bật bằng `TFT_RULES` (xem `docs/architecture.md`). Mặc định tắt, nên hành vi hiện tại không đổi. Bật sẽ đổi quyết định:
 1. Roll khi vàng còn từ 50 trở lên (giữ lãi tối đa, roll bằng phần vàng thừa).
 2. Lên level trước khi có 50 vàng ở các stage đầu (bỏ điều kiện `gold >= 50` ở stage sớm, theo bảng XP rẻ 2, 6, 10).
-3. Mốc level của guide metabot thay cho `LEVEL_BY_STAGE` (level 7 quanh 4-1, level 8 quanh 5-1). Đây là `single-source`. Bảng mốc `LEVEL_BY_STAGE_GUIDE` lấy level mở đầu của mỗi stage, vì engine không nhận `round`.
+3. Mốc level của guide metabot thay cho `LEVEL_BY_STAGE` (level 7 quanh 4-1, level 8 quanh 4-5 hoặc 5-1). Đây là `single-source`. Bảng `LEVEL_BY_STAGE_GUIDE` = [0, 2, 4, 6, 7, 8, 9, 9]: lấy level mở đầu của mỗi stage, vì engine không nhận `round`. Bảng đọc level 8 là mở đầu stage 5, và stage 3 là 6 (mốc 3-2, không phải mốc mở đầu 5 của 2-5).
+4. Dùng `hitWithin` (xác suất trong toàn bộ ngân sách roll) trong điểm roll. Chưa triển khai: hiện chỉ hiển thị.
 
-Hai cách đọc cần người dùng đổi nếu không đúng: (a) "giai đoạn đầu" là `stage <= 2` trong `earlyLevel`; (b) bảng mốc mở đầu theo stage trong `guideLevels`.
+Các cách đọc cần người dùng đổi nếu không đúng:
+(a) "giai đoạn đầu" là `stage <= 2` trong `earlyLevel`;
+(b) bảng mốc mở đầu theo stage trong `guideLevels`;
+(c) `earlyLevel` ở stage 2 trở xuống mua XP từ 4 vàng cho tới mục tiêu level, không kiểm tra lãi.
 
 Các test ghim hành vi hiện tại (`decide.test.js`, mục U9) và các test bật từng quy tắc (`rules.test.js`) đều có trong repo. Invariant chạy cả hai cách: tắt hết là 366/1485/65/35/49, bật cả ba là 363/1484/75/29/49.
 
@@ -67,7 +71,7 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | 2026-11-23 | Bán trước khi roll khi việc bán vẫn để đủ vàng roll; sửa văn bản "Mua trước rồi mới roll" để chỉ hiện khi thật sự có roll sau đó | `87987bc` |
 | 2026-11-23 | Line tự động (`src/engine/autoline.js`) chỉ bật khi `TFT_AUTO_LINE=1`, mặc định tắt để giữ hành vi hiện tại; chấm điểm theo bàn, không theo toàn bộ tướng sở hữu, để quân bench không khớp vẫn bán được | `8ee5511` |
 | 2026-11-23 | Kiểm tra line tự động trên file set thật qua `createApp` (một khung replay, mua tướng cùng tộc với bàn). Chưa chuyển ngưỡng sang `rules.js` vì không đổi hành vi và chưa có gì để tinh chỉnh (xem U8) | `cad25e9` |
-| 2026-11-23 | Thêm ba quy tắc U9 sau `TFT_RULES`, mặc định tắt; test ghim hành vi hiện tại và kiểm tra từng quy tắc bật | `eba636a` |
 | 2026-11-23 | Hiển thị xác suất trong toàn bộ ngân sách roll (`rolls`, `hitWithin`) trong trace và lý do; không đổi điểm, nên không đổi quyết định | `fdabca4` |
+| 2026-11-23 | Thêm ba quy tắc U9 sau `TFT_RULES`, mặc định tắt; test ghim hành vi hiện tại và kiểm tra từng quy tắc bật | `eba636a` |
 
 Giới hạn đã biết: `tft_evaluate_state` không dùng `TFT_RULES` và line tự động; đặt priority 0 thủ công không loại được tướng đang có line tự động.

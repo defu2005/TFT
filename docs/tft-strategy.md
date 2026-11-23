@@ -1,6 +1,6 @@
 # Chiến lược TFT: nguyên tắc, nguồn và khoảng trống của engine
 
-Trạng thái: **nháp**. Tài liệu này chỉ ghi nguyên tắc và số liệu từ nguồn. Không dùng để sửa `rules.js` hay engine ở vòng này.
+Trạng thái: **nháp**. Tài liệu này ghi nguyên tắc và số liệu từ nguồn. Vòng này không đổi bảng mặc định trong `rules.js`. Chỉ thêm ba quy tắc U9 tắt mặc định, bật bằng `TFT_RULES` (`keepInterest`, `earlyLevel`, `guideLevels`). `guideLevels` dùng bảng mốc level của metabot (mục 2).
 
 Nhãn trạng thái (theo `docs/tft-knowledge.md`):
 - `verified`: đã mở trang và đọc đúng con số đó.
@@ -77,6 +77,7 @@ Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experien
 - Điểm XP là `(wanted - level) * 1.1` (hoặc 0.6 khi HP thấp), và chỉ mua khi điểm > 0.5.
 
 **Khoảng trống**
+- `guideLevels` (bật bằng `TFT_RULES`) dùng mốc level của metabot thay `LEVEL_BY_STAGE`. Mốc stage 3 là 6, là mốc 3-2, không phải mốc mở đầu; xem comment trong `rules.js`.
 - Không có XP hiện tại và XP cần cho level tiếp theo, nên không biết còn bao nhiêu XP để lên level.
 - Điều kiện `gold >= 50` loại bỏ việc lên level sớm ở các vòng đầu, dù bảng wiki cho thấy các bước đầu rất rẻ (2, 6, 10 XP).
 
