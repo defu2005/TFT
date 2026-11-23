@@ -30,10 +30,10 @@ Ngày đăng và ngày cập nhật của các trang metabot (lấy từ thẻ m
 | Nguồn | 2–3 liên tiếp | 3–4 liên tiếp | 4 liên tiếp | 5 liên tiếp | 5+ liên tiếp | 6+ liên tiếp |
 | --- | --- | --- | --- | --- | --- | --- |
 | Wiki TFT:Gold, mục Income (trang hiện tại) | — | +1 | — | +2 | — | +3 |
-| Wiki TFT:Gold, ghi chú V10.8 | +1 (2–3) | — | +2 (4) | — | +3 (5+) | — |
-| Metabot, economy guide (`single-source`) | +1 | — | +2 | — | +3 (5+) | — |
+| Metabot, economy guide, "Typical streak bonuses" (`single-source`) | +1 | — | +2 | — | +3 (5+) | — |
+| Wiki TFT:Gold, ghi chú V10.8 (lịch sử, đã thay thế) | +1 (2–3) | — | +2 (4) | — | +3 (5+) | — |
 
-Ghi chú: mục Income của wiki ghi ngưỡng 3–4 và 5, 6+, khác với ghi chú V10.8 và metabot. Mục lịch sử bản vá mới nhất trên trang wiki là V10.12 (bán lại tướng 1 sao và 1 vàng), không đề cập chuỗi. Chưa biết giá trị nào áp dụng cho Set 18, nên trạng thái là `conflict`.
+Ghi chú: mục Income của wiki và bảng "Typical streak bonuses" của metabot khác nhau. Metabot ghi bảng này là "typical", không phải quy tắc chính thức. Mục lịch sử bản vá mới nhất trên trang wiki là V10.12 (bán lại tướng 1 sao và 1 vàng), không đề cập chuỗi. Chưa biết giá trị nào áp dụng cho Set 18, nên trạng thái là `conflict`.
 
 **Nguồn**
 - Riot wiki, TFT:Gold, [wiki.leagueoflegends.com/en-us/TFT:Gold](https://wiki.leagueoflegends.com/en-us/TFT:Gold): `verified` cho lãi và thu nhập thụ động. Trang không ghi rõ set; có mục Enchanted Wilds (Set 18) trong menu.
@@ -66,7 +66,7 @@ Ghi chú: mục Income của wiki ghi ngưỡng 3–4 và 5, 6+, khác với ghi
 | 8 → 9 | 68 |
 | 9 → 10 | 68 |
 
-Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experience](https://wiki.leagueoflegends.com/en-us/TFT:Experience): `verified` cho số trong bảng, "4 gold = 4 XP" và "2 XP free at end of round". Trang đã lưu không có mục lịch sử bản vá, nên không xác định được bảng nào áp dụng cho Set 18. Số 48/76/84 từ đoạn tìm kiếm Set 14 không xuất hiện trong trang này. Trạng thái: **conflict** với đoạn tìm kiếm, cần xác nhận set (U1).
+Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experience](https://wiki.leagueoflegends.com/en-us/TFT:Experience): `verified` cho số trong bảng, "4 gold = 4 XP" và "2 XP free at end of round". Trang đã lưu không có mục lịch sử bản vá, nên không xác định được bảng nào áp dụng cho Set 18. Kiểm tra chuỗi chính xác "48 XP", "76 XP", "84 XP": không có trong trang này; "60 XP" và "68 XP" có trong bảng. Trạng thái: **conflict** với đoạn tìm kiếm, cần xác nhận set (U1).
 
 **Mục tiêu level theo stage**
 - Metabot, Set 18 leveling guide (`single-source`, đăng 2026-10-24): "level 4 ở 2-1, 5 ở 2-5, 6 ở 3-2, 7 ở 4-1, 8 ở 4-5 hoặc 5-1 khi rolldown, 9 ở 5-5". Trang ghi số liệu theo patch 16.20.
@@ -103,7 +103,7 @@ Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experien
 - Điều kiện roll: 12 vàng; 2 khi HP ≤ 30; 0 khi có lượt miễn phí (`freeRolls`). Không xét lượt roll nhiều lần.
 
 **Khoảng trống**
-- Chỉ tính một shop, không tính xác suất gặp trong nhiều lượt roll (chuỗi roll). Mục này là G5, sẽ được xử lý trong bước engine không đổi quyết định.
+- Điểm roll chỉ tính một shop. Từ `fdabca4`, trace và lý do hiển thị xác suất trong toàn bộ ngân sách roll (`rolls`, `hitWithin`), nhưng điểm roll không dùng con số này. Đưa nó vào điểm sẽ đổi quyết định, nên chờ U9 (G5).
 - Không có chiến lược "slow roll" (giữ vàng để roll tại level cụ thể) ngoài điểm số một lần.
 - Bảng odds lệch ở level 8, 9 (xem U2).
 
@@ -146,7 +146,7 @@ Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experien
 | G2 | Không có XP hiện tại và XP cần để lên level | Trực tiếp: quyết định lên level | `xp`, `xpToNext` (I4) | wiki `verified`, thiếu set |
 | G3 | Lên level bị khóa bởi `gold >= 50` | Trực tiếp: bỏ lỡ lên level sớm | cần `xp` (I4) | `verified` (bảng wiki) |
 | G4 | Không có thu nhập thụ động và chuỗi thắng/thua | Gián tiếp: giữ vàng hay chi tiêu | `streak`, `round` (I4) | thụ động `verified`; chuỗi `conflict` |
-| G5 | Không xét nhiều lượt roll, chỉ một shop | Trực tiếp: điểm roll | không cần trường mới | ý tưởng từ nguyên tắc, chưa kiểm chứng |
+| G5 | Điểm roll chỉ tính một shop; xác suất nhiều lượt (`hitWithin`) chỉ hiển thị, chưa dùng trong điểm | Trực tiếp: điểm roll | không cần trường mới | hiển thị ở `fdabca4`; dùng trong điểm chờ U9 |
 | G6 | Không có sát thương người chơi theo giai đoạn | Gián tiếp: quyết định ổn định máu | `stage`, số tướng địch sống | `conflict` |
 | G7 | `CHAMPS_PER_COST` chưa khớp danh sách tướng của set; số bản pool chưa xác nhận cho Set 18/19 | Trực tiếp: xác suất gặp | `takenByOthers` (I3) | `search summary` |
 | G8 | `rules.js` không có dòng odds hay pool cho cost trên 5; engine nhận cost 7 và cho hit 0 | Gián tiếp: tướng cost cao không bao giờ được tính xác suất | không cần trường mới | đã xác nhận bằng chạy thử |
@@ -161,6 +161,6 @@ Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experien
 3. Bảng XP (wiki) ghi 7→8 = 60, 8→9 = 68; đoạn tìm kiếm Set 14 ghi 7→8 = 48, 8→9 = 76.
 4. Sát thương người chơi giai đoạn 4: 6, 7 hoặc 8 tùy nguồn.
 5. Ngày Set 19: 1/12 (seemeta) và 2/12 (esports.gg và đoạn tìm kiếm gần đây).
-6. Chuỗi thắng/thua: wiki (mục Income) ghi 3–4 +1, 5 +2, 6+ +3; wiki (ghi chú V10.8) và metabot ghi 2–3 +1, 4 +2, 5+ +3.
-EOF
-echo written
+6. Chuỗi thắng/thua: mục Income của wiki ghi 3–4 +1, 5 +2, 6+ +3. Metabot ghi "Typical streak bonuses" (bảng "thường gặp"): 2–3 +1, 4 +2, 5+ +3. Ghi chú V10.8 của wiki là lịch sử đã bị thay thế, không phải nguồn hiện hành.
+
+Lưu ý chung: lịch sử bản vá của wiki chỉ đến V10.x, nên không xác định được ngày của mục Income hay bảng XP. Vì vậy chuỗi thắng/thua và U1 vẫn mở, cần người dùng xác nhận.
