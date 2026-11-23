@@ -51,7 +51,8 @@ export function decide(state, out, trace = null) {
         if (trace) trace.push({ action: "buy", slot: i, unit: unit.id, cost: unit.cost, score: 0, note: `thiếu vàng (cần ${unit.cost}, có ${gold})` })
         continue
       }
-      const owned = unit.copiesOwned | 0
+      const owned = Math.max(unit.copiesOwned | 0, countCopies(state.board, unit.id) + countCopies(state.bench, unit.id))
+      const taken = unit.takenByOthers == null ? 0 : unit.takenByOthers | 0
       if (owned >= 9) {
         if (trace) trace.push({ action: "buy", slot: i, unit: unit.id, cost: unit.cost, score: 0, note: "đã đủ 9 bản (3 sao)" })
         continue
@@ -59,12 +60,12 @@ export function decide(state, out, trace = null) {
       // The target's copy count applies only to the target unit itself.
       const isTarget = !!target && target.id != null && unit.id === target.id
       const copiesFromTarget = isTarget ? target.copiesLeft ?? 0 : 0
-      const copiesSource = copiesFromTarget > 0 ? "target" : unit.poolCopies != null ? "poolCopies" : "pool - copiesOwned (ước lượng)"
-      const copiesLeft = Math.max(0, copiesFromTarget || (POOL_FALLBACK(unit) - (unit.copiesOwned | 0)))
+      const copiesSource = copiesFromTarget > 0 ? "target" : unit.poolCopies != null ? "poolCopies" : unit.takenByOthers != null ? "pool - copiesOwned - takenByOthers" : "pool - copiesOwned (ước lượng)"
+      const copiesLeft = Math.max(0, copiesFromTarget || (POOL_FALLBACK(unit) - owned - taken))
       const champsAtCost = unit.champsAtCost
       const hit = hitChance(level, unit.cost, copiesLeft, champsAtCost)
       const interestLoss = interestGold(gold) - interestGold(gold - unit.cost)
-      let score = unit.priority * (1 + (unit.copiesOwned | 0)) * (0.4 + hit)
+      let score = unit.priority * (1 + owned) * (0.4 + hit)
       if (!urgent) score -= interestLoss * 0.35
       if (owned % 3 === 2) score += 1.5
       if (trace) {
@@ -79,7 +80,8 @@ export function decide(state, out, trace = null) {
           copiesSource,
           interestLoss,
           priority: unit.priority,
-          copiesOwned: unit.copiesOwned | 0,
+          copiesOwned: owned,
+          takenByOthers: taken,
         })
       }
       if (score > bestBuy) {
@@ -148,4 +150,14 @@ export function decide(state, out, trace = null) {
 
 function POOL_FALLBACK(unit) {
   return unit.poolCopies ?? POOL_COPIES[unit.cost] ?? 0
+}
+
+function countCopies(list, id) {
+  if (!Array.isArray(list)) return 0
+  let n = 0
+  for (let i = 0; i < list.length; i++) {
+    const u = list[i]
+    if (u && u.id === id) n += u.star === 3 ? 9 : u.star === 2 ? 3 : 1
+  }
+  return n
 }

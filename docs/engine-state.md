@@ -29,7 +29,7 @@ Tài liệu này liệt kê dữ liệu mà bước quyết định cần, dữ 
 | `copiesOwned` | chỉ tính quân trên sàn, **thiếu bench** | `standaloneSource.js` |
 | `poolCopies`, `champsAtCost` | **chưa có nguồn** | không có |
 | mục tiêu và line | nhập tay | MCP `tft_set_target`, `tft_set_line` |
-| `rules.js`, `set17.json` | số liệu **Set 17**, không dùng cho Set 18 | repo |
+| `rules.js`, `set17.json` | `rules.js` vẫn được engine dùng nhưng **chưa xác minh cho Set 18**; `set17.json` là dữ liệu Set 17 | repo |
 
 ## 3. Dữ liệu chưa có
 
@@ -60,7 +60,7 @@ Quy ước:
 
 ## 5. Trạng thái triển khai
 
-- Đếm bản từ `board` và `bench`, cộng `takenByOthers` vào `copiesLeft`: **chưa làm**.
+- Đếm bản từ `board` và `bench`, trừ `takenByOthers` khỏi số bản còn lại: **đã làm** (log schema vẫn là 1).
 - Chặn mua khi bench đầy, hành động bán, chỉ số đơn vị trong `out`, log schema 2: **chưa làm**.
 - Lên level và roll theo `xp` và `round`: **chờ số XP từ người dùng**.
 - Chọn line tự động từ dữ liệu set: **chưa có dữ liệu set hiện tại**.

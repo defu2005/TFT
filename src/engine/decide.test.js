@@ -2,6 +2,8 @@ import assert from "node:assert/strict"
 import test from "node:test"
 import { decide, BUY, HOLD, XP } from "./decide.js"
 import { hitChance } from "./odds.js"
+import { POOL_COPIES } from "../data/rules.js"
+import { explain } from "./reason.js"
 
 test("a five-cost unit is impossible in a level 3 shop", () => {
   assert.equal(hitChance(3, 5, 9), 0)
@@ -148,4 +150,47 @@ test("a unit with 3 copies scores with priority times owned times odds, minus in
   const entry = trace.find((c) => c.action === "buy" && c.slot === 1)
   const expected = 5 * 4 * (0.4 + entry.hit) - entry.interestLoss * 0.35
   assert.ok(Math.abs(entry.score - expected) < 1e-9)
+})
+
+const CORE = (shop) => ({ level: 7, gold: 40, hp: 80, stage: 4, shop: [shop, null, null, null, null], target: null })
+
+test("owned copies include the board and bench, not only copiesOwned", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0 }
+  const trace = []
+  decide(
+    {
+      ...CORE({ id: "core", cost: 3, copiesOwned: 0, priority: 5 }),
+      board: [{ id: "core", star: 2 }],
+      bench: [{ id: "core", star: 1 }, null],
+    },
+    out,
+    trace,
+  )
+  const entry = trace.find((c) => c.action === "buy" && c.slot === 0)
+  assert.equal(entry.copiesOwned, 4)
+  assert.equal(entry.copiesLeft, POOL_COPIES[3] - 4)
+})
+
+test("copies held by other players are subtracted from the pool", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0 }
+  const trace = []
+  const state = CORE({ id: "core", cost: 3, copiesOwned: 1, priority: 5, takenByOthers: 6 })
+  decide(state, out, trace)
+  assert.equal(out.action, BUY)
+  const entry = trace.find((c) => c.action === "buy" && c.slot === 0)
+  assert.equal(entry.copiesLeft, POOL_COPIES[3] - 7)
+  assert.equal(entry.copiesSource, "pool - copiesOwned - takenByOthers")
+  assert.equal(explain(state, out, trace).caveats.length, 1)
+})
+
+test("a raw board entry without an id does not change copiesOwned", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0 }
+  const trace = []
+  decide(
+    { ...CORE({ id: "core", cost: 3, copiesOwned: 3, priority: 5 }), board: [{ championName: "core", starLevel: 2 }] },
+    out,
+    trace,
+  )
+  const entry = trace.find((c) => c.action === "buy" && c.slot === 0)
+  assert.equal(entry.copiesOwned, 3)
 })

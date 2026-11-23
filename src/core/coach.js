@@ -171,11 +171,18 @@ function applyLines(shop, lines) {
 export function hashState(state) {
   let ids = ""
   if (Array.isArray(state.shop)) {
-    for (const unit of state.shop) ids += unit ? `${unit.id ?? "-"}:${unit.priority ?? 0},` : "-,"
+    for (const unit of state.shop) ids += unit ? `${unit.id ?? "-"}:${unit.priority ?? 0}:${unit.copiesOwned ?? 0}:${unit.takenByOthers ?? ""},` : "-,"
   }
   const t = state.target
   const targetKey = t ? `${t.id ?? "-"}:${t.cost}:${t.copiesLeft}:${t.priority}:${t.champsAtCost ?? ""}` : "none"
-  return `${state.level}|${state.gold}|${state.hp}|${state.stage}|${ids}|${targetKey}`
+  return `${state.level}|${state.gold}|${state.hp}|${state.stage}|${ids}|${targetKey}|${unitsKey(state.board)}|${unitsKey(state.bench)}`
+}
+
+function unitsKey(list) {
+  if (!Array.isArray(list)) return ""
+  let key = ""
+  for (const u of list) key += u ? `${u.id ?? "-"}:${u.star ?? ""},` : "-,"
+  return key
 }
 
 function sanitizeTarget(t) {

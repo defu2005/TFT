@@ -15,7 +15,7 @@ export function explain(state, out, trace) {
       `Mua ô ${out.slot} (${c?.unit ?? "?"}, cost ${c?.cost ?? "?"}): điểm ${out.score.toFixed(2)}, ` +
       `xác suất gặp ${(out.hit * 100).toFixed(1)}%, còn ${c?.copiesLeft ?? "?"} bản ` +
       `(nguồn số bản: ${c?.copiesSource ?? "?"}), mất ${c?.interestLoss ?? 0} lãi.`
-    if (c?.copiesSource && c.copiesSource !== "target" && c.copiesSource !== "poolCopies") {
+    if (c?.copiesSource === "pool - copiesOwned (ước lượng)") {
       caveats.push("số bản còn lại là ước lượng vì state không có số bản của người chơi khác")
     }
   } else if (chosen === XP) {

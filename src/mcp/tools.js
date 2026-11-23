@@ -28,8 +28,11 @@ const unitSchema = z
     priority: z.number().min(0).default(0),
     poolCopies: z.number().int().min(0).optional(),
     champsAtCost: z.number().int().min(1).optional(),
+    takenByOthers: z.number().int().min(0).optional(),
   })
   .nullable()
+
+const ownedSchema = z.object({ id: z.string(), star: z.number().int().min(1).max(3).optional() }).nullable()
 
 const stateSchema = {
   level: z.number().int().min(1).max(11),
@@ -38,6 +41,8 @@ const stateSchema = {
   stage: z.number().int().min(1),
   shop: z.array(unitSchema).length(5).nullable().optional(),
   target: targetSchema.optional(),
+  board: z.array(ownedSchema).nullable().optional(),
+  bench: z.array(ownedSchema).nullable().optional(),
 }
 
 function asText(value) {
@@ -208,6 +213,8 @@ function normalizeState(args) {
     stage: args.stage,
     shop: args.shop ?? null,
     target: args.target ?? null,
+    board: args.board ?? null,
+    bench: args.bench ?? null,
   }
 }
 
