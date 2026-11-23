@@ -4,22 +4,38 @@ Harness danh gia policy (env-agnostic) va pipeline BC cho bai toan TFT. Trang th
 
 Ghi chu: toy env trong `src/tft_sim/env.py` chi la test double. Ket qua tren no khong noi gi ve suc manh bot TFT.
 
-## Bang do pham vi (scoreboard)
+## Bang do pham vi (scoreboard) - noi dung TONG HOP, khong phai TFT that
 
-Moi hang la mot loai quyet dinh. "Chua" nghia la chua co.
+Cot: trong sim = action co xuat hien trong sim tong hop; co teacher = scripted_action chon hanh dong do; da hoc = clone dat >= 70% dong y voi teacher tren trang thai clone tu gap; danh gia tren TFT that = chua.
 
-| Quyet dinh | Trong sim | Co teacher | Da hoc (BC) | Da danh gia tren TFT |
+| Quyet dinh | Trong sim | Co teacher | Da hoc (BC) | Ty le dong y (flat / flat+slot) | Danh gia tren TFT that |
+|---|---|---|---|---|---|
+| Mua tuong tu shop (BUY_SHOP) | co | co | co | 74% / 82% | chua |
+| Roll (REROLL) | co | co, rat hiem (n=3) | chua du du lieu | - | chua |
+| Mua XP (BUY_XP) | co | co | co (gan nguong) | 71% / 77% | chua |
+| Ban tuong / ban tu board | co | **khong** (scripted khong ban) | - | - | chua |
+| Dat tuong len board (FIELD) | co | co | co | 100% / 100% | chua |
+| Dat tuong xuong bench (BENCH_BOARD) | co | **khong** | - | - | chua |
+| Trang bi (EQUIP) | co | co | co | 100% / 100% | chua |
+| Chon augment (PICK_AUGMENT) | co | co | chua (59-60%) | 59% / 60% | chua |
+| Chon god (PICK_GOD) | co | co | co | 100% / 100% | chua |
+| Reroll augment (REROLL_AUGMENT) | co | co, rat hiem (n=37-51) | chua (0%) | 0% / 0% | chua |
+| Dinh vi trong tran (positioning) | **mo** (chua co trong 43 action cua TFT_GOAT) | - | - | - | - |
+| Nham muc tieu item | **mo** | - | - | - | - |
+
+## Ket qua BC (synthetic, seed test 1000-1199, 200 lobby/bien the)
+
+Tap: train 200-349 (150 lobby, 2.02M dong), val 800-849. Lobby toan scripted lam nhan. Seat xoay bang shuffle co seed.
+
+| Bien the | Dong y val voi teacher | vs random (diff A-B, CI95) | vs scripted (diff A-B, CI95) | Bat hop le |
 |---|---|---|---|---|
-| Mua tuong tu shop | chua | chua | chua | chua |
-| Roll | chua | chua | chua | chua |
-| Mua XP / len level | chua | chua | chua | chua |
-| Ban tuong | chua | chua | chua | chua |
-| Dat tuong len board / ban | chua | chua | chua | chua |
-| Trang bi (gan item) | chua | chua | chua | chua |
-| Chon augment | chua | chua | chua | chua |
-| Chon tuong tu god/vote | chua | chua | chua | chua |
-| Dinh vi trong tran (positioning) | **mo** (chua co trong 43 action cua TFT_GOAT) | - | - | - |
-| Nhắm muc tieu item | **mo** | - | - | - |
+| flat | 99.6% | -3.40 [-3.51, -3.28] | +0.22 [-0.02, 0.47] | 0 |
+| flat+slot | 99.7% | -3.39 [-3.51, -3.27] | +0.07 [-0.17, 0.29] | 0 |
+
+Doi chung: scripted vs scripted (200 lobby): diff +0.07, CI95 [-0.15, 0.29], chua 0.
+Tieu chi qua: 0 hanh dong bat hop le, thang random ro rang, va trong khoang 0.5 hang cua scripted. **Dat ca hai bien the, tren noi dung tong hop.**
+Luu y: "vs scripted" ghi lai hieu so hang trung binh, khong phai ty le dong y. Bien the flat+slot dong y tot hon nhung khong cai thien ro ret ve hieu so. Cac loai co dong y thap (REROLL_AUGMENT, PICK_AUGMENT) ghi nhan ro, chua duoc giai quyet.
+File: `results/bc/bc_results.json`, model `results/bc/bc_flat.pt`, `results/bc/bc_flat+slot.pt`.
 
 ## Trang thai cong viec
 

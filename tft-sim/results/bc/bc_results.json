@@ -1,0 +1,139 @@
+{
+  "content": "synthetic (build_sample_content)",
+  "train_rows": 2023872,
+  "val_rows": 671146,
+  "variants": {
+    "flat": {
+      "val_teacher_agreement": 0.9955,
+      "vs_random": {
+        "lobbies": 200,
+        "completed": 200,
+        "mean_placement_A": 2.8025,
+        "mean_placement_B": 6.1975,
+        "diff_A_minus_B": -3.395,
+        "ci95_diff": [
+          -3.5125625,
+          -3.2775
+        ],
+        "illegal_A": 0,
+        "illegal_B": 0
+      },
+      "vs_scripted": {
+        "lobbies": 200,
+        "completed": 200,
+        "mean_placement_A": 4.61125,
+        "mean_placement_B": 4.38875,
+        "diff_A_minus_B": 0.2225,
+        "ci95_diff": [
+          -0.0175,
+          0.465
+        ],
+        "illegal_A": 0,
+        "illegal_B": 0
+      },
+      "per_type_agreement_on_clone_states": {
+        "BUY_SHOP": {
+          "n": 21879,
+          "agree": 0.7435
+        },
+        "FIELD": {
+          "n": 3218,
+          "agree": 1.0
+        },
+        "PASS": {
+          "n": 230291,
+          "agree": 0.991
+        },
+        "EQUIP": {
+          "n": 1220312,
+          "agree": 1.0
+        },
+        "PICK_AUGMENT": {
+          "n": 2363,
+          "agree": 0.5895
+        },
+        "PICK_GOD": {
+          "n": 2400,
+          "agree": 1.0
+        },
+        "BUY_XP": {
+          "n": 419,
+          "agree": 0.7136
+        },
+        "REROLL_AUGMENT": {
+          "n": 37,
+          "agree": 0.0
+        },
+        "REROLL": {
+          "n": 3,
+          "agree": 0.0
+        }
+      },
+      "elapsed_s": 330.3
+    },
+    "flat+slot": {
+      "val_teacher_agreement": 0.997,
+      "vs_random": {
+        "lobbies": 200,
+        "completed": 200,
+        "mean_placement_A": 2.80375,
+        "mean_placement_B": 6.19625,
+        "diff_A_minus_B": -3.3925,
+        "ci95_diff": [
+          -3.5125,
+          -3.27
+        ],
+        "illegal_A": 0,
+        "illegal_B": 0
+      },
+      "vs_scripted": {
+        "lobbies": 200,
+        "completed": 200,
+        "mean_placement_A": 4.5325,
+        "mean_placement_B": 4.4675,
+        "diff_A_minus_B": 0.065,
+        "ci95_diff": [
+          -0.1725,
+          0.2925624999999996
+        ],
+        "illegal_A": 0,
+        "illegal_B": 0
+      },
+      "per_type_agreement_on_clone_states": {
+        "BUY_SHOP": {
+          "n": 24254,
+          "agree": 0.8173
+        },
+        "FIELD": {
+          "n": 3299,
+          "agree": 1.0
+        },
+        "PASS": {
+          "n": 237668,
+          "agree": 0.9898
+        },
+        "EQUIP": {
+          "n": 1190572,
+          "agree": 1.0
+        },
+        "PICK_AUGMENT": {
+          "n": 2349,
+          "agree": 0.5981
+        },
+        "PICK_GOD": {
+          "n": 2400,
+          "agree": 1.0
+        },
+        "BUY_XP": {
+          "n": 485,
+          "agree": 0.7711
+        },
+        "REROLL_AUGMENT": {
+          "n": 51,
+          "agree": 0.0
+        }
+      },
+      "elapsed_s": 403.6
+    }
+  }
+}
