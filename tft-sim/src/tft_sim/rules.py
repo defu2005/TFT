@@ -23,7 +23,7 @@ def make_rule(sell: bool = False, floor: int = 54, pick: str = "cheapest"):
                 a = REROLL
         if sell and len(player.bench) >= 9 and a in (PASS, BUY_XP, REROLL):
             champs = env._state.set_content.champions
-            idx = _pick_sell(player, champs, pick)
+            idx = _pick_sell_hybrid(player, champs) if pick == "hybrid" else _pick_sell(player, champs, pick)
             if idx is not None and mask[SELL_BENCH_START + idx]:
                 return SELL_BENCH_START + idx
         return a
@@ -46,3 +46,9 @@ def _pick_sell(player, champs, pick):
         if not same and not shares:
             cand.append((cost, i))
     return min(cand)[1] if cand else None
+
+
+def _pick_sell_hybrid(player, champs):
+    """Ban 'useless' truoc; neu khong co unit nao thi ban unit re nhat."""
+    idx = _pick_sell(player, champs, "useless")
+    return idx if idx is not None else _pick_sell(player, champs, "cheapest")
