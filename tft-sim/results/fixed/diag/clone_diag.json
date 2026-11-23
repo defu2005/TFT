@@ -1,0 +1,209 @@
+{
+  "seeds": "2000-2199",
+  "val": {
+    "flat": {
+      "per_type_ge2": {
+        "BUY_SHOP": {
+          "n": 12547,
+          "agree": 0.8122
+        },
+        "BUY_XP": {
+          "n": 21181,
+          "agree": 0.9178
+        },
+        "EQUIP": {
+          "n": 2238,
+          "agree": 1.0
+        },
+        "FIELD": {
+          "n": 4201,
+          "agree": 1.0
+        },
+        "PASS": {
+          "n": 13505,
+          "agree": 0.7581
+        },
+        "PICK_AUGMENT": {
+          "n": 1200,
+          "agree": 0.5992
+        },
+        "PICK_GOD": {
+          "n": 1200,
+          "agree": 1.0
+        },
+        "REROLL": {
+          "n": 845,
+          "agree": 0.8899
+        },
+        "REROLL_AUGMENT": {
+          "n": 23,
+          "agree": 0.0
+        }
+      },
+      "teacher_PASS_rows_predicted_as": {
+        "PASS": 10238,
+        "BUY_XP": 2996,
+        "REROLL": 271
+      }
+    },
+    "flat+slot": {
+      "per_type_ge2": {
+        "BUY_SHOP": {
+          "n": 12547,
+          "agree": 0.8444
+        },
+        "BUY_XP": {
+          "n": 21181,
+          "agree": 0.8981
+        },
+        "EQUIP": {
+          "n": 2238,
+          "agree": 1.0
+        },
+        "FIELD": {
+          "n": 4201,
+          "agree": 1.0
+        },
+        "PASS": {
+          "n": 13505,
+          "agree": 0.8074
+        },
+        "PICK_AUGMENT": {
+          "n": 1200,
+          "agree": 0.5992
+        },
+        "PICK_GOD": {
+          "n": 1200,
+          "agree": 1.0
+        },
+        "REROLL": {
+          "n": 845,
+          "agree": 0.8734
+        },
+        "REROLL_AUGMENT": {
+          "n": 23,
+          "agree": 0.0
+        }
+      },
+      "teacher_PASS_rows_predicted_as": {
+        "PASS": 10904,
+        "BUY_XP": 2377,
+        "REROLL": 224
+      }
+    }
+  },
+  "clone": {
+    "illegal": 0,
+    "steps_per_game_mean": 243.7,
+    "phase_len_hist_top": {
+      "28": 5,
+      "29": 2,
+      "30": 3,
+      "31": 3,
+      "32": 1,
+      "33": 1
+    },
+    "phases_total": 7840,
+    "phases_len_50_cap_hits": 0,
+    "confusion_teacher_to_clone": {
+      "BUY_SHOP": {
+        "BUY_SHOP": 25219
+      },
+      "FIELD": {
+        "FIELD": 8397
+      },
+      "PASS": {
+        "PASS": 23961,
+        "BUY_XP": 8336,
+        "REROLL": 2374
+      },
+      "EQUIP": {
+        "EQUIP": 4506
+      },
+      "PICK_AUGMENT": {
+        "PICK_AUGMENT": 2358
+      },
+      "PICK_GOD": {
+        "PICK_GOD": 2400
+      },
+      "BUY_XP": {
+        "BUY_XP": 33469,
+        "PASS": 3204
+      },
+      "REROLL": {
+        "REROLL": 230,
+        "PASS": 37
+      },
+      "REROLL_AUGMENT": {
+        "PICK_AUGMENT": 42
+      }
+    }
+  },
+  "ladder": {
+    "eps_0.1": {
+      "lobbies": 200,
+      "completed": 200,
+      "mean_placement_A": 4.275,
+      "mean_placement_B": 4.725,
+      "diff_A_minus_B": -0.45,
+      "ci95_diff": [
+        -0.6750625,
+        -0.21
+      ],
+      "illegal_A": 0,
+      "illegal_B": 0
+    },
+    "eps_0.3": {
+      "lobbies": 200,
+      "completed": 200,
+      "mean_placement_A": 4.47875,
+      "mean_placement_B": 4.52125,
+      "diff_A_minus_B": -0.0425,
+      "ci95_diff": [
+        -0.28,
+        0.195
+      ],
+      "illegal_A": 0,
+      "illegal_B": 0
+    },
+    "eps_0.6": {
+      "lobbies": 200,
+      "completed": 200,
+      "mean_placement_A": 5.81125,
+      "mean_placement_B": 3.18875,
+      "diff_A_minus_B": 2.6225,
+      "ci95_diff": [
+        2.4374375,
+        2.8
+      ],
+      "illegal_A": 0,
+      "illegal_B": 0
+    },
+    "scripted_no_buy": {
+      "lobbies": 200,
+      "completed": 200,
+      "mean_placement_A": 6.4825,
+      "mean_placement_B": 2.5175,
+      "diff_A_minus_B": 3.965,
+      "ci95_diff": [
+        3.9425,
+        3.9825
+      ],
+      "illegal_A": 0,
+      "illegal_B": 0
+    },
+    "clone_flat+slot": {
+      "lobbies": 200,
+      "completed": 200,
+      "mean_placement_A": 4.51,
+      "mean_placement_B": 4.49,
+      "diff_A_minus_B": 0.02,
+      "ci95_diff": [
+        -0.2150625,
+        0.25256249999999963
+      ],
+      "illegal_A": 0,
+      "illegal_B": 0
+    }
+  }
+}
