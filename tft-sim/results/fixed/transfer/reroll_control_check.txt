@@ -1,0 +1,15 @@
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  tot += float(loss) * len(idx)
+epoch 0 loss 0.7656
+epoch 1 loss 0.3367
+epoch 2 loss 0.2718
+epoch 3 loss 0.1914
+epoch 4 loss 0.1418
+epoch 5 loss 0.1157
+epoch 6 loss 0.1001
+epoch 7 loss 0.0898
+epoch 8 loss 0.0833
+epoch 9 loss 0.0772
+REROLL ge2 rows: A val n = 845  B test n = 2546
+universal A->A REROLL = 0.8994  A->B REROLL = 0.8633  diff = -0.0361
+bootstrap CI95 of (A->B minus A->A) REROLL: [-0.0649, -0.0066] lobbies A 46 B 172

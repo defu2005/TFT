@@ -76,15 +76,43 @@ Co che (eps=0.1 so voi scripted): ngau nhien nang ban board nhieu hon (FIELD 14.
 
 Ung vien teacher (1 wrapper, seed 4000-4199): scripted, nhung PASS -> BUY_XP khi gold >= 40. Ket qua: diff +0.18, CI95 [-0.05, 0.43]. **Khong tot hon scripted; giu scripted lam teacher.**
 
-### Tieu chi transfer (viet TRUOC khi chay transfer)
+### Transfer A -> B (ket qua)
 
-- Noi dung A: `default_content()`. Noi dung B: hoan vi chi phi tuong va trait tren ban synthetic (chua lam).
-- Metric chinh: dong y theo loai, tren trang thai teacher cua B, chi hang >= 2 hop le. Bao cao ca trung binh co trong so theo n.
-- Can tren U: flat+slot huan luyen va kiem tra tren B (trong phan phoi).
-- Can duoi L: flat huan luyen tren A, kiem tra tren B (khong thich ung).
-- Void: neu U - L < 5 diem phan tram thi bai test khong co y nghia; phai thiet ke lai B.
-- Pass: flat+slot huan luyen tren A, kiem tra tren B, dat T >= L + 0.8 * (U - L). (Dinh nghia nay thay cho "universal-only" trong ghi chu tu van, vi cach hieu truoc do khong nhat quan. Can xac nhan lai.)
-- Guard placement: CI upper cua (clone - scripted) tren B phai < +0.5 hang. Day chi la chan tho: no chi loai bo gan muc "ngau nhien 60%" (+2.6), khong chung minh bat chuoc chi tiet.
+**Noi dung B**: `src/tft_sim/content_b.py`. Cung 8 tuong, cung thu tu, cung so chieu flat (126) va aux (20). Hoan vi co dinh seed 1234 tren cost va tuple trait giua cac tuong (cung multiset). Patch rieng `synth-fullrecipe-B`. Kiem tra: `diag_equip_b.py` 898 EQUIP, 0 khong tieu thu.
+
+**Du lieu**: A train 200-349, A val 800-849 (cu). B train 5000-5149, B val 7000-7049, B test 6000-6199 (moi). Diag seed 2000-2199, 3000-3199, 4000-4199 khong trung.
+
+**Bien the**: flat (day du); flat+slot (flat + aux); universal = scalars + opponents + gods + aux (82 chieu, bo shop, bench, board, traits). Epoch 10 (val on dinh; xem `results/fixed/transfer/transfer_prep_check.json`).
+
+**Tieu chi (viet truoc khi chay)**: metric = dong y exact action tren hang >= 2 hop le, rieng BUY_SHOP.
+- L = flat, A -> B.  T = universal, A -> B.  U = bien the tot nhat, B -> B.
+- Void neu U - L < 0.05. Pass neu T >= L + 0.8 (U - L).
+- Kiem soat: cac loai khac, A -> A (val) so voi A -> B (test). Dich chuyen > 2 diem phai dieu tra.
+
+**Ket qua BUY_SHOP** (`results/fixed/transfer/transfer_results.json`):
+
+| Bien the | A -> A (val) | A -> B (test) | B -> B (test) |
+|---|---|---|---|
+| flat | 81.5% | 80.0% | 82.6% |
+| flat+slot | 93.3% | 92.9% | 94.0% |
+| universal | 93.5% | 94.0% | 93.8% |
+
+- L = 80.0%, U = 94.0% (flat+slot, B->B), gap = 13.9 diem, CI bootstrap theo lobby cho U-L [13.6, 14.3].
+- T = 94.0%, nguong = 91.2%, CI T-L [13.6, 14.3].
+- **Void: khong. Pass: CO** (T vuot nguong).
+
+**Kiem tra void (buoc truoc)**: mo hinh khong noi dung (scalars + opponents + gods, khong slot) dat 81.2% BUY_SHOP tren A val (`results/fixed/transfer/content_free_check.txt`), cung muc flat. Tuc la: quyet dinh mua khong doc duoc tu scalar/opponent; can block slot. Khoang cach 12 diem > 5, nen khong void.
+
+**Kiem soat (cac loai khac, A -> A vs A -> B, bien the flat)**: BUY_XP -7.9 diem, REROLL -10.7 diem, cac loai con lai < 1.5 diem. Voi universal:
+- BUY_XP: 98.7% -> 98.4% (khong doi). Flat giam 8 diem vi dung dinh danh tuong.
+- REROLL: 89.9% -> 86.3%, giam 3.6 diem, CI bootstrap [-6.5, -0.7] (`results/fixed/transfer/reroll_control_check.txt`). **Vuot nguong 2 diem va CI khong chua 0. Nguyen nhan CHUA ro.** Loai nay chi ~1% hang (n=845 A val, n=2546 B test); khong anh huong ket luan BUY_SHOP. Phan bo nhan cua A va B gan nhu giong nhau (BUY_SHOP 22.0% vs 22.1%, BUY_XP 37.2% vs 37.4%), nen khong phai do lech nhan chung.
+
+**Dieu can nho**: ket qua chi tren 8 tuong, 2 trait, 1 set synthetic. Pass chung minh model doc duoc luat mua tu feature slot (cost, trait chung), khong chi nho danh tinh tuong. Chua chung minh tren TFT that.
+
+### Mo: ung vien teacher
+
+- Da thu 1 wrapper (PASS -> BUY_XP khi gold >= 40), seed 4000-4199: +0.18 [-0.05, 0.43]. Khong tot hon scripted; giu scripted.
+- Nguyen nhan chenh lech teacher-ngau nhien CHUA XAC DINH. Ngau nhien nang FIELD, BENCH_BOARD va SELL_BENCH (teacher khong lam BENCH_BOARD/SELL), roi FIELD lai. Co the la hoan doi bang board ma teacher khong bao gio thuc hien. Ghi "mot ung vien da thu, nguyen nhan mo".
 
 ## Trang thai cong viec
 
