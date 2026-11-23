@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npm test)",
-      "Bash(npm run bench)"
+      "Bash(npm run bench)",
+      "Bash(python -m pytest:*)"
     ]
   }
 }
