@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import test from "node:test"
-import { decide, BUY, HOLD, XP, SELL } from "./decide.js"
+import { decide, BUY, HOLD, XP, SELL, ROLL } from "./decide.js"
 import { hitChance } from "./odds.js"
 import { POOL_COPIES } from "../data/rules.js"
 import { explain } from "./reason.js"
@@ -332,4 +332,44 @@ test("a target in the shop with no gold to buy holds and does not roll for it", 
   decide(TARGET_SHOP(2, 20), out, trace)
   assert.equal(out.action, HOLD)
   assert.match(trace.find((c) => c.action === "roll").note, /trong shop/)
+})
+
+const ROLL_TARGET = { id: "Z", cost: 1, copiesLeft: 30, priority: 5, champsAtCost: 1 }
+const ROLL_STATE = (gold, shop, extra = {}) => ({ level: 8, gold, hp: 80, stage: 5, shop, target: ROLL_TARGET, ...extra })
+
+test("an affordable wanted unit is bought before rolling, even when the roll scores higher", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  const trace = []
+  const state = ROLL_STATE(31, [{ id: "a", cost: 1, copiesOwned: 0, priority: 1 }, null, null, null, null])
+  decide(state, out, trace)
+  const buy = trace.find((c) => c.action === "buy" && c.slot === 0)
+  const roll = trace.find((c) => c.action === "roll")
+  assert.ok(buy.score > 0)
+  assert.ok(roll.score > buy.score)
+  assert.equal(out.action, BUY)
+  assert.equal(out.slot, 0)
+  assert.match(explain(state, out, trace).text, /trước/)
+})
+
+test("keeps gold for the roll when the buy would leave too little to roll", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  decide(ROLL_STATE(12, [{ id: "a", cost: 1, copiesOwned: 0, priority: 1 }, null, null, null, null]), out)
+  assert.equal(out.action, ROLL)
+})
+
+test("a free roll costs no gold and is scored without the penalty", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  const trace = []
+  decide(ROLL_STATE(0, [null, null, null, null, null], { freeRolls: 2 }), out, trace)
+  const roll = trace.find((c) => c.action === "roll")
+  assert.equal(out.action, ROLL)
+  assert.equal(roll.needs, 0)
+  assert.equal(roll.free, 2)
+  assert.ok(Math.abs(out.score - roll.hit * 5 * 0.8) < 1e-9)
+})
+
+test("without free rolls an empty shop with no gold holds", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  decide(ROLL_STATE(0, [null, null, null, null, null]), out)
+  assert.equal(out.action, HOLD)
 })

@@ -33,11 +33,16 @@ export function decide(state, out, trace = null) {
   const shop = state.shop
   const target = state.target
   const urgent = hp <= 30
+  const freeRolls = state.freeRolls > 0 ? state.freeRolls | 0 : 0
+  const rollNeeds = freeRolls > 0 ? 0 : REROLL_COST + (urgent ? 0 : 10)
 
   let bestBuy = 0
   let bestSlot = -1
   let bestHit = 0
   let targetInShop = false
+  let keepBuy = 0
+  let keepSlot = -1
+  let keepHit = 0
   // Fixed-length array, null = empty slot. Absent or empty means unknown.
   const bench = Array.isArray(state.bench) && state.bench.length > 0 ? state.bench : null
   let benchFull = !!bench
@@ -111,6 +116,11 @@ export function decide(state, out, trace = null) {
         bestSlot = i
         bestHit = hit
       }
+      if (!blocked && score > keepBuy && gold - unit.cost >= rollNeeds) {
+        keepBuy = score
+        keepSlot = i
+        keepHit = hit
+      }
     }
   }
 
@@ -132,19 +142,21 @@ export function decide(state, out, trace = null) {
   }
 
   let rollScore = 0
-  const rollAffordable = !!target?.cost && gold >= REROLL_COST + (urgent ? 0 : 10)
+  const rollAffordable = !!target?.cost && gold >= rollNeeds
   let rollHit = 0
   if (target && target.cost && rollAffordable && !targetInShop) {
     rollHit = hitChance(level, target.cost, target.copiesLeft, target.champsAtCost)
     rollScore = rollHit * target.priority * (urgent ? 2 : 0.8)
-    if (!urgent) rollScore -= 0.5
+    if (!urgent && freeRolls === 0) rollScore -= 0.5
   }
   if (trace) {
     trace.push({
       action: "roll",
       score: rollScore,
       hit: rollHit,
-      note: !target ? "không có mục tiêu (set_target chưa được gọi)" : targetInShop ? "mục tiêu đang có trong shop" : !rollAffordable ? `thiếu vàng để roll (cần ${REROLL_COST + (urgent ? 0 : 10)})` : "",
+      needs: rollNeeds,
+      free: freeRolls,
+      note: !target ? "không có mục tiêu (set_target chưa được gọi)" : targetInShop ? "mục tiêu đang có trong shop" : !rollAffordable ? `thiếu vàng để roll (cần ${rollNeeds})` : "",
     })
   }
 
@@ -198,6 +210,13 @@ export function decide(state, out, trace = null) {
     return out
   }
   if (rollScore > 0.45) {
+    if (keepSlot >= 0) {
+      out.action = BUY
+      out.slot = keepSlot
+      out.score = keepBuy
+      out.hit = keepHit
+      return out
+    }
     out.action = ROLL
     out.score = rollScore
     out.hit = rollHit

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import test from "node:test"
-import { decide, BUY, SELL, ROLL } from "./decide.js"
+import { decide, actionName, BUY, SELL, ROLL } from "./decide.js"
 
 // Seeded generator so every run checks the same 2,000 states.
 function mulberry32(seed) {
@@ -31,13 +31,13 @@ function makeState(rnd) {
     }
   })
   const target =
-    rnd() < 0.6
+    rnd() < 0.4
       ? null
       : {
-          id: rnd() < 0.5 ? pick(IDS) : "Z",
+          id: rnd() < 0.7 ? "Z" : pick(IDS),
           cost: int(1, 5),
           copiesLeft: int(0, 20),
-          priority: int(0, 5),
+          priority: int(2, 5),
           champsAtCost: int(1, 13),
         }
   const state = { level: int(1, 11), gold: int(0, 60), hp: int(0, 100), stage: int(1, 8), shop, target }
@@ -51,12 +51,14 @@ function makeState(rnd) {
     const len = int(1, 9)
     state.bench = Array.from({ length: len }, () => (rnd() < 0.3 ? null : { id: pick(IDS), star: int(1, 3), priority: maybe(0.5, int(0, 5)), sellValue: maybe(0.7, int(0, 5)) }))
   }
+  if (rnd() < 0.3) state.freeRolls = int(0, 3)
   if (rnd() < 0.5) state.board = Array.from({ length: int(0, 6) }, () => ({ id: pick(IDS), star: int(1, 2) }))
   return state
 }
 
 test("engine invariants hold on 2,000 seeded states", () => {
   const rnd = mulberry32(20261123)
+  const counts = { hold: 0, buy: 0, xp: 0, roll: 0, sell: 0 }
   for (let n = 0; n < 2000; n++) {
     const state = makeState(rnd)
     const where = () => JSON.stringify(state)
@@ -83,9 +85,21 @@ test("engine invariants hold on 2,000 seeded states", () => {
       assert.equal(typeof unit.sellValue, "number", `SELL without sellValue: ${where()}`)
       assert.ok(!(unit.priority > 0), `SELL of a line unit: ${where()}`)
     }
+    counts[actionName(out.action)]++
+    if (out.action === ROLL) {
+      const roll = trace.find((c) => c.action === "roll")
+      for (const c of trace) {
+        if (c.action !== "buy" || !(c.score > 0) || c.note !== "") continue
+        assert.ok(!(state.gold - c.cost >= roll.needs), `ROLL while a wanted affordable buy remains: ${where()}`)
+      }
+    }
     if (out.action === ROLL && state.target) {
       const inShop = state.shop?.some((u) => u && u.id === state.target.id)
       assert.ok(!inShop, `ROLL while target is in the shop: ${where()}`)
     }
   }
+  for (const [name, count] of Object.entries(counts)) {
+    assert.ok(count >= 20, `${name} occurred ${count} times, need at least 20`)
+  }
+  console.log("action counts", JSON.stringify(counts))
 })

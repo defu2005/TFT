@@ -63,6 +63,8 @@ Quy ước:
 
 - Đếm bản từ `board` và `bench`, trừ `takenByOthers` khỏi số bản còn lại: **đã làm** (log schema vẫn là 1).
 - Chặn mua khi bench đầy, hành động bán để nhường chỗ, chỉ số ô bench trong `out`, log schema 2: **đã làm** (chỉ bán để nhường chỗ; bán để lấy lãi cần `phase` và `round`, chưa làm).
+- Lượt roll miễn phí (`freeRolls`): **đã làm**; roll chỉ được khuyến nghị khi có mục tiêu.
+- Mua món muốn mua trước khi roll, không roll khi mục tiêu đã có trong shop: **đã làm**.
 - Lên level và roll theo `xp` và `round`: **chờ số XP từ người dùng**.
 - Chọn line tự động từ dữ liệu set: **chưa có dữ liệu set hiện tại**.
 

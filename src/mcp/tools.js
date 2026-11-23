@@ -49,6 +49,7 @@ const stateSchema = {
   shop: z.array(unitSchema).length(5).nullable().optional(),
   target: targetSchema.optional(),
   board: z.array(ownedSchema).nullable().optional(),
+  freeRolls: z.number().int().min(0).optional(),
   bench: z.array(ownedSchema).nullable().optional(),
 }
 
@@ -221,6 +222,7 @@ function normalizeState(args) {
     shop: args.shop ?? null,
     target: args.target ?? null,
     board: args.board ?? null,
+    freeRolls: args.freeRolls ?? 0,
     bench: args.bench ?? null,
   }
 }

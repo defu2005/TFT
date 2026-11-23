@@ -176,7 +176,7 @@ export function hashState(state) {
   }
   const t = state.target
   const targetKey = t ? `${t.id ?? "-"}:${t.cost}:${t.copiesLeft}:${t.priority}:${t.champsAtCost ?? ""}` : "none"
-  return `${state.level}|${state.gold}|${state.hp}|${state.stage}|${ids}|${targetKey}|${unitsKey(state.board)}|${unitsKey(state.bench)}`
+  return `${state.level}|${state.gold}|${state.hp}|${state.stage}|${ids}|${targetKey}|${unitsKey(state.board)}|${unitsKey(state.bench)}|${state.freeRolls ?? ""}`
 }
 
 function unitsKey(list) {

@@ -11,10 +11,12 @@ export function explain(state, out, trace) {
   let text
   if (chosen === BUY) {
     const c = trace.find((t) => t.action === "buy" && t.slot === out.slot)
+    const roll = trace.find((t) => t.action === "roll")
     text =
       `Mua ô ${out.slot} (${c?.unit ?? "?"}, cost ${c?.cost ?? "?"}): điểm ${out.score.toFixed(2)}, ` +
       `xác suất gặp ${(out.hit * 100).toFixed(1)}%, còn ${c?.copiesLeft ?? "?"} bản ` +
-      `(nguồn số bản: ${c?.copiesSource ?? "?"}), mất ${c?.interestLoss ?? 0} lãi.`
+      `(nguồn số bản: ${c?.copiesSource ?? "?"}), mất ${c?.interestLoss ?? 0} lãi.` +
+      (roll && roll.score > out.score ? " Mua trước rồi mới roll, vì roll sẽ thay shop." : "")
     if (c?.copiesSource === "pool - copiesOwned (ước lượng)") {
       caveats.push("số bản còn lại là ước lượng vì state không có số bản của người chơi khác")
     }
@@ -23,7 +25,7 @@ export function explain(state, out, trace) {
     text = `Lên level: level ${c?.level} dưới mục tiêu ${c?.wanted} của stage ${c?.stage}, vàng ${state.gold} đủ điều kiện.`
   } else if (chosen === ROLL) {
     const c = trace.find((t) => t.action === "roll")
-    text = `Roll để tìm ${state.target?.id ?? "mục tiêu"}: xác suất gặp ${((c?.hit ?? 0) * 100).toFixed(1)}%, điểm ${out.score.toFixed(2)}.`
+    text = `Roll để tìm ${state.target?.id ?? "mục tiêu"}: xác suất gặp ${((c?.hit ?? 0) * 100).toFixed(1)}%, điểm ${out.score.toFixed(2)}.` + (c?.free > 0 ? ` Dùng lượt roll miễn phí (còn ${c.free}).` : "")
   } else if (chosen === SELL) {
     const c = trace.find((t) => t.action === "sell" && t.bench === out.bench)
     text = `Bán ô bench ${out.bench} (${c?.unit ?? "?"}) lấy ${c?.sellValue ?? "?"} vàng: bench đầy, cần chỗ để mua ${c?.makesRoomFor ?? "?"} (điểm ${out.score.toFixed(2)}).`

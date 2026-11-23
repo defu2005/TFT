@@ -34,4 +34,12 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | 2026-11-23 | Chặn mua khi bench đầy; bán để nhường chỗ; log schema 2 | `37cb046` |
 | 2026-11-23 | Chỉ bán khi không có lượt mua; giữ bản đang cần trong line | `4766647` |
 | 2026-11-23 | Mục tiêu đang có trong shop được mua bất kể priority trên shop; không roll khi mục tiêu đã có trong shop | `0376529` |
-| 2026-11-23 | Bỏ qua ô shop không có cost hợp lệ (`thiếu cost`); thêm test bất biến trên 2.000 trạng thái sinh có seed | (xem git log: commit "Skip shop units without a cost") |
+| 2026-11-23 | Bỏ qua ô shop không có cost hợp lệ (`thiếu cost`); thêm test bất biến trên 2.000 trạng thái sinh có seed | `744ee3d` |
+| 2026-11-23 | Mua món muốn mua có sẵn trước khi roll nếu còn đủ vàng để roll; hỗ trợ lượt roll miễn phí (`freeRolls`, không tốn vàng, không bị phạt) | (commit này) |
+
+## 4. Mở cho người dùng, phát sinh từ vòng này
+
+| # | Câu hỏi | Trạng thái |
+| --- | --- | --- |
+| U5 | Lượt roll miễn phí có được cộng dồn sang stage sau không? | **mở** |
+| U6 | Roll miễn phí chỉ được khuyến nghị khi đã đặt mục tiêu (`tft_set_target`). Đây có phải là điều muốn không? | **mở** |

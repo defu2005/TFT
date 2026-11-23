@@ -81,3 +81,9 @@ test("hashState changes when only a bench unit's sellValue changes", () => {
   const changed = { ...snapshot(), bench: [{ id: "K", star: 1, sellValue: 3 }] }
   assert.notEqual(hashState(base), hashState(changed))
 })
+
+test("hashState changes when only freeRolls changes", () => {
+  const base = { ...snapshot(), freeRolls: 1 }
+  const changed = { ...snapshot(), freeRolls: 2 }
+  assert.notEqual(hashState(base), hashState(changed))
+})
