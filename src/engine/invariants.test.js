@@ -144,23 +144,24 @@ function withUnit(state, f) {
   return { ...state, shop: state.shop?.map((u) => (u ? f(u) : u)) ?? state.shop }
 }
 
-function decideOf(state, rules) {
+function decideOf(state, rules, profile = null) {
   const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
-  decide(state, out, null, rules, null)
+  decide(state, out, null, rules, profile)
   return out
 }
 
-for (const [label, rules] of [["rules off", null], ["all U9 rules on", ALL_RULES]]) {
+const CANDIDATE = buildProfile(JSON.parse(fs.readFileSync(new URL("../data/profiles/set18.candidate.json", import.meta.url), "utf8")), "16.20")
+for (const [label, rules, profile] of [["rules off", null, null], ["all U9 rules on", ALL_RULES, null], ["candidate profile", null, CANDIDATE]]) {
   test(`HUD fields: price equal to the tier decides as before, and a null price is never bought (${label})`, () => {
     const rnd = mulberry32(20261124)
     for (let n = 0; n < 2000; n++) {
       const state = makeState(rnd)
       const same = withUnit(state, (u) => ({ ...u, price: u.cost }))
-      const a = decideOf(state, rules)
-      const b = decideOf(same, rules)
+      const a = decideOf(state, rules, profile)
+      const b = decideOf(same, rules, profile)
       assert.deepEqual([b.action, b.slot, b.score], [a.action, a.slot, a.score], `state ${n}`)
       const nulled = withUnit(state, (u) => ({ ...u, price: null }))
-      assert.notEqual(decideOf(nulled, rules).action, BUY, `null price bought in state ${n}`)
+      assert.notEqual(decideOf(nulled, rules, profile).action, BUY, `null price bought in state ${n}`)
     }
   })
 
@@ -168,13 +169,13 @@ for (const [label, rules] of [["rules off", null], ["all U9 rules on", ALL_RULES
     const rnd = mulberry32(20261125)
     for (let n = 0; n < 2000; n++) {
       const state = makeState(rnd)
-      const noGold = decideOf({ ...state, hudGoldUnknown: true }, rules)
+      const noGold = decideOf({ ...state, hudGoldUnknown: true }, rules, profile)
       assert.ok(![BUY, ROLL, 2].includes(noGold.action), `unknown gold acted in state ${n}: ${noGold.action}`)
-      const noLevel = decideOf({ ...state, hudLevelUnknown: true }, rules)
+      const noLevel = decideOf({ ...state, hudLevelUnknown: true }, rules, profile)
       assert.ok(![2, ROLL].includes(noLevel.action), `unknown level acted in state ${n}: ${noLevel.action}`)
       // With the level unknown, whatever number is sent must not change the output.
-      const a = decideOf({ ...state, level: 1, hudLevelUnknown: true }, rules)
-      const b = decideOf({ ...state, level: 11, hudLevelUnknown: true }, rules)
+      const a = decideOf({ ...state, level: 1, hudLevelUnknown: true }, rules, profile)
+      const b = decideOf({ ...state, level: 11, hudLevelUnknown: true }, rules, profile)
       assert.deepEqual([b.action, b.slot, b.score], [a.action, a.slot, a.score], `level leaked in state ${n}`)
     }
   })

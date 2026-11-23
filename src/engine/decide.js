@@ -161,7 +161,7 @@ export function decide(state, out, trace = null, rules, profile) {
     trace.push({
       action: "xp",
       score: xpScore,
-      level,
+      level: levelKnown ? level : null,
       wanted,
       stage,
       note: level >= wanted ? `level ${level} đã đạt mục tiêu ${wanted}` : !goldKnown ? "chưa đọc được vàng" : !levelKnown ? "chưa đọc được cấp" : !xpAffordable ? `chưa đủ điều kiện (vàng ${gold}, cần ${xpGold} và ${BUY_XP_COST})` : "",

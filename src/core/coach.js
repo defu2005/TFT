@@ -81,6 +81,9 @@ export function createCoach({
           if (boardMissing) reason.caveats.push("nguồn không gửi bàn đấu, line tự động không có gì để xét")
         }
       }
+      // Unknown fields are reported as null, never as the number the engine used.
+      reason.factors.level = input.hudLevelUnknown || input.level == null ? null : input.level
+      reason.factors.shopKnown = Array.isArray(input.shop) && !(input.shopUnknownSlots?.length)
       if (rules) reason.factors.rules = rules
       if (traitOverlay) {
         reason.factors.traitOverlay = { set: traitOverlay.set, verified: traitOverlay.verified, applied: traitOverlay.applied }
@@ -105,7 +108,7 @@ export function createCoach({
         sourceKind: source.kind,
         latencyMs: round(latencyMs),
         stateHash,
-        known: { shop: Array.isArray(input.shop), target: !!input.target },
+        known: { shop: reason.factors.shopKnown, target: !!input.target },
         state: input,
         decision: { action: actionName(out.action), slot: out.slot, bench: out.bench, score: round(out.score), hit: input.hudLevelUnknown ? null : round(out.hit) },
         reason,
