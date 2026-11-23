@@ -16,7 +16,7 @@ export function explain(state, out, trace) {
       `Mua ô ${out.slot} (${c?.unit ?? "?"}, cost ${c?.cost ?? "?"}): điểm ${out.score.toFixed(2)}, ` +
       `xác suất gặp ${(out.hit * 100).toFixed(1)}%, còn ${c?.copiesLeft ?? "?"} bản ` +
       `(nguồn số bản: ${c?.copiesSource ?? "?"}), mất ${c?.interestLoss ?? 0} lãi.` +
-      (roll && roll.score > out.score ? " Mua trước rồi mới roll, vì roll sẽ thay shop." : "")
+      (roll && roll.score > 0.45 && roll.score > out.score ? " Mua trước rồi mới roll, vì roll sẽ thay shop." : "")
     if (c?.copiesSource === "pool - copiesOwned (ước lượng)") {
       caveats.push("số bản còn lại là ước lượng vì state không có số bản của người chơi khác")
     }

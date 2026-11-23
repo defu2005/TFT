@@ -51,6 +51,7 @@ export function decide(state, out, trace = null) {
   if (bench) for (let j = 0; j < bench.length; j++) if (!bench[j]) benchFull = false
   let blockedBuy = 0
   let blockedUnit = null
+  let blockedCost = 0
 
   if (shop) {
     for (let i = 0; i < 5; i++) {
@@ -112,6 +113,7 @@ export function decide(state, out, trace = null) {
         if (score > blockedBuy) {
           blockedBuy = score
           blockedUnit = unit.id
+          blockedCost = unit.cost
         }
       } else if (score > bestBuy) {
         bestBuy = score
@@ -220,6 +222,12 @@ export function decide(state, out, trace = null) {
       out.slot = keepSlot
       out.score = keepBuy
       out.hit = keepHit
+      return out
+    }
+    if (sellBench >= 0 && gold + sellGold - blockedCost >= rollNeeds) {
+      out.action = SELL
+      out.bench = sellBench
+      out.score = sellScore
       return out
     }
     out.action = ROLL

@@ -23,7 +23,8 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | I2 | `bench` với `id`, `star`, `sellValue` | Gate bench đầy, bán để nhường chỗ | **mở** |
 | I3 | `takenByOthers` cho từng ô shop (số bản người khác đang giữ) | Xác suất gặp tướng chính xác | **mở** |
 | I4 | `round`, `phase`, `xp`, `xpToNext` | Lên level và roll đúng thời điểm | **mở** |
-| I5 | Đánh dấu giá trị ước lượng trong `missing` (gold, level, stage khi không có HUD) | Tránh khuyến nghị lên level dựa trên vàng bịa | **mở** |
+| I5 | Đánh dấu giá trị ước lượng trong `missing` (gold, level, stage khi không có HUD), và cho biết tướng shop không rõ cost đang được gán cost 1 mặc định (`standaloneSource.js`) | Tránh khuyến nghị lên level dựa trên vàng bịa; tránh mua/bán sai giá | **mở** |
+| I7 | Gửi `freeRolls` (số lượt roll miễn phí còn lại) | Engine đã hỗ trợ nhưng không nguồn nào gửi | **mở** |
 | I6 | Tên tướng trong `championName` và `id` của HUD shop khớp nhau | Nếu khác, `copiesOwned` luôn bằng 0 | **mở** |
 
 ## 3. Quyết định đã tự đưa ra
@@ -39,4 +40,5 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | 2026-11-23 | Bỏ qua ô shop không có cost hợp lệ (`thiếu cost`); thêm test bất biến trên 2.000 trạng thái sinh có seed | `744ee3d` |
 | 2026-11-23 | Mua món muốn mua có sẵn trước khi roll nếu còn đủ vàng để roll; hỗ trợ lượt roll miễn phí (`freeRolls`, không tốn vàng, không bị phạt) | `ef40fd1` |
 | 2026-11-23 | Diễn giải "tối ưu" là tối ưu chất lượng quyết định. Tốc độ không cần sửa: khoảng 70–130 ns mỗi quyết định so với vòng lặp 250 ms | `8cfa5d0` |
-| 2026-11-23 | Chọn hành động tốt nhất trong số các hành động vượt ngưỡng của chính nó: mua hoặc bán không còn bị giữ lại bởi roll dưới ngưỡng 0.45 hoặc xp dưới 0.5 | `8cfa5d0` |
+| 2026-11-23 | Chọn hành động tốt nhất trong số các hành động vượt ngưỡng của chính nó: mua hoặc bán không còn bị giữ lại bởi roll dưới ngưỡng 0.45 hoặc xp dưới 0.5
+| 2026-11-23 | Bán trước khi roll khi việc bán vẫn để đủ vàng roll; sửa văn bản "Mua trước rồi mới roll" để chỉ hiện khi thật sự có roll sau đó | (commit này) |

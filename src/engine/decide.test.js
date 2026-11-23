@@ -379,7 +379,8 @@ const LOW_ROLL_TARGET = { ...ROLL_TARGET, priority: 1.5 }
 test("a buy that beats a sub-threshold roll is taken instead of holding", () => {
   const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
   const trace = []
-  decide(ROLL_STATE(20, [{ id: "a", cost: 1, copiesOwned: 0, priority: 1 }, null, null, null, null], { target: LOW_ROLL_TARGET }), out, trace)
+  const state = ROLL_STATE(20, [{ id: "a", cost: 1, copiesOwned: 0, priority: 1 }, null, null, null, null], { target: LOW_ROLL_TARGET })
+  decide(state, out, trace)
   const buy = trace.find((c) => c.action === "buy" && c.slot === 0)
   const roll = trace.find((c) => c.action === "roll")
   assert.ok(buy.score > 0)
@@ -387,6 +388,7 @@ test("a buy that beats a sub-threshold roll is taken instead of holding", () => 
   assert.ok(roll.score <= 0.45)
   assert.equal(out.action, BUY)
   assert.equal(out.slot, 0)
+  assert.doesNotMatch(explain(state, out, trace).text, /trước/)
 })
 
 test("a sell that beats a sub-threshold roll is taken instead of holding", () => {
@@ -400,4 +402,22 @@ test("a sell that beats a sub-threshold roll is taken instead of holding", () =>
   )
   assert.equal(out.action, SELL)
   assert.equal(out.bench, 1)
+})
+
+test("a sell is taken before a roll when the sale still leaves gold to roll", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  decide(ROLL_STATE(31, [{ id: "a", cost: 1, copiesOwned: 0, priority: 1 }, null, null, null, null], { bench: SELL_BENCH }), out)
+  assert.equal(out.action, SELL)
+  assert.equal(out.bench, 1)
+})
+
+test("a roll is kept when the sale would leave too little gold to roll", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  decide(
+    ROLL_STATE(12, [{ id: "a", cost: 1, copiesOwned: 0, priority: 1 }, null, null, null, null], {
+      bench: [{ id: "x", star: 1, sellValue: 0 }],
+    }),
+    out,
+  )
+  assert.equal(out.action, ROLL)
 })
