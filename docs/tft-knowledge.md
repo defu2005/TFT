@@ -88,7 +88,7 @@ Trạng thái chung: `rules.js` là **unverified** cho Set 18 và chưa có ngu�
 ## 7. Sát thương người chơi, HP và cơ chế set
 
 - Sát thương người chơi theo stage: **pending**. Không có trong 18.1, 18.6, 18.7 hay wiki.
-- Cơ chế set 18 là **Wisp** (theo [Riot 18.1](https://teamfighttactics.leagueoflegends.com/en-us/news/game-updates/teamfight-tactics-patch-18-1), verified): 7 loại (Champion, Combat, Misc, Shop, Gold/XP, Risky, Item). Chỉ mua được trong giai đoạn chuẩn bị; xuất hiện ở mỗi shop thứ hai; sau stage 5, mỗi Wisp thứ hai đảm bảo là Combat Wisp. Chi tiết đầy đủ: "Enchanted Wilds Overview" (chưa mở).
+- Cơ chế set 18 là **Wisp** (theo [Riot 18.1](https://teamfighttactics.leagueoflegends.com/en-us/news/game-updates/teamfight-tactics-patch-18-1), verified): 7 loại (Champion, Combat, Misc, Shop, Gold/XP, Risky, Item). Chỉ mua được trong giai đoạn chuẩn bị; xuất hiện ở mỗi shop thứ hai; sau stage 5, mỗi Wisp thứ hai đảm bảo là Combat Wisp. Chi tiết đầy đủ: [Enchanted Wilds Overview](https://teamfighttactics.leagueoflegends.com/en-us/news/game-updates/enchanted-wilds-overview/) (đã đọc, verified): "Wisps will always appear in the rightmost slot"; "you'll still benefit from seeing one more unit in that shop slot, regardless of whether or not you buy the Wisp"; "revealing the unit that was hiding behind it".
 - Patch 18.6 có thay đổi Blossom và Sprykin, và Elderwood (9) bonus health theo esports.gg (search summary, chưa mở trang).
 
 ## 8. Trang bị và augment
