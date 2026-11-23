@@ -291,6 +291,21 @@ co che can do them. Doi thu la bot scripted trong mo phong, khong phai TFT that.
 
 Chua viet quy tac cho BENCH_BOARD: can chan doan co che truoc (`scripts/diag_bb.py`).
 
+## Teacher v3 (hybrid + doi unit) va kiem dinh giu-lai tren seed 60000-61999
+
+Quy tac: hybrid + doi unit (FIELD unit banc manh nhat; khi board day, doi unit board yeu nhat lay unit banc manh hon).
+Khoa so sanh chon tren seed tinh chinh 20000-21999 (dev): value -3,48; star_cost -3,40; cost -3,13; hybrid -2,58. Dong bang "value".
+
+| Noi dung | Doi unit (value) vs | Hieu A-B | CI 95% |
+|---|---|---|---|
+| Set 17 | scripted goc | -3,50 | [-3,53, -3,46] |
+| Set 17 | hybrid | -1,88 | [-1,95, -1,82] |
+| Set 17 | null: scripted vs scripted | +0,013 | [-0,07, +0,09] |
+| Set 18 DA-only | scripted goc | -3,80 | [-3,82, -3,78] |
+| Set 18 DA-only | null: scripted vs scripted | -0,05 | [-0,13, +0,02] |
+
+Doc ket qua: doi unit lam teacher tot hon ro rang tren seed giu-lai, va null khong vuot 0. Day van la doi thu scripted trong mo phong, khong phai TFT that. Muc chenh voi scripted goc (~-3,5) gan toi da co the cua thang do.
+
 ## Trang thai cong viec
 
 - Test cua tft-sim: 9 pass (chay tren toy env, co loai tru seat). Toy env chi kiem chung harness.
