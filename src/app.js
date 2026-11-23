@@ -15,6 +15,21 @@ const SOURCES = ["live", "replay", "capture", "ram", "standalone", "hybrid"]
 //   TFT_CAPTURE      capture file for capture mode (JSONL from `npm run capture`); required in that mode
 //   TFT_LOG          decision log path (default: logs/decisions.jsonl)
 //   TFT_INTERVAL_MS  tick interval (default: 250)
+//   TFT_RULES        comma list of opt-in U9 rules: keepInterest, earlyLevel, guideLevels (default: none)
+const KNOWN_RULES = ["keepInterest", "earlyLevel", "guideLevels"]
+
+// Returns null when unset; otherwise flags for the named rules. Unknown names throw.
+export function parseRules(value) {
+  const names = String(value ?? "").split(",").map((s) => s.trim()).filter(Boolean)
+  if (names.length === 0) return null
+  const rules = { keepInterest: false, earlyLevel: false, guideLevels: false }
+  for (const name of names) {
+    if (!KNOWN_RULES.includes(name)) throw new Error(`TFT_RULES có tên không rõ: ${name} (chọn trong ${KNOWN_RULES.join(", ")})`)
+    rules[name] = true
+  }
+  return rules
+}
+
 export function loadConfig(env = process.env) {
   const source = SOURCES.includes(env.TFT_SOURCE) ? env.TFT_SOURCE : "live"
   if (source === "capture" && !env.TFT_CAPTURE) {
@@ -29,6 +44,7 @@ export function loadConfig(env = process.env) {
     intervalMs: Number(env.TFT_INTERVAL_MS) || 250,
     autoLine: env.TFT_AUTO_LINE === "1",
     setFile: env.TFT_SET_FILE || null,
+    rules: parseRules(env.TFT_RULES),
   }
 }
 
@@ -61,6 +77,6 @@ export function createApp(config = loadConfig(), { onTick = null, onError = null
   }
   const source = makeSource(config)
   const logger = createDecisionLog(config.logPath)
-  const coach = createCoach({ source, logger, intervalMs: config.intervalMs, onTick, onError, autoLine: auto })
+  const coach = createCoach({ source, logger, intervalMs: config.intervalMs, onTick, onError, autoLine: auto, rules: config.rules ?? null })
   return { coach, source, logger, config }
 }

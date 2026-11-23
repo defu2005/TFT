@@ -12,6 +12,7 @@ export function createCoach({
   onTick = null,
   onError = null,
   autoLine = null,
+  rules = null,
   now = () => Date.now(),
 } = {}) {
   if (!source) throw new Error("createCoach needs a source")
@@ -65,9 +66,10 @@ export function createCoach({
       if (Array.isArray(fields.bench)) input.bench = applyLines(fields.bench, lines, auto)
       const trace = []
       const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
-      decide(input, out, trace)
+      decide(input, out, trace, rules)
       const reason = explain(input, out, trace)
       if (auto && auto.size) reason.factors.autoLine = Object.fromEntries(auto)
+      if (rules) reason.factors.rules = rules
       if (missing.length) {
         const note = `thiếu trường từ nguồn: ${missing.join(", ")}; đang dùng giá trị mặc định cho các trường này`
         reason.caveats.push(note)
@@ -153,6 +155,7 @@ export function createCoach({
         ticks: cache.ticks,
         intervalMs,
         autoLine: !!autoLine,
+        rules: rules ?? null,
       }
     },
 

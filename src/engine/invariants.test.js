@@ -2,6 +2,8 @@ import assert from "node:assert/strict"
 import test from "node:test"
 import { decide, actionName, BUY, SELL, ROLL, HOLD } from "./decide.js"
 
+const ALL_RULES = { keepInterest: true, earlyLevel: true, guideLevels: true }
+
 // Seeded generator so every run checks the same 2,000 states.
 function mulberry32(seed) {
   let a = seed >>> 0
@@ -56,7 +58,7 @@ function makeState(rnd) {
   return state
 }
 
-test("engine invariants hold on 2,000 seeded states", () => {
+function checkInvariants(rules) {
   const rnd = mulberry32(20261123)
   const counts = { hold: 0, buy: 0, xp: 0, roll: 0, sell: 0 }
   for (let n = 0; n < 2000; n++) {
@@ -64,9 +66,9 @@ test("engine invariants hold on 2,000 seeded states", () => {
     const where = () => JSON.stringify(state)
     const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
     const trace = []
-    decide(state, out, trace)
+    decide(state, out, trace, rules)
     const plain = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
-    decide(state, plain)
+    decide(state, plain, null, rules)
 
     assert.ok(Number.isFinite(out.score), `score not finite: ${where()}`)
     for (const c of trace) {
@@ -106,8 +108,18 @@ test("engine invariants hold on 2,000 seeded states", () => {
       assert.ok(!inShop, `ROLL while target is in the shop: ${where()}`)
     }
   }
+  return counts
+}
+
+test("engine invariants hold on 2,000 seeded states", () => {
+  const counts = checkInvariants(null)
   for (const [name, count] of Object.entries(counts)) {
     assert.ok(count >= 20, `${name} occurred ${count} times, need at least 20`)
   }
   console.log("action counts", JSON.stringify(counts))
+})
+
+test("engine invariants hold on the same 2,000 states with all U9 rules on", () => {
+  const counts = checkInvariants(ALL_RULES)
+  console.log("action counts (all U9 rules on)", JSON.stringify(counts))
 })

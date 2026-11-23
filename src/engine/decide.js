@@ -1,4 +1,4 @@
-import { BUY_XP_COST, LEVEL_BY_STAGE, POOL_COPIES, REROLL_COST } from "../data/rules.js"
+import { BUY_XP_COST, LEVEL_BY_STAGE, LEVEL_BY_STAGE_GUIDE, POOL_COPIES, REROLL_COST } from "../data/rules.js"
 import { hitChance, hitChanceOverRolls, interestGold } from "./odds.js"
 
 export const HOLD = 0
@@ -8,6 +8,9 @@ export const ROLL = 3
 export const SELL = 4
 
 const ACTION_NAME = ["hold", "buy", "xp", "roll", "sell"]
+
+// Off by default. Each flag switches on one U9 rule in docs/needs.md; see parseRules in src/app.js.
+export const NO_RULES = Object.freeze({ keepInterest: false, earlyLevel: false, guideLevels: false })
 
 export function actionName(code) {
   return ACTION_NAME[code] ?? "hold"
@@ -21,7 +24,8 @@ export function actionName(code) {
 //
 // When `trace` is an array, every candidate considered is pushed into it with the
 // numbers behind its score. The hot path passes no trace and allocates nothing extra.
-export function decide(state, out, trace = null) {
+export function decide(state, out, trace = null, rules) {
+  const r = rules || NO_RULES
   out.action = HOLD
   out.slot = -1
   out.score = 0
@@ -36,7 +40,8 @@ export function decide(state, out, trace = null) {
   const target = state.target
   const urgent = hp <= 30
   const freeRolls = state.freeRolls > 0 ? state.freeRolls | 0 : 0
-  const rollNeeds = freeRolls > 0 ? 0 : REROLL_COST + (urgent ? 0 : 10)
+  const reserve = urgent ? 0 : r.keepInterest ? 50 : 10
+  const rollNeeds = freeRolls > 0 ? 0 : REROLL_COST + reserve
 
   let bestBuy = 0
   let bestSlot = -1
@@ -128,9 +133,11 @@ export function decide(state, out, trace = null) {
     }
   }
 
-  const wanted = LEVEL_BY_STAGE[stage] ?? LEVEL_BY_STAGE[LEVEL_BY_STAGE.length - 1]
+  const levelTable = r.guideLevels ? LEVEL_BY_STAGE_GUIDE : LEVEL_BY_STAGE
+  const wanted = levelTable[stage] ?? levelTable[levelTable.length - 1]
+  const xpGold = r.earlyLevel && stage <= 2 ? BUY_XP_COST : 50
   let xpScore = 0
-  const xpAffordable = gold >= 50 && gold >= BUY_XP_COST
+  const xpAffordable = gold >= xpGold && gold >= BUY_XP_COST
   if (level < wanted && xpAffordable) {
     xpScore = (wanted - level) * (urgent ? 0.6 : 1.1)
   }
@@ -141,7 +148,7 @@ export function decide(state, out, trace = null) {
       level,
       wanted,
       stage,
-      note: level >= wanted ? `level ${level} đã đạt mục tiêu ${wanted}` : !xpAffordable ? `chưa đủ điều kiện (vàng ${gold}, cần 50 và ${BUY_XP_COST})` : "",
+      note: level >= wanted ? `level ${level} đã đạt mục tiêu ${wanted}` : !xpAffordable ? `chưa đủ điều kiện (vàng ${gold}, cần ${xpGold} và ${BUY_XP_COST})` : "",
     })
   }
 
@@ -154,7 +161,6 @@ export function decide(state, out, trace = null) {
     if (!urgent && freeRolls === 0) rollScore -= 0.5
   }
   if (trace) {
-    const reserve = urgent ? 0 : 10
     const rolls = freeRolls + (gold > reserve ? ((gold - reserve) / REROLL_COST) | 0 : 0)
     const hitWithin = target && target.cost && !targetInShop ? hitChanceOverRolls(level, target.cost, target.copiesLeft, target.champsAtCost, rolls) : 0
     trace.push({

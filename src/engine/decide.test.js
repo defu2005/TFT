@@ -456,7 +456,7 @@ test("U9 rule 1 (roll only while gold stays at 50+): today a roll at 51 gold is 
   assert.equal(out.action, ROLL)
 })
 
-test("U9 rule 2 (level only at 50+ gold early): today level 3 at 20 gold holds with the XP note", () => {
+test("U9 rule 2 (level before 50 gold in early stages): today level 3 at 20 gold holds with the XP note", () => {
   const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
   const trace = []
   decide({ level: 3, stage: 2, gold: 20, hp: 80, shop: [null, null, null, null, null], target: null }, out, trace)
