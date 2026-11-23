@@ -5,9 +5,12 @@ import { z } from "zod"
 import { decide } from "../engine/decide.js"
 import { explain, CAVEAT_ODDS } from "../engine/reason.js"
 import { hitChance, interestGold } from "../engine/odds.js"
-import * as rules from "../data/profile.js"
+import * as tables from "../data/profile.js"
 
 const HERE = path.dirname(fileURLToPath(import.meta.url))
+
+// Same wording as the coach uses for a profile file.
+const PROFILE_CAVEAT = (p) => `bảng tỉ lệ shop của set ${p.set}, bản yêu cầu ${p.requested ?? "mới nhất"}, bản áp dụng ${p.applied ?? "không có"}, từ file hồ sơ, chưa xác minh`
 const SET_FILE = path.join(HERE, "..", "data", "set17.json")
 
 const targetSchema = z
@@ -75,7 +78,8 @@ function loadSetSummary() {
 
 // Registers every capability as an MCP tool. Tools read cached state from the coach;
 // none of them triggers a read from the state source.
-export function registerTools(server, { coach }) {
+export function registerTools(server, { coach, rules = null, profile = null }) {
+  const caveat = profile ? PROFILE_CAVEAT(profile) : CAVEAT_ODDS
   server.registerTool(
     "tft_status",
     {
@@ -121,8 +125,8 @@ export function registerTools(server, { coach }) {
       const state = normalizeState(args)
       const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
       const trace = []
-      decide(state, out, trace)
-      return asText(explain(state, out, trace))
+      decide(state, out, trace, rules, profile)
+      return asText(explain(state, out, trace, caveat))
     },
   )
 
@@ -139,7 +143,7 @@ export function registerTools(server, { coach }) {
       },
     },
     async ({ level, cost, copiesLeft, champsAtCost }) =>
-      asText({ hitChance: round(hitChance(level, cost, copiesLeft, champsAtCost)), caveat: CAVEAT_ODDS }),
+      asText({ hitChance: round(hitChance(level, cost, copiesLeft, champsAtCost, profile)), caveat }),
   )
 
   server.registerTool(
@@ -151,7 +155,7 @@ export function registerTools(server, { coach }) {
     },
     async ({ gold }) => {
       const interest = interestGold(gold)
-      const nextThreshold = interest >= rules.MAX_INTEREST ? null : (interest + 1) * 10
+      const nextThreshold = interest >= tables.MAX_INTEREST ? null : (interest + 1) * 10
       return asText({ gold, interest, nextThreshold })
     },
   )
@@ -165,15 +169,17 @@ export function registerTools(server, { coach }) {
     },
     async () =>
       asText({
-        shopOdds: rules.SHOP_ODDS,
-        poolCopies: rules.POOL_COPIES,
-        champsPerCost: rules.CHAMPS_PER_COST,
-        levelByStage: rules.LEVEL_BY_STAGE,
-        buyXpCost: rules.BUY_XP_COST,
-        rerollCost: rules.REROLL_COST,
-        maxInterest: rules.MAX_INTEREST,
+        shopOdds: profile ? profile.shopOdds : tables.SHOP_ODDS,
+        poolCopies: profile ? profile.poolCopies : tables.POOL_COPIES,
+        champsPerCost: profile ? profile.champsPerCost : tables.CHAMPS_PER_COST,
+        levelByStage: tables.LEVEL_BY_STAGE,
+        buyXpCost: tables.BUY_XP_COST,
+        rerollCost: tables.REROLL_COST,
+        maxInterest: tables.MAX_INTEREST,
+        profile: profile ? { set: profile.set, requested: profile.requested, applied: profile.applied } : null,
+        rules,
         verified: false,
-        caveat: CAVEAT_ODDS,
+        caveat,
         set17: loadSetSummary(),
       }),
   )

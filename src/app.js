@@ -90,5 +90,5 @@ export function createApp(config = loadConfig(), { onTick = null, onError = null
   const source = makeSource(config)
   const logger = createDecisionLog(config.logPath)
   const coach = createCoach({ source, logger, intervalMs: config.intervalMs, onTick, onError, autoLine: auto, autoLineCheck: autoCheck, rules: config.rules ?? null, profile })
-  return { coach, source, logger, config }
+  return { coach, source, logger, config, profile }
 }
