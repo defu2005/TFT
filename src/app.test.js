@@ -341,6 +341,50 @@ test("bare null gold and level (no flags) reach the record as unknown and decide
   assert.equal(record.reason.factors.level, null)
 })
 
+// Hand-read frames from third-party VOD 2924500482 (boxbox, patch 18.6), 1505 s, 2105 s, 2705 s. Names read from the
+// cards and matched to set18.json; the HUD shows the cost on each card, which equals the tier, so no price is given.
+// Gold, level, HP and stage are read from the HUD. The rightmost empty slot in frame 3 is an empty card, not a price.
+test("hand-read 18.6 frames replay: level, gold and shop are read; no decision is made on an empty slot", async () => {
+  const fixture = path.join(import.meta.dirname, "data", "fixtures", "handread-18-6.json")
+  const { coach } = createApp(replayConfig({ TFT_REPLAY: fixture }))
+  const first = await coach.tick()
+  assert.equal(first.state.level, 7)
+  assert.equal(first.state.gold, 50)
+  assert.equal(first.reason.factors.shopKnown, true)
+  assert.equal(typeof first.decision.hit, "number")
+  const second = await coach.tick()
+  assert.equal(second.state.level, 9)
+  assert.equal(second.state.gold, 14)
+  assert.ok(second.state.shop.some((u) => u?.id === "DA_Brambleback18"))
+  const third = await coach.tick()
+  assert.equal(third.state.gold, 10)
+  assert.notEqual(third.decision.slot, 4)
+  assert.ok(third.decision.action === "hold" || third.decision.slot !== 4)
+})
+
+// Gold and level keys omitted (no flag, no null): nothing is rolled, bought or leveled on a coerced zero, even with free rolls.
+test("omitted gold and level keys with free rolls decide nothing", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-omitted-"))
+  const fixture = path.join(dir, "frame.json")
+  fs.writeFileSync(
+    fixture,
+    JSON.stringify({
+      frames: [
+        {
+          hp: 80,
+          stage: 3,
+          freeRolls: 2,
+          target: { id: "DA_18_Ivern", cost: 1, copiesLeft: 10, priority: 1, champsAtCost: 13 },
+          shop: [{ id: "DA_18_Ivern", cost: 1, copiesOwned: 0, priority: 1 }, null, null, null, null],
+        },
+      ],
+    }),
+  )
+  const { coach } = createApp(replayConfig({ TFT_REPLAY: fixture }))
+  const record = await coach.tick()
+  assert.equal(record.decision.action, "hold")
+})
+
 // Level unknown (HUD): the buy is still allowed, but no probability is reported or computed.
 test("unknown level: decision.hit is null and the reason text states no probability", async () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-hudlevel-"))
