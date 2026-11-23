@@ -70,6 +70,8 @@ test("the auto line on the Set 18 file rates a shop unit that shares a trait wit
   const config = replayConfig({ TFT_REPLAY: fixture, TFT_AUTO_LINE: "1", TFT_SET_FILE: path.join(import.meta.dirname, "data", "set18.json") })
   const { coach } = createApp(config)
   const record = await coach.tick()
+  assert.equal(record.decision.action, "buy")
+  assert.equal(record.decision.slot, 0)
   assert.ok(record.reason.factors.autoLine.DA_18_Xayah >= 1)
 })
 

@@ -23,6 +23,7 @@ for (const c of champs) byCost[c.cost - 1] += 1
 const snapshot = {
   source: "https://raw.communitydragon.org/latest/cdragon/tft/en_us.json",
   contentVersion,
+  dumpFileDate: fs.statSync(input).mtime.toISOString().slice(0, 10),
   set: 18,
   name: "Set 18",
   nameInDump: set.name,
