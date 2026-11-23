@@ -8,10 +8,13 @@ import { hitChance } from "../engine/odds.js"
 // Captures the handlers registerTool() receives, so the tools can be called without a transport.
 function fakeServer() {
   const handlers = new Map()
+  const configs = new Map()
   return {
     handlers,
-    registerTool(name, _config, handler) {
+    configs,
+    registerTool(name, config, handler) {
       handlers.set(name, handler)
+      configs.set(name, config)
     },
   }
 }
@@ -40,4 +43,50 @@ test("tft_rules reports the profile tables and the profile when one is given", a
   const body = JSON.parse((await server.handlers.get("tft_rules")({})).content[0].text)
   assert.deepEqual(body.shopOdds[8], candidate.patches[0].shopOdds["8"])
   assert.equal(body.profile.applied, "16.20")
+})
+
+const { z } = await import("zod")
+const S18_PROFILE = () => buildProfile(candidate, "16.20")
+
+// A state where the U9 keepInterest rule flips the action: 51 gold, no free rolls, a wanted target.
+const ROLL_STATE = { level: 8, gold: 51, hp: 80, stage: 5, shop: [null, null, null, null, null], target: { id: "Z", cost: 1, copiesLeft: 30, priority: 5, champsAtCost: 1 } }
+
+test("tft_evaluate_state changes its action when the keepInterest rule is passed", async () => {
+  const plain = fakeServer()
+  registerTools(plain, { coach, rules: null, profile: null })
+  const ruled = fakeServer()
+  registerTools(ruled, { coach, rules: { keepInterest: true, earlyLevel: false, guideLevels: false }, profile: null })
+  const without = JSON.parse((await plain.handlers.get("tft_evaluate_state")(ROLL_STATE)).content[0].text)
+  const withRule = JSON.parse((await ruled.handlers.get("tft_evaluate_state")(ROLL_STATE)).content[0].text)
+  assert.equal(without.action, "roll")
+  assert.equal(withRule.action, "hold")
+  assert.deepEqual(withRule.factors.rules, { keepInterest: true, earlyLevel: false, guideLevels: false })
+})
+
+test("tft_evaluate_state carries the profile caveats and factor when a profile is given", async () => {
+  const profile = S18_PROFILE()
+  const server = fakeServer()
+  registerTools(server, { coach, rules: null, profile })
+  const body = JSON.parse((await server.handlers.get("tft_evaluate_state")(ROLL_STATE)).content[0].text)
+  assert.equal(body.factors.profile.applied, "16.20")
+  for (const c of profile.caveats) assert.ok(body.caveats.includes(c), c)
+})
+
+test("tft_rules returns the guide level table when guideLevels is on", async () => {
+  const server = fakeServer()
+  registerTools(server, { coach, rules: { keepInterest: false, earlyLevel: false, guideLevels: true }, profile: null })
+  const body = JSON.parse((await server.handlers.get("tft_rules")({})).content[0].text)
+  assert.deepEqual(body.levelByStage, [0, 2, 4, 6, 7, 8, 9, 9])
+  assert.equal(body.maxCost, 5)
+})
+
+test("tool input schemas take the cost bound from the profile, not a fixed 5", () => {
+  const plain = fakeServer()
+  registerTools(plain, { coach })
+  const wide = fakeServer()
+  registerTools(wide, { coach, profile: { ...S18_PROFILE(), maxCost: 7 } })
+  const cfgPlain = plain.configs.get("tft_hit_chance").inputSchema
+  const cfgWide = wide.configs.get("tft_hit_chance").inputSchema
+  assert.equal(z.object(cfgPlain).safeParse({ level: 8, cost: 6, copiesLeft: 5 }).success, false)
+  assert.equal(z.object(cfgWide).safeParse({ level: 8, cost: 6, copiesLeft: 5 }).success, true)
 })

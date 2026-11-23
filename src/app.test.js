@@ -97,7 +97,7 @@ test("auto line reports shop or board ids that the set file does not know", asyn
   const config = replayConfig({ TFT_REPLAY: fixture, TFT_AUTO_LINE: "1", TFT_SET_FILE: SET17 })
   const { coach } = createApp(config)
   const record = await coach.tick()
-  assert.deepEqual(record.reason.factors.setMismatch, { count: 1, ids: ["DA_18_Xayah"] })
+  assert.deepEqual(record.reason.factors.setMismatch, { count: 1, ids: ["DA_18_Xayah"], missingId: 0 })
   assert.ok(record.reason.caveats.some((c) => c.includes("bỏ qua")))
 })
 
@@ -162,4 +162,30 @@ test("a profile file reaches the decision through createApp; TFT_PATCH picks the
   assert.ok(b.reason.caveats.some((c) => /set TEST, bản yêu cầu 16.20, bản áp dụng 16.20/.test(c)))
 
   assert.throws(() => createApp(loadConfig({ TFT_SOURCE: "replay", TFT_PATCH: "16.20", TFT_LOG: path.join(dir, "e.jsonl") })), /TFT_PROFILE_FILE/)
+})
+
+test("auto line reports board units that have no id at all", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-noid-"))
+  const fixture = path.join(dir, "frame.json")
+  fs.writeFileSync(
+    fixture,
+    JSON.stringify({
+      frames: [
+        {
+          level: 7,
+          gold: 20,
+          hp: 80,
+          stage: 3,
+          target: null,
+          shop: [{ id: "TFT17_Briar", cost: 1, copiesOwned: 0, priority: 0 }, null, null, null, null],
+          board: [{ championName: "Belveth", star: 1 }],
+        },
+      ],
+    }),
+  )
+  const config = replayConfig({ TFT_REPLAY: fixture, TFT_AUTO_LINE: "1", TFT_SET_FILE: SET17 })
+  const { coach } = createApp(config)
+  const record = await coach.tick()
+  assert.equal(record.reason.factors.setMismatch.missingId, 1)
+  assert.ok(record.reason.caveats.some((c) => c.includes("không có id")))
 })

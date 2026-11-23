@@ -13,10 +13,12 @@ const HERE = path.dirname(fileURLToPath(import.meta.url))
 const PROFILE_CAVEAT = (p) => `bảng tỉ lệ shop của set ${p.set}, bản yêu cầu ${p.requested ?? "mới nhất"}, bản áp dụng ${p.applied ?? "không có"}, từ file hồ sơ, chưa xác minh`
 const SET_FILE = path.join(HERE, "..", "data", "set17.json")
 
+// Caps come from the profile in use, so a profile with more costs or levels is accepted.
+function schemasFor(maxCost, maxLevel) {
 const targetSchema = z
   .object({
     id: z.string().optional(),
-    cost: z.number().int().min(1).max(5),
+    cost: z.number().int().min(1).max(maxCost),
     copiesLeft: z.number().int().min(0),
     priority: z.number().min(0),
     champsAtCost: z.number().int().min(1).optional(),
@@ -26,7 +28,7 @@ const targetSchema = z
 const unitSchema = z
   .object({
     id: z.string(),
-    cost: z.number().int().min(1).max(5),
+    cost: z.number().int().min(1).max(maxCost),
     copiesOwned: z.number().int().min(0).default(0),
     priority: z.number().min(0).default(0),
     poolCopies: z.number().int().min(0).optional(),
@@ -45,7 +47,7 @@ const ownedSchema = z
   .nullable()
 
 const stateSchema = {
-  level: z.number().int().min(1).max(11),
+  level: z.number().int().min(1).max(maxLevel),
   gold: z.number().int().min(0),
   hp: z.number().min(0),
   stage: z.number().int().min(1),
@@ -54,6 +56,8 @@ const stateSchema = {
   board: z.array(ownedSchema).nullable().optional(),
   freeRolls: z.number().int().min(0).optional(),
   bench: z.array(ownedSchema).nullable().optional(),
+}
+  return { targetSchema, stateSchema }
 }
 
 function asText(value) {
@@ -79,6 +83,9 @@ function loadSetSummary() {
 // Registers every capability as an MCP tool. Tools read cached state from the coach;
 // none of them triggers a read from the state source.
 export function registerTools(server, { coach, rules = null, profile = null }) {
+  const maxCost = profile?.maxCost ?? tables.DEFAULT_PROFILE.maxCost
+  const maxLevel = profile ? profile.shopOdds.length - 1 : 11
+  const { targetSchema, stateSchema } = schemasFor(maxCost, maxLevel)
   const caveat = profile ? PROFILE_CAVEAT(profile) : CAVEAT_ODDS
   server.registerTool(
     "tft_status",
@@ -126,7 +133,13 @@ export function registerTools(server, { coach, rules = null, profile = null }) {
       const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
       const trace = []
       decide(state, out, trace, rules, profile)
-      return asText(explain(state, out, trace, caveat))
+      const reason = explain(state, out, trace, caveat)
+      if (profile) {
+        reason.caveats.push(...profile.caveats)
+        reason.factors.profile = { set: profile.set, requested: profile.requested, applied: profile.applied }
+      }
+      if (rules) reason.factors.rules = rules
+      return asText(reason)
     },
   )
 
@@ -134,10 +147,10 @@ export function registerTools(server, { coach, rules = null, profile = null }) {
     "tft_hit_chance",
     {
       title: "Xác suất gặp tướng trong shop",
-      description: "Xác suất có ít nhất một bản của tướng xuất hiện trong shop 5 ô. " + CAVEAT_ODDS + ".",
+      description: "Xác suất có ít nhất một bản của tướng xuất hiện trong shop 5 ô. " + caveat + ".",
       inputSchema: {
-        level: z.number().int().min(1).max(11),
-        cost: z.number().int().min(1).max(5),
+        level: z.number().int().min(1).max(maxLevel),
+        cost: z.number().int().min(1).max(maxCost),
         copiesLeft: z.number().int().min(0),
         champsAtCost: z.number().int().min(1).optional(),
       },
@@ -172,7 +185,8 @@ export function registerTools(server, { coach, rules = null, profile = null }) {
         shopOdds: profile ? profile.shopOdds : tables.SHOP_ODDS,
         poolCopies: profile ? profile.poolCopies : tables.POOL_COPIES,
         champsPerCost: profile ? profile.champsPerCost : tables.CHAMPS_PER_COST,
-        levelByStage: tables.LEVEL_BY_STAGE,
+        levelByStage: rules?.guideLevels ? tables.LEVEL_BY_STAGE_GUIDE : tables.LEVEL_BY_STAGE,
+        maxCost,
         buyXpCost: tables.BUY_XP_COST,
         rerollCost: tables.REROLL_COST,
         maxInterest: tables.MAX_INTEREST,

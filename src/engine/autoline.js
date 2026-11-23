@@ -42,15 +42,21 @@ function rate(out, index, list, board, count) {
   }
 }
 
-// Ids on shop, bench or board that the set file does not know. The auto line skips them silently,
-// so the coach reports them. Returns a sorted, de-duplicated array.
+// Units on shop, bench or board that the auto line cannot rate: ids the set file does not know,
+// and units with no id at all (the live HUD gives only a name). The auto line skips both silently,
+// so the coach reports them. Returns { ids: sorted unique unknown ids, missingId: count }.
 export function unknownIds(index, state) {
   const unknown = new Set()
+  let missingId = 0
   for (const list of [state.shop, state.bench, state.board]) {
     if (!Array.isArray(list)) continue
-    for (const u of list) if (u && typeof u.id === "string" && !index.traitsOf.has(u.id)) unknown.add(u.id)
+    for (const u of list) {
+      if (!u || typeof u !== "object") continue
+      if (typeof u.id !== "string") missingId += 1
+      else if (!index.traitsOf.has(u.id)) unknown.add(u.id)
+    }
   }
-  return [...unknown].sort()
+  return { ids: [...unknown].sort(), missingId }
 }
 
 function ids(list) {

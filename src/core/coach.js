@@ -72,10 +72,11 @@ export function createCoach({
       const reason = explain(input, out, trace, profile ? `bảng tỉ lệ shop của set ${profile.set}, bản yêu cầu ${profile.requested ?? "mới nhất"}, bản áp dụng ${profile.applied ?? "không có"}, từ file hồ sơ, chưa xác minh` : undefined)
       if (auto && auto.size) reason.factors.autoLine = Object.fromEntries(auto)
       if (autoLineCheck) {
-        const unknown = autoLineCheck(fields)
-        if (unknown.length) {
-          reason.factors.setMismatch = { count: unknown.length, ids: unknown.slice(0, 5) }
-          reason.caveats.push(`${unknown.length} id không có trong file set, line tự động bỏ qua chúng`)
+        const { ids, missingId } = autoLineCheck(fields)
+        if (ids.length || missingId) {
+          reason.factors.setMismatch = { count: ids.length, ids: ids.slice(0, 5), missingId }
+          if (ids.length) reason.caveats.push(`${ids.length} id không có trong file set, line tự động bỏ qua chúng`)
+          if (missingId) reason.caveats.push(`${missingId} tướng không có id, line tự động không xét được chúng`)
         }
       }
       if (rules) reason.factors.rules = rules
