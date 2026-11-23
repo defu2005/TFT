@@ -21,6 +21,8 @@ Tài liệu này liệt kê dữ liệu mà bước quyết định cần, dữ 
 | --- | --- | --- |
 | `hp` | thật | `TFTEoGStats.json` |
 | `shop` | thật khi có file HUD | `captures/hud-live.json` |
+| `shop[].price` (vàng trả cho ô) | thật khi HUD đọc được; `null` = không đọc được, không bao giờ mua; vắng = bằng `cost` | HUD (nhánh codex `hud-realtime-handoff`, hợp đồng trong `docs/hud-reader.md`); chưa có frame thật |
+| `hudGoldUnknown`, `hudLevelUnknown`, `shopUnknownSlots` | cờ: vàng hoặc cấp chưa xác nhận; ô chưa đọc. Vắng = đã biết | HUD; engine: không mua khi thiếu vàng, không xp/roll khi thiếu vàng hoặc cấp (`ec36ab4`) |
 | `gold`, `level` | thật khi có file HUD; **ước lượng** khi không có | HUD, hoặc công thức trong `standaloneSource.js` |
 | `stage` | **ước lượng** từ thời gian trận | `computeStage` |
 | `board` (`championName`, `starLevel`) | thật | `boardPieces` trong snapshot |
