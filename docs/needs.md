@@ -33,3 +33,4 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | 2026-11-23 | Đếm bản từ board và bench, trừ số bản người khác giữ | `afe451c` |
 | 2026-11-23 | Chặn mua khi bench đầy; bán để nhường chỗ; log schema 2 | `37cb046` |
 | 2026-11-23 | Chỉ bán khi không có lượt mua; giữ bản đang cần trong line | `4766647` |
+| 2026-11-23 | Mục tiêu đang có trong shop được mua bất kể priority trên shop; không roll khi mục tiêu đã có trong shop | (commit này) |

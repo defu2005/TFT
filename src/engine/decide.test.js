@@ -302,3 +302,34 @@ test("a bench copy of a unit the shop wants is kept, not sold", () => {
   assert.equal(out.bench, 1)
   assert.match(trace.find((c) => c.action === "sell" && c.bench === 0).note, /line/)
 })
+
+const TARGET_SHOP = (gold, hp) => ({
+  level: 7,
+  gold,
+  hp,
+  stage: 4,
+  shop: [{ id: "T", cost: 3, copiesOwned: 0, priority: 0 }, null, null, null, null],
+  target: { id: "T", cost: 3, copiesLeft: 10, priority: 5, champsAtCost: 13 },
+})
+
+test("a target in the shop is bought even when its shop priority is 0 (healthy HP)", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  decide(TARGET_SHOP(40, 80), out)
+  assert.equal(out.action, BUY)
+  assert.equal(out.slot, 0)
+})
+
+test("a target in the shop is bought at low HP too", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  decide(TARGET_SHOP(40, 20), out)
+  assert.equal(out.action, BUY)
+  assert.equal(out.slot, 0)
+})
+
+test("a target in the shop with no gold to buy holds and does not roll for it", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  const trace = []
+  decide(TARGET_SHOP(2, 20), out, trace)
+  assert.equal(out.action, HOLD)
+  assert.match(trace.find((c) => c.action === "roll").note, /trong shop/)
+})

@@ -37,6 +37,7 @@ export function decide(state, out, trace = null) {
   let bestBuy = 0
   let bestSlot = -1
   let bestHit = 0
+  let targetInShop = false
   // Fixed-length array, null = empty slot. Absent or empty means unknown.
   const bench = Array.isArray(state.bench) && state.bench.length > 0 ? state.bench : null
   let benchFull = !!bench
@@ -51,7 +52,10 @@ export function decide(state, out, trace = null) {
         if (trace) trace.push({ action: "buy", slot: i, score: 0, note: "ô trống" })
         continue
       }
-      if (unit.priority <= 0) {
+      const isTarget = !!target && target.id != null && unit.id === target.id
+      if (isTarget) targetInShop = true
+      const priority = isTarget ? Math.max(unit.priority || 0, target.priority || 0) : unit.priority || 0
+      if (!(priority > 0)) {
         if (trace) trace.push({ action: "buy", slot: i, unit: unit.id, cost: unit.cost, score: 0, note: "không nằm trong line (priority 0)" })
         continue
       }
@@ -66,14 +70,13 @@ export function decide(state, out, trace = null) {
         continue
       }
       // The target's copy count applies only to the target unit itself.
-      const isTarget = !!target && target.id != null && unit.id === target.id
       const copiesFromTarget = isTarget ? target.copiesLeft ?? 0 : 0
       const copiesSource = copiesFromTarget > 0 ? "target" : unit.poolCopies != null ? "poolCopies" : unit.takenByOthers != null ? "pool - copiesOwned - takenByOthers" : "pool - copiesOwned (ước lượng)"
       const copiesLeft = Math.max(0, copiesFromTarget || (POOL_FALLBACK(unit) - owned - taken))
       const champsAtCost = unit.champsAtCost
       const hit = hitChance(level, unit.cost, copiesLeft, champsAtCost)
       const interestLoss = interestGold(gold) - interestGold(gold - unit.cost)
-      let score = unit.priority * (1 + owned) * (0.4 + hit)
+      let score = priority * (1 + owned) * (0.4 + hit)
       if (!urgent) score -= interestLoss * 0.35
       if (owned % 3 === 2) score += 1.5
       const blocked = benchFull && owned % 3 !== 2
@@ -88,7 +91,7 @@ export function decide(state, out, trace = null) {
           copiesLeft,
           copiesSource,
           interestLoss,
-          priority: unit.priority,
+          priority,
           copiesOwned: owned,
           takenByOthers: taken,
           note: blocked ? "bench đầy, lượt mua không hoàn thành sao" : "",
@@ -127,7 +130,7 @@ export function decide(state, out, trace = null) {
   let rollScore = 0
   const rollAffordable = !!target?.cost && gold >= REROLL_COST + (urgent ? 0 : 10)
   let rollHit = 0
-  if (target && target.cost && rollAffordable) {
+  if (target && target.cost && rollAffordable && !targetInShop) {
     rollHit = hitChance(level, target.cost, target.copiesLeft, target.champsAtCost)
     rollScore = rollHit * target.priority * (urgent ? 2 : 0.8)
     if (!urgent) rollScore -= 0.5
@@ -137,7 +140,7 @@ export function decide(state, out, trace = null) {
       action: "roll",
       score: rollScore,
       hit: rollHit,
-      note: !target ? "không có mục tiêu (set_target chưa được gọi)" : !rollAffordable ? `thiếu vàng để roll (cần ${REROLL_COST + (urgent ? 0 : 10)})` : "",
+      note: !target ? "không có mục tiêu (set_target chưa được gọi)" : targetInShop ? "mục tiêu đang có trong shop" : !rollAffordable ? `thiếu vàng để roll (cần ${REROLL_COST + (urgent ? 0 : 10)})` : "",
     })
   }
 
