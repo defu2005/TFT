@@ -8,7 +8,7 @@ File này ghi mọi thứ engine cần từ người dùng hoặc phiên ingest,
 | --- | --- | --- | --- | --- |
 | U1 | Bảng XP theo level (xp mỗi lần mua, xp để lên từng level) | Quyết định lên level và thời điểm lên level | Bước 3 của quyết định XP | **mở** |
 | U2 | Dùng bảng odds nào: `rules.js` (chưa xác minh, lệch nguồn Set 17 ở level 8, 9) hay nguồn khác | Xác suất gặp tướng, quyết định roll | Mọi tính toán hit chance | **mở** |
-| U3 | File dữ liệu của set hiện tại (tướng, tộc, mốc, cost) | Chọn line tự động, thay `tft_set_line` nhập tay. Id trong file phải khớp id shop và board: hiện id live là `DA_18_*`, còn `set17.json` là `TFT17_*`, nên line tự động chưa có tác dụng trong game. `scripts/export-set.js` chỉ giữ id bắt đầu bằng `TFT<set>_`, trong khi `docs/tft-knowledge.md` ghi tướng Set 18 là `DA_*`; chạy như hiện tại sẽ không xuất được tướng Set 18 nào | Line tự động (`TFT_AUTO_LINE=1`) | **mở** |
+| U3 | File dữ liệu của set hiện tại (tướng, tộc, mốc, cost) | Chọn line tự động, thay `tft_set_line` nhập tay. Id trong file phải khớp id shop và board: hiện id live là `DA_18_*`, còn `set17.json` là `TFT17_*`, nên line tự động chưa có tác dụng trong game. `scripts/export-set.js` chỉ giữ id bắt đầu bằng `TFT<set>_`, trong khi `docs/tft-knowledge.md` ghi tướng Set 18 là `DA_*`; chạy như hiện tại sẽ không xuất được tướng Set 18 nào. Đã thêm `scripts/export-set18.js` (lọc `DA_`, có trait) xuất `src/data/set18.json` (74 mục, 14/13/14/14/19 theo mục; 10 tướng cost 5 khi gộp Lux), `scripts/export-set.js` chưa đổi. File này chưa chứa lọc tướng không vào shop (U10) | Line tự động (`TFT_AUTO_LINE=1`, `TFT_SET_FILE=src/data/set18.json`) | **mở** |
 | U7 | Trọng số line tự động (2 khi trùng tướng trên bàn, 2 khi đạt mốc, 1 khi trùng tộc chưa đạt mốc, trần 5) là heuristic của phiên engine; cần người dùng điều chỉnh | Chất lượng line tự động | **mở** |
 | U8 | Trọng số và ngưỡng trong `decide.js` (0.45 cho roll, 0.5 cho xp, hệ số điểm mua, mốc level theo stage) chưa được tinh chỉnh. Tinh chỉnh cần log trận thật hoặc capture | Chất lượng quyết định | **mở** |
 | U4 | Xác nhận: mua tướng hoàn thành sao khi bench đầy có hợp lệ trong client không | Engine đang khuyến nghị lượt này | Quy tắc gate bench đầy | **mở** |
@@ -64,6 +64,7 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | I7 | Gửi `freeRolls` (số lượt roll miễn phí còn lại) | Engine đã hỗ trợ nhưng không nguồn nào gửi | **mở** |
 | I6 | Tên tướng trong `championName` và `id` của HUD shop khớp nhau | Nếu khác, `copiesOwned` luôn bằng 0 | **mở** |
 | I8 | Nguồn gửi `set` và `patch`. CDragon latest báo `content-metadata` version 16.23.x, cùng hệ với nhãn 16.20 của metabot. Patch notes của Riot cho Set 18 là 18.x (wiki). Cần xác nhận client gửi chuỗi nào, và số nào dùng cho `patch` | Không có nó, engine không biết đang dùng đúng hồ sơ; `TFT_PROFILE_FILE` và `TFT_PATCH` chọn bằng tay | **mở** |
+| U10 | Tướng có trait `Riftbeast` (Gromp, Murkwolf, Pebbles, Cinderling, Scuttlecrab, Krug, Mama Beak, Sentinel, Elder Dragon) có phải tướng mua được trong shop không. Trong dump, các tướng này có `DA_` và trait, nhưng không có tên trait rõ là PvE, và Lux (10 mục `DA_Lux18_*`, cùng trait `Avatar`, cùng ability `Final Spark`) được đọc là một tướng | Quyết định `champsPerCost` (số tướng theo cost, ảnh hưởng `others` trong `hitChance`). Đọc A: giữ, 14/13/14/14/10 (1-cost 14, 5-cost 10). Đọc B: bỏ Riftbeast, 12/10/12/13/9. Lux gộp thành một tướng (đọc được từ cùng ability và trait) | Không chọn; `champsPerCost` không đưa vào `set18.candidate.json` | **mở** |
 
 ## 3. Quyết định đã tự đưa ra
 
@@ -87,5 +88,6 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | 2026-11-23 | Đưa bảng dữ liệu vào `profile` (mặc định từ `rules.js`), thêm `TFT_PROFILE_FILE` và `TFT_PATCH` với bản vá chồng lên nhau; mặc định tắt | `7494f0b`, `2f50e6c`, `44e43f9` |
 | 2026-11-23 | Hồ sơ candidate Set 18 (nhãn 16.20 chưa xác minh, hàng 8 và 9), tắt mặc định, chỉ dùng khi đặt `TFT_PROFILE_FILE` | `63e1724`, `33f098f` |
 | 2026-11-23 | Hồ sơ đọc bản vá: áp dụng mọi bản vá ≤ phiên bản yêu cầu; caveat theo level; kiểm tra số và khóa chặt hơn | `a52cfaa` |
+| 2026-11-23 | Xuất roster Set 18 (`DA_`) từ dump CDragon 16.23.8406595 vào `src/data/set18.json`; thêm test line tự động trên file này; chưa đưa `champsPerCost` vào hồ sơ | `scripts/export-set18.js`, `src/data/set18.json` |
 
 Giới hạn đã biết: `tft_evaluate_state` và các công cụ `tft_rules`, `tft_hit_chance` không dùng `TFT_RULES`, `TFT_PROFILE_FILE`, `TFT_PATCH` và line tự động; chúng đọc bảng mặc định của `rules.js`; đặt priority 0 thủ công không loại được tướng đang có line tự động.

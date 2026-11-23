@@ -96,6 +96,7 @@ Schema chưa phải chuẩn công khai, có thể thay đổi.
 | `TFT_SET_FILE` | (trống) | file dữ liệu set (cùng cấu trúc `src/data/set17.json`) cho line tự động |
 | `TFT_PROFILE_FILE` | (trống) | file hồ sơ set (bảng odds, pool, số tướng theo cost, `maxCost`, danh sách bản vá chồng lên nhau). Trống thì dùng `rules.js` |
 | `TFT_PATCH` | (trống, cần `TFT_PROFILE_FILE`) | phiên bản bản vá để áp dụng từ file hồ sơ; trống thì lấy bản mới nhất (so số theo thứ tự, 16.9 trước 16.20) |
+Lưu ý: `TFT_PATCH` phải dùng cùng hệ số với file hồ sơ. Ví dụ file candidate có bản `16.20`; đặt `TFT_PATCH=18.7` sẽ áp dụng bản `16.20` vì 18.7 lớn hơn 16.20 theo so số, và kết quả sẽ không phải của Riot 18.7.
 | `TFT_RULES` | (trống) | danh sách tên, cách nhau bằng dấu phẩy, bật quy tắc U9: `keepInterest`, `earlyLevel`, `guideLevels`. Tên lạ làm app báo lỗi. `tft_evaluate_state` không dùng quy tắc này |
 
 
