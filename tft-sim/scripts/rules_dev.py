@@ -9,12 +9,13 @@ from tft_sim.rules import make_rule
 from tft_sim.tftgoat import make_env, play, scripted_policy, summarize
 
 name, sell, floor = sys.argv[1], bool(int(sys.argv[2])), int(sys.argv[3])
+pick = sys.argv[4] if len(sys.argv) > 4 else "cheapest"
 R = Path("results/fixed/real")
 env = make_env(build_real("TFTSet17"))
-pol = make_rule(sell=sell, floor=floor)
+pol = make_rule(sell=sell, floor=floor, pick=pick)
 lobs = [play(env, s, pol, scripted_policy) for s in range(20000, 22000)]
 s = summarize(lobs)
-out = {"variant": name, "sell": sell, "floor": floor, "seeds": "20000-21999 (tuning)", "summary": s,
+out = {"variant": name, "sell": sell, "floor": floor, "pick": pick, "seeds": "20000-21999 (tuning)", "summary": s,
        "per_lobby_diff_A_minus_B": [float(np.mean(l.placements_a) - np.mean(l.placements_b)) for l in lobs]}
 (R / f"rule_dev_{name}.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
 print("RESULT", name, round(s["diff_A_minus_B"], 4), s["ci95_diff"], "illegal", s["illegal_A"], flush=True)

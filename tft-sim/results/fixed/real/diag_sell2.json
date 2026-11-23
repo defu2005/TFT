@@ -1,0 +1,15 @@
+{
+  "seeds": "20000-20199 (tuning)",
+  "board_size_mean": {
+    "A": 6.82,
+    "B": 6.61
+  },
+  "star2plus_units_mean": {
+    "A": 1.869,
+    "B": 1.534
+  },
+  "sell_events": 137588,
+  "share_sold_star2plus": 0.0167,
+  "share_sold_same_champ_owned": 0.2146,
+  "share_sold_shares_trait_with_board": 0.6487
+}

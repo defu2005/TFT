@@ -220,6 +220,31 @@ Doc ket qua:
 - Clone khong vuot duoc teacher. Tran hien tai cua BC la teacher, khong phai dac trung. Khong them bien the BC nua.
 - Teacher co 10% hanh dong ngau nhien lai tot hon teacher thuan. Chua biet do kham pha hay do mot loai hanh dong cu the; buoc tiep theo la tach theo loai.
 
+## Loi teacher scripted tren noi dung that (phat hien buoc 2 cua advisor)
+
+Teacher scripted co loi: **khong bao gio ban** unit. Tren CDragon 18.7 Set 17, teacher giu banc day
+86% buoc (vang trung binh ~45); khi banc day va vang >= 2 no chon PASS/BUY_XP/REROLL va khong bao gio mua
+(BUY_SHOP bi chan boi banc day). Hieu qua: chi ~22 lan mua moi game, ~342 lan PASS.
+Ban ngau nhien (eps ban 0.1) tot hon teacher thuan (-0.36 khi chi cho SELL_BENCH) vi no giai phong banc.
+Day la loi cua teacher, cung loai voi loi EQUIP truoc day, khong phai khai pha chien thuat.
+
+Luu y: nhan xet "phan lon loi the den tu chu trinh mua-ban" trong commit truoc la **sai**; hoan gia ban
+la luat TFT (`economy.py`). Khi hoan gia = 0, quy tac ban van cai thien ~0,59 tren 200 lobby (tuning). Con
+phan con lai duoc quy cho loi banc day.
+
+Ket qua quet quy tac (2000 lobby, seed tinh chinh 20000-21999, A-B; so am = quy tac tot hon):
+
+| Bien the | Hieu A-B | CI95 |
+|---|---|---|
+| Ban unit re nhat khi banc day | -2,42 | [-2,47, -2,36] |
+| Ha nguong vang 50 / 40 / 30 / 20 (khong ban) | +0,13 / +0,10 / +0,07 / +0,05 | chua 0 hoac gan 0 |
+
+Ha nguong vang lam **te hon** (khong tot hon). Dong cac bien the nguong.
+
+Chan doan tran (200 lobby tinh chinh): 2,0% unit bi ban la 2 sao+; 21% co ban sao khac cua cung tuong;
+65% chung trait voi board. Tuc quy tac hien tai thuong ban unit con dung. Bien the "useless" (chi ban unit
+mot ban, khong chung trait voi board) duoc thu nghiem tren seed tinh chinh; ket qua o `results/fixed/real/rule_dev_useless.json`.
+
 ## Trang thai cong viec
 
 - Test cua tft-sim: 9 pass (chay tren toy env, co loai tru seat). Toy env chi kiem chung harness.
