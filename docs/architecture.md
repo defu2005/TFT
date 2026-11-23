@@ -101,6 +101,6 @@ Khi line tự động bật, coach báo `reason.factors.setMismatch` (id không 
 | `TFT_PATCH` | (trống, cần `TFT_PROFILE_FILE`) | phiên bản bản vá để áp dụng từ file hồ sơ; trống thì lấy bản mới nhất (so số theo thứ tự, 16.9 trước 16.20) |
 | `TFT_RULES` | (trống) | danh sách tên, cách nhau bằng dấu phẩy, bật quy tắc U9: `keepInterest`, `earlyLevel`, `guideLevels`. Tên lạ làm app báo lỗi. `tft_evaluate_state` không dùng quy tắc này |
 
-Lưu ý: `TFT_PATCH` phải dùng cùng hệ số với file hồ sơ. Ví dụ file candidate có bản `16.20`; đặt `TFT_PATCH=18.7` sẽ áp dụng bản `16.20` vì 18.7 lớn hơn 16.20 theo so số, và kết quả sẽ không phải của Riot 18.7. Hàng 7 của bản `18.6` (đọc tay HUD, xem `docs/needs.md` mục 8) chỉ áp dụng khi `TFT_PATCH` là `18.x` hoặc để trống; `TFT_PATCH=16.x` (kể cả `16.23`) không thấy hàng này.
+Lưu ý: `TFT_PATCH` phải dùng cùng hệ số với file hồ sơ. Ví dụ file candidate có bản `16.20`; đặt `TFT_PATCH=18.7` sẽ áp dụng bản `16.20` rồi bản `18.6` vì 18.7 lớn hơn cả hai theo so số, và kết quả sẽ không phải của Riot 18.7. Với file candidate và `TFT_PATCH` trống, `applied` là `18.6` (đã đo qua `buildProfile`). Hàng 7 của bản `18.6` (đọc tay HUD, xem `docs/needs.md` mục 8) chỉ áp dụng khi `TFT_PATCH` là `18.x` hoặc để trống; `TFT_PATCH=16.x` (kể cả `16.23`) không thấy hàng này.
 
 
