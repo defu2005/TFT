@@ -87,3 +87,15 @@ test("hashState changes when only freeRolls changes", () => {
   const changed = { ...snapshot(), freeRolls: 2 }
   assert.notEqual(hashState(base), hashState(changed))
 })
+
+test("an auto line rates a shop unit; a manual line on the same unit overrides it", async () => {
+  const src = { kind: "fake", read: async () => ({ ...snapshot(), board: [{ id: "B", star: 1 }] }) }
+  const coach = createCoach({ source: src, autoLine: () => new Map([["A", 3]]) })
+  const record = await coach.tick()
+  assert.equal(record.decision.action, "buy")
+  assert.equal(record.decision.slot, 0)
+  assert.deepEqual(record.reason.factors.autoLine, { A: 3 })
+  coach.setLine("A", 1)
+  await coach.tick()
+  assert.equal(coach.getState().input.shop[0].priority, 1)
+})

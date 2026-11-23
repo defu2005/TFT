@@ -18,6 +18,7 @@ src/
   engine/decide.js    chấm điểm các hành động; ghi trace nếu được yêu cầu
   engine/reason.js    lý do bằng tiếng Việt, ứng viên, yếu tố
   engine/odds.js      xác suất gặp tướng, lãi theo vàng
+  engine/autoline.js  line tự động từ tướng trên bàn và tộc (tắt mặc định, bật bằng TFT_AUTO_LINE=1)
   ingest/sources.js   nguồn trạng thái: live hoặc replay
   ingest/liveClient.js đọc Live Client Data tại 127.0.0.1:2999; toState liệt kê trường thiếu
   ingest/capture.js   ghi payload thô ra captures/ (gitignored, có Riot ID); không ra quyết định
@@ -75,5 +76,7 @@ Schema chưa phải chuẩn công khai, có thể thay đổi.
 | `TFT_REPLAY` | fixture tổng hợp | đường dẫn fixture replay |
 | `TFT_LOG` | `logs/decisions.jsonl` | đường dẫn log |
 | `TFT_INTERVAL_MS` | `250` | chu kỳ vòng lặp |
+| `TFT_AUTO_LINE` | `0` | `1` bật line tự động từ bàn và tộc; cần `TFT_SET_FILE` |
+| `TFT_SET_FILE` | (trống) | file dữ liệu set (cùng cấu trúc `src/data/set17.json`) cho line tự động |
 
 

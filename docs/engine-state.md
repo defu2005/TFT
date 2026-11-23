@@ -66,7 +66,7 @@ Quy ước:
 - Lượt roll miễn phí (`freeRolls`): **đã làm**; roll chỉ được khuyến nghị khi có mục tiêu.
 - Mua món muốn mua trước khi roll, không roll khi mục tiêu đã có trong shop: **đã làm**.
 - Lên level và roll theo `xp` và `round`: **chờ số XP từ người dùng**.
-- Chọn line tự động từ dữ liệu set: **chưa có dữ liệu set hiện tại**.
+- Chọn line tự động từ bàn và tộc: **đã làm, tắt mặc định** (`TFT_AUTO_LINE=1`, `TFT_SET_FILE`). Chưa có tác dụng trong game vì id của set 17 không khớp id live (xem `docs/needs.md`, U3).
 
 ## 6. Lưu ý
 

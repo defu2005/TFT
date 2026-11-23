@@ -8,7 +8,8 @@ File này ghi mọi thứ engine cần từ người dùng hoặc phiên ingest,
 | --- | --- | --- | --- | --- |
 | U1 | Bảng XP theo level (xp mỗi lần mua, xp để lên từng level) | Quyết định lên level và thời điểm lên level | Bước 3 của quyết định XP | **mở** |
 | U2 | Dùng bảng odds nào: `rules.js` (chưa xác minh, lệch nguồn Set 17 ở level 8, 9) hay nguồn khác | Xác suất gặp tướng, quyết định roll | Mọi tính toán hit chance | **mở** |
-| U3 | File dữ liệu của set hiện tại (tướng, tộc, mốc, cost) | Chọn line tự động, thay `tft_set_line` nhập tay | Giai đoạn 3 | **mở** |
+| U3 | File dữ liệu của set hiện tại (tướng, tộc, mốc, cost) | Chọn line tự động, thay `tft_set_line` nhập tay. Id trong file phải khớp id shop và board: hiện id live là `DA_18_*`, còn `set17.json` là `TFT17_*`, nên line tự động chưa có tác dụng trong game | Line tự động (`TFT_AUTO_LINE=1`) | **mở** |
+| U7 | Trọng số line tự động (2 khi trùng tướng trên bàn, 2 khi đạt mốc, 1 khi trùng tộc chưa đạt mốc, trần 5) là heuristic của phiên engine; cần người dùng điều chỉnh | Chất lượng line tự động | **mở** |
 | U4 | Xác nhận: mua tướng hoàn thành sao khi bench đầy có hợp lệ trong client không | Engine đang khuyến nghị lượt này | Quy tắc gate bench đầy | **mở** |
 | U5 | Lượt roll miễn phí có cộng dồn sang stage sau không? | Quy tắc tính roll miễn phí | Giá trị `freeRolls` | **mở** |
 | U6 | Roll miễn phí chỉ được khuyến nghị khi đã đặt mục tiêu (`tft_set_target`). Có đúng ý không? | Hành vi roll miễn phí | Khuyến nghị roll | **mở** |
@@ -42,3 +43,6 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | 2026-11-23 | Diễn giải "tối ưu" là tối ưu chất lượng quyết định. Tốc độ không cần sửa: khoảng 70–130 ns mỗi quyết định so với vòng lặp 250 ms | `8cfa5d0` |
 | 2026-11-23 | Chọn hành động tốt nhất trong số các hành động vượt ngưỡng của chính nó: mua hoặc bán không còn bị giữ lại bởi roll dưới ngưỡng 0.45 hoặc xp dưới 0.5 | `8cfa5d0` |
 | 2026-11-23 | Bán trước khi roll khi việc bán vẫn để đủ vàng roll; sửa văn bản "Mua trước rồi mới roll" để chỉ hiện khi thật sự có roll sau đó | `87987bc` |
+| 2026-11-23 | Line tự động (`src/engine/autoline.js`) chỉ bật khi `TFT_AUTO_LINE=1`, mặc định tắt để giữ hành vi hiện tại; chấm điểm theo bàn, không theo toàn bộ tướng sở hữu, để quân bench không khớp vẫn bán được | (commit này) |
+
+Giới hạn đã biết: `tft_evaluate_state` không dùng line tự động; đặt priority 0 thủ công không loại được tướng đang có line tự động.

@@ -11,6 +11,7 @@ export function createCoach({
   intervalMs = 250,
   onTick = null,
   onError = null,
+  autoLine = null,
   now = () => Date.now(),
 } = {}) {
   if (!source) throw new Error("createCoach needs a source")
@@ -55,16 +56,18 @@ export function createCoach({
       // `missing` lists fields the source did not provide; it is not part of the engine input.
       const { missing = [], ...fields } = snapshot
       sourceStatus.missing = missing
+      const auto = autoLine ? autoLine(fields) : null
       const input = {
         ...fields,
-        shop: applyLines(fields.shop, lines),
+        shop: applyLines(fields.shop, lines, auto),
         target: target ?? fields.target ?? null,
       }
-      if (Array.isArray(fields.bench)) input.bench = applyLines(fields.bench, lines)
+      if (Array.isArray(fields.bench)) input.bench = applyLines(fields.bench, lines, auto)
       const trace = []
       const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
       decide(input, out, trace)
       const reason = explain(input, out, trace)
+      if (auto && auto.size) reason.factors.autoLine = Object.fromEntries(auto)
       if (missing.length) {
         const note = `thiếu trường từ nguồn: ${missing.join(", ")}; đang dùng giá trị mặc định cho các trường này`
         reason.caveats.push(note)
@@ -149,6 +152,7 @@ export function createCoach({
         updatedAt: cache.updatedAt,
         ticks: cache.ticks,
         intervalMs,
+        autoLine: !!autoLine,
       }
     },
 
@@ -159,11 +163,11 @@ export function createCoach({
 }
 
 // Returns a new shop array with priorities taken from the line map. The source's array is not changed.
-function applyLines(shop, lines) {
+function applyLines(shop, lines, auto = null) {
   if (!Array.isArray(shop)) return shop ?? null
   return shop.map((unit) => {
     if (!unit) return null
-    const priority = lines.has(unit.id) ? lines.get(unit.id) : unit.priority ?? 0
+    const priority = lines.has(unit.id) ? lines.get(unit.id) : Math.max(auto?.get(unit.id) ?? 0, unit.priority ?? 0)
     return { ...unit, priority }
   })
 }
