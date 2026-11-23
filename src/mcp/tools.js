@@ -84,7 +84,8 @@ function loadSetSummary() {
 // none of them triggers a read from the state source.
 export function registerTools(server, { coach, rules = null, profile = null }) {
   const maxCost = profile?.maxCost ?? tables.DEFAULT_PROFILE.maxCost
-  const maxLevel = profile ? profile.shopOdds.length - 1 : 11
+  // The state cap never drops below 11: the coach decides at any level, and a short odds table only lowers the hit chance.
+  const maxLevel = Math.max(11, profile ? profile.shopOdds.length - 1 : 11)
   const { targetSchema, stateSchema } = schemasFor(maxCost, maxLevel)
   const caveat = profile ? PROFILE_CAVEAT(profile) : CAVEAT_ODDS
   server.registerTool(

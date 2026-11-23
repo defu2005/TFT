@@ -90,3 +90,11 @@ test("tool input schemas take the cost bound from the profile, not a fixed 5", (
   assert.equal(z.object(cfgPlain).safeParse({ level: 8, cost: 6, copiesLeft: 5 }).success, false)
   assert.equal(z.object(cfgWide).safeParse({ level: 8, cost: 6, copiesLeft: 5 }).success, true)
 })
+
+test("tft_evaluate_state still accepts level 11 when the profile's odds table is shorter", () => {
+  const short = { ...S18_PROFILE(), shopOdds: S18_PROFILE().shopOdds.slice(0, 9) }
+  const server = fakeServer()
+  registerTools(server, { coach, profile: short })
+  const schema = z.object(server.configs.get("tft_evaluate_state").inputSchema)
+  assert.equal(schema.safeParse({ ...ROLL_STATE, level: 11 }).success, true)
+})
