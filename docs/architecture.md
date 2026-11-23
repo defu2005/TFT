@@ -19,6 +19,9 @@ src/
   engine/reason.js    lý do bằng tiếng Việt, ứng viên, yếu tố
   engine/odds.js      xác suất gặp tướng, lãi theo vàng
   engine/autoline.js  line tự động từ tướng trên bàn và tộc (tắt mặc định, bật bằng TFT_AUTO_LINE=1)
+  data/profile.js     hồ sơ mặc định (bảng odds, pool, số tướng theo cost, maxCost) lấy từ rules.js
+  data/profileFile.js đọc file hồ sơ set có bản vá chồng lên nhau (tắt mặc định, TFT_PROFILE_FILE)
+  data/profiles/      hồ sơ candidate (ví dụ set18.candidate.json), chỉ dùng khi được chọn bằng TFT_PROFILE_FILE
   ingest/sources.js   nguồn trạng thái: live hoặc replay
   ingest/liveClient.js đọc Live Client Data tại 127.0.0.1:2999; toState liệt kê trường thiếu
   ingest/capture.js   ghi payload thô ra captures/ (gitignored, có Riot ID); không ra quyết định

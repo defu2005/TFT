@@ -70,6 +70,7 @@ Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experien
 
 **Mục tiêu level theo stage**
 - Metabot, Set 18 leveling guide (`single-source`, đăng 2026-10-24): "level 4 ở 2-1, 5 ở 2-5, 6 ở 3-2, 7 ở 4-1, 8 ở 4-5 hoặc 5-1 khi rolldown, 9 ở 5-5". Trang ghi số liệu theo patch 16.20.
+- Trang Set 18 leveling của metabot (`single-source`, một site): chỉ có câu về level 8 (4-cost 30%), level 9 (4-cost 33%, 5-cost 15%) và level 10 (4-cost 40%, 5-cost 25%) trên patch 16.20. Không có bảng đầy đủ và không nói về level 11. Level 8 và 9 khớp bảng Set 17 và bảng metabot, lệch `rules.js`; level 10 khớp `rules.js`.
 - `LEVEL_BY_STAGE` trong `rules.js` đặt level 8 ở stage 4 (xem G11). Đây là điểm lệch với metabot.
 
 **Hiện tại engine làm gì**
