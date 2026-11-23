@@ -95,9 +95,9 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | 2026-11-23 (advisor, theo ủy quyền của người dùng) | Roll với ô shop chưa đọc: chỉ cảnh báo, không chặn (chặn sẽ dừng mọi roll trong shop Wisp sau merge) | `cdd399b` |
 | 2026-11-23 (advisor, theo ủy quyền của người dùng) | Live/RAM: gold và level `null` khi thiếu, giữ nguyên | `0887032` |
 | 2026-11-23 (advisor, theo ủy quyền của người dùng) | Quét VOD: kết thúc. I9 giữ mở như yêu cầu ingest; Take One giữ "lớp thẻ chưa xác nhận" | (tài liệu) |
-| 2026-11-23 (advisor, theo ủy quyền của người dùng) | Merge nhánh codex vào nhánh này (commit merge hai cha) | (sẽ ghi sau merge) |
-| 2026-11-23 (advisor, theo ủy quyền của người dùng) | Sau merge: ước lượng vàng và level của nguồn standalone đổi thành `null` kèm cờ, như nguồn live/RAM | (sẽ ghi sau merge) |
-| 2026-11-23 (advisor, theo ủy quyền của người dùng) | Sau merge: id HUD ánh xạ theo tên qua `src/data/set18-hud-names.json` | (sẽ ghi sau merge) |
+| 2026-11-23 (advisor, theo ủy quyền của người dùng) | Merge nhánh codex vào nhánh này (commit merge hai cha) | `c79c200` |
+| 2026-11-23 (advisor, theo ủy quyền của người dùng) | Sau merge: ước lượng vàng và level của nguồn standalone đổi thành `null` kèm cờ, như nguồn live/RAM | `c79c200` |
+| 2026-11-23 (advisor, theo ủy quyền của người dùng) | Sau merge: id HUD ánh xạ theo tên qua `src/data/set18-hud-names.json` | `c79c200` |
 | 2026-11-23 | Tài liệu hoá nhu cầu dữ liệu và hợp đồng giả định | `c5c15e1` |
 | 2026-11-23 | Đếm bản từ board và bench, trừ số bản người khác giữ | `afe451c` |
 | 2026-11-23 | Chặn mua khi bench đầy; bán để nhường chỗ; log schema 2 | `37cb046` |
