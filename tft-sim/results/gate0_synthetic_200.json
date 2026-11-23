@@ -1,0 +1,16 @@
+{
+  "content": "synthetic (build_sample_content) - KHONG phai TFT that",
+  "lobbies_requested": 200,
+  "lobbies_completed": 200,
+  "crashes": [],
+  "mean_placement_scripted_A": 2.775,
+  "mean_placement_random_B": 6.225,
+  "diff_A_minus_B": -3.45,
+  "ci95_diff": [
+    -3.5525,
+    -3.3375
+  ],
+  "replay_same_seed_identical": true,
+  "elapsed_s": 82.7,
+  "games_per_hour": 8701.0
+}
