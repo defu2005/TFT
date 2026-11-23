@@ -47,10 +47,11 @@ export function explain(state, out, trace, oddsCaveat = CAVEAT_ODDS) {
     text: `${text} (${caveats.join("; ")})`,
     factors: {
       hpUrgent: (state.hp | 0) <= 30,
-      gold: state.gold | 0,
-      level: state.level | 0,
+      // Unknown values are null, never the number the engine used.
+      gold: state.hudGoldUnknown ? null : state.gold | 0,
+      level: state.hudLevelUnknown ? null : state.level | 0,
       stage: state.stage | 0,
-      shopKnown: Array.isArray(state.shop),
+      shopKnown: Array.isArray(state.shop) && !(state.shopUnknownSlots?.length),
       targetSet: !!state.target,
     },
     caveats,

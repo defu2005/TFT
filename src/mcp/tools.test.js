@@ -130,6 +130,8 @@ test("tft_evaluate_state accepts a HUD record with null level and gold, and repo
     target: null,
   })
   const out = JSON.parse((await server.handlers.get("tft_evaluate_state")(parsed)).content[0].text)
+  assert.equal(out.factors.level, null)
+  assert.equal(out.factors.gold, 50)
   assert.equal(out.action, "buy")
   assert.equal(out.candidates.find((c) => c.action === "buy" && c.slot === 0).hit, null)
   assert.ok(!out.text.includes("%"))

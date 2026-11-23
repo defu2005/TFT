@@ -339,3 +339,36 @@ test("unknown level: decision.hit is null and the reason text states no probabil
   assert.ok(!record.reason.text.includes("%"))
   assert.ok(record.reason.text.includes("chưa đọc được cấp"))
 })
+
+// Partial HUD (from the handoff's contract): gold confirmed, level unknown, three shop slots unreadable.
+test("partial HUD: level and unreadable shop slots are reported as unknown, not as numbers", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-partial-"))
+  const fixture = path.join(dir, "frame.json")
+  fs.writeFileSync(
+    fixture,
+    JSON.stringify({
+      frames: [
+        {
+          level: null,
+          hudLevelUnknown: true,
+          gold: 55,
+          hp: 80,
+          stage: 3,
+          shopUnknownSlots: [0, 2, 4],
+          target: { id: "DA_18_Ornn", cost: 1, copiesLeft: 30, priority: 10, champsAtCost: 14 },
+          shop: [null, { id: "DA_18_Ornn", cost: 1, price: 1, copiesOwned: 0, priority: 4 }, null, { id: "DA_18_Varus", cost: 1, price: 1, copiesOwned: 0, priority: 0 }, null],
+          board: [{ id: "DA_18_Ornn", star: 1 }],
+        },
+      ],
+    }),
+  )
+  const { coach } = createApp(replayConfig({ TFT_REPLAY: fixture, TFT_AUTO_LINE: "1", TFT_SET_FILE: SET18 }))
+  const record = await coach.tick()
+  assert.equal(record.reason.factors.level, null)
+  assert.equal(record.reason.factors.gold, 55)
+  assert.equal(record.reason.factors.shopKnown, false)
+  assert.equal(record.known.shop, false)
+  assert.equal(record.decision.action, "buy")
+  assert.equal(record.decision.slot, 1)
+  assert.equal(record.decision.hit, null)
+})
