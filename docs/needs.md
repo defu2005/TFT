@@ -25,7 +25,7 @@ File này ghi mọi thứ engine cần từ người dùng hoặc phiên ingest,
 - **Mới, từ nghiên cứu (G11):** `LEVEL_BY_STAGE` đặt level 8 ở stage 4. Metabot, Set 18 leveling guide (`single-source`, patch 16.20, đăng 2026-10-24) đặt level 7 quanh 4-1 và level 8 quanh 4-5 hoặc 5-1. Chưa đóng; cần người dùng chọn mốc (xem U9).
 - **Mới:** ngày Set 19 còn xung đột giữa 1/12 và 2/12. Cần người dùng xác nhận nếu muốn dùng làm mốc.
 - **Mới, chuỗi thắng/thua:** mục Income của wiki ghi 3–4 +1, 5 +2, 6+ +3. Metabot ghi "Typical streak bonuses" 2–3 +1, 4 +2, 5+ +3 (`single-source`, bảng "thường gặp", không phải quy tắc). Ghi chú V10.8 của wiki là lịch sử đã thay thế. Lịch sử bản vá của wiki chỉ đến V10.x nên không định ngày được mục Income. Cần người dùng xác nhận set và giá trị.
-- **Mới, U1:** trang wiki TFT:Experience đã lưu không có mục lịch sử bản vá, và lịch sử bản vá của wiki chỉ đến V10.x, nên không quyết được bảng nào áp dụng. Chuỗi "48 XP", "76 XP", "84 XP" không có trong trang; bảng có 60 và 68.
+- **Mới, U1:** trang wiki TFT:Experience đã lưu không có mục lịch sử bản vá. Lịch sử bản vá của TFT:Gold chỉ đến V10.x, nên cả hai không định ngày được bảng nào áp dụng. Chuỗi "48 XP", "76 XP", "84 XP" không có trong trang; bảng có 60 và 68.
 
 **U9 (đề xuất, chưa bật, chờ người dùng đồng ý).** Ba quy tắc sau sẽ đổi quyết định nếu bật, nên giữ tắt cho đến khi người dùng đồng ý:
 1. Roll khi vàng còn từ 50 trở lên (giữ lãi tối đa, roll bằng phần vàng thừa).
@@ -61,9 +61,8 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | 2026-11-23 | Diễn giải "tối ưu" là tối ưu chất lượng quyết định. Tốc độ không cần sửa: khoảng 70–130 ns mỗi quyết định so với vòng lặp 250 ms | `8cfa5d0` |
 | 2026-11-23 | Chọn hành động tốt nhất trong số các hành động vượt ngưỡng của chính nó: mua hoặc bán không còn bị giữ lại bởi roll dưới ngưỡng 0.45 hoặc xp dưới 0.5 | `8cfa5d0` |
 | 2026-11-23 | Bán trước khi roll khi việc bán vẫn để đủ vàng roll; sửa văn bản "Mua trước rồi mới roll" để chỉ hiện khi thật sự có roll sau đó | `87987bc` |
-| 2026-11-23 | Hiển thị xác suất trong toàn bộ ngân sách roll (`rolls`, `hitWithin`) trong trace và lý do; không đổi điểm, nên không đổi quyết định | `fdabca4` |
 | 2026-11-23 | Line tự động (`src/engine/autoline.js`) chỉ bật khi `TFT_AUTO_LINE=1`, mặc định tắt để giữ hành vi hiện tại; chấm điểm theo bàn, không theo toàn bộ tướng sở hữu, để quân bench không khớp vẫn bán được | `8ee5511` |
-
 | 2026-11-23 | Kiểm tra line tự động trên file set thật qua `createApp` (một khung replay, mua tướng cùng tộc với bàn). Chưa chuyển ngưỡng sang `rules.js` vì không đổi hành vi và chưa có gì để tinh chỉnh (xem U8) | `cad25e9` |
+| 2026-11-23 | Hiển thị xác suất trong toàn bộ ngân sách roll (`rolls`, `hitWithin`) trong trace và lý do; không đổi điểm, nên không đổi quyết định | `fdabca4` |
 
 Giới hạn đã biết: `tft_evaluate_state` không dùng line tự động; đặt priority 0 thủ công không loại được tướng đang có line tự động.

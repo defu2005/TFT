@@ -100,7 +100,7 @@ Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experien
 **Hiện tại engine làm gì**
 - `SHOP_ODDS` trong `rules.js`: khớp metabot ở level 4–7, nhưng **level 8 và 9 không khớp** (`rules.js` level 8: 17/24/32/24/3; level 9: 15/18/25/30/12; metabot: 15/20/32/30/3 và 10/17/25/33/15). Riêng ô 4 vàng ở level 8: `rules.js` 24%, metabot 30%. Số 24% của `rules.js` khớp con số Set 14 trong đoạn tìm kiếm. Bảng `docs/tft-knowledge.md` cũng ghi cùng xung đột này với Set 17.
 - Roll chỉ được khuyến nghị khi có mục tiêu (`tft_set_target`), tính xác suất gặp một tướng trong một shop.
-- Điều kiện roll: 12 vàng; 2 khi HP ≤ 30; 0 khi có lượt miễn phí (`freeRolls`). Không xét lượt roll nhiều lần.
+- Điều kiện roll: 12 vàng; 2 khi HP ≤ 30; 0 khi có lượt miễn phí (`freeRolls`).
 
 **Khoảng trống**
 - Điểm roll chỉ tính một shop. Từ `fdabca4`, trace và lý do hiển thị xác suất trong toàn bộ ngân sách roll (`rolls`, `hitWithin`), nhưng điểm roll không dùng con số này. Đưa nó vào điểm sẽ đổi quyết định, nên chờ U9 (G5).
@@ -163,4 +163,4 @@ Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experien
 5. Ngày Set 19: 1/12 (seemeta) và 2/12 (esports.gg và đoạn tìm kiếm gần đây).
 6. Chuỗi thắng/thua: mục Income của wiki ghi 3–4 +1, 5 +2, 6+ +3. Metabot ghi "Typical streak bonuses" (bảng "thường gặp"): 2–3 +1, 4 +2, 5+ +3. Ghi chú V10.8 của wiki là lịch sử đã bị thay thế, không phải nguồn hiện hành.
 
-Lưu ý chung: lịch sử bản vá của wiki chỉ đến V10.x, nên không xác định được ngày của mục Income hay bảng XP. Vì vậy chuỗi thắng/thua và U1 vẫn mở, cần người dùng xác nhận.
+Lưu ý chung: lịch sử bản vá của wiki TFT:Gold chỉ đến V10.x, nên không xác định được ngày của mục Income. Trang TFT:Experience đã lưu không có mục lịch sử bản vá, nên không xác định được ngày của bảng XP. Vì vậy chuỗi thắng/thua và U1 vẫn mở, cần người dùng xác nhận.
