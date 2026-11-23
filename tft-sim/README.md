@@ -99,7 +99,7 @@ Ung vien teacher (1 wrapper, seed 4000-4199): scripted, nhung PASS -> BUY_XP khi
 
 - L = 80.0%, U = 94.0% (flat+slot, B->B), gap = 13.9 diem, CI bootstrap theo lobby cho U-L [13.6, 14.3].
 - T = 94.0%, nguong = 91.2%, CI T-L [13.6, 14.3].
-- **Void: khong. Pass: CO** (T vuot nguong).
+- Ket qua "Pass" tren seed 0 da RUT LAI (xem bang seed ben duoi): khac biet flat/slot la do feature, khong phai do chuyen giao.
 
 **Kiem tra void (buoc truoc)**: mo hinh khong noi dung (scalars + opponents + gods, khong slot) dat 81.2% BUY_SHOP tren A val (`results/fixed/transfer/content_free_check.txt`), cung muc flat. Tuc la: quyet dinh mua khong doc duoc tu scalar/opponent; can block slot. Khoang cach 12 diem > 5, nen khong void.
 
@@ -108,6 +108,31 @@ Ung vien teacher (1 wrapper, seed 4000-4199): scripted, nhung PASS -> BUY_XP khi
 - REROLL: 89.9% -> 86.3%, giam 3.6 diem, CI bootstrap [-6.5, -0.7] (`results/fixed/transfer/reroll_control_check.txt`). **Vuot nguong 2 diem va CI khong chua 0. Nguyen nhan CHUA ro.** Loai nay chi ~1% hang (n=845 A val, n=2546 B test); khong anh huong ket luan BUY_SHOP. Phan bo nhan cua A va B gan nhu giong nhau (BUY_SHOP 22.0% vs 22.1%, BUY_XP 37.2% vs 37.4%), nen khong phai do lech nhan chung.
 
 **Dieu can nho**: ket qua chi tren 8 tuong, 2 trait, 1 set synthetic. Pass chung minh model doc duoc luat mua tu feature slot (cost, trait chung), khong chi nho danh tinh tuong. Chua chung minh tren TFT that.
+
+### Lap lai co seed: penalty = B->B minus A->B (5 seed torch, epoch 10/20/40)
+
+**Tuyen bo "Pass" o tren da bi rut lai.** Phep so sanh cu (flat vs slot vs universal, 1 seed) bi nhieu boi khac biet ve feature: flat va slot khac nhau o khoi slot, khong chi o du lieu huan luyen. Ket qua seed ben duoi thay the no.
+
+Moi o: trung binh [min, max] qua 5 seed. Nguon: `results/fixed/transfer/transfer_seeds.json`, bang `transfer_seeds_table.md`. Ghi chu: `train()` co tham so `seed` (mac dinh 0); lan chay dau bi trung seed, da sua.
+
+| bien the | epoch | BUY_SHOP A->B | BUY_SHOP B->B | penalty BUY_SHOP | penalty BUY_XP | penalty REROLL | penalty overall | BUY_SHOP A->A (val) |
+|---|---|---|---|---|---|---|---|---|
+| flat | 10 | 80.4 [79.5, 81.2] | 82.4 [82.1, 82.6] | 2.0 [0.9, 2.9] | 6.1 [3.1, 10.4] | 4.7 [-2.9, 22.6] | 2.7 [2.0, 4.1] | 81.5 [81.3, 81.7] |
+| flat | 20 | 79.8 [79.4, 80.5] | 85.0 [83.9, 85.8] | 5.3 [3.4, 6.1] | 4.6 [2.8, 6.0] | 2.5 [-0.2, 6.8] | 2.9 [2.4, 3.2] | 81.5 [80.8, 82.0] |
+| flat | 40 | 79.1 [78.7, 79.4] | 88.9 [88.3, 89.2] | 9.7 [8.9, 10.4] | 3.5 [2.5, 4.2] | -0.1 [-2.1, 1.6] | 3.6 [3.3, 4.0] | 82.7 [81.7, 83.3] |
+| flat+slot | 10 | 92.9 [92.8, 93.1] | 94.1 [94.0, 94.2] | 1.1 [1.1, 1.2] | 3.0 [0.0, 7.0] | 12.1 [-5.1, 23.5] | 1.7 [1.1, 2.7] | 93.2 [92.8, 93.4] |
+| flat+slot | 20 | 94.2 [93.7, 94.6] | 95.7 [95.3, 96.1] | 1.4 [1.1, 2.0] | 2.8 [1.4, 3.8] | 9.2 [0.2, 17.4] | 1.7 [1.4, 1.9] | 94.8 [94.5, 95.0] |
+| flat+slot | 40 | 96.2 [95.9, 96.7] | 97.9 [97.7, 98.2] | 1.7 [1.2, 2.3] | 1.7 [-0.1, 3.1] | 0.5 [-5.2, 11.3] | 1.5 [1.3, 1.7] | 97.3 [96.9, 97.7] |
+| universal | 10 | 93.7 [93.3, 94.0] | 93.8 [93.5, 93.9] | 0.1 [-0.3, 0.6] | -0.4 [-1.3, 0.2] | 2.9 [0.2, 6.4] | 0.1 [-0.0, 0.3] | 93.2 [92.9, 93.5] |
+| universal | 20 | 95.5 [94.7, 95.9] | 95.7 [94.9, 96.3] | 0.2 [-0.0, 0.4] | 0.1 [-0.2, 0.5] | 1.1 [-3.8, 5.0] | 0.0 [-0.1, 0.1] | 95.1 [94.3, 95.4] |
+| universal | 40 | 98.2 [97.5, 98.6] | 98.1 [97.7, 98.6] | -0.1 [-0.4, 0.3] | -0.0 [-0.2, 0.1] | 0.4 [-1.8, 2.8] | -0.0 [-0.1, 0.1] | 98.0 [97.2, 98.6] |
+
+Doc ket qua:
+- **universal**: penalty BUY_SHOP ~0 o ca 3 muc epoch (khoang -0.1 den 0.2). A->A va B->B gan bang nhau. Day la ket qua ky vong vi khoi slot duoc xay tu cac dau vao cua chinh teacher (owned, trait chung), nen dieu nay chi cho thay cai dat khong lam hong suy luan tren 8 tuong, KHONG phai bang chung model tong quat hoa.
+- **flat**: penalty tang theo epoch (2.0 -> 5.3 -> 9.7). Model hoc danh tinh tuong, khong hoc luat chung.
+- **flat+slot**: penalty 1.1 den 1.7, nho nhung khac 0.
+- **REROLL**: khong on dinh. Penalty universal 6.4 diem o seed 0 khong lap lai; o epoch 40 khoang la [-1.8, 2.8] chua 0. Nen KHONG can thi nghiem bo cot aux.
+- **BUY_XP**: flat giam 3.5-6.1 diem o ca 3 epoch, do lech co he thong o nguong gold 54 (xem muc tren). Universal ~0.
 
 ### Mo: ung vien teacher
 
