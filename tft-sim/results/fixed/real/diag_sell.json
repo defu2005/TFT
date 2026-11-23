@@ -1,0 +1,26 @@
+{
+  "seeds": "20000-20199 (tuning seeds, diagnostics only)",
+  "seat_B": {
+    "steps": 202404,
+    "bench_full_share": 0.8613219106341772,
+    "gold_mean": 44.66959151004921
+  },
+  "seat_A": {
+    "steps": 206635,
+    "bench_full_share": 0.7773465289036223,
+    "gold_mean": 45.50594526580686
+  },
+  "seat_A_sells": 13800,
+  "sell_bench_before_mean": 8.19659420289855,
+  "sell_gold_mean": 1.9443478260869564,
+  "teacher_action_when_bench_full_and_gold_ge2": {
+    "PICK_AUGMENT": 2107,
+    "PASS": 104695,
+    "FIELD": 5396,
+    "PICK_GOD": 2398,
+    "EQUIP": 3631,
+    "BUY_XP": 46024,
+    "REROLL": 8753,
+    "REROLL_AUGMENT": 52
+  }
+}
