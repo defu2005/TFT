@@ -59,6 +59,10 @@ export function decide(state, out, trace = null) {
         if (trace) trace.push({ action: "buy", slot: i, unit: unit.id, cost: unit.cost, score: 0, note: "không nằm trong line (priority 0)" })
         continue
       }
+      if (!(unit.cost >= 1)) {
+        if (trace) trace.push({ action: "buy", slot: i, unit: unit.id, score: 0, note: "thiếu cost" })
+        continue
+      }
       if (gold < unit.cost) {
         if (trace) trace.push({ action: "buy", slot: i, unit: unit.id, cost: unit.cost, score: 0, note: `thiếu vàng (cần ${unit.cost}, có ${gold})` })
         continue
