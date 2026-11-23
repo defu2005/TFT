@@ -56,4 +56,5 @@ test("a missing RAM file makes the coach say gold and level are unknown, not def
   assert.equal(record.state.hudLevelUnknown, true)
   assert.match(record.reason.text, /vàng chưa biết nên không mua, roll hay xp; cấp chưa biết nên không roll hay xp/)
   assert.equal(record.decision.action, "hold")
+  assert.doesNotMatch(record.reason.text, /mặc định cho ram-/)
 })
