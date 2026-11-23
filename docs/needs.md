@@ -90,4 +90,4 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | 2026-11-23 | Hồ sơ đọc bản vá: áp dụng mọi bản vá ≤ phiên bản yêu cầu; caveat theo level; kiểm tra số và khóa chặt hơn | `a52cfaa` |
 | 2026-11-23 | Xuất roster Set 18 (`DA_`) từ dump CDragon 16.23.8406595 vào `src/data/set18.json`; thêm test line tự động trên file này; chưa đưa `champsPerCost` vào hồ sơ | `77b9c18` (code), `f4f8a46` (sửa, gộp code và docs) |
 
-Giới hạn đã biết: `tft_evaluate_state` và các công cụ `tft_rules`, `tft_hit_chance` không dùng `TFT_RULES`, `TFT_PROFILE_FILE`, `TFT_PATCH` và line tự động; chúng đọc bảng mặc định của `rules.js`; đặt priority 0 thủ công không loại được tướng đang có line tự động.
+Các công cụ MCP (`tft_evaluate_state`, `tft_hit_chance`, `tft_rules`) nay đọc cùng `TFT_RULES` và hồ sơ như coach (`src/mcp/server.js` truyền vào). Giới hạn còn lại: line tự động chưa có trong công cụ MCP; đặt priority 0 thủ công không loại được tướng đang có line tự động.
