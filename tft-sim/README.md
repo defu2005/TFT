@@ -339,6 +339,16 @@ Doc ket qua: doi unit lam teacher tot hon ro rang tren seed giu-lai, va null kho
 
 **Ket luan:** clone ngang teacher v3 tren Set 17 (CI chua 0) va gan ngang tren Set 18 DA-only. Tran cua clone la teacher v3; de vuot can giai doan 3 (tim kiem hoac RL).
 
+## Giai doan 3: tim kiem tham so tren v3 (dong)
+
+**Ket qua:** CEM 4 the he, 12 ung vien moi the he, 400 lobby moi ung vien (seed dev 100000-100399). Trung binh quan the ~ +0,10 (da so kem v3); ung vien tot nhat trong +-0,03. **Chua tim thay cau hinh nao tot hon v3 o do phan giai +-0,17.** Khong chay giu-lai (seed 110000 chua dung).
+
+**Kiem tra nut:** nut xp_floor va reroll_floor co tac dung (dem BUY_XP 11.744 so voi 19.337 o theta mac dinh; vang cuoi 4 so voi 51). Nghia la cac nut song, nhung khong cai nao cai thien placement o do phan giai nay.
+
+**Bien du bao placement (Spearman, 1.600 seat-game, v3 vs v3):** cap (level) 0,86; suc manh ban (board_strength) 0,77; vang 0,61; so unit 2 sao 0,40; HP ~0 (HP la ket qua, khong phai nguyen nhan).
+
+**Ket luan:** do phan giai cua tham so hoa la +-0,17 tren 400 lobby. Cap va suc manh ban du bao placement manh, nhung v3 da toi uu chung qua quy tac swap va nut kinh te. **Giai doan 3 dong: sat tran cua ho quy tac 43 hanh dong trong mo phong nay.** Muon vuot tiep can (a) mo rong khong gian hanh dong (vi tri, item), hoac (b) fork TFT_GOAT de sua mo phong.
+
 ## Trang thai cong viec
 
 - Test cua tft-sim: 9 pass (chay tren toy env, co loai tru seat). Toy env chi kiem chung harness.

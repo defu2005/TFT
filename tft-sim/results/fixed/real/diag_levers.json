@@ -1,0 +1,10 @@
+{
+  "n_seat_games": 1600,
+  "spearman_with_goodness": {
+    "gold": 0.612,
+    "level": 0.864,
+    "board_strength": 0.765,
+    "n_2star_plus": 0.402,
+    "hp": -0.038
+  }
+}
