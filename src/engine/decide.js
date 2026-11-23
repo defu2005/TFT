@@ -35,6 +35,9 @@ export function decide(state, out, trace = null, rules, profile) {
 
   const level = state.level | 0
   const gold = state.gold | 0
+  // Unknown gold or level (HUD reader) is not a zero: no buy, roll or xp is decided on a coerced number.
+  const goldKnown = state.hudGoldUnknown !== true
+  const levelKnown = state.hudLevelUnknown !== true
   const hp = state.hp | 0
   const stage = state.stage | 0
   const shop = state.shop
@@ -63,7 +66,8 @@ export function decide(state, out, trace = null, rules, profile) {
     for (let i = 0; i < 5; i++) {
       const unit = shop[i]
       if (!unit) {
-        if (trace) trace.push({ action: "buy", slot: i, score: 0, note: "ô trống" })
+        const unknown = Array.isArray(state.shopUnknownSlots) && state.shopUnknownSlots.includes(i)
+        if (trace) trace.push({ action: "buy", slot: i, score: 0, ...(unknown ? { unknown: true } : {}), note: unknown ? "chưa đọc được ô này" : "ô trống" })
         continue
       }
       const isTarget = !!target && target.id != null && unit.id === target.id
@@ -77,8 +81,18 @@ export function decide(state, out, trace = null, rules, profile) {
         if (trace) trace.push({ action: "buy", slot: i, unit: unit.id, score: 0, note: "thiếu cost" })
         continue
       }
-      if (gold < unit.cost) {
-        if (trace) trace.push({ action: "buy", slot: i, unit: unit.id, cost: unit.cost, score: 0, note: `thiếu vàng (cần ${unit.cost}, có ${gold})` })
+      // price: gold spent on the slot (HUD shows it). Absent means the tier is the price. null means unreadable: no buy.
+      const price = unit.price === undefined ? unit.cost : unit.price
+      if (price === null) {
+        if (trace) trace.push({ action: "buy", slot: i, unit: unit.id, cost: unit.cost, price: null, score: 0, note: "chưa đọc được giá mua" })
+        continue
+      }
+      if (!goldKnown) {
+        if (trace) trace.push({ action: "buy", slot: i, unit: unit.id, cost: unit.cost, price, score: 0, note: "chưa đọc được vàng" })
+        continue
+      }
+      if (gold < price) {
+        if (trace) trace.push({ action: "buy", slot: i, unit: unit.id, cost: unit.cost, price, score: 0, note: `thiếu vàng (cần ${price}, có ${gold})` })
         continue
       }
       const owned = Math.max(unit.copiesOwned | 0, countCopies(state.board, unit.id) + countCopies(state.bench, unit.id))
@@ -93,7 +107,7 @@ export function decide(state, out, trace = null, rules, profile) {
       const copiesLeft = Math.max(0, copiesFromTarget || (POOL_FALLBACK(unit, p) - owned - taken))
       const champsAtCost = unit.champsAtCost
       const hit = hitChance(level, unit.cost, copiesLeft, champsAtCost, p)
-      const interestLoss = interestGold(gold) - interestGold(gold - unit.cost)
+      const interestLoss = interestGold(gold) - interestGold(gold - price)
       let score = priority * (1 + owned) * (0.4 + hit)
       if (!urgent) score -= interestLoss * 0.35
       if (owned % 3 === 2) score += 1.5
@@ -104,8 +118,9 @@ export function decide(state, out, trace = null, rules, profile) {
           slot: i,
           unit: unit.id,
           cost: unit.cost,
+          price,
           score,
-          hit,
+          hit: levelKnown ? hit : null,
           copiesLeft,
           copiesSource,
           interestLoss,
@@ -119,14 +134,14 @@ export function decide(state, out, trace = null, rules, profile) {
         if (score > blockedBuy) {
           blockedBuy = score
           blockedUnit = unit.id
-          blockedCost = unit.cost
+          blockedCost = price
         }
       } else if (score > bestBuy) {
         bestBuy = score
         bestSlot = i
         bestHit = hit
       }
-      if (!blocked && score > keepBuy && gold - unit.cost >= rollNeeds) {
+      if (!blocked && score > keepBuy && gold - price >= rollNeeds) {
         keepBuy = score
         keepSlot = i
         keepHit = hit
@@ -138,7 +153,7 @@ export function decide(state, out, trace = null, rules, profile) {
   const wanted = levelTable[stage] ?? levelTable[levelTable.length - 1]
   const xpGold = r.earlyLevel && stage <= 2 ? BUY_XP_COST : 50
   let xpScore = 0
-  const xpAffordable = gold >= xpGold && gold >= BUY_XP_COST
+  const xpAffordable = goldKnown && levelKnown && gold >= xpGold && gold >= BUY_XP_COST
   if (level < wanted && xpAffordable) {
     xpScore = (wanted - level) * (urgent ? 0.6 : 1.1)
   }
@@ -149,12 +164,12 @@ export function decide(state, out, trace = null, rules, profile) {
       level,
       wanted,
       stage,
-      note: level >= wanted ? `level ${level} đã đạt mục tiêu ${wanted}` : !xpAffordable ? `chưa đủ điều kiện (vàng ${gold}, cần ${xpGold} và ${BUY_XP_COST})` : "",
+      note: level >= wanted ? `level ${level} đã đạt mục tiêu ${wanted}` : !goldKnown ? "chưa đọc được vàng" : !levelKnown ? "chưa đọc được cấp" : !xpAffordable ? `chưa đủ điều kiện (vàng ${gold}, cần ${xpGold} và ${BUY_XP_COST})` : "",
     })
   }
 
   let rollScore = 0
-  const rollAffordable = !!target?.cost && gold >= rollNeeds
+  const rollAffordable = goldKnown && levelKnown && !!target?.cost && gold >= rollNeeds
   let rollHit = 0
   if (target && target.cost && rollAffordable && !targetInShop) {
     rollHit = hitChance(level, target.cost, target.copiesLeft, target.champsAtCost, p)
@@ -163,7 +178,7 @@ export function decide(state, out, trace = null, rules, profile) {
   }
   if (trace) {
     const rolls = freeRolls + (gold > reserve ? ((gold - reserve) / REROLL_COST) | 0 : 0)
-    const hitWithin = target && target.cost && !targetInShop ? hitChanceOverRolls(level, target.cost, target.copiesLeft, target.champsAtCost, rolls, p) : 0
+    const hitWithin = goldKnown && levelKnown && target && target.cost && !targetInShop ? hitChanceOverRolls(level, target.cost, target.copiesLeft, target.champsAtCost, rolls, p) : 0
     trace.push({
       action: "roll",
       score: rollScore,
@@ -172,7 +187,7 @@ export function decide(state, out, trace = null, rules, profile) {
       free: freeRolls,
       rolls,
       hitWithin,
-      note: !target ? "không có mục tiêu (set_target chưa được gọi)" : targetInShop ? "mục tiêu đang có trong shop" : !rollAffordable ? `thiếu vàng để roll (cần ${rollNeeds})` : "",
+      note: !target ? "không có mục tiêu (set_target chưa được gọi)" : targetInShop ? "mục tiêu đang có trong shop" : !goldKnown ? "chưa đọc được vàng" : !levelKnown ? "chưa đọc được cấp" : !rollAffordable ? `thiếu vàng để roll (cần ${rollNeeds})` : "",
     })
   }
 

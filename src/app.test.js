@@ -282,3 +282,31 @@ test("TFT_TRAIT_OVERLAY adds Elderwood to Ivern and the auto line rates it", asy
 test("TFT_TRAIT_OVERLAY without TFT_AUTO_LINE is refused", () => {
   assert.throws(() => createApp(replayConfig({ TFT_TRAIT_OVERLAY: OVERLAY })), /TFT_AUTO_LINE/)
 })
+
+// HUD reader frame with unreadable gold (standalone contract): no buy, no roll, no xp, and the flag reaches the record.
+test("a frame with unknown gold holds and records the flag; a null price is not bought", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-hudgold-"))
+  const fixture = path.join(dir, "frame.json")
+  fs.writeFileSync(
+    fixture,
+    JSON.stringify({
+      frames: [
+        {
+          level: 7,
+          gold: null,
+          hudGoldUnknown: true,
+          hp: 80,
+          stage: 3,
+          freeRolls: 2,
+          target: { id: "DA_18_Ivern", cost: 5, copiesLeft: 10, priority: 1, champsAtCost: 13 },
+          shop: [{ id: "DA_18_Ornn", cost: 1, price: null, copiesOwned: 0, priority: 1 }, null, null, null, null],
+          board: [{ id: "DA_18_Ornn", star: 1 }],
+        },
+      ],
+    }),
+  )
+  const { coach } = createApp(replayConfig({ TFT_REPLAY: fixture }))
+  const record = await coach.tick()
+  assert.equal(record.decision.action, "hold")
+  assert.equal(record.state.hudGoldUnknown, true)
+})

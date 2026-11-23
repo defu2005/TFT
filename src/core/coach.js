@@ -107,7 +107,7 @@ export function createCoach({
         stateHash,
         known: { shop: Array.isArray(input.shop), target: !!input.target },
         state: input,
-        decision: { action: actionName(out.action), slot: out.slot, bench: out.bench, score: round(out.score), hit: round(out.hit) },
+        decision: { action: actionName(out.action), slot: out.slot, bench: out.bench, score: round(out.score), hit: input.hudLevelUnknown ? null : round(out.hit) },
         reason,
       }
 
@@ -201,11 +201,14 @@ function applyLines(shop, lines, auto = null) {
 export function hashState(state) {
   let ids = ""
   if (Array.isArray(state.shop)) {
-    for (const unit of state.shop) ids += unit ? `${unit.id ?? "-"}:${unit.priority ?? 0}:${unit.copiesOwned ?? 0}:${unit.takenByOthers ?? ""},` : "-,"
+    for (const unit of state.shop) ids += unit ? `${unit.id ?? "-"}:${unit.priority ?? 0}:${unit.copiesOwned ?? 0}:${unit.takenByOthers ?? ""}${unit.price !== undefined ? `:p${unit.price}` : ""},` : "-,"
   }
   const t = state.target
   const targetKey = t ? `${t.id ?? "-"}:${t.cost}:${t.copiesLeft}:${t.priority}:${t.champsAtCost ?? ""}` : "none"
-  return `${state.level}|${state.gold}|${state.hp}|${state.stage}|${ids}|${targetKey}|${unitsKey(state.board)}|${unitsKey(state.bench)}|${state.freeRolls ?? ""}`
+  const base = `${state.level}|${state.gold}|${state.hp}|${state.stage}|${ids}|${targetKey}|${unitsKey(state.board)}|${unitsKey(state.bench)}|${state.freeRolls ?? ""}`
+  // HUD flags are appended only when present, so states without them keep their old hash.
+  const flags = [state.hudGoldUnknown ? "G?" : "", state.hudLevelUnknown ? "L?" : "", Array.isArray(state.shopUnknownSlots) ? `U${state.shopUnknownSlots.join(",")}` : ""].filter(Boolean).join("")
+  return flags ? `${base}|${flags}` : base
 }
 
 function unitsKey(list) {

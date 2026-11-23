@@ -34,6 +34,8 @@ const unitSchema = z
     poolCopies: z.number().int().min(0).optional(),
     champsAtCost: z.number().int().min(1).optional(),
     takenByOthers: z.number().int().min(0).optional(),
+    // Gold spent on the slot (the HUD shows it). null = unreadable, never bought. Absent = the tier.
+    price: z.number().int().min(0).max(999).nullable().optional(),
   })
   .nullable()
 
@@ -55,6 +57,9 @@ const stateSchema = {
   target: targetSchema.optional(),
   board: z.array(ownedSchema).nullable().optional(),
   freeRolls: z.number().int().min(0).optional(),
+  hudGoldUnknown: z.boolean().optional(),
+  hudLevelUnknown: z.boolean().optional(),
+  shopUnknownSlots: z.array(z.number().int().min(0).max(4)).optional(),
   bench: z.array(ownedSchema).nullable().optional(),
 }
   return { targetSchema, stateSchema }

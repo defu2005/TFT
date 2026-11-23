@@ -138,3 +138,40 @@ test("engine invariants hold on the same 2,000 states under the Set 18 candidate
   console.log("action counts (candidate profile)", JSON.stringify(counts), "differ from default", differ, "of 2000")
 })
 
+
+// HUD unknown-field properties over the same seeded states (rules off and all U9 rules on).
+function withUnit(state, f) {
+  return { ...state, shop: state.shop?.map((u) => (u ? f(u) : u)) ?? state.shop }
+}
+
+function decideOf(state, rules) {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  decide(state, out, null, rules, null)
+  return out
+}
+
+for (const [label, rules] of [["rules off", null], ["all U9 rules on", ALL_RULES]]) {
+  test(`HUD fields: price equal to the tier decides as before, and a null price is never bought (${label})`, () => {
+    const rnd = mulberry32(20261124)
+    for (let n = 0; n < 2000; n++) {
+      const state = makeState(rnd)
+      const same = withUnit(state, (u) => ({ ...u, price: u.cost }))
+      const a = decideOf(state, rules)
+      const b = decideOf(same, rules)
+      assert.deepEqual([b.action, b.slot, b.score], [a.action, a.slot, a.score], `state ${n}`)
+      const nulled = withUnit(state, (u) => ({ ...u, price: null }))
+      assert.notEqual(decideOf(nulled, rules).action, BUY, `null price bought in state ${n}`)
+    }
+  })
+
+  test(`HUD fields: unknown gold never buys, rolls or levels; unknown level never levels or rolls (${label})`, () => {
+    const rnd = mulberry32(20261125)
+    for (let n = 0; n < 2000; n++) {
+      const state = makeState(rnd)
+      const noGold = decideOf({ ...state, hudGoldUnknown: true }, rules)
+      assert.ok(![BUY, ROLL, 2].includes(noGold.action), `unknown gold acted in state ${n}: ${noGold.action}`)
+      const noLevel = decideOf({ ...state, hudLevelUnknown: true }, rules)
+      assert.ok(![2, ROLL].includes(noLevel.action), `unknown level acted in state ${n}: ${noLevel.action}`)
+    }
+  })
+}

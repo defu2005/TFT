@@ -98,3 +98,20 @@ test("tft_evaluate_state still accepts level 11 when the profile's odds table is
   const schema = z.object(server.configs.get("tft_evaluate_state").inputSchema)
   assert.equal(schema.safeParse({ ...ROLL_STATE, level: 11 }).success, true)
 })
+
+test("tft_evaluate_state takes a null price and the HUD flags, and never buys the null-price slot", async () => {
+  const server = fakeServer()
+  registerTools(server, { coach, rules: null, profile: null })
+  const state = {
+    level: 7,
+    gold: 0,
+    hp: 80,
+    stage: 3,
+    hudGoldUnknown: true,
+    shopUnknownSlots: [1],
+    shop: [{ id: "DA_18_Ornn", cost: 1, price: null, copiesOwned: 0, priority: 1 }, null, null, null, null],
+  }
+  const out = JSON.parse((await server.handlers.get("tft_evaluate_state")(state)).content[0].text)
+  assert.notEqual(out.action, "buy")
+  assert.equal(out.action, "hold")
+})
