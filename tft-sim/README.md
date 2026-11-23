@@ -11,7 +11,7 @@ Ty le dong y o day la muc loai+chi so tren hang >=2 hop le, vs random; xem muc B
 | Quyet dinh | Trong sim | Co teacher | Da hoc (BC) | Ty le dong y (flat / flat+slot) | Danh gia tren TFT that |
 |---|---|---|---|---|---|
 | Mua tuong tu shop (BUY_SHOP) | co | co | co | 77% / 80% | chua |
-| Roll (REROLL) | co | co, hiem (n=845 tren 200 lobby) | co (gan) | 87% / 82% | chua |
+| Roll (REROLL) | co | co, hiem | co (gan) | 87% / 82% (vs random, n=84 / 308; val n chua tach) | chua |
 | Mua XP (BUY_XP) | co | co | co | 86% / 82% | chua |
 | Ban tuong / ban tu board | co | **khong** (scripted khong ban) | - | - | chua |
 | Dat tuong len board (FIELD) | co | co | co | 100% / 100% | chua |
@@ -55,11 +55,36 @@ Seed moi 2000-2199, 200 lobby, A = bien the degraded, B = scripted goc. Script: 
 
 Ket luan: metric phat hien duoc teacher bi cat mot phan lon (60% ngau nhien, bo mua) nhung KHONG phat hien duoc mat mat nho (10-30%). Hon nua, 10% ngau nhien cho ket qua **tot hon** scripted co y nghia thong ke. Nghia la scripted khong phai teacher manh, va hieu so hang khong phai thuoc do tot cho viec bat chuoc teacher. Vi vay tieu chi "trong 0.5 hang cua scripted" KHONG chung minh duoc gi o muc chi tiet.
 
-Chan doan clone (tren cung seed 2000-2199):
+Chan doan clone (tren cung seed 2000-2199). **Luu y pham vi: moi 8 ghe deu la clone** (`diag_run` dung cung policy cho moi ghe), nen day khong phai do tren lobby A/B. Ma tran o muc loai, khong phai hanh dong chinh xac.
 - 0 hanh dong bat hop le; 243.7 buoc/game (scripted 225.7).
 - 0 phase cham gioi han MAX_PLANNING_STEPS = 50 (scripted cung 0). Clone khong bi lap den gioi han.
 - Ma tran nham o muc loai (teacher -> clone): BUY_SHOP, FIELD, EQUIP, PICK_GOD, PICK_AUGMENT luon khop loai. Loai khop nhung chi so khac nhau nen dong y theo chi so thap hon. PASS khi teacher noi PASS: clone chon PASS 69%, BUY_XP 24%, REROLL 7%. Sai lech nay la cho chinh cua rule gold >= 54 trong teacher.
+- Kiem tra cong gold (`encoding.py`): gold la scalar THO trong observation (vi tri 0, khong clip). Teacher khong bao gio mua XP hay roll duoi 54 gold, va khong bao gio PASS khi du 54 gold (val: 0 / 21.181 BUY_XP duoi 54; 0 / 13.505 PASS tren 54). Clone dong y PASS 100% o gold < 40, 92% o 40-49, nhung chi 71% o 50-53 (8.707 dong). Loi tap trung dung o nguong 54: day la boundary fit (3 epoch, chuan hoa) va phan bo lech, KHONG phai thieu feature.
 - PICK_AUGMENT va REROLL_AUGMENT dung tier augment trong state privileged cua teacher, khong co trong observation. Day la khoang trong quan sat, khong phai ket qua hoc.
+
+### Lap lai va co che (fresh seeds 3000-3199, eps=0.1 = A, scripted = B)
+
+| Eps | diff A-B | CI95 |
+|---|---|---|
+| 0.05 | -0.22 | [-0.44, 0.04] |
+| 0.10 | -0.18 | [-0.43, 0.06] |
+| 0.20 | -0.30 | [-0.54, -0.07] |
+
+Ca 4 do (2000-2199 va 3000-3199) deu co dau am: ngau nhien lam tot hon scripted khoang 0.2-0.4 hang. Do lon nho, chua co y nghia thuc te. Ket luan: **scripted la teacher yeu**, khong phai bang chung ngau nhien "that" co the chuyen thanh teacher.
+
+Co che (eps=0.1 so voi scripted): ngau nhien nang ban board nhieu hon (FIELD 14.057 so voi 8.432; BENCH_BOARD 5.497 so voi 0; SELL_BENCH 3.073 so voi 0), level som hon mot chut o vong 2-3 (3.08 so voi 3.00), ban lam gold duoi 54 (XP/REROLL 786 lan, scripted 0). Chenh lech board va HP nho (~0.1 don vi). Khong tim thay co che lon duy nhat.
+
+Ung vien teacher (1 wrapper, seed 4000-4199): scripted, nhung PASS -> BUY_XP khi gold >= 40. Ket qua: diff +0.18, CI95 [-0.05, 0.43]. **Khong tot hon scripted; giu scripted lam teacher.**
+
+### Tieu chi transfer (viet TRUOC khi chay transfer)
+
+- Noi dung A: `default_content()`. Noi dung B: hoan vi chi phi tuong va trait tren ban synthetic (chua lam).
+- Metric chinh: dong y theo loai, tren trang thai teacher cua B, chi hang >= 2 hop le. Bao cao ca trung binh co trong so theo n.
+- Can tren U: flat+slot huan luyen va kiem tra tren B (trong phan phoi).
+- Can duoi L: flat huan luyen tren A, kiem tra tren B (khong thich ung).
+- Void: neu U - L < 5 diem phan tram thi bai test khong co y nghia; phai thiet ke lai B.
+- Pass: flat+slot huan luyen tren A, kiem tra tren B, dat T >= L + 0.8 * (U - L). (Dinh nghia nay thay cho "universal-only" trong ghi chu tu van, vi cach hieu truoc do khong nhat quan. Can xac nhan lai.)
+- Guard placement: CI upper cua (clone - scripted) tren B phai < +0.5 hang. Day chi la chan tho: no chi loai bo gan muc "ngau nhien 60%" (+2.6), khong chung minh bat chuoc chi tiet.
 
 ## Trang thai cong viec
 

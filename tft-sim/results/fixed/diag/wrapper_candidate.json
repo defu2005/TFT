@@ -1,0 +1,17 @@
+{
+  "candidate": "scripted; PASS -> BUY_XP when gold>=40 and BUY_XP legal",
+  "seeds": "4000-4199",
+  "vs_scripted": {
+    "lobbies": 200,
+    "completed": 200,
+    "mean_placement_A": 4.59,
+    "mean_placement_B": 4.41,
+    "diff_A_minus_B": 0.18,
+    "ci95_diff": [
+      -0.0475,
+      0.4275
+    ],
+    "illegal_A": 0,
+    "illegal_B": 0
+  }
+}
