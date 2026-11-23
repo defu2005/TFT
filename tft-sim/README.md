@@ -205,6 +205,21 @@ Them tier 3 augment dang duoc chao (truong `tiers`, ngoai `aux`, 20 cot giu nguy
 
 **Ket luan:** tier augment sua duoc hanh vi augment, nhung KHONG thay doi chenh lech so voi scripted. Chenh lech nay khong do thieu augment. Null (scripted vs scripted) la +0,034, nen phan con lai khong ro nguyen nhan.
 
+## Choi tren noi dung that: CDragon 18.7, Set 17 block (2000 lobby, seed 20000-21999)
+
+Nhan: "CDragon latest (18.7), Set 17 block". Doi thu la **bot scripted**, khong phai nguoi choi TFT that, nen day khong phai bang chung ve TFT that. Script: `scripts/play_real.py`; ket qua: `results/fixed/real/play_*.json` (hieu hang tung lobby A-B; placement thap hon la tot hon).
+
+| Thi nghiem | Hieu A-B | CI95 | Ghi chu |
+|---|---|---|---|
+| Null: scripted vs scripted | +0.013 | [-0.062, +0.084] | Chua 0: cong cu do hop le |
+| Random vs scripted | +3.58 | [3.55, 3.60] | Replay 100 seed dau khop hoan toan |
+| Universal clone (huan luyen tren Set 17) vs scripted | -0.0003 | [-0.075, +0.073] | Ngang bang teacher, chua vuot |
+| Scripted voi eps=0.1 vs scripted | -0.263 | [-0.337, -0.192] | Tot hon scripted, CI khong chua 0 |
+
+Doc ket qua:
+- Clone khong vuot duoc teacher. Tran hien tai cua BC la teacher, khong phai dac trung. Khong them bien the BC nua.
+- Teacher co 10% hanh dong ngau nhien lai tot hon teacher thuan. Chua biet do kham pha hay do mot loai hanh dong cu the; buoc tiep theo la tach theo loai.
+
 ## Trang thai cong viec
 
 - Test cua tft-sim: 9 pass (chay tren toy env, co loai tru seat). Toy env chi kiem chung harness.
