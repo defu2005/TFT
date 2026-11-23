@@ -11,7 +11,8 @@ test("ramSource returns missing file error when state file does not exist", asyn
   const state = await src.read()
 
   assert.equal(src.kind, "ram")
-  assert.equal(state.gold, 0)
+  assert.equal(state.gold, null)
+  assert.equal(state.level, null)
   assert.equal(state.hp, 100)
   assert.ok(state.missing.includes("ram-state-file-not-found"))
 })

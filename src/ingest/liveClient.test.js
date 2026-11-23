@@ -37,6 +37,23 @@ test("an empty payload lists every field it lacks and does not hide them as zero
   assert.deepEqual(s.missing, ["gold", "level", "hp", "stage", "shop"])
 })
 
+test("a payload with no gold or level gives null for both, not 0 or 1", () => {
+  const s = toState({ activePlayer: { championStats: { currentHealth: 40 } }, gameData: { round: 3 }, shop: [null, null, null, null, null] })
+  assert.equal(s.gold, null)
+  assert.equal(s.level, null)
+  assert.ok(s.missing.includes("gold") && s.missing.includes("level"))
+})
+
+test("the coach flags a missing level and makes no xp or roll on it", async () => {
+  const p = { activePlayer: { currentGold: 50, championStats: { currentHealth: 40 } }, gameData: { round: 3 }, shop: [{ id: "DA_18_Varus", cost: 3, copiesOwned: 0, priority: 5 }, null, null, null, null] }
+  const src = { kind: "fake", read: async () => toState(p) }
+  const record = await createCoach({ source: src }).tick()
+  assert.equal(record.state.hudLevelUnknown, true)
+  assert.notEqual(record.decision.action, 2)
+  assert.notEqual(record.decision.action, 3)
+  assert.equal(record.reason.factors.level, null)
+})
+
 test("hp of 0 is kept, not replaced by the fallback", () => {
   const p = fullPayload()
   p.activePlayer.championStats.currentHealth = 0

@@ -58,8 +58,9 @@ export function toState(payload) {
   if (!Array.isArray(shopRaw)) missing.push("shop")
 
   return {
-    level: levelRaw === undefined ? 1 : num(levelRaw),
-    gold: num(goldRaw),
+    // A missing gold or level is null, not 0 or 1: the coach flags it and the engine makes no buy, roll or xp on it.
+    level: levelRaw == null ? null : num(levelRaw),
+    gold: goldRaw == null ? null : num(goldRaw),
     hp: hpRaw === undefined ? 100 : num(hpRaw),
     stage: stageNumber(stageRaw),
     shop: normalizeShop(shopRaw),
