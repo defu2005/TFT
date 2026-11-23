@@ -15,6 +15,14 @@ File này ghi mọi thứ engine cần từ người dùng hoặc phiên ingest,
 | U5 | Lượt roll miễn phí có cộng dồn sang stage sau không? | Quy tắc tính roll miễn phí | Giá trị `freeRolls` | **mở** |
 | U6 | Roll miễn phí chỉ được khuyến nghị khi đã đặt mục tiêu (`tft_set_target`). Có đúng ý không? | Hành vi roll miễn phí | Khuyến nghị roll | **mở** |
 
+**Đề xuất từ nghiên cứu (`docs/tft-strategy.md`), chờ người dùng xác nhận. Chưa đóng mục nào:**
+- **U1 (đề xuất):** bảng XP theo level từ wiki Riot, TFT:Experience (`verified`, không ghi set): 2→3 = 2 XP, 3→4 = 6, 4→5 = 10, 5→6 = 20, 6→7 = 36, 7→8 = 60, 8→9 = 68, 9→10 = 68. Đoạn tìm kiếm cho Set 14 ghi khác (7→8 = 48, 8→9 = 76). Cần xác nhận bảng nào áp dụng cho Set 18.
+- **U2 (đề xuất):** bảng odds của metabot (`verified`, không ghi set) khớp Set 17 trong `docs/tft-knowledge.md` ở level 8 (15/20/32/30/3) và level 9 (10/17/25/33/15). `rules.js` lệch ở hai level này và khớp ở level 4–7. Đề xuất: dùng bảng của metabot cho level 8 và 9 sau khi xác nhận set.
+- **U4 (đề xuất):** chưa có nguồn xác nhận. Trạng thái `pending`.
+- **U5 (đề xuất):** chưa có nguồn. Trạng thái `pending`.
+- **Mới, từ nghiên cứu:** engine nhận tướng cost 7 mà không báo lỗi (gap G8 trong `docs/tft-strategy.md`). Đề xuất: giới hạn cost trong khoảng 1–5 ở lớp nhận dữ liệu, không ở engine. Chưa sửa.
+- **Mới:** ngày Set 19 còn xung đột giữa 1/12 và 2/12. Cần người dùng xác nhận nếu muốn dùng làm mốc.
+
 ## 2. Từ phiên ingest
 
 Format và danh sách trường xem `docs/engine-state.md`, mục 4.
