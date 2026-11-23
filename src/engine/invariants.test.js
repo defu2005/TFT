@@ -1,6 +1,8 @@
 import assert from "node:assert/strict"
 import test from "node:test"
+import fs from "node:fs"
 import { decide, actionName, BUY, SELL, ROLL, HOLD } from "./decide.js"
+import { buildProfile } from "../data/profileFile.js"
 
 const ALL_RULES = { keepInterest: true, earlyLevel: true, guideLevels: true }
 
@@ -58,7 +60,7 @@ function makeState(rnd) {
   return state
 }
 
-function checkInvariants(rules) {
+function checkInvariants(rules, profile = null, record = null) {
   const rnd = mulberry32(20261123)
   const counts = { hold: 0, buy: 0, xp: 0, roll: 0, sell: 0 }
   for (let n = 0; n < 2000; n++) {
@@ -66,9 +68,10 @@ function checkInvariants(rules) {
     const where = () => JSON.stringify(state)
     const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
     const trace = []
-    decide(state, out, trace, rules)
+    decide(state, out, trace, rules, profile)
     const plain = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
-    decide(state, plain, null, rules)
+    decide(state, plain, null, rules, profile)
+    if (record) record.push([out.action, out.slot, out.bench])
 
     assert.ok(Number.isFinite(out.score), `score not finite: ${where()}`)
     for (const c of trace) {
@@ -123,3 +126,15 @@ test("engine invariants hold on the same 2,000 states with all U9 rules on", () 
   const counts = checkInvariants(ALL_RULES)
   console.log("action counts (all U9 rules on)", JSON.stringify(counts))
 })
+
+test("engine invariants hold on the same 2,000 states under the Set 18 candidate profile; differences from default are printed", () => {
+  const file = JSON.parse(fs.readFileSync(new URL("../data/profiles/set18.candidate.json", import.meta.url), "utf8"))
+  const profile = buildProfile(file, "16.20")
+  const defaultRecord = []
+  const candRecord = []
+  checkInvariants(null, null, defaultRecord)
+  const counts = checkInvariants(null, profile, candRecord)
+  const differ = defaultRecord.filter((d, i) => d[0] !== candRecord[i][0] || d[1] !== candRecord[i][1] || d[2] !== candRecord[i][2]).length
+  console.log("action counts (candidate profile)", JSON.stringify(counts), "differ from default", differ, "of 2000")
+})
+

@@ -6,7 +6,7 @@
   "patches": [
     {
       "version": "16.20",
-      "notes": "CHƯA XÁC MINH, có thể sai. Nhãn 16.20 là của metabot. Tìm kiếm cho thấy Riot đánh số 16.x cho bộ Lore & Legends trước đó, còn Set 18 bắt đầu ở 18.1, nên hàng odds này có thể không thuộc Set 18. Trang Set 18 leveling (đăng 2026-10-24) chỉ có năm ô câu chữ, không có bảng: level 8 tướng cost 4 là 30%; level 9 là 33% (cost 4) và 15% (cost 5); level 10 là 40% (cost 4) và 25% (cost 5). Hàng 8 và 9 của file này là Set 17 (tft-knowledge) và bảng xấp xỉ của metabot, từ cùng một site. Các hàng còn lại và pool, số tướng theo cost lấy từ rules.js. File này cũng cũ hơn bản Riot 18.7 (2026-11-17) trong tft-knowledge.md. Riot 18.2 và các bản sau chưa được đối chiếu.",
+      "notes": "CHƯA XÁC MINH, có thể sai. Nhãn 16.20 là của metabot, chưa ánh xạ được với số của Riot (wiki ghi Set 18 là 18.x). Tìm kiếm cho thấy Riot đánh số 16.x cho bộ Lore & Legends trước đó, còn Set 18 bắt đầu ở 18.1, nên hàng odds này có thể không thuộc Set 18. Trang Set 18 leveling (đăng 2026-10-24) chỉ có năm ô câu chữ, không có bảng: level 8 tướng cost 4 là 30%; level 9 là 33% (cost 4) và 15% (cost 5); level 10 là 40% (cost 4) và 25% (cost 5). Hàng 8 và 9 của file này là Set 17 (tft-knowledge) và bảng xấp xỉ của metabot, từ cùng một site. Các hàng còn lại và pool, số tướng theo cost lấy từ rules.js. File này cũng cũ hơn bản Riot 18.7 (2026-11-17) trong tft-knowledge.md. Riot 18.2 và các bản sau chưa được đối chiếu.",
       "shopOdds": {
         "8": [0.15, 0.20, 0.32, 0.30, 0.03],
         "9": [0.10, 0.17, 0.25, 0.33, 0.15]

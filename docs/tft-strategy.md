@@ -164,7 +164,7 @@ Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experien
 3. Bảng XP (wiki) ghi 7→8 = 60, 8→9 = 68; đoạn tìm kiếm Set 14 ghi 7→8 = 48, 8→9 = 76.
 4. Sát thương người chơi giai đoạn 4: 6, 7 hoặc 8 tùy nguồn.
 5. Ngày Set 19: 1/12 (seemeta) và 2/12 (esports.gg và đoạn tìm kiếm gần đây).
-7. Level 8 và 9 (metabot Set 18 guide, nhãn "16.20") khớp Set 17 và metabot, lệch `rules.js`. Một site, nhãn không xác minh; xem mục 3.
-8. Chuỗi thắng/thua: mục Income của wiki ghi 3–4 +1, 5 +2, 6+ +3. Metabot ghi "Typical streak bonuses" (bảng "thường gặp"): 2–3 +1, 4 +2, 5+ +3. Ghi chú V10.8 của wiki là lịch sử đã bị thay thế, không phải nguồn hiện hành.
+6. Level 8 và 9 (metabot Set 18 guide, nhãn "16.20") khớp Set 17 và metabot, lệch `rules.js`. Một site, nhãn không xác minh; xem mục 3.
+7. Chuỗi thắng/thua: mục Income của wiki ghi 3–4 +1, 5 +2, 6+ +3. Metabot ghi "Typical streak bonuses" (bảng "thường gặp"): 2–3 +1, 4 +2, 5+ +3. Ghi chú V10.8 của wiki là lịch sử đã bị thay thế, không phải nguồn hiện hành.
 
 Lưu ý chung: lịch sử bản vá của wiki TFT:Gold chỉ đến V10.x, nên không xác định được ngày của mục Income. Trang TFT:Experience đã lưu không có mục lịch sử bản vá, nên không xác định được ngày của bảng XP. Vì vậy chuỗi thắng/thua và U1 vẫn mở, cần người dùng xác nhận.
