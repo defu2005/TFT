@@ -105,7 +105,7 @@ Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experien
 
 **Khoảng trống**
 - Điểm roll chỉ tính một shop. Từ `fdabca4`, trace và lý do hiển thị xác suất trong toàn bộ ngân sách roll (`rolls`, `hitWithin`), nhưng điểm roll không dùng con số này. Đưa nó vào điểm sẽ đổi quyết định, nên chờ U9 (G5).
-- Không có chiến lược "slow roll" (giữ vàng để roll tại level cụ thể) ngoài điểm số một lần.
+- Không có chiến lược "slow roll" (giữ vàng để roll tại level cụ thể) ngoài điểm số một lần. Quy tắc U9 `keepInterest` là một phần liên quan (giữ 50 vàng trước khi roll), nhưng vẫn tắt mặc định (xem U9).
 - Bảng odds lệch ở level 8, 9 (xem U2).
 
 ## 4. Máu (HP) và sát thương người chơi
@@ -145,7 +145,7 @@ Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experien
 | --- | --- | --- | --- | --- |
 | G1 | Bảng odds level 8, 9 trong `rules.js` không khớp nguồn | Trực tiếp: xác suất roll và điểm mua | không cần trường mới | `conflict` (U2) |
 | G2 | Không có XP hiện tại và XP cần để lên level | Trực tiếp: quyết định lên level | `xp`, `xpToNext` (I4) | wiki `verified`, thiếu set |
-| G3 | Lên level bị khóa bởi `gold >= 50` | Trực tiếp: bỏ lỡ lên level sớm | cần `xp` (I4) | `verified` (bảng wiki) |
+| G3 | Lên level bị khóa bởi `gold >= 50` (quy tắc U9 `earlyLevel` mở ở stage ≤ 2) | Trực tiếp: bỏ lỡ lên level sớm | cần `xp` (I4) | `verified` (bảng wiki) |
 | G4 | Không có thu nhập thụ động và chuỗi thắng/thua | Gián tiếp: giữ vàng hay chi tiêu | `streak`, `round` (I4) | thụ động `verified`; chuỗi `conflict` |
 | G5 | Điểm roll chỉ tính một shop; xác suất nhiều lượt (`hitWithin`) chỉ hiển thị, chưa dùng trong điểm | Trực tiếp: điểm roll | không cần trường mới | hiển thị ở `fdabca4`; dùng trong điểm chờ U9 |
 | G6 | Không có sát thương người chơi theo giai đoạn | Gián tiếp: quyết định ổn định máu | `stage`, số tướng địch sống | `conflict` |
@@ -153,7 +153,7 @@ Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experien
 | G8 | `rules.js` không có dòng odds hay pool cho cost trên 5; engine nhận cost 7 và cho hit 0 | Gián tiếp: tướng cost cao không bao giờ được tính xác suất | không cần trường mới | đã xác nhận bằng chạy thử |
 | G9 | Chưa có quy tắc bán và ghép cặp | Gián tiếp | bench, sellValue (I2) | `pending` |
 | G10 | Chưa rõ mua hoàn thành sao khi bench đầy | Trực tiếp: lượt mua bị chặn/cho phép | U4 | `pending` |
-| G11 | `LEVEL_BY_STAGE` đặt level 8 ở stage 4; metabot đặt level 8 quanh 4-5 hoặc 5-1 (Set 18 guide) | Trực tiếp: thời điểm lên level | `stage`, `round` (I4) | `single-source` (metabot, patch 16.20) |
+| G11 | `LEVEL_BY_STAGE` đặt level 8 ở stage 4 (quy tắc U9 `guideLevels`); metabot đặt level 8 quanh 4-5 hoặc 5-1 (Set 18 guide) | Trực tiếp: thời điểm lên level | `stage`, `round` (I4) | `single-source` (metabot, patch 16.20) |
 
 ## 10. Mâu thuẫn giữa các nguồn
 

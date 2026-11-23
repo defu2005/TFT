@@ -36,7 +36,8 @@ File này ghi mọi thứ engine cần từ người dùng hoặc phiên ingest,
 Các cách đọc cần người dùng đổi nếu không đúng:
 (a) "giai đoạn đầu" là `stage <= 2` trong `earlyLevel`;
 (b) bảng mốc mở đầu theo stage trong `guideLevels`;
-(c) `earlyLevel` ở stage 2 trở xuống mua XP từ 4 vàng cho tới mục tiêu level, không kiểm tra lãi.
+(c) `earlyLevel` ở stage 2 trở xuống mua XP từ 4 vàng cho tới mục tiêu level, không kiểm tra lãi;
+(d) `earlyLevel` phụ thuộc vàng, level và stage. Khi HUD thiếu (I5), các giá trị này là ước lượng, nên quy tắc này dễ sai nhất khi nguồn không đầy đủ.
 
 Các test ghim hành vi hiện tại (`decide.test.js`, mục U9) và các test bật từng quy tắc (`rules.test.js`) đều có trong repo. Invariant chạy cả hai cách: tắt hết là 366/1485/65/35/49, bật cả ba là 363/1484/75/29/49.
 
