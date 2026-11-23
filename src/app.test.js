@@ -231,3 +231,54 @@ test("auto line says so when the source sends no board at all", async () => {
   assert.equal(record.reason.factors.setMismatch.boardMissing, true)
   assert.ok(record.reason.caveats.some((c) => c.includes("không gửi bàn đấu")))
 })
+
+// Riot 18.7 moved Ivern to Elderwood (add-only overlay). Without the overlay Ivern shares no trait with
+// an Ornn board, so the auto line does not rate it; with the overlay it does.
+function ivernFrame() {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-overlay-"))
+  const fixture = path.join(dir, "frame.json")
+  fs.writeFileSync(
+    fixture,
+    JSON.stringify({
+      frames: [
+        {
+          level: 7,
+          gold: 20,
+          hp: 80,
+          stage: 3,
+          target: null,
+          shop: [{ id: "DA_18_Ivern", cost: 5, copiesOwned: 0, priority: 0 }, null, null, null, null],
+          board: [{ id: "DA_18_Ornn", star: 1 }],
+        },
+      ],
+    }),
+  )
+  return fixture
+}
+
+const SET18 = path.join(import.meta.dirname, "data", "set18.json")
+const OVERLAY = path.join(import.meta.dirname, "data", "overlays", "set18-riot-18-7.json")
+
+test("the trait overlay is off by default: Ivern shares no trait with an Ornn board", async () => {
+  const { coach, traitOverlay } = createApp(replayConfig({ TFT_REPLAY: ivernFrame(), TFT_AUTO_LINE: "1", TFT_SET_FILE: SET18 }))
+  const record = await coach.tick()
+  assert.equal(record.reason.factors.autoLine?.DA_18_Ivern, undefined)
+  assert.equal(traitOverlay, null)
+  assert.equal(record.reason.factors.traitOverlay, undefined)
+  assert.equal(coach.getState().traitOverlay, null)
+})
+
+test("TFT_TRAIT_OVERLAY adds Elderwood to Ivern and the auto line rates it", async () => {
+  const config = replayConfig({ TFT_REPLAY: ivernFrame(), TFT_AUTO_LINE: "1", TFT_SET_FILE: SET18, TFT_TRAIT_OVERLAY: OVERLAY })
+  const { coach, traitOverlay } = createApp(config)
+  const record = await coach.tick()
+  assert.ok(record.reason.factors.autoLine.DA_18_Ivern >= 1)
+  assert.deepEqual(traitOverlay, { set: "18", verified: false, applied: 2, file: OVERLAY })
+  assert.deepEqual(record.reason.factors.traitOverlay, { set: "18", verified: false, applied: 2 })
+  assert.ok(record.reason.caveats.some((c) => c.includes("chưa xác minh")))
+  assert.deepEqual(coach.getState().traitOverlay, { set: "18", verified: false, applied: 2 })
+})
+
+test("TFT_TRAIT_OVERLAY without TFT_AUTO_LINE is refused", () => {
+  assert.throws(() => createApp(replayConfig({ TFT_TRAIT_OVERLAY: OVERLAY })), /TFT_AUTO_LINE/)
+})

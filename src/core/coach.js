@@ -15,6 +15,7 @@ export function createCoach({
   autoLineCheck = null,
   rules = null,
   profile = null,
+  traitOverlay = null,
   now = () => Date.now(),
 } = {}) {
   if (!source) throw new Error("createCoach needs a source")
@@ -81,6 +82,10 @@ export function createCoach({
         }
       }
       if (rules) reason.factors.rules = rules
+      if (traitOverlay) {
+        reason.factors.traitOverlay = { set: traitOverlay.set, verified: traitOverlay.verified, applied: traitOverlay.applied }
+        if (!traitOverlay.verified) reason.caveats.push(`trait overlay (set ${traitOverlay.set}) chưa xác minh: ${traitOverlay.applied} tộc thêm vào tướng cho line tự động; chỉ bật khi bản vá đã phát hành`)
+      }
       if (profile) {
         reason.factors.profile = { set: profile.set, requested: profile.requested, applied: profile.applied }
         for (const note of profile.caveats) reason.caveats.push(note)
@@ -172,6 +177,7 @@ export function createCoach({
         autoLine: !!autoLine,
         rules: rules ?? null,
         profile: profile ? { set: profile.set, requested: profile.requested, applied: profile.applied } : null,
+        traitOverlay: traitOverlay ? { set: traitOverlay.set, verified: traitOverlay.verified, applied: traitOverlay.applied } : null,
       }
     },
 

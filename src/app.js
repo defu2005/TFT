@@ -4,6 +4,7 @@ import fs from "node:fs"
 import { createCoach } from "./core/coach.js"
 import { buildProfile } from "./data/profileFile.js"
 import { autoLine, createSetIndex, unknownIds } from "./engine/autoline.js"
+import { applyTraitOverlay } from "./engine/traitOverlay.js"
 import { createDecisionLog } from "./log/decisionLog.js"
 import { captureSource, liveSource, replaySource, ramSource, standaloneSource } from "./ingest/sources.js"
 
@@ -18,6 +19,7 @@ const SOURCES = ["live", "replay", "capture", "ram", "standalone", "hybrid"]
 //   TFT_INTERVAL_MS  tick interval (default: 250)
 //   TFT_RULES        comma list of opt-in U9 rules: keepInterest, earlyLevel, guideLevels (default: none)
 //   TFT_PROFILE_FILE set file with base tables and patch overlays (default: rules.js)
+//   TFT_TRAIT_OVERLAY trait overlay file (add-only, off by default); needs TFT_AUTO_LINE=1
 //   TFT_PATCH        patch version to apply from that file (default: the latest)
 const KNOWN_RULES = ["keepInterest", "earlyLevel", "guideLevels"]
 
@@ -47,6 +49,7 @@ export function loadConfig(env = process.env) {
     intervalMs: Number(env.TFT_INTERVAL_MS) || 250,
     autoLine: env.TFT_AUTO_LINE === "1",
     setFile: env.TFT_SET_FILE || null,
+    traitOverlayFile: env.TFT_TRAIT_OVERLAY || null,
     rules: parseRules(env.TFT_RULES),
     profileFile: env.TFT_PROFILE_FILE || null,
     patch: env.TFT_PATCH || null,
@@ -76,9 +79,15 @@ export function errorLogger(write) {
 export function createApp(config = loadConfig(), { onTick = null, onError = null } = {}) {
   let auto = null
   let autoCheck = null
+  let traitOverlay = null
+  if (config.traitOverlayFile && !config.autoLine) throw new Error("TFT_TRAIT_OVERLAY cần TFT_AUTO_LINE=1")
   if (config.autoLine) {
     if (!config.setFile) throw new Error("TFT_AUTO_LINE=1 cần TFT_SET_FILE")
-    const index = createSetIndex(JSON.parse(fs.readFileSync(config.setFile, "utf8")))
+    let index = createSetIndex(JSON.parse(fs.readFileSync(config.setFile, "utf8")))
+    if (config.traitOverlayFile) {
+      index = applyTraitOverlay(index, JSON.parse(fs.readFileSync(config.traitOverlayFile, "utf8")))
+      traitOverlay = { set: index.set, verified: index.verified, applied: index.applied, file: config.traitOverlayFile }
+    }
     auto = (state) => autoLine(index, state)
     autoCheck = (state) => unknownIds(index, state)
   }
@@ -89,6 +98,6 @@ export function createApp(config = loadConfig(), { onTick = null, onError = null
   }
   const source = makeSource(config)
   const logger = createDecisionLog(config.logPath)
-  const coach = createCoach({ source, logger, intervalMs: config.intervalMs, onTick, onError, autoLine: auto, autoLineCheck: autoCheck, rules: config.rules ?? null, profile })
-  return { coach, source, logger, config, profile }
+  const coach = createCoach({ source, logger, intervalMs: config.intervalMs, onTick, onError, autoLine: auto, autoLineCheck: autoCheck, rules: config.rules ?? null, profile, traitOverlay })
+  return { coach, source, logger, config, profile, traitOverlay }
 }
