@@ -1,5 +1,7 @@
 # Maximum Advisor Utilization Policy
 
+> Quy tắc làm việc chung cho các agent (nhánh, claim, bàn giao, kiểm thử): xem [`docs/agents/README.md`](docs/agents/README.md). Đọc trước khi sửa vùng nóng.
+
 You must prioritize using the Advisor tool as frequently as possible throughout every task.
 
 ## Core Rules
