@@ -1,0 +1,79 @@
+# Kiến trúc tft-coach
+
+Trạng thái: đã có code chạy được trên dữ liệu replay tổng hợp. Chưa kiểm thử với dữ liệu live.
+
+## 1. Phạm vi
+
+App chạy local trên máy người dùng. Mỗi vòng lặp, app đọc trạng thái trận, tính quyết định tốt nhất theo engine, ghi lại quyết định kèm lý do, và cung cấp các khả năng đó cho agent qua MCP. Đọc thông tin realtime trận đấu bằng live client api.
+
+Đã xác minh giấy phép bên thứ 3 từ Riot.
+
+## 2. Thành phần
+
+```
+src/
+  app.js              cấu hình và lắp ráp (createApp)
+  main.js             entry CLI: chạy vòng lặp, in dòng khi quyết định đổi (stderr)
+  core/coach.js       vòng lặp, cache trạng thái và quyết định, gọi logger
+  engine/decide.js    chấm điểm các hành động; ghi trace nếu được yêu cầu
+  engine/reason.js    lý do bằng tiếng Việt, ứng viên, yếu tố
+  engine/odds.js      xác suất gặp tướng, lãi theo vàng
+  ingest/sources.js   nguồn trạng thái: live hoặc replay
+  ingest/liveClient.js đọc Live Client Data tại 127.0.0.1:2999; toState liệt kê trường thiếu
+  ingest/capture.js   ghi payload thô ra captures/ (gitignored, có Riot ID); không ra quyết định
+  log/decisionLog.js  JSONL, chỉ ghi khi trạng thái hoặc quyết định đổi
+  mcp/server.js       MCP qua stdio (stdout chỉ dành cho giao thức)
+  mcp/tools.js        các tool MCP
+src/data/rules.js     bảng tỉ lệ, số bản, mốc level (chưa xác minh cho Set 18)
+src/data/fixtures/    replay tổng hợp, có đánh dấu synthetic
+```
+
+## 3. Luồng dữ liệu
+
+1. `coach.tick()` đọc nguồn (live hoặc replay), có timeout 150 ms.
+2. `decide(state, out, trace)` chấm điểm và đưa từng ứng viên vào `trace`.
+3. `explain(state, out, trace)` tạo lý do một dòng và danh sách ứng viên.
+4. Cache được cập nhật. Logger ghi một dòng JSONL nếu `stateHash` hoặc quyết định khác dòng trước.
+5. Các tool MCP chỉ đọc cache. Không tool nào gọi nguồn.
+
+Vòng lặp chạy mỗi 250 ms. Một tick không chạy chồng lên tick trước.
+
+## 4. Bản ghi log
+
+Mỗi dòng JSONL có:
+
+- `schema` (hiện là 1), `ts`, `source` (`engine`), `sourceKind` (`live` hoặc `replay`), `latencyMs`
+- `stateHash`, `known` (có shop không, có target không), `state`
+- `decision`: `action`, `slot`, `score`, `hit`
+- `reason`: `text`, `factors`, `caveats`, `candidates` (từng hành động với điểm số và số liệu)
+
+Schema chưa phải chuẩn công khai, có thể thay đổi.
+
+## 5. Tool MCP
+
+| Tool | Việc làm |
+| --- | --- |
+| `tft_status` | Nguồn, lỗi gần nhất, số lần đọc, trạng thái cache |
+| `tft_current_decision` | Quyết định mới nhất kèm lý do và ứng viên |
+| `tft_evaluate_state` | Chấm điểm một trạng thái người dùng cung cấp, không ghi log |
+| `tft_hit_chance` | Xác suất gặp tướng trong shop |
+| `tft_interest` | Lãi theo số vàng |
+| `tft_rules` | Bảng luật và tóm tắt Set 17 |
+| `tft_recent_decisions` | Các dòng log gần nhất |
+| `tft_set_target` | Đặt tướng đang nhắm tới, hoặc xóa |
+| `tft_set_line` | Đặt priority cho một tướng trong shop (đưa vào line), hoặc bỏ |
+
+Đăng ký: `.mcp.json` ở gốc repo. Agent khởi chạy `node src/mcp/server.js`.
+
+## 6. Cấu hình
+
+| Biến | Mặc định | Ý nghĩa |
+| --- | --- | --- |
+| `TFT_SOURCE` | `live` | `live`, `replay` (state tổng hợp) hoặc `capture` (payload thật đã ghi) |
+| `TFT_CAPTURE` | (bắt buộc khi `capture`) | file JSONL từ `npm run capture` |
+| `TFT_CAPTURE_POLL_MS` | `1000` | chu kỳ đọc khi ghi capture |
+| `TFT_REPLAY` | fixture tổng hợp | đường dẫn fixture replay |
+| `TFT_LOG` | `logs/decisions.jsonl` | đường dẫn log |
+| `TFT_INTERVAL_MS` | `250` | chu kỳ vòng lặp |
+
+

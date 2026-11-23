@@ -1,0 +1,23 @@
+{
+  "name": "tft-coach",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js",
+    "bench": "node src/bench.js",
+    "test": "node --test",
+    "mcp": "node src/mcp/server.js",
+    "capture": "node src/ingest/capture.js",
+    "extract": "node scripts/extract-live.js",
+    "hud": "python scripts/hud-reader.py",
+    "start:live": "node -e \"process.env.TFT_SOURCE='standalone'; import('./src/main.js')\"",
+    "probe:network": "python scripts/probe-network.py",
+    "probe:ram": "python scripts/probe-ram.py --interactive",
+    "probe:ram:check": "python scripts/probe-ram.py --check",
+    "probe:ram:live": "python scripts/probe-ram.py --live"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  }
+}

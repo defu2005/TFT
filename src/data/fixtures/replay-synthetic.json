@@ -1,0 +1,46 @@
+{
+  "synthetic": true,
+  "note": "Khung trạng thái giả lập để kiểm thử. Không phải payload thật từ Live Client Data. Giá trị và tên tướng là tự đặt.",
+  "frames": [
+    {
+      "level": 6, "gold": 58, "hp": 80, "stage": 4,
+      "shop": [null, null, null, null, null],
+      "target": null
+    },
+    {
+      "level": 7, "gold": 42, "hp": 55, "stage": 4,
+      "shop": [
+        { "id": "SyntheticA", "cost": 1, "copiesOwned": 0, "priority": 1 },
+        { "id": "SyntheticB", "cost": 3, "copiesOwned": 2, "priority": 5, "poolCopies": 18 },
+        null, null, null
+      ],
+      "target": null
+    },
+    {
+      "level": 7, "gold": 12, "hp": 40, "stage": 3,
+      "shop": [
+        { "id": "SyntheticC", "cost": 2, "copiesOwned": 0, "priority": 0 },
+        null, null, null, null
+      ],
+      "target": null
+    },
+    {
+      "level": 8, "gold": 30, "hp": 25, "stage": 5,
+      "shop": [
+        { "id": "SyntheticD", "cost": 2, "copiesOwned": 0, "priority": 3 },
+        null, null, null, null
+      ],
+      "target": null
+    },
+    {
+      "level": 8, "gold": 20, "hp": 60, "stage": 5,
+      "shop": [null, null, null, null, null],
+      "target": { "id": "SyntheticE", "cost": 4, "copiesLeft": 6, "priority": 5, "champsAtCost": 12 }
+    },
+    {
+      "level": 9, "gold": 5, "hp": 70, "stage": 6,
+      "shop": [null, null, null, null, null],
+      "target": null
+    }
+  ]
+}
