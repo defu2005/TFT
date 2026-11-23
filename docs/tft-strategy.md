@@ -69,8 +69,7 @@ Ghi chú: mục Income của wiki và bảng "Typical streak bonuses" của meta
 Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experience](https://wiki.leagueoflegends.com/en-us/TFT:Experience): `verified` cho số trong bảng, "4 gold = 4 XP" và "2 XP free at end of round". Trang đã lưu không có mục lịch sử bản vá, nên không xác định được bảng nào áp dụng cho Set 18. Kiểm tra chuỗi chính xác "48 XP", "76 XP", "84 XP": không có trong trang này; "60 XP" và "68 XP" có trong bảng. Trạng thái: **conflict** với đoạn tìm kiếm, cần xác nhận set (U1).
 
 **Mục tiêu level theo stage**
-- Metabot, Set 18 leveling guide (`single-source`, đăng 2026-10-24): "level 4 ở 2-1, 5 ở 2-5, 6 ở 3-2, 7 ở 4-1, 8 ở 4-5 hoặc 5-1 khi rolldown, 9 ở 5-5". Trang ghi số liệu theo patch 16.20.
-- Trang Set 18 leveling của metabot (`single-source`, một site): chỉ có câu về level 8 (4-cost 30%), level 9 (4-cost 33%, 5-cost 15%) và level 10 (4-cost 40%, 5-cost 25%) trên patch 16.20. Không có bảng đầy đủ và không nói về level 11. Level 8 và 9 khớp bảng Set 17 và bảng metabot, lệch `rules.js`; level 10 khớp `rules.js`.
+- Metabot, Set 18 leveling guide (`single-source`, đăng 2026-10-24): "level 4 ở 2-1, 5 ở 2-5, 6 ở 3-2, 7 ở 4-1, 8 ở 4-5 hoặc 5-1 khi rolldown, 9 ở 5-5". Trang ghi số liệu theo patch 16.20; xem mục 3 về nhãn này.
 - `LEVEL_BY_STAGE` trong `rules.js` đặt level 8 ở stage 4 (xem G11). Đây là điểm lệch với metabot.
 
 **Hiện tại engine làm gì**
@@ -83,6 +82,8 @@ Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experien
 - Điều kiện `gold >= 50` loại bỏ việc lên level sớm ở các vòng đầu, dù bảng wiki cho thấy các bước đầu rất rẻ (2, 6, 10 XP).
 
 ## 3. Roll: khi nào, mức level nào
+
+- Trang Set 18 leveling của metabot (`single-source`, một site): chỉ có câu về level 8 (4-cost 30%), level 9 (4-cost 33%, 5-cost 15%) và level 10 (4-cost 40%, 5-cost 25%) trên patch 16.20. Không có bảng đầy đủ và không nói về level 11. Level 8 và 9 khớp bảng Set 17 và bảng metabot, lệch `rules.js`; level 10 khớp `rules.js`.
 
 **Nguyên tắc**
 - Tỉ lệ shop theo level là điểm mấu chốt. Bảng sau lấy từ metabot, `single-source`. Trang ghi rõ: "Approximate shop odds by level... use them as a map, not a precise contract" (xấp xỉ, dùng như bản đồ, không phải hợp đồng chính xác). Trang không ghi set:
@@ -163,6 +164,7 @@ Nguồn: Riot wiki, TFT:Experience, [wiki.leagueoflegends.com/en-us/TFT:Experien
 3. Bảng XP (wiki) ghi 7→8 = 60, 8→9 = 68; đoạn tìm kiếm Set 14 ghi 7→8 = 48, 8→9 = 76.
 4. Sát thương người chơi giai đoạn 4: 6, 7 hoặc 8 tùy nguồn.
 5. Ngày Set 19: 1/12 (seemeta) và 2/12 (esports.gg và đoạn tìm kiếm gần đây).
-6. Chuỗi thắng/thua: mục Income của wiki ghi 3–4 +1, 5 +2, 6+ +3. Metabot ghi "Typical streak bonuses" (bảng "thường gặp"): 2–3 +1, 4 +2, 5+ +3. Ghi chú V10.8 của wiki là lịch sử đã bị thay thế, không phải nguồn hiện hành.
+7. Level 8 và 9 (metabot Set 18 guide, nhãn "16.20") khớp Set 17 và metabot, lệch `rules.js`. Một site, nhãn không xác minh; xem mục 3.
+8. Chuỗi thắng/thua: mục Income của wiki ghi 3–4 +1, 5 +2, 6+ +3. Metabot ghi "Typical streak bonuses" (bảng "thường gặp"): 2–3 +1, 4 +2, 5+ +3. Ghi chú V10.8 của wiki là lịch sử đã bị thay thế, không phải nguồn hiện hành.
 
 Lưu ý chung: lịch sử bản vá của wiki TFT:Gold chỉ đến V10.x, nên không xác định được ngày của mục Income. Trang TFT:Experience đã lưu không có mục lịch sử bản vá, nên không xác định được ngày của bảng XP. Vì vậy chuỗi thắng/thua và U1 vẫn mở, cần người dùng xác nhận.

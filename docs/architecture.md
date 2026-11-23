@@ -22,6 +22,19 @@ src/
   data/profile.js     hồ sơ mặc định (bảng odds, pool, số tướng theo cost, maxCost) lấy từ rules.js
   data/profileFile.js đọc file hồ sơ set có bản vá chồng lên nhau (tắt mặc định, TFT_PROFILE_FILE)
   data/profiles/      hồ sơ candidate (ví dụ set18.candidate.json), chỉ dùng khi được chọn bằng TFT_PROFILE_FILE
+
+Định dạng file hồ sơ (`TFT_PROFILE_FILE`):
+```json
+{
+  "set": "18",
+  "unmodelled": ["ghi chú tính năng set chưa mô hình"],
+  "base": { "maxCost": 5, "shopOdds": [null, [1,0,0,0,0], ...], "poolCopies": [0,30,25,18,10,9], "champsPerCost": [0,13,13,13,12,8] },
+  "patches": [
+    { "version": "16.20", "notes": "...", "shopOdds": { "8": [0.15,0.20,0.32,0.30,0.03] } }
+  ]
+}
+```
+`base` có thể bỏ trống; khi đó bảng mặc định của `rules.js` được dùng và được ghi vào caveat. Mỗi hàng odds có `maxCost` phần tử và tổng bằng 1. Bản vá chỉ liệt kê hàng đổi; mọi bản vá có version ≤ `TFT_PATCH` được áp dụng theo thứ tự số. Khóa không rõ làm app báo lỗi. Chỉ `shopOdds`, `poolCopies`, `champsPerCost` và `maxCost` được đọc từ file; các phần khác vẫn là hằng trong code.
   ingest/sources.js   nguồn trạng thái: live hoặc replay
   ingest/liveClient.js đọc Live Client Data tại 127.0.0.1:2999; toState liệt kê trường thiếu
   ingest/capture.js   ghi payload thô ra captures/ (gitignored, có Riot ID); không ra quyết định
