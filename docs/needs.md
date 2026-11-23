@@ -14,14 +14,23 @@ File này ghi mọi thứ engine cần từ người dùng hoặc phiên ingest,
 | U4 | Xác nhận: mua tướng hoàn thành sao khi bench đầy có hợp lệ trong client không | Engine đang khuyến nghị lượt này | Quy tắc gate bench đầy | **mở** |
 | U5 | Lượt roll miễn phí có cộng dồn sang stage sau không? | Quy tắc tính roll miễn phí | Giá trị `freeRolls` | **mở** |
 | U6 | Roll miễn phí chỉ được khuyến nghị khi đã đặt mục tiêu (`tft_set_target`). Có đúng ý không? | Hành vi roll miễn phí | Khuyến nghị roll | **mở** |
+| U9 | Ba quy tắc chưa bật: roll khi còn từ 50 vàng; lên level trước 50 vàng ở stage đầu; dùng mốc level của guide metabot thay `LEVEL_BY_STAGE` (chi tiết ở đề xuất bên dưới) | Mỗi quy tắc đổi quyết định mua/roll/level | Quyết định roll và lên level | **mở** |
 
 **Đề xuất từ nghiên cứu (`docs/tft-strategy.md`), chờ người dùng xác nhận. Chưa đóng mục nào:**
 - **U1 (đề xuất):** bảng XP theo level từ wiki Riot, TFT:Experience (`verified`, không ghi set): 2→3 = 2 XP, 3→4 = 6, 4→5 = 10, 5→6 = 20, 6→7 = 36, 7→8 = 60, 8→9 = 68, 9→10 = 68. Đoạn tìm kiếm cho Set 14 ghi khác (7→8 = 48, 8→9 = 76). Cần xác nhận bảng nào áp dụng cho Set 18.
-- **U2 (đề xuất):** bảng odds của metabot (`verified`, không ghi set) khớp Set 17 trong `docs/tft-knowledge.md` ở level 8 (15/20/32/30/3) và level 9 (10/17/25/33/15). `rules.js` lệch ở hai level này và khớp ở level 4–7. Đề xuất: dùng bảng của metabot cho level 8 và 9 sau khi xác nhận set.
+- **U2 (đề xuất):** bảng odds của metabot (`single-source`, không ghi set) khớp Set 17 trong `docs/tft-knowledge.md` ở level 8 (15/20/32/30/3) và level 9 (10/17/25/33/15). `rules.js` lệch ở hai level này và khớp ở level 4–7. Trang metabot ghi rõ đây là "Approximate shop odds by level... use them as a map, not a precise contract" (xấp xỉ, dùng như bản đồ, không phải hợp đồng chính xác). Ô 4 vàng ở level 8: `rules.js` 24% (khớp số Set 14 trong đoạn tìm kiếm), metabot 30%. Đề xuất: dùng bảng của metabot cho level 8 và 9 sau khi xác nhận set.
 - **U4 (đề xuất):** chưa có nguồn xác nhận. Trạng thái `pending`.
 - **U5 (đề xuất):** chưa có nguồn. Trạng thái `pending`.
-- **Mới, từ nghiên cứu:** engine nhận tướng cost 7 mà không báo lỗi (gap G8 trong `docs/tft-strategy.md`). Đề xuất: giới hạn cost trong khoảng 1–5 ở lớp nhận dữ liệu, không ở engine. Chưa sửa.
+- **Mới, từ nghiên cứu (G8):** `rules.js` không có dòng odds hay pool cho cost trên 5. Engine nhận tướng cost 7 mà không báo lỗi và cho hit 0. Không đề xuất giới hạn cost 1–5, vì làm vậy sẽ bỏ tướng cost 7 của Set 19 (đoạn tìm kiếm, `search summary`). Cần người dùng xác nhận bảng odds và pool cho cost 6–7 nếu muốn tính xác suất cho chúng.
+- **Mới, từ nghiên cứu (G11):** `LEVEL_BY_STAGE` đặt level 8 ở stage 4. Metabot, Set 18 leveling guide (`single-source`, patch 16.20, đăng 2026-10-24) đặt level 7 quanh 4-1 và level 8 quanh 4-5 hoặc 5-1. Chưa đóng; cần người dùng chọn mốc (xem U9).
 - **Mới:** ngày Set 19 còn xung đột giữa 1/12 và 2/12. Cần người dùng xác nhận nếu muốn dùng làm mốc.
+- **Mới, chuỗi thắng/thua:** wiki (mục Income) ghi 3–4 +1, 5 +2, 6+ +3; wiki (ghi chú V10.8) và metabot ghi 2–3 +1, 4 +2, 5+ +3. Chưa rõ set nào áp dụng. Cần người dùng xác nhận nguồn.
+- **Mới, U1:** trang wiki TFT:Experience đã lưu không có mục lịch sử bản vá, nên không quyết được giữa 60/68/68 và 48/76/84 từ trang này.
+
+**U9 (đề xuất, chưa bật, chờ người dùng đồng ý).** Ba quy tắc sau sẽ đổi quyết định nếu bật, nên giữ tắt cho đến khi người dùng đồng ý:
+1. Roll khi vàng còn từ 50 trở lên (giữ lãi tối đa, roll bằng phần vàng thừa).
+2. Lên level trước khi có 50 vàng ở các stage đầu (bỏ điều kiện `gold >= 50` ở stage sớm, theo bảng XP rẻ 2, 6, 10).
+3. Mốc level của guide metabot thay cho `LEVEL_BY_STAGE` (level 7 quanh 4-1, level 8 quanh 4-5 hoặc 5-1). Đây là `single-source`.
 
 ## 2. Từ phiên ingest
 
