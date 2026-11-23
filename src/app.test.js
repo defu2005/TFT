@@ -492,6 +492,7 @@ test("a shop slot the reader could not read is named in the caveat, and the buy 
   assert.ok(record.reason.caveats.some((c) => c.includes("ô 5")))
   assert.equal(record.decision.action, "buy")
   assert.equal(record.decision.slot, 0)
+  assert.doesNotMatch(record.reason.text, /roll sẽ bỏ/)
 })
 
 test("the same frame without an unread-slot flag has no unread-slot caveat", async () => {
