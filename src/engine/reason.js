@@ -1,4 +1,4 @@
-import { BUY, XP, ROLL, actionName } from "./decide.js"
+import { BUY, XP, ROLL, SELL, actionName } from "./decide.js"
 
 export const CAVEAT_ODDS = "bảng tỉ lệ shop trong rules.js chưa xác minh cho Set 18"
 
@@ -24,6 +24,9 @@ export function explain(state, out, trace) {
   } else if (chosen === ROLL) {
     const c = trace.find((t) => t.action === "roll")
     text = `Roll để tìm ${state.target?.id ?? "mục tiêu"}: xác suất gặp ${((c?.hit ?? 0) * 100).toFixed(1)}%, điểm ${out.score.toFixed(2)}.`
+  } else if (chosen === SELL) {
+    const c = trace.find((t) => t.action === "sell" && t.bench === out.bench)
+    text = `Bán ô bench ${out.bench} (${c?.unit ?? "?"}) lấy ${c?.sellValue ?? "?"} vàng: bench đầy, cần chỗ để mua ${c?.makesRoomFor ?? "?"} (điểm ${out.score.toFixed(2)}).`
   } else {
     const blocked = trace.filter((c) => c.action === "buy" && c.note && c.note !== "ô trống").map((c) => c.note)
     const reasons = [...new Set(blocked)].slice(0, 3)

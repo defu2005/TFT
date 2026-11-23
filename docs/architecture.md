@@ -42,9 +42,9 @@ Vòng lặp chạy mỗi 250 ms. Một tick không chạy chồng lên tick trư
 
 Mỗi dòng JSONL có:
 
-- `schema` (hiện là 1), `ts`, `source` (`engine`), `sourceKind` (`live` hoặc `replay`), `latencyMs`
+- `schema` (hiện là 2), `ts`, `source` (`engine`), `sourceKind` (`live` hoặc `replay`), `latencyMs`
 - `stateHash`, `known` (có shop không, có target không), `state`
-- `decision`: `action`, `slot`, `score`, `hit`
+- `decision`: `action` (`hold`, `buy`, `xp`, `roll`, `sell`), `slot`, `bench` (ô bench khi bán, -1 nếu không), `score`, `hit`
 - `reason`: `text`, `factors`, `caveats`, `candidates` (từng hành động với điểm số và số liệu)
 
 Schema chưa phải chuẩn công khai, có thể thay đổi.

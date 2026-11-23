@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import test from "node:test"
-import { decide, BUY, HOLD, XP } from "./decide.js"
+import { decide, BUY, HOLD, XP, SELL } from "./decide.js"
 import { hitChance } from "./odds.js"
 import { POOL_COPIES } from "../data/rules.js"
 import { explain } from "./reason.js"
@@ -193,4 +193,64 @@ test("a raw board entry without an id does not change copiesOwned", () => {
   )
   const entry = trace.find((c) => c.action === "buy" && c.slot === 0)
   assert.equal(entry.copiesOwned, 3)
+})
+
+const SELL_BENCH = [
+  { id: "x", star: 1, sellValue: 1 },
+  { id: "y", star: 1, sellValue: 3 },
+]
+
+test("a full bench blocks the buy and sells the most valuable bench unit that is not in the line", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  const trace = []
+  const state = { ...CORE({ id: "core", cost: 3, copiesOwned: 0, priority: 5 }), bench: SELL_BENCH }
+  decide(state, out, trace)
+  assert.equal(out.action, SELL)
+  assert.equal(out.bench, 1)
+  assert.equal(out.slot, -1)
+  const buy = trace.find((c) => c.action === "buy" && c.slot === 0)
+  assert.match(buy.note, /bench đầy/)
+  assert.equal(out.score, buy.score)
+  const sell = trace.find((c) => c.action === "sell" && c.bench === 1)
+  assert.equal(sell.makesRoomFor, "core")
+})
+
+test("a buy that completes a 3-star is not blocked by a full bench", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  decide({ ...CORE({ id: "core", cost: 3, copiesOwned: 2, priority: 5 }), bench: SELL_BENCH }, out)
+  assert.equal(out.action, BUY)
+  assert.equal(out.slot, 0)
+  assert.equal(out.bench, -1)
+})
+
+test("a full bench with nothing sellable holds and names the reasons", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  const trace = []
+  const state = {
+    ...CORE({ id: "core", cost: 3, copiesOwned: 0, priority: 5 }),
+    bench: [
+      { id: "a", star: 1, priority: 4, sellValue: 2 },
+      { id: "b", star: 1 },
+    ],
+  }
+  decide(state, out, trace)
+  assert.equal(out.action, HOLD)
+  const sells = trace.filter((c) => c.action === "sell")
+  assert.match(sells[0].note, /line/)
+  assert.match(sells[1].note, /sellValue/)
+  assert.match(explain(state, out, trace).text, /bench đầy/)
+})
+
+test("a free bench slot lets the buy go ahead", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  decide({ ...CORE({ id: "core", cost: 3, copiesOwned: 0, priority: 5 }), bench: [null, { id: "x", star: 1, sellValue: 1 }] }, out)
+  assert.equal(out.action, BUY)
+})
+
+test("without bench data the engine buys and records that the bench is unknown", () => {
+  const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+  const trace = []
+  decide(CORE({ id: "core", cost: 3, copiesOwned: 0, priority: 5 }), out, trace)
+  assert.equal(out.action, BUY)
+  assert.match(trace.find((c) => c.action === "sell").note, /không có dữ liệu bench/)
 })

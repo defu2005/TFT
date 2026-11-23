@@ -1,7 +1,7 @@
 import { decide, actionName } from "../engine/decide.js"
 import { explain } from "../engine/reason.js"
 
-const SCHEMA_VERSION = 1
+const SCHEMA_VERSION = 2
 
 // The coach owns the tick loop and the cached state. Entry points (CLI, MCP) only
 // read from it. MCP tools call getState() and never trigger a read from the source.
@@ -60,8 +60,9 @@ export function createCoach({
         shop: applyLines(fields.shop, lines),
         target: target ?? fields.target ?? null,
       }
+      if (Array.isArray(fields.bench)) input.bench = applyLines(fields.bench, lines)
       const trace = []
-      const out = { action: 0, slot: -1, score: 0, hit: 0 }
+      const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
       decide(input, out, trace)
       const reason = explain(input, out, trace)
       if (missing.length) {
@@ -81,7 +82,7 @@ export function createCoach({
         stateHash,
         known: { shop: Array.isArray(input.shop), target: !!input.target },
         state: input,
-        decision: { action: actionName(out.action), slot: out.slot, score: round(out.score), hit: round(out.hit) },
+        decision: { action: actionName(out.action), slot: out.slot, bench: out.bench, score: round(out.score), hit: round(out.hit) },
         reason,
       }
 
@@ -181,7 +182,7 @@ export function hashState(state) {
 function unitsKey(list) {
   if (!Array.isArray(list)) return ""
   let key = ""
-  for (const u of list) key += u ? `${u.id ?? "-"}:${u.star ?? ""},` : "-,"
+  for (const u of list) key += u ? `${u.id ?? "-"}:${u.star ?? ""}:${u.priority ?? 0}:${u.sellValue ?? ""},` : "-,"
   return key
 }
 

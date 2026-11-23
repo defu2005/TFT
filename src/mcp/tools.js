@@ -32,7 +32,14 @@ const unitSchema = z
   })
   .nullable()
 
-const ownedSchema = z.object({ id: z.string(), star: z.number().int().min(1).max(3).optional() }).nullable()
+const ownedSchema = z
+  .object({
+    id: z.string(),
+    star: z.number().int().min(1).max(3).optional(),
+    priority: z.number().min(0).optional(),
+    sellValue: z.number().min(0).optional(),
+  })
+  .nullable()
 
 const stateSchema = {
   level: z.number().int().min(1).max(11),
@@ -111,7 +118,7 @@ export function registerTools(server, { coach }) {
     },
     async (args) => {
       const state = normalizeState(args)
-      const out = { action: 0, slot: -1, score: 0, hit: 0 }
+      const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
       const trace = []
       decide(state, out, trace)
       return asText(explain(state, out, trace))

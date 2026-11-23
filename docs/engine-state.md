@@ -45,7 +45,7 @@ phase     "planning" | "combat" | "carousel"
 streak    dương = thắng, âm = thua
 shop[i].takenByOthers    số bản gốc người khác giữ
 board[]   { id, cost, star, items?, x?, y? }
-bench[]   độ dài cố định, ô trống = null: { id, cost, star, items?, sellValue? }
+bench[]   độ dài cố định, ô trống = null: { id, cost, star, priority?, items?, sellValue? }
 itemBench[]   mã trang bị
 offers    { kind: "augment"|"carousel"|"wisp", options: [{ id }], rerolls? } | null
 opponents[]   { hp, level, board: [{ id, star, x, y }] }
@@ -55,13 +55,14 @@ Quy ước:
 - `id` của tướng trên bàn, bench và shop phải trùng nhau.
 - Số bản gốc: 1, 3, 9 theo sao 1, 2, 3.
 - Độ dài bench cố định, engine không giữ hằng số kích thước bench.
+- `bench[].priority` là tuỳ chọn; coach áp dụng line lên cả bench như lên shop.
 - `sellValue` do phiên ingest cung cấp. Engine không có bảng hoàn tiền.
 - Giá trị ước lượng đưa vào `missing`.
 
 ## 5. Trạng thái triển khai
 
 - Đếm bản từ `board` và `bench`, trừ `takenByOthers` khỏi số bản còn lại: **đã làm** (log schema vẫn là 1).
-- Chặn mua khi bench đầy, hành động bán, chỉ số đơn vị trong `out`, log schema 2: **chưa làm**.
+- Chặn mua khi bench đầy, hành động bán để nhường chỗ, chỉ số ô bench trong `out`, log schema 2: **đã làm** (chỉ bán để nhường chỗ; bán để lấy lãi cần `phase` và `round`, chưa làm).
 - Lên level và roll theo `xp` và `round`: **chờ số XP từ người dùng**.
 - Chọn line tự động từ dữ liệu set: **chưa có dữ liệu set hiện tại**.
 

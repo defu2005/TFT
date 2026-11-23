@@ -5,8 +5,9 @@ export const HOLD = 0
 export const BUY = 1
 export const XP = 2
 export const ROLL = 3
+export const SELL = 4
 
-const ACTION_NAME = ["hold", "buy", "xp", "roll"]
+const ACTION_NAME = ["hold", "buy", "xp", "roll", "sell"]
 
 export function actionName(code) {
   return ACTION_NAME[code] ?? "hold"
@@ -23,6 +24,7 @@ export function decide(state, out, trace = null) {
   out.slot = -1
   out.score = 0
   out.hit = 0
+  out.bench = -1
 
   const level = state.level | 0
   const gold = state.gold | 0
@@ -35,6 +37,12 @@ export function decide(state, out, trace = null) {
   let bestBuy = 0
   let bestSlot = -1
   let bestHit = 0
+  // Fixed-length array, null = empty slot. Absent or empty means unknown.
+  const bench = Array.isArray(state.bench) && state.bench.length > 0 ? state.bench : null
+  let benchFull = !!bench
+  if (bench) for (let j = 0; j < bench.length; j++) if (!bench[j]) benchFull = false
+  let blockedBuy = 0
+  let blockedUnit = null
 
   if (shop) {
     for (let i = 0; i < 5; i++) {
@@ -68,6 +76,7 @@ export function decide(state, out, trace = null) {
       let score = unit.priority * (1 + owned) * (0.4 + hit)
       if (!urgent) score -= interestLoss * 0.35
       if (owned % 3 === 2) score += 1.5
+      const blocked = benchFull && owned % 3 !== 2
       if (trace) {
         trace.push({
           action: "buy",
@@ -82,9 +91,15 @@ export function decide(state, out, trace = null) {
           priority: unit.priority,
           copiesOwned: owned,
           takenByOthers: taken,
+          note: blocked ? "bench đầy, lượt mua không hoàn thành sao" : "",
         })
       }
-      if (score > bestBuy) {
+      if (blocked) {
+        if (score > blockedBuy) {
+          blockedBuy = score
+          blockedUnit = unit.id
+        }
+      } else if (score > bestBuy) {
         bestBuy = score
         bestSlot = i
         bestHit = hit
@@ -124,6 +139,43 @@ export function decide(state, out, trace = null) {
       hit: rollHit,
       note: !target ? "không có mục tiêu (set_target chưa được gọi)" : !rollAffordable ? `thiếu vàng để roll (cần ${REROLL_COST + (urgent ? 0 : 10)})` : "",
     })
+  }
+
+  let sellScore = 0
+  let sellBench = -1
+  let sellGold = -1
+  if (bench) {
+    for (let j = 0; j < bench.length; j++) {
+      const u = bench[j]
+      if (!u) continue
+      const inLine = u.priority > 0 || (!!target && target.id != null && u.id === target.id)
+      const value = typeof u.sellValue === "number" ? u.sellValue : -1
+      const score = !inLine && value >= 0 ? blockedBuy : 0
+      if (trace) {
+        trace.push({
+          action: "sell",
+          bench: j,
+          unit: u.id,
+          sellValue: value < 0 ? null : value,
+          score,
+          makesRoomFor: score > 0 ? blockedUnit : null,
+          note: inLine ? "nằm trong line hoặc là mục tiêu" : value < 0 ? "thiếu sellValue" : blockedBuy > 0 ? "" : "không có lượt mua nào bị chặn vì bench đầy",
+        })
+      }
+      if (score > 0 && value > sellGold) {
+        sellScore = score
+        sellBench = j
+        sellGold = value
+      }
+    }
+  } else if (trace) {
+    trace.push({ action: "sell", score: 0, note: "không có dữ liệu bench" })
+  }
+  if (sellScore > bestBuy && sellScore >= xpScore && sellScore >= rollScore) {
+    out.action = SELL
+    out.bench = sellBench
+    out.score = sellScore
+    return out
   }
 
   if (bestBuy >= xpScore && bestBuy >= rollScore && bestBuy > 0) {

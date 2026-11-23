@@ -42,7 +42,7 @@ test("every logged record carries reason, candidates and state", async () => {
   const coach = createCoach({ source: replaySource(FIXTURE), logger })
   await coach.tick()
   const [entry] = logger.readRecent(1)
-  assert.equal(entry.schema, 1)
+  assert.equal(entry.schema, 2)
   assert.ok(entry.reason.text.length > 0)
   assert.ok(Array.isArray(entry.reason.candidates))
   assert.equal(entry.source, "engine")

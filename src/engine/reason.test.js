@@ -72,3 +72,21 @@ test("candidates carry numeric scores rounded to three places", () => {
     if (typeof c.score === "number") assert.equal(Math.round(c.score * 1000) / 1000, c.score)
   }
 })
+
+test("explains a sell that makes room on a full bench", () => {
+  const r = run({
+    level: 7,
+    gold: 40,
+    hp: 80,
+    stage: 4,
+    shop: [{ id: "core", cost: 3, copiesOwned: 0, priority: 5 }, null, null, null, null],
+    target: null,
+    bench: [
+      { id: "x", star: 1, sellValue: 1 },
+      { id: "y", star: 1, sellValue: 3 },
+    ],
+  })
+  assert.equal(r.action, "sell")
+  assert.match(r.text, /Bán ô bench 1 \(y\) lấy 3 vàng/)
+  assert.match(r.text, /mua core/)
+})
