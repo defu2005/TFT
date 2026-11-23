@@ -19,6 +19,8 @@ test("standaloneSource handles missing files gracefully", async () => {
   // Without a HUD, gold and level are estimates: they must be reported as missing, not passed as read values.
   assert.ok(state.missing.includes("gold"))
   assert.ok(state.missing.includes("level"))
+  assert.ok(state.missing.includes("hp"), "no snapshot: hp is missing, not an assumed 100")
+  assert.ok(state.missing.includes("stage"), "no snapshot: stage is missing")
 })
 
 test("standaloneSource parses snapshot to extract player HP and board pieces", async () => {
@@ -225,4 +227,20 @@ test("observed shop prices gate buying independently of unit tier", async (t) =>
   assert.equal(free.reason.candidates[0].cost, 3)
   assert.equal(free.reason.candidates[0].price, 0)
   assert.ok(free.reason.candidates[0].hit > 0)
+})
+
+test("shop cost falls back to set18.json when the slot has no cost; an unknown id stays unread", async (t) => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-hud-cost-"))
+  t.after(() => fs.rmSync(dir, { recursive: true, force: true }))
+  const hudPath = path.join(dir, "hud.json")
+  const coach = createCoach({ source: createStandaloneSource({ hudPath, eogPath: path.join(dir, "snapshot.json") }) })
+  fs.writeFileSync(hudPath, JSON.stringify({
+    hudSchema: 2, source: "window", set: 18, capturedAtMs: Date.now(), hudDetected: true,
+    gold: 20, level: 6,
+    shopSlots: [{ id: "DA_18_Ornn", price: 1 }, { id: "DA_NotInSet18", price: 1 }, null, null, null],
+  }))
+  const record = await coach.tick()
+  assert.equal(record.state.shop[0].cost, 1)
+  assert.equal(record.state.shop[0].id, "DA_18_Ornn")
+  assert.deepEqual(record.state.shopUnknownSlots, [1, 2, 3, 4])
 })
