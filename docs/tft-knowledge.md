@@ -14,7 +14,7 @@ Trạng thái: **nháp**. Mỗi số liệu có nguồn và trạng thái:
 | Ngày ghi | 2026-11-22 | - | - |
 | Bản dump | `.cache/tft-en_us.json`, ghi 2026-11-22 09:43 | file cục bộ | verified (tồn tại) |
 | Patch 18.6 | Phát hành 2026-11-03 19:00 UTC. Có "standalone client" | [Riot patch 18.6](https://teamfighttactics.leagueoflegends.com/en-us/news/game-updates/teamfight-tactics-patch-18-6) | verified (đã mở trang Riot) |
-| Patch 18.7 | Phát hành 2026-11-17 19:00 UTC. Trang Riot cho biết set tiếp theo là "Prismatic Tour" | [Riot patch 18.7](https://teamfighttactics.leagueoflegends.com/en-us/news/game-updates/teamfight-tactics-patch-18-7) | verified (đã mở trang Riot); seemeta ghi 18.7 là "Delayed" |
+| Patch 18.7 | Ngày trên trang Riot 2026-11-17 19:00 UTC. Trang Riot cho biết set tiếp theo là "Prismatic Tour" | [Riot patch 18.7](https://teamfighttactics.leagueoflegends.com/en-us/news/game-updates/teamfight-tactics-patch-18-7) | verified (đã mở trang Riot); seemeta ghi 18.7 là "Delayed" |
 | Set đang chơi | **Set 18 (Enchanted Wilds)**, bắt đầu 2026-08-26 (patch 18.1) | [seemeta](https://seemeta.com/en/tft/set-18/release-dates) | search summary + seemeta |
 | Set 19 | "Prismatic Tour", ngày 1/12/2026 theo seemeta, patch 19.1; 19.2 dự kiến 15/12 | [seemeta](https://seemeta.com/en/tft/set-18/release-dates) | conflict với esports.gg (2/12) |
 
@@ -121,7 +121,7 @@ Trạng thái chung: `rules.js` là **unverified** cho Set 18 và chưa có ngu�
 1. Odds level 8 và 9 trong `rules.js` không khớp nguồn Set 17.
 2. Số tướng theo cost trong `rules.js` không khớp đếm cục bộ Set 17 (14/12/13/14/9). Nguồn của `rules.js` chưa xác định.
 3. Ngày Set 19: 1/12 (seemeta) hay 2/12 (esports.gg).
-4. Patch 18.7: Riot ghi 17/11, seemeta (cập nhật 21/11) ghi "Delayed". Chưa rõ 18.7 đã phát hành hay chưa. Riot 18.7 (đã mở trang, 2026-11-23) đổi Sprykin (máu 55%⇒45%, mốc 7 100%⇒75%), Ivern và Kennen (trait); CDragon 16.23 và PBE 16.24 chưa có các giá trị này.
+4. Patch 18.7: ngày trên trang Riot là 17/11, seemeta (cập nhật 21/11) ghi "Delayed". Chưa rõ 18.7 đã phát hành hay chưa. Riot 18.7 (đã mở trang, 2026-11-23) đổi Sprykin (máu 55%⇒45%, mốc 7 100%⇒75%), Ivern và Kennen (trait); CDragon 16.23 (cùng file với PBE) chưa có các giá trị này.
 5. Set 18 roster: đếm thô trong dump là 14/13/14/14/19, có lẫn quái. Chưa đối chiếu với nguồn chính thức.
 
 - Payload Live Client trong trận TFT.
