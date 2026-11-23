@@ -311,6 +311,36 @@ test("a frame with unknown gold holds and records the flag; a null price is not 
   assert.equal(record.state.hudGoldUnknown, true)
 })
 
+// Bare nulls from a source (no flags): the coach sets the flags, so nothing is rolled, bought or leveled on a zero.
+test("bare null gold and level (no flags) reach the record as unknown and decide nothing", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-barenull-"))
+  const fixture = path.join(dir, "frame.json")
+  fs.writeFileSync(
+    fixture,
+    JSON.stringify({
+      frames: [
+        {
+          level: null,
+          gold: null,
+          hp: 80,
+          stage: 3,
+          freeRolls: 2,
+          target: { id: "DA_18_Ivern", cost: 1, copiesLeft: 10, priority: 1, champsAtCost: 13 },
+          shop: [{ id: "DA_18_Ivern", cost: 1, price: 1, copiesOwned: 0, priority: 1 }, null, null, null, null],
+        },
+      ],
+    }),
+  )
+  const { coach } = createApp(replayConfig({ TFT_REPLAY: fixture }))
+  const record = await coach.tick()
+  assert.equal(record.state.hudGoldUnknown, true)
+  assert.equal(record.state.hudLevelUnknown, true)
+  assert.equal(record.decision.action, "hold")
+  assert.equal(record.decision.hit, null)
+  assert.equal(record.reason.factors.gold, null)
+  assert.equal(record.reason.factors.level, null)
+})
+
 // Level unknown (HUD): the buy is still allowed, but no probability is reported or computed.
 test("unknown level: decision.hit is null and the reason text states no probability", async () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-hudlevel-"))

@@ -66,6 +66,15 @@ export function createCoach({
         shop: applyLines(fields.shop, lines, auto),
         target: target ?? fields.target ?? null,
       }
+      // A null gold or level from the source is unknown (HUD), the same as the flag: the number is 0 and the flag is set.
+      if (fields.gold === null) {
+        input.gold = 0
+        input.hudGoldUnknown = true
+      }
+      if (fields.level === null) {
+        input.level = 0
+        input.hudLevelUnknown = true
+      }
       if (Array.isArray(fields.bench)) input.bench = applyLines(fields.bench, lines, auto)
       const trace = []
       const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
