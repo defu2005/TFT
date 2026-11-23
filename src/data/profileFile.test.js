@@ -76,7 +76,7 @@ test("a missing base table falls back to rules.js and says so in the caveats", (
   assert.ok(profile.caveats.some((c) => /champsPerCost/.test(c)))
 })
 
-test("the Set 18 candidate loads: rows 8 and 9 change, every other row equals the default", () => {
+test("the Set 18 candidate loads: rows 8 and 9 change, champsPerCost comes from base, pool equals the default", () => {
   const file = JSON.parse(fs.readFileSync(new URL("./profiles/set18.candidate.json", import.meta.url), "utf8"))
   const profile = buildProfile(file, "16.20")
   for (let level = 1; level < DEFAULT_PROFILE.shopOdds.length; level++) {
@@ -87,7 +87,7 @@ test("the Set 18 candidate loads: rows 8 and 9 change, every other row equals th
     }
   }
   assert.deepEqual([...profile.poolCopies], [...DEFAULT_PROFILE.poolCopies])
-  assert.deepEqual([...profile.champsPerCost], [...DEFAULT_PROFILE.champsPerCost])
+  assert.deepEqual([...profile.champsPerCost], [0, 14, 13, 14, 14, 10])
   assert.ok(profile.caveats.some((c) => /Opening Encounters/.test(c)))
 })
 
@@ -122,4 +122,13 @@ test("a null or string pool entry throws, since it would skew the hit chance", (
 test("the inherited-table caveat names the levels that come from rules.js", () => {
   const profile = buildProfile({ set: "PARTIAL", base: { poolCopies: BASE.poolCopies, champsPerCost: BASE.champsPerCost }, patches: [{ version: "16.20", shopOdds: { 8: [0.15, 0.2, 0.32, 0.3, 0.03] } }] })
   assert.ok(profile.caveats.some((c) => /shopOdds ở level 1, 2, 3, 4, 5, 6, 7, 9, 10, 11 lấy từ mặc định/.test(c)))
+})
+
+test("the candidate's base champsPerCost is used when a roll gives no champsAtCost", async () => {
+  const { hitChance } = await import("../engine/odds.js")
+  const file = JSON.parse(fs.readFileSync(new URL("./profiles/set18.candidate.json", import.meta.url), "utf8"))
+  const profile = buildProfile(file, "16.20")
+  assert.equal(profile.champsPerCost[4], 14)
+  assert.equal(hitChance(8, 4, 10, undefined, profile), hitChance(8, 4, 10, 14, profile))
+  assert.ok(!profile.caveats.some((c) => c.includes("champsPerCost lấy từ mặc định")))
 })

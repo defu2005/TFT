@@ -2,7 +2,8 @@
   "set": "18",
   "unmodelled": [
     "Opening Encounters (Riot 18.1, verified): thêm Item Forge và Completed Item Anvil Start, bỏ Loot Subscription, Artifact Anvil và Reroll Start",
-    "Wisp (Riot 18.1, verified): Wisp chiếm một ô shop ở mỗi shop có Wisp (mọi shop chẵn), ẩn một tướng và tiết lộ sau giai đoạn chuẩn bị; sau stage 5 mỗi Wisp thứ hai là Combat Wisp; 7 loại (Champion, Combat, Misc, Shop, Gold/XP, Risky, Item). Không mô hình (I9)"
+    "Wisp (Riot 18.1 và Enchanted Wilds Overview): \"You can purchase one Wisp per round, and it'll appear in every other shop\"; \"Wisps will always appear in the rightmost slot\"; \"revealing the unit that was hiding behind it\". Wisp chiếm ô ngoài cùng bên phải và ẩn một tướng; không mô hình (I9)",
+    "champsPerCost ở base lấy từ Riot Enchanted Wilds Overview (trait Riftbeast liệt kê 10 tướng; Lux là một Avatar xuất hiện trong shop) và đếm tên trong dump CDragon 16.23.8406595; đây là đếm tên, không phải số bản pool, và chưa đối chiếu với bản chụp shop (I6, U10)"
   ],
   "patches": [
     {
@@ -25,5 +26,15 @@
         ]
       }
     }
-  ]
+  ],
+  "base": {
+    "champsPerCost": [
+      0,
+      14,
+      13,
+      14,
+      14,
+      10
+    ]
+  }
 }
