@@ -14,7 +14,7 @@ File này ghi mọi thứ engine cần từ người dùng hoặc phiên ingest,
 | U4 | Xác nhận: mua tướng hoàn thành sao khi bench đầy có hợp lệ trong client không | Engine đang khuyến nghị lượt này | Quy tắc gate bench đầy | **mở** |
 | U5 | Lượt roll miễn phí có cộng dồn sang stage sau không? | Quy tắc tính roll miễn phí | Giá trị `freeRolls` | **mở** |
 | U6 | Roll miễn phí chỉ được khuyến nghị khi đã đặt mục tiêu (`tft_set_target`). Có đúng ý không? | Hành vi roll miễn phí | Khuyến nghị roll | **mở** |
-| U9 | Ba quy tắc chưa bật: roll khi còn từ 50 vàng; lên level trước 50 vàng ở stage đầu; dùng mốc level của guide metabot thay `LEVEL_BY_STAGE` (chi tiết ở đề xuất bên dưới) | Mỗi quy tắc đổi quyết định mua/roll/level | Quyết định roll và lên level | **mở** |
+| U9 | Ba quy tắc, đã có trong code nhưng tắt mặc định: roll khi còn từ 50 vàng; lên level trước 50 vàng ở stage đầu; dùng mốc level của guide metabot thay `LEVEL_BY_STAGE` (chi tiết ở đề xuất bên dưới) | Mỗi quy tắc đổi quyết định mua/roll/level | Quyết định roll và lên level | **mở** |
 
 **Đề xuất từ nghiên cứu (`docs/tft-strategy.md`), chờ người dùng xác nhận. Chưa đóng mục nào:**
 - **U1 (đề xuất):** bảng XP theo level từ wiki Riot, TFT:Experience (`verified`, không ghi set): 2→3 = 2 XP, 3→4 = 6, 4→5 = 10, 5→6 = 20, 6→7 = 36, 7→8 = 60, 8→9 = 68, 9→10 = 68. Đoạn tìm kiếm cho Set 14 ghi khác (7→8 = 48, 8→9 = 76). Cần xác nhận bảng nào áp dụng cho Set 18.
@@ -27,10 +27,14 @@ File này ghi mọi thứ engine cần từ người dùng hoặc phiên ingest,
 - **Mới, chuỗi thắng/thua:** mục Income của wiki ghi 3–4 +1, 5 +2, 6+ +3. Metabot ghi "Typical streak bonuses" 2–3 +1, 4 +2, 5+ +3 (`single-source`, bảng "thường gặp", không phải quy tắc). Ghi chú V10.8 của wiki là lịch sử đã thay thế. Lịch sử bản vá của wiki chỉ đến V10.x nên không định ngày được mục Income. Cần người dùng xác nhận set và giá trị.
 - **Mới, U1:** trang wiki TFT:Experience đã lưu không có mục lịch sử bản vá. Lịch sử bản vá của TFT:Gold chỉ đến V10.x, nên cả hai không định ngày được bảng nào áp dụng. Chuỗi "48 XP", "76 XP", "84 XP" không có trong trang; bảng có 60 và 68.
 
-**U9 (đề xuất, chưa bật, chờ người dùng đồng ý).** Ba quy tắc sau sẽ đổi quyết định nếu bật, nên giữ tắt cho đến khi người dùng đồng ý:
+**U9 (đề xuất, tắt mặc định, chờ người dùng đồng ý).** Ba quy tắc sau đã được triển khai, bật bằng `TFT_RULES` (xem `docs/architecture.md`). Mặc định tắt, nên hành vi hiện tại không đổi. Bật sẽ đổi quyết định:
 1. Roll khi vàng còn từ 50 trở lên (giữ lãi tối đa, roll bằng phần vàng thừa).
 2. Lên level trước khi có 50 vàng ở các stage đầu (bỏ điều kiện `gold >= 50` ở stage sớm, theo bảng XP rẻ 2, 6, 10).
-3. Mốc level của guide metabot thay cho `LEVEL_BY_STAGE` (level 7 quanh 4-1, level 8 quanh 4-5 hoặc 5-1). Đây là `single-source`.
+3. Mốc level của guide metabot thay cho `LEVEL_BY_STAGE` (level 7 quanh 4-1, level 8 quanh 5-1). Đây là `single-source`. Bảng mốc `LEVEL_BY_STAGE_GUIDE` lấy level mở đầu của mỗi stage, vì engine không nhận `round`.
+
+Hai cách đọc cần người dùng đổi nếu không đúng: (a) "giai đoạn đầu" là `stage <= 2` trong `earlyLevel`; (b) bảng mốc mở đầu theo stage trong `guideLevels`.
+
+Các test ghim hành vi hiện tại (`decide.test.js`, mục U9) và các test bật từng quy tắc (`rules.test.js`) đều có trong repo. Invariant chạy cả hai cách: tắt hết là 366/1485/65/35/49, bật cả ba là 363/1484/75/29/49.
 
 ## 2. Từ phiên ingest
 
@@ -63,6 +67,7 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | 2026-11-23 | Bán trước khi roll khi việc bán vẫn để đủ vàng roll; sửa văn bản "Mua trước rồi mới roll" để chỉ hiện khi thật sự có roll sau đó | `87987bc` |
 | 2026-11-23 | Line tự động (`src/engine/autoline.js`) chỉ bật khi `TFT_AUTO_LINE=1`, mặc định tắt để giữ hành vi hiện tại; chấm điểm theo bàn, không theo toàn bộ tướng sở hữu, để quân bench không khớp vẫn bán được | `8ee5511` |
 | 2026-11-23 | Kiểm tra line tự động trên file set thật qua `createApp` (một khung replay, mua tướng cùng tộc với bàn). Chưa chuyển ngưỡng sang `rules.js` vì không đổi hành vi và chưa có gì để tinh chỉnh (xem U8) | `cad25e9` |
+| 2026-11-23 | Thêm ba quy tắc U9 sau `TFT_RULES`, mặc định tắt; test ghim hành vi hiện tại và kiểm tra từng quy tắc bật | `eba636a` |
 | 2026-11-23 | Hiển thị xác suất trong toàn bộ ngân sách roll (`rolls`, `hitWithin`) trong trace và lý do; không đổi điểm, nên không đổi quyết định | `fdabca4` |
 
-Giới hạn đã biết: `tft_evaluate_state` không dùng line tự động; đặt priority 0 thủ công không loại được tướng đang có line tự động.
+Giới hạn đã biết: `tft_evaluate_state` không dùng `TFT_RULES` và line tự động; đặt priority 0 thủ công không loại được tướng đang có line tự động.
