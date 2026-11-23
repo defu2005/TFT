@@ -23,6 +23,8 @@ Moi hang la mot loai quyet dinh. "Chua" nghia la chua co.
 
 ## Trang thai cong viec
 
-- Harness trung lap, test voi dap an da biet tren toy env: viet, chua duoc chay trong phien nay (xem bao cao).
-- Adapter TFT_GOAT: `adapter_tftgoat.py`, **chua kiem thu**.
-- Gate 0 (chay TFT_GOAT, 4 scripted vs 4 random): **chua qua**. Bi chan boi quyen chay code ben thu ba.
+- Test cua tft-sim: 9 pass (chay tren toy env, co loai tru seat). Toy env chi kiem chung harness.
+- Adapter TFT_GOAT (`adapter_tftgoat.py`): **chua kiem thu**.
+- TFT_GOAT, pytest (bo qua test co tai mang): 193 pass, 2 fail. Nguyen nhan da xac dinh: `data/cdragon/` chua ban CommunityDragon `latest` (tai 2026-11-23, patch 18.7) bi luu duoi ten `cdragon_17.4.json`. File da duoc doi ten thanh `cdragon_latest_fetched-2026-11-23.json`, sha256 `caed07e9b1602557b8bce09ed2c80a29d67a1d3fa83c676d85592a52b11c3a9e`.
+- Snapshot dung patch 17.4 cua CommunityDragon: `https://raw.communitydragon.org/17.4/cdragon/tft/en_us.json` tra ve 404. Cac bien the 17.1, 17.2, 17.3, 17.4.1 cung 404. Chua co nguon 17.x nao duoc chap nhan.
+- Gate 0 (4 scripted dau 4 random, xoay seat, replay cung seed): **chua chay**. Can quyen chay script cua TFT_GOAT ngoai pytest.
