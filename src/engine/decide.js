@@ -13,7 +13,7 @@ export function actionName(code) {
 }
 
 // Fills `out` and returns it. No network, no model call.
-// state.shop is a 5-slot array of { id, cost, copiesOwned, priority, poolCopies? } or null.
+// cost is the unit tier. price is the displayed purchase price when supplied.
 // priority > 0 means the unit is in the line we are playing.
 //
 // When `trace` is an array, every candidate considered is pushed into it with the
@@ -31,6 +31,7 @@ export function decide(state, out, trace = null) {
   const shop = state.shop
   const target = state.target
   const urgent = hp <= 30
+  const economyNote = state.hudGoldUnknown ? "chưa đọc được vàng" : state.hudLevelUnknown ? "chưa đọc được cấp" : ""
 
   let bestBuy = 0
   let bestSlot = -1
@@ -40,15 +41,22 @@ export function decide(state, out, trace = null) {
     for (let i = 0; i < 5; i++) {
       const unit = shop[i]
       if (!unit) {
-        if (trace) trace.push({ action: "buy", slot: i, score: 0, note: "ô trống" })
+        if (trace) {
+          const unknown = state.shopUnknownSlots?.includes(i)
+          trace.push({ action: "buy", slot: i, score: 0, ...(unknown ? { unknown } : {}), note: unknown ? "chưa đọc được ô này" : "ô trống" })
+        }
         continue
       }
       if (unit.priority <= 0) {
         if (trace) trace.push({ action: "buy", slot: i, unit: unit.id, cost: unit.cost, score: 0, note: "không nằm trong line (priority 0)" })
         continue
       }
-      if (gold < unit.cost) {
-        if (trace) trace.push({ action: "buy", slot: i, unit: unit.id, cost: unit.cost, score: 0, note: `thiếu vàng (cần ${unit.cost}, có ${gold})` })
+      const price = unit.price === undefined ? unit.cost : unit.price
+      if (price === null || gold < price) {
+        if (trace) {
+          const note = price === null ? "chưa đọc được giá mua" : `thiếu vàng (cần ${price}, có ${gold})`
+          trace.push({ action: "buy", slot: i, unit: unit.id, cost: unit.cost, price, score: 0, note })
+        }
         continue
       }
       // The target's copy count applies only to the target unit itself.
@@ -57,8 +65,8 @@ export function decide(state, out, trace = null) {
       const copiesSource = copiesFromTarget > 0 ? "target" : unit.poolCopies != null ? "poolCopies" : "pool - copiesOwned (ước lượng)"
       const copiesLeft = Math.max(0, copiesFromTarget || (POOL_FALLBACK(unit) - (unit.copiesOwned | 0)))
       const champsAtCost = unit.champsAtCost
-      const hit = hitChance(level, unit.cost, copiesLeft, champsAtCost)
-      const interestLoss = interestGold(gold) - interestGold(gold - unit.cost)
+      const hit = state.hudLevelUnknown ? 0 : hitChance(level, unit.cost, copiesLeft, champsAtCost)
+      const interestLoss = interestGold(gold) - interestGold(gold - price)
       let score = unit.priority * (1 + (unit.copiesOwned | 0)) * (0.4 + hit)
       if (!urgent) score -= interestLoss * 0.35
       if (unit.copiesOwned >= 2) score += 1.5
@@ -68,8 +76,9 @@ export function decide(state, out, trace = null) {
           slot: i,
           unit: unit.id,
           cost: unit.cost,
+          price,
           score,
-          hit,
+          hit: state.hudLevelUnknown ? null : hit,
           copiesLeft,
           copiesSource,
           interestLoss,
@@ -87,7 +96,7 @@ export function decide(state, out, trace = null) {
 
   const wanted = LEVEL_BY_STAGE[stage] ?? LEVEL_BY_STAGE[LEVEL_BY_STAGE.length - 1]
   let xpScore = 0
-  const xpAffordable = gold >= 50 && gold >= BUY_XP_COST
+  const xpAffordable = !economyNote && gold >= 50 && gold >= BUY_XP_COST
   if (level < wanted && xpAffordable) {
     xpScore = (wanted - level) * (urgent ? 0.6 : 1.1)
   }
@@ -98,12 +107,12 @@ export function decide(state, out, trace = null) {
       level,
       wanted,
       stage,
-      note: level >= wanted ? `level ${level} đã đạt mục tiêu ${wanted}` : !xpAffordable ? `chưa đủ điều kiện (vàng ${gold}, cần 50 và ${BUY_XP_COST})` : "",
+      note: economyNote || (level >= wanted ? `level ${level} đã đạt mục tiêu ${wanted}` : !xpAffordable ? `chưa đủ điều kiện (vàng ${gold}, cần 50 và ${BUY_XP_COST})` : ""),
     })
   }
 
   let rollScore = 0
-  const rollAffordable = !!target?.cost && gold >= REROLL_COST + (urgent ? 0 : 10)
+  const rollAffordable = !economyNote && !!target?.cost && gold >= REROLL_COST + (urgent ? 0 : 10)
   let rollHit = 0
   if (target && target.cost && rollAffordable) {
     rollHit = hitChance(level, target.cost, target.copiesLeft, target.champsAtCost)
@@ -115,7 +124,7 @@ export function decide(state, out, trace = null) {
       action: "roll",
       score: rollScore,
       hit: rollHit,
-      note: !target ? "không có mục tiêu (set_target chưa được gọi)" : !rollAffordable ? `thiếu vàng để roll (cần ${REROLL_COST + (urgent ? 0 : 10)})` : "",
+      note: !target ? "không có mục tiêu (set_target chưa được gọi)" : economyNote || (!rollAffordable ? `thiếu vàng để roll (cần ${REROLL_COST + (urgent ? 0 : 10)})` : ""),
     })
   }
 

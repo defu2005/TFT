@@ -11,9 +11,11 @@ export function explain(state, out, trace) {
   let text
   if (chosen === BUY) {
     const c = trace.find((t) => t.action === "buy" && t.slot === out.slot)
+    const hit = state.hudLevelUnknown ? "chưa xác định" : `${(out.hit * 100).toFixed(1)}%`
+    const price = state.shop?.[out.slot]?.price === undefined ? `cost ${c?.cost ?? "?"}` : `giá ${c?.price ?? "?"} vàng`
     text =
-      `Mua ô ${out.slot} (${c?.unit ?? "?"}, cost ${c?.cost ?? "?"}): điểm ${out.score.toFixed(2)}, ` +
-      `xác suất gặp ${(out.hit * 100).toFixed(1)}%, còn ${c?.copiesLeft ?? "?"} bản ` +
+      `Mua ô ${out.slot} (${c?.unit ?? "?"}, ${price}): điểm ${out.score.toFixed(2)}, ` +
+      `xác suất gặp ${hit}, còn ${c?.copiesLeft ?? "?"} bản ` +
       `(nguồn số bản: ${c?.copiesSource ?? "?"}), mất ${c?.interestLoss ?? 0} lãi.`
     if (c?.copiesSource && c.copiesSource !== "target" && c.copiesSource !== "poolCopies") {
       caveats.push("số bản còn lại là ước lượng vì state không có số bản của người chơi khác")
@@ -25,7 +27,7 @@ export function explain(state, out, trace) {
     const c = trace.find((t) => t.action === "roll")
     text = `Roll để tìm ${state.target?.id ?? "mục tiêu"}: xác suất gặp ${((c?.hit ?? 0) * 100).toFixed(1)}%, điểm ${out.score.toFixed(2)}.`
   } else {
-    const blocked = trace.filter((c) => c.action === "buy" && c.note && c.note !== "ô trống").map((c) => c.note)
+    const blocked = trace.filter((c) => c.action === "buy" && !c.unknown && c.note && c.note !== "ô trống").map((c) => c.note)
     const reasons = [...new Set(blocked)].slice(0, 3)
     const xp = trace.find((c) => c.action === "xp")
     const roll = trace.find((c) => c.action === "roll")
@@ -41,10 +43,10 @@ export function explain(state, out, trace) {
     text: `${text} (${caveats.join("; ")})`,
     factors: {
       hpUrgent: (state.hp | 0) <= 30,
-      gold: state.gold | 0,
-      level: state.level | 0,
+      gold: state.hudGoldUnknown ? null : state.gold | 0,
+      level: state.hudLevelUnknown ? null : state.level | 0,
       stage: state.stage | 0,
-      shopKnown: Array.isArray(state.shop),
+      shopKnown: Array.isArray(state.shop) && !state.shopUnknownSlots?.length,
       targetSet: !!state.target,
     },
     caveats,

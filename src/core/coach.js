@@ -65,7 +65,7 @@ export function createCoach({
       decide(input, out, trace)
       const reason = explain(input, out, trace)
       if (missing.length) {
-        const note = `thiếu trường từ nguồn: ${missing.join(", ")}; đang dùng giá trị mặc định cho các trường này`
+        const note = `thiếu trường từ nguồn: ${missing.join(", ")}`
         reason.caveats.push(note)
         reason.text += ` (${note})`
       }
@@ -79,9 +79,9 @@ export function createCoach({
         sourceKind: source.kind,
         latencyMs: round(latencyMs),
         stateHash,
-        known: { shop: Array.isArray(input.shop), target: !!input.target },
+        known: { shop: reason.factors.shopKnown, target: !!input.target },
         state: input,
-        decision: { action: actionName(out.action), slot: out.slot, score: round(out.score), hit: round(out.hit) },
+        decision: { action: actionName(out.action), slot: out.slot, score: round(out.score), hit: input.hudLevelUnknown ? null : round(out.hit) },
         reason,
       }
 
@@ -171,11 +171,21 @@ function applyLines(shop, lines) {
 export function hashState(state) {
   let ids = ""
   if (Array.isArray(state.shop)) {
-    for (const unit of state.shop) ids += unit ? `${unit.id ?? "-"}:${unit.priority ?? 0},` : "-,"
+    for (const unit of state.shop) {
+      if (!unit) {
+        ids += "-,"
+        continue
+      }
+      const priceKey = unit.price === undefined ? "" : `:${unit.price}`
+      ids += `${unit.id ?? "-"}:${unit.priority ?? 0}${priceKey},`
+    }
   }
   const t = state.target
   const targetKey = t ? `${t.id ?? "-"}:${t.cost}:${t.copiesLeft}:${t.priority}:${t.champsAtCost ?? ""}` : "none"
-  return `${state.level}|${state.gold}|${state.hp}|${state.stage}|${ids}|${targetKey}`
+  const unknownSlots = state.shopUnknownSlots?.join(",")
+  const key = `${state.level}|${state.gold}|${state.hp}|${state.stage}|${ids}|${targetKey}`
+  if (!unknownSlots && !state.hudGoldUnknown && !state.hudLevelUnknown) return key
+  return `${key}|${unknownSlots ?? ""}|${Boolean(state.hudGoldUnknown)}|${Boolean(state.hudLevelUnknown)}`
 }
 
 function sanitizeTarget(t) {

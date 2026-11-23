@@ -24,6 +24,7 @@ const unitSchema = z
   .object({
     id: z.string(),
     cost: z.number().int().min(1).max(5),
+    price: z.number().int().min(0).max(999).nullable().optional(),
     copiesOwned: z.number().int().min(0).default(0),
     priority: z.number().min(0).default(0),
     poolCopies: z.number().int().min(0).optional(),
