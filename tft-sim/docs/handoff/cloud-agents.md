@@ -104,6 +104,14 @@ Vai **P — định vị (lớp con môi trường)** là việc phát triển m
 
 ## 6. Thư mục đầu ra và đóng gói
 
+**Quyết định (2026-11-24):** dữ liệu thô `.npz` ở lại máy thuê, không chuyển về máy người dùng và không đưa lên dịch vụ ngoài. Thứ chuyển đi là:
+- Checkpoint mô hình (vài MB, có thể commit vào repo nếu dưới 10 MB).
+- File JSON kết quả và summary (commit vào repo).
+- Nếu cần, file nhỏ gửi qua công cụ gửi file trong phiên.
+
+Dữ liệu thô chỉ được rời máy thuê khi người dùng yêu cầu rõ.
+
+
 - Dữ liệu lớn: `/data/sim/<ngày>/<shard>/` (đường dẫn người dùng cung cấp; nếu chưa có, ghi `TBD` và báo lại).
 - Summary JSON: `tft-sim/results/fixed/real/shard_<seed_lo>.json` (commit lên nhánh).
 - Mỗi kết quả JSON có: `seeds`, `rows`, `sha256`, `commit_tft`, `commit_tft_goat`, `ram_peak_mb`, `wall_seconds`.
