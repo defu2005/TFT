@@ -106,7 +106,7 @@ Kiểm tra bắt buộc trước khi báo xong:
 - **C:** `python scripts/cem_item.py 6 12 220000 220200 results/fixed/real/cem_item_v2.json 240000 241000` (Pool(4)). Ước tính khoảng 1,5 giờ, vì mỗi ứng viên chạy 200 ván dev. Nếu hết giờ, giảm số thế hệ và báo lại.
 - **E:** `python scripts/play_v4.py <mode> <ckpt> 241000 242000 v5` với mode trong `v4null`, `clone_v4`, `clone_v3`, `clone_scr`. Đã đặt `torch.set_num_threads(1)`. Tối đa 4 tiến trình song song.
 
-Ước tính thời gian DT: thu khoảng 10–15 phút (4 nhân). Huấn luyện: khoảng 20 phút mỗi seed (3 seed × 40 epoch), **ước tính ngoại suy từ thử 12.000 dòng, chưa đo trên 6 triệu dòng**. Đo trong 10 phút đầu rồi báo lại.
+Đo thực tế (máy 4 nhân, 16 GB, mạng bật): gộp 350 ván (1,03 triệu dòng) mất 15 giây, đỉnh RAM 1,5 GB; huấn luyện 3 seed × 40 epoch trên 886.111 dòng train mất 630 giây, đỉnh RAM 2,4 GB; test 147.991 dòng. Ngoại suy cho 1.500 ván train (~4,4 triệu dòng): huấn luyện khoảng 55 phút, RAM đỉnh khoảng 8–10 GB, gộp khoảng 6–7 GB. Bước thu 2.000 ván: khoảng 15 phút với 2 tiến trình.
 
 ## 6. Đầu ra và đóng gói
 
