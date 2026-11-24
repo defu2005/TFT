@@ -133,16 +133,19 @@ Nhãn cấp là cấp thật: `SHOP_ODDS[cấp]` (`src/engine/odds.js`, `p.shopO
 | 4 | [0.55, 0.3, 0.15, 0, 0] | [55, 30, 15, 0, 0] | HUD, mục 10(a) | `row("18.6", 4)` | HUD trên 18.6, khớp mặc định |
 | 5 | [0.45, 0.33, 0.2, 0.02, 0] | [45, 33, 20, 2, 0] | HUD, mục 8 và 10 | `row("18.6", 5)` | HUD trên 18.6, khớp mặc định |
 | 6 | [0.3, 0.4, 0.25, 0.05, 0] | [30, 40, 25, 5, 0] | HUD, mục 8 và 10 | `row("18.6", 6)` | HUD trên 18.6, khớp mặc định |
-| 7 | [0.19, 0.3, 0.4, 0.1, 0.01] | [16, 30, 43, 10, 1] | HUD, mục 8, `4/56` (đọc tay, 18.6, hai trận, `31a29d5`) | `row("18.6")`, `profileFile.test.js` dòng 41 | HUD một lần đọc trên 18.6; lệch mặc định ở cost 1 và 3 (0.03) |
-| 8 | [0.17, 0.24, 0.32, 0.24, 0.03] | [15, 20, 32, 30, 3] | overlay 16.20 của candidate, khớp HUD mục 8 (`4/68`) | `row("18.6", 8)` | HUD trên 18.6; nhãn 16.20 là của metabot, chưa xác minh |
-| 9 | [0.15, 0.18, 0.25, 0.3, 0.12] | [10, 17, 25, 33, 15] | overlay 16.20, khớp HUD mục 8 (`0/68`, `8/68`, `18/68`) | `row("18.6", 9)` | như cấp 8 |
+| 7 | [0.19, 0.3, 0.4, 0.1, 0.01] | [16, 30, 43, 10, 1] | đọc tay từ HUD, 18.6, hai trận (`31a29d5`), mục 8 `4/56` | `profileFile.test.js` dòng 41 | HUD trên 18.6 ở hai trận; lệch mặc định ở cost 1 (0.16 so với 0.19) và cost 3 (0.43 so với 0.40) |
+| 8 | [0.17, 0.24, 0.32, 0.24, 0.03] | [15, 20, 32, 30, 3] | kế thừa overlay 16.20 của candidate, khớp HUD mục 8 (`4/68`) | `profileFile.test.js` (`row("18.6", 8)`) | HUD trên 18.6; nhãn 16.20 là của metabot, chưa xác minh. Lệch mặc định ở cost 1, 2, 4 |
+| 9 | [0.15, 0.18, 0.25, 0.3, 0.12] | [10, 17, 25, 33, 15] | kế thừa overlay 16.20, khớp HUD mục 8 (`0/68`, `8/68`, `18/68`) | `profileFile.test.js` (`row("18.6", 9)`) | như cấp 8. Lệch mặc định ở cost 1, 2, 4, 5 |
 | 10 | [0.05, 0.1, 0.2, 0.4, 0.25] | như mặc định | không có đo | không | không |
 | 11 | [0.01, 0.02, 0.12, 0.5, 0.35] | như mặc định | không có đo | không | không |
 
-**Ngưỡng XP (U1):** không có bảng XP theo cấp trong `rules.js` hay profile; code chỉ có `BUY_XP_COST = 4`. Có hai nguồn đã ghi:
-- Wiki TFT:Experience (mục U1): 2→3 = 2, 3→4 = 6, 4→5 = 10, 5→6 = 20, 6→7 = 36, 7→8 = 60, 8→9 = 68, 9→10 = 68. Không có mục lịch sử bản vá.
-- HUD trên 18.6 (mục 8, `x/y` của cấp): cấp 5 = 20, cấp 6 = 36, cấp 7 = 56, cấp 8 = 68, cấp 9 = 68. Khớp wiki ở 20, 36, 68, 68; lệch wiki ở 7→8 (56 so với 60).
+**Ngưỡng XP (U1):** không có bảng XP theo cấp trong `rules.js` hay profile; code chỉ có `BUY_XP_COST = 4`. Ba nguồn:
+- HUD trên 18.6 (mục 8 và 10, `x/y` của cấp): 3→4 = 6, 4→5 = 10, 5→6 = 20, 6→7 = 36, 7→8 = 56, 8→9 = 68, 9→10 = 68.
+- Riot 18.2 (mục 8): 7→8 = 56, 8→9 = 68, 9→10 = 68. Khớp HUD ở các mốc đó.
+- Wiki TFT:Experience (mục U1, không có mục lịch sử bản vá): 2→3 = 2, 3→4 = 6, 4→5 = 10, 5→6 = 20, 6→7 = 36, 7→8 = 60, 8→9 = 68, 9→10 = 68. Lệch HUD và Riot ở 7→8 (60 so với 56).
 
-Cấp 1–4 và 10–11 chưa có số nào. Các dòng XP này chỉ là ghi chú; code không dùng.
+Chưa có số nào cho 1→2 và 2→3 (cấp 2 không đọc được trong mục 10), và cho 10→11. Các dòng XP chỉ là ghi chú; code không dùng.
 
-**Quyết định cần chốt trước khi đổi dữ liệu:** hàng 18.6 cấp 7 chỉ lệch mặc định 0.03 ở hai cost, nên không đổi quyết định lớn; cấp 1–2 và 10–11 chưa có dữ liệu thật. Đổi profile cần I11 (hàng odds và XP đọc từ client) hoặc nguồn có số.
+**Phần chênh giữa mặc định và hàng 18.6 đã đo:** cấp 3–6 và 10–11 khớp hoàn toàn. Ở cấp 7, 8, 9 có chênh lệch ở một số cost (bảng trên). Chạy bài kiểm tra bất biến trên 2.000 trạng thái sinh có seed với hồ sơ candidate ở `TFT_PATCH=18.6`: 4 quyết định khác mặc định, cùng con số ở `16.20` (mục U2). Số này dựa trên tập sinh, không phải trận thật.
+
+Cần I11 (hàng odds và XP đọc từ client) hoặc nguồn có số trước khi đổi hồ sơ. Bật thử: `TFT_PROFILE_FILE=src/data/profiles/set18.candidate.json TFT_PATCH=18.6`.
