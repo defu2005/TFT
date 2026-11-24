@@ -1,0 +1,10 @@
+{
+  "gold_at_last_pvp_by_placement": {
+    "top4_mean": 61.54,
+    "bottom4_mean": 62.14
+  },
+  "board_headroom_mean_ratio": 0.989,
+  "augment_decisions": 4906,
+  "augment_suboptimal_tier_picks": 0,
+  "augment_registry_picks": 847
+}

@@ -63,3 +63,21 @@ def make_param_policy(theta: Theta):
                 a = BUY_SHOP_START + max(scored)[2]
         return a
     return pol
+
+
+def make_endgame(hp_threshold: int):
+    """v3 + chi tieu vang khi may: neu hp <= hp_threshold thi PASS -> BUY_XP (neu hop le) hoac REROLL (neu hop le).
+    Vang con lai khi chet khong co gia tri (bottom-4 chet voi ~62 vang), nen tieu het la khong mat gi."""
+    from tft_sim.rules import make_swap_rule as _mk
+    base = _mk(key="value", sell=True, floor=54)
+
+    def pol(env, agent, obs, mask, rng):
+        a = base(env, agent, obs, mask, rng)
+        player = env._state.players[agent]
+        if a == PASS and player.hp <= hp_threshold:
+            if mask[BUY_XP]:
+                return BUY_XP
+            if mask[REROLL]:
+                return REROLL
+        return a
+    return pol
