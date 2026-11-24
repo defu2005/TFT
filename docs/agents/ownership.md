@@ -22,6 +22,8 @@ Khi gọi nhau trong yêu cầu dữ liệu hoặc bàn giao, dùng ID cố đ�
 - `hud`: OCR HUD Set 18 và chiến dịch VOD.
 - `sim`: mô phỏng `tft-sim/`.
 - `user`: người điều phối và máy ingest của người dùng.
+- `data`: làm sạch dữ liệu trạng thái (`docs/data-plan.md` mục 5).
+- `label`: gán nhãn mù để đo nhiễu nhãn OCR (`docs/data-plan.md` mục 4).
 
 ## Vùng nóng
 

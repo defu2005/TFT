@@ -10,6 +10,9 @@ status: mở
 
 ## Việc cần làm (hud)
 
+0. **Giao một trận mẫu trước** (ghi `status: đã giao` cho trận đó) để lane làm sạch bắt đầu. Các trận còn lại giao sau.
+0b. Thêm tham số set cho `scripts/hud_ocr.py`, thay cho đường dẫn `set18-hud.json` cố định.
+0c. Xuất **vùng HUD đã cắt** (không phải khung đầy đủ) của 16 khung audit, để lane gán nhãn mù.
 1. **Ước tính dung lượng trước** (tổng MB của log nén, theo từng trận). Ghi vào phản hồi.
 2. **Định dạng:** JSON Lines nén gzip, `.jsonl.gz`. Không kèm ảnh, không kèm khung hình, không kèm URL media đã ký, không kèm MP4.
 3. **Vị trí:** nếu tổng dung lượng vài chục MB trở xuống, commit vào nhánh của `hud` tại `data/hud-logs/`. Nếu lớn hơn, đề xuất nơi lưu bền khác (release asset hoặc kho ngoài) và không commit vào git.

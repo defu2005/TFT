@@ -12,6 +12,8 @@ Dùng ID này để gọi nhau. Tên nhánh do phiên cấp và có thể đổi
 | `hud` | OCR HUD Set 18, chiến dịch VOD | `codex/hud-realtime-progress` (đã merge, PR #3) |
 | `sim` | Mô phỏng và học chính sách `tft-sim/` | `claude/claude-fable-5-2-awwmf5` (đã merge, PR #4) |
 | `user` | Người điều phối và máy ingest của người dùng | `master`, và máy người dùng (không có nhánh riêng) |
+| `data` | Làm sạch dữ liệu trạng thái | Phiên mới (chưa có nhánh) |
+| `label` | Gán nhãn mù, đo nhiễu nhãn | Phiên mới (chưa có nhánh) |
 
 ## 2. Cách trao đổi
 
