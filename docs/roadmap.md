@@ -89,6 +89,11 @@ Người dùng đã duyệt các mục 3–6 dưới đây. Mục 1, 2 và 2b đ
 | 6 | **Ảnh chụp EoG giữa trận** do người dùng thực hiện (3–5 file, đã ẩn tên và PUUID). | Đã duyệt. Chờ người dùng gửi file. |
 
 Đã bỏ: 1 (đóng đường RAM), 2 (sản phẩm sau trận là mặc định), 2b (công cụ mô tả trong trận).
+
+**Bổ sung 2026-11-24 (người dùng duyệt):**
+- **Dữ liệu huấn luyện:** dùng VOD của streamer cho việc huấn luyện. Rủi ro pháp lý chưa được kiểm tra. Người dùng đã nhận thức và quyết định.
+- **Giai đoạn hiện tại:** thu thập và làm sạch dữ liệu. Yêu cầu `hud` commit log OCR theo mẫu: `docs/agents/requests/20261124-user-to-hud-vod-sample-logs.md`.
+- **Mô hình:** quyết định mô hình học gì trước do một phiên chuyên trách đảm nhiệm. Chưa thuộc phạm vi của phiên này.
 ## Lịch sử
 
 - 2026-11-23: bản đầu tiên, dựa trên các nhánh hiện có.
