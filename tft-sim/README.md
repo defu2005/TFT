@@ -20,7 +20,7 @@ Ty le dong y o day la muc loai+chi so tren hang >=2 hop le, vs random; xem muc B
 | Chon augment (PICK_AUGMENT) | co | co (dung privileged tier) | **co, khi co tier trong feature** (99,9% val, closed loop 99,99%) | 99,9% (co tier) | chua |
 | Chon god (PICK_GOD) | co | co | co | 100% / 100% | chua |
 | Reroll augment (REROLL_AUGMENT) | co | co, rat hiem (n=42-58) | **co, khi co tier** (96% val n=23, closed loop 97% n=524) | 96% (co tier, it mau) | chua |
-| Dinh vi trong tran (positioning) | **mo** (chua co trong 43 action cua TFT_GOAT) | - | - | - | - |
+| Dinh vi trong tran (positioning) | **mo** (env khong co hanh dong dinh vi); engine: mac dinh theo vai tro tot hon xao (+1,0) va dao nguoc (+2,0) | - | - | - | - |
 | Nham muc tieu item | **mo** | - | - | - | - |
 
 ## Engine (EngineResolver): san chinh cho giai doan 3
@@ -119,9 +119,22 @@ Mac dinh cua env: thanh pham (2 thanh phan) duoc trao cho unit dat nhat (cost ca
 - Gia tri 1,1 lon hon nhieu so voi cac luat dau (cheapest/ngau nhien vs mac dinh ~0,2). Can kiem tra them truoc khi tin manh (vi du tren seed moi, va luat khac cung loai).
 - Lan chay 400 lobby dau (130000) khong dung de ket luan do CI chua 0; do la cau hinh cu, da bo sung seed moi.
 
-## Dinh vi trong tran (giai doan 4): chua do, khong co dau vao
+## Dinh vi trong tran (giai doan 4): don bay that trong engine (do bang probe)
 
-Engine xep vi tri hoan toan theo diem `_frontline_score` (tank truoc, carry sau). Thu tu board chi quyet dinh khi hoa diem (`sorted` on dinh), nen khong co dau vao dinh vi nao tu env. Khong the do "xep ngau nhien vs mac dinh" ma khong sua engine (`tft_goat/engine/simulate.py`, `_build_team`). Trang thai: **khong biet** dinh vi co phai don bay hay khong; can them dau vao dinh vi vao env truoc khi do.
+Engine dat vi tri theo vai tro (`_frontline_score`: tank truoc, carry sau), va env khong co hanh dong dinh vi. De do, `scripts/pos_probe.py` patch `_build_team` va `rounds._fight`: nhom A doi vi tri sau mac dinh, nhom B giu mac dinh, cung lobby, cung chinh sach v4. Am = A tot hon.
+
+| Nhom A | Seed | A-B | CI 95% | n |
+|---|---|---|---|---|
+| null (mac dinh vs mac dinh) | 200000-200399 | -0,04 | [-0,20, +0,13] | 400 |
+| xao ngau nhien (cac o giu nguyen) | 200000-200399 | +1,00 | [+0,85, +1,16] | 400 |
+| carry ra truoc, tank sau | 200000-200399 | +1,98 | [+1,84, +2,12] | 400 |
+
+**Ket luan:** mac dinh theo vai tro tot hon nhieu so voi ngau nhien va so voi dao nguoc. Vi tri la don bay that trong engine. Chua biet mot chinh sach dinh vi hoc duoc co vuot mac dinh hay khong; buoc do can them dau vao dinh vi cho clone/teacher.
+
+## Tai hien valuemax (seed moi) va co che trang bi
+
+- Tren seed moi 190000-190999 (chua dung): valuemax vs mac dinh **-1,06** [-1,16, -0,95]; spread vs mac dinh -0,95 [-1,06, -0,85]; null +0,015 [-0,09, +0,12]. Hieu ung duoc tai hien.
+- Co che (200 lobby, seed 190000-190199, `scripts/item_mechanism.py`): ghe valuemax dat item len unit co gia tri trung binh 5,10, so voi 2,98 cua mac dinh (dem cac lan gan co gia tri). Ty le item roi vao unit da co item: 23,8% so voi 20,1%. Vay co che la chon dung carry (unit 2-3 sao, gia tri cao), it hon la don item vao mot unit.
 
 ## Set 17 va Set 18 (luu y cho nhanh `sim` va cac workstream khac)
 
