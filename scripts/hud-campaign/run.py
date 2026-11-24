@@ -79,7 +79,11 @@ def stats_file(name):
     if not (CGROUP / name).exists():
         times = os.times()
         if name == 'cpu.stat':
-            return {'usage_usec': int((times.user + times.system) * 1e6)}
+            # Whole-machine busy time from /proc/stat, so ffmpeg and tesseract children count too.
+            fields = [int(x) for x in Path('/proc/stat').read_text().splitlines()[0].split()[1:]]
+            idle = fields[3] + (fields[4] if len(fields) > 4 else 0)
+            busy = sum(fields) - idle
+            return {'usage_usec': int(busy * 1e6 / os.sysconf('SC_CLK_TCK'))}
         if name == 'memory.stat':
             return {'inactive_file': 0}
         return {}
