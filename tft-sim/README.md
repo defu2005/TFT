@@ -103,7 +103,7 @@ Engine xep vi tri hoan toan theo diem `_frontline_score` (tank truoc, carry sau)
 ## Set 17 va Set 18 (luu y cho nhanh `sim` va cac workstream khac)
 
 - Mo phong nay chay tren noi dung **Set 17** (block trong CDragon). Tro choi dang chay la Set 18 (patch 18.7). Ket qua o day la cho Set 17, khong phai cho Set 18.
-- Bang odds Set 17 lech so voi Set 18 o cap 8-9 (xem `docs/agents/needs.md` U2 tren nhanh `claude/dazzling-feynman-g7a0b9`). Tren Set 18 chi co phep chay DA-only (muc Set 18 o tren).
+- Bang odds Set 17 lech so voi Set 18 o cap 8-9 (xem `docs/needs.md` U2 tren nhanh `claude/dazzling-feynman-g7a0b9`). Tren Set 18 chi co phep chay DA-only (muc Set 18 o tren).
 - Hop dong du lieu: snapshot CDragon dung patch cho mo phong la viec cua `sim`; dang chan Gate 0 tren noi dung that. Chua co snapshot Set 18 day du.
 
 ## Yeu cau du lieu (ghi trong handoff, chuyen cho nguoi dung)
