@@ -136,6 +136,16 @@ Engine dat vi tri theo vai tro (`_frontline_score`: tank truoc, carry sau), va e
 - Tren seed moi 190000-190999 (chua dung): valuemax vs mac dinh **-1,06** [-1,16, -0,95]; spread vs mac dinh -0,95 [-1,06, -0,85]; null +0,015 [-0,09, +0,12]. Hieu ung duoc tai hien.
 - Co che (200 lobby, seed 190000-190199, `scripts/item_mechanism.py`): ghe valuemax dat item len unit co gia tri trung binh 5,10, so voi 2,98 cua mac dinh (dem cac lan gan co gia tri). Ty le item roi vao unit da co item: 23,8% so voi 20,1%. Vay co che la chon dung carry (unit 2-3 sao, gia tri cao), it hon la don item vao mot unit.
 
+## Chinh sach hoc duoc dau tien: CEM chon dich trang bi (engine)
+
+`scripts/cem_item.py`: diem unit = w . [cost, sao, items, gia tri, la tank]; chon unit diem cao nhat. CEM 3 the he x 8 ung vien x 200 lobby (tinh chinh 220000-220199, co dinh moi the he). Giu lai 230000-230999 (chua dung), so voi mac dinh.
+
+- Trong so cuoi (trung binh elite): cost 0,04; sao -0,19; items 0,04; gia tri 0,30; tank **1,41**.
+- Giu lai: A-B = **-1,05** [-1,15, -0,95] (n = 1000). Null (mac dinh vs mac dinh) ~ 0 (xem muc tren).
+- So voi luat heuristic `valuemax`: -1,06 (190000) va -1,09 (140000). **Chinh sach hoc duoc ngang luat heuristic, khong vuot.** Tin hieu chinh nam o vai tro tank, khong chi gia tri.
+
+Gioi han: CEM chi 3 the he, 200 lobby moi ung vien; chua thu voi nhieu the he hon hoac kien truc lon hon.
+
 ## Set 17 va Set 18 (luu y cho nhanh `sim` va cac workstream khac)
 
 - Mo phong nay chay tren noi dung **Set 17** (block trong CDragon). Tro choi dang chay la Set 18 (patch 18.7). Ket qua o day la cho Set 17, khong phai cho Set 18.
