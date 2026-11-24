@@ -49,7 +49,7 @@ Ghi chu:
 - **Quy tac teacher v4** = `make_aug_rule()`: v3 (swap value) + chon augment uu tien augment co trong `AUGMENT_REGISTRY`, roi moi den tier. Chon tren dev 100000-100399 (-0,77 [-0,94, -0,61] so v3).
 - **Dac trung uni3 (185 chieu)** = uni2 (179) + 3 co "co augment o slot" + 3 co "augment o slot nam trong registry" (`src/tft_sim/features_v4.py`).
 - **Du lieu:** teacher v4 tren EngineResolver, ca 8 ghe. Train 150000-150399 (1,18 trieu dong), val 150400-150499 (297 nghin), test 151000-151199 (590 nghin). Script: `scripts/collect_v4.py`. File .npz khong commit (o scratchpad).
-- **BC (40 epoch, 3 seed):** test 99,6% tong; PICK_AUGMENT 99,6%; REROLL 94,6%; BENCH_BOARD 96,1%. Script: `scripts/bc_v4.py` (checkpoint seed 0 o scratchpad).
+- **BC (40 epoch, 3 seed):** test 99,5-99,7% tong; PICK_AUGMENT 99,6-99,9%; REROLL 94,6-98,6%; BENCH_BOARD 95,9-97,1%. Script: `scripts/bc_v4.py` (checkpoint seed 0 o scratchpad).
 
 **Choi tren engine, seed 160000-160999 (chua dung):**
 
@@ -61,6 +61,56 @@ Ghi chu:
 | clone v4 vs scripted goc | -2,30 | [-2,39, -2,21] |
 
 Dat tieu chi cua advisor: clone vs v4 co CI chua 0, va clone vs v3 gan -0,8 (dung bang gia tri augment). Ghi chu: v4 chi la ung vien dong bang, chua sang loc nhieu theo loai va chua chon quy tac god; PICK_GOD van la teacher cu. Script choi: `scripts/play_v4.py` (chay 1 luong torch de tranh tranh chap CPU).
+
+## Sang nhieu theo loai tren v4 (engine), seed 130000-130399 (dev, 400 lobby moi loai)
+
+Quy tac: voi xac suat 0,1 chon ngau nhien mot hanh dong hop le cua loai do, nguoc lai v4. A = v4 + nhieu, B = v4. Duong = nhieu lam xau di.
+
+| Loai | A-B | CI 95% |
+|---|---|---|
+| null (v4 vs v4) | +0,092 | [-0,08, +0,26] |
+| PASS | +1,271 | [+1,11, +1,42] |
+| REROLL | +1,331 | [+1,17, +1,49] |
+| SELL_BENCH | +0,349 | [+0,17, +0,52] |
+| EQUIP | +0,099 | [-0,07, +0,27] |
+| PICK_AUGMENT | +0,091 | [-0,08, +0,27] |
+| PICK_GOD | +0,085 | [-0,09, +0,27] |
+| REROLL_AUGMENT | +0,070 | [-0,11, +0,24] |
+| BUY_SHOP | -0,004 | [-0,18, +0,18] |
+| BENCH_BOARD | -0,059 | [-0,22, +0,11] |
+| BUY_XP | -0,098 | [-0,27, +0,07] |
+| FIELD | -0,133 | [-0,31, +0,04] |
+
+**Ket luan:** khong loai nao co nhieu thang voi CI ca 99,5% loai 0. Theo tieu chi cua advisor, **v4 dong bang**, khong can lap lai tren 140000-141999. Ghi chu: PASS, REROLL, SELL_BENCH cho thay teacher da dung o do la ro; cac loai con lai khong co y nghia thong ke o n=400.
+
+## Trang bi tren engine: don bay that, chua biet dich toi uu (giai doan 4)
+
+Mac dinh cua env: thanh pham (2 thanh phan) duoc trao cho unit dat nhat trong board con slot (`_equip` trong `env/actions.py`). Khong co hanh dong chon unit nhan item. Thu nghiem: thay luat chon dich, cung chinh sach v4, ghe nhom A dung luat moi, ghe nhom B mac dinh, cung lobby; hieu A-B so voi null.
+
+| Luat (ghe A) | Seed | Hieu so voi mac dinh | CI 95% | n |
+|---|---|---|---|---|
+| unit re nhat | 130000-130399 | -0,19 | [-0,45, +0,06] | 400 |
+| ngau nhien | 130000-130399 | -0,18 | [-0,42, +0,07] | 400 |
+| unit re nhat | 170000-170999 (chua dung) | -0,21 | [-0,36, -0,07] | 1000 |
+| ngau nhien | 170000-170999 (chua dung) | -0,23 | [-0,38, -0,09] | 1000 |
+
+**Ket luan:** tren seed moi 170000-170999, chon unit dat nhat cho item tot hon hai luat thay the khoang 0,2 thu hang (CI khong chua 0). Vay trang bi la don bay that trong engine. Chua biet luat nao tot hon mac dinh; can them mot luat ung vien (toi da hai luat theo advisor) va kiem tra tren seed moi. Lan dau 400 lobby qua it (CI chua 0), nen khong dung de ket luan.
+
+## Dinh vi trong tran (giai doan 4): chua do, khong co dau vao
+
+Engine xep vi tri hoan toan theo diem `_frontline_score` (tank truoc, carry sau). Thu tu board chi quyet dinh khi hoa diem (`sorted` on dinh), nen khong co dau vao dinh vi nao tu env. Khong the do "xep ngau nhien vs mac dinh" ma khong sua engine (`tft_goat/engine/simulate.py`, `_build_team`). Trang thai: **khong biet** dinh vi co phai don bay hay khong; can them dau vao dinh vi vao env truoc khi do.
+
+## Set 17 va Set 18 (luu y cho nhanh `sim` va cac workstream khac)
+
+- Mo phong nay chay tren noi dung **Set 17** (block trong CDragon). Tro choi dang chay la Set 18 (patch 18.7). Ket qua o day la cho Set 17, khong phai cho Set 18.
+- Bang odds Set 17 lech so voi Set 18 o cap 8-9 (xem `docs/agents/needs.md` U2 tren nhanh `claude/dazzling-feynman-g7a0b9`). Tren Set 18 chi co phep chay DA-only (muc Set 18 o tren).
+- Hop dong du lieu: snapshot CDragon dung patch cho mo phong la viec cua `sim`; dang chan Gate 0 tren noi dung that. Chua co snapshot Set 18 day du.
+
+## Yeu cau du lieu (ghi trong handoff, chuyen cho nguoi dung)
+
+- Odds va XP Set 18 theo cap, nguon chinh thuc hoac ban chup client. Can de chay Set 18 khong lech Set 17.
+- Ban chup shop that (`captures/`), neu can cho giai doan 6.
+- Nguon du lieu TFT that cho giai doan 6 va xac nhan dieu khoan API Riot.
 
 ## Dinh chinh (noi dung that, buoc 4)
 
