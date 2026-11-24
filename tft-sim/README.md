@@ -31,14 +31,14 @@ Engine (`tft_goat.engine.resolver`) mo phong tung tick, co ability, item, augmen
 |---|---|---|---|
 | null: v3 vs v3 | 120000-120999 | +0,007 | [-0,10, +0,11] |
 | v3 vs scripted goc | 120000-120999 | -1,93 | [-2,03, -1,84] |
-| v3 vs hybrid | dev 100000-100399 | -0,80 | (chua ghi CI rieng) |
-| augment (registry truoc) vs v3, dev | dev | -0,77 | - |
+| v3 vs hybrid | dev 100000-100399 | -0,80 | [-0,97, -0,62] |
+| augment (registry truoc) vs v3, dev | dev 100000-100399 | -0,77 | [-0,94, -0,61] |
 | augment vs v3, giu-lai | 110000-111999 | -0,814 | [-0,889, -0,740] |
 | null: v3 vs v3, giu-lai augment | 110000-111999 | -0,0005 | [-0,074, +0,073] |
 
 Ghi chu:
 - Heuristic: v3 vs hybrid -1,88 (giu-lai 60000-61999). Engine: -0,80. Muc chenh cho thay so heuristic phong dai hon engine.
-- Quy tac augment la **sua teacher trong mo phong, phan anh do phu cai dat**. `env/combat.py` chi tinh augment co trong `AUGMENT_REGISTRY` (89 augment). Augment ngoai registry khong co tac dung trong env, nen ket qua cua no la cai dat, khong phai kien thuc TFT.
+- Quy tac augment la **sua teacher trong mo phong, phan anh do phu cai dat**. Trong `env/combat.py`, `augment_power` (heuristic) va `AUGMENT_REGISTRY` (engine, 89 augment) chi tinh augment co trong registry. `env/actions.py` `_pick_augment` ap dung bonus chung theo tier (`_TIER_POWER`: silver 0,7, gold 1,0, prismatic 1,4) cho moi augment, nen augment ngoai registry van co tac dung, nhung chi la bonus chung, khong phai hieu ung that. Vi vay ket qua o day la cai dat cua chung toi, khong phai kien thuc TFT.
 - Endgame (ap luc HP): khong phat hien o +-0,17 (endgame_dev H20/40/60).
 - Dinh vi va item: mo. Engine tu xep vi tri, EQUIP khong chon unit nhan item. Giai doan 4 can sua engine hoac env.
 - God (PICK_GOD): chua do duoc. `diag_aug.py` dem god bang `god_offer` (sai), ket qua 0 khong hop le.
