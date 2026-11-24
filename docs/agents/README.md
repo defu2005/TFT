@@ -12,6 +12,7 @@ Bộ tài liệu này áp dụng cho mọi agent (Claude, Codex, hoặc người
 5. [`handoff.md`](handoff.md): mẫu bàn giao và quy tắc tiếp quản.
 6. [`verification.md`](verification.md): lệnh test theo từng vùng và cách ghi kết quả.
 7. [`hygiene.md`](hygiene.md): bí mật, file sinh ra, dữ liệu lớn, không commit gì.
+8. [`data-contracts.md`](data-contracts.md): dữ liệu nào workstream này cần từ workstream khác, và cách gửi yêu cầu, trả lời qua `requests/` và `responses/`.
 
 ## Nguyên tắc cốt lõi
 

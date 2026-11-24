@@ -42,6 +42,12 @@ Ghi rõ đây là kết quả trên dữ liệu gì (tổng hợp, replay, live)
 - Việc còn lại, theo thứ tự ưu tiên.
 - Điều gì đang chặn và ai có thể gỡ.
 
+## Yêu cầu dữ liệu
+
+- Yêu cầu tôi đã gửi (đường dẫn file trên nhánh của tôi, và trạng thái):
+- Yêu cầu gửi cho tôi đang chờ (lấy từ quét đầu phiên):
+- Dữ liệu tôi đã giao (commit hash, đường dẫn, phiên bản schema):
+
 ## Quyết định đã chốt
 
 - Quyết định và lý do. Người sau không được đảo lại mà không có lý do mới.

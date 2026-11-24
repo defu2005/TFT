@@ -14,6 +14,15 @@ Mỗi workstream có một thư mục chính. Agent của workstream đó là ch
 | Tài liệu sản phẩm | `docs/` (trừ `docs/agents/`) | Có thể xung đột khi nhiều agent cùng sửa một tài liệu |
 | Quy tắc agent | `docs/agents/`, `CLAUDE.md`, `AGENTS.md` | Chỉ sửa qua người điều phối |
 
+## ID workstream
+
+Khi gọi nhau trong yêu cầu dữ liệu hoặc bàn giao, dùng ID cố định, không dùng tên nhánh (xem `data-contracts.md`):
+
+- `engine`: engine, coach, MCP, ingest trạng thái.
+- `hud`: OCR HUD Set 18 và chiến dịch VOD.
+- `sim`: mô phỏng `tft-sim/`.
+- `user`: người điều phối và máy ingest của người dùng.
+
 ## Vùng nóng
 
 Các file sau đã được sửa bởi nhiều nhánh. **Không được sửa khi có claim khác đang giữ chúng.**

@@ -11,7 +11,7 @@ Cập nhật: 2026-11-23. Tài liệu này dựa trên `docs/data-sources.md`, `
   3. **HUD OCR** (`scripts/hud-reader.py` trên master, `scripts/hud_*.py` và chiến dịch VOD trên nhánh codex): đọc vàng, cấp, tên và giá shop. Đây là hướng duy nhất có kết quả đo, nhưng độ chính xác chưa đạt mục tiêu.
 - **Mâu thuẫn cần giải quyết trên master:** `data-sources.md` ghi RAM bị Vanguard chặn (lỗi `ACCESS_DENIED`), còn `network-and-ram-layer.md` ghi `OpenProcess` với `PROCESS_VM_READ` thành công. Hai kết luận không thể cùng đúng. Ngoài ra cả hai tài liệu ghi "100% chính xác real-time" cho các trường, nhưng không có số đo nào đi kèm. Các con số này không được dùng làm căn cứ.
 - **Dữ liệu tướng và bảng odds chưa khớp:** `rules.js` chưa được xác minh cho Set 18, và `needs.md` U2 vẫn mở. Live dùng id `DA_18_*`, còn `set17.json` dùng `TFT17_*`, nên line tự động chưa có tác dụng trong game.
-- Chưa có kết nối `tft-coach` MCP: đã thử lại và vẫn `CONNECTION_CLOSED`.
+- `tft-coach` MCP đã kết nối (2026-11-24). `tft_status` cho thấy nguồn live `ECONNREFUSED` tại `127.0.0.1:2999`, khớp với `data-sources.md`. Việc sửa đường live vẫn là đường găng ở Phase 3.
 
 ## Đường găng (critical path)
 
@@ -77,7 +77,7 @@ Mỗi phase kết thúc bằng một cổng đo được. Không chuyển phase 
 ### Phase 6: Sản phẩm
 
 - **Việc:** đóng gói cho Windows, đo độ trễ đầu cuối, trải nghiệm MCP, `src/llm/hint.js`.
-- **Hạ tầng:** `tft-coach` MCP không kết nối. Kiểm tra lại đường dẫn server và nguyên nhân đóng kết nối. Nếu nguyên nhân là thiếu `node_modules`, thêm bước `npm ci` vào thiết lập môi trường.
+- **Hạ tầng:** `tft-coach` MCP đã kết nối từ 2026-11-24. Nếu gặp lại `CONNECTION_CLOSED` ở phiên mới, kiểm tra `node_modules` (đã thử: `npm ci`), rồi thêm bước này vào thiết lập môi trường.
 - **Cổng:** do người dùng xác định khi đến lúc.
 
 ## Quyết định cần người dùng

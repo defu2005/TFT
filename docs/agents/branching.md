@@ -35,6 +35,7 @@
 
 - Rebase nhánh của mình lên `master` mới nhất **trước khi** yêu cầu merge, và chỉ khi nhánh chưa được người khác dùng làm nền.
 - Nhánh đã có người khác tách từ nó thì dùng `merge`, không rebase.
+- Thư mục `docs/agents/requests/` và `docs/agents/responses/` chỉ được ghi bởi workstream sở hữu nhánh đó. Không sửa file của workstream khác.
 - Xung đột khi rebase: xử lý theo `conflict-protocol.md`.
 
 ## Thứ tự merge được khuyến nghị
