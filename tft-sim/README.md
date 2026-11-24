@@ -1,6 +1,6 @@
 # tft-sim
 
-Harness danh gia policy (env-agnostic) va pipeline BC cho bai toan TFT. Trang thai: **giai doan 0** (teacher da sua tren noi dung synthetic; chua co transfer test; chua co noi dung TFT that dung patch).
+Harness danh gia policy (env-agnostic) va pipeline BC cho bai toan TFT. Trang thai: giai doan 1 va 2 dong tren HeuristicResolver; giai doan 3 mo lai tren **EngineResolver** (san chinh tu nay). Chua co bang chung nao tu TFT that.
 
 Ghi chu: toy env trong `src/tft_sim/env.py` chi la test double. Ket qua tren no khong noi gi ve suc manh bot TFT.
 
@@ -22,6 +22,27 @@ Ty le dong y o day la muc loai+chi so tren hang >=2 hop le, vs random; xem muc B
 | Reroll augment (REROLL_AUGMENT) | co | co, rat hiem (n=42-58) | **co, khi co tier** (96% val n=23, closed loop 97% n=524) | 96% (co tier, it mau) | chua |
 | Dinh vi trong tran (positioning) | **mo** (chua co trong 43 action cua TFT_GOAT) | - | - | - | - |
 | Nham muc tieu item | **mo** | - | - | - | - |
+
+## Engine (EngineResolver): san chinh cho giai doan 3
+
+Engine (`tft_goat.engine.resolver`) mo phong tung tick, co ability, item, augment (Set 17 only), dinh vi theo vai tro. Khong co quyen dieu khien dinh vi cua nguoi choi. Chay ~1 lobby/giay. Set 18 khong danh gia duoc tren engine.
+
+| Phep (engine) | Seed | Hieu A-B | CI 95% |
+|---|---|---|---|
+| null: v3 vs v3 | 120000-120999 | +0,007 | [-0,10, +0,11] |
+| v3 vs scripted goc | 120000-120999 | -1,93 | [-2,03, -1,84] |
+| v3 vs hybrid | dev 100000-100399 | -0,80 | (chua ghi CI rieng) |
+| augment (registry truoc) vs v3, dev | dev | -0,77 | - |
+| augment vs v3, giu-lai | 110000-111999 | -0,814 | [-0,889, -0,740] |
+| null: v3 vs v3, giu-lai augment | 110000-111999 | -0,0005 | [-0,074, +0,073] |
+
+Ghi chu:
+- Heuristic: v3 vs hybrid -1,88 (giu-lai 60000-61999). Engine: -0,80. Muc chenh cho thay so heuristic phong dai hon engine.
+- Quy tac augment la **sua teacher trong mo phong, phan anh do phu cai dat**. `env/combat.py` chi tinh augment co trong `AUGMENT_REGISTRY` (89 augment). Augment ngoai registry khong co tac dung trong env, nen ket qua cua no la cai dat, khong phai kien thuc TFT.
+- Endgame (ap luc HP): khong phat hien o +-0,17 (endgame_dev H20/40/60).
+- Dinh vi va item: mo. Engine tu xep vi tri, EQUIP khong chon unit nhan item. Giai doan 4 can sua engine hoac env.
+- God (PICK_GOD): chua do duoc. `diag_aug.py` dem god bang `god_offer` (sai), ket qua 0 khong hop le.
+- Clone tren engine (`engine_arena.py clone`): chua co ket qua trong repo tai thoi diem nay.
 
 ## Dinh chinh (noi dung that, buoc 4)
 
@@ -291,7 +312,7 @@ co che can do them. Doi thu la bot scripted trong mo phong, khong phai TFT that.
 
 Chua viet quy tac cho BENCH_BOARD: can chan doan co che truoc (`scripts/diag_bb.py`).
 
-## Teacher v3 (hybrid + doi unit) va kiem dinh giu-lai tren seed 60000-61999
+## Teacher v3 (hybrid + doi unit) va kiem dinh giu-lai tren seed 60000-61999 (HeuristicResolver)
 
 Quy tac: hybrid + doi unit (FIELD unit banc manh nhat; khi board day, doi unit board yeu nhat lay unit banc manh hon).
 Khoa so sanh chon tren seed tinh chinh 20000-21999 (dev): value -3,48; star_cost -3,40; cost -3,13; hybrid -2,58. Dong bang "value".
@@ -339,7 +360,7 @@ Doc ket qua: doi unit lam teacher tot hon ro rang tren seed giu-lai, va null kho
 
 **Ket luan:** clone ngang teacher v3 tren Set 17 (CI chua 0) va gan ngang tren Set 18 DA-only. Tran cua clone la teacher v3; de vuot can giai doan 3 (tim kiem hoac RL).
 
-## Giai doan 3: tim kiem tham so tren v3 (dong)
+## Giai doan 3: tim kiem tham so tren v3 (dong, HeuristicResolver)
 
 **Ket qua:** CEM 4 the he, 12 ung vien moi the he, 400 lobby moi ung vien (seed dev 100000-100399). Trung binh quan the ~ +0,10 (da so kem v3); ung vien tot nhat trong +-0,03. **Chua tim thay cau hinh nao tot hon v3 o do phan giai +-0,17.** Khong chay giu-lai (seed 110000 chua dung).
 
@@ -347,7 +368,7 @@ Doc ket qua: doi unit lam teacher tot hon ro rang tren seed giu-lai, va null kho
 
 **Bien du bao placement (Spearman, 1.600 seat-game, v3 vs v3):** cap (level) 0,86; suc manh ban (board_strength) 0,77; vang 0,61; so unit 2 sao 0,40; HP ~0 (HP la ket qua, khong phai nguyen nhan).
 
-**Ket luan:** do phan giai cua tham so hoa la +-0,17 tren 400 lobby. Cap va suc manh ban du bao placement manh, nhung v3 da toi uu chung qua quy tac swap va nut kinh te. **Giai doan 3 dong: sat tran cua ho quy tac 43 hanh dong trong mo phong nay.** Muon vuot tiep can (a) mo rong khong gian hanh dong (vi tri, item), hoac (b) fork TFT_GOAT de sua mo phong.
+**Ket luan:** do phan giai cua tham so hoa la +-0,17 tren 400 lobby. Cap va suc manh ban du bao placement manh, nhung v3 da toi uu chung qua quy tac swap va nut kinh te. **Ket luan giai doan 3 tren HeuristicResolver (da cu, xem muc Engine ben duoi):** khong cau hinh tham so nao vuot v3 trong do phan giai +-0,17. Dieu nay chi dung voi tham so hoa do thi; no KHONG chung minh rang khong con cai thien nao o cap quy tac. Muc "sat tran" cua README cu la sai va da bo.
 
 ## Trang thai cong viec
 
