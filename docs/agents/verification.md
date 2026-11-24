@@ -6,9 +6,9 @@ Chạy đúng lệnh của vùng mình sửa. Khi sửa nhiều vùng, chạy t�
 
 | Vùng | Lệnh | Ghi chú |
 |---|---|---|
-| Engine, MCP, ingest (Node) | `npm test` | Trên `master` hiện là 39 test |
-| HUD OCR (Python) | `python3 scripts/test_hud_ocr.py -v` | **Có trên `codex/hud-realtime-progress` (nhánh kế thừa `codex/hud-realtime-handoff`).** Cần `TFT_SET18_ART_ZIP` để chạy đủ bộ. Thiếu biến này một số test có thể bị bỏ qua. |
-| Mô phỏng `tft-sim` | `cd tft-sim && PYTHONPATH=src python3 -m pytest -q` | **Chỉ có trên nhánh `claude/claude-fable-5-2-awwmf5`.** Thiếu `PYTHONPATH=src` sẽ lỗi thu thập (`No module named 'tft_sim'`). |
+| Engine, MCP, ingest (Node) | `npm test` | Trên `master` hiện là 182 test |
+| HUD OCR (Python) | `python3 scripts/test_hud_ocr.py -v` | **Có trên `master` (từ PR #3).** Cần `TFT_SET18_ART_ZIP` để chạy đủ bộ. Thiếu biến này một số test có thể bị bỏ qua. |
+| Mô phỏng `tft-sim` | `cd tft-sim && PYTHONPATH=src python3 -m pytest -q` | **Có trên `master` (từ PR #4).** Thiếu `PYTHONPATH=src` sẽ lỗi thu thập (`No module named 'tft_sim'`). |
 | Replay engine | `npm run bench` | Khi thay đổi logic quyết định |
 
 Trước khi báo "xong", chạy đúng các lệnh trên trong worktree sạch của nhánh. Đừng dựa vào test đã chạy từ một nhánh khác.

@@ -24,16 +24,12 @@ Bộ tài liệu này áp dụng cho mọi agent (Claude, Codex, hoặc người
 - **Đo trước khi khẳng định.** Ghi phiên bản mã, lệnh chạy, số mẫu và kết quả. Không gọi một con số là "độ chính xác" nếu chưa đối chiếu với nhãn.
 - **Khi không chắc, dừng và hỏi.** Tốt hơn là một câu hỏi thay vì một nhánh bị phá.
 
-## Thực trạng cần biết (tại thời điểm viết)
+## Thực trạng cần biết (cập nhật 2026-11-24)
 
-- `master` (`f3284c7`) có engine, MCP server, 39 test và replay tổng hợp.
-- Năm nhánh đang phát triển, chưa nhánh nào vào `master` (đã kiểm tra 2026-11-24):
-  - `claude/nifty-lovelace-252i30`: PR #1, chỉ có tài liệu.
-  - `claude/dazzling-feynman-g7a0b9`: engine. Tách từ `f3284c7`, 170 commit.
-  - `codex/hud-realtime-progress`: OCR HUD. Chứa `dazzling` đến `7f5b292` và thêm 2 commit. Không tách trực tiếp từ `master`.
-  - `codex/hud-realtime-handoff`: bàn giao cũ, nằm trong lịch sử của `progress`.
-  - `claude/claude-fable-5-2-awwmf5`: mô phỏng `tft-sim/`. Tách từ `3e09f8a`, 77 commit.
-- Kiểm tra `git merge-tree` cho từng cặp đều sạch. Chưa kiểm tra việc merge tuần tự nhiều nhánh.
-- Thông tin cũ "bảy file vùng nóng xung đột giữa codex và dazzling" đã lỗi thời: `progress` đã chứa `dazzling`.
+- `master` đã có năm nhánh tích hợp qua PR #1–#4: tài liệu, engine, OCR HUD, mô phỏng `tft-sim/`. Đầu hiện tại: `329f23d`.
+- Test trên `master`: 182 Node đạt, `tft-sim` pytest 8 đạt và 1 bỏ qua. `test_hud_ocr.py` cần `TFT_SET18_ART_ZIP` để chạy đủ bộ.
+- Roster Set 18 có chủ là `engine` (quyết định 2026-11-24). `data-contracts.md` mục 5 ghi rõ phần còn chưa xác minh.
+- Chưa có yêu cầu hay trả lời dữ liệu nào trong `requests/` và `responses/`.
+- Mã đường RAM (`probe-ram.py`, `ramSource.js`) vẫn còn trên `master`. Đây là việc của `engine`.
 
 Những thông tin này sẽ lỗi thời. Khi có thay đổi lớn, cập nhật lại mục này.

@@ -8,9 +8,9 @@ Dùng ID này để gọi nhau. Tên nhánh do phiên cấp và có thể đổi
 
 | ID | Việc | Nhánh hiện tại |
 |---|---|---|
-| `engine` | Engine, coach, MCP, ingest trạng thái | `claude/dazzling-feynman-g7a0b9` (chưa merge) |
-| `hud` | OCR HUD Set 18, chiến dịch VOD | `codex/hud-realtime-progress` (chưa merge; chứa `dazzling` đến `7f5b292`) |
-| `sim` | Mô phỏng và học chính sách `tft-sim/` | `claude/claude-fable-5-2-awwmf5` (chưa merge) |
+| `engine` | Engine, coach, MCP, ingest trạng thái | `claude/dazzling-feynman-g7a0b9` (đã merge, PR #2) |
+| `hud` | OCR HUD Set 18, chiến dịch VOD | `codex/hud-realtime-progress` (đã merge, PR #3) |
+| `sim` | Mô phỏng và học chính sách `tft-sim/` | `claude/claude-fable-5-2-awwmf5` (đã merge, PR #4) |
 | `user` | Người điều phối và máy ingest của người dùng | `master`, và máy người dùng (không có nhánh riêng) |
 
 ## 2. Cách trao đổi
