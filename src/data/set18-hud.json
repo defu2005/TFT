@@ -327,5 +327,11 @@
       "id": "DA_Taric18",
       "cost": 5
     }
+  ],
+  "shopOptions": [
+    { "name": "Fertilize", "id": "fertilize" },
+    { "name": "Forest Guide", "id": "forest_guide" },
+    { "name": "Late Bloomer", "id": "late_bloomer" },
+    { "name": "Phantom Armor", "id": "phantom_armor" }
   ]
 }

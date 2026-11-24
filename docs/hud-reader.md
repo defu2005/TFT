@@ -6,6 +6,8 @@ Khi lượt đầu nhận ra một phần HUD, bộ đọc có thể đọc lạ
 
 Bản ghi `hudSchema: 2` xác nhận HUD nếu có ít nhất hai nhóm tín hiệu trong ba nhóm vàng, cấp và cửa hàng. Cửa hàng cần ít nhất hai tên tướng nhận dạng được để làm tín hiệu. Từng trường chưa đọc được vẫn là `null`. Trong `shopSlots`, `null` cũng có thể là ô trống hoặc thẻ Wisp. `shop` trong bản ghi OCR chỉ có dữ liệu khi xác nhận đủ năm tướng.
 
+Thẻ đặc biệt đã xác nhận xuất hiện trong `shopOptions` với chỉ số ô tính từ 1, `id`, `name` và `price`. Nếu tên đã được xác nhận mà giá chưa đọc được, `price` là `null`. Các ô này để trống trong `shopSlots` để coach bỏ qua khi tính đề xuất mua tướng.
+
 Nguồn standalone nhận bản ghi từ cửa sổ thật trong vòng hai giây. Với bản ghi phiên bản 2, coach chỉ xét mua những ô đã đọc được khi đã xác nhận số vàng. `cost` là bậc tướng trong danh mục để tính xác suất. `price` là số vàng hiển thị trên thẻ để xét đủ vàng và tính lãi bị mất. Khi `price` là `null`, coach giữ tên tướng và bỏ qua đề xuất mua ô đó. Bản ghi cũ không có trường `price` dùng bậc tướng như trước. `shopUnknownSlots` liệt kê các chỉ số ô chưa xác định, tính từ 0. Khi chưa xác nhận được cấp, coach có thể xét mua các ô đã đọc và để trống xác suất gặp tướng. Đề xuất lên cấp hoặc roll cần xác nhận cả vàng lẫn cấp.
 
 ## Chạy
@@ -34,7 +36,7 @@ python scripts/hud-reader.py --video match.mp4 --interval 0.25 > hud-video.jsonl
 
 Nếu `PrintWindow` trả ảnh đen trên thiết bị chạy game, thử `npm run hud -- --capture screen`. Chế độ này chỉ đọc vùng client khi cửa sổ TFT ở foreground. Giữ vùng game không bị overlay hoặc cửa sổ khác che.
 
-Có thể dùng `--profile profile.json` để chỉnh vùng theo HUD của thiết bị. `viewport` là hình chữ nhật chứa game trên ảnh đã chụp, còn các vùng `gold`, `level` và năm vùng `shop` nằm bên trong viewport. Tọa độ có dạng `[trái, trên, phải, dưới]` và nằm trong khoảng 0–1. Ví dụ, ghi `{"viewport":[0.125,0,0.875,1]}` cho video 2560×1080 chứa game 1920×1080 ở chính giữa. Tọa độ mặc định được hiệu chỉnh trên VOD desktop Set 18 của Setsuko ở 720p và thử lại trên VOD BoxBox ở 1080p. Nếu bố cục hoặc tỉ lệ HUD thay đổi, đo lại từng vùng theo ảnh mẫu. Có thể cấu hình `level_labels` và `aliases` (tên hiển thị theo ngôn ngữ → tên trong danh mục), cùng `--language` cho Tesseract. Bản mobile cần ảnh hoặc video và profile riêng.
+Có thể dùng `--profile profile.json` để chỉnh vùng theo HUD của thiết bị. `viewport` là hình chữ nhật chứa game trên ảnh đã chụp, còn các vùng `gold`, `level` và năm vùng `shop` nằm bên trong viewport. Tọa độ có dạng `[trái, trên, phải, dưới]` và nằm trong khoảng 0–1. Ví dụ, ghi `{"viewport":[0.125,0,0.875,1]}` cho video 2560×1080 chứa game 1920×1080 ở chính giữa. Vùng cấp và giá mặc định được mở rộng phía trên dựa trên các VOD Set 18 ở 720p và 1080p. Nếu bố cục hoặc tỉ lệ HUD thay đổi, đo lại từng vùng theo ảnh mẫu. Hồ sơ `scripts/hud-campaign/dishsoap-2906219397-720p.json` là ví dụ cho bố cục có HUD dịch ngang. Có thể cấu hình `level_labels` và `aliases` (tên hiển thị theo ngôn ngữ → tên trong danh mục), cùng `--language` cho Tesseract. Bản mobile cần ảnh hoặc video và profile riêng.
 
 Năm vùng `shop_price` bao quanh số giá ở bên phải mỗi thẻ. Khi chỉnh tọa độ `shop`, hãy khai báo cả `shop_price` để bộ đọc dùng đúng bố cục. `shop_price: null` tắt đọc giá cho bố cục đó.
 

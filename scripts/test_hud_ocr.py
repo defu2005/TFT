@@ -83,6 +83,20 @@ class HudParsingTests(unittest.TestCase):
             self.assertIsNone(reader.retry_gold(region, ("J", 44)))
             self.assertEqual(reader.retry_gold(region, ("J", 44), corroborated=True), 1)
 
+    def test_gold_retry_uses_level_recovered_during_the_same_frame(self):
+        reader = HudReader()
+        self.addCleanup(reader.close)
+        image = Image.new("RGB", (1280, 720), "#14212b")
+        rows = [("S", 26), ("Lvl. 8", 40), ("Karma", 95), ("Varus", 94),
+                ("Ornn", 96), ("", 0), ("", 0), ("Lvl. 8", 0)]
+        level_readings = [("Lvl. 8", 78)] * 3
+        with patch.object(reader, "recognize", side_effect=[rows, level_readings]), \
+                patch.object(reader, "retry_gold", side_effect=[None, 5]) as retry:
+            result = reader.read(image)
+        self.assertEqual((result["gold"], result["level"]), (5, 8))
+        self.assertFalse(retry.call_args_list[0].args[2])
+        self.assertTrue(retry.call_args_list[1].kwargs["corroborated"])
+
     def test_price_uses_digit_width_and_resolves_conflicting_masks(self):
         reader = HudReader()
         self.assertEqual(reader.accept_price([("3", 96), ("3", 95), ("4", 83)], False, 75), 3)
@@ -113,6 +127,34 @@ class HudParsingTests(unittest.TestCase):
         self.assertIsNone(reader.accept_price([("3", 97), ("4", 95)], False, 85, minimum_votes=2))
         self.assertEqual(reader.accept_price([("3", 97), ("3", 95)], False, 85, minimum_votes=2), 3)
 
+    def test_price_rejects_a_glyph_cut_off_by_the_crop(self):
+        reader = HudReader()
+        self.addCleanup(reader.close)
+        price = Image.new("RGB", (21, 12), "#14212b")
+        ImageDraw.Draw(price).rectangle((14, 2, 17, 9), fill="white")
+        clipped = price.crop((0, 0, 21, 9))
+        with patch.object(reader, "cached_prices",
+                          side_effect=lambda groups, retry=False: [3 if tiles else None for tiles, _ in groups]):
+            self.assertEqual(reader.read_prices([price, clipped]), [3, None])
+
+    def test_shop_option_requires_matching_title_and_retries_its_own_price(self):
+        reader = HudReader()
+        self.addCleanup(reader.close)
+        image = Image.new("RGB", (200, 40), "#14212b")
+        ImageDraw.Draw(image).rectangle((5, 7, 35, 21), fill="white")
+        boxes = [None, None, (0, 0, 152, 30), None, None, None, None, (153, 8, 183, 23)]
+        rows = [("6", 97), ("Lvl. 5", 95), ("Phantom Armor", 96)]
+        slots = [None] * 5
+        prices = [None] * 5
+        with patch.object(reader, "recognize", return_value=[("Phantom Armor", 95), ("Fertilize", 95)]):
+            self.assertEqual(reader.read_shop_options(image, boxes, rows, slots, prices), {})
+        with patch.object(reader, "recognize", return_value=[("Phantom Armor.", 42), ("Phantom Armor", 95)]), \
+                patch.object(reader, "read_prices", return_value=[2]) as read_prices:
+            self.assertEqual(reader.read_shop_options(image, boxes, rows, slots, prices),
+                             {1: {"id": "phantom_armor", "name": "Phantom Armor", "price": 2}})
+        self.assertEqual(read_prices.call_args.args[0][0].size, (30, 17))
+        self.assertIsNone(slots[0])
+
     def test_native_price_reads_only_unresolved_masks_after_the_first_batch(self):
         reader = HudReader()
         self.addCleanup(reader.close)
@@ -125,23 +167,45 @@ class HudParsingTests(unittest.TestCase):
             self.assertEqual(reader.cached_prices(groups), [3, 5])
         self.assertEqual([call.args[1] for call in recognize.call_args_list], [4, 1])
 
-    def test_highlighted_title_retry_confirms_the_original_name(self):
+    def test_title_retry_confirms_the_name_with_a_highlight_or_cursor(self):
+        reader = HudReader()
+        self.addCleanup(reader.close)
+        cases = [("Xayah _", "Xayah", "xayah", (145, 28, 151, 29)),
+                 ("Kog'Maw S", "Kog'Maw", "kogmaw", (130, 0, 147, 23))]
+        for text, title, name, artifact in cases:
+            with self.subTest(text=text):
+                tile = Image.new("RGB", (152, 30), "#202b32")
+                draw = ImageDraw.Draw(tile)
+                draw.rectangle((15, 5, 25, 21), fill="white")
+                draw.rectangle(artifact, fill="white")
+                slots = [None] * 5
+                rows = [("6", 97), ("Lvl. 5", 95), (text, 0)]
+                boxes = [None, None, (0, 0, *tile.size)]
+                prices = [1, None, None, None, None]
+                with patch.object(reader, "recognize", return_value=[("Yorick", 97), ("Yorick", 95)]):
+                    reader.retry_visible_shop(tile, boxes, rows, slots, prices)
+                self.assertIsNone(slots[0])
+                with patch.object(reader, "recognize", return_value=[(title, 97), (title, 95)]):
+                    reader.retry_visible_shop(tile, boxes, rows, slots, prices)
+                self.assertEqual(slots[0], reader.roster[name])
+
+    def test_uncertain_title_needs_three_matching_names_at_lower_confidence(self):
         reader = HudReader()
         self.addCleanup(reader.close)
         tile = Image.new("RGB", (152, 30), "#202b32")
-        draw = ImageDraw.Draw(tile)
-        draw.rectangle((15, 5, 25, 21), fill="white")
-        draw.rectangle((145, 28, 151, 29), fill="white")
-        slots = [None] * 5
-        rows = [("6", 97), ("Lvl. 5", 95), ("Xayah _", 0)]
+        ImageDraw.Draw(tile).rectangle((15, 5, 25, 21), fill="white")
         boxes = [None, None, (0, 0, *tile.size)]
-        prices = [1, None, None, None, None]
-        with patch.object(reader, "recognize", return_value=[("Yorick", 97), ("Yorick", 95)]):
+        slots = [None] * 5
+        prices = [3, None, None, None, None]
+        rows = [("2", 97), ("Lvl. 8", 95), ("Kha‘Zix", 35)]
+        with patch.object(reader, "recognize", return_value=[("Yorick", 84), ("Yorick", 86)]):
             reader.retry_visible_shop(tile, boxes, rows, slots, prices)
         self.assertIsNone(slots[0])
-        with patch.object(reader, "recognize", return_value=[("Xayah", 97), ("Xayah", 95)]):
+        lower = [("Kha'Zix", 78), ("Kha'Zix", 75)]
+        confirmed = [("Kha'Zix", 84), ("Kha'Zix", 86)]
+        with patch.object(reader, "recognize", side_effect=[lower, confirmed]):
             reader.retry_visible_shop(tile, boxes, rows, slots, prices)
-        self.assertEqual(slots[0], reader.roster["xayah"])
+        self.assertEqual(slots[0], reader.roster["khazix"])
 
     def test_pale_coin_is_shorter_than_a_leading_price_digit(self):
         price = Image.new("RGB", (21, 10), "#14212b")
@@ -232,6 +296,22 @@ class HudImageTests(unittest.TestCase):
             self.check_hud(wide_reader.read(wide), 50, 8, SHOP_A)
             bounds, boxes = wide_reader.video_crops(wide.size)
             self.assertEqual(wide_reader.read_crops(wide.crop(bounds), boxes), wide_reader.read(wide))
+
+    def test_default_regions_include_level_and_prices_positioned_higher(self):
+        image = self.render(12, 5, SHOP_A, "#405c36", 870)
+        draw = ImageDraw.Draw(image)
+        draw.rectangle((235, 874, 320, 925), fill="#101c2b")
+        level_font = ImageFont.truetype("DejaVuSans-Bold.ttf", 19)
+        price_font = ImageFont.truetype("DejaVuSans-Bold.ttf", 16)
+        draw.text((266, 890), "Lvl. 5", font=level_font, anchor="mm", fill="white")
+        for index, price in enumerate((1, 2, 3, 4, 5)):
+            draw.text((627 + round(index * 202.5), 1058), str(price),
+                      font=price_font, anchor="mm", fill="#fff3de")
+        for size in ((1920, 1080), (1280, 720), (960, 540)):
+            with self.subTest(size=size):
+                result = self.reader.read(image.resize(size, Image.Resampling.LANCZOS))
+                self.check_hud(result, 12, 5, SHOP_A)
+                self.assertEqual([slot["price"] for slot in result["shopSlots"]], [1, 2, 3, 4, 5])
 
     def test_native_session_keeps_text_and_digits_separate(self):
         if self.reader.native is None:

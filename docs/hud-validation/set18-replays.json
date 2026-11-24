@@ -1,0 +1,3847 @@
+{
+  "clearHudDefaultRegions": {
+    "before": {
+      "gold.seen": 413,
+      "level.seen": 413,
+      "level.missing": 336,
+      "id.seen": 2065,
+      "price.seen": 1836,
+      "price.missing": 1091,
+      "seen": 413,
+      "exact": 64,
+      "level.wrong": 6,
+      "gold.missing": 26,
+      "id.missing": 147,
+      "price.wrong": 3,
+      "gold.wrong": 1
+    },
+    "after": {
+      "gold.seen": 413,
+      "level.seen": 413,
+      "level.missing": 18,
+      "id.seen": 2065,
+      "price.seen": 1836,
+      "seen": 413,
+      "exact": 389,
+      "price.missing": 4,
+      "id.missing": 2,
+      "gold.missing": 3
+    },
+    "corpora": {
+      "clean-720p-2920305475": {
+        "labelsSha256": "6ff859f47c599b8a0f95de3ce9ef745cd001bd3c027bd80503d9cfbba2e1a57b",
+        "before": {
+          "gold.seen": 33,
+          "level.seen": 33,
+          "level.missing": 32,
+          "id.seen": 165,
+          "price.seen": 139,
+          "price.missing": 86,
+          "seen": 33,
+          "exact": 0,
+          "level.wrong": 1
+        },
+        "after": {
+          "gold.seen": 33,
+          "level.seen": 33,
+          "level.missing": 5,
+          "id.seen": 165,
+          "price.seen": 139,
+          "seen": 33,
+          "exact": 26,
+          "price.missing": 2
+        }
+      },
+      "clear-720p-2918556483": {
+        "labelsSha256": "c624cc573ef45c0ca7a4e75b0bb0d3027526df0cdc583245db1886d288985bfc",
+        "before": {
+          "gold.seen": 15,
+          "level.seen": 15,
+          "level.missing": 15,
+          "id.seen": 75,
+          "price.seen": 75,
+          "price.missing": 75,
+          "seen": 15,
+          "exact": 0,
+          "gold.missing": 4,
+          "id.missing": 20
+        },
+        "after": {
+          "gold.seen": 15,
+          "level.seen": 15,
+          "id.seen": 75,
+          "price.seen": 75,
+          "seen": 15,
+          "exact": 15
+        }
+      },
+      "scaled-1080/independent-2919423875": {
+        "labelsSha256": "8de71e2ca26d1257229db5c4238604ff39d811afa2e78c1a3770c11fb40aeae8",
+        "before": {
+          "gold.seen": 9,
+          "level.seen": 9,
+          "level.missing": 9,
+          "id.seen": 45,
+          "price.seen": 40,
+          "price.missing": 35,
+          "seen": 9,
+          "exact": 0
+        },
+        "after": {
+          "gold.seen": 9,
+          "level.seen": 9,
+          "id.seen": 45,
+          "price.seen": 40,
+          "seen": 9,
+          "exact": 9
+        }
+      },
+      "holdout-1080-2923262621/dense": {
+        "labelsSha256": "65ea8ef985cbd0feb9ab75ac4a9d18f9a0689eb429273c6b425b17c8b4a8c873",
+        "before": {
+          "gold.seen": 72,
+          "level.seen": 72,
+          "level.missing": 72,
+          "id.seen": 360,
+          "price.seen": 316,
+          "price.missing": 273,
+          "seen": 72,
+          "exact": 0,
+          "gold.missing": 19,
+          "id.missing": 95,
+          "price.wrong": 1
+        },
+        "after": {
+          "gold.seen": 72,
+          "level.seen": 72,
+          "id.seen": 360,
+          "price.seen": 316,
+          "seen": 72,
+          "exact": 72
+        }
+      },
+      "holdout-1080-2923262621/dense-transitions": {
+        "labelsSha256": "c4628ac1fe08ba6b127a550a197e60883bf4a80d63dec1f5bc0fd51899e8434e",
+        "before": {
+          "gold.seen": 76,
+          "level.seen": 76,
+          "level.missing": 66,
+          "id.seen": 380,
+          "price.seen": 351,
+          "price.missing": 271,
+          "seen": 76,
+          "exact": 0,
+          "level.wrong": 5,
+          "price.wrong": 1,
+          "id.missing": 14
+        },
+        "after": {
+          "gold.seen": 76,
+          "level.seen": 76,
+          "id.seen": 380,
+          "price.seen": 351,
+          "seen": 76,
+          "exact": 75,
+          "id.missing": 1,
+          "price.missing": 1
+        }
+      },
+      "late-frame-audit": {
+        "labelsSha256": "2a3f06fe9063f96f8666671821e90eef9168040f76e6539d9b36b2edf516601c",
+        "before": {
+          "gold.seen": 5,
+          "level.seen": 5,
+          "level.missing": 5,
+          "id.seen": 25,
+          "price.seen": 24,
+          "price.missing": 22,
+          "seen": 5,
+          "exact": 0
+        },
+        "after": {
+          "gold.seen": 5,
+          "level.seen": 5,
+          "id.seen": 25,
+          "price.seen": 24,
+          "seen": 5,
+          "exact": 5
+        }
+      },
+      "new-source-hls": {
+        "labelsSha256": "5b61f2106b28fc6138fe9ff48da54901c3921ffc11146b93bc5d5e5f460e0cc7",
+        "before": {
+          "gold.seen": 154,
+          "level.seen": 154,
+          "level.missing": 89,
+          "id.seen": 770,
+          "price.seen": 700,
+          "price.missing": 202,
+          "seen": 154,
+          "exact": 64,
+          "gold.wrong": 1
+        },
+        "after": {
+          "gold.seen": 154,
+          "level.seen": 154,
+          "id.seen": 770,
+          "price.seen": 700,
+          "seen": 154,
+          "exact": 143,
+          "level.missing": 11
+        }
+      },
+      "independent-k3soju-2910735765": {
+        "labelsSha256": "116c2038ecf449def7c17ebc2b9d162241a50e7dc6f6754b7e0d2c96f5574791",
+        "before": {
+          "gold.seen": 17,
+          "level.seen": 17,
+          "level.missing": 17,
+          "id.seen": 85,
+          "price.seen": 77,
+          "price.missing": 49,
+          "seen": 17,
+          "exact": 0,
+          "price.wrong": 1,
+          "gold.missing": 3,
+          "id.missing": 15
+        },
+        "after": {
+          "gold.seen": 17,
+          "level.seen": 17,
+          "id.seen": 85,
+          "price.seen": 77,
+          "seen": 17,
+          "exact": 14,
+          "gold.missing": 3
+        }
+      },
+      "independent-robin-2912449718": {
+        "labelsSha256": "a4c8b6aeb70657604836c3cf6783cda33d0d2215fa6dcb585b996af107ac1836",
+        "before": {
+          "gold.seen": 32,
+          "level.seen": 32,
+          "level.missing": 31,
+          "id.seen": 160,
+          "price.seen": 114,
+          "price.missing": 78,
+          "seen": 32,
+          "exact": 0,
+          "id.missing": 3
+        },
+        "after": {
+          "gold.seen": 32,
+          "level.seen": 32,
+          "id.seen": 160,
+          "price.seen": 114,
+          "seen": 32,
+          "exact": 30,
+          "level.missing": 2,
+          "id.missing": 1,
+          "price.missing": 1
+        }
+      }
+    }
+  },
+  "current720pReplay": {
+    "summary": {
+      "independent-dishsoap-2906219397": {
+        "totals": {
+          "scheduled": 72,
+          "processed": 72,
+          "dropped": 0,
+          "warmLate": 1,
+          "compared": 17,
+          "exact": 17,
+          "exactWithin250ms": 17
+        },
+        "warmP95Ms": 117.98,
+        "coldLatencyMs": [
+          1069.9,
+          611.18
+        ],
+        "warmLateMs": [
+          292.75
+        ],
+        "report": "report-dishsoap-720p-verified.json",
+        "otherLabeledHud": [
+          {
+            "clip": "woods",
+            "frame": 2,
+            "cohort": "hiddenHud",
+            "output": {
+              "hudDetected": false,
+              "gold": null,
+              "level": null,
+              "shopSlots": [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "deadlineMissed": false
+            }
+          }
+        ]
+      },
+      "independent-dishsoap-2901713662": {
+        "totals": {
+          "scheduled": 72,
+          "processed": 72,
+          "dropped": 0,
+          "warmLate": 0,
+          "compared": 14,
+          "exact": 14,
+          "exactWithin250ms": 14
+        },
+        "warmP95Ms": 71.61,
+        "coldLatencyMs": [
+          911.83,
+          424.41
+        ],
+        "warmLateMs": [],
+        "report": "report-dishsoap-transfer-720p.json",
+        "otherLabeledHud": [
+          {
+            "clip": "early",
+            "frame": 2,
+            "cohort": "hiddenHud",
+            "output": {
+              "hudDetected": false,
+              "gold": null,
+              "level": null,
+              "shopSlots": [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "deadlineMissed": false
+            }
+          },
+          {
+            "clip": "early",
+            "frame": 6,
+            "cohort": "hiddenHud",
+            "output": {
+              "hudDetected": false,
+              "gold": null,
+              "level": null,
+              "shopSlots": [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "deadlineMissed": false
+            }
+          },
+          {
+            "clip": "early",
+            "frame": 34,
+            "cohort": "hiddenHud",
+            "output": {
+              "hudDetected": false,
+              "gold": null,
+              "level": null,
+              "shopSlots": [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "deadlineMissed": false
+            }
+          },
+          {
+            "clip": "late",
+            "frame": 2,
+            "cohort": "shopHidden",
+            "output": {
+              "hudDetected": true,
+              "gold": 48,
+              "level": 6,
+              "shopSlots": [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "deadlineMissed": false
+            }
+          }
+        ]
+      },
+      "independent-frodan-2913998942": {
+        "totals": {
+          "scheduled": 72,
+          "processed": 72,
+          "dropped": 0,
+          "warmLate": 1,
+          "compared": 18,
+          "exact": 18,
+          "exactWithin250ms": 18
+        },
+        "warmP95Ms": 180.67,
+        "coldLatencyMs": [
+          1099.92,
+          860.96
+        ],
+        "warmLateMs": [
+          282.12
+        ],
+        "report": "report-frodan-720p.json",
+        "otherLabeledHud": []
+      },
+      "overall": {
+        "totals": {
+          "scheduled": 216,
+          "processed": 216,
+          "dropped": 0,
+          "warmLate": 2,
+          "compared": 49,
+          "exact": 49,
+          "exactWithin250ms": 49
+        },
+        "warmP95Ms": 145.34,
+        "coldLatencyMinMs": 424.41,
+        "coldLatencyMaxMs": 1099.92,
+        "warmCount": 210
+      }
+    },
+    "sources": {
+      "independent-dishsoap-2906219397": {
+        "scope": "Production OCR and current catalog with fixed-range benchmark driver; original source MP4 at 4 Hz.",
+        "pinnedSha256": {
+          "scripts/hud-reader.py": "9c2831f43aed91aef78268da0d518625e49fd086035ff1dc015537ad965942f5",
+          "scripts/hud_ocr.py": "b7b08ff522cf727e1cfd21e01287a593ea89f408e019150c4248fe7af1f86e51",
+          "scripts/hud_tesseract.py": "bcec9e4de7d198d7c39a524f50f5151e83281304a5fad7f90281458ccdf22ded",
+          "src/data/set18-hud.json": "e54046e9afaeb77853c9240320eae9bef4afcb47c2bd64d69ae13d9970779851"
+        },
+        "source": "https://www.twitch.tv/videos/2906219397",
+        "resolution": [
+          1280,
+          720
+        ],
+        "referenceSha256": "488aecfa54ad678ca45d3f2577263a8cb4119b8f9e18b77dd3bfc3ec16b48e89",
+        "profile": "scripts/hud-campaign/dishsoap-2906219397-720p.json",
+        "clips": {
+          "woods": {
+            "metrics": {
+              "scheduled": 36,
+              "processed": 36,
+              "dropped": 0,
+              "warmLate": 0
+            },
+            "score": {
+              "expected": 8,
+              "lastLogFrame": 35,
+              "frames": {
+                "compared": 8,
+                "dropped": 0,
+                "late": 0,
+                "exact": 8,
+                "exactWithin250ms": 8
+              },
+              "fields": {
+                "hud": {
+                  "correct": 8
+                },
+                "gold": {
+                  "correct": 8
+                },
+                "level": {
+                  "correct": 8
+                },
+                "championName": {
+                  "correct": 30
+                },
+                "championPrice": {
+                  "correct": 30
+                },
+                "empty": {
+                  "correct": 10
+                }
+              },
+              "details": [
+                {
+                  "frame": 6,
+                  "mediaTimeMs": 1500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 10,
+                  "mediaTimeMs": 2500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 14,
+                  "mediaTimeMs": 3500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 18,
+                  "mediaTimeMs": 4500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 22,
+                  "mediaTimeMs": 5500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 26,
+                  "mediaTimeMs": 6500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 30,
+                  "mediaTimeMs": 7500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 34,
+                  "mediaTimeMs": 8500,
+                  "late": false,
+                  "errors": []
+                }
+              ]
+            },
+            "warmP95Ms": 52.99,
+            "cpuStart": 0.857,
+            "cpuEnd": 0.857,
+            "log": "independent-dishsoap-2906219397-woods-verified.jsonl.gz",
+            "sourceStartSec": 597,
+            "labeledFrames": [
+              {
+                "frame": 2,
+                "mediaTimeMs": 500,
+                "vodTimeMs": 597500,
+                "cohort": "hiddenHud",
+                "hudVisible": false,
+                "gold": null,
+                "level": null,
+                "slots": [
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  }
+                ]
+              },
+              {
+                "frame": 6,
+                "mediaTimeMs": 1500,
+                "vodTimeMs": 598500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 2,
+                "level": 3,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Rakan",
+                    "name": "Rakan",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_gromp",
+                    "name": "Gromp",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Rakan",
+                    "name": "Rakan",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Rakan",
+                    "name": "Rakan",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 10,
+                "mediaTimeMs": 2500,
+                "vodTimeMs": 599500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 2,
+                "level": 3,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Rakan",
+                    "name": "Rakan",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_gromp",
+                    "name": "Gromp",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Rakan",
+                    "name": "Rakan",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Rakan",
+                    "name": "Rakan",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 14,
+                "mediaTimeMs": 3500,
+                "vodTimeMs": 600500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 2,
+                "level": 3,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Rakan",
+                    "name": "Rakan",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_gromp",
+                    "name": "Gromp",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Rakan",
+                    "name": "Rakan",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Rakan",
+                    "name": "Rakan",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 18,
+                "mediaTimeMs": 4500,
+                "vodTimeMs": 601500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 0,
+                "level": 3,
+                "slots": [
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_gromp",
+                    "name": "Gromp",
+                    "price": 2
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Rakan",
+                    "name": "Rakan",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 22,
+                "mediaTimeMs": 5500,
+                "vodTimeMs": 602500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 0,
+                "level": 3,
+                "slots": [
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_gromp",
+                    "name": "Gromp",
+                    "price": 2
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Rakan",
+                    "name": "Rakan",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 26,
+                "mediaTimeMs": 6500,
+                "vodTimeMs": 603500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 0,
+                "level": 3,
+                "slots": [
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_gromp",
+                    "name": "Gromp",
+                    "price": 2
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Rakan",
+                    "name": "Rakan",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 30,
+                "mediaTimeMs": 7500,
+                "vodTimeMs": 604500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 0,
+                "level": 3,
+                "slots": [
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_gromp",
+                    "name": "Gromp",
+                    "price": 2
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Rakan",
+                    "name": "Rakan",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 34,
+                "mediaTimeMs": 8500,
+                "vodTimeMs": 605500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 0,
+                "level": 3,
+                "slots": [
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_gromp",
+                    "name": "Gromp",
+                    "price": 2
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Rakan",
+                    "name": "Rakan",
+                    "price": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "blue": {
+            "metrics": {
+              "scheduled": 36,
+              "processed": 36,
+              "dropped": 0,
+              "warmLate": 1
+            },
+            "score": {
+              "expected": 9,
+              "lastLogFrame": 35,
+              "frames": {
+                "compared": 9,
+                "dropped": 0,
+                "late": 0,
+                "exact": 9,
+                "exactWithin250ms": 9
+              },
+              "fields": {
+                "hud": {
+                  "correct": 9
+                },
+                "gold": {
+                  "correct": 9
+                },
+                "level": {
+                  "correct": 9
+                },
+                "championName": {
+                  "correct": 45
+                },
+                "championPrice": {
+                  "correct": 45
+                }
+              },
+              "details": [
+                {
+                  "frame": 2,
+                  "mediaTimeMs": 500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 6,
+                  "mediaTimeMs": 1500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 10,
+                  "mediaTimeMs": 2500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 14,
+                  "mediaTimeMs": 3500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 18,
+                  "mediaTimeMs": 4500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 22,
+                  "mediaTimeMs": 5500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 26,
+                  "mediaTimeMs": 6500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 30,
+                  "mediaTimeMs": 7500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 34,
+                  "mediaTimeMs": 8500,
+                  "late": false,
+                  "errors": []
+                }
+              ]
+            },
+            "warmP95Ms": 171.92,
+            "cpuStart": 0.857,
+            "cpuEnd": 0.861,
+            "log": "independent-dishsoap-2906219397-blue-verified.jsonl.gz",
+            "sourceStartSec": 1917,
+            "labeledFrames": [
+              {
+                "frame": 2,
+                "mediaTimeMs": 500,
+                "vodTimeMs": 1917500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 3,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_KhaZix",
+                    "name": "Kha'Zix",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Kayle",
+                    "name": "Kayle",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 6,
+                "mediaTimeMs": 1500,
+                "vodTimeMs": 1918500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 3,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_KhaZix",
+                    "name": "Kha'Zix",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Kayle",
+                    "name": "Kayle",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 10,
+                "mediaTimeMs": 2500,
+                "vodTimeMs": 1919500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 3,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_KhaZix",
+                    "name": "Kha'Zix",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Kayle",
+                    "name": "Kayle",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 14,
+                "mediaTimeMs": 3500,
+                "vodTimeMs": 1920500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 3,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_KhaZix",
+                    "name": "Kha'Zix",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Kayle",
+                    "name": "Kayle",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 18,
+                "mediaTimeMs": 4500,
+                "vodTimeMs": 1921500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 3,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_KhaZix",
+                    "name": "Kha'Zix",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Kayle",
+                    "name": "Kayle",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 22,
+                "mediaTimeMs": 5500,
+                "vodTimeMs": 1922500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 3,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_KhaZix",
+                    "name": "Kha'Zix",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Kayle",
+                    "name": "Kayle",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 26,
+                "mediaTimeMs": 6500,
+                "vodTimeMs": 1923500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 3,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_KhaZix",
+                    "name": "Kha'Zix",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Kayle",
+                    "name": "Kayle",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 30,
+                "mediaTimeMs": 7500,
+                "vodTimeMs": 1924500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 3,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_KhaZix",
+                    "name": "Kha'Zix",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Kayle",
+                    "name": "Kayle",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 34,
+                "mediaTimeMs": 8500,
+                "vodTimeMs": 1925500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 3,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_KhaZix",
+                    "name": "Kha'Zix",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Kayle",
+                    "name": "Kayle",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yunara",
+                    "name": "Yunara",
+                    "price": 2
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "totals": {
+          "scheduled": 72,
+          "processed": 72,
+          "dropped": 0,
+          "warmLate": 1,
+          "compared": 17,
+          "exact": 17,
+          "exactWithin250ms": 17
+        }
+      },
+      "independent-dishsoap-2901713662": {
+        "scope": "Production OCR and current catalog with fixed-range benchmark driver; original source MP4 at 4 Hz.",
+        "pinnedSha256": {
+          "scripts/hud-reader.py": "9c2831f43aed91aef78268da0d518625e49fd086035ff1dc015537ad965942f5",
+          "scripts/hud_ocr.py": "b7b08ff522cf727e1cfd21e01287a593ea89f408e019150c4248fe7af1f86e51",
+          "scripts/hud_tesseract.py": "bcec9e4de7d198d7c39a524f50f5151e83281304a5fad7f90281458ccdf22ded",
+          "src/data/set18-hud.json": "e54046e9afaeb77853c9240320eae9bef4afcb47c2bd64d69ae13d9970779851"
+        },
+        "source": "https://www.twitch.tv/videos/2901713662",
+        "resolution": [
+          1280,
+          720
+        ],
+        "referenceSha256": "21d47fe3088b5bcac4de45f6c693e00bd543e17f1e8e5849e3eaa3572fbea251",
+        "profile": "scripts/hud-campaign/dishsoap-2906219397-720p.json",
+        "clips": {
+          "early": {
+            "metrics": {
+              "scheduled": 36,
+              "processed": 36,
+              "dropped": 0,
+              "warmLate": 0
+            },
+            "score": {
+              "expected": 6,
+              "lastLogFrame": 35,
+              "frames": {
+                "compared": 6,
+                "dropped": 0,
+                "late": 0,
+                "exact": 6,
+                "exactWithin250ms": 6
+              },
+              "fields": {
+                "hud": {
+                  "correct": 6
+                },
+                "gold": {
+                  "correct": 6
+                },
+                "level": {
+                  "correct": 6
+                },
+                "championName": {
+                  "correct": 30
+                },
+                "championPrice": {
+                  "correct": 30
+                }
+              },
+              "details": [
+                {
+                  "frame": 10,
+                  "mediaTimeMs": 2500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 14,
+                  "mediaTimeMs": 3500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 18,
+                  "mediaTimeMs": 4500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 22,
+                  "mediaTimeMs": 5500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 26,
+                  "mediaTimeMs": 6500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 30,
+                  "mediaTimeMs": 7500,
+                  "late": false,
+                  "errors": []
+                }
+              ]
+            },
+            "warmP95Ms": 122.58,
+            "cpuStart": 0.857,
+            "cpuEnd": 0.857,
+            "log": "independent-dishsoap-2901713662-early.jsonl.gz",
+            "sourceStartSec": 1017,
+            "labeledFrames": [
+              {
+                "frame": 2,
+                "mediaTimeMs": 500,
+                "vodTimeMs": 1017500,
+                "cohort": "hiddenHud",
+                "hudVisible": false,
+                "gold": null,
+                "level": null,
+                "slots": [
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  }
+                ]
+              },
+              {
+                "frame": 6,
+                "mediaTimeMs": 1500,
+                "vodTimeMs": 1018500,
+                "cohort": "hiddenHud",
+                "hudVisible": false,
+                "gold": null,
+                "level": null,
+                "slots": [
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  }
+                ]
+              },
+              {
+                "frame": 10,
+                "mediaTimeMs": 2500,
+                "vodTimeMs": 1019500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 30,
+                "level": 4,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_akali",
+                    "name": "Akali",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Warwick",
+                    "name": "Warwick",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_teemo",
+                    "name": "Teemo",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Warwick",
+                    "name": "Warwick",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_Scuttlecrab18",
+                    "name": "Scuttlecrab",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 14,
+                "mediaTimeMs": 3500,
+                "vodTimeMs": 1020500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 30,
+                "level": 4,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_akali",
+                    "name": "Akali",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Warwick",
+                    "name": "Warwick",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_teemo",
+                    "name": "Teemo",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Warwick",
+                    "name": "Warwick",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_Scuttlecrab18",
+                    "name": "Scuttlecrab",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 18,
+                "mediaTimeMs": 4500,
+                "vodTimeMs": 1021500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 30,
+                "level": 4,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_akali",
+                    "name": "Akali",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Warwick",
+                    "name": "Warwick",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_teemo",
+                    "name": "Teemo",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Warwick",
+                    "name": "Warwick",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_Scuttlecrab18",
+                    "name": "Scuttlecrab",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 22,
+                "mediaTimeMs": 5500,
+                "vodTimeMs": 1022500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 30,
+                "level": 4,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_akali",
+                    "name": "Akali",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Warwick",
+                    "name": "Warwick",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_teemo",
+                    "name": "Teemo",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Warwick",
+                    "name": "Warwick",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_Scuttlecrab18",
+                    "name": "Scuttlecrab",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 26,
+                "mediaTimeMs": 6500,
+                "vodTimeMs": 1023500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 30,
+                "level": 4,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_akali",
+                    "name": "Akali",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Warwick",
+                    "name": "Warwick",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_teemo",
+                    "name": "Teemo",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Warwick",
+                    "name": "Warwick",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_Scuttlecrab18",
+                    "name": "Scuttlecrab",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 30,
+                "mediaTimeMs": 7500,
+                "vodTimeMs": 1024500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 30,
+                "level": 4,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_akali",
+                    "name": "Akali",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Warwick",
+                    "name": "Warwick",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_teemo",
+                    "name": "Teemo",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Warwick",
+                    "name": "Warwick",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_Scuttlecrab18",
+                    "name": "Scuttlecrab",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 34,
+                "mediaTimeMs": 8500,
+                "vodTimeMs": 1025500,
+                "cohort": "hiddenHud",
+                "hudVisible": false,
+                "gold": null,
+                "level": null,
+                "slots": [
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  }
+                ]
+              }
+            ]
+          },
+          "late": {
+            "metrics": {
+              "scheduled": 36,
+              "processed": 36,
+              "dropped": 0,
+              "warmLate": 0
+            },
+            "score": {
+              "expected": 8,
+              "lastLogFrame": 35,
+              "frames": {
+                "compared": 8,
+                "dropped": 0,
+                "late": 0,
+                "exact": 8,
+                "exactWithin250ms": 8
+              },
+              "fields": {
+                "hud": {
+                  "correct": 8
+                },
+                "gold": {
+                  "correct": 8
+                },
+                "level": {
+                  "correct": 8
+                },
+                "championName": {
+                  "correct": 32
+                },
+                "championPrice": {
+                  "correct": 32
+                },
+                "empty": {
+                  "correct": 8
+                }
+              },
+              "details": [
+                {
+                  "frame": 6,
+                  "mediaTimeMs": 1500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 10,
+                  "mediaTimeMs": 2500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 14,
+                  "mediaTimeMs": 3500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 18,
+                  "mediaTimeMs": 4500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 22,
+                  "mediaTimeMs": 5500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 26,
+                  "mediaTimeMs": 6500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 30,
+                  "mediaTimeMs": 7500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 34,
+                  "mediaTimeMs": 8500,
+                  "late": false,
+                  "errors": []
+                }
+              ]
+            },
+            "warmP95Ms": 46.05,
+            "cpuStart": 0.857,
+            "cpuEnd": 0.861,
+            "log": "independent-dishsoap-2901713662-late.jsonl.gz",
+            "sourceStartSec": 1737,
+            "labeledFrames": [
+              {
+                "frame": 2,
+                "mediaTimeMs": 500,
+                "vodTimeMs": 1737500,
+                "cohort": "shopHidden",
+                "hudVisible": true,
+                "gold": 48,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  },
+                  {
+                    "state": "hiddenSlot"
+                  }
+                ]
+              },
+              {
+                "frame": 6,
+                "mediaTimeMs": 1500,
+                "vodTimeMs": 1738500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 48,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yorick",
+                    "name": "Yorick",
+                    "price": 1
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_mamabeak",
+                    "name": "Mama Beak",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_leona",
+                    "name": "Leona",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 10,
+                "mediaTimeMs": 2500,
+                "vodTimeMs": 1739500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 48,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yorick",
+                    "name": "Yorick",
+                    "price": 1
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_mamabeak",
+                    "name": "Mama Beak",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_leona",
+                    "name": "Leona",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 14,
+                "mediaTimeMs": 3500,
+                "vodTimeMs": 1740500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 48,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yorick",
+                    "name": "Yorick",
+                    "price": 1
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_mamabeak",
+                    "name": "Mama Beak",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_leona",
+                    "name": "Leona",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 18,
+                "mediaTimeMs": 4500,
+                "vodTimeMs": 1741500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 48,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yorick",
+                    "name": "Yorick",
+                    "price": 1
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_mamabeak",
+                    "name": "Mama Beak",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_leona",
+                    "name": "Leona",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 22,
+                "mediaTimeMs": 5500,
+                "vodTimeMs": 1742500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 48,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yorick",
+                    "name": "Yorick",
+                    "price": 1
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_mamabeak",
+                    "name": "Mama Beak",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_leona",
+                    "name": "Leona",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 26,
+                "mediaTimeMs": 6500,
+                "vodTimeMs": 1743500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 48,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yorick",
+                    "name": "Yorick",
+                    "price": 1
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_mamabeak",
+                    "name": "Mama Beak",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_leona",
+                    "name": "Leona",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 30,
+                "mediaTimeMs": 7500,
+                "vodTimeMs": 1744500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 48,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yorick",
+                    "name": "Yorick",
+                    "price": 1
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_mamabeak",
+                    "name": "Mama Beak",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_leona",
+                    "name": "Leona",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 34,
+                "mediaTimeMs": 8500,
+                "vodTimeMs": 1745500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 48,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Yorick",
+                    "name": "Yorick",
+                    "price": 1
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_mamabeak",
+                    "name": "Mama Beak",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_leona",
+                    "name": "Leona",
+                    "price": 1
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "totals": {
+          "scheduled": 72,
+          "processed": 72,
+          "dropped": 0,
+          "warmLate": 0,
+          "compared": 14,
+          "exact": 14,
+          "exactWithin250ms": 14
+        }
+      },
+      "independent-frodan-2913998942": {
+        "scope": "Production OCR and current catalog with fixed-range benchmark driver; original source MP4 at 4 Hz.",
+        "pinnedSha256": {
+          "scripts/hud-reader.py": "9c2831f43aed91aef78268da0d518625e49fd086035ff1dc015537ad965942f5",
+          "scripts/hud_ocr.py": "b7b08ff522cf727e1cfd21e01287a593ea89f408e019150c4248fe7af1f86e51",
+          "scripts/hud_tesseract.py": "bcec9e4de7d198d7c39a524f50f5151e83281304a5fad7f90281458ccdf22ded",
+          "src/data/set18-hud.json": "e54046e9afaeb77853c9240320eae9bef4afcb47c2bd64d69ae13d9970779851"
+        },
+        "source": "https://www.twitch.tv/videos/2913998942",
+        "resolution": [
+          1280,
+          720
+        ],
+        "referenceSha256": "c168557fc569f5936ed666fa5cfde3eebd29890cf4c571f76425665bf0ae38d3",
+        "profile": null,
+        "clips": {
+          "teal": {
+            "metrics": {
+              "scheduled": 36,
+              "processed": 36,
+              "dropped": 0,
+              "warmLate": 0
+            },
+            "score": {
+              "expected": 9,
+              "lastLogFrame": 35,
+              "frames": {
+                "compared": 9,
+                "dropped": 0,
+                "late": 0,
+                "exact": 9,
+                "exactWithin250ms": 9
+              },
+              "fields": {
+                "hud": {
+                  "correct": 9
+                },
+                "gold": {
+                  "correct": 9
+                },
+                "level": {
+                  "correct": 9
+                },
+                "championName": {
+                  "correct": 36
+                },
+                "championPrice": {
+                  "correct": 36
+                },
+                "empty": {
+                  "correct": 9
+                }
+              },
+              "details": [
+                {
+                  "frame": 2,
+                  "mediaTimeMs": 500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 6,
+                  "mediaTimeMs": 1500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 10,
+                  "mediaTimeMs": 2500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 14,
+                  "mediaTimeMs": 3500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 18,
+                  "mediaTimeMs": 4500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 22,
+                  "mediaTimeMs": 5500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 26,
+                  "mediaTimeMs": 6500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 30,
+                  "mediaTimeMs": 7500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 34,
+                  "mediaTimeMs": 8500,
+                  "late": false,
+                  "errors": []
+                }
+              ]
+            },
+            "warmP95Ms": 104.75,
+            "cpuStart": 0.57,
+            "cpuEnd": 0.57,
+            "log": "independent-frodan-2913998942-teal.jsonl.gz",
+            "sourceStartSec": 1077,
+            "labeledFrames": [
+              {
+                "frame": 2,
+                "mediaTimeMs": 500,
+                "vodTimeMs": 1077500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 50,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_teemo",
+                    "name": "Teemo",
+                    "price": 2
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_Karma18",
+                    "name": "Karma",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Sejuani",
+                    "name": "Sejuani",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 6,
+                "mediaTimeMs": 1500,
+                "vodTimeMs": 1078500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 53,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_teemo",
+                    "name": "Teemo",
+                    "price": 2
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_Karma18",
+                    "name": "Karma",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Sejuani",
+                    "name": "Sejuani",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 10,
+                "mediaTimeMs": 2500,
+                "vodTimeMs": 1079500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 53,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_teemo",
+                    "name": "Teemo",
+                    "price": 2
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_Karma18",
+                    "name": "Karma",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Sejuani",
+                    "name": "Sejuani",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 14,
+                "mediaTimeMs": 3500,
+                "vodTimeMs": 1080500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 54,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_teemo",
+                    "name": "Teemo",
+                    "price": 2
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_Karma18",
+                    "name": "Karma",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Sejuani",
+                    "name": "Sejuani",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 18,
+                "mediaTimeMs": 4500,
+                "vodTimeMs": 1081500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 50,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_teemo",
+                    "name": "Teemo",
+                    "price": 2
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_Karma18",
+                    "name": "Karma",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Sejuani",
+                    "name": "Sejuani",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 22,
+                "mediaTimeMs": 5500,
+                "vodTimeMs": 1082500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 50,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_teemo",
+                    "name": "Teemo",
+                    "price": 2
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_Karma18",
+                    "name": "Karma",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Sejuani",
+                    "name": "Sejuani",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 26,
+                "mediaTimeMs": 6500,
+                "vodTimeMs": 1083500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 50,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_teemo",
+                    "name": "Teemo",
+                    "price": 2
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_Karma18",
+                    "name": "Karma",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Sejuani",
+                    "name": "Sejuani",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 30,
+                "mediaTimeMs": 7500,
+                "vodTimeMs": 1084500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 50,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_teemo",
+                    "name": "Teemo",
+                    "price": 2
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_Karma18",
+                    "name": "Karma",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Sejuani",
+                    "name": "Sejuani",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  }
+                ]
+              },
+              {
+                "frame": 34,
+                "mediaTimeMs": 8500,
+                "vodTimeMs": 1085500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 50,
+                "level": 6,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_teemo",
+                    "name": "Teemo",
+                    "price": 2
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_Karma18",
+                    "name": "Karma",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Sejuani",
+                    "name": "Sejuani",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_pebbles",
+                    "name": "Pebbles",
+                    "price": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "woods": {
+            "metrics": {
+              "scheduled": 36,
+              "processed": 36,
+              "dropped": 0,
+              "warmLate": 1
+            },
+            "score": {
+              "expected": 9,
+              "lastLogFrame": 35,
+              "frames": {
+                "compared": 9,
+                "dropped": 0,
+                "late": 0,
+                "exact": 9,
+                "exactWithin250ms": 9
+              },
+              "fields": {
+                "hud": {
+                  "correct": 9
+                },
+                "gold": {
+                  "correct": 9
+                },
+                "level": {
+                  "correct": 9
+                },
+                "championName": {
+                  "correct": 44
+                },
+                "championPrice": {
+                  "correct": 44
+                },
+                "empty": {
+                  "correct": 1
+                }
+              },
+              "details": [
+                {
+                  "frame": 2,
+                  "mediaTimeMs": 500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 6,
+                  "mediaTimeMs": 1500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 10,
+                  "mediaTimeMs": 2500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 14,
+                  "mediaTimeMs": 3500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 18,
+                  "mediaTimeMs": 4500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 22,
+                  "mediaTimeMs": 5500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 26,
+                  "mediaTimeMs": 6500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 30,
+                  "mediaTimeMs": 7500,
+                  "late": false,
+                  "errors": []
+                },
+                {
+                  "frame": 34,
+                  "mediaTimeMs": 8500,
+                  "late": false,
+                  "errors": []
+                }
+              ]
+            },
+            "warmP95Ms": 231.15,
+            "cpuStart": 0.57,
+            "cpuEnd": 0.857,
+            "log": "independent-frodan-2913998942-woods.jsonl.gz",
+            "sourceStartSec": 1797,
+            "labeledFrames": [
+              {
+                "frame": 2,
+                "mediaTimeMs": 500,
+                "vodTimeMs": 1797500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 14,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_azir",
+                    "name": "Azir",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_fiddlesticks",
+                    "name": "Fiddlesticks",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_azir",
+                    "name": "Azir",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Sejuani",
+                    "name": "Sejuani",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_mamabeak",
+                    "name": "Mama Beak",
+                    "price": 3
+                  }
+                ]
+              },
+              {
+                "frame": 6,
+                "mediaTimeMs": 1500,
+                "vodTimeMs": 1798500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 14,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_azir",
+                    "name": "Azir",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_fiddlesticks",
+                    "name": "Fiddlesticks",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_azir",
+                    "name": "Azir",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Sejuani",
+                    "name": "Sejuani",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_mamabeak",
+                    "name": "Mama Beak",
+                    "price": 3
+                  }
+                ]
+              },
+              {
+                "frame": 10,
+                "mediaTimeMs": 2500,
+                "vodTimeMs": 1799500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 14,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_azir",
+                    "name": "Azir",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_fiddlesticks",
+                    "name": "Fiddlesticks",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_azir",
+                    "name": "Azir",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Sejuani",
+                    "name": "Sejuani",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_mamabeak",
+                    "name": "Mama Beak",
+                    "price": 3
+                  }
+                ]
+              },
+              {
+                "frame": 14,
+                "mediaTimeMs": 3500,
+                "vodTimeMs": 1800500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 2,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "DA_18_KhaZix",
+                    "name": "Kha'Zix",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_amumu",
+                    "name": "Amumu",
+                    "price": 4
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_malphite",
+                    "name": "Malphite",
+                    "price": 4
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Varus",
+                    "name": "Varus",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_caitlyn",
+                    "name": "Caitlyn",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 18,
+                "mediaTimeMs": 4500,
+                "vodTimeMs": 1801500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 6,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_cinderling",
+                    "name": "Cinderling",
+                    "price": 1
+                  },
+                  {
+                    "state": "empty"
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_ahri",
+                    "name": "Ahri",
+                    "price": 4
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Diana",
+                    "name": "Diana",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_rammus",
+                    "name": "Rammus",
+                    "price": 3
+                  }
+                ]
+              },
+              {
+                "frame": 22,
+                "mediaTimeMs": 5500,
+                "vodTimeMs": 1802500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 5,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_fiddlesticks",
+                    "name": "Fiddlesticks",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_cinderling",
+                    "name": "Cinderling",
+                    "price": 1
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_lux_base",
+                    "name": "Lux",
+                    "price": 5
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_ahri",
+                    "name": "Ahri",
+                    "price": 4
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_aphelios",
+                    "name": "Aphelios",
+                    "price": 4
+                  }
+                ]
+              },
+              {
+                "frame": 26,
+                "mediaTimeMs": 6500,
+                "vodTimeMs": 1803500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 2,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_shen",
+                    "name": "Shen",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Kayle",
+                    "name": "Kayle",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_malphite",
+                    "name": "Malphite",
+                    "price": 4
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_KhaZix",
+                    "name": "Kha'Zix",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Alistar",
+                    "name": "Alistar",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 30,
+                "mediaTimeMs": 7500,
+                "vodTimeMs": 1804500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 2,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_shen",
+                    "name": "Shen",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Kayle",
+                    "name": "Kayle",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_malphite",
+                    "name": "Malphite",
+                    "price": 4
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_KhaZix",
+                    "name": "Kha'Zix",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Alistar",
+                    "name": "Alistar",
+                    "price": 2
+                  }
+                ]
+              },
+              {
+                "frame": 34,
+                "mediaTimeMs": 8500,
+                "vodTimeMs": 1805500,
+                "cohort": "clearHud",
+                "hudVisible": true,
+                "gold": 14,
+                "level": 8,
+                "slots": [
+                  {
+                    "state": "champion",
+                    "id": "tft18_azir",
+                    "name": "Azir",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_fiddlesticks",
+                    "name": "Fiddlesticks",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_azir",
+                    "name": "Azir",
+                    "price": 3
+                  },
+                  {
+                    "state": "champion",
+                    "id": "DA_18_Sejuani",
+                    "name": "Sejuani",
+                    "price": 2
+                  },
+                  {
+                    "state": "champion",
+                    "id": "tft18_mamabeak",
+                    "name": "Mama Beak",
+                    "price": 3
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "totals": {
+          "scheduled": 72,
+          "processed": 72,
+          "dropped": 0,
+          "warmLate": 1,
+          "compared": 18,
+          "exact": 18,
+          "exactWithin250ms": 18
+        }
+      }
+    }
+  },
+  "priceCropAndCursor": {
+    "scope": "Still images, frozen reference recorded before OCR",
+    "labelsSha256": "5b61f2106b28fc6138fe9ff48da54901c3921ffc11146b93bc5d5e5f460e0cc7",
+    "readerSha256": "bb2cf55ed00a49bd4b1dee916b078be833a9749712571ebf61c2c93867f848c2",
+    "matchedTotals": {
+      "before": {
+        "exact": 153,
+        "compared": 154,
+        "championPrice": {
+          "correct": 699,
+          "missing": 1
+        }
+      },
+      "after": {
+        "exact": 154,
+        "compared": 154,
+        "championPrice": {
+          "correct": 700
+        }
+      }
+    },
+    "intentionallyWrongProfileTotals": {
+      "before": {
+        "exact": 0,
+        "compared": 65,
+        "championPrice": {
+          "missing": 185,
+          "correct": 65,
+          "wrong": 39
+        }
+      },
+      "after": {
+        "exact": 0,
+        "compared": 65,
+        "championPrice": {
+          "missing": 289
+        }
+      }
+    }
+  },
+  "specialOffers": {
+    "still": {
+      "rows": [
+        {
+          "sourceCrop": "new-source-hls/setsuko-late-18.png",
+          "correct": true,
+          "otherFieldsUnchanged": true,
+          "option": {
+            "5": {
+              "name": "Phantom Armor",
+              "id": "phantom_armor",
+              "price": 2
+            }
+          }
+        },
+        {
+          "sourceCrop": "new-source-hls/setsuko-late-19.png",
+          "correct": true,
+          "otherFieldsUnchanged": true,
+          "option": {
+            "5": {
+              "name": "Phantom Armor",
+              "id": "phantom_armor",
+              "price": 2
+            }
+          }
+        },
+        {
+          "sourceCrop": "new-source-hls/setsuko-late-21.png",
+          "correct": true,
+          "otherFieldsUnchanged": true,
+          "option": {
+            "5": {
+              "name": "Phantom Armor",
+              "id": "phantom_armor",
+              "price": 2
+            }
+          }
+        },
+        {
+          "sourceCrop": "independent-k3soju-2910735765/green-22.png",
+          "correct": true,
+          "otherFieldsUnchanged": true,
+          "option": {
+            "5": {
+              "name": "Fertilize",
+              "id": "fertilize",
+              "price": 1
+            }
+          }
+        },
+        {
+          "sourceCrop": "independent-k3soju-2910735765/green-26.png",
+          "correct": true,
+          "otherFieldsUnchanged": true,
+          "option": null
+        },
+        {
+          "sourceCrop": "scaled-1080/independent-2919423875/hud-01854.png",
+          "correct": true,
+          "otherFieldsUnchanged": true,
+          "option": {
+            "5": {
+              "name": "Forest Guide",
+              "id": "forest_guide",
+              "price": 6
+            }
+          }
+        },
+        {
+          "sourceCrop": "scaled-1080/independent-2919423875/hud-05748.png",
+          "correct": true,
+          "otherFieldsUnchanged": true,
+          "option": {
+            "5": {
+              "name": "Late Bloomer",
+              "id": "late_bloomer",
+              "price": 4
+            }
+          }
+        }
+      ]
+    },
+    "paced": {
+      "scope": "Original 1080p videos paced at 4 Hz. The seek is from the benchmark driver.",
+      "referenceSha256": "bfa2f54208b16f3c5b8e43cf07ca74d95cd5714f3534d8663d61d62d65c54d73",
+      "cases": [
+        {
+          "name": "setsuko",
+          "vod": "2911167981",
+          "start": 3780,
+          "profile": "setsuko-2911167981-1080p.json",
+          "optionAt": {
+            "0": null,
+            "2": null,
+            "4": null,
+            "6": null,
+            "8": {
+              "5": {
+                "id": "phantom_armor",
+                "name": "Phantom Armor",
+                "price": 2
+              }
+            },
+            "10": null,
+            "14": null,
+            "16": null,
+            "18": null,
+            "20": null,
+            "22": null,
+            "24": null,
+            "26": null,
+            "28": null,
+            "30": null,
+            "32": null,
+            "34": null
+          },
+          "runs": {
+            "before": {
+              "metrics": {
+                "scheduled": 36,
+                "processed": 36,
+                "dropped": 0,
+                "warmP95Ms": 83.91,
+                "warmLate": 0,
+                "coldMs": 499.78,
+                "positive": 1,
+                "positiveExact": 0,
+                "positiveExactOnTime": 0,
+                "negative": 16,
+                "negativeExact": 16
+              },
+              "evaluation": [
+                {
+                  "frame": 0,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": true,
+                  "exact": true
+                },
+                {
+                  "frame": 2,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 4,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 6,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 8,
+                  "expected": {
+                    "5": {
+                      "id": "phantom_armor",
+                      "name": "Phantom Armor",
+                      "price": 2
+                    }
+                  },
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": false
+                },
+                {
+                  "frame": 10,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 14,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 16,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 18,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 20,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 22,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 24,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 26,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 28,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 30,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 32,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 34,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                }
+              ],
+              "changedOtherFields": [],
+              "log": "setsuko-before.jsonl.gz"
+            },
+            "after": {
+              "metrics": {
+                "scheduled": 36,
+                "processed": 36,
+                "dropped": 0,
+                "warmP95Ms": 88.38,
+                "warmLate": 0,
+                "coldMs": 613.72,
+                "positive": 1,
+                "positiveExact": 1,
+                "positiveExactOnTime": 1,
+                "negative": 16,
+                "negativeExact": 16
+              },
+              "evaluation": [
+                {
+                  "frame": 0,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": true,
+                  "exact": true
+                },
+                {
+                  "frame": 2,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 4,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 6,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 8,
+                  "expected": {
+                    "5": {
+                      "id": "phantom_armor",
+                      "name": "Phantom Armor",
+                      "price": 2
+                    }
+                  },
+                  "actual": {
+                    "5": {
+                      "name": "Phantom Armor",
+                      "id": "phantom_armor",
+                      "price": 2
+                    }
+                  },
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 10,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 14,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 16,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 18,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 20,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 22,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 24,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 26,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 28,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 30,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 32,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 34,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                }
+              ],
+              "changedOtherFields": [],
+              "log": "setsuko-after.jsonl.gz"
+            }
+          }
+        },
+        {
+          "name": "k3soju",
+          "vod": "2910735765",
+          "start": 3717,
+          "profile": "k3soju-2910735765-1080p.json",
+          "optionAt": {
+            "2": null,
+            "6": null,
+            "10": null,
+            "14": null,
+            "18": null,
+            "22": {
+              "5": {
+                "id": "fertilize",
+                "name": "Fertilize",
+                "price": 1
+              }
+            },
+            "30": null,
+            "34": null
+          },
+          "runs": {
+            "before": {
+              "metrics": {
+                "scheduled": 36,
+                "processed": 36,
+                "dropped": 0,
+                "warmP95Ms": 111.61,
+                "warmLate": 0,
+                "coldMs": 534.43,
+                "positive": 1,
+                "positiveExact": 0,
+                "positiveExactOnTime": 0,
+                "negative": 7,
+                "negativeExact": 7
+              },
+              "evaluation": [
+                {
+                  "frame": 2,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 6,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 10,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 14,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 18,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 22,
+                  "expected": {
+                    "5": {
+                      "id": "fertilize",
+                      "name": "Fertilize",
+                      "price": 1
+                    }
+                  },
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": false
+                },
+                {
+                  "frame": 30,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 34,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                }
+              ],
+              "changedOtherFields": [],
+              "log": "k3soju-before.jsonl.gz"
+            },
+            "after": {
+              "metrics": {
+                "scheduled": 36,
+                "processed": 36,
+                "dropped": 0,
+                "warmP95Ms": 57.13,
+                "warmLate": 0,
+                "coldMs": 585.8,
+                "positive": 1,
+                "positiveExact": 1,
+                "positiveExactOnTime": 1,
+                "negative": 7,
+                "negativeExact": 7
+              },
+              "evaluation": [
+                {
+                  "frame": 2,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 6,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 10,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 14,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 18,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 22,
+                  "expected": {
+                    "5": {
+                      "id": "fertilize",
+                      "name": "Fertilize",
+                      "price": 1
+                    }
+                  },
+                  "actual": {
+                    "5": {
+                      "name": "Fertilize",
+                      "id": "fertilize",
+                      "price": 1
+                    }
+                  },
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 30,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                },
+                {
+                  "frame": 34,
+                  "expected": null,
+                  "actual": null,
+                  "processed": true,
+                  "late": false,
+                  "exact": true
+                }
+              ],
+              "changedOtherFields": [],
+              "log": "k3soju-after.jsonl.gz"
+            }
+          }
+        }
+      ],
+      "candidateOcrSha256": "b703debdb847d48e5bcb7f104a00e170727cc6c0ea99ecf0413bdf3234426246"
+    }
+  },
+  "firstSampleReplayExperiment": {
+    "baseline": {
+      "processWallMs": 444.83,
+      "endToEndLatencyMs": 209.88,
+      "captureLatencyMs": 84.7,
+      "recognitionLatencyMs": 51.25,
+      "scheduleLagMs": 73.75
+    },
+    "overlap": {
+      "processWallMs": 437.51,
+      "endToEndLatencyMs": 304.97,
+      "captureLatencyMs": 150.6,
+      "recognitionLatencyMs": 50.11,
+      "scheduleLagMs": 91.16
+    }
+  }
+}
