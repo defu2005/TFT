@@ -198,6 +198,7 @@ def video_records(reader, filename, interval):
                 raise ValueError("video decoder returned an incomplete frame")
             return data
 
+        first_scheduled = time.perf_counter()
         pending = prefetch.submit(read_frame)
 
         def take_frame():
@@ -213,7 +214,10 @@ def video_records(reader, filename, interval):
             return Image.frombytes("RGB", hud_size, data) if data else None
 
         try:
-            first = sample(recognize, capture, "video", 0, time.perf_counter(), interval, 0, source_size=size)
+            # Initialize Tesseract while FFmpeg decodes the first frame. The
+            # first scheduled tick still includes initialization and decoding.
+            reader.prepare_for_video()
+            first = sample(recognize, capture, "video", 0, first_scheduled, interval, 0, source_size=size)
             if first["resolution"] is None:
                 if decoder.wait():
                     raise ValueError("ffmpeg could not decode the video")

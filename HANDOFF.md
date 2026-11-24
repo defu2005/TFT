@@ -1,5 +1,17 @@
 # Bàn giao TFT HUD Set 18
 
+## Tiến độ cập nhật 24/11/2026
+
+Ưu tiên kiểm chứng vàng, cấp, tên và giá hiển thị theo từng ô shop khi HUD rõ. Replay giữ lịch 4 Hz. Chấm riêng tỷ lệ đọc đúng, tỷ lệ mẫu đúng hạn 250 ms, trạng thái HUD ẩn và mẫu khởi động.
+
+- Lượt Frodan 1080p `2919423875` dài 31 phút 45 giây đã xử lý 7.620/7.620 mẫu và không bỏ mẫu. P95 là 141,08 ms, 13 mẫu sau khởi động vượt 250 ms. Cả 9 mốc HUD rõ chọn trước đều đúng và kịp. Trong phép kiểm tra riêng 13 mẫu trễ, một trong 5 mẫu HUD rõ bỏ sót Xayah vì viền thẻ lóe sáng.
+- Bộ đọc hiện khởi tạo Tesseract song song với FFmpeg, giảm nhận dạng lặp ở giá, đọc lại vàng và cấp khi đủ bằng chứng, rồi kiểm tra riêng nét sáng dưới tên tướng. Lượt hồi quy Xayah đạt 5/5 mốc đúng và kịp với 180/180 mẫu xử lý, trễ 0 sau khởi động. Bộ kiểm thử Python đạt 14/14 với ảnh Set 18.
+- Hai nguồn 1080p mới có 154 mẫu shop thường với HUD rõ. Dishsoap `2916057333` đạt 89/89. Setsuko `2911167981` đạt 0/65 khi áp vùng đọc từ nguồn khác và 64/65 sau hiệu chỉnh. Tính phép đo cuối của mỗi nguồn, vàng và cấp đúng 154/154, tên và giá đều đúng 699/700, toàn mẫu đúng 153/154. Đây là tỷ lệ trên các đoạn đã chấm. Các mẫu Setsuko sau hiệu chỉnh là lượt hồi quy trên cùng nguồn. Trường còn thiếu là Kog'Maw tại mẫu có con trỏ sát vùng giá. Ba thẻ Phantom Armor được chấm riêng và vẫn thiếu tên lẫn giá.
+- Bộ đọc có thể loại kết quả khi thiếu độ tin cậy, các mặt nạ bất đồng hoặc HUD chưa được xác nhận. Coach lưu cờ thiếu vàng, thiếu cấp hoặc ô chưa đọc khi nhận bản ghi schema 2. Kết quả được chấp nhận vẫn có thể sai do đặt lệch vùng ảnh. Cấu hình đầu của Setsuko từng trả giá 9 cho Yunara giá 2. Không có đối chiếu với ảnh đã gắn nhãn trong lúc chạy thật.
+- Profile hiệu chỉnh `scripts/hud-campaign/setsuko-2911167981-1080p.json` dùng riêng cho video này. Khi chạy lại, truyền profile qua `--profile`. Các bản ghi chạy khác phải lưu cấu hình thực tế đã dùng. Đừng dùng tỷ lệ của một profile cho các bố cục chưa đo.
+- Chiến dịch đã hoàn tất 40 mục và đang tải 6 chương mới, gồm ba nguồn 720p và ba nguồn 1080p. Tiến trình dùng snapshot `0983ecd7a1088a76`. `/workspace/scratch/tft-test-matches/campaign/status.json` có heartbeat, số mục tải và số mục đang OCR. Gói bàn giao nằm tại `/workspace/scratch/tft-handoff/tft-campaign-checkpoint.tar.gz`.
+- Trong `/workspace/scratch/tft-hud-optimization/full-match23-audit/whole-match-prototype/`, xem `production-full-2919423875/result.json`, `late-frame-audit/paced-regression.json` và `new-source-hls/report-calibrated.json`. Phiên này lưu nhãn, log nén và cấu hình. Giữ sổ nguồn để giao nhau theo VOD và thời gian, và dọn media mẫu sau khi có kết quả kiểm tra.
+
 Mục tiêu là đọc vàng, cấp, tên và giá của từng ô shop theo thời gian thực ở 4 Hz, rồi đối chiếu với ảnh gốc. Mục tiêu 100% vẫn đang mở. Bộ đọc dùng vùng ảnh từ HUD, Tesseract và danh mục Set 18. `cost` là bậc tướng, còn `price` là giá đang hiện trên thẻ. Một thẻ có tên hợp lệ và `price: null` vẫn được lưu, nhưng coach bỏ qua đề xuất mua thẻ đó. Xem [cách chạy và hiệu chỉnh đầu vào](docs/hud-reader.md).
 
 ## Trạng thái lúc bàn giao

@@ -68,10 +68,13 @@ class NativeTesseract:
         self.language = language
         self.thread = local()
 
-    def words(self, sheet, single_line, digits):
+    def get_session(self):
         if not hasattr(self.thread, "session"):
             self.thread.session = Session(self.api, self.language)
-        session = self.thread.session
+        return self.thread.session
+
+    def words(self, sheet, single_line, digits):
+        session = self.get_session()
         self.api.TessBaseAPISetPageSegMode(session.handle, 7 if single_line else 6)
         whitelist = b"0123456789" if digits else b""
         if not self.api.TessBaseAPISetVariable(session.handle, b"tessedit_char_whitelist", whitelist):

@@ -91,12 +91,57 @@ class HudParsingTests(unittest.TestCase):
         self.assertEqual(reader.accept_price([("15", 95)], True, 75), 15)
         self.assertEqual(reader.accept_price([("0", 95)], False, 75), 0)
 
+    def test_cropped_gold_retry_needs_hud_and_agreeing_digits(self):
+        reader = HudReader()
+        self.addCleanup(reader.close)
+        region = Image.new("RGB", (23, 24))
+        ImageDraw.Draw(region).rectangle((9, 3, 14, 16), fill="white")
+        primary = ("$1", 68)
+        failed_full_crop = [("", 0), ("51", 41), ("1", 45)]
+        with patch.object(reader, "recognize", side_effect=[failed_full_crop, [("51", 94), ("51", 93)]]):
+            self.assertEqual(reader.retry_gold(region, primary, corroborated=True), 51)
+        with patch.object(reader, "recognize", side_effect=[failed_full_crop, [("51", 94), ("31", 93)]]):
+            self.assertIsNone(reader.retry_gold(region, primary, corroborated=True))
+        with patch.object(reader, "recognize", return_value=[("", 0)]) as recognize:
+            self.assertIsNone(reader.retry_gold(region, primary))
+            self.assertEqual(recognize.call_count, 1)
+
     def test_price_retry_requires_two_confident_votes(self):
         reader = HudReader()
         self.addCleanup(reader.close)
         self.assertIsNone(reader.accept_price([("3", 97), ("3", 75)], False, 85, minimum_votes=2))
         self.assertIsNone(reader.accept_price([("3", 97), ("4", 95)], False, 85, minimum_votes=2))
         self.assertEqual(reader.accept_price([("3", 97), ("3", 95)], False, 85, minimum_votes=2), 3)
+
+    def test_native_price_reads_only_unresolved_masks_after_the_first_batch(self):
+        reader = HudReader()
+        self.addCleanup(reader.close)
+        masks = [Image.new("L", (10, 10), color) for color in range(6)]
+        groups = [(masks[:3], False), (masks[3:], False)]
+        first_batch = [("3", 95), ("3", 95), ("4", 95), ("5", 95)]
+        with patch.object(reader, "native", object()), patch.object(
+                reader, "recognize", side_effect=[first_batch, [("5", 95)]]) as recognize:
+            self.assertEqual(reader.cached_prices(groups), [3, 5])
+            self.assertEqual(reader.cached_prices(groups), [3, 5])
+        self.assertEqual([call.args[1] for call in recognize.call_args_list], [4, 1])
+
+    def test_highlighted_title_retry_confirms_the_original_name(self):
+        reader = HudReader()
+        self.addCleanup(reader.close)
+        tile = Image.new("RGB", (152, 30), "#202b32")
+        draw = ImageDraw.Draw(tile)
+        draw.rectangle((15, 5, 25, 21), fill="white")
+        draw.rectangle((145, 28, 151, 29), fill="white")
+        slots = [None] * 5
+        rows = [("6", 97), ("Lvl. 5", 95), ("Xayah _", 0)]
+        boxes = [None, None, (0, 0, *tile.size)]
+        prices = [1, None, None, None, None]
+        with patch.object(reader, "recognize", return_value=[("Yorick", 97), ("Yorick", 95)]):
+            reader.retry_visible_shop(tile, boxes, rows, slots, prices)
+        self.assertIsNone(slots[0])
+        with patch.object(reader, "recognize", return_value=[("Xayah", 97), ("Xayah", 95)]):
+            reader.retry_visible_shop(tile, boxes, rows, slots, prices)
+        self.assertEqual(slots[0], reader.roster["xayah"])
 
     def test_pale_coin_is_shorter_than_a_leading_price_digit(self):
         price = Image.new("RGB", (21, 10), "#14212b")
