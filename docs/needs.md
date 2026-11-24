@@ -154,6 +154,7 @@ Cần I11 (hàng odds và XP đọc từ client) hoặc nguồn có số trướ
 ## Quy tắc `targetBudget` (tắt mặc định, bật bằng `TFT_RULES=targetBudget`)
 - Số bản còn cần `copiesNeeded` tính từ board và bench theo đơn vị bản (1 bản, 3 bản cho 2 sao, 9 bản cho 3 sao): dưới 3 bản đích là 2 sao, từ 3 đến 8 là 3 sao, 9 thì không còn gì để mua.
 - Thiếu board hoặc bench thì không biết số bản đang có: dùng `copiesNeeded = 1` và ghi chú trong lý do. Nguồn live hiện không gửi bench nên rule này dùng k = 1 khi chạy live.
-- Ngân sách roll = (vàng − giữ lãi − giá × copiesNeeded) / 2, giữ lãi 10 (50 nếu `keepInterest`, 0 khi nguy hiểm). Điểm roll = P(gặp ít nhất k bản trong ngân sách).
-- Đo trên 2.000 trạng thái cố định: mặc định không đổi; bật rule đổi 44 quyết định (hold→roll 38, roll→hold 4, xp→buy 1, xp→roll 1). Đây là thay đổi hành vi có chủ đích, chưa được chứng minh là tốt hơn; cần backtest trước khi bật mặc định.
+- Ngân sách roll = (vàng − giữ lãi − giá × copiesNeeded) / 2, giữ lãi 10 (50 nếu `keepInterest`, 0 khi nguy hiểm).
+- Đây là cổng, không đổi điểm: điểm roll và xác suất mỗi ô giữ như khi tắt rule. Cổng đóng (không roll) khi ngân sách không đủ để gặp k bản; xác suất trong ngân sách được ghi riêng trong trace và lý do.
+- Đo trên 2.000 trạng thái cố định: mặc định không đổi. Bật rule chỉ đổi 3 quyết định (roll→hold 3) và không thêm roll nào; test kiểm tra điều này.
 - Dự báo vàng theo vòng (`src/engine/economy.js`) chưa dùng trong quyết định; thời điểm tính lãi chưa kiểm chứng với game.

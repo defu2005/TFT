@@ -6,7 +6,7 @@ import { buildProfile } from "../data/profileFile.js"
 
 const ALL_RULES = { keepInterest: true, earlyLevel: true, guideLevels: true }
 // Pinned count for the targetBudget rule on the seeded states below; change it only with a reason.
-const CHANGED_WITH_TARGET_BUDGET = 44
+const CHANGED_WITH_TARGET_BUDGET = 3
 
 // Seeded generator so every run checks the same 2,000 states.
 function mulberry32(seed) {
@@ -187,6 +187,7 @@ test("targetBudget rule: count decisions that change on the same 2,000 states", 
   const rnd = mulberry32(20260)
   const moves = {}
   let changed = 0
+  let addedRolls = 0
   for (let i = 0; i < 2000; i++) {
     const state = makeState(rnd)
     const a = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
@@ -197,8 +198,11 @@ test("targetBudget rule: count decisions that change on the same 2,000 states", 
       changed++
       const key = `${actionName(a.action)}->${actionName(b.action)}`
       moves[key] = (moves[key] || 0) + 1
+      if (b.action === ROLL && a.action !== ROLL) addedRolls++
     }
   }
   console.log(`# targetBudget changes ${changed} of 2000 decisions ${JSON.stringify(moves)}`)
   assert.equal(changed, CHANGED_WITH_TARGET_BUDGET)
+  // The gate only closes rolls: it may remove a roll, never add one.
+  assert.equal(addedRolls, 0, "targetBudget added a roll the default did not take")
 })

@@ -189,21 +189,26 @@ export function decide(state, out, trace = null, rules, profile) {
   let ownedKnown = true
   let copiesNeeded = 0
   let budgetRolls = 0
+  let budgetHit = 0
   if (target && target.cost && rollAffordable && !targetInShop) {
+    rollHit = hitChance(level, target.cost, target.copiesLeft, target.champsAtCost, p)
+    let gateOpen = true
     if (r.targetBudget) {
-      // Opt-in: odds of finishing the next star within the budget left after buying the copies needed.
+      // Opt-in gate, not a new score: the roll is allowed only if the budget left after buying the
+      // copies needed can still finish k copies. The per-shop chance and the score stay as when off.
       // Owned copies need both board and bench; without both, the goal is unknown and k falls back to 1.
       budgeted = true
       ownedKnown = Array.isArray(state.board) && Array.isArray(state.bench)
       const owned = ownedKnown ? countCopies(state.board, target.id) + countCopies(state.bench, target.id) : 0
       copiesNeeded = ownedKnown ? copiesToNextStar(owned) : 1
       budgetRolls = targetBudgetRolls(gold, reserve, target.cost, copiesNeeded, freeRolls)
-      rollHit = budgetRolls > 0 && copiesNeeded > 0 ? hitAtLeastKOverRolls(level, target.cost, target.copiesLeft, target.champsAtCost, copiesNeeded, budgetRolls, p) : 0
-    } else {
-      rollHit = hitChance(level, target.cost, target.copiesLeft, target.champsAtCost, p)
+      budgetHit = budgetRolls > 0 && copiesNeeded > 0 ? hitAtLeastKOverRolls(level, target.cost, target.copiesLeft, target.champsAtCost, copiesNeeded, budgetRolls, p) : 0
+      gateOpen = budgetHit > 0
     }
-    rollScore = rollHit * target.priority * (urgent ? 2 : 0.8)
-    if (!urgent && freeRolls === 0) rollScore -= 0.5
+    if (gateOpen) {
+      rollScore = rollHit * target.priority * (urgent ? 2 : 0.8)
+      if (!urgent && freeRolls === 0) rollScore -= 0.5
+    }
   }
   if (trace) {
     const rolls = freeRolls + (gold > reserve ? ((gold - reserve) / REROLL_COST) | 0 : 0)
@@ -222,6 +227,7 @@ export function decide(state, out, trace = null, rules, profile) {
       ownedKnown,
       copiesNeeded,
       budgetRolls,
+      budgetHit,
       hitAtLeast2Within: goldKnown && levelKnown && target && target.cost && !targetInShop ? hitAtLeastKOverRolls(level, target.cost, target.copiesLeft, target.champsAtCost, 2, rolls, p) : 0,
       rollsAfterTarget: goldKnown && target && target.cost ? Math.max(0, freeRolls + ((gold - target.cost - reserve) > 0 ? ((gold - target.cost - reserve) / REROLL_COST) | 0 : 0)) : 0,
       note: !target ? "không có mục tiêu (set_target chưa được gọi)" : targetInShop ? "mục tiêu đang có trong shop" : !goldKnown ? "chưa đọc được vàng" : !levelKnown ? "chưa đọc được cấp" : !rollAffordable ? `thiếu vàng để roll (cần ${rollNeeds})` : "",

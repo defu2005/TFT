@@ -25,7 +25,7 @@ export function explain(state, out, trace, oddsCaveat = CAVEAT_ODDS) {
     text = `Lên level: level ${c?.level} dưới mục tiêu ${c?.wanted} của stage ${c?.stage}, vàng ${state.gold} đủ điều kiện.`
   } else if (chosen === ROLL) {
     const c = trace.find((t) => t.action === "roll")
-    text = `Roll để tìm ${state.target?.id ?? "mục tiêu"}: ${c?.hit === null ? "xác suất chưa tính (chưa đọc được cấp)" : c?.budgeted ? `xác suất gặp ít nhất ${c.copiesNeeded} bản trong ${c.budgetRolls} lượt (sau khi giữ vàng mua) ${((c.hit ?? 0) * 100).toFixed(1)}%` : `xác suất gặp ${((c?.hit ?? 0) * 100).toFixed(1)}%`}, điểm ${out.score.toFixed(2)}.` + (c?.free > 0 ? ` Dùng lượt roll miễn phí (còn ${c.free}).` : "") + (c?.budgeted ? "" : budgetNote(c)) + (c?.budgeted && !c.ownedKnown ? " Thiếu board hoặc bench nên không biết số bản đang có: tính cần 1 bản." : "")
+    text = `Roll để tìm ${state.target?.id ?? "mục tiêu"}: ${c?.hit === null ? "xác suất chưa tính (chưa đọc được cấp)" : `xác suất gặp ${((c?.hit ?? 0) * 100).toFixed(1)}%`}, điểm ${out.score.toFixed(2)}.` + (c?.free > 0 ? ` Dùng lượt roll miễn phí (còn ${c.free}).` : "") + (c?.budgeted ? budgetSentence(c) : budgetNote(c))
   } else if (chosen === SELL) {
     const c = trace.find((t) => t.action === "sell" && t.bench === out.bench)
     text = `Bán ô bench ${out.bench + 1} (${c?.unit ?? "?"}) lấy ${c?.sellValue ?? "?"} vàng: bench đầy, cần chỗ để mua ${c?.makesRoomFor ?? "?"} (điểm ${out.score.toFixed(2)}).`
@@ -60,6 +60,13 @@ export function explain(state, out, trace, oddsCaveat = CAVEAT_ODDS) {
 }
 
 // Odds over the whole roll budget, shown only when it says more than one shop.
+// Opt-in rule: the budget left after buying the copies needed, and the chance of finishing them in it.
+function budgetSentence(c) {
+  if (!c.ownedKnown) return " Thiếu board hoặc bench nên không biết số bản đang có: tính cần 1 bản."
+  if (!(c.budgetHit > 0)) return ` Ngân sách ${c.budgetRolls} lượt không đủ để gặp ${c.copiesNeeded} bản: không roll.`
+  return ` Ngân sách ${c.budgetRolls} lượt: xác suất gặp ít nhất ${c.copiesNeeded} bản ${(c.budgetHit * 100).toFixed(1)}%.`
+}
+
 function budgetNote(c) {
   if (!c || c.budgeted || !(c.rolls > 1) || !(c.hitWithin > 0)) return ""
   return ` Roll hết ${c.rolls} lượt trong ngân sách: ${(c.hitWithin * 100).toFixed(1)}%.`
