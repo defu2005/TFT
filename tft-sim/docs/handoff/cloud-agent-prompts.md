@@ -5,11 +5,11 @@
 ## A. Trước khi tạo phiên (người dùng làm một lần)
 
 1. Chọn **nhánh gốc** là `claude/claude-fable-5-2-awwmf5` (chứa `tft-sim/scripts/collect_v4.py`, `cloud_setup.sh`, `merge_v4.py`).
-2. Tạo nhánh riêng cho từng phiên, từ nhánh gốc, và đặt tên như sau:
-   - DT: `sim-dt`
-   - C: `sim-c`
-   - R: `sim-r`
-   - E: `sim-e` (**tạo sau khi DT đã push**, nhánh gốc của E là `sim-dt`)
+2. Tạo nhánh riêng cho từng phiên, từ nhánh gốc (ngoại lệ đã được người dùng đồng ý: nhánh sim chưa merge vào master). Tên theo `branching.md`: Codex dùng `codex/<mô-tả>`; Cursor dùng `cursor/<mô-tả>` (không có quy tắc riêng cho Cursor trong repo):
+   - DT: `codex/sim-dt`
+   - C: `codex/sim-c`
+   - R: `cursor/sim-r`
+   - E: `codex/sim-e` (**tạo sau khi DT đã push**, nhánh gốc của E là `codex/sim-dt`)
 3. Cài đặt môi trường cho phiên (mục B).
 
 ## B. Cài đặt môi trường
@@ -47,7 +47,7 @@ Các vai DT, C, E chỉ cần máy cục bộ. Vai R cần internet nên dùng C
 ## Prompt DT (thu dữ liệu, gộp, huấn luyện)
 
 ```
-Bạn là agent DT cho dự án TFT (workstream sim). Nhánh được giao: sim-dt.
+Bạn là agent DT cho dự án TFT (workstream sim). Nhánh được giao: codex/sim-dt.
 
 Bước 0 (bắt buộc): kiểm tra file tft-sim/scripts/collect_v4.py và tft-sim/docs/handoff/cloud-agents.md có trong repo. Nếu thiếu, dừng và báo "nhánh sai", không làm gì thêm. Chạy `awk '/MemTotal/{print int($2/1024)" MB"}' /proc/meminfo` và `nproc`, ghi kết quả. Ngưỡng: MemTotal từ 15000 MB trở lên (máy 16 GB danh nghĩa báo khoảng 15.700 MB). Nếu thấp hơn, chạy chế độ rút gọn (bước 1b), không đổi dải seed.
 
@@ -80,7 +80,7 @@ Các bước:
    Huấn luyện mất khoảng 20 phút mỗi seed. Sau 10 phút đầu, báo thời gian thực tế.
 5. Lưu checkpoint vào repo: mkdir -p tft-sim/results/checkpoints && cp ~/work/data/split/clone_v5_seed0.pt tft-sim/results/checkpoints/ (kiểm tra dung lượng dưới 1 MB; nếu lớn hơn, dừng và báo).
 6. Viết tft-sim/results/fixed/real/shard_summary.json gồm: seeds, số dòng từng shard và từng tập, sha256 của s1–s4 và split/*.npz, commit_tft (git rev-parse HEAD), commit_tft_goat (git -C ~/work/tft_goat rev-parse HEAD), ram_peak_mb, wall_seconds, check_results (kết quả 5 kiểm tra trong mục 3 của cloud-agents.md).
-7. Commit các file: results/fixed/real/bc_v5.json, results/fixed/real/shard_summary.json, results/checkpoints/clone_v5_seed0.pt. KHÔNG commit .npz. Push lên sim-dt.
+7. Commit các file: results/fixed/real/bc_v5.json, results/fixed/real/shard_summary.json, results/checkpoints/clone_v5_seed0.pt. KHÔNG commit .npz. Push lên codex/sim-dt.
 
 Ràng buộc: không dùng seed ngoài 300000–301999; không sửa src/, ingest/, master; không tạo PR.
 
@@ -95,7 +95,7 @@ Báo cáo cuối (ngắn):
 ## Prompt C (CEM trang bị, nhiều thế hệ hơn)
 
 ```
-Bạn là agent C cho dự án TFT (workstream sim). Nhánh được giao: sim-c.
+Bạn là agent C cho dự án TFT (workstream sim). Nhánh được giao: codex/sim-c.
 
 Bước 0: kiểm tra tft-sim/scripts/cem_item.py có trong repo. Nếu thiếu, dừng và báo "nhánh sai".
 
@@ -113,7 +113,7 @@ Các bước (từ thư mục tft-sim):
 
 Ràng buộc: không dùng seed 230000–230999 (đã dùng) hay 241000+ (dành cho E); không sửa src/, ingest/, master; không tạo PR; không chọn tham số trên 240000–240999 rồi báo lại như kết quả giữ-lại.
 
-Commit: results/fixed/real/cem_item_v2.json và các JSON so sánh. Push lên sim-c.
+Commit: results/fixed/real/cem_item_v2.json và các JSON so sánh. Push lên codex/sim-c.
 
 Báo cáo cuối: bảng thế hệ, trọng số cuối, held_mean_A_minus_B kèm CI95 so với mặc định, valuemax-vs-default cùng seed, nhánh và commit hash.
 ```
@@ -121,7 +121,7 @@ Báo cáo cuối: bảng thế hệ, trọng số cuối, held_mean_A_minus_B k�
 ## Prompt R (nghiên cứu Set 18)
 
 ```
-Bạn là agent R cho dự án TFT (workstream sim). Nhánh được giao: sim-r.
+Bạn là agent R cho dự án TFT (workstream sim). Nhánh được giao: cursor/sim-r.
 
 Bước 0: kiểm tra tft-sim/docs/handoff/set18-sources.md có trong repo. Nếu thiếu, dừng và báo "nhánh sai".
 
@@ -140,7 +140,7 @@ Quy tắc:
 - Không vượt qua chặn truy cập (403, chặn bot, yêu cầu JavaScript). Ghi lại và chuyển sang nguồn khác.
 - Không sửa src/, ingest/, src/data/set18.json.
 
-Đầu ra: cập nhật tft-sim/docs/handoff/set18-sources.md. Commit lên sim-r. Không tạo PR.
+Đầu ra: cập nhật tft-sim/docs/handoff/set18-sources.md. Commit lên cursor/sim-r. Không tạo PR.
 
 Báo cáo cuối: đã tìm được gì, còn thiếu gì, mâu thuẫn giữa các nguồn, nhánh và commit hash.
 ```
@@ -148,7 +148,7 @@ Báo cáo cuối: đã tìm được gì, còn thiếu gì, mâu thuẫn giữa 
 ## Prompt E (kiểm định clone v5, chỉ sau khi DT xong)
 
 ```
-Bạn là agent E cho dự án TFT (workstream sim). Nhánh được giao: sim-e. Nhánh gốc của phiên này là sim-dt (đã có checkpoint).
+Bạn là agent E cho dự án TFT (workstream sim). Nhánh được giao: codex/sim-e. Nhánh gốc của phiên này là codex/sim-dt (đã có checkpoint).
 
 Bước 0: kiểm tra tft-sim/results/checkpoints/clone_v5_seed0.pt có trong repo. Nếu thiếu, dừng và báo "DT chưa xong".
 
