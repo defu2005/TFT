@@ -138,4 +138,7 @@ test("odds mismatch is null when the level is unknown or no row was read", async
   assert.equal(noLevel.reason.factors.oddsMismatch, null)
   const noRow = await createCoach({ source: fakeSource({ oddsObserved: null }) }).tick()
   assert.equal(noRow.reason.factors.oddsMismatch, null)
+  // a numeric level flagged unknown must still give no comparison (factors.level is the flag-aware value)
+  const flaggedLevel = await createCoach({ source: fakeSource({ level: 7, hudLevelUnknown: true, oddsObserved: [16, 30, 43, 10, 1] }) }).tick()
+  assert.equal(flaggedLevel.reason.factors.oddsMismatch, null)
 })
