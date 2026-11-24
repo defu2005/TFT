@@ -1,4 +1,4 @@
-"""Huan luyen clone v4 (uni3, 185 chieu) tren du lieu teacher v4. 40 epoch, 3 seed torch.
+"""Args: dir [tag]. Huan luyen clone v4 (uni3, 185 chieu) tren du lieu teacher v4. 40 epoch, 3 seed torch.
 Bao do khop theo loai tren test (chi dong >=2 hop le); seed 0 luu checkpoint."""
 import json, sys
 from pathlib import Path
@@ -7,7 +7,8 @@ import torch
 from tft_sim.bc_train import train, val_agreement
 from tft_sim.tftgoat import action_type
 
-D = Path(sys.argv[1]); R = Path("results/fixed/real"); R.mkdir(parents=True, exist_ok=True)
+D = Path(sys.argv[1]); TAG = sys.argv[2] if len(sys.argv) > 2 else "v4"
+R = Path("results/fixed/real"); R.mkdir(parents=True, exist_ok=True)
 tr = np.load(D / "train.npz"); te = np.load(D / "test.npz")
 Xtr, Mtr, ytr = tr["uni3"], tr["mask"], tr["action"]
 Xte, Mte, yte = te["uni3"], te["mask"].astype(bool), te["action"]
@@ -27,6 +28,6 @@ for seed in range(3):
     out["seeds"][seed] = {"overall": round(overall, 4), "per_type": per}
     print("seed", seed, "overall", round(overall, 4), per, flush=True)
     if seed == 0:
-        torch.save({"state": m.state_dict(), "mu": mu, "sd": sd, "in_dim": Xtr.shape[1]}, D / "clone_v4_seed0.pt")
-(R / "bc_v4.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+        torch.save({"state": m.state_dict(), "mu": mu, "sd": sd, "in_dim": Xtr.shape[1]}, D / f"clone_{TAG}_seed0.pt")
+(R / f"bc_{TAG}.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
 print("BCDONE", flush=True)

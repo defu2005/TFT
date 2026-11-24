@@ -8,8 +8,9 @@ from multiprocessing import Pool
 from pathlib import Path
 import numpy as np
 
-GENS, POP, DEV_LO, DEV_HI, OUT = int(sys.argv[1]), int(sys.argv[2]), 220000, 220200, sys.argv[5]
-HELD_LO, HELD_HI = 230000, 231000
+GENS, POP, OUT = int(sys.argv[1]), int(sys.argv[2]), sys.argv[5]
+DEV_LO, DEV_HI = (int(sys.argv[3]), int(sys.argv[4])) if len(sys.argv) > 4 else (220000, 220200)
+HELD_LO, HELD_HI = (int(sys.argv[6]), int(sys.argv[7])) if len(sys.argv) > 7 else (230000, 231000)
 FEAT_N = 5
 
 def _feat(state, u):
