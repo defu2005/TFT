@@ -110,3 +110,32 @@ test("a shop with an unread slot is reported as unread, not as a defaulted field
   assert.doesNotMatch(text, /mặc định cho shop/)
   assert.match(text, /ô shop chưa đọc được: ô 5/)
 })
+
+function fakeSource(extra = {}) {
+  const state = { level: 7, gold: 42, hp: 60, stage: 4, shop: [null, { id: "DA_18_Ornn", cost: 1, copiesOwned: 0, priority: 5 }, null, null, null], target: null, missing: [], ...extra }
+  return { kind: "fake", read: async () => ({ ...state }) }
+}
+
+test("observed odds row differing from the default is a caveat only; the decision is unchanged", async () => {
+  const with_ = await createCoach({ source: fakeSource({ oddsObserved: [16, 30, 43, 10, 1] }) }).tick()
+  const without = await createCoach({ source: fakeSource() }).tick()
+  assert.equal(with_.reason.factors.oddsMismatch, true)
+  assert.ok(with_.reason.caveats.some((c) => c.includes("hàng odds HUD cấp 7 [16, 30, 43, 10, 1]")))
+  assert.deepEqual([with_.decision.action, with_.decision.slot], [without.decision.action, without.decision.slot])
+  assert.equal(without.reason.factors.oddsMismatch, null)
+})
+
+test("observed odds row matching the 18.6 candidate is not a mismatch", async () => {
+  const file = JSON.parse(fs.readFileSync(new URL("../data/profiles/set18.candidate.json", import.meta.url), "utf8"))
+  const { buildProfile } = await import("../data/profileFile.js")
+  const record = await createCoach({ source: fakeSource({ oddsObserved: [16, 30, 43, 10, 1] }), profile: buildProfile(file, "18.6") }).tick()
+  assert.equal(record.reason.factors.oddsMismatch, false)
+  assert.ok(!record.reason.caveats.some((c) => c.includes("hàng odds HUD")))
+})
+
+test("odds mismatch is null when the level is unknown or no row was read", async () => {
+  const noLevel = await createCoach({ source: fakeSource({ level: null, hudLevelUnknown: true, oddsObserved: [16, 30, 43, 10, 1] }) }).tick()
+  assert.equal(noLevel.reason.factors.oddsMismatch, null)
+  const noRow = await createCoach({ source: fakeSource({ oddsObserved: null }) }).tick()
+  assert.equal(noRow.reason.factors.oddsMismatch, null)
+})

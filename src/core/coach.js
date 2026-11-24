@@ -1,5 +1,6 @@
 import { decide, actionName } from "../engine/decide.js"
 import { explain } from "../engine/reason.js"
+import { DEFAULT_PROFILE } from "../data/profile.js"
 
 const SCHEMA_VERSION = 2
 
@@ -88,6 +89,15 @@ export function createCoach({
       // Unknown fields are reported as null, never as the number the engine used.
       reason.factors.level = input.hudLevelUnknown || input.level == null ? null : input.level
       reason.factors.shopKnown = Array.isArray(input.shop) && !(input.shopUnknownSlots?.length)
+      // Observed odds row (I11): compared with the active profile only. The decision never reads it.
+      const oddsRow = Array.isArray(input.oddsObserved) ? input.oddsObserved : null
+      const oddsLevel = input.level
+      const table = (profile ?? DEFAULT_PROFILE).shopOdds
+      const expected = oddsLevel != null && Array.isArray(table[oddsLevel]) ? table[oddsLevel].map((x) => Math.round(x * 100)) : null
+      const oddsMismatch = oddsRow && expected ? oddsRow.some((x, i) => Math.abs(x - expected[i]) > 0.5) : null
+      reason.factors.oddsObserved = oddsRow
+      reason.factors.oddsMismatch = oddsMismatch
+      if (oddsMismatch) reason.caveats.push(`hàng odds HUD cấp ${oddsLevel} [${oddsRow.join(", ")}] khác hồ sơ [${expected.join(", ")}]; xác suất vẫn theo hồ sơ, quyết định không đổi`)
       if (rules) reason.factors.rules = rules
       if (traitOverlay) {
         reason.factors.traitOverlay = { set: traitOverlay.set, verified: traitOverlay.verified, applied: traitOverlay.applied }

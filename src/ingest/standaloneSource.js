@@ -117,6 +117,7 @@ export function createStandaloneSource(options = {}) {
         shop,
         ...(!goldKnown ? { hudGoldUnknown: true } : {}),
         ...(!levelKnown ? { hudLevelUnknown: true } : {}),
+        oddsObserved: validOddsRow(hud),
         ...(shop && shopUnknownSlots.length ? { shopUnknownSlots } : {}),
         target: null,
         missing,
@@ -126,6 +127,15 @@ export function createStandaloneSource(options = {}) {
       }
     },
   }
+}
+
+// Observed shop odds row from the HUD (I11): five numbers in percent that sum to 100 within 1. Anything else is unread (null).
+function validOddsRow(hud) {
+  const row = hud?.oddsRow
+  if (!Array.isArray(row) || row.length !== 5) return null
+  if (!row.every((x) => Number.isFinite(x) && x >= 0 && x <= 100)) return null
+  if (Math.abs(row.reduce((a, b) => a + b, 0) - 100) > 1) return null
+  return row
 }
 
 function usableHud(hud) {

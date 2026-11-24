@@ -244,3 +244,22 @@ test("shop cost falls back to set18.json when the slot has no cost; an unknown i
   assert.equal(record.state.shop[0].id, "DA_18_Ornn")
   assert.deepEqual(record.state.shopUnknownSlots, [1, 2, 3, 4])
 })
+
+test("HUD odds row is kept only when it has five numbers in 0–100 that sum to 100 within 1", async (t) => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-hud-odds-"))
+  t.after(() => fs.rmSync(dir, { recursive: true, force: true }))
+  const hudPath = path.join(dir, "hud.json")
+  const source = createStandaloneSource({ hudPath, eogPath: path.join(dir, "snapshot.json") })
+  const base = { hudSchema: 2, source: "window", set: 18, hudDetected: true, gold: 40, level: 7, shopSlots: [null, null, null, null, null] }
+  const write = (oddsRow) => fs.writeFileSync(hudPath, JSON.stringify({ ...base, capturedAtMs: Date.now(), ...(oddsRow === undefined ? {} : { oddsRow }) }))
+  write([16, 30, 43, 10, 1])
+  assert.deepEqual((await source.read()).oddsObserved, [16, 30, 43, 10, 1])
+  write([16, 30, 43, 10])
+  assert.equal((await source.read()).oddsObserved, null)
+  write([16, 30, 43, 10, 150])
+  assert.equal((await source.read()).oddsObserved, null)
+  write([16, 30, 43, 10, "1"])
+  assert.equal((await source.read()).oddsObserved, null)
+  write(undefined)
+  assert.equal((await source.read()).oddsObserved, null)
+})

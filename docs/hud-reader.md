@@ -4,6 +4,8 @@ Bộ đọc lấy vàng, cấp và tên tướng từ chữ trên HUD qua Tesser
 
 Khi lượt đầu nhận ra một phần HUD, bộ đọc có thể đọc lại riêng ô vàng bằng chế độ chỉ nhận chữ số. Các vùng cấp hoặc tên tướng chưa rõ được đọc lại theo từng dòng để giảm ảnh hưởng của chữ ở vùng lân cận. Khi cả vàng lẫn cấp đã được xác nhận, bước đọc lại cũng dùng ngưỡng tương phản thấp hơn cho ô tướng bị làm tối trong hiệu ứng chuyển cảnh.
 
+Trường tùy chọn `oddsRow` (I11): năm số theo phần trăm của hàng odds đang hiển thị cho cấp hiện tại, tổng 100 ± 1. Thiếu hoặc không hợp lệ là chưa đọc (engine coi là `null`). Engine so hàng này với hồ sơ đang dùng và ghi `reason.factors.oddsMismatch`; không đổi quyết định. Trường `xp` (`{current, needed}`) được định nghĩa ở đây nhưng engine chưa đọc (I4).
+
 Bản ghi `hudSchema: 2` xác nhận HUD nếu có ít nhất hai nhóm tín hiệu trong ba nhóm vàng, cấp và cửa hàng. Cửa hàng cần ít nhất hai tên tướng nhận dạng được để làm tín hiệu. Từng trường chưa đọc được vẫn là `null`. Trong `shopSlots`, `null` cũng có thể là ô trống hoặc thẻ Wisp. `shop` trong bản ghi OCR chỉ có dữ liệu khi xác nhận đủ năm tướng.
 
 Nguồn standalone nhận bản ghi từ cửa sổ thật trong vòng hai giây. Với bản ghi phiên bản 2, coach chỉ xét mua những ô đã đọc được khi đã xác nhận số vàng. `cost` là bậc tướng trong danh mục để tính xác suất. `price` là số vàng hiển thị trên thẻ để xét đủ vàng và tính lãi bị mất. Khi `price` là `null`, coach giữ tên tướng và bỏ qua đề xuất mua ô đó. Bản ghi cũ không có trường `price` dùng bậc tướng như trước. `shopUnknownSlots` liệt kê các chỉ số ô chưa xác định, tính từ 0. Khi chưa xác nhận được cấp, coach có thể xét mua các ô đã đọc và để trống xác suất gặp tướng. Đề xuất lên cấp hoặc roll cần xác nhận cả vàng lẫn cấp.
