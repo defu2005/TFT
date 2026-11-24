@@ -58,6 +58,8 @@ export function slotChance(level, cost, copiesLeft, champsAtCost, profile) {
 export const SHOP_SLOTS = 5
 export function hitAtLeastKOverRolls(level, cost, copiesLeft, champsAtCost, k, rolls, profile) {
   if (!(rolls > 0)) return 0
+  // k copies of one unit need k copies in the pool; the independent-slot model cannot see that.
+  if (copiesLeft < k) return 0
   return atLeastKOfSlots(slotChance(level, cost, copiesLeft, champsAtCost, profile), SHOP_SLOTS * Math.floor(rolls), k)
 }
 

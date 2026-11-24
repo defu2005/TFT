@@ -33,3 +33,8 @@ test("at least k is monotone in k and zero when k exceeds slots", () => {
   assert.equal(atLeastKOfSlots(0.5, 3, 4), 0)
   assert.equal(hitAtLeastKOverRolls(7, 1, 9, 13, 1, 0), 0)
 })
+
+test("k copies are impossible when fewer than k copies are left in the pool", () => {
+  assert.equal(hitAtLeastKOverRolls(7, 1, 1, 13, 2, 10), 0)
+  assert.ok(hitAtLeastKOverRolls(7, 1, 2, 13, 2, 10) > 0)
+})
