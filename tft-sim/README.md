@@ -44,6 +44,24 @@ Ghi chu:
 - God (PICK_GOD): chua do duoc. `diag_aug.py` dem god bang `god_offer` (sai), ket qua 0 khong hop le.
 - Clone (uni2, huan luyen tren heuristic) vs v3 tren engine, seed 120000-120999: -0,086 [-0,19, +0,02]. CI chua 0: clone ngang v3 tren engine, khong phai chi tren heuristic. Nguon: `engine_arena.py clone`, log scratchpad.
 
+## Giai doan 2 tren engine: clone v4 (v3 + augment, uni3) - ung vien dong bang
+
+- **Quy tac teacher v4** = `make_aug_rule()`: v3 (swap value) + chon augment uu tien augment co trong `AUGMENT_REGISTRY`, roi moi den tier. Chon tren dev 100000-100399 (-0,77 [-0,94, -0,61] so v3).
+- **Dac trung uni3 (185 chieu)** = uni2 (179) + 3 co "co augment o slot" + 3 co "augment o slot nam trong registry" (`src/tft_sim/features_v4.py`).
+- **Du lieu:** teacher v4 tren EngineResolver, ca 8 ghe. Train 150000-150399 (1,18 trieu dong), val 150400-150499 (297 nghin), test 151000-151199 (590 nghin). Script: `scripts/collect_v4.py`. File .npz khong commit (o scratchpad).
+- **BC (40 epoch, 3 seed):** test 99,6% tong; PICK_AUGMENT 99,6%; REROLL 94,6%; BENCH_BOARD 96,1%. Script: `scripts/bc_v4.py` (checkpoint seed 0 o scratchpad).
+
+**Choi tren engine, seed 160000-160999 (chua dung):**
+
+| Phep | Hieu A-B | CI 95% |
+|---|---|---|
+| null: v4 vs v4 | -0,011 | [-0,12, +0,09] |
+| clone v4 vs v4 | -0,031 | [-0,14, +0,08] |
+| clone v4 vs v3 | -0,82 | [-0,92, -0,71] |
+| clone v4 vs scripted goc | -2,30 | [-2,39, -2,21] |
+
+Dat tieu chi cua advisor: clone vs v4 co CI chua 0, va clone vs v3 gan -0,8 (dung bang gia tri augment). Ghi chu: v4 chi la ung vien dong bang, chua sang loc nhieu theo loai va chua chon quy tac god; PICK_GOD van la teacher cu. Script choi: `scripts/play_v4.py` (chay 1 luong torch de tranh tranh chap CPU).
+
 ## Dinh chinh (noi dung that, buoc 4)
 
 - **Rut lai nhan "134 EQUIP no-op" tren CDragon.** Chan doan truoc so sanh so thanh phan truoc va sau ca buoc env, nen tron lan cap thanh phan cuoi vong (PvE). Chan doan truc tiep (bao `_equip`, `scripts/diag_equip_real.py`): **134/134 EQUIP tieu thu dung 2 thanh phan.** Khong can dan xuat noi dung moi cho EQUIP tren CDragon.
