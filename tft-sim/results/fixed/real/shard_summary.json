@@ -1,0 +1,95 @@
+{
+  "mode": "reduced_low_memory",
+  "train_games": 500,
+  "seeds": {
+    "train": [
+      300000,
+      300499
+    ],
+    "val": [
+      301500,
+      301599
+    ],
+    "test": [
+      301600,
+      301999
+    ],
+    "collected_shards": {
+      "s1": [
+        300000,
+        300499
+      ],
+      "s4": [
+        301500,
+        301999
+      ]
+    }
+  },
+  "shards": {
+    "s1": {
+      "rows": 1479411,
+      "seed_min": 300000,
+      "seed_max": 300499,
+      "sha256": "01b38c05db5cfebd8b9c4502742eafb5e273176c509203aed5c4a2e74f5465e7"
+    },
+    "s2": {
+      "rows": null,
+      "seed_min": null,
+      "seed_max": null,
+      "sha256": null,
+      "status": "not_collected_low_memory_mode"
+    },
+    "s3": {
+      "rows": null,
+      "seed_min": null,
+      "seed_max": null,
+      "sha256": null,
+      "status": "not_collected_low_memory_mode"
+    },
+    "s4": {
+      "rows": 1479539,
+      "seed_min": 301500,
+      "seed_max": 301999,
+      "sha256": "681e6759984da2e87b75c90b53616299773999b62d0c1ddc084fcf37f63e63d8"
+    }
+  },
+  "splits": {
+    "train": {
+      "rows": 1479411,
+      "seed_min": 300000,
+      "seed_max": 300499,
+      "sha256": "41d676af78becc9b6e6f8239b9bbcb45bb65c5cf0bba9d44f59e517950e45a1b"
+    },
+    "val": {
+      "rows": 295884,
+      "seed_min": 301500,
+      "seed_max": 301599,
+      "sha256": "8bf86aebd407f97db1e49fa0307aeabc4d465c8d7cf14b5dfd574c5fa4cd0e7a"
+    },
+    "test": {
+      "rows": 1183655,
+      "seed_min": 301600,
+      "seed_max": 301999,
+      "sha256": "92db200d6fb113214ae3f7c1cc42a13d2369e51b79ef1882276b1665a94e660f"
+    }
+  },
+  "commit_tft": "0ba34f388be1bab2f9dcf82c7a3dd321290a0b2d",
+  "commit_tft_goat": "d5358e9402569f745bea81b61c5aed0500c57d66",
+  "ram_peak_mb": 6350,
+  "ram_peak_measurement": "sampled host used RAM during shard collection; training sample peak 5143 MB",
+  "wall_seconds": 1248,
+  "timings_seconds": {
+    "collection_two_shards": 403.2,
+    "training_three_seeds": 714.3
+  },
+  "check_results": {
+    "seed_range": [
+      300000,
+      300002
+    ],
+    "s1_rows": 5821,
+    "check_rows": 5821,
+    "rows_identical": true,
+    "actions_identical": true
+  }
+}
