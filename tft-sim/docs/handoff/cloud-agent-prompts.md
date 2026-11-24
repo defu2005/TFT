@@ -57,7 +57,7 @@ Môi trường: đã cài bằng bash tft-sim/scripts/cloud_setup.sh. Trước m
 Nếu ~/work/env.sh chưa có hoặc `import tft_goat` lỗi, chạy lại bash tft-sim/scripts/cloud_setup.sh; nếu vẫn lỗi, dừng và báo log.
 
 Các bước:
-1. Thu 4 shard song song (từ thư mục tft-sim):
+1. Thu shard (từ thư mục tft-sim). Đo thực tế: 300 ván = 886.000 dòng, mỗi tiến trình đỉnh RAM khoảng 1,7 GB, khoảng 0,9 giây mỗi ván trên một nhân. Với 500 ván mỗi shard, RAM mỗi tiến trình khoảng 3 GB: nếu RAM dưới 24 GB, chạy 2 tiến trình một lúc, không chạy 4. Chạy 4 shard song song:
    mkdir -p ~/work/data
    python scripts/collect_v4.py 300000 300500 ~/work/data/s1.npz &
    python scripts/collect_v4.py 300500 301000 ~/work/data/s2.npz &

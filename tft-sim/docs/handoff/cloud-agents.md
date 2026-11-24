@@ -76,7 +76,7 @@ Không chồng dải. Không dùng 230000–230999 hay 240000+ để huấn luy�
 
 `scripts/merge_v4.py out_dir shard...` kiểm tra từng shard (shape, action, mask hợp lệ, không NaN), loại shard lỗi, rồi chia theo seed thành `train.npz`, `val.npz`, `test.npz` theo mục 2.
 
-Đo trên máy 4 nhân: khoảng 1 giây mỗi ván trên một nhân, khoảng 3.000 dòng mỗi ván. 2.000 ván ≈ 6 triệu dòng ≈ 4,4 GB `uni3` (chưa nén). **Cần máy có RAM tối thiểu 16 GB** (gộp tạm thời nhân đôi bộ nhớ). Nếu ít hơn, giảm số ván và báo lại.
+Đo thực tế (máy 4 nhân, 15 GB): 300 ván mất 4 phút 41 giây một nhân, tạo 886.111 dòng (khoảng 2.950 dòng mỗi ván), đỉnh RAM tiến trình 1,7 GB. 2.000 ván ≈ 6 triệu dòng ≈ 4,4 GB `uni3` (chưa nén). **Cần máy có RAM tối thiểu 16 GB** (gộp tạm thời nhân đôi bộ nhớ). Nếu ít hơn, giảm số ván và báo lại.
 
 Kiểm tra bắt buộc trước khi báo xong:
 1. `uni3.shape[1] == 185`, `mask.shape[1] == 43`, action trong `[0, 42]`, không NaN/inf.
