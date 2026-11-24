@@ -42,7 +42,7 @@ Ghi chu:
 - Endgame (ap luc HP): khong phat hien o +-0,17 (endgame_dev H20/40/60).
 - Dinh vi va item: mo. Engine tu xep vi tri, EQUIP khong chon unit nhan item. Giai doan 4 can sua engine hoac env.
 - God (PICK_GOD): chua do duoc. `diag_aug.py` dem god bang `god_offer` (sai), ket qua 0 khong hop le.
-- Clone tren engine (`engine_arena.py clone`): chua co ket qua trong repo tai thoi diem nay.
+- Clone (uni2, huan luyen tren heuristic) vs v3 tren engine, seed 120000-120999: -0,086 [-0,19, +0,02]. CI chua 0: clone ngang v3 tren engine, khong phai chi tren heuristic. Nguon: `engine_arena.py clone`, log scratchpad.
 
 ## Dinh chinh (noi dung that, buoc 4)
 
