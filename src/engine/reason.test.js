@@ -20,7 +20,7 @@ test("explains a buy with slot, odds and interest, and carries the odds caveat",
     target: null,
   })
   assert.equal(r.action, "buy")
-  assert.match(r.text, /Mua ô 1 \(B, cost 3\)/)
+  assert.match(r.text, /Mua ô 2 \(B, cost 3\)/) // slot index 1 is shown as ô 2
   assert.match(r.text, /xác suất gặp/)
   assert.ok(r.caveats.includes(CAVEAT_ODDS))
   assert.match(r.text, /ước lượng/)
@@ -99,4 +99,18 @@ test("a roll that spans several shops reports the budget chance in the reason", 
   const reason = explain(state, out, trace)
   assert.equal(out.action, 3)
   assert.match(reason.text, /Roll hết 10 lượt/)
+})
+
+test("a buy on the first shop slot is shown as ô 1, not ô 0", () => {
+  const r = run({
+    level: 7,
+    gold: 42,
+    hp: 55,
+    stage: 4,
+    shop: [{ id: "A", cost: 1, copiesOwned: 0, priority: 5 }, null, null, null, null],
+    target: null,
+  })
+  assert.equal(r.action, "buy")
+  assert.match(r.text, /Mua ô 1 \(A, cost 1\)/)
+  assert.doesNotMatch(r.text, /ô 0/)
 })

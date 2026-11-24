@@ -13,7 +13,7 @@ export function explain(state, out, trace, oddsCaveat = CAVEAT_ODDS) {
     const c = trace.find((t) => t.action === "buy" && t.slot === out.slot)
     const roll = trace.find((t) => t.action === "roll")
     text =
-      `Mua ô ${out.slot} (${c?.unit ?? "?"}, cost ${c?.cost ?? "?"}${c?.price !== undefined && c.price !== c.cost ? `, giá ${c.price ?? "chưa đọc"}` : ""}): điểm ${out.score.toFixed(2)}, ` +
+      `Mua ô ${out.slot + 1} (${c?.unit ?? "?"}, cost ${c?.cost ?? "?"}${c?.price !== undefined && c.price !== c.cost ? `, giá ${c.price ?? "chưa đọc"}` : ""}): điểm ${out.score.toFixed(2)}, ` +
       `${c?.hit === null ? "xác suất chưa tính (chưa đọc được cấp)" : `xác suất gặp ${(out.hit * 100).toFixed(1)}%`}, còn ${c?.copiesLeft ?? "?"} bản ` +
       `(nguồn số bản: ${c?.copiesSource ?? "?"}), mất ${c?.interestLoss ?? 0} lãi.` +
       (roll && roll.score > 0.45 && roll.score > out.score ? " Mua trước rồi mới roll, vì roll sẽ thay shop." : "")
