@@ -67,13 +67,30 @@ def snapshot():
     return folder / 'scripts' / 'hud-reader.py', version
 
 
+def meminfo(key):
+    for line in Path('/proc/meminfo').read_text().splitlines():
+        if line.startswith(key + ':'):
+            return int(line.split()[1]) * 1024
+    return 0
+
+
 def stats_file(name):
+    # Fallback when cgroup v2 files are absent (no cgroup mount in this container).
+    if not (CGROUP / name).exists():
+        times = os.times()
+        if name == 'cpu.stat':
+            return {'usage_usec': int((times.user + times.system) * 1e6)}
+        if name == 'memory.stat':
+            return {'inactive_file': 0}
+        return {}
     return dict((key, int(value)) for key, value in (line.split() for line in
                 (CGROUP / name).read_text().splitlines()))
 
 
 def capacity():
     count = len(os.sched_getaffinity(0))
+    if not (CGROUP / 'cpu.max').exists():
+        return count
     cpu, period = (CGROUP / 'cpu.max').read_text().split()
     return min(count, int(cpu) / int(period)) if cpu != 'max' else count
 
@@ -243,7 +260,7 @@ def remove_finished(db):
 def run(db, pool, reader, version):
     active = {}
     cpu_count = capacity()
-    memory_max = int((CGROUP / 'memory.max').read_text())
+    memory_max = int((CGROUP / 'memory.max').read_text()) if (CGROUP / 'memory.max').exists() else meminfo('MemTotal')
     target = 2
     previous_cpu = stats_file('cpu.stat')['usage_usec']
     previous_clock = time.monotonic()
@@ -280,7 +297,7 @@ def run(db, pool, reader, version):
         remove_finished(db)
         report_sources(db)
 
-        memory = int((CGROUP / 'memory.current').read_text())
+        memory = int((CGROUP / 'memory.current').read_text()) if (CGROUP / 'memory.current').exists() else meminfo('MemTotal') - meminfo('MemAvailable')
         working = max(0, memory - stats_file('memory.stat')['inactive_file'])
         timestamp = time.monotonic()
         current_cpu = stats_file('cpu.stat')['usage_usec']
