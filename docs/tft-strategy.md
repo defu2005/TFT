@@ -1,6 +1,6 @@
 # Chiến lược TFT: nguyên tắc, nguồn và khoảng trống của engine
 
-Trạng thái: **nháp**. Tài liệu này ghi nguyên tắc và số liệu từ nguồn. Vòng này không đổi bảng mặc định trong `rules.js`. Chỉ thêm ba quy tắc U9 tắt mặc định, bật bằng `TFT_RULES` (`keepInterest`, `earlyLevel`, `guideLevels`). `guideLevels` dùng bảng mốc level của metabot (mục 2).
+Trạng thái: **nháp**. Tài liệu này ghi nguyên tắc và số liệu từ nguồn. Vòng này không đổi bảng mặc định trong `rules.js`. Chỉ thêm ba quy tắc U9 tắt mặc định, bật bằng `TFT_RULES` (`keepInterest`, `earlyLevel`, `guideLevels`, `targetBudget`). `guideLevels` dùng bảng mốc level của metabot (mục 2).
 
 Nhãn trạng thái (theo `docs/tft-knowledge.md`):
 - `verified`: đã mở trang và đọc đúng con số đó.

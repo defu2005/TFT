@@ -1,12 +1,13 @@
-import { MAX_INTEREST } from "../data/rules.js"
+import { interestGold } from "./odds.js"
 
-// Gold at the start of each of the next `rounds` rounds, with income and interest added round by round.
-// Interest is taken from the gold held at the start of each round, as the game does.
+// Gold at the end of each of the next `rounds` rounds, with income and interest added round by round.
+// Interest uses the gold held at the start of the round (research §14.1 example). The timing is not yet
+// checked against the game, so this is a planning projection and not used in any decision.
 export function projectGold(gold, rounds, baseIncome = 5) {
   const out = []
   let g = gold
   for (let i = 0; i < rounds; i++) {
-    g += baseIncome + Math.min(MAX_INTEREST, (g / 10) | 0)
+    g += baseIncome + interestGold(g)
     out.push(g)
   }
   return out

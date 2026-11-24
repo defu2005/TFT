@@ -12,9 +12,12 @@ const ACTION_NAME = ["hold", "buy", "xp", "roll", "sell"]
 // Off by default. Each flag switches on one U9 rule in docs/needs.md; see parseRules in src/app.js.
 export const NO_RULES = Object.freeze({ keepInterest: false, earlyLevel: false, guideLevels: false, targetBudget: false })
 
-// Copies of the target still needed for its next star (3 copies make one 2-star, 9 make 3-star).
+// Copies still needed to reach the next star, in copy units (1 copy, 3 for a 2-star, 9 for a 3-star).
+// Under 3 copies the goal is a 2-star; from 3 to 8 it is a 3-star; at 9 there is nothing left to buy.
 export function copiesToNextStar(owned) {
-  return 3 - (owned % 3)
+  if (owned < 3) return 3 - owned
+  if (owned < 9) return 9 - owned
+  return 0
 }
 
 // Rolls left after keeping the interest reserve and paying for the copies still needed.
@@ -182,12 +185,20 @@ export function decide(state, out, trace = null, rules, profile) {
   let rollScore = 0
   const rollAffordable = goldKnown && levelKnown && !!target?.cost && gold >= rollNeeds
   let rollHit = 0
+  let budgeted = false
+  let ownedKnown = true
+  let copiesNeeded = 0
+  let budgetRolls = 0
   if (target && target.cost && rollAffordable && !targetInShop) {
     if (r.targetBudget) {
       // Opt-in: odds of finishing the next star within the budget left after buying the copies needed.
-      const owned = countCopies(state.board, target.id) + countCopies(state.bench, target.id)
-      const budgetRolls = targetBudgetRolls(gold, reserve, target.cost, copiesToNextStar(owned), freeRolls)
-      rollHit = budgetRolls > 0 ? hitAtLeastKOverRolls(level, target.cost, target.copiesLeft, target.champsAtCost, copiesToNextStar(owned), budgetRolls, p) : 0
+      // Owned copies need both board and bench; without both, the goal is unknown and k falls back to 1.
+      budgeted = true
+      ownedKnown = Array.isArray(state.board) && Array.isArray(state.bench)
+      const owned = ownedKnown ? countCopies(state.board, target.id) + countCopies(state.bench, target.id) : 0
+      copiesNeeded = ownedKnown ? copiesToNextStar(owned) : 1
+      budgetRolls = targetBudgetRolls(gold, reserve, target.cost, copiesNeeded, freeRolls)
+      rollHit = budgetRolls > 0 && copiesNeeded > 0 ? hitAtLeastKOverRolls(level, target.cost, target.copiesLeft, target.champsAtCost, copiesNeeded, budgetRolls, p) : 0
     } else {
       rollHit = hitChance(level, target.cost, target.copiesLeft, target.champsAtCost, p)
     }
@@ -207,6 +218,10 @@ export function decide(state, out, trace = null, rules, profile) {
       hitWithin,
       // Trace only (no decision change). Two copies within the budget, and the budget after
       // setting aside one buy at the target's tier price (copies needed is not in the state; 1 is assumed).
+      budgeted,
+      ownedKnown,
+      copiesNeeded,
+      budgetRolls,
       hitAtLeast2Within: goldKnown && levelKnown && target && target.cost && !targetInShop ? hitAtLeastKOverRolls(level, target.cost, target.copiesLeft, target.champsAtCost, 2, rolls, p) : 0,
       rollsAfterTarget: goldKnown && target && target.cost ? Math.max(0, freeRolls + ((gold - target.cost - reserve) > 0 ? ((gold - target.cost - reserve) / REROLL_COST) | 0 : 0)) : 0,
       note: !target ? "không có mục tiêu (set_target chưa được gọi)" : targetInShop ? "mục tiêu đang có trong shop" : !goldKnown ? "chưa đọc được vàng" : !levelKnown ? "chưa đọc được cấp" : !rollAffordable ? `thiếu vàng để roll (cần ${rollNeeds})` : "",

@@ -75,7 +75,7 @@ Quy ước:
 - Mua món muốn mua trước khi roll, không roll khi mục tiêu đã có trong shop: **đã làm**.
 - Lên level và roll theo `xp` và `round`: **chờ số XP từ người dùng**.
 - Xác suất trong toàn bộ ngân sách roll (`hitWithin`): **chỉ hiển thị**, chưa dùng trong điểm (U9 mục 4).
-- Quy tắc U9 (`keepInterest`, `earlyLevel`, `guideLevels`): **đã làm nhưng tắt mặc định**, bật bằng `TFT_RULES`. `tft_evaluate_state` không dùng chúng.
+- Quy tắc U9 (`keepInterest`, `earlyLevel`, `guideLevels`, `targetBudget`): **đã làm nhưng tắt mặc định**, bật bằng `TFT_RULES`. `tft_evaluate_state` không dùng chúng.
 - Hồ sơ dữ liệu (`profile`): **đã làm nhưng tắt mặc định**. Bảng mặc định lấy từ `rules.js`; `TFT_PROFILE_FILE` + `TFT_PATCH` đổi bảng theo set và bản vá; file candidate Set 18 chưa được xác nhận (U2). Chưa có nguồn nào gửi `set` và `patch` (I8).
 - Chọn line tự động từ bàn và tộc: **đã làm, tắt mặc định** (`TFT_AUTO_LINE=1`, `TFT_SET_FILE`). Chưa có tác dụng trong game vì id của set 17 không khớp id live (xem `docs/needs.md`, U3).
 

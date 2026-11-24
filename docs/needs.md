@@ -150,3 +150,10 @@ Không có số HUD cho 2→3 (cấp 2 không đọc được trong mục 10); k
 **Phần chênh giữa mặc định và hàng 18.6 đã đo:** cấp 3–6 đã đo và khớp mặc định; cấp 1–2 và 10–11 chưa đo. Ở cấp 7, 8, 9 có chênh lệch ở một số cost (bảng trên). Chạy bài kiểm tra bất biến trên 2.000 trạng thái sinh có seed với hồ sơ candidate ở `TFT_PATCH=18.6`: 4 quyết định khác mặc định, cùng con số ở `16.20` (mục U2). Số này dựa trên tập sinh, không phải trận thật.
 
 Cần I11 (hàng odds và XP đọc từ client) hoặc nguồn có số trước khi đổi hồ sơ. Bật thử: `TFT_PROFILE_FILE=src/data/profiles/set18.candidate.json TFT_PATCH=18.6`.
+
+## Quy tắc `targetBudget` (tắt mặc định, bật bằng `TFT_RULES=targetBudget`)
+- Số bản còn cần `copiesNeeded` tính từ board và bench theo đơn vị bản (1 bản, 3 bản cho 2 sao, 9 bản cho 3 sao): dưới 3 bản đích là 2 sao, từ 3 đến 8 là 3 sao, 9 thì không còn gì để mua.
+- Thiếu board hoặc bench thì không biết số bản đang có: dùng `copiesNeeded = 1` và ghi chú trong lý do. Nguồn live hiện không gửi bench nên rule này dùng k = 1 khi chạy live.
+- Ngân sách roll = (vàng − giữ lãi − giá × copiesNeeded) / 2, giữ lãi 10 (50 nếu `keepInterest`, 0 khi nguy hiểm). Điểm roll = P(gặp ít nhất k bản trong ngân sách).
+- Đo trên 2.000 trạng thái cố định: mặc định không đổi; bật rule đổi 44 quyết định (hold→roll 38, roll→hold 4, xp→buy 1, xp→roll 1). Đây là thay đổi hành vi có chủ đích, chưa được chứng minh là tốt hơn; cần backtest trước khi bật mặc định.
+- Dự báo vàng theo vòng (`src/engine/economy.js`) chưa dùng trong quyết định; thời điểm tính lãi chưa kiểm chứng với game.

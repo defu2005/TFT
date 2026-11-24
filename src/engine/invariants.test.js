@@ -5,6 +5,8 @@ import { decide, actionName, BUY, SELL, ROLL, HOLD } from "./decide.js"
 import { buildProfile } from "../data/profileFile.js"
 
 const ALL_RULES = { keepInterest: true, earlyLevel: true, guideLevels: true }
+// Pinned count for the targetBudget rule on the seeded states below; change it only with a reason.
+const CHANGED_WITH_TARGET_BUDGET = 44
 
 // Seeded generator so every run checks the same 2,000 states.
 function mulberry32(seed) {
@@ -151,7 +153,7 @@ function decideOf(state, rules, profile = null) {
 }
 
 const CANDIDATE = buildProfile(JSON.parse(fs.readFileSync(new URL("../data/profiles/set18.candidate.json", import.meta.url), "utf8")), "16.20")
-for (const [label, rules, profile] of [["rules off", null, null], ["all U9 rules on", ALL_RULES, null], ["candidate profile", null, CANDIDATE]]) {
+for (const [label, rules, profile] of [["rules off", null, null], ["all U9 rules on", ALL_RULES, null], ["candidate profile", null, CANDIDATE], ["targetBudget on", { keepInterest: false, earlyLevel: false, guideLevels: false, targetBudget: true }, null]]) {
   test(`HUD fields: price equal to the tier decides as before, and a null price is never bought (${label})`, () => {
     const rnd = mulberry32(20261124)
     for (let n = 0; n < 2000; n++) {
@@ -183,6 +185,7 @@ for (const [label, rules, profile] of [["rules off", null, null], ["all U9 rules
 
 test("targetBudget rule: count decisions that change on the same 2,000 states", () => {
   const rnd = mulberry32(20260)
+  const moves = {}
   let changed = 0
   for (let i = 0; i < 2000; i++) {
     const state = makeState(rnd)
@@ -190,8 +193,12 @@ test("targetBudget rule: count decisions that change on the same 2,000 states", 
     const b = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
     decide(state, a, null)
     decide(state, b, null, { keepInterest: false, earlyLevel: false, guideLevels: false, targetBudget: true })
-    if (a.action !== b.action || a.slot !== b.slot || a.bench !== b.bench) changed++
+    if (a.action !== b.action || a.slot !== b.slot || a.bench !== b.bench) {
+      changed++
+      const key = `${actionName(a.action)}->${actionName(b.action)}`
+      moves[key] = (moves[key] || 0) + 1
+    }
   }
-  console.log(`# targetBudget changes ${changed} of 2000 decisions`)
-  assert.ok(changed >= 0)
+  console.log(`# targetBudget changes ${changed} of 2000 decisions ${JSON.stringify(moves)}`)
+  assert.equal(changed, CHANGED_WITH_TARGET_BUDGET)
 })
