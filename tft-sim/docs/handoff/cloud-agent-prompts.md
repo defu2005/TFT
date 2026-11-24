@@ -49,7 +49,7 @@ Các vai DT, C, E chỉ cần máy cục bộ. Vai R cần internet nên dùng C
 ```
 Bạn là agent DT cho dự án TFT (workstream sim). Nhánh được giao: sim-dt.
 
-Bước 0 (bắt buộc): kiểm tra file tft-sim/scripts/collect_v4.py và tft-sim/docs/handoff/cloud-agents.md có trong repo. Nếu thiếu, dừng và báo "nhánh sai", không làm gì thêm. Chạy `free -g` và `nproc`, ghi kết quả. Nếu RAM dưới 16 GB, dừng sau bước 0 và báo; KHÔNG đổi dải seed để chạy ít hơn.
+Bước 0 (bắt buộc): kiểm tra file tft-sim/scripts/collect_v4.py và tft-sim/docs/handoff/cloud-agents.md có trong repo. Nếu thiếu, dừng và báo "nhánh sai", không làm gì thêm. Chạy `awk '/MemTotal/{print int($2/1024)" MB"}' /proc/meminfo` và `nproc`, ghi kết quả. Ngưỡng: MemTotal từ 15000 MB trở lên (máy 16 GB danh nghĩa báo khoảng 15.700 MB). Nếu thấp hơn, chạy chế độ rút gọn (bước 1b), không đổi dải seed.
 
 Đọc trước: tft-sim/docs/handoff/cloud-agents.md (mục 0–6). Đó là nguồn chuẩn.
 
@@ -57,17 +57,22 @@ Môi trường: đã cài bằng bash tft-sim/scripts/cloud_setup.sh. Trước m
 Nếu ~/work/env.sh chưa có hoặc `import tft_goat` lỗi, chạy lại bash tft-sim/scripts/cloud_setup.sh; nếu vẫn lỗi, dừng và báo log.
 
 Các bước:
-1. Thu shard (từ thư mục tft-sim). Đo thực tế: 300 ván = 886.000 dòng, mỗi tiến trình đỉnh RAM khoảng 1,7 GB, khoảng 0,9 giây mỗi ván trên một nhân. Với 500 ván mỗi shard, RAM mỗi tiến trình khoảng 3 GB: nếu RAM dưới 24 GB, chạy 2 tiến trình một lúc, không chạy 4. Chạy 4 shard song song:
+1. Thu shard (từ thư mục tft-sim). Luôn chạy tối đa 2 tiến trình cùng lúc (đã đo: 300 ván = 886.000 dòng, đỉnh RAM tiến trình khoảng 1,7 GB, khoảng 0,9 giây mỗi ván trên một nhân). Đợt 1:
    mkdir -p ~/work/data
    python scripts/collect_v4.py 300000 300500 ~/work/data/s1.npz &
    python scripts/collect_v4.py 300500 301000 ~/work/data/s2.npz &
+   wait
+   Đợt 2:
    python scripts/collect_v4.py 301000 301500 ~/work/data/s3.npz &
    python scripts/collect_v4.py 301500 302000 ~/work/data/s4.npz &
    wait
    Mỗi tiến trình phải in DONE. Ghi thời gian và RAM đỉnh.
+
+1b. Chế độ rút gọn (chỉ khi MemTotal dưới 15000 MB): chỉ chạy s1 (300000–300499, toàn bộ train) và s4 (301500–301999, chứa val và test). Gộp và huấn luyện như bình thường, ghi rõ trong báo cáo là chỉ 500 ván train. Không đổi dải seed.
+
 2. Kiểm tra tái lập: chạy lại python scripts/collect_v4.py 300000 300002 ~/work/data/check.npz. Lọc s1.npz theo seed 300000–300001 và so sánh action và số dòng với check.npz (phải giống hệt). Nếu khác, dừng và báo.
 3. Gộp và chia:
-   python scripts/merge_v4.py ~/work/data/split ~/work/data/s1.npz ~/work/data/s2.npz ~/work/data/s3.npz ~/work/data/s4.npz
+   python scripts/merge_v4.py ~/work/data/split ~/work/data/s1.npz ~/work/data/s2.npz ~/work/data/s3.npz ~/work/data/s4.npz  (chế độ rút gọn: chỉ s1 và s4)
    In ra số dòng train/val/test. Nếu shard nào bị LOAI, dừng và báo.
 4. Huấn luyện clone v5:
    python scripts/bc_v4.py ~/work/data/split v5

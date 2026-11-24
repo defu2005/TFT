@@ -13,9 +13,9 @@ Mỗi phiên chạy trên máy riêng, tạm thời, và **không chia sẻ file
 - **Không dùng seed đã đóng** (mục 2).
 - **Không lộ bí mật** vào commit, log, hay request ra ngoài.
 
-## 1. Môi trường (đặt trong phần Setup/Install của dashboard)
+## 1. Môi trường
 
-Lệnh duy nhất để cài đặt, chạy từ gốc repo:
+Cài đặt: Codex dùng `bash tft-sim/scripts/cloud_setup.sh` (xem `cloud-agent-prompts.md` mục B). Cursor dùng lệnh tự chứa trong cùng mục B, vì Build chạy trên nhánh mặc định.
 
 ```bash
 bash tft-sim/scripts/cloud_setup.sh
