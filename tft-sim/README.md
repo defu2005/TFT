@@ -508,3 +508,29 @@ Doc ket qua: doi unit lam teacher tot hon ro rang tren seed giu-lai, va null kho
 - Nguong "da hoc" 70% duoc dat sau khi da xem so lieu, nen khong duoc coi la tieu chi trung lap.
 - Ket qua theo loai (BUY_SHOP 74-82%, BUY_XP 71-77%, PICK_AUGMENT ~60%, REROLL_AUGMENT 0%) la phan co y nghia. Ket qua vs scripted can doc cung canh bao nay.
 - Nghien cuu theo patch: xem `docs/knowledge/`. Thiet ke: `docs/PATCH_MODEL.md`. Transfer test chua chay.
+
+## Ket qua cloud agent (giam sat tu dong, 2026-11-24)
+
+Quet `origin` sau commit `0ba34f3`. Hai nhanh co commit moi; hai nhanh chua co gi moi hoac chua ton tai. Moi so duoi day lay tu file trong nhanh, kem seed.
+
+**DT — `codex/sim-dt` @ `01d2339` (che do giam: `reduced_low_memory`).** Khong phai ke hoach 2.000 van: chi thu thap `s1` (seed 300000–300499, 500 van) va `s4` (seed 301500–301999, val + test). `s2`, `s3` khong thu. Nguon: `results/fixed/real/shard_summary.json`.
+- Tach: train 1.479.411 dong (300000–300499); val 295.884 (301500–301599); test 1.183.655 (301600–301999).
+- Thoi gian 1.248 s; RAM dinh lay mau 6.350 MB (huan luyen 5.143 MB). Kiem tra lai 3 seed dau (300000–300002): dong va action giong het.
+- Clone v5, 3 seed × 40 epoch (`results/fixed/real/bc_v5.json`), do **do khop hanh dong voi teacher** tren test, khong phai placement:
+  - tong: seed0 0,9889; seed1 0,9978; seed2 0,9971.
+  - thap nhat theo loai: REROLL seed0 0,6544 (seed1 0,9327; seed2 0,9939); BENCH_BOARD 0,9628–0,9736; BUY_XP seed0 0,9131.
+- Checkpoint `results/checkpoints/clone_v5_seed0.pt` (188.905 byte) da commit.
+- **Chua co so placement cho v5.** Chua co CI95; vong E chua chay.
+
+**R — `cursor/sim-r` @ `bcf9ebe`.** `docs/handoff/set18-sources.md` cap nhat: cap 7 = 19/30/40/10/1 (Riot 17.1, da kiem nguon cong khai); XP 2→7 = 2/6/10/20/36 (Riot 14.15, khop 13.23). Chua duoc xac minh doc lap:
+- Commit `bcf9ebe` noi snapshot CDragon trong repo co version string **16.23**, khong phai 18.7. Toi kiem tra snapshot `tft-sim/data/cdragon/cdragon_18.7_2026-11-23.json.gz`: sha256 khop README, nhung khong tim thay chuoi version nao trong noi dung. **Chua giai quyet duoc; can kiem tra truoc khi tin nhan 18.7 cho Set 18.**
+- File ghi "Cap nhat: 2026-11-25", la ngay sau ngay hom nay (2026-11-24). Can kiem tra lai.
+
+**C — `codex/sim-c`:** chua co commit moi (van `0ba34f3`).
+
+**E — `codex/sim-e`:** chua ton tai. DT da commit checkpoint nen E co the bat dau khi nguoi dieu phoi tao nhanh tu `codex/sim-dt`. Chua chay gi.
+
+Commit ket qua nay chi them muc moi; so cu khong sua.
+
+Co-Authored-By: Claude Haiku 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_014HR84uNjNyg8fiD4KjHhVE

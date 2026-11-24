@@ -114,3 +114,10 @@ Kiểm tra bắt buộc trước khi báo xong:
 - Checkpoint (`~190 KB`) và JSON: commit lên nhánh được giao.
 - Dữ liệu thô chỉ rời máy khi người dùng yêu cầu rõ.
 
+
+## Dang chay / bi chan (cap nhat tu dong 2026-11-24)
+
+- **DT:** chay che do giam (`reduced_low_memory`): train 500 van (300000–300499), khong phai 1.500. Seed 300500–301499 chua thu thap va van de trong. Can quyet dinh co chay them shard `s2`, `s3` hay chap nhan clone v5 o muc nay. RAM dinh 6.350 MB, duoi nguong 16 GB.
+- **R:** commit `bcf9ebe` noi snapshot CDragon trong repo la version 16.23, trong khi README ghi 18.7. Chua xac minh (snapshot khong chua chuoi version). Doc ghi ngay "2026-11-25" (tuong lai). Can kiem tra truoc khi dung so Set 18 cua R.
+- **E:** cho nhanh `codex/sim-e`. Checkpoint `clone_v5_seed0.pt` da co tren `codex/sim-dt`.
+- **C:** chua co commit.
