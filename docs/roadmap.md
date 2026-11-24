@@ -25,7 +25,7 @@ Mỗi phase kết thúc bằng một cổng đo được. Không chuyển phase 
 
 - **Mục tiêu:** một nền chung, một bộ dữ liệu được xác nhận, một đường live có chính sách rõ ràng.
 - **Việc:**
-  1. Đưa quy tắc agent (`docs/agents/`) lên `master` qua PR. Cần người dùng yêu cầu.
+  1. Đưa quy tắc agent (`docs/agents/`) lên `master` qua PR. **Đã xong:** PR #1 (2026-11-24).
   2. Xác định set đang chạy: `set17.json` và tóm tắt Set 17 trên master, nhánh codex đọc Set 18, nhánh fable ghi CDragon latest là 18.7. Kiểm chứng từ nguồn chính thức trước khi chọn.
   3. Giải quyết mâu thuẫn RAM (xem trên). Ghi rõ chính sách với từng đường: Riot API, log client, đọc bộ nhớ, sniff mạng, OCR màn hình. Đọc bộ nhớ và sniff mạng có rủi ro về điều khoản và anti-cheat, nên đây là quyết định của người dùng, không phải của agent.
   4. Chọn một đường dữ liệu làm chính.
@@ -34,7 +34,7 @@ Mỗi phase kết thúc bằng một cổng đo được. Không chuyển phase 
 
 ### Phase 2: Tích hợp nhánh
 
-- **Mục tiêu:** một `master` có đủ các nhánh, mọi bộ test xanh.
+- **Mục tiêu:** một `master` có đủ các nhánh, mọi bộ test xanh. **Đã xong (2026-11-24):** PR #1–#4 đã merge, test xanh (182 Node, 8 pytest).
 - **Thứ tự merge đề xuất:** PR #1 (tài liệu), rồi `dazzling`, rồi `codex/hud-realtime-progress`, rồi `fable`. Mỗi nhánh một PR, chạy đủ bộ test sau mỗi lần merge.
 - **Sau mỗi lần merge:** chạy `npm test` (39/168/42 test Node tùy nhánh), `python3 scripts/test_hud_ocr.py -v` (cần `TFT_SET18_ART_ZIP`), và `PYTHONPATH=src python3 -m pytest -q` trong `tft-sim/`.
 - **Cổng:** `master` có đủ nội dung, tất cả bộ test xanh.
