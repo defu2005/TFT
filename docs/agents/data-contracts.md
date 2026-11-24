@@ -9,7 +9,7 @@ Dùng ID này để gọi nhau. Tên nhánh do phiên cấp và có thể đổi
 | ID | Việc | Nhánh hiện tại |
 |---|---|---|
 | `engine` | Engine, coach, MCP, ingest trạng thái | `claude/dazzling-feynman-g7a0b9` (chưa merge) |
-| `hud` | OCR HUD Set 18, chiến dịch VOD | `codex/hud-realtime-handoff` (chưa merge) |
+| `hud` | OCR HUD Set 18, chiến dịch VOD | `codex/hud-realtime-progress` (chưa merge; chứa `dazzling` đến `7f5b292`) |
 | `sim` | Mô phỏng và học chính sách `tft-sim/` | `claude/claude-fable-5-2-awwmf5` (chưa merge) |
 | `user` | Người điều phối và máy ingest của người dùng | `master`, và máy người dùng (không có nhánh riêng) |
 
@@ -109,16 +109,15 @@ Mỗi dòng là một điểm trao đổi đã xác định từ các tài liệ
 
 Dòng I6 và I8 được gán cho `hud` theo mục "Từ phiên ingest" của `needs.md`, trong đó nhánh `codex/hud-realtime-handoff` được nêu là nhánh ingest. `user` chỉ là bên dự phòng khi cần máy người dùng.
 
-## 5. Quyết định người dùng cần đưa ra
+## 5. Chủ dữ liệu roster Set 18 (quyết định theo tư vấn advisor, 2026-11-24)
 
-**Ai là chủ của dữ liệu roster và trait Set 18?** Hiện có ba nguồn, và chúng không khớp nhau:
+**Chủ: `engine`.** File `src/data/set18.json` (trên `dazzling`) là nguồn duy nhất cho ID và cost. Script `scripts/export-set18.js` là bộ sinh duy nhất và ghi phiên bản CDragon.
 
-- `engine`: `src/data/set18.json`, xuất từ CDragon phiên bản 16.23.8406595. Có overlay trait cho 18.7 nhưng không bật mặc định.
-- `sim`: lấy CDragon 18.7 khi chạy `tft-sim`.
-- `hud`: `src/data/set18-hud.json`, dùng để nhận diện tên trên màn hình.
-
-Trước khi người dùng chọn, các nhánh **không được** tự sửa file roster của nhau. Mỗi bên chỉ ghi chú sự khác biệt trong `responses/` của mình.
-
+- `hud` giữ tên hiển thị và alias, lấy ID và cost từ file của `engine`.
+- `sim` đọc cùng file đó.
+- Kiểm tra ngày 2026-11-24: catalog của `dazzling` và của `progress` đều khớp 33/33 ID và cost trong ván EoG mẫu, không lệch. `CHAMPION_COSTS` trên master sai 3 tướng (Xayah 3 thay vì 1, Diana 4 thay vì 3, Kayle 1 thay vì 2) và thiếu 21 tướng.
+- **Chưa xác minh:** nhãn `16.23.8406595` (engine) và `18.7` (sim) có thể là cùng một bản dump CDragon với hai nhãn khác nhau. Trước khi kết luận là hai nguồn khác nhau, cần kiểm tra bản dump.
+- Các nhánh không được tự sửa file roster của nhau. Mỗi bên ghi khác biệt vào `responses/` của mình.
 ## 6. Mẫu hợp đồng
 
 Khi một workstream chốt một bộ dữ liệu để người khác dùng, tạo `docs/agents/contracts/<tên-dữ-liệu>.md` trên nhánh của mình:

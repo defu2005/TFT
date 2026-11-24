@@ -27,11 +27,13 @@ Bộ tài liệu này áp dụng cho mọi agent (Claude, Codex, hoặc người
 ## Thực trạng cần biết (tại thời điểm viết)
 
 - `master` (`f3284c7`) có engine, MCP server, 39 test và replay tổng hợp.
-- Ba nhánh chưa merge, mỗi nhánh một workstream:
-  - `codex/hud-realtime-handoff`: OCR HUD Set 18 và chiến dịch kiểm thử VOD. Tách từ `3e09f8a`.
-  - `claude/dazzling-feynman-g7a0b9`: tài liệu và logic coach. Tách từ `f3284c7`.
-  - `claude/claude-fable-5-2-awwmf5`: mô phỏng `tft-sim/`. Tách từ `3e09f8a`.
-- Hai nhánh `codex` và `fable` tách từ commit cũ hơn master, thiếu commit cấu hình `f3284c7`. Cần rebase trước khi merge.
-- Bảy file trong `src/` bị sửa bởi cả `codex` và `dazzling`. Đây là nguồn xung đột chính. Xem `ownership.md`.
+- Năm nhánh đang phát triển, chưa nhánh nào vào `master` (đã kiểm tra 2026-11-24):
+  - `claude/nifty-lovelace-252i30`: PR #1, chỉ có tài liệu.
+  - `claude/dazzling-feynman-g7a0b9`: engine. Tách từ `f3284c7`, 170 commit.
+  - `codex/hud-realtime-progress`: OCR HUD. Chứa `dazzling` đến `7f5b292` và thêm 2 commit. Không tách trực tiếp từ `master`.
+  - `codex/hud-realtime-handoff`: bàn giao cũ, nằm trong lịch sử của `progress`.
+  - `claude/claude-fable-5-2-awwmf5`: mô phỏng `tft-sim/`. Tách từ `3e09f8a`, 77 commit.
+- Kiểm tra `git merge-tree` cho từng cặp đều sạch. Chưa kiểm tra việc merge tuần tự nhiều nhánh.
+- Thông tin cũ "bảy file vùng nóng xung đột giữa codex và dazzling" đã lỗi thời: `progress` đã chứa `dazzling`.
 
 Những thông tin này sẽ lỗi thời. Khi có thay đổi lớn, cập nhật lại mục này.

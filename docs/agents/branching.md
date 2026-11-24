@@ -42,10 +42,12 @@
 
 Đây là thứ tự đề xuất, không phải lệnh. Người điều phối quyết định cuối.
 
-1. Nhánh tài liệu và quy tắc (không chạm `src/`).
-2. Nhánh mô phỏng `tft-sim/` (không chạm `src/`, nhưng cần rebase để có commit cấu hình trên master).
-3. Nhánh đã rebase lên master có thay đổi `src/` nhỏ nhất.
-4. Nhánh còn lại, sau khi giải quyết xung đột trên bảy file vùng nóng.
+1. PR #1 (`claude/nifty-lovelace-252i30`): tài liệu và quy tắc, không chạm `src/`.
+2. `claude/dazzling-feynman-g7a0b9` (engine).
+3. `codex/hud-realtime-progress` (OCR HUD, đã chứa `dazzling` đến `7f5b292`).
+4. `claude/claude-fable-5-2-awwmf5` (`tft-sim/`, không chạm `src/`).
+
+Mỗi nhánh là một PR riêng. Chạy đủ bộ test sau mỗi lần merge.
 
 ## Dọn nhánh
 
