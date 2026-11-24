@@ -81,3 +81,32 @@ def make_endgame(hp_threshold: int):
                 return REROLL
         return a
     return pol
+
+
+def make_aug_rule():
+    """v3 + chon augment: uu tien augment co hieu ung trong combat (AUGMENT_REGISTRY cua engine), roi moi den tier.
+    v3 chi chon theo tier, nen bo qua augment co hieu ung combat khi tier thap hon."""
+    from tft_goat.engine.augments_set17 import AUGMENT_REGISTRY as REG
+    from tft_goat.env.actions import PICK_AUGMENT_START
+    from tft_sim.tftgoat import augment_tiers  # noqa: F401  (giu tuong thich)
+    RANK = {"silver": 1, "gold": 2, "prismatic": 3, "god": 4}
+    base = make_swap_rule(key="value", sell=True, floor=54)
+
+    def pol(env, agent, obs, mask, rng):
+        a = base(env, agent, obs, mask, rng)
+        if PICK_AUGMENT_START <= a < PICK_AUGMENT_START + 3:
+            p = env._state.players[agent]
+            offer = list(p.augment_offer)[:3]
+            augs = env._state.set_content.augments
+            best, best_key = a, None
+            for i in range(3):
+                if not mask[PICK_AUGMENT_START + i] or i >= len(offer):
+                    continue
+                name = offer[i]
+                tier = RANK.get(augs[name].tier, 0) if name in augs else 0
+                key = (name in REG, tier, -i)
+                if best_key is None or key > best_key:
+                    best_key, best = key, PICK_AUGMENT_START + i
+            return best
+        return a
+    return pol
