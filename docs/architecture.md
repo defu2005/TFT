@@ -1,10 +1,10 @@
 # Kiến trúc tft-coach
 
-Trạng thái: đã có code chạy được trên dữ liệu replay tổng hợp. Chưa kiểm thử với dữ liệu live.
+Trạng thái (cập nhật 2026-11-24, đầu nhánh `claude/dazzling-feynman-g7a0b9`): engine và coach chạy trên replay tổng hợp và trên nguồn standalone (TFTEoGStats.json + HUD). Live Client 127.0.0.1:2999 trả ECONNREFUSED với client hiện tại, nên chưa có đường live đã xác nhận. `npm test` 182/182; Python `scripts/test_hud_ocr.py` 7 đạt, 4 bỏ qua vì thiếu `TFT_SET18_ART_ZIP`.
 
 ## 1. Phạm vi
 
-App chạy local trên máy người dùng. Mỗi vòng lặp, app đọc trạng thái trận, tính quyết định tốt nhất theo engine, ghi lại quyết định kèm lý do, và cung cấp các khả năng đó cho agent qua MCP. Đọc thông tin realtime trận đấu bằng live client api.
+App chạy local trên máy người dùng. Mỗi vòng lặp, app đọc trạng thái trận, tính quyết định tốt nhất theo engine, ghi lại quyết định kèm lý do, và cung cấp các khả năng đó cho agent qua MCP. Nguồn trạng thái: Live Client API (hiện không dùng được), file RAM (`captures/ram-state.json`, hiện bị chặn bởi Vanguard), hoặc nguồn standalone (`TFTEoGStats.json` và `captures/hud-live.json`). Xem `docs/data-sources.md`.
 
 Đã xác minh giấy phép bên thứ 3 từ Riot.
 
@@ -35,7 +35,12 @@ src/
 }
 ```
 `base` có thể bỏ trống; khi đó bảng mặc định của `rules.js` được dùng và được ghi vào caveat. Mỗi hàng odds có `maxCost` phần tử và tổng bằng 1. Bản vá chỉ liệt kê hàng đổi; mọi bản vá có version ≤ `TFT_PATCH` được áp dụng theo thứ tự số. Khóa không rõ làm app báo lỗi. Chỉ `shopOdds`, `poolCopies`, `champsPerCost` và `maxCost` được đọc từ file; các phần khác vẫn là hằng trong code.
-  ingest/sources.js   nguồn trạng thái: live hoặc replay
+  ingest/sources.js   nguồn trạng thái: live, replay, capture, ram, standalone (hybrid = standalone)
+  ingest/standaloneSource.js  đọc TFTEoGStats.json (HP, bàn cờ, stage) và captures/hud-live.json (vàng, cấp, shop, giá, oddsRow); cờ hudGoldUnknown, hudLevelUnknown, shopUnknownSlots; HUD cũ quá 2 giây bị bỏ
+  ingest/ramSource.js  đọc captures/ram-state.json; gold/level null khi thiếu file
+  src/data/set18.json, set18-hud.json, set18-hud-names.json  roster Set 18 (74 tướng, cost từ đây), catalog OCR (65 tên khớp), bảng tên→id
+  src/llm/hint.js     gợi ý tính bên cạnh vòng quyết định; engine không đọc (chưa dùng)
+  src/engine/traitOverlay.js  overlay tộc tùy chọn
   ingest/liveClient.js đọc Live Client Data tại 127.0.0.1:2999; toState liệt kê trường thiếu
   ingest/capture.js   ghi payload thô ra captures/ (gitignored, có Riot ID); không ra quyết định
   log/decisionLog.js  JSONL, chỉ ghi khi trạng thái hoặc quyết định đổi
@@ -88,7 +93,9 @@ Khi line tự động bật, coach báo `reason.factors.setMismatch` (id không 
 
 | Biến | Mặc định | Ý nghĩa |
 | --- | --- | --- |
-| `TFT_SOURCE` | `live` | `live`, `replay` (state tổng hợp) hoặc `capture` (payload thật đã ghi) |
+| `TFT_SOURCE` | `live` | `live`, `replay` (state tổng hợp), `capture` (payload thật đã ghi), `ram` (file RAM), `standalone` hoặc `hybrid` (TFTEoGStats.json + HUD) |
+| `TFT_PLAYER` | (trống) | tên người chơi trong snapshot, dùng cho nguồn standalone |
+| `TFT_RAM_STATE` | `captures/ram-state.json` | file trạng thái RAM khi `TFT_SOURCE=ram` |
 | `TFT_CAPTURE` | (bắt buộc khi `capture`) | file JSONL từ `npm run capture` |
 | `TFT_CAPTURE_POLL_MS` | `1000` | chu kỳ đọc khi ghi capture |
 | `TFT_REPLAY` | fixture tổng hợp | đường dẫn fixture replay |
