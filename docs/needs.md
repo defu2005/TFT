@@ -98,7 +98,7 @@ Format và danh sách trường xem `docs/engine-state.md`, mục 4.
 | 2026-11-23 (advisor, theo ủy quyền của người dùng) | Merge nhánh codex vào nhánh này (commit merge hai cha) | `c79c200` |
 | 2026-11-23 (advisor, theo ủy quyền của người dùng) | Sau merge: ước lượng vàng và level của nguồn standalone đổi thành `null` kèm cờ, như nguồn live/RAM | `c79c200` |
 | 2026-11-24 (advisor, theo ủy quyền của người dùng) | Số ô trong chữ cho người chơi đánh số từ 1 (`Mua ô 1`, `Bán ô bench 2`); `decision.slot` và `bench` giữ chỉ số 0 | `81902ad`, `ee4a565` |
-| 2026-11-24 (advisor) | I11 phía engine: hàng odds HUD là tùy chọn, kiểm năm số 0–100 tổng 100 ± 1; so với hồ sơ đang dùng chỉ để ghi cờ và caveat, không đổi quyết định | (commit kế tiếp) |
+| 2026-11-24 (advisor) | I11 phía engine: hàng odds HUD là tùy chọn, kiểm năm số 0–100 tổng 100 ± 1; so với hồ sơ đang dùng chỉ để ghi cờ và caveat, không đổi quyết định | `94d1fd6` |
 | 2026-11-23 (advisor, theo ủy quyền của người dùng) | Sau merge: id catalog HUD ánh xạ theo tên qua `src/data/set18-hud-names.json`; 65/65 khớp `set18.json` cùng cost (test `hudCatalog.test.js`). Phạm vi: chỉ catalog, chưa kiểm với snapshot thật | `c79c200`; sửa sau đó: `git log c79c200..HEAD` |
 | 2026-11-23 | Tài liệu hoá nhu cầu dữ liệu và hợp đồng giả định | `c5c15e1` |
 | 2026-11-23 | Đếm bản từ board và bench, trừ số bản người khác giữ | `afe451c` |
