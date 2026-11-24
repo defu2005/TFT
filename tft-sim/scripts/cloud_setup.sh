@@ -37,10 +37,10 @@ pip install -q torch --index-url https://download.pytorch.org/whl/cpu \
 # 3. Kiểm tra nhập được cả hai gói.
 PYTHONPATH="$SIM_DIR/src:$GOAT/src" python -c "import tft_goat, tft_sim, torch, numpy; print('ok torch', torch.__version__, 'numpy', numpy.__version__)"
 
-cat <<EOF
-
-Xong. Trước mỗi lệnh chạy sim, đặt:
-  . $VENV/bin/activate
-  export PYTHONPATH=$SIM_DIR/src:$GOAT/src
-  export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
-EOF
+# Ghi file env với đường dẫn tuyệt đối; agent chỉ cần: . ~/work/env.sh
+cat > "$WORK/env.sh" <<ENVEOF
+. $VENV/bin/activate
+export PYTHONPATH=$SIM_DIR/src:$GOAT/src
+export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+ENVEOF
+echo "Xong. Trước mỗi lệnh sim chạy: . $WORK/env.sh"

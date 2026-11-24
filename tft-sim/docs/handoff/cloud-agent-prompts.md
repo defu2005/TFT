@@ -14,26 +14,33 @@
 
 ## B. Cài đặt môi trường
 
-Cả hai dịch vụ đều dùng cùng một lệnh cài đặt:
+Lệnh cài đặt chung: `bash tft-sim/scripts/cloud_setup.sh` (idempotent; ghi `~/work/env.sh`).
 
-```bash
-bash tft-sim/scripts/cloud_setup.sh
-```
+**Cursor Cloud Agents** (đã đọc `cursor.com/docs/cloud-agent/setup`, `builds`, `security-network`):
+- Build được tạo từ **nhánh mặc định** (master). Install chạy trên checkout của nhánh mặc định, nơi chưa có `tft-sim/scripts/cloud_setup.sh`. Vì vậy **install phải là lệnh tự chứa**, không gọi file trong repo:
+  ```bash
+  set -e
+  mkdir -p ~/work && cd ~/work
+  [ -d tft_goat/.git ] || git clone -q https://github.com/MielPopsssssss/tft_goat tft_goat
+  git -C tft_goat fetch -q origin d5358e9402569f745bea81b61c5aed0500c57d66 2>/dev/null || git -C tft_goat fetch -q origin
+  git -C tft_goat checkout -q --detach d5358e9402569f745bea81b61c5aed0500c57d66
+  [ -x venv/bin/python ] || python3 -m venv venv
+  . venv/bin/activate
+  pip install -q numpy pydantic httpx riotwatcher gymnasium pettingzoo pytest
+  pip install -q torch --index-url https://download.pytorch.org/whl/cpu || pip install -q torch
+  ```
+- Phiên chạy trên nhánh `sim-*` được checkout **sau** khi Build khởi động (xác nhận trong tài liệu). Vì vậy `tft-sim/scripts/cloud_setup.sh` có trong phiên, và prompt gọi nó nếu `~/work/env.sh` chưa có.
+- Install timeout mặc định 90 phút; đủ cho bước trên.
+- Cấu hình VM: "limited memory and CPU" theo mặc định, **không ghi số RAM/CPU**. Vì vậy bước 0 của prompt DT phải đo `free -g`, `nproc`.
+- **Cursor tự mở PR** khi bàn giao ("pushes its branch and opens a pull request"). Quy tắc "không tạo PR" trong prompt không chắc được tuân thủ. Cần người dùng quyết định.
+- Commit do "Cursor Agent" thực hiện. Tài liệu không nói có cho chọn nhánh khi tạo phiên không; tài liệu nói có thể bắt đầu phiên trên một nhánh cụ thể (feature branch run).
 
-**Codex Cloud** (theo tài liệu đã đọc, có xác nhận một phần):
-- Tạo môi trường mới, chọn repo `defu2005/TFT`.
-- Đặt **Install script** = lệnh trên.
-- **Network:** bật "Package managers". Thêm domain nếu cần: `download.pytorch.org`, `github.com`. Lưu ý: agent phase mặc định **không** có internet, nên mọi việc tải về phải nằm trong install script. Các vai DT, C, E chỉ cần máy cục bộ nên không cần thêm.
-- Publish môi trường để dùng lại.
-- *Chưa xác nhận:* tên chính xác các nút trên giao diện hiện tại có thể khác. Trang "Codex Cloud (Legacy)" nói setup script chạy có internet, agent phase tắt mặc định.
+**Codex Cloud** (đã đọc `learn.chatgpt.com/docs/environments/cloud-environments.md` và `docs/cloud.md`):
+- Codex tự kiểm tra repo và đề xuất **Install script** và **Start skill**; có thể lưu trạng thái đã chuẩn bị ("Publishing captures the prepared filesystem"). Đặt Install script = lệnh tự chứa như trên, hoặc `bash tft-sim/scripts/cloud_setup.sh` nếu chạy trên nhánh sim.
+- Network: agent phase (theo trang Legacy) tắt internet mặc định; mọi tải về phải nằm trong setup. *Chưa xác nhận* trên giao diện hiện tại.
+- *Chưa xác nhận:* cách chọn nhánh khi tạo task; tài liệu không đề cập.
 
-**Cursor Cloud Agents** (theo `cursor.com/docs/cloud-agent/setup`):
-- Tạo môi trường mới trong dashboard Cloud Agents, chọn repo `defu2005/TFT`.
-- Đặt **install** = lệnh trên. Cursor chạy install khi tạo Build, trước khi agent bắt đầu, và yêu cầu install **idempotent** (script này đã như vậy).
-- Vai R cần internet để tra cứu nguồn; Cursor phù hợp hơn Codex cho việc này.
-- *Chưa xác nhận:* Cursor có cho chọn nhánh khi tạo phiên hay không. Nếu không, phiên sẽ tự tạo nhánh; khi đó người dùng đổi tên hoặc gửi lại nhánh.
-
-Mỗi lần chạy sim trong phiên, agent tự đặt biến môi trường (mục 1 của `cloud-agents.md`).
+Các vai DT, C, E chỉ cần máy cục bộ. Vai R cần internet nên dùng Cursor.
 
 ---
 
@@ -42,15 +49,12 @@ Mỗi lần chạy sim trong phiên, agent tự đặt biến môi trường (m�
 ```
 Bạn là agent DT cho dự án TFT (workstream sim). Nhánh được giao: sim-dt.
 
-Bước 0 (bắt buộc): kiểm tra file tft-sim/scripts/collect_v4.py và tft-sim/docs/handoff/cloud-agents.md có trong repo. Nếu thiếu, dừng và báo "nhánh sai", không làm gì thêm.
+Bước 0 (bắt buộc): kiểm tra file tft-sim/scripts/collect_v4.py và tft-sim/docs/handoff/cloud-agents.md có trong repo. Nếu thiếu, dừng và báo "nhánh sai", không làm gì thêm. Chạy `free -g` và `nproc`, ghi kết quả. Nếu RAM dưới 16 GB, dừng sau bước 0 và báo; KHÔNG đổi dải seed để chạy ít hơn.
 
 Đọc trước: tft-sim/docs/handoff/cloud-agents.md (mục 0–6). Đó là nguồn chuẩn.
 
-Môi trường: đã cài bằng bash tft-sim/scripts/cloud_setup.sh. Trước mỗi lệnh sim, chạy:
-  . ~/work/venv/bin/activate
-  export PYTHONPATH="$PWD/tft-sim/src:$HOME/work/tft_goat/src"
-  export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
-Nếu lệnh cài đặt chưa chạy hoặc `import tft_goat` lỗi, chạy lại bash tft-sim/scripts/cloud_setup.sh; nếu vẫn lỗi, dừng và báo log.
+Môi trường: đã cài bằng bash tft-sim/scripts/cloud_setup.sh. Trước mỗi lệnh sim, chạy: . ~/work/env.sh (đặt PYTHONPATH và OMP_NUM_THREADS=1 bằng đường dẫn tuyệt đối).
+Nếu ~/work/env.sh chưa có hoặc `import tft_goat` lỗi, chạy lại bash tft-sim/scripts/cloud_setup.sh; nếu vẫn lỗi, dừng và báo log.
 
 Các bước:
 1. Thu 4 shard song song (từ thư mục tft-sim):
@@ -92,24 +96,21 @@ Bước 0: kiểm tra tft-sim/scripts/cem_item.py có trong repo. Nếu thiếu,
 
 Đọc trước: tft-sim/docs/handoff/cloud-agents.md (mục 0, 2, 5).
 
-Môi trường: đã cài bằng bash tft-sim/scripts/cloud_setup.sh. Trước mỗi lệnh sim, chạy:
-  . ~/work/venv/bin/activate
-  export PYTHONPATH="$PWD/tft-sim/src:$HOME/work/tft_goat/src"
-  export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+Môi trường: đã cài bằng bash tft-sim/scripts/cloud_setup.sh. Trước mỗi lệnh sim, chạy: . ~/work/env.sh (đặt PYTHONPATH và OMP_NUM_THREADS=1 bằng đường dẫn tuyệt đối).
 
 Các bước (từ thư mục tft-sim):
 1. Chạy CEM với 6 thế hệ, 12 ứng viên, dev 220000–220199, giữ-lại 240000–240999:
    python scripts/cem_item.py 6 12 220000 220200 results/fixed/real/cem_item_v2.json 240000 241000
    Chạy trong nền và ghi log ra file. Ước tính khoảng 1,5 giờ. Nếu gần hết thời gian phiên, giảm số thế hệ và ghi lại đã giảm bao nhiêu.
 2. Đọc file JSON. Báo: best_fit và mean_fit từng thế hệ, trọng số cuối, held_mean_A_minus_B và held_ci95.
-3. Lưu ý: script đã tự so sánh chính sách học được với mặc định trên 240000–240999. Chưa có so sánh với valuemax. Chạy thêm: python scripts/item_target_probe.py valuemax default 240000 241000 (đây là hiệu valuemax trừ default, số âm nghĩa là valuemax tốt hơn). Báo CI95 của hiệu. Lưu ý: lệnh trên so valuemax với default, chưa so chính sách CEM học được với valuemax. Nếu không có cách chạy trực tiếp trọng số w với scripts có sẵn, báo "chưa so sánh được CEM với valuemax" và không tự viết mã so sánh mới trong phiên.
-4. Kết luận rõ một trong ba: học được vượt valuemax (CI95 nằm hoàn toàn dưới 0), ngang valuemax (CI95 chứa 0), hoặc kém valuemax (CI95 nằm hoàn toàn trên 0).
+3. Lưu ý: script đã tự so sánh chính sách học được với mặc định trên 240000–240999. Chưa có so sánh với valuemax. Chạy thêm: python scripts/item_target_probe.py valuemax default 240000 241000 (đây là hiệu valuemax trừ default, số âm nghĩa là valuemax tốt hơn). Báo CI95 của hiệu. Lưu ý: lệnh trên so valuemax với default, không so CEM với valuemax. Không tự viết mã so sánh mới trong phiên.
+4. Kết luận CHỈ so với mặc định: held_mean_A_minus_B và CI95 trong file JSON (số âm = học được tốt hơn mặc định). Không viết "vượt valuemax" trong phiên này. Báo số valuemax-vs-default trên cùng 240000–240999 bên cạnh, để người đọc tự so. Nếu bước 3 không chạy được, ghi rõ là chưa có.
 
 Ràng buộc: không dùng seed 230000–230999 (đã dùng) hay 241000+ (dành cho E); không sửa src/, ingest/, master; không tạo PR; không chọn tham số trên 240000–240999 rồi báo lại như kết quả giữ-lại.
 
 Commit: results/fixed/real/cem_item_v2.json và các JSON so sánh. Push lên sim-c.
 
-Báo cáo cuối: bảng thế hệ, trọng số cuối, hiệu trên 240000–240999 kèm CI95, so sánh valuemax, kết luận, nhánh và commit hash.
+Báo cáo cuối: bảng thế hệ, trọng số cuối, held_mean_A_minus_B kèm CI95 so với mặc định, valuemax-vs-default cùng seed, nhánh và commit hash.
 ```
 
 ## Prompt R (nghiên cứu Set 18)
@@ -148,10 +149,7 @@ Bước 0: kiểm tra tft-sim/results/checkpoints/clone_v5_seed0.pt có trong re
 
 Đọc trước: tft-sim/docs/handoff/cloud-agents.md (mục 0, 2, 5).
 
-Môi trường: đã cài bằng bash tft-sim/scripts/cloud_setup.sh. Trước mỗi lệnh sim, chạy:
-  . ~/work/venv/bin/activate
-  export PYTHONPATH="$PWD/tft-sim/src:$HOME/work/tft_goat/src"
-  export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+Môi trường: đã cài bằng bash tft-sim/scripts/cloud_setup.sh. Trước mỗi lệnh sim, chạy: . ~/work/env.sh (đặt PYTHONPATH và OMP_NUM_THREADS=1 bằng đường dẫn tuyệt đối).
 
 Các phép (mỗi phép 1000 ván, seed 241000–241999, chưa dùng). Từ thư mục tft-sim, checkpoint là results/checkpoints/clone_v5_seed0.pt:
 - python scripts/play_v4.py v4null results/checkpoints/clone_v5_seed0.pt 241000 242000 v5

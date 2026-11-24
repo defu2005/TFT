@@ -1,10 +1,22 @@
 """Noi dung that tu CDragon latest (18.7). Nhan: 'CDragon latest (18.7)'.
 Set 17 block (TFTSet17) va Set 18 roster (TFTSet18) dung cung mot file. build_set_content doc hang so
 SET_MUTATOR toan cuc, nen dat tam thoi trong tien trinh (khong sua TFT_GOAT)."""
+import gzip
 import json
+import os
 from pathlib import Path
 
-RAW = Path("/home/user/mielpopsssssss/tft_goat/data/cdragon/cdragon_latest_fetched-2026-11-23.json")
+# Snapshot 18.7 nam trong repo (gzip, sha256 giai nen caed07e9...). Bien TFT_CDRAGON ghi de duong dan.
+# Khong phu thuoc may ca nhan: agent cloud chi can clone repo.
+_REPO = Path(__file__).resolve().parents[2] / "data" / "cdragon" / "cdragon_18.7_2026-11-23.json.gz"
+RAW = Path(os.environ.get("TFT_CDRAGON", _REPO))
+
+
+def load_raw_snapshot() -> dict:
+    if RAW.suffix == ".gz":
+        with gzip.open(RAW, "rt", encoding="utf-8") as f:
+            return json.load(f)
+    return json.loads(RAW.read_text(encoding="utf-8"))
 
 
 def build_real(mutator: str):
@@ -12,7 +24,7 @@ def build_real(mutator: str):
     old = dc.SET_MUTATOR
     try:
         dc.SET_MUTATOR = mutator
-        raw = json.loads(RAW.read_text(encoding="utf-8"))
+        raw = load_raw_snapshot()
         return dc.build_set_content(raw, f"CDragon-latest-18.7-{mutator}")
     finally:
         dc.SET_MUTATOR = old

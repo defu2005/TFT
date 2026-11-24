@@ -26,13 +26,7 @@ Script này (đã kiểm thử trên clone sạch của nhánh):
 - tạo venv tại `~/work/venv`, cài numpy, pydantic, httpx, riotwatcher, gymnasium, pettingzoo, pytest, torch CPU;
 - kiểm tra nhập được `tft_goat`, `tft_sim`, `torch`.
 
-Mỗi lần chạy lệnh sim, agent đặt trực tiếp (script không giữ được biến môi trường sang shell của agent):
-
-```bash
-. ~/work/venv/bin/activate
-export PYTHONPATH="$PWD/tft-sim/src:$HOME/work/tft_goat/src"
-export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
-```
+Script ghi `~/work/env.sh` với đường dẫn tuyệt đối. Trước mỗi lệnh sim, agent chạy `. ~/work/env.sh` (script không giữ được biến môi trường sang shell của agent).
 
 **Bắt buộc `OMP_NUM_THREADS=1`** khi chạy nhiều tiến trình. Không có nó, torch tranh CPU và chạy chậm nhiều lần.
 
@@ -120,8 +114,3 @@ Kiểm tra bắt buộc trước khi báo xong:
 - Checkpoint (`~190 KB`) và JSON: commit lên nhánh được giao.
 - Dữ liệu thô chỉ rời máy khi người dùng yêu cầu rõ.
 
----
-
-# Phạm vi các phiên (Codex / Cursor)
-
-Phần chọn công cụ, nhánh và thứ tự nằm trong `docs/handoff/cloud-agents.md` mục 4. Prompt từng vai nằm trong `docs/handoff/cloud-agent-prompts.md`.
