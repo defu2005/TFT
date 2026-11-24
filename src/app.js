@@ -17,17 +17,17 @@ const SOURCES = ["live", "replay", "capture", "ram", "standalone", "hybrid"]
 //   TFT_CAPTURE      capture file for capture mode (JSONL from `npm run capture`); required in that mode
 //   TFT_LOG          decision log path (default: logs/decisions.jsonl)
 //   TFT_INTERVAL_MS  tick interval (default: 250)
-//   TFT_RULES        comma list of opt-in U9 rules: keepInterest, earlyLevel, guideLevels (default: none)
+//   TFT_RULES        comma list of opt-in U9 rules: keepInterest, earlyLevel, guideLevels, targetBudget (default: none)
 //   TFT_PROFILE_FILE set file with base tables and patch overlays (default: rules.js)
 //   TFT_TRAIT_OVERLAY trait overlay file (add-only, off by default); needs TFT_AUTO_LINE=1
 //   TFT_PATCH        patch version to apply from that file (default: the latest)
-const KNOWN_RULES = ["keepInterest", "earlyLevel", "guideLevels"]
+const KNOWN_RULES = ["keepInterest", "earlyLevel", "guideLevels", "targetBudget"]
 
 // Returns null when unset; otherwise flags for the named rules. Unknown names throw.
 export function parseRules(value) {
   const names = String(value ?? "").split(",").map((s) => s.trim()).filter(Boolean)
   if (names.length === 0) return null
-  const rules = { keepInterest: false, earlyLevel: false, guideLevels: false }
+  const rules = { keepInterest: false, earlyLevel: false, guideLevels: false, targetBudget: false }
   for (const name of names) {
     if (!KNOWN_RULES.includes(name)) throw new Error(`TFT_RULES có tên không rõ: ${name} (chọn trong ${KNOWN_RULES.join(", ")})`)
     rules[name] = true

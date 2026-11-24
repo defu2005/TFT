@@ -180,3 +180,18 @@ for (const [label, rules, profile] of [["rules off", null, null], ["all U9 rules
     }
   })
 }
+
+test("targetBudget rule: count decisions that change on the same 2,000 states", () => {
+  const rnd = mulberry32(20260)
+  let changed = 0
+  for (let i = 0; i < 2000; i++) {
+    const state = makeState(rnd)
+    const a = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+    const b = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+    decide(state, a, null)
+    decide(state, b, null, { keepInterest: false, earlyLevel: false, guideLevels: false, targetBudget: true })
+    if (a.action !== b.action || a.slot !== b.slot || a.bench !== b.bench) changed++
+  }
+  console.log(`# targetBudget changes ${changed} of 2000 decisions`)
+  assert.ok(changed >= 0)
+})

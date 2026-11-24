@@ -10,7 +10,18 @@ export const SELL = 4
 const ACTION_NAME = ["hold", "buy", "xp", "roll", "sell"]
 
 // Off by default. Each flag switches on one U9 rule in docs/needs.md; see parseRules in src/app.js.
-export const NO_RULES = Object.freeze({ keepInterest: false, earlyLevel: false, guideLevels: false })
+export const NO_RULES = Object.freeze({ keepInterest: false, earlyLevel: false, guideLevels: false, targetBudget: false })
+
+// Copies of the target still needed for its next star (3 copies make one 2-star, 9 make 3-star).
+export function copiesToNextStar(owned) {
+  return 3 - (owned % 3)
+}
+
+// Rolls left after keeping the interest reserve and paying for the copies still needed.
+export function targetBudgetRolls(gold, reserve, cost, copiesNeeded, freeRolls) {
+  const spare = gold - reserve - cost * copiesNeeded
+  return freeRolls + (spare > 0 ? (spare / REROLL_COST) | 0 : 0)
+}
 
 export function actionName(code) {
   return ACTION_NAME[code] ?? "hold"
@@ -172,7 +183,14 @@ export function decide(state, out, trace = null, rules, profile) {
   const rollAffordable = goldKnown && levelKnown && !!target?.cost && gold >= rollNeeds
   let rollHit = 0
   if (target && target.cost && rollAffordable && !targetInShop) {
-    rollHit = hitChance(level, target.cost, target.copiesLeft, target.champsAtCost, p)
+    if (r.targetBudget) {
+      // Opt-in: odds of finishing the next star within the budget left after buying the copies needed.
+      const owned = countCopies(state.board, target.id) + countCopies(state.bench, target.id)
+      const budgetRolls = targetBudgetRolls(gold, reserve, target.cost, copiesToNextStar(owned), freeRolls)
+      rollHit = budgetRolls > 0 ? hitAtLeastKOverRolls(level, target.cost, target.copiesLeft, target.champsAtCost, copiesToNextStar(owned), budgetRolls, p) : 0
+    } else {
+      rollHit = hitChance(level, target.cost, target.copiesLeft, target.champsAtCost, p)
+    }
     rollScore = rollHit * target.priority * (urgent ? 2 : 0.8)
     if (!urgent && freeRolls === 0) rollScore -= 0.5
   }

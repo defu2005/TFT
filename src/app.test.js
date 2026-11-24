@@ -104,7 +104,8 @@ test("auto line reports shop or board ids that the set file does not know", asyn
 test("TFT_RULES parses names into flags, rejects unknown names, and is null when unset", () => {
   assert.equal(parseRules(undefined), null)
   assert.equal(parseRules(""), null)
-  assert.deepEqual(parseRules("keepInterest, guideLevels"), { keepInterest: true, earlyLevel: false, guideLevels: true })
+  assert.deepEqual(parseRules("keepInterest, guideLevels"), { keepInterest: true, earlyLevel: false, guideLevels: true, targetBudget: false })
+  assert.equal(parseRules("targetBudget").targetBudget, true)
   assert.throws(() => parseRules("keepInterest,nope"), /nope/)
 })
 
