@@ -5,7 +5,7 @@ Tài liệu này dành cho các agent cloud chạy song song. Mỗi agent nhận
 ## 0. Quy tắc cứng (áp dụng cho mọi agent)
 
 - **Phạm vi:** chỉ sửa `tft-sim/` trên nhánh được giao. Không sửa `src/`, `ingest/`, live coach, `master`, `docs/agents/`, `CLAUDE.md`, `AGENTS.md`.
-- **Nhánh:** đẩy lên đúng nhánh được giao (`claude/sim-<vai>-<mã>`). Không tạo PR. Không force-push.
+- **Nhánh:** đẩy lên đúng nhánh mà phiên cloud được giao khi tạo. Tên `claude/sim-<vai>-<mã>` trong prompt chỉ là gợi ý; nếu phiên không có nhánh được giao, dừng và hỏi người dùng. Không tạo PR. Không force-push.
 - **Không commit dữ liệu lớn.** File `.npz`, checkpoint `.pt`, log thô: giữ ngoài git, ghi vào thư mục đầu ra được giao (mục 6). Chỉ commit JSON kết quả nhỏ và summary.
 - **Không bịa số.** Mọi số báo cáo phải lấy từ file kết quả, kèm đường dẫn file và seed range.
 - **Không dùng seed đã dùng** (mục 2). Dùng seed sai là lỗi nghiêm trọng, vì nó làm hỏng kiểm định giữ-lại.
