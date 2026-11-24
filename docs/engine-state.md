@@ -84,3 +84,6 @@ Quy ước:
 - Mọi logic mới chỉ được kiểm thử trên trạng thái tổng hợp. Hành vi trên game thật không đổi cho đến khi phiên ingest gửi các trường này.
 - Không dùng số liệu game từ trí nhớ. Bench size, hoàn tiền khi bán và XP mỗi lần mua phải lấy từ dữ liệu repo hoặc từ người dùng.
 - Tài liệu này chỉ có trên nhánh `claude/dazzling-feynman-g7a0b9`. Phiên ingest cần fetch nhánh này để đọc.
+
+
+Chỉ số ô: `decision.slot` và `bench` là chỉ số 0 (dùng trong log và JSON). Chữ hiển thị cho người chơi (`reason.text`, ví dụ "Mua ô 1", "Bán ô bench 2") đánh số từ 1. Test: `src/engine/reason.test.js` ("first shop slot is shown as ô 1", "Bán ô bench 2").

@@ -28,7 +28,7 @@ export function explain(state, out, trace, oddsCaveat = CAVEAT_ODDS) {
     text = `Roll để tìm ${state.target?.id ?? "mục tiêu"}: ${c?.hit === null ? "xác suất chưa tính (chưa đọc được cấp)" : `xác suất gặp ${((c?.hit ?? 0) * 100).toFixed(1)}%`}, điểm ${out.score.toFixed(2)}.` + (c?.free > 0 ? ` Dùng lượt roll miễn phí (còn ${c.free}).` : "") + budgetNote(c)
   } else if (chosen === SELL) {
     const c = trace.find((t) => t.action === "sell" && t.bench === out.bench)
-    text = `Bán ô bench ${out.bench} (${c?.unit ?? "?"}) lấy ${c?.sellValue ?? "?"} vàng: bench đầy, cần chỗ để mua ${c?.makesRoomFor ?? "?"} (điểm ${out.score.toFixed(2)}).`
+    text = `Bán ô bench ${out.bench + 1} (${c?.unit ?? "?"}) lấy ${c?.sellValue ?? "?"} vàng: bench đầy, cần chỗ để mua ${c?.makesRoomFor ?? "?"} (điểm ${out.score.toFixed(2)}).`
   } else {
     const blocked = trace.filter((c) => c.action === "buy" && c.note && c.note !== "ô trống").map((c) => c.note)
     const reasons = [...new Set(blocked)].slice(0, 3)

@@ -87,7 +87,7 @@ test("explains a sell that makes room on a full bench", () => {
     ],
   })
   assert.equal(r.action, "sell")
-  assert.match(r.text, /Bán ô bench 1 \(y\) lấy 3 vàng/)
+  assert.match(r.text, /Bán ô bench 2 \(y\) lấy 3 vàng/) // bench index 1 is shown as ô 2
   assert.match(r.text, /mua core/)
 })
 
