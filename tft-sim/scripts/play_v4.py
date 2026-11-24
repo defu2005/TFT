@@ -1,4 +1,3 @@
-import torch; torch.set_num_threads(1)
 """Choi tren EngineResolver, seed 160000-160999 (chua dung). Mode:
   v4null   : v4 vs v4 (null)
   clone_v4 : clone v4 vs teacher v4
@@ -6,6 +5,10 @@ import torch; torch.set_num_threads(1)
   clone_scr: clone v4 vs scripted goc
 Hieu A-B; so am = tot hon. Ghi results/fixed/real/play_v4_<mode>.json."""
 import json, sys
+
+import torch
+
+torch.set_num_threads(1)  # 1 luong: tranh tranh chap CPU khi chay nhieu tien trinh
 from pathlib import Path
 import numpy as np
 import torch

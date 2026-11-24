@@ -13,9 +13,9 @@ Ty le dong y o day la muc loai+chi so tren hang >=2 hop le, vs random; xem muc B
 | Mua tuong tu shop (BUY_SHOP) | co | co | co | 77% / 80% | chua |
 | Roll (REROLL) | co | co, hiem | co (gan) | 87% / 82% (vs random, n=84 / 308; val n chua tach) | chua |
 | Mua XP (BUY_XP) | co | co | co | 86% / 82% | chua |
-| Ban tuong / ban tu board | co | **khong** (scripted khong ban) | - | - | chua |
+| Ban tuong / ban tu board | co | co (teacher v4 co quy tac ban, `make_swap_rule(sell=True)`) | - | - | chua |
 | Dat tuong len board (FIELD) | co | co | co | 100% / 100% | chua |
-| Dat tuong xuong bench (BENCH_BOARD) | co | **khong** | - | - | chua |
+| Dat tuong xuong bench (BENCH_BOARD) | co | co (teacher v4: doi unit board yeu nhat khi bench manh hon) | - | - | chua |
 | Trang bi (EQUIP) | co | co | co (0 no-op tren noi dung synthetic) | 100% / 100% | chua |
 | Chon augment (PICK_AUGMENT) | co | co (dung privileged tier) | **co, khi co tier trong feature** (99,9% val, closed loop 99,99%) | 99,9% (co tier) | chua |
 | Chon god (PICK_GOD) | co | co | co | 100% / 100% | chua |
@@ -85,7 +85,7 @@ Quy tac: voi xac suat 0,1 chon ngau nhien mot hanh dong hop le cua loai do, nguo
 
 ## Trang bi tren engine: don bay that, chua biet dich toi uu (giai doan 4)
 
-Mac dinh cua env: thanh pham (2 thanh phan) duoc trao cho unit dat nhat trong board con slot (`_equip` trong `env/actions.py`). Khong co hanh dong chon unit nhan item. Thu nghiem: thay luat chon dich, cung chinh sach v4, ghe nhom A dung luat moi, ghe nhom B mac dinh, cung lobby; hieu A-B so voi null.
+Mac dinh cua env: thanh pham (2 thanh phan) duoc trao cho unit dat nhat (cost cao nhat) trong board con slot (`_equip` trong `env/actions.py`). Khong co hanh dong chon unit nhan item. Thu nghiem: thay luat chon dich, cung chinh sach v4, ghe nhom A dung luat moi, ghe nhom B mac dinh, cung lobby; hieu A-B so voi null.
 
 | Luat (ghe A) | Seed | Hieu so voi mac dinh | CI 95% | n |
 |---|---|---|---|---|
@@ -94,7 +94,30 @@ Mac dinh cua env: thanh pham (2 thanh phan) duoc trao cho unit dat nhat trong bo
 | unit re nhat | 170000-170999 (chua dung) | -0,21 | [-0,36, -0,07] | 1000 |
 | ngau nhien | 170000-170999 (chua dung) | -0,23 | [-0,38, -0,09] | 1000 |
 
-**Ket luan:** tren seed moi 170000-170999, chon unit dat nhat cho item tot hon hai luat thay the khoang 0,2 thu hang (CI khong chua 0). Vay trang bi la don bay that trong engine. Chua biet luat nao tot hon mac dinh; can them mot luat ung vien (toi da hai luat theo advisor) va kiem tra tren seed moi. Lan dau 400 lobby qua it (CI chua 0), nen khong dung de ket luan.
+**Dau cua so (da sua):** hieu so la A-B, A la nhom dung luat thay the. Thu hang thap hon la tot hon, nen **am = nhom A xep tot hon**. Ban truoc ghi nguoc dau.
+
+**Kiem chung dau (doi chung):** nhom A khong bao gio ghep item (`none`), seed 180000-180199: A-B = +3,99 (A xep rat xau). Dau dung: am = A tot hon.
+
+**Luat ung vien (toi da hai, theo advisor):**
+- `spread`: unit it item nhat; hoa thi gia tri cao nhat (gia tri = cost x 3^(sao-1)).
+- `valuemax`: unit gia tri cao nhat.
+
+| Hieu A-B (ghe A = luat, ghe B = ngau nhien) | Seed | Hieu so | CI 95% | n |
+|---|---|---|---|---|
+| null: ngau nhien vs ngau nhien | 140000-140999 | -0,015 | [-0,12, +0,09] | 1000 |
+| spread vs ngau nhien | 140000-140999 (giu-lai) | -0,70 | [-0,80, -0,59] | 1000 |
+| valuemax vs ngau nhien | 140000-140999 (giu-lai) | -0,80 | [-0,91, -0,70] | 1000 |
+| valuemax vs mac dinh (cost cao nhat) | 140000-140999 (giu-lai) | **-1,09** | [-1,19, -0,99] | 1000 |
+| spread vs ngau nhien | 180000-180399 (dev) | -0,76 | [-0,92, -0,59] | 400 |
+| valuemax vs ngau nhien | 180000-180399 (dev) | -0,87 | [-1,03, -0,71] | 400 |
+
+**Ket luan:** luat `valuemax` (dua item cho unit co gia tri cao nhat) tot hon mac dinh cua env khoang 1,1 thu hang tren seed giu-lai, va tot hon ngau nhien khoang 0,8. Chon cho `valuemax` duoc dong bang cho giai doan 4 trong engine nay.
+
+**Gioi han:**
+- Day la so trong engine (Set 17, mo phong item don gian), chua phai TFT that.
+- Chua do co che (item tap trung hay trai deu) vi chua ghi log tong item theo ghe; buoc nay chua lam.
+- Gia tri 1,1 lon hon nhieu so voi cac luat dau (cheapest/ngau nhien vs mac dinh ~0,2). Can kiem tra them truoc khi tin manh (vi du tren seed moi, va luat khac cung loai).
+- Lan chay 400 lobby dau (130000) khong dung de ket luan do CI chua 0; do la cau hinh cu, da bo sung seed moi.
 
 ## Dinh vi trong tran (giai doan 4): chua do, khong co dau vao
 
