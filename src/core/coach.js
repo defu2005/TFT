@@ -1,7 +1,8 @@
 import { decide, actionName } from "../engine/decide.js"
 import { explain } from "../engine/reason.js"
+import { DEFAULT_PROFILE } from "../data/profile.js"
 
-const SCHEMA_VERSION = 1
+const SCHEMA_VERSION = 2
 
 // The coach owns the tick loop and the cached state. Entry points (CLI, MCP) only
 // read from it. MCP tools call getState() and never trigger a read from the source.
@@ -11,6 +12,11 @@ export function createCoach({
   intervalMs = 250,
   onTick = null,
   onError = null,
+  autoLine = null,
+  autoLineCheck = null,
+  rules = null,
+  profile = null,
+  traitOverlay = null,
   now = () => Date.now(),
 } = {}) {
   if (!source) throw new Error("createCoach needs a source")
@@ -55,19 +61,76 @@ export function createCoach({
       // `missing` lists fields the source did not provide; it is not part of the engine input.
       const { missing = [], ...fields } = snapshot
       sourceStatus.missing = missing
+      const auto = autoLine ? autoLine(fields) : null
       const input = {
         ...fields,
-        shop: applyLines(fields.shop, lines),
+        shop: applyLines(fields.shop, lines, auto),
         target: target ?? fields.target ?? null,
       }
+      // A null or omitted gold or level from the source is unknown (HUD): the flag is set and the value stays as sent in the record.
+      // decide reads null as 0 only behind the flag, so nothing is decided on it.
+      if (fields.gold == null) input.hudGoldUnknown = true
+      if (fields.level == null) input.hudLevelUnknown = true
+      if (Array.isArray(fields.bench)) input.bench = applyLines(fields.bench, lines, auto)
       const trace = []
-      const out = { action: 0, slot: -1, score: 0, hit: 0 }
-      decide(input, out, trace)
-      const reason = explain(input, out, trace)
-      if (missing.length) {
-        const note = `thiếu trường từ nguồn: ${missing.join(", ")}; đang dùng giá trị mặc định cho các trường này`
+      const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
+      decide(input, out, trace, rules, profile)
+      const reason = explain(input, out, trace, profile ? `bảng tỉ lệ shop của set ${profile.set}, bản yêu cầu ${profile.requested ?? "mới nhất"}, bản áp dụng ${profile.applied ?? "không có"}, từ file hồ sơ, chưa xác minh` : undefined)
+      if (auto && auto.size) reason.factors.autoLine = Object.fromEntries(auto)
+      if (autoLineCheck) {
+        const { ids, missingId, boardMissing } = autoLineCheck(fields)
+        if (ids.length || missingId || boardMissing) {
+          reason.factors.setMismatch = { count: ids.length, ids: ids.slice(0, 5), missingId, boardMissing }
+          if (ids.length) reason.caveats.push(`${ids.length} id không có trong file set, line tự động bỏ qua chúng`)
+          if (missingId) reason.caveats.push(`${missingId} tướng không có id hay championName, line tự động không xét được chúng`)
+          if (boardMissing) reason.caveats.push("nguồn không gửi bàn đấu, line tự động không có gì để xét")
+        }
+      }
+      // Unknown fields are reported as null, never as the number the engine used.
+      reason.factors.level = input.hudLevelUnknown || input.level == null ? null : input.level
+      reason.factors.shopKnown = Array.isArray(input.shop) && !(input.shopUnknownSlots?.length)
+      // Observed odds row (I11): compared with the active profile only. The decision never reads it.
+      const oddsRow = Array.isArray(input.oddsObserved) ? input.oddsObserved : null
+      const oddsLevel = reason.factors.level
+      const table = (profile ?? DEFAULT_PROFILE).shopOdds
+      const expected = oddsLevel != null && Array.isArray(table[oddsLevel]) ? table[oddsLevel].map((x) => Math.round(x * 100)) : null
+      const oddsMismatch = oddsRow && expected ? oddsRow.some((x, i) => Math.abs(x - expected[i]) > 0.5) : null
+      reason.factors.oddsObserved = oddsRow
+      reason.factors.oddsMismatch = oddsMismatch
+      if (oddsMismatch) reason.caveats.push(`hàng odds HUD cấp ${oddsLevel} [${oddsRow.join(", ")}] khác hồ sơ [${expected.join(", ")}]; xác suất vẫn theo hồ sơ, quyết định không đổi`)
+      if (rules) reason.factors.rules = rules
+      if (traitOverlay) {
+        reason.factors.traitOverlay = { set: traitOverlay.set, verified: traitOverlay.verified, applied: traitOverlay.applied }
+        if (!traitOverlay.verified) reason.caveats.push(`trait overlay (set ${traitOverlay.set}) chưa xác minh: ${traitOverlay.applied} tộc thêm vào tướng cho line tự động; chỉ bật khi bản vá đã phát hành`)
+      }
+      if (profile) {
+        reason.factors.profile = { set: profile.set, requested: profile.requested, applied: profile.applied }
+        for (const note of profile.caveats) reason.caveats.push(note)
+      }
+      // gold and level are unknown (null) when the source gives no value: their flags say so, whatever `missing` holds.
+      const unknown = [input.hudGoldUnknown ? "gold" : null, input.hudLevelUnknown ? "level" : null].filter(Boolean)
+      if (missing.length || unknown.length) {
+        // Source errors (ram-*) are not fields: they are reported as missing, not as defaulted values.
+        const defaulted = missing.filter((f) => !unknown.includes(f) && !/^ram-/.test(f) && f !== "shop" && f !== "snapshot")
+        const parts = []
+        if (missing.length) parts.push(`thiếu trường từ nguồn: ${missing.join(", ")}`)
+        if (defaulted.length) parts.push(`đang dùng giá trị mặc định cho ${defaulted.join(", ")}`)
+        if (input.hudGoldUnknown) parts.push("vàng chưa biết nên không mua, roll hay xp")
+        if (input.hudLevelUnknown) parts.push("cấp chưa biết nên không roll hay xp")
+        const note = parts.join("; ")
         reason.caveats.push(note)
         reason.text += ` (${note})`
+      }
+      if (Array.isArray(input.shopUnknownSlots) && input.shopUnknownSlots.length) {
+        const shown = input.shopUnknownSlots.map((i) => i + 1).join(", ")
+        const note = `ô shop chưa đọc được: ô ${shown} (không mua được ô đó; quyết định trên các ô còn lại)`
+        reason.caveats.push(note)
+        reason.text += ` (${note})`
+        if (actionName(out.action) === "roll") {
+          const rollNote = `roll sẽ bỏ ô ${shown} chưa đọc được, có thể là tướng mua được; coach không chặn roll vì ô đó`
+          reason.caveats.push(rollNote)
+          reason.text += ` (${rollNote})`
+        }
       }
       const latencyMs = performance.now() - started
       const stateHash = hashState(input)
@@ -79,9 +142,9 @@ export function createCoach({
         sourceKind: source.kind,
         latencyMs: round(latencyMs),
         stateHash,
-        known: { shop: Array.isArray(input.shop), target: !!input.target },
+        known: { shop: reason.factors.shopKnown, target: !!input.target },
         state: input,
-        decision: { action: actionName(out.action), slot: out.slot, score: round(out.score), hit: round(out.hit) },
+        decision: { action: actionName(out.action), slot: out.slot, bench: out.bench, score: round(out.score), hit: input.hudLevelUnknown ? null : round(out.hit) },
         reason,
       }
 
@@ -148,6 +211,10 @@ export function createCoach({
         updatedAt: cache.updatedAt,
         ticks: cache.ticks,
         intervalMs,
+        autoLine: !!autoLine,
+        rules: rules ?? null,
+        profile: profile ? { set: profile.set, requested: profile.requested, applied: profile.applied } : null,
+        traitOverlay: traitOverlay ? { set: traitOverlay.set, verified: traitOverlay.verified, applied: traitOverlay.applied } : null,
       }
     },
 
@@ -158,11 +225,11 @@ export function createCoach({
 }
 
 // Returns a new shop array with priorities taken from the line map. The source's array is not changed.
-function applyLines(shop, lines) {
+function applyLines(shop, lines, auto = null) {
   if (!Array.isArray(shop)) return shop ?? null
   return shop.map((unit) => {
     if (!unit) return null
-    const priority = lines.has(unit.id) ? lines.get(unit.id) : unit.priority ?? 0
+    const priority = lines.has(unit.id) ? lines.get(unit.id) : Math.max(auto?.get(unit.id) ?? 0, unit.priority ?? 0)
     return { ...unit, priority }
   })
 }
@@ -171,11 +238,21 @@ function applyLines(shop, lines) {
 export function hashState(state) {
   let ids = ""
   if (Array.isArray(state.shop)) {
-    for (const unit of state.shop) ids += unit ? `${unit.id ?? "-"}:${unit.priority ?? 0},` : "-,"
+    for (const unit of state.shop) ids += unit ? `${unit.id ?? "-"}:${unit.priority ?? 0}:${unit.copiesOwned ?? 0}:${unit.takenByOthers ?? ""}${unit.price !== undefined ? `:p${unit.price}` : ""},` : "-,"
   }
   const t = state.target
   const targetKey = t ? `${t.id ?? "-"}:${t.cost}:${t.copiesLeft}:${t.priority}:${t.champsAtCost ?? ""}` : "none"
-  return `${state.level}|${state.gold}|${state.hp}|${state.stage}|${ids}|${targetKey}`
+  const base = `${state.level}|${state.gold}|${state.hp}|${state.stage}|${ids}|${targetKey}|${unitsKey(state.board)}|${unitsKey(state.bench)}|${state.freeRolls ?? ""}`
+  // HUD flags are appended only when present, so states without them keep their old hash.
+  const flags = [state.hudGoldUnknown ? "G?" : "", state.hudLevelUnknown ? "L?" : "", Array.isArray(state.shopUnknownSlots) ? `U${state.shopUnknownSlots.join(",")}` : ""].filter(Boolean).join("")
+  return flags ? `${base}|${flags}` : base
+}
+
+function unitsKey(list) {
+  if (!Array.isArray(list)) return ""
+  let key = ""
+  for (const u of list) key += u ? `${u.id ?? "-"}:${u.star ?? ""}:${u.priority ?? 0}:${u.sellValue ?? ""},` : "-,"
+  return key
 }
 
 function sanitizeTarget(t) {

@@ -1,0 +1,755 @@
+{
+ "source": "Name join of the codex branch's HUD catalog (third party, set18-hud.json at 5954d5f) to src/data/set18.json. Derived; not verified against the game.",
+ "method": "Exact name match, case-insensitive. All 65 HUD names match a dump name with the same cost. The HUD id is kept for comparison: 49 are tft18_* (not in the dump); Sentinel's HUD id DA_18_Sentry is Pebbles in the dump.",
+ "perCost": {
+  "hud": [
+   14,
+   13,
+   14,
+   14,
+   10
+  ],
+  "dumpCollapsedLux": [
+   14,
+   13,
+   14,
+   14,
+   10
+  ],
+  "dumpRaw": [
+   14,
+   13,
+   14,
+   14,
+   19
+  ]
+ },
+ "dumpOnlyLuxVariants": [
+  "DA_Lux18_Blackthorn",
+  "DA_Lux18_Blossom",
+  "DA_18_Lux_Coven",
+  "DA_18_Lux_Elderwood",
+  "DA_18_Lux_Fae",
+  "DA_18_Lux_Inferno",
+  "DA_18_Lux_Moonbeam",
+  "DA_18_Lux_Primal",
+  "DA_18_Lux_Sunbeam"
+ ],
+ "rows": [
+  {
+   "name": "Akali",
+   "hudId": "tft18_akali",
+   "hudCost": 1,
+   "dumpIds": [
+    "DA_18_Akali_AD"
+   ],
+   "dumpCosts": [
+    1
+   ]
+  },
+  {
+   "name": "Camille",
+   "hudId": "tft18_camille",
+   "hudCost": 1,
+   "dumpIds": [
+    "DA_18_Camille"
+   ],
+   "dumpCosts": [
+    1
+   ]
+  },
+  {
+   "name": "Cinderling",
+   "hudId": "tft18_cinderling",
+   "hudCost": 1,
+   "dumpIds": [
+    "DA_Cinderling18"
+   ],
+   "dumpCosts": [
+    1
+   ]
+  },
+  {
+   "name": "Karma",
+   "hudId": "DA_Karma18",
+   "hudCost": 1,
+   "dumpIds": [
+    "DA_Karma18"
+   ],
+   "dumpCosts": [
+    1
+   ]
+  },
+  {
+   "name": "Kobuko",
+   "hudId": "tft18_kobuko",
+   "hudCost": 1,
+   "dumpIds": [
+    "DA_18_Kobuko"
+   ],
+   "dumpCosts": [
+    1
+   ]
+  },
+  {
+   "name": "Leona",
+   "hudId": "tft18_leona",
+   "hudCost": 1,
+   "dumpIds": [
+    "DA_18_Leona"
+   ],
+   "dumpCosts": [
+    1
+   ]
+  },
+  {
+   "name": "Ornn",
+   "hudId": "DA_18_Ornn",
+   "hudCost": 1,
+   "dumpIds": [
+    "DA_18_Ornn"
+   ],
+   "dumpCosts": [
+    1
+   ]
+  },
+  {
+   "name": "Pebbles",
+   "hudId": "tft18_pebbles",
+   "hudCost": 1,
+   "dumpIds": [
+    "DA_18_Sentry"
+   ],
+   "dumpCosts": [
+    1
+   ]
+  },
+  {
+   "name": "Rakan",
+   "hudId": "DA_18_Rakan",
+   "hudCost": 1,
+   "dumpIds": [
+    "DA_18_Rakan"
+   ],
+   "dumpCosts": [
+    1
+   ]
+  },
+  {
+   "name": "Rek'Sai",
+   "hudId": "tft18_reksai",
+   "hudCost": 1,
+   "dumpIds": [
+    "DA_18_RekSai"
+   ],
+   "dumpCosts": [
+    1
+   ]
+  },
+  {
+   "name": "Varus",
+   "hudId": "DA_18_Varus",
+   "hudCost": 1,
+   "dumpIds": [
+    "DA_18_Varus"
+   ],
+   "dumpCosts": [
+    1
+   ]
+  },
+  {
+   "name": "Veigar",
+   "hudId": "tft18_veigar",
+   "hudCost": 1,
+   "dumpIds": [
+    "DA_18_Veigar"
+   ],
+   "dumpCosts": [
+    1
+   ]
+  },
+  {
+   "name": "Xayah",
+   "hudId": "DA_18_Xayah",
+   "hudCost": 1,
+   "dumpIds": [
+    "DA_18_Xayah"
+   ],
+   "dumpCosts": [
+    1
+   ]
+  },
+  {
+   "name": "Yorick",
+   "hudId": "DA_18_Yorick",
+   "hudCost": 1,
+   "dumpIds": [
+    "DA_18_Yorick"
+   ],
+   "dumpCosts": [
+    1
+   ]
+  },
+  {
+   "name": "Alistar",
+   "hudId": "DA_18_Alistar",
+   "hudCost": 2,
+   "dumpIds": [
+    "DA_18_Alistar"
+   ],
+   "dumpCosts": [
+    2
+   ]
+  },
+  {
+   "name": "Caitlyn",
+   "hudId": "tft18_caitlyn",
+   "hudCost": 2,
+   "dumpIds": [
+    "DA_18_Caitlyn"
+   ],
+   "dumpCosts": [
+    2
+   ]
+  },
+  {
+   "name": "Elise",
+   "hudId": "DA_18_Elise",
+   "hudCost": 2,
+   "dumpIds": [
+    "DA_18_Elise"
+   ],
+   "dumpCosts": [
+    2
+   ]
+  },
+  {
+   "name": "Gromp",
+   "hudId": "tft18_gromp",
+   "hudCost": 2,
+   "dumpIds": [
+    "DA_Gromp18_AP"
+   ],
+   "dumpCosts": [
+    2
+   ]
+  },
+  {
+   "name": "Kayle",
+   "hudId": "DA_18_Kayle",
+   "hudCost": 2,
+   "dumpIds": [
+    "DA_18_Kayle"
+   ],
+   "dumpCosts": [
+    2
+   ]
+  },
+  {
+   "name": "LeBlanc",
+   "hudId": "tft18_leblanc",
+   "hudCost": 2,
+   "dumpIds": [
+    "DA_18_LeBlanc"
+   ],
+   "dumpCosts": [
+    2
+   ]
+  },
+  {
+   "name": "Murkwolf",
+   "hudId": "tft18_murkwolf",
+   "hudCost": 2,
+   "dumpIds": [
+    "DA_Murkwolf18"
+   ],
+   "dumpCosts": [
+    2
+   ]
+  },
+  {
+   "name": "Scuttlecrab",
+   "hudId": "DA_Scuttlecrab18",
+   "hudCost": 2,
+   "dumpIds": [
+    "DA_Scuttlecrab18"
+   ],
+   "dumpCosts": [
+    2
+   ]
+  },
+  {
+   "name": "Sejuani",
+   "hudId": "DA_18_Sejuani",
+   "hudCost": 2,
+   "dumpIds": [
+    "DA_18_Sejuani"
+   ],
+   "dumpCosts": [
+    2
+   ]
+  },
+  {
+   "name": "Shen",
+   "hudId": "tft18_shen",
+   "hudCost": 2,
+   "dumpIds": [
+    "DA_18_Shen"
+   ],
+   "dumpCosts": [
+    2
+   ]
+  },
+  {
+   "name": "Teemo",
+   "hudId": "tft18_teemo",
+   "hudCost": 2,
+   "dumpIds": [
+    "DA_18_Teemo"
+   ],
+   "dumpCosts": [
+    2
+   ]
+  },
+  {
+   "name": "Warwick",
+   "hudId": "DA_18_Warwick",
+   "hudCost": 2,
+   "dumpIds": [
+    "DA_18_Warwick"
+   ],
+   "dumpCosts": [
+    2
+   ]
+  },
+  {
+   "name": "Yunara",
+   "hudId": "DA_18_Yunara",
+   "hudCost": 2,
+   "dumpIds": [
+    "DA_18_Yunara"
+   ],
+   "dumpCosts": [
+    2
+   ]
+  },
+  {
+   "name": "Azir",
+   "hudId": "tft18_azir",
+   "hudCost": 3,
+   "dumpIds": [
+    "DA_18_Azir"
+   ],
+   "dumpCosts": [
+    3
+   ]
+  },
+  {
+   "name": "Cassiopeia",
+   "hudId": "tft18_cassiopeia",
+   "hudCost": 3,
+   "dumpIds": [
+    "DA_18_Cassiopeia"
+   ],
+   "dumpCosts": [
+    3
+   ]
+  },
+  {
+   "name": "Diana",
+   "hudId": "DA_18_Diana",
+   "hudCost": 3,
+   "dumpIds": [
+    "DA_18_Diana"
+   ],
+   "dumpCosts": [
+    3
+   ]
+  },
+  {
+   "name": "Fiddlesticks",
+   "hudId": "tft18_fiddlesticks",
+   "hudCost": 3,
+   "dumpIds": [
+    "DA_Fiddlesticks18"
+   ],
+   "dumpCosts": [
+    3
+   ]
+  },
+  {
+   "name": "Hecarim",
+   "hudId": "tft18_hecarim",
+   "hudCost": 3,
+   "dumpIds": [
+    "DA_18_Hecarim"
+   ],
+   "dumpCosts": [
+    3
+   ]
+  },
+  {
+   "name": "Kha'Zix",
+   "hudId": "DA_18_KhaZix",
+   "hudCost": 3,
+   "dumpIds": [
+    "DA_18_KhaZix"
+   ],
+   "dumpCosts": [
+    3
+   ]
+  },
+  {
+   "name": "Kog'Maw",
+   "hudId": "tft18_kogmaw",
+   "hudCost": 3,
+   "dumpIds": [
+    "DA_KogMaw18_AD"
+   ],
+   "dumpCosts": [
+    3
+   ]
+  },
+  {
+   "name": "Krug",
+   "hudId": "tft18_krug",
+   "hudCost": 3,
+   "dumpIds": [
+    "DA_Krug18"
+   ],
+   "dumpCosts": [
+    3
+   ]
+  },
+  {
+   "name": "Mama Beak",
+   "hudId": "tft18_mamabeak",
+   "hudCost": 3,
+   "dumpIds": [
+    "DA_CrimsonRaptor18"
+   ],
+   "dumpCosts": [
+    3
+   ]
+  },
+  {
+   "name": "Master Yi",
+   "hudId": "tft18_masteryi",
+   "hudCost": 3,
+   "dumpIds": [
+    "DA_18_MasterYi_AD"
+   ],
+   "dumpCosts": [
+    3
+   ]
+  },
+  {
+   "name": "Rammus",
+   "hudId": "tft18_rammus",
+   "hudCost": 3,
+   "dumpIds": [
+    "DA_18_Rammus"
+   ],
+   "dumpCosts": [
+    3
+   ]
+  },
+  {
+   "name": "Rengar",
+   "hudId": "tft18_rengar",
+   "hudCost": 3,
+   "dumpIds": [
+    "DA_18_Rengar"
+   ],
+   "dumpCosts": [
+    3
+   ]
+  },
+  {
+   "name": "Tristana",
+   "hudId": "tft18_tristana",
+   "hudCost": 3,
+   "dumpIds": [
+    "DA_18_Tristana"
+   ],
+   "dumpCosts": [
+    3
+   ]
+  },
+  {
+   "name": "Vi",
+   "hudId": "tft18_vi",
+   "hudCost": 3,
+   "dumpIds": [
+    "DA_Vi18"
+   ],
+   "dumpCosts": [
+    3
+   ]
+  },
+  {
+   "name": "Ahri",
+   "hudId": "tft18_ahri",
+   "hudCost": 4,
+   "dumpIds": [
+    "DA_18_Ahri"
+   ],
+   "dumpCosts": [
+    4
+   ]
+  },
+  {
+   "name": "Amumu",
+   "hudId": "tft18_amumu",
+   "hudCost": 4,
+   "dumpIds": [
+    "DA_Amumu18"
+   ],
+   "dumpCosts": [
+    4
+   ]
+  },
+  {
+   "name": "Aphelios",
+   "hudId": "tft18_aphelios",
+   "hudCost": 4,
+   "dumpIds": [
+    "DA_18_Aphelios"
+   ],
+   "dumpCosts": [
+    4
+   ]
+  },
+  {
+   "name": "Brambleback",
+   "hudId": "tft18_brambleback",
+   "hudCost": 4,
+   "dumpIds": [
+    "DA_Brambleback18"
+   ],
+   "dumpCosts": [
+    4
+   ]
+  },
+  {
+   "name": "Ezreal",
+   "hudId": "tft18_ezreal",
+   "hudCost": 4,
+   "dumpIds": [
+    "DA_18_Ezreal"
+   ],
+   "dumpCosts": [
+    4
+   ]
+  },
+  {
+   "name": "Lillia",
+   "hudId": "tft18_lillia",
+   "hudCost": 4,
+   "dumpIds": [
+    "DA_18_Lillia"
+   ],
+   "dumpCosts": [
+    4
+   ]
+  },
+  {
+   "name": "Malphite",
+   "hudId": "tft18_malphite",
+   "hudCost": 4,
+   "dumpIds": [
+    "DA_18_Malphite"
+   ],
+   "dumpCosts": [
+    4
+   ]
+  },
+  {
+   "name": "Morgana",
+   "hudId": "tft18_morgana",
+   "hudCost": 4,
+   "dumpIds": [
+    "DA_18_Morgana"
+   ],
+   "dumpCosts": [
+    4
+   ]
+  },
+  {
+   "name": "Nidalee",
+   "hudId": "tft18_nidalee",
+   "hudCost": 4,
+   "dumpIds": [
+    "DA_Nidalee18_AP"
+   ],
+   "dumpCosts": [
+    4
+   ]
+  },
+  {
+   "name": "Sentinel",
+   "hudId": "DA_18_Sentry",
+   "hudCost": 4,
+   "dumpIds": [
+    "DA_Sentinel18"
+   ],
+   "dumpCosts": [
+    4
+   ]
+  },
+  {
+   "name": "Sett",
+   "hudId": "tft18_sett",
+   "hudCost": 4,
+   "dumpIds": [
+    "DA_18_Sett"
+   ],
+   "dumpCosts": [
+    4
+   ]
+  },
+  {
+   "name": "Sivir",
+   "hudId": "tft18_sivir",
+   "hudCost": 4,
+   "dumpIds": [
+    "DA_18_Sivir"
+   ],
+   "dumpCosts": [
+    4
+   ]
+  },
+  {
+   "name": "Soraka",
+   "hudId": "tft18_soraka",
+   "hudCost": 4,
+   "dumpIds": [
+    "DA_18_Soraka"
+   ],
+   "dumpCosts": [
+    4
+   ]
+  },
+  {
+   "name": "Zyra",
+   "hudId": "tft18_zyra",
+   "hudCost": 4,
+   "dumpIds": [
+    "DA_18_Zyra"
+   ],
+   "dumpCosts": [
+    4
+   ]
+  },
+  {
+   "name": "Alune",
+   "hudId": "tft18_alune",
+   "hudCost": 5,
+   "dumpIds": [
+    "DA_18_Alune"
+   ],
+   "dumpCosts": [
+    5
+   ]
+  },
+  {
+   "name": "Ashe",
+   "hudId": "tft18_ashe",
+   "hudCost": 5,
+   "dumpIds": [
+    "DA_18_Ashe"
+   ],
+   "dumpCosts": [
+    5
+   ]
+  },
+  {
+   "name": "Draven",
+   "hudId": "tft18_draven",
+   "hudCost": 5,
+   "dumpIds": [
+    "DA_Draven18"
+   ],
+   "dumpCosts": [
+    5
+   ]
+  },
+  {
+   "name": "Elder Dragon",
+   "hudId": "tft18_elderdragon",
+   "hudCost": 5,
+   "dumpIds": [
+    "DA_18_ElderDragon"
+   ],
+   "dumpCosts": [
+    5
+   ]
+  },
+  {
+   "name": "Gnar",
+   "hudId": "tft18_gnar",
+   "hudCost": 5,
+   "dumpIds": [
+    "DA_18_GnarSmall"
+   ],
+   "dumpCosts": [
+    5
+   ]
+  },
+  {
+   "name": "Ivern",
+   "hudId": "tft18_ivern",
+   "hudCost": 5,
+   "dumpIds": [
+    "DA_18_Ivern"
+   ],
+   "dumpCosts": [
+    5
+   ]
+  },
+  {
+   "name": "Kennen",
+   "hudId": "tft18_kennen",
+   "hudCost": 5,
+   "dumpIds": [
+    "DA_18_Kennen"
+   ],
+   "dumpCosts": [
+    5
+   ]
+  },
+  {
+   "name": "Lux",
+   "hudId": "tft18_lux_base",
+   "hudCost": 5,
+   "dumpIds": [
+    "DA_Lux18_Base"
+   ],
+   "dumpCosts": [
+    5
+   ]
+  },
+  {
+   "name": "Maokai",
+   "hudId": "tft18_maokai",
+   "hudCost": 5,
+   "dumpIds": [
+    "DA_18_Maokai"
+   ],
+   "dumpCosts": [
+    5
+   ]
+  },
+  {
+   "name": "Taric",
+   "hudId": "tft18_taric",
+   "hudCost": 5,
+   "dumpIds": [
+    "DA_Taric18"
+   ],
+   "dumpCosts": [
+    5
+   ]
+  }
+ ]
+}

@@ -5,26 +5,13 @@ const DEFAULT_EOG = path.join(process.env.LOCALAPPDATA || "", "TFT", "Saved", "L
 const DEFAULT_LOG = path.join(process.env.LOCALAPPDATA || "", "TFT", "Saved", "Logs", "TFT.log")
 const DEFAULT_EXTRACTED = path.join(process.cwd(), "captures", "extracted-live.jsonl")
 const DEFAULT_HUD = path.join(process.cwd(), "captures", "hud-live.json")
+const HUD_MAX_AGE_MS = 2_000
 
-// Known Set 18 champion costs for accurate shop & economy calculations
-export const CHAMPION_COSTS = {
-  DA_18_Ornn: 1,
-  DA_Karma18: 1,
-  DA_18_Sentry: 1,
-  DA_18_Rakan: 1,
-  DA_18_Varus: 1,
-  DA_18_Yorick: 1,
-  DA_18_KhaZix: 1,
-  DA_18_Kayle: 1,
-  DA_18_Yunara: 2,
-  DA_Scuttlecrab18: 2,
-  DA_18_Sejuani: 2,
-  DA_18_Elise: 2,
-  DA_18_Alistar: 2,
-  DA_18_Warwick: 3,
-  DA_18_Xayah: 3,
-  DA_18_Diana: 4,
-}
+// Champion costs come from the set file, not a hand-typed table. An id missing from the set file has no cost, so its slot is unread.
+const SET18_FILE = path.join(import.meta.dirname, "..", "data", "set18.json")
+export const SET18_COSTS = Object.fromEntries(
+  (JSON.parse(fs.readFileSync(SET18_FILE, "utf8")).champions ?? []).map((c) => [c.id, c.cost]),
+)
 
 export function createStandaloneSource(options = {}) {
   const eogPath = options.eogPath || DEFAULT_EOG
@@ -32,10 +19,6 @@ export function createStandaloneSource(options = {}) {
   const extractedPath = options.extractedPath || DEFAULT_EXTRACTED
   const hudPath = options.hudPath || DEFAULT_HUD
   const playerName = options.playerName || process.env.TFT_PLAYER || null
-
-  let lastKnownGold = 10
-  let lastKnownLevel = 1
-  let lastPhase = null
 
   return {
     kind: "standalone",
@@ -55,10 +38,12 @@ export function createStandaloneSource(options = {}) {
       let hud = null
       if (fs.existsSync(hudPath)) {
         try {
-          hud = JSON.parse(fs.readFileSync(hudPath, "utf8"))
+          const candidate = JSON.parse(fs.readFileSync(hudPath, "utf8"))
+          if (usableHud(candidate)) hud = candidate
         } catch {}
       }
 
+      const missing = []
       const players = snapshot?.statsBlock?.players || []
       const activePlayer = findPlayer(players, playerName)
       const gameLengthSeconds = Number(snapshot?.statsBlock?.gameLengthSeconds) || 0
@@ -75,49 +60,50 @@ export function createStandaloneSource(options = {}) {
 
       // Compute Stage from game duration
       const stage = computeStage(gameLengthSeconds)
+      if (!gameLengthSeconds) missing.push("stage")
+      const partialHud = hud?.hudSchema === 2
 
       // Compute Level (board capacity gives minimum level)
-      let level = Math.max(1, boardPieces.length)
-      if (hud && typeof hud.level === "number" && hud.level > 0) {
-        level = hud.level
-      } else if (stage > 1 && level < 3) {
-        level = stage >= 4 ? 6 : stage >= 3 ? 5 : 4
-      }
-      lastKnownLevel = level
+      const levelKnown = Number.isInteger(hud?.level) && hud.level > 0
+      // Unknown level is null with a flag, never a guess from the stage or the board (decision 2026-11-23).
+      const level = levelKnown ? hud.level : null
+      if (!levelKnown) missing.push("level")
 
       // Compute HP
-      const hp = typeof activePlayer?.health === "number" ? activePlayer.health : 100
+      const hpKnown = typeof activePlayer?.health === "number"
+  const hp = hpKnown ? activePlayer.health : 100
+  if (!hpKnown) missing.push("hp")
 
       // Compute Gold
-      let gold = lastKnownGold
-      if (hud && typeof hud.gold === "number" && hud.gold >= 0) {
-        gold = hud.gold
-      } else {
-        // Base gold estimation based on stage and interest
-        const baseGoldForStage = Math.min(50, Math.max(5, (stage - 1) * 12 + 10))
-        gold = baseGoldForStage
-      }
-      lastKnownGold = gold
+      const goldKnown = Number.isInteger(hud?.gold) && hud.gold >= 0
+      // Unknown gold is null with a flag, never an estimate from the stage (decision 2026-11-23).
+      const gold = goldKnown ? hud.gold : null
+      if (!goldKnown) missing.push("gold")
 
       // Compute Shop
       let shop = null
-      const missing = []
-
-      if (hud && Array.isArray(hud.shop) && hud.shop.length === 5) {
-        shop = hud.shop.map((slot) => {
-          if (!slot || !slot.id) return null
-          const cost = slot.cost || CHAMPION_COSTS[slot.id] || 1
+      const shopUnknownSlots = []
+      const observedSlots = partialHud ? (goldKnown ? hud.shopSlots : null) : hud?.shop
+      if (Array.isArray(observedSlots) && observedSlots.length === 5) {
+        shop = observedSlots.map((slot, index) => {
+          if (partialHud && !validShopUnit(slot)) {
+            shopUnknownSlots.push(index)
+            return null
+          }
+          if (!slot?.id) return null
           return {
             id: slot.id,
-            cost,
+            cost: unitCost(slot),
+            ...(Object.hasOwn(slot, "price")
+              ? { price: Number.isInteger(slot.price) && slot.price >= 0 && slot.price <= 999 ? slot.price : null }
+              : {}),
             copiesOwned: copiesMap[slot.id] || 0,
             priority: slot.priority || 0,
           }
         })
-      } else {
-        // Shop is unknown without HUD reader
-        missing.push("shop")
       }
+      if (shopUnknownSlots.length === 5) shop = null
+      if (!shop) missing.push("shop")
 
       if (!snapshot) {
         missing.push("snapshot")
@@ -129,6 +115,10 @@ export function createStandaloneSource(options = {}) {
         hp,
         stage,
         shop,
+        ...(!goldKnown ? { hudGoldUnknown: true } : {}),
+        ...(!levelKnown ? { hudLevelUnknown: true } : {}),
+        oddsObserved: validOddsRow(hud),
+        ...(shop && shopUnknownSlots.length ? { shopUnknownSlots } : {}),
         target: null,
         missing,
         board: boardPieces,
@@ -137,6 +127,38 @@ export function createStandaloneSource(options = {}) {
       }
     },
   }
+}
+
+// Observed shop odds row from the HUD (I11): five numbers in percent that sum to 100 within 1. Anything else is unread (null).
+function validOddsRow(hud) {
+  const row = hud?.oddsRow
+  if (!Array.isArray(row) || row.length !== 5) return null
+  if (!row.every((x) => Number.isFinite(x) && x >= 0 && x <= 100)) return null
+  if (Math.abs(row.reduce((a, b) => a + b, 0) - 100) > 1) return null
+  return row
+}
+
+function usableHud(hud) {
+  if (!hud || typeof hud !== "object") return false
+  if (hud.hudSchema === undefined) {
+    // Preserve imported snapshots. The original Python reader always wrote
+    // hudDetected alongside its hard-coded sample data.
+    return !Object.hasOwn(hud, "hudDetected")
+  }
+  if (![1, 2].includes(hud.hudSchema) || hud.set !== 18 || hud.source !== "window" || hud.hudDetected !== true) return false
+  if (!Number.isSafeInteger(hud.capturedAtMs)) return false
+  const age = Date.now() - hud.capturedAtMs
+  return age >= 0 && age <= HUD_MAX_AGE_MS
+}
+
+function unitCost(slot) {
+  return slot?.cost ?? SET18_COSTS[slot?.id]
+}
+
+function validShopUnit(slot) {
+  const cost = unitCost(slot)
+  return typeof slot?.id === "string" && slot.id.length > 0 &&
+    Number.isInteger(cost) && cost >= 1 && cost <= 5
 }
 
 function findPlayer(players, name) {

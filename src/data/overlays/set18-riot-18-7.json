@@ -1,0 +1,9 @@
+{
+  "set": "18",
+  "verified": false,
+  "note": "Riot 18.7 patch notes (2026-11-17): 'Ivern: ... eventually landed on Ivern' and 'Kennen Now a Sprykin', 'Ivern Now an Elderwood'. Add only: the page does not say the old traits (Ivern Greenfather, Kennen Inferno and Executioner) are removed. Use only once 18.7 is live. The CDragon build here (16.23; PBE 16.24 is the same file) still carries the old traits. Not switched on by default: set TFT_TRAIT_OVERLAY to this file to use it.",
+  "champions": {
+    "DA_18_Ivern": { "add": ["Elderwood"] },
+    "DA_18_Kennen": { "add": ["Sprykin"] }
+  }
+}

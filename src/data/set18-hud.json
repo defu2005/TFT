@@ -1,0 +1,331 @@
+{
+  "set": 18,
+  "source": "https://github.com/lilbear201122/tft-set18-comp-notebook/blob/85e0fdf42787265065abbb2cd1269c8f17e4c7df/data/champions_raw.json",
+  "champions": [
+    {
+      "name": "Akali",
+      "id": "DA_18_Akali_AD",
+      "cost": 1
+    },
+    {
+      "name": "Camille",
+      "id": "DA_18_Camille",
+      "cost": 1
+    },
+    {
+      "name": "Cinderling",
+      "id": "DA_Cinderling18",
+      "cost": 1
+    },
+    {
+      "name": "Karma",
+      "id": "DA_Karma18",
+      "cost": 1
+    },
+    {
+      "name": "Kobuko",
+      "id": "DA_18_Kobuko",
+      "cost": 1
+    },
+    {
+      "name": "Leona",
+      "id": "DA_18_Leona",
+      "cost": 1
+    },
+    {
+      "name": "Ornn",
+      "id": "DA_18_Ornn",
+      "cost": 1
+    },
+    {
+      "name": "Pebbles",
+      "id": "DA_18_Sentry",
+      "cost": 1
+    },
+    {
+      "name": "Rakan",
+      "id": "DA_18_Rakan",
+      "cost": 1
+    },
+    {
+      "name": "Rek'Sai",
+      "id": "DA_18_RekSai",
+      "cost": 1
+    },
+    {
+      "name": "Varus",
+      "id": "DA_18_Varus",
+      "cost": 1
+    },
+    {
+      "name": "Veigar",
+      "id": "DA_18_Veigar",
+      "cost": 1
+    },
+    {
+      "name": "Xayah",
+      "id": "DA_18_Xayah",
+      "cost": 1
+    },
+    {
+      "name": "Yorick",
+      "id": "DA_18_Yorick",
+      "cost": 1
+    },
+    {
+      "name": "Alistar",
+      "id": "DA_18_Alistar",
+      "cost": 2
+    },
+    {
+      "name": "Caitlyn",
+      "id": "DA_18_Caitlyn",
+      "cost": 2
+    },
+    {
+      "name": "Elise",
+      "id": "DA_18_Elise",
+      "cost": 2
+    },
+    {
+      "name": "Gromp",
+      "id": "DA_Gromp18_AP",
+      "cost": 2
+    },
+    {
+      "name": "Kayle",
+      "id": "DA_18_Kayle",
+      "cost": 2
+    },
+    {
+      "name": "LeBlanc",
+      "id": "DA_18_LeBlanc",
+      "cost": 2
+    },
+    {
+      "name": "Murkwolf",
+      "id": "DA_Murkwolf18",
+      "cost": 2
+    },
+    {
+      "name": "Scuttlecrab",
+      "id": "DA_Scuttlecrab18",
+      "cost": 2
+    },
+    {
+      "name": "Sejuani",
+      "id": "DA_18_Sejuani",
+      "cost": 2
+    },
+    {
+      "name": "Shen",
+      "id": "DA_18_Shen",
+      "cost": 2
+    },
+    {
+      "name": "Teemo",
+      "id": "DA_18_Teemo",
+      "cost": 2
+    },
+    {
+      "name": "Warwick",
+      "id": "DA_18_Warwick",
+      "cost": 2
+    },
+    {
+      "name": "Yunara",
+      "id": "DA_18_Yunara",
+      "cost": 2
+    },
+    {
+      "name": "Azir",
+      "id": "DA_18_Azir",
+      "cost": 3
+    },
+    {
+      "name": "Cassiopeia",
+      "id": "DA_18_Cassiopeia",
+      "cost": 3
+    },
+    {
+      "name": "Diana",
+      "id": "DA_18_Diana",
+      "cost": 3
+    },
+    {
+      "name": "Fiddlesticks",
+      "id": "DA_Fiddlesticks18",
+      "cost": 3
+    },
+    {
+      "name": "Hecarim",
+      "id": "DA_18_Hecarim",
+      "cost": 3
+    },
+    {
+      "name": "Kha'Zix",
+      "id": "DA_18_KhaZix",
+      "cost": 3
+    },
+    {
+      "name": "Kog'Maw",
+      "id": "DA_KogMaw18_AD",
+      "cost": 3
+    },
+    {
+      "name": "Krug",
+      "id": "DA_Krug18",
+      "cost": 3
+    },
+    {
+      "name": "Mama Beak",
+      "id": "DA_CrimsonRaptor18",
+      "cost": 3
+    },
+    {
+      "name": "Master Yi",
+      "id": "DA_18_MasterYi_AD",
+      "cost": 3
+    },
+    {
+      "name": "Rammus",
+      "id": "DA_18_Rammus",
+      "cost": 3
+    },
+    {
+      "name": "Rengar",
+      "id": "DA_18_Rengar",
+      "cost": 3
+    },
+    {
+      "name": "Tristana",
+      "id": "DA_18_Tristana",
+      "cost": 3
+    },
+    {
+      "name": "Vi",
+      "id": "DA_Vi18",
+      "cost": 3
+    },
+    {
+      "name": "Ahri",
+      "id": "DA_18_Ahri",
+      "cost": 4
+    },
+    {
+      "name": "Amumu",
+      "id": "DA_Amumu18",
+      "cost": 4
+    },
+    {
+      "name": "Aphelios",
+      "id": "DA_18_Aphelios",
+      "cost": 4
+    },
+    {
+      "name": "Brambleback",
+      "id": "DA_Brambleback18",
+      "cost": 4
+    },
+    {
+      "name": "Ezreal",
+      "id": "DA_18_Ezreal",
+      "cost": 4
+    },
+    {
+      "name": "Lillia",
+      "id": "DA_18_Lillia",
+      "cost": 4
+    },
+    {
+      "name": "Malphite",
+      "id": "DA_18_Malphite",
+      "cost": 4
+    },
+    {
+      "name": "Morgana",
+      "id": "DA_18_Morgana",
+      "cost": 4
+    },
+    {
+      "name": "Nidalee",
+      "id": "DA_Nidalee18_AP",
+      "cost": 4
+    },
+    {
+      "name": "Sentinel",
+      "id": "DA_Sentinel18",
+      "cost": 4
+    },
+    {
+      "name": "Sett",
+      "id": "DA_18_Sett",
+      "cost": 4
+    },
+    {
+      "name": "Sivir",
+      "id": "DA_18_Sivir",
+      "cost": 4
+    },
+    {
+      "name": "Soraka",
+      "id": "DA_18_Soraka",
+      "cost": 4
+    },
+    {
+      "name": "Zyra",
+      "id": "DA_18_Zyra",
+      "cost": 4
+    },
+    {
+      "name": "Alune",
+      "id": "DA_18_Alune",
+      "cost": 5
+    },
+    {
+      "name": "Ashe",
+      "id": "DA_18_Ashe",
+      "cost": 5
+    },
+    {
+      "name": "Draven",
+      "id": "DA_Draven18",
+      "cost": 5
+    },
+    {
+      "name": "Elder Dragon",
+      "id": "DA_18_ElderDragon",
+      "cost": 5
+    },
+    {
+      "name": "Gnar",
+      "id": "DA_18_GnarSmall",
+      "cost": 5
+    },
+    {
+      "name": "Ivern",
+      "id": "DA_18_Ivern",
+      "cost": 5
+    },
+    {
+      "name": "Kennen",
+      "id": "DA_18_Kennen",
+      "cost": 5
+    },
+    {
+      "name": "Lux",
+      "id": "DA_Lux18_Base",
+      "cost": 5
+    },
+    {
+      "name": "Maokai",
+      "id": "DA_18_Maokai",
+      "cost": 5
+    },
+    {
+      "name": "Taric",
+      "id": "DA_Taric18",
+      "cost": 5
+    }
+  ]
+}

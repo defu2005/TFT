@@ -13,8 +13,8 @@ const { coach, source } = createApp(config, {
     const d = record.decision
     const line = [
       record.ts,
-      `level=${record.state.level}`,
-      `gold=${record.state.gold}`,
+      `level=${record.state.hudLevelUnknown || record.state.level == null ? "?" : record.state.level}`,
+      `gold=${record.state.hudGoldUnknown || record.state.gold == null ? "?" : record.state.gold}`,
       `hp=${record.state.hp}`,
       `stage=${record.state.stage}`,
       `action=${d.action}`,

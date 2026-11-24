@@ -56,6 +56,26 @@ test("MCP server on the replay fixture: initialize, list tools, call tools", asy
     )
     assert.equal(evalRes.action, "buy")
 
+    const sellRes = JSON.parse(
+      (
+        await client.callTool({
+          name: "tft_evaluate_state",
+          arguments: {
+            level: 7,
+            gold: 40,
+            hp: 80,
+            stage: 4,
+            shop: [{ id: "core", cost: 3, copiesOwned: 0, priority: 5 }, null, null, null, null],
+            bench: [
+              { id: "x", star: 1, sellValue: 1 },
+              { id: "y", star: 1, sellValue: 3 },
+            ],
+          },
+        })
+      ).content[0].text,
+    )
+    assert.equal(sellRes.action, "sell")
+
     const hit = JSON.parse((await client.callTool({ name: "tft_hit_chance", arguments: { level: 8, cost: 4, copiesLeft: 6, champsAtCost: 12 } })).content[0].text)
     assert.ok(hit.hitChance > 0 && hit.hitChance <= 1)
 

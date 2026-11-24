@@ -61,3 +61,41 @@ test("a target change alone changes the state hash", () => {
   const withTarget = { ...base, target: { id: "T", cost: 2, copiesLeft: 10, priority: 3, champsAtCost: 13 } }
   assert.notEqual(hashState(base), hashState(withTarget))
 })
+
+test("a full bench sells its unit after setLine; setLine on the bench unit protects it", async () => {
+  const src = { kind: "fake", read: async () => ({ ...snapshot(), bench: [{ id: "K", star: 1, sellValue: 2 }] }) }
+  const coach = createCoach({ source: src })
+  await coach.tick()
+  coach.setLine("A", 5)
+  const record = await coach.tick()
+  assert.equal(record.schema, 2)
+  assert.equal(record.decision.action, "sell")
+  assert.equal(record.decision.bench, 0)
+  coach.setLine("K", 3)
+  const protectedRecord = await coach.tick()
+  assert.equal(protectedRecord.decision.action, "hold")
+})
+
+test("hashState changes when only a bench unit's sellValue changes", () => {
+  const base = { ...snapshot(), bench: [{ id: "K", star: 1, sellValue: 2 }] }
+  const changed = { ...snapshot(), bench: [{ id: "K", star: 1, sellValue: 3 }] }
+  assert.notEqual(hashState(base), hashState(changed))
+})
+
+test("hashState changes when only freeRolls changes", () => {
+  const base = { ...snapshot(), freeRolls: 1 }
+  const changed = { ...snapshot(), freeRolls: 2 }
+  assert.notEqual(hashState(base), hashState(changed))
+})
+
+test("an auto line rates a shop unit; a manual line on the same unit overrides it", async () => {
+  const src = { kind: "fake", read: async () => ({ ...snapshot(), board: [{ id: "B", star: 1 }] }) }
+  const coach = createCoach({ source: src, autoLine: () => new Map([["A", 3]]) })
+  const record = await coach.tick()
+  assert.equal(record.decision.action, "buy")
+  assert.equal(record.decision.slot, 0)
+  assert.deepEqual(record.reason.factors.autoLine, { A: 3 })
+  coach.setLine("A", 1)
+  await coach.tick()
+  assert.equal(coach.getState().input.shop[0].priority, 1)
+})

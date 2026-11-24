@@ -18,6 +18,23 @@ src/
   engine/decide.js    chấm điểm các hành động; ghi trace nếu được yêu cầu
   engine/reason.js    lý do bằng tiếng Việt, ứng viên, yếu tố
   engine/odds.js      xác suất gặp tướng, lãi theo vàng
+  engine/autoline.js  line tự động từ tướng trên bàn và tộc (tắt mặc định, bật bằng TFT_AUTO_LINE=1)
+  data/profile.js     hồ sơ mặc định (bảng odds, pool, số tướng theo cost, maxCost) lấy từ rules.js
+  data/profileFile.js đọc file hồ sơ set có bản vá chồng lên nhau (tắt mặc định, TFT_PROFILE_FILE)
+  data/profiles/      hồ sơ candidate (ví dụ set18.candidate.json), chỉ dùng khi được chọn bằng TFT_PROFILE_FILE
+
+Định dạng file hồ sơ (`TFT_PROFILE_FILE`):
+```json
+{
+  "set": "18",
+  "unmodelled": ["ghi chú tính năng set chưa mô hình"],
+  "base": { "maxCost": 5, "shopOdds": [null, [1,0,0,0,0], ...], "poolCopies": [0,30,25,18,10,9], "champsPerCost": [0,13,13,13,12,8] },
+  "patches": [
+    { "version": "16.20", "notes": "...", "shopOdds": { "8": [0.15,0.20,0.32,0.30,0.03] } }
+  ]
+}
+```
+`base` có thể bỏ trống; khi đó bảng mặc định của `rules.js` được dùng và được ghi vào caveat. Mỗi hàng odds có `maxCost` phần tử và tổng bằng 1. Bản vá chỉ liệt kê hàng đổi; mọi bản vá có version ≤ `TFT_PATCH` được áp dụng theo thứ tự số. Khóa không rõ làm app báo lỗi. Chỉ `shopOdds`, `poolCopies`, `champsPerCost` và `maxCost` được đọc từ file; các phần khác vẫn là hằng trong code.
   ingest/sources.js   nguồn trạng thái: live hoặc replay
   ingest/liveClient.js đọc Live Client Data tại 127.0.0.1:2999; toState liệt kê trường thiếu
   ingest/capture.js   ghi payload thô ra captures/ (gitignored, có Riot ID); không ra quyết định
@@ -42,9 +59,9 @@ Vòng lặp chạy mỗi 250 ms. Một tick không chạy chồng lên tick trư
 
 Mỗi dòng JSONL có:
 
-- `schema` (hiện là 1), `ts`, `source` (`engine`), `sourceKind` (`live` hoặc `replay`), `latencyMs`
+- `schema` (hiện là 2), `ts`, `source` (`engine`), `sourceKind` (`live` hoặc `replay`), `latencyMs`
 - `stateHash`, `known` (có shop không, có target không), `state`
-- `decision`: `action`, `slot`, `score`, `hit`
+- `decision`: `action` (`hold`, `buy`, `xp`, `roll`, `sell`), `slot`, `bench` (ô bench khi bán, -1 nếu không), `score`, `hit`
 - `reason`: `text`, `factors`, `caveats`, `candidates` (từng hành động với điểm số và số liệu)
 
 Schema chưa phải chuẩn công khai, có thể thay đổi.
@@ -65,6 +82,8 @@ Schema chưa phải chuẩn công khai, có thể thay đổi.
 
 Đăng ký: `.mcp.json` ở gốc repo. Agent khởi chạy `node src/mcp/server.js`.
 
+Khi line tự động bật, coach báo `reason.factors.setMismatch` (id không có trong file set, tướng không có id hay championName, nguồn không gửi bàn đấu) kèm caveat; line tự động đọc `championName` khi không có `id`. Các tool chấm điểm, xác suất và `tft_rules` dùng cùng `TFT_RULES` và hồ sơ như coach; `tft_rules` trả bảng level theo `guideLevels` và `maxCost` của hồ sơ. Giới hạn cost và level trong schema lấy từ hồ sơ đang dùng, không cố định 5 và 11. Line tự động chưa có trong các tool này.
+
 ## 6. Cấu hình
 
 | Biến | Mặc định | Ý nghĩa |
@@ -75,5 +94,13 @@ Schema chưa phải chuẩn công khai, có thể thay đổi.
 | `TFT_REPLAY` | fixture tổng hợp | đường dẫn fixture replay |
 | `TFT_LOG` | `logs/decisions.jsonl` | đường dẫn log |
 | `TFT_INTERVAL_MS` | `250` | chu kỳ vòng lặp |
+| `TFT_AUTO_LINE` | `0` | `1` bật line tự động từ bàn và tộc; cần `TFT_SET_FILE` |
+| `TFT_SET_FILE` | (trống) | file dữ liệu set (cùng cấu trúc `src/data/set17.json`) cho line tự động |
+| `TFT_PROFILE_FILE` | (trống) | file hồ sơ set (bảng odds, pool, số tướng theo cost, `maxCost`, danh sách bản vá chồng lên nhau). Trống thì dùng `rules.js` |
+| `TFT_TRAIT_OVERLAY` | (trống, cần `TFT_AUTO_LINE=1`) | file overlay tộc cho set (chỉ cộng thêm tộc, không xóa); không khóa theo `TFT_PATCH`. Mặc định tắt; bản hiện có `src/data/overlays/set18-riot-18-7.json` (chưa xác minh, chỉ bật khi 18.7 đã phát hành). Nhánh ingest (`tft-sim/docs/PATCH_MODEL.md`, thiết kế, chưa chạy) có gói theo bản vá gồm roster tường minh, odds, XP và pool; khi gói đó có, overlay này chỉ là giải pháp tạm |
+| `TFT_PATCH` | (trống, cần `TFT_PROFILE_FILE`) | phiên bản bản vá để áp dụng từ file hồ sơ; trống thì lấy bản mới nhất (so số theo thứ tự, 16.9 trước 16.20) |
+| `TFT_RULES` | (trống) | danh sách tên, cách nhau bằng dấu phẩy, bật quy tắc U9: `keepInterest`, `earlyLevel`, `guideLevels`. Tên lạ làm app báo lỗi. `tft_evaluate_state` không dùng quy tắc này |
+
+Lưu ý: `TFT_PATCH` phải dùng cùng hệ số với file hồ sơ. Ví dụ file candidate có bản `16.20`; đặt `TFT_PATCH=18.7` sẽ áp dụng bản `16.20` rồi bản `18.6` vì 18.7 lớn hơn cả hai theo so số, và kết quả sẽ không phải của Riot 18.7. Với file candidate và `TFT_PATCH` trống, `applied` là `18.6` (đã đo qua `buildProfile`). Hàng 7 của bản `18.6` (đọc tay HUD, xem `docs/needs.md` mục 8) chỉ áp dụng khi `TFT_PATCH` là `18.x` hoặc để trống; `TFT_PATCH=16.x` (kể cả `16.23`) không thấy hàng này.
 
 

@@ -42,7 +42,7 @@ test("every logged record carries reason, candidates and state", async () => {
   const coach = createCoach({ source: replaySource(FIXTURE), logger })
   await coach.tick()
   const [entry] = logger.readRecent(1)
-  assert.equal(entry.schema, 1)
+  assert.equal(entry.schema, 2)
   assert.ok(entry.reason.text.length > 0)
   assert.ok(Array.isArray(entry.reason.candidates))
   assert.equal(entry.source, "engine")
@@ -72,4 +72,73 @@ test("setTarget is used on the next tick", async () => {
   await coach.tick()
   assert.equal(coach.getState().target.id, "T")
   assert.equal(coach.setTarget(null), null)
+})
+
+test("a roll with an unread shop slot says the roll discards that slot; a buy on a readable slot does not", async () => {
+  const state = {
+    level: 3, gold: 4, hp: 20, stage: 4, freeRolls: 0,
+    shop: [{ id: "DA_18_Ezreal", cost: 4, copiesOwned: 0, priority: 0, price: 4 }, { id: "DA_18_Xayah", cost: 1, copiesOwned: 0, priority: 0, price: 1 }, null, null, null],
+    shopUnknownSlots: [4],
+    target: { id: "DA_18_Zed", cost: 1, copiesLeft: 5, champsAtCost: 13, priority: 5 },
+  }
+  const coach = createCoach({ source: { kind: "live", read: async () => JSON.parse(JSON.stringify(state)) } })
+  await coach.tick()
+  const roll = coach.getState().reason
+  assert.equal(coach.getState().decision.action, "roll")
+  assert.match(roll.text, /roll sẽ bỏ ô 5 chưa đọc được/)
+  // target already in the shop: the coach buys the readable slot 1, and the roll caveat is absent
+  const buyState = { ...state, target: { id: "DA_18_Xayah", cost: 1, copiesLeft: 5, champsAtCost: 13, priority: 5 } }
+  const c2 = createCoach({ source: { kind: "live", read: async () => JSON.parse(JSON.stringify(buyState)) } })
+  await c2.tick()
+  assert.equal(c2.getState().decision.action, "buy")
+  assert.equal(c2.getState().decision.slot, 1)
+  assert.doesNotMatch(c2.getState().reason.text, /roll sẽ bỏ/)
+})
+
+test("a shop with an unread slot is reported as unread, not as a defaulted field; a missing snapshot is a missing source", async () => {
+  const state = {
+    level: 7, gold: 30, hp: 80, stage: 4, freeRolls: 0,
+    shop: [{ id: "DA_18_Ornn", cost: 1, copiesOwned: 0, priority: 1, price: 1 }, null, null, null, null],
+    shopUnknownSlots: [4],
+    missing: ["shop", "snapshot"],
+    target: { id: "DA_18_Ornn", cost: 1, copiesLeft: 9, champsAtCost: 13, priority: 5 },
+  }
+  const coach = createCoach({ source: { kind: "standalone", read: async () => JSON.parse(JSON.stringify(state)) } })
+  await coach.tick()
+  const text = coach.getState().reason.text
+  assert.match(text, /thiếu trường từ nguồn: shop, snapshot/)
+  assert.doesNotMatch(text, /mặc định cho shop/)
+  assert.match(text, /ô shop chưa đọc được: ô 5/)
+})
+
+function fakeSource(extra = {}) {
+  const state = { level: 7, gold: 42, hp: 60, stage: 4, shop: [null, { id: "DA_18_Ornn", cost: 1, copiesOwned: 0, priority: 5 }, null, null, null], target: null, missing: [], ...extra }
+  return { kind: "fake", read: async () => ({ ...state }) }
+}
+
+test("observed odds row differing from the default is a caveat only; the decision is unchanged", async () => {
+  const with_ = await createCoach({ source: fakeSource({ oddsObserved: [16, 30, 43, 10, 1] }) }).tick()
+  const without = await createCoach({ source: fakeSource() }).tick()
+  assert.equal(with_.reason.factors.oddsMismatch, true)
+  assert.ok(with_.reason.caveats.some((c) => c.includes("hàng odds HUD cấp 7 [16, 30, 43, 10, 1]")))
+  assert.deepEqual([with_.decision.action, with_.decision.slot], [without.decision.action, without.decision.slot])
+  assert.equal(without.reason.factors.oddsMismatch, null)
+})
+
+test("observed odds row matching the 18.6 candidate is not a mismatch", async () => {
+  const file = JSON.parse(fs.readFileSync(new URL("../data/profiles/set18.candidate.json", import.meta.url), "utf8"))
+  const { buildProfile } = await import("../data/profileFile.js")
+  const record = await createCoach({ source: fakeSource({ oddsObserved: [16, 30, 43, 10, 1] }), profile: buildProfile(file, "18.6") }).tick()
+  assert.equal(record.reason.factors.oddsMismatch, false)
+  assert.ok(!record.reason.caveats.some((c) => c.includes("hàng odds HUD")))
+})
+
+test("odds mismatch is null when the level is unknown or no row was read", async () => {
+  const noLevel = await createCoach({ source: fakeSource({ level: null, hudLevelUnknown: true, oddsObserved: [16, 30, 43, 10, 1] }) }).tick()
+  assert.equal(noLevel.reason.factors.oddsMismatch, null)
+  const noRow = await createCoach({ source: fakeSource({ oddsObserved: null }) }).tick()
+  assert.equal(noRow.reason.factors.oddsMismatch, null)
+  // a numeric level flagged unknown must still give no comparison (factors.level is the flag-aware value)
+  const flaggedLevel = await createCoach({ source: fakeSource({ level: 7, hudLevelUnknown: true, oddsObserved: [16, 30, 43, 10, 1] }) }).tick()
+  assert.equal(flaggedLevel.reason.factors.oddsMismatch, null)
 })

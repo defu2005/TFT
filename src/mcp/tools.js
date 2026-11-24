@@ -5,15 +5,20 @@ import { z } from "zod"
 import { decide } from "../engine/decide.js"
 import { explain, CAVEAT_ODDS } from "../engine/reason.js"
 import { hitChance, interestGold } from "../engine/odds.js"
-import * as rules from "../data/rules.js"
+import * as tables from "../data/profile.js"
 
 const HERE = path.dirname(fileURLToPath(import.meta.url))
+
+// Same wording as the coach uses for a profile file.
+const PROFILE_CAVEAT = (p) => `bảng tỉ lệ shop của set ${p.set}, bản yêu cầu ${p.requested ?? "mới nhất"}, bản áp dụng ${p.applied ?? "không có"}, từ file hồ sơ, chưa xác minh`
 const SET_FILE = path.join(HERE, "..", "data", "set17.json")
 
+// Caps come from the profile in use, so a profile with more costs or levels is accepted.
+function schemasFor(maxCost, maxLevel) {
 const targetSchema = z
   .object({
     id: z.string().optional(),
-    cost: z.number().int().min(1).max(5),
+    cost: z.number().int().min(1).max(maxCost),
     copiesLeft: z.number().int().min(0),
     priority: z.number().min(0),
     champsAtCost: z.number().int().min(1).optional(),
@@ -23,21 +28,41 @@ const targetSchema = z
 const unitSchema = z
   .object({
     id: z.string(),
-    cost: z.number().int().min(1).max(5),
+    cost: z.number().int().min(1).max(maxCost),
     copiesOwned: z.number().int().min(0).default(0),
     priority: z.number().min(0).default(0),
     poolCopies: z.number().int().min(0).optional(),
     champsAtCost: z.number().int().min(1).optional(),
+    takenByOthers: z.number().int().min(0).optional(),
+    // Gold spent on the slot (the HUD shows it). null = unreadable, never bought. Absent = the tier.
+    price: z.number().int().min(0).max(999).nullable().optional(),
+  })
+  .nullable()
+
+const ownedSchema = z
+  .object({
+    id: z.string(),
+    star: z.number().int().min(1).max(3).optional(),
+    priority: z.number().min(0).optional(),
+    sellValue: z.number().min(0).optional(),
   })
   .nullable()
 
 const stateSchema = {
-  level: z.number().int().min(1).max(11),
-  gold: z.number().int().min(0),
+  level: z.number().int().min(1).max(maxLevel).nullable(),
+  gold: z.number().int().min(0).nullable(),
   hp: z.number().min(0),
   stage: z.number().int().min(1),
   shop: z.array(unitSchema).length(5).nullable().optional(),
   target: targetSchema.optional(),
+  board: z.array(ownedSchema).nullable().optional(),
+  freeRolls: z.number().int().min(0).optional(),
+  hudGoldUnknown: z.boolean().optional(),
+  hudLevelUnknown: z.boolean().optional(),
+  shopUnknownSlots: z.array(z.number().int().min(0).max(4)).optional(),
+  bench: z.array(ownedSchema).nullable().optional(),
+}
+  return { targetSchema, stateSchema }
 }
 
 function asText(value) {
@@ -62,7 +87,12 @@ function loadSetSummary() {
 
 // Registers every capability as an MCP tool. Tools read cached state from the coach;
 // none of them triggers a read from the state source.
-export function registerTools(server, { coach }) {
+export function registerTools(server, { coach, rules = null, profile = null }) {
+  const maxCost = profile?.maxCost ?? tables.DEFAULT_PROFILE.maxCost
+  // The state cap never drops below 11: the coach decides at any level, and a short odds table only lowers the hit chance.
+  const maxLevel = Math.max(11, profile ? profile.shopOdds.length - 1 : 11)
+  const { targetSchema, stateSchema } = schemasFor(maxCost, maxLevel)
+  const caveat = profile ? PROFILE_CAVEAT(profile) : CAVEAT_ODDS
   server.registerTool(
     "tft_status",
     {
@@ -106,10 +136,16 @@ export function registerTools(server, { coach }) {
     },
     async (args) => {
       const state = normalizeState(args)
-      const out = { action: 0, slot: -1, score: 0, hit: 0 }
+      const out = { action: 0, slot: -1, score: 0, hit: 0, bench: -1 }
       const trace = []
-      decide(state, out, trace)
-      return asText(explain(state, out, trace))
+      decide(state, out, trace, rules, profile)
+      const reason = explain(state, out, trace, caveat)
+      if (profile) {
+        reason.caveats.push(...profile.caveats)
+        reason.factors.profile = { set: profile.set, requested: profile.requested, applied: profile.applied }
+      }
+      if (rules) reason.factors.rules = rules
+      return asText(reason)
     },
   )
 
@@ -117,16 +153,16 @@ export function registerTools(server, { coach }) {
     "tft_hit_chance",
     {
       title: "Xác suất gặp tướng trong shop",
-      description: "Xác suất có ít nhất một bản của tướng xuất hiện trong shop 5 ô. " + CAVEAT_ODDS + ".",
+      description: "Xác suất có ít nhất một bản của tướng xuất hiện trong shop 5 ô. " + caveat + ".",
       inputSchema: {
-        level: z.number().int().min(1).max(11),
-        cost: z.number().int().min(1).max(5),
+        level: z.number().int().min(1).max(maxLevel),
+        cost: z.number().int().min(1).max(maxCost),
         copiesLeft: z.number().int().min(0),
         champsAtCost: z.number().int().min(1).optional(),
       },
     },
     async ({ level, cost, copiesLeft, champsAtCost }) =>
-      asText({ hitChance: round(hitChance(level, cost, copiesLeft, champsAtCost)), caveat: CAVEAT_ODDS }),
+      asText({ hitChance: round(hitChance(level, cost, copiesLeft, champsAtCost, profile)), caveat }),
   )
 
   server.registerTool(
@@ -138,7 +174,7 @@ export function registerTools(server, { coach }) {
     },
     async ({ gold }) => {
       const interest = interestGold(gold)
-      const nextThreshold = interest >= rules.MAX_INTEREST ? null : (interest + 1) * 10
+      const nextThreshold = interest >= tables.MAX_INTEREST ? null : (interest + 1) * 10
       return asText({ gold, interest, nextThreshold })
     },
   )
@@ -152,15 +188,18 @@ export function registerTools(server, { coach }) {
     },
     async () =>
       asText({
-        shopOdds: rules.SHOP_ODDS,
-        poolCopies: rules.POOL_COPIES,
-        champsPerCost: rules.CHAMPS_PER_COST,
-        levelByStage: rules.LEVEL_BY_STAGE,
-        buyXpCost: rules.BUY_XP_COST,
-        rerollCost: rules.REROLL_COST,
-        maxInterest: rules.MAX_INTEREST,
+        shopOdds: profile ? profile.shopOdds : tables.SHOP_ODDS,
+        poolCopies: profile ? profile.poolCopies : tables.POOL_COPIES,
+        champsPerCost: profile ? profile.champsPerCost : tables.CHAMPS_PER_COST,
+        levelByStage: rules?.guideLevels ? tables.LEVEL_BY_STAGE_GUIDE : tables.LEVEL_BY_STAGE,
+        maxCost,
+        buyXpCost: tables.BUY_XP_COST,
+        rerollCost: tables.REROLL_COST,
+        maxInterest: tables.MAX_INTEREST,
+        profile: profile ? { set: profile.set, requested: profile.requested, applied: profile.applied } : null,
+        rules,
         verified: false,
-        caveat: CAVEAT_ODDS,
+        caveat,
         set17: loadSetSummary(),
       }),
   )
@@ -201,13 +240,22 @@ export function registerTools(server, { coach }) {
 }
 
 function normalizeState(args) {
+  // null gold or level means unknown (HUD): the flag is set and the number is 0, so nothing is decided on it.
+  const hudGoldUnknown = args.gold === null || args.hudGoldUnknown === true
+  const hudLevelUnknown = args.level === null || args.hudLevelUnknown === true
   return {
-    level: args.level,
-    gold: args.gold,
+    level: args.level ?? 0,
+    gold: args.gold ?? 0,
     hp: args.hp,
     stage: args.stage,
     shop: args.shop ?? null,
     target: args.target ?? null,
+    board: args.board ?? null,
+    freeRolls: args.freeRolls ?? 0,
+    bench: args.bench ?? null,
+    ...(hudGoldUnknown ? { hudGoldUnknown: true } : {}),
+    ...(hudLevelUnknown ? { hudLevelUnknown: true } : {}),
+    ...(Array.isArray(args.shopUnknownSlots) ? { shopUnknownSlots: args.shopUnknownSlots } : {}),
   }
 }
 

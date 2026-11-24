@@ -5,7 +5,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { createApp, errorLogger, loadConfig } from "../app.js"
 import { registerTools } from "./tools.js"
 
-const { coach, source, config } = createApp(loadConfig(), {
+const { coach, source, config, profile } = createApp(loadConfig(), {
   onError: errorLogger((text) => process.stderr.write(text)),
 })
 
@@ -13,7 +13,7 @@ coach.start()
 process.stderr.write(`tft-coach MCP (${source.kind}), log: ${config.logPath}\n`)
 
 const server = new McpServer({ name: "tft-coach", version: "0.1.0" })
-registerTools(server, { coach })
+registerTools(server, { coach, rules: config.rules ?? null, profile })
 
 const shutdown = () => {
   coach.stop()

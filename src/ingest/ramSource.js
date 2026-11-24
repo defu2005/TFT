@@ -15,8 +15,8 @@ export function ramSource(statePath = DEFAULT_STATE_FILE) {
     read: async () => {
       if (!fs.existsSync(statePath)) {
         return {
-          level: 1,
-          gold: 0,
+          level: null,
+          gold: null,
           hp: 100,
           stage: 1,
           shop: null,
@@ -30,15 +30,16 @@ export function ramSource(statePath = DEFAULT_STATE_FILE) {
         const data = JSON.parse(text)
         const missing = []
 
-        if (data.gold === undefined) missing.push("gold")
-        if (data.level === undefined) missing.push("level")
+        if (data.gold == null) missing.push("gold")
+        if (data.level == null) missing.push("level")
         if (data.hp === undefined) missing.push("hp")
         if (data.stage === undefined) missing.push("stage")
         if (!Array.isArray(data.shop) || data.shop.every(s => s === null)) missing.push("shop")
 
         return {
-          level: Number(data.level) || 1,
-          gold: Number(data.gold) || 0,
+          // Missing gold or level is null, not 0 or 1: the coach flags it and the engine makes no buy, roll or xp on it.
+          level: data.level == null ? null : Number(data.level) || 1,
+          gold: data.gold == null ? null : Number(data.gold) || 0,
           hp: Number(data.hp) || 100,
           stage: Number(data.stage) || 1,
           shop: Array.isArray(data.shop) ? data.shop : null,
@@ -48,8 +49,8 @@ export function ramSource(statePath = DEFAULT_STATE_FILE) {
         }
       } catch (err) {
         return {
-          level: 1,
-          gold: 0,
+          level: null,
+          gold: null,
           hp: 100,
           stage: 1,
           shop: null,

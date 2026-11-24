@@ -1,0 +1,53 @@
+{
+  "set": "18",
+  "unmodelled": [
+    "Opening Encounters (Riot 18.1, verified): thêm Item Forge và Completed Item Anvil Start, bỏ Loot Subscription, Artifact Anvil và Reroll Start",
+    "Wisp (Riot 18.1 và Enchanted Wilds Overview): \"You can purchase one Wisp per round, and it'll appear in every other shop\"; \"Wisps will always appear in the rightmost slot\"; \"revealing the unit that was hiding behind it\". Wisp chiếm ô ngoài cùng bên phải và ẩn một tướng; không mô hình (I9)",
+    "Lux: mỗi origin có một bản riêng trong pool hay không (chưa biết); origin được chọn khi mua và ẩn với người chơi khác (Riot Enchanted Wilds Overview). Không mô hình (I6, U10)"
+  ],
+  "patches": [
+    {
+      "version": "16.20",
+      "notes": "CHƯA XÁC MINH. Nhãn 16.20 là của metabot. CDragon latest có content-metadata với version 16.23.x (dạng build của client), nên nhãn 16.x có thể là build của client chứ không phải số bản vá trong patch notes (wiki ghi Set 18 ra mắt ở 18.1). Ánh xạ 16.N sang 18.x đo được theo khoảng (docs/needs.md I8): 16.23 là sau 18.6 và trước 18.7. Trang Set 18 leveling (đăng 2026-10-24) chỉ có năm ô câu chữ, không có bảng: level 8 tướng cost 4 là 30%; level 9 là 33% (cost 4) và 15% (cost 5); level 10 là 40% (cost 4) và 25% (cost 5). Hàng 8 và 9 của file này là Set 17 (tft-knowledge) và bảng xấp xỉ của metabot, từ cùng một site. Các hàng còn lại và pool lấy từ rules.js; số tướng theo cost nằm ở `base` (xem caveat của `unmodelled`). File này cũng cũ hơn bản Riot 18.7 (2026-11-17) trong tft-knowledge.md. Riot 18.1–18.7 đã đọc (xem U10 và U1): không có bảng tỉ lệ shop hay số bản pool nào đổi trong các trang này; có thay đổi XP ở 18.2. Reroll Subscription (augment, 10 lượt roll miễn phí rồi 3 ở level 9, Riot 18.1 verified) không nằm ở đây: engine đã hỗ trợ freeRolls, phần thiếu là nguồn (I7). Tên trong tft-knowledge.md dòng 47 và 59 khác nhau, cần đối chiếu. Nguồn của champsPerCost ở base: đếm tên trong dump CDragon 16.23.8406595, Riftbeast tính vào, Lux tính một tên. Nguồn: Riot Enchanted Wilds Overview (10 tướng Riftbeast; \"Lux is the Avatar and appears in your shop\"). Lux: origin được chọn khi mua và ẩn với người khác, muốn đổi phải bán và tìm bản khác, nên chưa biết mỗi biến thể có bao nhiêu bản trong pool (I6, U10) Riot 18.7 (2026-11-17) không thêm tướng. Trang ghi \"We went back and forth ... eventually landed on Ivern\" và \"Kennen Now a Sprykin\", \"Ivern Now an Elderwood\"; trang không nói trait cũ có bị bỏ hay không. Dump 16.23 (cùng file với PBE 16.24 beta, content-metadata PBE 16.24.8407700) còn trait cũ của Ivern (Greenfather) và Kennen (Inferno, Executioner), nên dump không xác nhận được việc thay thế. Cả hai tướng đã có trong roster, nên base.champsPerCost không đổi. Dump 16.23 (cùng file với PBE 16.24) có Scuttlecrab base AD 50 (Riot 18.7 ghi 50 ⇒ 60), nên dump là bản sau 18.6 và trước 18.7 (Blossom 18.6 có; Sprykin 18.7 không có), và chưa rõ 18.7 đã phát hành (docs/tft-knowledge.md dòng 17 và 124 mâu thuẫn). Nếu 18.7 chưa phát hành, trait trong set18.json khớp game hiện tại. Sprykin trong dump có sáu tướng (Veigar, Kobuko, Teemo, Rammus, Gnar, Tristana); thêm Kennen thành bảy, khớp mốc (7) mà Riot nêu. Không thêm overlay vào hồ sơ này: overlay trait là file riêng (TFT_TRAIT_OVERLAY), bật khi 18.7 đã phát hành.",
+      "shopOdds": {
+        "8": [
+          0.15,
+          0.2,
+          0.32,
+          0.3,
+          0.03
+        ],
+        "9": [
+          0.1,
+          0.17,
+          0.25,
+          0.33,
+          0.15
+        ]
+      }
+    },
+    {
+      "version": "18.6",
+      "notes": "Đọc tay từ HUD trong video bên thứ ba. Hàng 7 đọc được ở hai trận: boxbox 2924500482 (nhãn patch 18.6 hiện trên overlay) và robinsongz 2925294495 (nhãn 18.6 lấy từ `seed-sources.json` và ngày upload 20261110, chưa thấy trên overlay). Cả hai đều 16/30/43/10/1. Chỉ thêm hàng 7; hàng 5, 6 khớp mặc định; hàng 8 và 9 ở 18.6 là kế thừa từ overlay 16.20 và khớp hàng HUD của mục 8 (VOD 2924500482), không phải từ mặc định. Không phải nguồn chính thức. Nhãn `18.6` chỉ được áp dụng khi yêu cầu là 18.x (hoặc không yêu cầu); yêu cầu `16.x` (kể cả 16.23) không thấy hàng này.",
+      "shopOdds": {
+        "7": [
+          0.16,
+          0.3,
+          0.43,
+          0.1,
+          0.01
+        ]
+      }
+    }
+  ],
+  "base": {
+    "champsPerCost": [
+      0,
+      14,
+      13,
+      14,
+      14,
+      10
+    ]
+  }
+}
