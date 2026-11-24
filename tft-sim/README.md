@@ -534,3 +534,17 @@ Commit ket qua nay chi them muc moi; so cu khong sua.
 
 Co-Authored-By: Claude Haiku 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_014HR84uNjNyg8fiD4KjHhVE
+
+## Ket qua CEM trang bi (vai C, codex/sim-c @ 65f6c1c, 2026-11-24)
+
+Nguon: `results/fixed/real/cem_item_v2.json` va `item_valuemax_vs_default_240000.json` tren `codex/sim-c`. CEM 6 the he, 12 ung vien, dev 220000–220199 (200 van moi ung vien). Kiem dinh cuoi tren seed giu-lai 240000–240999 (1.000 van, chua dung truoc do).
+
+- **Tuyen tinh CEM (vs mac dinh):** A−B = **−1,095**, CI95 [−1,198; −0,987], n = 1.000. Am = CEM tot hon mac dinh. Trong so: [0,084; −0,175; 0,063; 0,555; 1,010].
+- **Valuemax vs mac dinh (240000–240999):** A−B = **−1,006**, CI95 [−1,105; −0,899] (bootstrap 2.000 lan, tu `per_lobby_diff`, n = 1.000). Khop voi uoc luong truoc do (~1,1 vi tri), nhung giu-lai hep hon.
+- **So sanh truc tiep CEM vs valuemax chua lam.** Chenh lech giua hai ket qua (−1,095 so voi −1,006) nho hon do rong CI, nen chua the noi CEM tot hon valuemax.
+- Dev best_fit o the he 5 khoang −1,19 (dev 200 van, nhieu mau); khong dung so dev lam ket luan.
+
+Trang thai: vai C xong ve trang bi. Chua co placement cho clone v5 (vai E chua chay).
+
+Co-Authored-By: Claude Haiku 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_014HR84uNjNyg8fiD4KjHhVE
