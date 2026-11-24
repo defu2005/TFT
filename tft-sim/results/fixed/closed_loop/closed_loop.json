@@ -1,0 +1,112 @@
+{
+  "epochs": 40,
+  "seeds": "10000-10199",
+  "A": {
+    "placement": {
+      "lobbies": 200,
+      "completed": 200,
+      "mean_placement_A": 4.40875,
+      "mean_placement_B": 4.59125,
+      "diff_A_minus_B": -0.1825,
+      "ci95_diff": [
+        -0.4425,
+        0.06756249999999966
+      ],
+      "illegal_A": 0,
+      "illegal_B": 0
+    },
+    "illegal_A": 0,
+    "agree_clone_states": {
+      "BUY_SHOP": {
+        "n": 25430,
+        "agree": 0.9829
+      },
+      "FIELD": {
+        "n": 8444,
+        "agree": 0.9998
+      },
+      "PASS": {
+        "n": 27324,
+        "agree": 0.9914
+      },
+      "EQUIP": {
+        "n": 4502,
+        "agree": 1.0
+      },
+      "PICK_AUGMENT": {
+        "n": 2352,
+        "agree": 0.6144
+      },
+      "PICK_GOD": {
+        "n": 2400,
+        "agree": 1.0
+      },
+      "BUY_XP": {
+        "n": 42473,
+        "agree": 0.9983
+      },
+      "REROLL": {
+        "n": 1562,
+        "agree": 0.9744
+      },
+      "REROLL_AUGMENT": {
+        "n": 48,
+        "agree": 0.0
+      }
+    }
+  },
+  "B": {
+    "placement": {
+      "lobbies": 200,
+      "completed": 200,
+      "mean_placement_A": 4.46,
+      "mean_placement_B": 4.54,
+      "diff_A_minus_B": -0.08,
+      "ci95_diff": [
+        -0.3325,
+        0.17006249999999967
+      ],
+      "illegal_A": 0,
+      "illegal_B": 0
+    },
+    "illegal_A": 0,
+    "agree_clone_states": {
+      "BUY_SHOP": {
+        "n": 25170,
+        "agree": 0.9824
+      },
+      "FIELD": {
+        "n": 8426,
+        "agree": 0.9995
+      },
+      "PASS": {
+        "n": 27338,
+        "agree": 0.9919
+      },
+      "EQUIP": {
+        "n": 4492,
+        "agree": 1.0
+      },
+      "PICK_AUGMENT": {
+        "n": 2352,
+        "agree": 0.6169
+      },
+      "PICK_GOD": {
+        "n": 2400,
+        "agree": 1.0
+      },
+      "BUY_XP": {
+        "n": 42480,
+        "agree": 0.998
+      },
+      "REROLL_AUGMENT": {
+        "n": 48,
+        "agree": 0.0
+      },
+      "REROLL": {
+        "n": 1533,
+        "agree": 0.9752
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "lobbies": 100,
+  "phases": {
+    "all_passed": 3959
+  },
+  "cap_share": 0.0,
+  "phase_len_mean": 13.84
+}

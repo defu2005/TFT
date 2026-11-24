@@ -1,0 +1,9 @@
+{
+  "lobbies": 200,
+  "lobbies_per_s": 3.77,
+  "steps_mean": 612.24,
+  "steps_p50": 601.0,
+  "steps_p90": 660.5,
+  "steps_max": 829,
+  "completed": 200
+}

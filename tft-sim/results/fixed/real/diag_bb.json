@@ -1,0 +1,15 @@
+{
+  "seeds": "20000-20199 (dev)",
+  "outcomes": {
+    "other": 46021,
+    "none": 772,
+    "same": 1791
+  },
+  "n_pairs_same_or_other": 47812,
+  "mean_cost_out_vs_in_when_other": {
+    "cost_out": 2.503,
+    "cost_in": 2.964,
+    "star_out": 1.213,
+    "star_in": 1.065
+  }
+}

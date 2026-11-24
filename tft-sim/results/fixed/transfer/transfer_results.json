@@ -1,0 +1,447 @@
+{
+  "epochs": 10,
+  "variants": {
+    "flat": {
+      "A_to_A_val": {
+        "overall_ge2": 0.9286,
+        "per_type_ge2": {
+          "BUY_SHOP": {
+            "n": 12547,
+            "agree": 0.8147
+          },
+          "BUY_XP": {
+            "n": 21181,
+            "agree": 0.9592
+          },
+          "EQUIP": {
+            "n": 2238,
+            "agree": 1.0
+          },
+          "FIELD": {
+            "n": 4201,
+            "agree": 1.0
+          },
+          "PASS": {
+            "n": 13505,
+            "agree": 0.9831
+          },
+          "PICK_AUGMENT": {
+            "n": 1200,
+            "agree": 0.5992
+          },
+          "PICK_GOD": {
+            "n": 1200,
+            "agree": 1.0
+          },
+          "REROLL": {
+            "n": 845,
+            "agree": 0.832
+          },
+          "REROLL_AUGMENT": {
+            "n": 23,
+            "agree": 0.0
+          }
+        }
+      },
+      "A_to_B_test": {
+        "overall_ge2": 0.8972,
+        "per_type_ge2": {
+          "BUY_SHOP": {
+            "n": 50418,
+            "agree": 0.8003
+          },
+          "BUY_XP": {
+            "n": 85123,
+            "agree": 0.8801
+          },
+          "EQUIP": {
+            "n": 8988,
+            "agree": 0.9996
+          },
+          "FIELD": {
+            "n": 16864,
+            "agree": 0.9925
+          },
+          "PASS": {
+            "n": 54078,
+            "agree": 0.9936
+          },
+          "PICK_AUGMENT": {
+            "n": 4800,
+            "agree": 0.609
+          },
+          "PICK_GOD": {
+            "n": 4800,
+            "agree": 1.0
+          },
+          "REROLL": {
+            "n": 2546,
+            "agree": 0.7247
+          },
+          "REROLL_AUGMENT": {
+            "n": 86,
+            "agree": 0.0
+          }
+        }
+      },
+      "B_to_B_test": {
+        "overall_ge2": 0.9386,
+        "per_type_ge2": {
+          "BUY_SHOP": {
+            "n": 50418,
+            "agree": 0.8257
+          },
+          "BUY_XP": {
+            "n": 85123,
+            "agree": 0.9837
+          },
+          "EQUIP": {
+            "n": 8988,
+            "agree": 0.9999
+          },
+          "FIELD": {
+            "n": 16864,
+            "agree": 0.9995
+          },
+          "PASS": {
+            "n": 54078,
+            "agree": 0.9685
+          },
+          "PICK_AUGMENT": {
+            "n": 4800,
+            "agree": 0.609
+          },
+          "PICK_GOD": {
+            "n": 4800,
+            "agree": 1.0
+          },
+          "REROLL": {
+            "n": 2546,
+            "agree": 0.9509
+          },
+          "REROLL_AUGMENT": {
+            "n": 86,
+            "agree": 0.0
+          }
+        }
+      }
+    },
+    "flat+slot": {
+      "A_to_A_val": {
+        "overall_ge2": 0.9584,
+        "per_type_ge2": {
+          "BUY_SHOP": {
+            "n": 12547,
+            "agree": 0.9327
+          },
+          "BUY_XP": {
+            "n": 21181,
+            "agree": 0.974
+          },
+          "EQUIP": {
+            "n": 2238,
+            "agree": 1.0
+          },
+          "FIELD": {
+            "n": 4201,
+            "agree": 1.0
+          },
+          "PASS": {
+            "n": 13505,
+            "agree": 0.9722
+          },
+          "PICK_AUGMENT": {
+            "n": 1200,
+            "agree": 0.5992
+          },
+          "PICK_GOD": {
+            "n": 1200,
+            "agree": 1.0
+          },
+          "REROLL": {
+            "n": 845,
+            "agree": 0.8876
+          },
+          "REROLL_AUGMENT": {
+            "n": 23,
+            "agree": 0.0
+          }
+        }
+      },
+      "A_to_B_test": {
+        "overall_ge2": 0.9354,
+        "per_type_ge2": {
+          "BUY_SHOP": {
+            "n": 50418,
+            "agree": 0.9285
+          },
+          "BUY_XP": {
+            "n": 85123,
+            "agree": 0.9096
+          },
+          "EQUIP": {
+            "n": 8988,
+            "agree": 1.0
+          },
+          "FIELD": {
+            "n": 16864,
+            "agree": 0.9985
+          },
+          "PASS": {
+            "n": 54078,
+            "agree": 0.9805
+          },
+          "PICK_AUGMENT": {
+            "n": 4800,
+            "agree": 0.609
+          },
+          "PICK_GOD": {
+            "n": 4800,
+            "agree": 1.0
+          },
+          "REROLL": {
+            "n": 2546,
+            "agree": 0.8562
+          },
+          "REROLL_AUGMENT": {
+            "n": 86,
+            "agree": 0.0
+          }
+        }
+      },
+      "B_to_B_test": {
+        "overall_ge2": 0.9628,
+        "per_type_ge2": {
+          "BUY_SHOP": {
+            "n": 50418,
+            "agree": 0.9396
+          },
+          "BUY_XP": {
+            "n": 85123,
+            "agree": 0.9796
+          },
+          "EQUIP": {
+            "n": 8988,
+            "agree": 1.0
+          },
+          "FIELD": {
+            "n": 16864,
+            "agree": 0.9995
+          },
+          "PASS": {
+            "n": 54078,
+            "agree": 0.9702
+          },
+          "PICK_AUGMENT": {
+            "n": 4800,
+            "agree": 0.6092
+          },
+          "PICK_GOD": {
+            "n": 4800,
+            "agree": 1.0
+          },
+          "REROLL": {
+            "n": 2546,
+            "agree": 0.9595
+          },
+          "REROLL_AUGMENT": {
+            "n": 86,
+            "agree": 0.0
+          }
+        }
+      }
+    },
+    "universal": {
+      "A_to_A_val": {
+        "overall_ge2": 0.9664,
+        "per_type_ge2": {
+          "BUY_SHOP": {
+            "n": 12547,
+            "agree": 0.9352
+          },
+          "BUY_XP": {
+            "n": 21181,
+            "agree": 0.9868
+          },
+          "EQUIP": {
+            "n": 2238,
+            "agree": 1.0
+          },
+          "FIELD": {
+            "n": 4201,
+            "agree": 0.999
+          },
+          "PASS": {
+            "n": 13505,
+            "agree": 0.9831
+          },
+          "PICK_AUGMENT": {
+            "n": 1200,
+            "agree": 0.5992
+          },
+          "PICK_GOD": {
+            "n": 1200,
+            "agree": 1.0
+          },
+          "REROLL": {
+            "n": 845,
+            "agree": 0.8994
+          },
+          "REROLL_AUGMENT": {
+            "n": 23,
+            "agree": 0.0
+          }
+        }
+      },
+      "A_to_B_test": {
+        "overall_ge2": 0.9677,
+        "per_type_ge2": {
+          "BUY_SHOP": {
+            "n": 50418,
+            "agree": 0.9397
+          },
+          "BUY_XP": {
+            "n": 85123,
+            "agree": 0.9844
+          },
+          "EQUIP": {
+            "n": 8988,
+            "agree": 1.0
+          },
+          "FIELD": {
+            "n": 16864,
+            "agree": 0.9992
+          },
+          "PASS": {
+            "n": 54078,
+            "agree": 0.9876
+          },
+          "PICK_AUGMENT": {
+            "n": 4800,
+            "agree": 0.609
+          },
+          "PICK_GOD": {
+            "n": 4800,
+            "agree": 1.0
+          },
+          "REROLL": {
+            "n": 2546,
+            "agree": 0.8633
+          },
+          "REROLL_AUGMENT": {
+            "n": 86,
+            "agree": 0.0
+          }
+        }
+      },
+      "B_to_B_test": {
+        "overall_ge2": 0.9674,
+        "per_type_ge2": {
+          "BUY_SHOP": {
+            "n": 50418,
+            "agree": 0.9383
+          },
+          "BUY_XP": {
+            "n": 85123,
+            "agree": 0.983
+          },
+          "EQUIP": {
+            "n": 8988,
+            "agree": 1.0
+          },
+          "FIELD": {
+            "n": 16864,
+            "agree": 0.9995
+          },
+          "PASS": {
+            "n": 54078,
+            "agree": 0.9869
+          },
+          "PICK_AUGMENT": {
+            "n": 4800,
+            "agree": 0.609
+          },
+          "PICK_GOD": {
+            "n": 4800,
+            "agree": 1.0
+          },
+          "REROLL": {
+            "n": 2546,
+            "agree": 0.9269
+          },
+          "REROLL_AUGMENT": {
+            "n": 86,
+            "agree": 0.0
+          }
+        }
+      }
+    }
+  },
+  "controls_A_to_A_vs_A_to_B": {
+    "BUY_SHOP": {
+      "A_to_A": 0.8147,
+      "A_to_B": 0.8003,
+      "shift_pts": -1.4
+    },
+    "BUY_XP": {
+      "A_to_A": 0.9592,
+      "A_to_B": 0.8801,
+      "shift_pts": -7.9
+    },
+    "EQUIP": {
+      "A_to_A": 1.0,
+      "A_to_B": 0.9996,
+      "shift_pts": -0.0
+    },
+    "FIELD": {
+      "A_to_A": 1.0,
+      "A_to_B": 0.9925,
+      "shift_pts": -0.7
+    },
+    "PASS": {
+      "A_to_A": 0.9831,
+      "A_to_B": 0.9936,
+      "shift_pts": 1.1
+    },
+    "PICK_AUGMENT": {
+      "A_to_A": 0.5992,
+      "A_to_B": 0.609,
+      "shift_pts": 1.0
+    },
+    "PICK_GOD": {
+      "A_to_A": 1.0,
+      "A_to_B": 1.0,
+      "shift_pts": 0.0
+    },
+    "REROLL": {
+      "A_to_A": 0.832,
+      "A_to_B": 0.7247,
+      "shift_pts": -10.7
+    },
+    "REROLL_AUGMENT": {
+      "A_to_A": 0.0,
+      "A_to_B": 0.0,
+      "shift_pts": 0.0
+    }
+  },
+  "bootstrap_on_test_lobbies": {
+    "T_minus_L": [
+      0.1359,
+      0.143
+    ],
+    "U_minus_L": [
+      0.1358,
+      0.1429
+    ]
+  },
+  "main": {
+    "L_flat_A_to_B": 0.8003,
+    "U_best_B_to_B": 0.9396,
+    "U_variant": "flat+slot",
+    "T_universal_A_to_B": 0.9397,
+    "gap_U_minus_L": 0.1393,
+    "threshold_T": 0.9117,
+    "void": false,
+    "pass": true
+  }
+}

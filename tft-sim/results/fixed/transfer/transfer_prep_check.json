@@ -1,0 +1,36 @@
+{
+  "rows_val_ge2": 56940,
+  "rows_val_buyshop_ge2": 12547,
+  "runs": {
+    "flat|ep3": {
+      "val_ge2": 0.8602,
+      "buyshop_ge2": 0.8122,
+      "elapsed_s": 2.2
+    },
+    "flat|ep10": {
+      "val_ge2": 0.9286,
+      "buyshop_ge2": 0.8147,
+      "elapsed_s": 2.9
+    },
+    "flat+slot|ep3": {
+      "val_ge2": 0.8714,
+      "buyshop_ge2": 0.8444,
+      "elapsed_s": 1.1
+    },
+    "flat+slot|ep10": {
+      "val_ge2": 0.9584,
+      "buyshop_ge2": 0.9327,
+      "elapsed_s": 3.0
+    },
+    "universal|ep3": {
+      "val_ge2": 0.8979,
+      "buyshop_ge2": 0.8553,
+      "elapsed_s": 0.9
+    },
+    "universal|ep10": {
+      "val_ge2": 0.9664,
+      "buyshop_ge2": 0.9352,
+      "elapsed_s": 2.4
+    }
+  }
+}

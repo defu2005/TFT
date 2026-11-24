@@ -1,0 +1,38 @@
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  tot += float(loss) * len(idx)
+epoch 0 loss 0.8288
+epoch 1 loss 0.3536
+epoch 2 loss 0.3027
+content-free (scalars+opp+gods) ep3: val_ge2=0.8547 BUY_SHOP_ge2=0.8123 rows_BUY_SHOP_ge2=12547
+epoch 0 loss 0.8288
+epoch 1 loss 0.3536
+epoch 2 loss 0.3027
+epoch 3 loss 0.2279
+epoch 4 loss 0.1805
+epoch 5 loss 0.1591
+epoch 6 loss 0.1468
+epoch 7 loss 0.1393
+epoch 8 loss 0.1341
+epoch 9 loss 0.1304
+content-free (scalars+opp+gods) ep10: val_ge2=0.9400 BUY_SHOP_ge2=0.8121 rows_BUY_SHOP_ge2=12547
+epoch 0 loss 0.8288
+epoch 1 loss 0.3536
+epoch 2 loss 0.3027
+epoch 3 loss 0.2279
+epoch 4 loss 0.1805
+epoch 5 loss 0.1591
+epoch 6 loss 0.1468
+epoch 7 loss 0.1393
+epoch 8 loss 0.1341
+epoch 9 loss 0.1304
+epoch 10 loss 0.1273
+epoch 11 loss 0.1238
+epoch 12 loss 0.1221
+epoch 13 loss 0.1199
+epoch 14 loss 0.1200
+epoch 15 loss 0.1167
+epoch 16 loss 0.1153
+epoch 17 loss 0.1149
+epoch 18 loss 0.1135
+epoch 19 loss 0.1122
+content-free (scalars+opp+gods) ep20: val_ge2=0.9469 BUY_SHOP_ge2=0.8113 rows_BUY_SHOP_ge2=12547

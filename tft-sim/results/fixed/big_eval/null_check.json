@@ -1,0 +1,13 @@
+{
+  "lobbies": 2000,
+  "completed": 2000,
+  "mean_placement_A": 4.51675,
+  "mean_placement_B": 4.48325,
+  "diff_A_minus_B": 0.0335,
+  "ci95_diff": [
+    -0.0397625,
+    0.10975
+  ],
+  "illegal_A": 0,
+  "illegal_B": 0
+}

@@ -1,0 +1,127 @@
+# Handoff cho agent cloud (Codex / Cursor): thu dữ liệu, huấn luyện, kiểm định (workstream `sim`)
+
+Dành cho agent chạy trên Codex Cloud hoặc Cursor Cloud Agents. Mỗi phiên nhận một vai (mục 4) và prompt tương ứng ở `cloud-agent-prompts.md`. Đọc mục 0–3 trước khi bắt đầu.
+
+Mỗi phiên chạy trên máy riêng, tạm thời, và **không chia sẻ file với phiên khác**. Vì vậy thu dữ liệu và huấn luyện được gộp trong cùng một phiên (vai DT). Chỉ checkpoint nhỏ và JSON đi giữa các phiên, qua git.
+
+## 0. Quy tắc cứng
+
+- **Phạm vi:** chỉ sửa `tft-sim/` trên nhánh được giao. Không sửa `src/`, `ingest/`, live coach, `master`, `docs/agents/`, `CLAUDE.md`, `AGENTS.md`, hoặc `.cursor/`, `.codex/` ở gốc repo.
+- **Nhánh:** commit và push **chỉ** lên nhánh mà người dùng đặt khi tạo phiên. Nếu phiên không có nhánh được giao, dừng và hỏi. Không tạo PR nếu người dùng không yêu cầu. Không force-push.
+- **Không commit dữ liệu lớn:** `.npz` giữ ngoài git (thư mục `~/work/data`). Checkpoint `.pt` dưới 1 MB (ước tính ~190 KB) được commit vào `tft-sim/results/checkpoints/`. Chỉ commit JSON kết quả và summary.
+- **Không bịa số.** Mọi số báo cáo lấy từ file kết quả, kèm seed range.
+- **Không dùng seed đã đóng** (mục 2).
+- **Không lộ bí mật** vào commit, log, hay request ra ngoài.
+
+## 1. Môi trường (đặt trong phần Setup/Install của dashboard)
+
+Lệnh duy nhất để cài đặt, chạy từ gốc repo:
+
+```bash
+bash tft-sim/scripts/cloud_setup.sh
+```
+
+Script này (đã kiểm thử trên clone sạch của nhánh):
+- clone `MielPopsssssss/tft_goat` (công khai, không cần đăng nhập) và ghim commit `d5358e94`;
+- tạo venv tại `~/work/venv`, cài numpy, pydantic, httpx, riotwatcher, gymnasium, pettingzoo, pytest, torch CPU;
+- kiểm tra nhập được `tft_goat`, `tft_sim`, `torch`.
+
+Mỗi lần chạy lệnh sim, agent đặt trực tiếp (script không giữ được biến môi trường sang shell của agent):
+
+```bash
+. ~/work/venv/bin/activate
+export PYTHONPATH="$PWD/tft-sim/src:$HOME/work/tft_goat/src"
+export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+```
+
+**Bắt buộc `OMP_NUM_THREADS=1`** khi chạy nhiều tiến trình. Không có nó, torch tranh CPU và chạy chậm nhiều lần.
+
+Kiểm tra nhanh (dùng seed thử 900000–900001, không thuộc dữ liệu):
+```bash
+cd tft-sim && python scripts/collect_v4.py 900000 900002 /tmp/smoke.npz
+```
+Đã đo: 2 ván ra 5.918 dòng, khoảng 3 giây. Chạy hai lần cho kết quả giống hệt.
+
+## 2. Sổ seed
+
+| Dải seed | Dùng cho | Trạng thái |
+|---|---|---|
+| 20000–21999 | tinh chỉnh | đã dùng |
+| 30000–31999 | giữ-lại cũ | đã dùng |
+| 40000–41999 | sàng loại cũ | đã dùng |
+| 50000–51999 | BENCH_BOARD | đã dùng |
+| 60000–61999 | giữ-lại v3 | đã dùng |
+| 70000–71999 | giai đoạn 1 | đã dùng |
+| 80000–81199 | dữ liệu clone v2 | đã dùng |
+| 90000–91999 | chơi clone v2 | đã dùng |
+| 100000–100399 | dev CEM / augment | đã dùng |
+| 110000–111999 | giữ-lại augment | đã dùng |
+| 120000–120999 | arena engine | đã dùng |
+| 130000–130399 | sàng v4 | đã dùng |
+| 140000–140999 | giữ-lại trang bị | đã dùng |
+| 150000–151199 | dữ liệu v4 | đã dùng |
+| 160000–160999 | chơi v4 | đã dùng |
+| 170000–170999 | trang bị (xác nhận) | đã dùng |
+| 180000–180399 | trang bị dev | đã dùng |
+| 190000–191000 | tái hiện valuemax | đã dùng |
+| 200000–200399 | định vị | đã dùng |
+| 220000–220199 | dev CEM | đã dùng (dev, được tái dùng) |
+| 230000–230999 | giữ-lại CEM cũ | đã dùng |
+| 900000–900099 | kiểm thử cài đặt (không phải dữ liệu) | dành cho smoke |
+| **300000–301999** | **dữ liệu DT: train 300000–301499, val 301500–301599, test 301600–301999** | **dành riêng cho vai DT** |
+| **240000–240999** | **kiểm định cuối CEM (vai C)** | dành riêng |
+| **241000–241999** | **kiểm định cuối clone (vai E)** | dành riêng |
+| **242000–249999** | **dự trữ cho vai P (định vị)** | dành riêng |
+
+Không chồng dải. Không dùng 230000–230999 hay 240000+ để huấn luyện.
+
+## 3. Định dạng và kiểm tra
+
+`scripts/collect_v4.py lo hi out.npz` ghi các mảng:
+- `uni3`: float32, `(N, 185)`; `mask`: bool, `(N, 43)`; `action`: int64 trong `[0, 42]`; `seed`, `seat`, `step`.
+
+`scripts/merge_v4.py out_dir shard...` kiểm tra từng shard (shape, action, mask hợp lệ, không NaN), loại shard lỗi, rồi chia theo seed thành `train.npz`, `val.npz`, `test.npz` theo mục 2.
+
+Đo trên máy 4 nhân: khoảng 1 giây mỗi ván trên một nhân, khoảng 3.000 dòng mỗi ván. 2.000 ván ≈ 6 triệu dòng ≈ 4,4 GB `uni3` (chưa nén). **Cần máy có RAM tối thiểu 16 GB** (gộp tạm thời nhân đôi bộ nhớ). Nếu ít hơn, giảm số ván và báo lại.
+
+Kiểm tra bắt buộc trước khi báo xong:
+1. `uni3.shape[1] == 185`, `mask.shape[1] == 43`, action trong `[0, 42]`, không NaN/inf.
+2. `mask[i, action[i]]` là True với mọi dòng.
+3. Mọi seed nằm đúng dải được giao (mục 2).
+4. Chạy lại `collect_v4.py` trên 2 seed đầu, so sánh `action` và số dòng phải giống hệt.
+5. Ghi summary: số dòng, số ván, sha256 của từng file, RAM đỉnh, thời gian.
+
+## 4. Các vai
+
+| Vai | Số phiên | Việc | Phụ thuộc | Đầu ra (commit) |
+|---|---|---|---|---|
+| **DT — thu + huấn luyện** | 1 | Thu 2.000 ván (4 tiến trình song song), gộp, huấn luyện clone v5, đánh giá test | không | `bc_v5.json`, `shard_summary.json`, `clone_v5_seed0.pt` |
+| **C — trang bị (CEM)** | 1 | CEM 6 thế hệ, 12 ứng viên, dev 200 ván, kiểm định cuối 240000–240999 | không | `cem_item_v2.json` |
+| **R — nghiên cứu Set 18** | 1 | Bổ sung `set18-sources.md` từ nguồn công khai | không | `set18-sources.md` |
+| **E — kiểm định clone v5** | 1 | Chơi clone v5 vs v4, v3, scripted trên 241000–241999 | **DT xong** (cần checkpoint) | `play_v5_*.json` |
+| P — định vị | — | chưa giao | — | — |
+
+**Thứ tự chạy:**
+1. Ngay bây giờ: DT, C, R song song.
+2. Khi DT đã commit checkpoint: E, và chọn nhánh E là nhánh DT (để E có `clone_v5_seed0.pt`).
+
+## 5. Thông số chạy
+
+- **DT:** 4 tiến trình song song, mỗi tiến trình 500 ván:
+  `300000–300499`, `300500–300999`, `301000–301499`, `301500–301999`. Shard cuối chứa cả val và test; `merge_v4.py` tự tách.
+- **C:** `python scripts/cem_item.py 6 12 220000 220200 results/fixed/real/cem_item_v2.json 240000 241000` (Pool(4)). Ước tính khoảng 1,5 giờ, vì mỗi ứng viên chạy 200 ván dev. Nếu hết giờ, giảm số thế hệ và báo lại.
+- **E:** `python scripts/play_v4.py <mode> <ckpt> 241000 242000 v5` với mode trong `v4null`, `clone_v4`, `clone_v3`, `clone_scr`. Đã đặt `torch.set_num_threads(1)`. Tối đa 4 tiến trình song song.
+
+Ước tính thời gian DT: thu khoảng 10–15 phút (4 nhân). Huấn luyện: khoảng 20 phút mỗi seed (3 seed × 40 epoch), **ước tính ngoại suy từ thử 12.000 dòng, chưa đo trên 6 triệu dòng**. Đo trong 10 phút đầu rồi báo lại.
+
+## 6. Đầu ra và đóng gói
+
+- Raw `.npz`: ở `~/work/data`, không commit, không đưa ra ngoài phiên.
+- Checkpoint (`~190 KB`) và JSON: commit lên nhánh được giao.
+- Dữ liệu thô chỉ rời máy khi người dùng yêu cầu rõ.
+
+---
+
+# Phạm vi các phiên (Codex / Cursor)
+
+Phần chọn công cụ, nhánh và thứ tự nằm trong `docs/handoff/cloud-agents.md` mục 4. Prompt từng vai nằm trong `docs/handoff/cloud-agent-prompts.md`.

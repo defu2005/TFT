@@ -1,0 +1,45 @@
+{
+  "seeds": "20000-21999",
+  "lobbies": 2000,
+  "results": {
+    "universal_ep40_vs_scripted": {
+      "lobbies": 2000,
+      "completed": 2000,
+      "mean_placement_A": 4.54075,
+      "mean_placement_B": 4.45925,
+      "diff_A_minus_B": 0.0815,
+      "ci95_diff": [
+        0.004993750000000001,
+        0.15700624999999996
+      ],
+      "illegal_A": 0,
+      "illegal_B": 0
+    },
+    "eps0.1_vs_scripted": {
+      "lobbies": 2000,
+      "completed": 2000,
+      "mean_placement_A": 4.26425,
+      "mean_placement_B": 4.73575,
+      "diff_A_minus_B": -0.4715,
+      "ci95_diff": [
+        -0.54650625,
+        -0.39724375
+      ],
+      "illegal_A": 0,
+      "illegal_B": 0
+    },
+    "eps0.3_vs_scripted": {
+      "lobbies": 2000,
+      "completed": 2000,
+      "mean_placement_A": 4.41675,
+      "mean_placement_B": 4.58325,
+      "diff_A_minus_B": -0.1665,
+      "ci95_diff": [
+        -0.24675625,
+        -0.088
+      ],
+      "illegal_A": 0,
+      "illegal_B": 0
+    }
+  }
+}

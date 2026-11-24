@@ -1,0 +1,12 @@
+{
+  "flat": {
+    "all_rows": 0.8978,
+    "rows_ge2_legal": 0.8602,
+    "n_ge2": 56940
+  },
+  "flat+slot": {
+    "all_rows": 0.906,
+    "rows_ge2_legal": 0.8714,
+    "n_ge2": 56940
+  }
+}

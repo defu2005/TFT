@@ -1,0 +1,225 @@
+{
+  "seeds": "3000-3199",
+  "replication": {
+    "0.05": {
+      "lobbies": 200,
+      "completed": 200,
+      "mean_placement_A": 4.3925,
+      "mean_placement_B": 4.6075,
+      "diff_A_minus_B": -0.215,
+      "ci95_diff": [
+        -0.4425625,
+        0.035
+      ],
+      "illegal_A": 0,
+      "illegal_B": 0
+    },
+    "0.1": {
+      "lobbies": 200,
+      "completed": 200,
+      "mean_placement_A": 4.40875,
+      "mean_placement_B": 4.59125,
+      "diff_A_minus_B": -0.1825,
+      "ci95_diff": [
+        -0.4275,
+        0.05506249999999966
+      ],
+      "illegal_A": 0,
+      "illegal_B": 0
+    },
+    "0.2": {
+      "lobbies": 200,
+      "completed": 200,
+      "mean_placement_A": 4.35125,
+      "mean_placement_B": 4.64875,
+      "diff_A_minus_B": -0.2975,
+      "ci95_diff": [
+        -0.5425,
+        -0.0675
+      ],
+      "illegal_A": 0,
+      "illegal_B": 0
+    }
+  },
+  "mechanism": {
+    "by_round": {
+      "A": {
+        "0": {
+          "level": 2.03,
+          "gold": 0.35,
+          "hp": 100.0,
+          "board": 1.77
+        },
+        "1": {
+          "level": 3.0,
+          "gold": 1.65,
+          "hp": 100.0,
+          "board": 2.52
+        },
+        "2": {
+          "level": 3.08,
+          "gold": 4.7,
+          "hp": 100.0,
+          "board": 2.84
+        },
+        "3": {
+          "level": 3.11,
+          "gold": 7.14,
+          "hp": 100.0,
+          "board": 3.08
+        },
+        "4": {
+          "level": 4.0,
+          "gold": 7.62,
+          "hp": 98.5,
+          "board": 3.89
+        },
+        "5": {
+          "level": 4.02,
+          "gold": 8.86,
+          "hp": 97.0,
+          "board": 4.0
+        },
+        "6": {
+          "level": 4.02,
+          "gold": 11.88,
+          "hp": 95.39,
+          "board": 4.01
+        },
+        "7": {
+          "level": 4.2,
+          "gold": 16.01,
+          "hp": 95.39,
+          "board": 4.16
+        },
+        "8": {
+          "level": 4.21,
+          "gold": 20.84,
+          "hp": 93.97,
+          "board": 4.21
+        },
+        "9": {
+          "level": 5.0,
+          "gold": 25.97,
+          "hp": 92.45,
+          "board": 4.86
+        },
+        "10": {
+          "level": 5.0,
+          "gold": 32.65,
+          "hp": 92.45,
+          "board": 4.96
+        },
+        "11": {
+          "level": 5.02,
+          "gold": 39.52,
+          "hp": 89.49,
+          "board": 5.01
+        }
+      },
+      "B": {
+        "0": {
+          "level": 2.0,
+          "gold": 0.0,
+          "hp": 100.0,
+          "board": 2.0
+        },
+        "1": {
+          "level": 3.0,
+          "gold": 1.19,
+          "hp": 100.0,
+          "board": 2.72
+        },
+        "2": {
+          "level": 3.0,
+          "gold": 4.39,
+          "hp": 100.0,
+          "board": 2.88
+        },
+        "3": {
+          "level": 3.0,
+          "gold": 7.07,
+          "hp": 100.0,
+          "board": 2.99
+        },
+        "4": {
+          "level": 4.0,
+          "gold": 7.58,
+          "hp": 98.5,
+          "board": 3.91
+        },
+        "5": {
+          "level": 4.0,
+          "gold": 8.6,
+          "hp": 96.98,
+          "board": 4.0
+        },
+        "6": {
+          "level": 4.0,
+          "gold": 11.3,
+          "hp": 95.58,
+          "board": 4.0
+        },
+        "7": {
+          "level": 4.0,
+          "gold": 15.44,
+          "hp": 95.58,
+          "board": 4.0
+        },
+        "8": {
+          "level": 4.0,
+          "gold": 20.23,
+          "hp": 93.97,
+          "board": 4.0
+        },
+        "9": {
+          "level": 5.0,
+          "gold": 25.2,
+          "hp": 92.44,
+          "board": 4.83
+        },
+        "10": {
+          "level": 5.0,
+          "gold": 31.68,
+          "hp": 92.44,
+          "board": 4.97
+        },
+        "11": {
+          "level": 5.02,
+          "gold": 38.88,
+          "hp": 89.34,
+          "board": 5.01
+        }
+      }
+    },
+    "action_counts_A_eps0.1": {
+      "PASS": 97161,
+      "BUY_XP": 42916,
+      "BUY_SHOP": 30433,
+      "FIELD": 14057,
+      "BENCH_BOARD": 5497,
+      "EQUIP": 4503,
+      "SELL_BENCH": 3073,
+      "PICK_AUGMENT": 2400,
+      "PICK_GOD": 2400,
+      "REROLL": 1988,
+      "REROLL_AUGMENT": 123
+    },
+    "action_counts_B_scripted": {
+      "PASS": 111776,
+      "BUY_XP": 41839,
+      "BUY_SHOP": 27842,
+      "FIELD": 8432,
+      "EQUIP": 4463,
+      "PICK_AUGMENT": 2400,
+      "PICK_GOD": 2400,
+      "REROLL": 1214,
+      "REROLL_AUGMENT": 54
+    },
+    "xp_or_reroll_below_54_gold_A": {
+      "BUY_XP": 369,
+      "REROLL": 417
+    },
+    "xp_or_reroll_below_54_gold_B": {}
+  }
+}

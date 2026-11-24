@@ -1,0 +1,15 @@
+{
+  "lobbies": 200,
+  "completed": 200,
+  "mean_placement_A": 4.48625,
+  "mean_placement_B": 4.51375,
+  "diff_A_minus_B": -0.0275,
+  "ci95_diff": [
+    -0.2475,
+    0.1775
+  ],
+  "illegal_A": 0,
+  "illegal_B": 0,
+  "content": "synthetic (full-recipe content, tft_sim.content)",
+  "elapsed_s": 14.3
+}
