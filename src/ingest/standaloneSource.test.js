@@ -263,3 +263,24 @@ test("HUD odds row is kept only when it has five numbers in 0–100 that sum to 
   write(undefined)
   assert.equal((await source.read()).oddsObserved, null)
 })
+
+test("HUD odds row flows from the real source into the coach as a caveat with the exact profile row", async (t) => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tft-hud-oddsflow-"))
+  t.after(() => fs.rmSync(dir, { recursive: true, force: true }))
+  const hudPath = path.join(dir, "hud.json")
+  const coach = createCoach({ source: createStandaloneSource({ hudPath, eogPath: path.join(dir, "snapshot.json") }) })
+  fs.writeFileSync(hudPath, JSON.stringify({
+    hudSchema: 2, source: "window", set: 18, capturedAtMs: Date.now(), hudDetected: true,
+    gold: 40, level: 7, oddsRow: [16, 30, 43, 10, 1], shopSlots: [null, null, null, null, null],
+  }))
+  const record = await coach.tick()
+  assert.equal(record.reason.factors.oddsMismatch, true)
+  assert.ok(record.reason.caveats.includes("hàng odds HUD cấp 7 [16, 30, 43, 10, 1] khác hồ sơ [19, 30, 40, 10, 1]; xác suất vẫn theo hồ sơ, quyết định không đổi"))
+  // a level flagged unknown gives no comparison, even with a row present
+  fs.writeFileSync(hudPath, JSON.stringify({
+    hudSchema: 2, source: "window", set: 18, capturedAtMs: Date.now(), hudDetected: true,
+    gold: 40, level: null, oddsRow: [16, 30, 43, 10, 1], shopSlots: [null, null, null, null, null],
+  }))
+  const unknownLevel = await coach.tick()
+  assert.equal(unknownLevel.reason.factors.oddsMismatch, null)
+})

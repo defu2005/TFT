@@ -124,21 +124,21 @@ Các công cụ MCP (`tft_evaluate_state`, `tft_hit_chance`, `tft_rules`) nay đ
 
 ## Phạm vi profile 18.x (quyết định 2026-11-24, chưa build)
 
-Nhãn cấp là cấp thật: `SHOP_ODDS[cấp]` (`src/engine/odds.js`, `p.shopOdds[level]`). Cột "Hàng hiệu lực tại 18.6" là hàng sau khi áp overlay đến 18.6 (`buildProfile`, `profileFile.test.js`). Đơn vị: xác suất (0–1) ở cả hai cột; bảng hiển thị phần trăm ở hàng đo được. Không hàng nào đã được xác minh với client 18.x (U2 vẫn mở).
+Nhãn cấp là cấp thật: `SHOP_ODDS[cấp]` (`src/engine/odds.js`, `p.shopOdds[level]`). Cột "Hàng hiệu lực tại 18.6" là hàng sau khi áp overlay đến 18.6 (`buildProfile`, `profileFile.test.js`). Không hàng nào đã được xác minh với client 18.x (U2 vẫn mở).
 
 | Cấp | Mặc định `rules.js` (chưa xác minh) | Hàng hiệu lực tại 18.6 | Nguồn của hàng 18.6 | Test | Xác minh |
 |---|---|---|---|---|---|
 | 1 | [1, 0, 0, 0, 0] | như mặc định | không có đo | không | không |
 | 2 | [1, 0, 0, 0, 0] | như mặc định | không có đo | không | không |
-| 3 | [0.75, 0.25, 0, 0, 0] | [75, 25, 0, 0, 0] | HUD, mục 10(a), VOD 2924500482 | `profileFile.test.js` (`row("18.6", 3)`) | HUD trên 18.6, khớp mặc định |
-| 4 | [0.55, 0.3, 0.15, 0, 0] | [55, 30, 15, 0, 0] | HUD, mục 10(a) | `row("18.6", 4)` | HUD trên 18.6, khớp mặc định |
-| 5 | [0.45, 0.33, 0.2, 0.02, 0] | [45, 33, 20, 2, 0] | HUD, mục 8 và 10 | `row("18.6", 5)` | HUD trên 18.6, khớp mặc định |
-| 6 | [0.3, 0.4, 0.25, 0.05, 0] | [30, 40, 25, 5, 0] | HUD, mục 8 | `row("18.6", 6)` | HUD trên 18.6, khớp mặc định |
-| 7 | [0.19, 0.3, 0.4, 0.1, 0.01] | [16, 30, 43, 10, 1] | đọc tay từ HUD, 18.6, hai trận (`31a29d5`), mục 8 `4/56` | `profileFile.test.js` dòng 41 | HUD trên 18.6 ở hai trận; lệch mặc định ở cost 1 (0.16 so với 0.19) và cost 3 (0.43 so với 0.40) |
-| 8 | [0.17, 0.24, 0.32, 0.24, 0.03] | [15, 20, 32, 30, 3] | kế thừa overlay 16.20 của candidate, khớp HUD mục 8 (`4/68`) | `profileFile.test.js` (`row("18.6", 8)`) | HUD trên 18.6; nhãn 16.20 là của metabot, chưa xác minh. Lệch mặc định ở cost 1, 2, 4 |
-| 9 | [0.15, 0.18, 0.25, 0.3, 0.12] | [10, 17, 25, 33, 15] | kế thừa overlay 16.20, khớp HUD mục 8 (`0/68`, `8/68`, `18/68`) | `profileFile.test.js` (`row("18.6", 9)`) | như cấp 8. Lệch mặc định ở cost 1, 2, 4, 5 |
-| 10 | [0.05, 0.1, 0.2, 0.4, 0.25] | như mặc định | không có đo | không | không |
-| 11 | [0.01, 0.02, 0.12, 0.5, 0.35] | như mặc định | không có đo | không | không |
+| 3 | [75, 25, 0, 0, 0] | [75, 25, 0, 0, 0] | HUD, mục 10(a), VOD 2924500482 | `profileFile.test.js` (`row("18.6", 3)`) | HUD trên 18.6, khớp mặc định |
+| 4 | [55, 30, 15, 0, 0] | [55, 30, 15, 0, 0] | HUD, mục 10(a) | `row("18.6", 4)` | HUD trên 18.6, khớp mặc định |
+| 5 | [45, 33, 20, 2, 0] | [45, 33, 20, 2, 0] | HUD, mục 8 và 10 | `row("18.6", 5)` | HUD trên 18.6, khớp mặc định |
+| 6 | [30, 40, 25, 5, 0] | [30, 40, 25, 5, 0] | HUD, mục 8 | `row("18.6", 6)` | HUD trên 18.6, khớp mặc định |
+| 7 | [19, 30, 40, 10, 1] | [16, 30, 43, 10, 1] | đọc tay từ HUD, 18.6, hai trận (`31a29d5`), mục 8 `4/56` | `profileFile.test.js` dòng 41 | HUD trên 18.6 ở hai trận; lệch mặc định ở cost 1 (0.16 so với 0.19) và cost 3 (0.43 so với 0.40) |
+| 8 | [17, 24, 32, 24, 3] | [15, 20, 32, 30, 3] | kế thừa overlay 16.20 của candidate, khớp HUD mục 8 (`4/68`) | `profileFile.test.js` (`row("18.6", 8)`) | HUD trên 18.6; nhãn 16.20 là của metabot, chưa xác minh. Lệch mặc định ở cost 1, 2, 4 |
+| 9 | [15, 18, 25, 30, 12] | [10, 17, 25, 33, 15] | kế thừa overlay 16.20, khớp HUD mục 8 (`0/68`, `8/68`, `18/68`) | `profileFile.test.js` (`row("18.6", 9)`) | như cấp 8. Lệch mặc định ở cost 1, 2, 4, 5 |
+| 10 | [5, 10, 20, 40, 25] | như mặc định | không có đo | không | không |
+| 11 | [1, 2, 12, 50, 35] | như mặc định | không có đo | không | không |
 
 **Ngưỡng XP (U1):** không có bảng XP theo cấp trong `rules.js` hay profile; code chỉ có `BUY_XP_COST = 4`. Ba nguồn:
 - HUD trên 18.6 (mục 8 và 10, `x/y` của cấp): 3→4 = 6, 4→5 = 10, 5→6 = 20, 6→7 = 36, 7→8 = 56, 8→9 = 68, 9→10 = 68.

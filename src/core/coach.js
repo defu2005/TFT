@@ -91,7 +91,7 @@ export function createCoach({
       reason.factors.shopKnown = Array.isArray(input.shop) && !(input.shopUnknownSlots?.length)
       // Observed odds row (I11): compared with the active profile only. The decision never reads it.
       const oddsRow = Array.isArray(input.oddsObserved) ? input.oddsObserved : null
-      const oddsLevel = input.level
+      const oddsLevel = reason.factors.level
       const table = (profile ?? DEFAULT_PROFILE).shopOdds
       const expected = oddsLevel != null && Array.isArray(table[oddsLevel]) ? table[oddsLevel].map((x) => Math.round(x * 100)) : null
       const oddsMismatch = oddsRow && expected ? oddsRow.some((x, i) => Math.abs(x - expected[i]) > 0.5) : null

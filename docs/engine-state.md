@@ -37,7 +37,7 @@ Tài liệu này liệt kê dữ liệu mà bước quyết định cần, dữ 
 | `poolCopies`, `champsAtCost` | **chưa có nguồn** | không có |
 | mục tiêu và line | nhập tay | MCP `tft_set_target`, `tft_set_line` |
 | `rules.js`, `set17.json` | `rules.js` vẫn được engine dùng nhưng **chưa xác minh cho Set 18**; `set17.json` là dữ liệu Set 17 | repo |
-| `oddsRow` (I11, tùy chọn) | HUD đọc hàng odds của cấp hiện tại; engine kiểm năm số 0–100, tổng 100 ± 1, sai thì coi là chưa đọc | Chỉ ghi `reason.factors.oddsObserved` và `oddsMismatch`, caveat khi lệch; không đổi quyết định | `src/ingest/standaloneSource.js`, `src/core/coach.js` | `src/core/coach.test.js`, `src/ingest/standaloneSource.test.js` |
+| `oddsRow` (I11, tùy chọn) | HUD đọc hàng odds của cấp hiện tại; engine kiểm năm số 0–100 tổng 100 ± 1, sai thì coi là chưa đọc. Chỉ ghi `factors.oddsMismatch` và caveat, không đổi quyết định | `standaloneSource.js`, `coach.js`; test `coach.test.js`, `standaloneSource.test.js` |
 
 ## 3. Dữ liệu chưa có
 
