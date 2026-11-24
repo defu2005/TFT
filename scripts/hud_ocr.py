@@ -12,7 +12,7 @@ import re
 import subprocess
 import unicodedata
 
-from PIL import Image, ImageChops, ImageOps
+from PIL import Image, ImageChops, ImageOps, ImageStat
 
 from hud_tesseract import native_reader
 
@@ -22,11 +22,11 @@ from hud_tesseract import native_reader
 DESKTOP_PROFILE = {
     "viewport": [0, 0, 1, 1],
     "gold": [612 / 1280, 590 / 720, 635 / 1280, 614 / 720],
-    "level": [159 / 1280, 596 / 720, 208 / 1280, 609 / 720],
+    "level": [159 / 1280, 587 / 720, 211 / 1280, 606 / 720],
     "shop": [[(299 + i * 135) / 1280, 700 / 720, (400 + i * 135) / 1280, 1] for i in range(5)],
-    "shop_price": [[(401 + i * 135) / 1280, 704 / 720, (422 + i * 135) / 1280, 714 / 720]
+    "shop_price": [[(401 + i * 135) / 1280, 700 / 720, (422 + i * 135) / 1280, 714 / 720]
                    for i in range(5)],
-    "level_labels": ["Lvl", "Level", "Cấp"],
+    "level_labels": ["Lvl", "Level", "Cấp", "LvI"],
 }
 CATALOG = Path(__file__).resolve().parents[1] / "src/data/set18-hud.json"
 ROW_HEIGHT = 78
@@ -35,6 +35,7 @@ LEVEL_AGREEMENT_CONFIDENCE = 25
 MIN_SHOP_RETRY_BRIGHTNESS = 120
 PRICE_CONFIDENCE = 75
 PRICE_RETRY_CONFIDENCE = 85
+NEUTRAL_PRICE_MASK = [255 if spread <= 55 else 0 for spread in range(256)]
 
 
 def normalize(text):
@@ -79,6 +80,21 @@ def text_row(region, threshold=170, height=48):
     gray = gray.resize(tuple(max(1, round(n * scale)) for n in gray.size), Image.Resampling.BICUBIC)
     # HUD glyphs are light. Keep the light strokes and suppress background art.
     return gray.point(lambda shade: 0 if shade >= threshold else 255)
+
+
+def tight_text_tiles(channels):
+    tiles = []
+    for channel, cutoff in channels:
+        tile = text_row(channel, threshold=cutoff)
+        bounds = ImageOps.invert(tile).getbbox()
+        if bounds:
+            tiles.append(tile.crop(bounds))
+    return tiles
+
+
+def darkest_channel(region):
+    red, green, blue = region.convert("RGB").split()
+    return ImageChops.darker(blue, ImageChops.darker(red, green))
 
 
 def recognize_cli(sheet, language, tesseract, single_line, digits):
@@ -130,9 +146,11 @@ def price_tiles(region):
     # A leading digit should light up nearly as many rows as the last digit.
     region = region.convert("RGB")
     split = round(region.width * 11 / 21)
-    neutral = Image.new("L", region.size)
-    pixels = (region.getpixel((x, y)) for y in range(region.height) for x in range(region.width))
-    neutral.putdata([min(p) if max(p) - min(p) <= 55 else 0 for p in pixels])
+    red, green, blue = region.split()
+    lower = ImageChops.darker(red, ImageChops.darker(green, blue))
+    upper = ImageChops.lighter(red, ImageChops.lighter(green, blue))
+    mask = ImageChops.subtract(upper, lower).point(NEUTRAL_PRICE_MASK)
+    neutral = ImageChops.multiply(lower, mask)
     leading_rows = sum(neutral.crop((0, y, split, y + 1)).getextrema()[1] >= 170
                        for y in range(region.height))
     trailing_rows = sum(neutral.crop((split, y, region.width, y + 1)).getextrema()[1] >= 170
@@ -150,6 +168,18 @@ def price_tiles(region):
     right = region.crop((split, 0, region.width, region.height))
     tiles = [text_row(right, threshold=threshold, height=46) for threshold in (175, 185, 205)]
     return [tile for tile in tiles if tile.getextrema()[0] == 0], False
+
+
+def price_glyph_clipped(region):
+    if min(region.size) < 3:
+        return False
+    # With a vertically misplaced crop, two rows of a digit can reach the
+    # bottom edge. OCR may still interpret that partial glyph as a full price.
+    split = round(region.width * 11 / 21)
+    bottom = ImageOps.grayscale(region.crop((split, region.height - 2, region.width, region.height)))
+    pixels = bottom.tobytes()
+    return (sum(value >= 185 for value in pixels[:bottom.width]) >= 2
+            and sum(value >= 185 for value in pixels[bottom.width:]) >= 2)
 
 
 def single_price_retry_tiles(region):
@@ -174,6 +204,34 @@ def single_price_retry_tiles(region):
     return list({(tile.size, tile.tobytes()): tile for tile in tiles if tile.getextrema()[0] == 0}.values())
 
 
+def gold_card_price_tiles(region):
+    region = region.convert("RGB")
+    top = region.crop((0, 0, region.width, max(1, round(region.height / 6))))
+    red, green, blue = ImageStat.Stat(top).median
+    if min(red - green, green - blue) < 25:
+        return []
+    split = round(region.width * 11 / 21)
+    digit = region.getchannel("G").crop((split, 0, region.width, region.height))
+    darkest, brightest = digit.getextrema()
+    if brightest - darkest < 40:
+        return []
+
+    # Separate the pale glyph from the saturated card background. A narrower
+    # aspect ratio reduces the horizontal spread of the illuminated strokes.
+    def narrow(height):
+        width = max(1, round(digit.width * height / digit.height * .75))
+        return ImageOps.autocontrast(digit.resize((width, height), Image.Resampling.BICUBIC))
+
+    tall = narrow(48)
+    tiles = [ImageOps.invert(tall)]
+    for channel, cutoff in ((tall, 110), (narrow(40), 145)):
+        mask = channel.point(lambda value: 0 if value >= cutoff else 255)
+        bounds = ImageOps.invert(mask).getbbox()
+        if bounds:
+            tiles.append(mask.crop(bounds))
+    return tiles
+
+
 class HudReader:
     def __init__(self, profile=None, language="eng", tesseract="tesseract", min_confidence=60):
         self.profile = load_profile(profile)
@@ -186,6 +244,7 @@ class HudReader:
         data = json.loads(CATALOG.read_text(encoding="utf-8"))
         self.roster = {normalize(c["name"]): {"id": c["id"], "cost": c["cost"]}
                        for c in data["champions"]}
+        self.shop_options = {normalize(option["name"]): option for option in data.get("shopOptions", [])}
         for alias, name in self.profile.get("aliases", {}).items():
             canonical = normalize(name)
             key = normalize(alias)
@@ -193,6 +252,18 @@ class HudReader:
                 raise ValueError(f"unknown or ambiguous champion alias: {alias}")
             self.roster[key] = self.roster[canonical]
         self.level_labels = {normalize(label) for label in self.profile["level_labels"]}
+
+    def prepare_for_video(self):
+        if self.native is not None:
+            self.retries.submit(self.prepare_native)
+            self.prepare_native()
+
+    def prepare_native(self):
+        try:
+            self.native.get_session()
+        except OSError:
+            # Recognition can still use the CLI if native initialization fails.
+            pass
 
     def close(self):
         self.retries.shutdown()
@@ -261,9 +332,9 @@ class HudReader:
             return self.result(rows, gold, level, slots)
 
         gold_retry = text_retry = None
+        corroborated_gold = level is not None and sum(slot is not None for slot in slots) >= 2
         if gold is None and min(gold_crop.size) >= 2:
-            corroborated = level is not None and sum(slot is not None for slot in slots) >= 2
-            gold_retry = self.retries.submit(self.retry_gold, gold_crop, rows[0], corroborated)
+            gold_retry = self.retries.submit(self.retry_gold, gold_crop, rows[0], corroborated_gold)
         needs_level = level is None and any(self.level_number(row[0]) is not None for row in (rows[1], rows[7]))
         tiles = [text_row(level_crop, threshold=threshold, height=height)
                  for threshold, height in ((177, 40), (170, 48), (155, 40))] if needs_level else []
@@ -301,11 +372,55 @@ class HudReader:
                 if len(names) == 1 and not conflict:
                     slots[i] = self.roster[names.pop()]
                 start += count
+        shop_visible = sum(slot is not None for slot in slots) >= 2
+        if gold_retry and gold is None and not corroborated_gold and level is not None and shop_visible:
+            gold = self.retry_gold(gold_crop, rows[0], corroborated=True)
+        if gold is not None and shop_visible:
+            if level is None and needs_level:
+                level = self.retry_visible_level(level_crop, (rows[1], rows[7]))
+            if level is not None:
+                self.retry_visible_shop(im, boxes, rows, slots, prices)
         slots = [dict(unit, price=price) if unit is not None else None for unit, price in zip(slots, prices)]
         result = self.result(rows, gold, level, slots)
         if price_error:
             result["priceOcrError"] = price_error
+        if result["hudDetected"]:
+            try:
+                options = self.read_shop_options(im, boxes, rows, slots, prices)
+                if options:
+                    result["shopOptions"] = options
+            except (OSError, subprocess.SubprocessError) as error:
+                result["shopOptionOcrError"] = str(error)
         return result
+
+    def read_shop_options(self, image, boxes, rows, slots, prices):
+        options = {}
+        threshold = max(self.min_confidence, 85)
+        for i, (text, confidence) in enumerate(rows[2:7]):
+            if slots[i] is not None or confidence < threshold:
+                continue
+            name = normalize(text)
+            option = self.shop_options.get(name)
+            if option is None:
+                continue
+            title = image.crop(boxes[i + 2])
+            masks = tight_text_tiles(((ImageOps.grayscale(title), 165), (darkest_channel(title), 154)))
+            if not masks:
+                continue
+            pages = [ImageOps.expand(tile, border=16, fill=255) for tile in masks]
+            confirmed = {normalize(candidate) for candidate, score in self.recognize(pages, len(pages), single_line=True)
+                         if score >= threshold}
+            if confirmed != {name}:
+                continue
+            price = prices[i]
+            if price is None and len(boxes) > 7:
+                # The curved option card can place the price below the champion price band.
+                x1, y1, x2, y2 = boxes[7 + i]
+                padding = max(1, round((y2 - y1) * .15))
+                region = image.crop((x1, y1, x2, min(image.height, y2 + padding)))
+                price = self.read_prices([region])[0]
+            options[i + 1] = dict(option, price=price)
+        return options
 
     def retry_gold(self, region, primary, corroborated=False):
         gray = ImageOps.grayscale(region)
@@ -325,15 +440,129 @@ class HudReader:
         candidate = self.read_gold(first, threshold)
         if candidate is not None and expected in (None, candidate) and candidate == self.read_gold(second, threshold):
             return candidate
+        if corroborated:
+            candidate = self.retry_gold_digits(region)
+            if candidate is not None and expected in (None, candidate):
+                return candidate
+            if expected is None and primary[0].replace(" ", "") in {"()", "(@)"}:
+                # A hollow zero can split into punctuation in the combined page.
+                tiles = [text_row(gray, threshold=160, height=height) for height in (28, 64)]
+                if all(self.read_gold(row, max(self.min_confidence, 90)) == 0 for row in self.read_digit_masks(tiles)):
+                    return 0
         return None
 
+    def retry_gold_digits(self, region):
+        # The lower border of the gold panel can connect to a digit in the
+        # full mask. Keep the upper part of the panel and compare two channels.
+        region = region.crop((0, round(region.height / 24), region.width, round(region.height * .75)))
+        masks = tight_text_tiles(((ImageOps.grayscale(region), 165),
+                                  (darkest_channel(region), 165),
+                                  (region.convert("RGB").getchannel("G"), 185)))
+        if len(masks) < 2:
+            return None
+        threshold = max(self.min_confidence, 90)
+        votes = Counter(value for row in self.read_digit_masks(masks)
+                        if (value := self.read_gold(row, threshold)) is not None)
+        if len(votes) == 1:
+            value, count = votes.most_common(1)[0]
+            if count >= 2:
+                return value
+        return None
+
+    def retry_visible_level(self, region, primary):
+        masks = tight_text_tiles(((ImageOps.grayscale(region), 165),
+                                  (region.convert("RGB").getchannel("G"), 185),
+                                  (darkest_channel(region), 110)))
+        if len(masks) < 2:
+            return None
+        readings = self.recognize([ImageOps.expand(tile, border=16, fill=255) for tile in masks],
+                                  len(masks), single_line=True)
+        levels = {level for text, _ in (*primary, *readings)
+                  if (level := self.level_number(text)) is not None}
+        threshold = max(self.min_confidence, 75)
+        confirmed = [level for text, confidence in readings if confidence >= threshold
+                     and (level := self.level_number(text)) is not None]
+        if len(levels) == 1 and len(confirmed) >= 2:
+            return confirmed[0]
+        return None
+
+    def retry_visible_shop(self, image, boxes, rows, slots, prices):
+        indexes, pages = [], []
+        for i, (slot, price) in enumerate(zip(slots, prices)):
+            if slot is not None or price is None or not rows[i + 2][0]:
+                continue
+            region = image.crop(boxes[i + 2])
+            masks, required_name = self.shop_title_masks(region, rows[i + 2][0])
+            if len(masks) == 2:
+                indexes.append((i, required_name))
+                pages.extend(ImageOps.expand(tile, border=16, fill=255) for tile in masks)
+        if not pages:
+            return
+        readings = iter(self.recognize(pages, len(pages), single_line=True))
+        threshold = max(self.min_confidence, 85)
+        retry_indexes, retry_pages = [], []
+        for i, required_name in indexes:
+            first, second = next(readings), next(readings)
+            name = normalize(first[0])
+            primary = normalize(rows[i + 2][0])
+            agreed = name == normalize(second[0])
+            conflict = rows[i + 2][1] >= 25 and primary in self.roster and primary != name
+            if agreed and min(first[1], second[1]) >= threshold and not conflict and required_name in (None, name):
+                slots[i] = self.roster.get(name)
+            elif agreed and required_name is None and name == primary and name in self.roster and rows[i + 2][1] >= 25:
+                # The first three readings agree on the spelling. A brighter
+                # mask can separate thin strokes in a low-confidence title.
+                region = image.crop(boxes[i + 2])
+                masks = tight_text_tiles(((ImageOps.grayscale(region), 155), (darkest_channel(region), 155)))
+                if len(masks) == 2:
+                    retry_indexes.append((i, name))
+                    retry_pages.extend(ImageOps.expand(tile, border=16, fill=255) for tile in masks)
+        if retry_pages:
+            stronger = iter(self.recognize(retry_pages, len(retry_pages), single_line=True))
+            threshold = max(self.min_confidence, 80)
+            for i, name in retry_indexes:
+                confirmations = next(stronger), next(stronger)
+                if all(score >= threshold and normalize(text) == name for text, score in confirmations):
+                    slots[i] = self.roster[name]
+
+    def shop_title_masks(self, region, title):
+        gray = ImageOps.grayscale(region)
+        primary = normalize(title)
+        cutoff = 110
+        required_name = None
+        right_edge = round(gray.width * .8)
+        edge = gray.crop((right_edge, 0, gray.width, gray.height))
+        glow = edge.point(lambda value: 255 if value >= 180 else 0).getbbox()
+        if glow and primary in self.roster:
+            # A selection highlight can add a horizontal stroke below the title.
+            if glow[1] >= round(gray.height * .8) and glow[3] == gray.height:
+                inner = (0, 0, region.width, glow[1])
+                gray, region = gray.crop(inner), region.crop(inner)
+                cutoff = 170
+                required_name = primary
+        elif glow:
+            # A cursor at the right end can appear as a separate short word.
+            # Re-read the left side and require both masks to confirm the name.
+            prefix, _, suffix = title.rpartition(" ")
+            candidate = normalize(prefix)
+            if candidate in self.roster and 0 < len(normalize(suffix)) <= 2:
+                inner = (0, 0, right_edge, region.height)
+                gray, region = gray.crop(inner), region.crop(inner)
+                cutoff = 160
+                required_name = candidate
+        return tight_text_tiles(((gray, cutoff), (darkest_channel(region), cutoff))), required_name
+
     def read_prices(self, regions):
-        groups = [price_tiles(region) for region in regions]
+        groups = [([], False) if price_glyph_clipped(region) else price_tiles(region) for region in regions]
         prices = self.cached_prices(groups)
         uncertain = [i for i, ((tiles, wide), price) in enumerate(zip(groups, prices))
                      if tiles and not wide and price is None]
         retry = [(single_price_retry_tiles(regions[i]), False) for i in uncertain]
         for i, price in zip(uncertain, self.cached_prices(retry, retry=True)):
+            prices[i] = price
+        unresolved = [i for i in uncertain if prices[i] is None]
+        retry = [(gold_card_price_tiles(regions[i]), False) for i in unresolved]
+        for i, price in zip(unresolved, self.cached_prices(retry, retry=True)):
             prices[i] = price
         return prices
 
@@ -346,12 +575,7 @@ class HudReader:
                 pending[key] = tiles
 
         if pending:
-            pages = [ImageOps.expand(tile, border=16, fill=255) for tiles in pending.values() for tile in tiles]
-            found = iter(self.recognize(pages, len(pages), single_line=True, digits=True))
-            threshold = max(self.min_confidence, PRICE_RETRY_CONFIDENCE if retry else PRICE_CONFIDENCE)
-            for key, tiles in pending.items():
-                self.price_cache[key] = self.accept_price([next(found) for _ in tiles], key[0], threshold,
-                                                          minimum_votes=2 if retry else 1)
+            self.read_uncached_prices(pending, retry)
 
         prices = []
         for key in keys:
@@ -361,6 +585,39 @@ class HudReader:
         while len(self.price_cache) > 256:
             self.price_cache.popitem(last=False)
         return prices
+
+    def read_uncached_prices(self, pending, retry):
+        threshold = max(self.min_confidence, PRICE_RETRY_CONFIDENCE if retry else PRICE_CONFIDENCE)
+        minimum_votes = 2 if retry else 1
+        # Keep a single invocation when using the Tesseract CLI. A native
+        # session can read additional masks cheaply if the first votes disagree.
+        counts = {key: len(tiles) // 2 + 1 if self.native is not None else len(tiles)
+                  for key, tiles in pending.items()}
+        first = self.read_digit_masks(tile for key, tiles in pending.items() for tile in tiles[:counts[key]])
+        unresolved = {}
+        for key, tiles in pending.items():
+            count = counts[key]
+            readings = [next(first) for _ in range(count)]
+            if count == len(tiles):
+                self.price_cache[key] = self.accept_price(readings, key[0], threshold, minimum_votes)
+                continue
+            # Agreement from a majority of all available masks guarantees
+            # the same result regardless of how the remaining masks vote.
+            price = self.accept_price(readings, key[0], threshold, count)
+            if price is None:
+                unresolved[key] = (readings, tiles[count:])
+            else:
+                self.price_cache[key] = price
+
+        if unresolved:
+            final = self.read_digit_masks(tile for _, tiles in unresolved.values() for tile in tiles)
+            for key, (readings, tiles) in unresolved.items():
+                readings.extend(next(final) for _ in tiles)
+                self.price_cache[key] = self.accept_price(readings, key[0], threshold, minimum_votes)
+
+    def read_digit_masks(self, tiles):
+        pages = [ImageOps.expand(tile, border=16, fill=255) for tile in tiles]
+        return iter(self.recognize(pages, len(pages), single_line=True, digits=True))
 
     def accept_price(self, rows, wide, threshold, minimum_votes=1):
         values = Counter()

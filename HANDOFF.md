@@ -1,5 +1,44 @@
 # Bàn giao TFT HUD Set 18
 
+## Mốc bàn giao 21:54 ngày 24/11/2026
+
+- Chiến dịch đã hoàn tất 42 lượt video và còn 5 chương đang chạy. Có 26 trận đầy đủ đã xác minh, gồm 23 trận đánh số, một trận Setsuko chạy trước và hai trận Frodan được phát lại riêng trong các chương VOD. Sổ ghi ID, khoảng thời gian, phiên bản OCR, kết quả và thời điểm dọn video. [Sổ nguồn và kết quả](docs/hud-validation/set18-campaign.json)
+- Hai chương 1080p vừa hoàn tất bằng snapshot `0983ecd7a1088a76`. k3soju `2910735765` xử lý 22.836 mẫu, bỏ 3 mẫu, p95 106,31 ms. Dishsoap `2916057333` xử lý 28.924 mẫu, bỏ 6 mẫu, p95 96,56 ms. Mỗi chương có 68 mẫu sau khởi động vượt 250 ms. MP4 đã được dọn sau khi lưu kết quả.
+- Báo cáo Git giữ nhãn và mốc thời gian của các phép đối chiếu gần nhất, số liệu vùng đọc mặc định, hồi quy giá bị cắt và thẻ shop đặc biệt. Khi bổ sung nguồn, kiểm tra cả VOD ID lẫn khoảng thời gian trong sổ. `scripts/hud-campaign/seed-sources.json` chứa danh sách dùng để dựng hàng đợi. Bản SQLite cùng log gốc nằm trong gói `/workspace/scratch/tft-handoff/tft-campaign-checkpoint.tar.gz`. [Phép đo HUD](docs/hud-validation/set18-replays.json)
+- Các profile đã kiểm tra nằm trong `scripts/hud-campaign/`. Profile 1080p của Dishsoap `2916057333` và Frodan được lưu cùng ba cấu hình mới cho Dishsoap 720p, k3soju 1080p và robinsongz 720p. Chọn profile theo bố cục đã đối chiếu với ảnh của nguồn.
+
+## Vùng đọc mặc định và bố cục dịch ngang
+
+- Tọa độ mặc định mở rộng vùng cấp và giá về phía trên. OCR có thể dùng cấp vừa xác nhận để đọc lại vàng trong cùng mẫu. Khi ba lượt OCR tên đồng ý về chính tả mà điểm còn thấp, hai mặt nạ tương phản hơn phải xác nhận lại cùng tên. Lượt chấm ảnh tĩnh mặc định trên 413 mốc cũ đạt 389/413 mốc đúng toàn bộ, so với 64/413 trước đó. Trong bộ ảnh này, các trường còn lỗi đều bị bỏ trống. Xem `automatic-layout/broad-comparison.json` và `automatic-layout/final-comparison.json` dưới thư mục `whole-match-prototype`.
+- Profile `scripts/hud-campaign/dishsoap-2906219397-720p.json` bao phủ bố cục giải đấu dịch ngang 70 px ở độ phân giải 1280 × 720. VOD dùng để hiệu chỉnh đạt 17/17 mốc. VOD Dishsoap độc lập `2901713662` dùng lại nguyên profile đạt 14/14 mốc. VOD Frodan `2913998942` với cấu hình mặc định đạt 18/18 mốc ở lượt chạy lại sau khi xử lý hai lỗi OCR phát hiện trong phép thử.
+- Cả 49 mốc HUD rõ của ba nguồn đều đúng và kịp 250 ms. Toàn bộ sáu đoạn xử lý 216/216 mẫu ở 4 Hz, p95 sau khởi động 145,34 ms. Có 2/210 mẫu sau khởi động vượt hạn và cả sáu mẫu đầu mất 424–1.100 ms. Bốn mốc HUD ẩn và một mốc shop đóng được chấm riêng. Xem `production-shared-layout-final/summary.json`. Kiểm thử đạt 19/19 Python và 177/177 Node.
+
+## Thẻ shop đặc biệt và phép thử khởi động ngày 24/11/2026
+
+- OCR xuất Fertilize, Forest Guide, Late Bloomer và Phantom Armor trong `shopOptions` sau khi OCR lần hai xác nhận tên. Giá được đọc từ ảnh và thử mở rộng vùng dưới khi thẻ đặt chữ số thấp hơn. Các thẻ vẫn để `null` trong `shopSlots` để coach bỏ qua khi tính mua tướng.
+- Ảnh gốc có nhãn cho kết quả đúng 6/6 thẻ ở ba nguồn 1080p. Hai đoạn phát lại Setsuko và k3soju đọc đúng tên và giá ở cả 2/2 mốc thẻ đặc biệt trong 250 ms. Cả 23 mốc đối chứng không có thẻ đặc biệt được giữ trống. Xử lý đủ 72 mẫu, p95 sau khởi động 77,56 ms, cả hai mẫu đầu vượt 250 ms. Xem `offer-validation/still.json` và `offer-validation/paced.json` dưới thư mục `whole-match-prototype`.
+- VOD robinsongz `2912449718` ở 720p đạt 32/32 mốc HUD rõ đúng và kịp 250 ms sau khi hiệu chỉnh vùng cấp và giá bằng `scripts/hud-campaign/robinsongz-2912449718-720p.json`. Kết quả là 114/114 tên và giá, 46/46 ô trống, 32/32 vàng và cấp. Bốn đoạn xử lý đủ 144 mẫu ở 4 Hz với p95 sau khởi động 108,72 ms, 0/140 mẫu sau khởi động vượt hạn và cả bốn mẫu đầu vượt hạn. Lượt này là hồi quy trên cùng video dùng hiệu chỉnh. Xem `production-shop-options/report-robin-720p-verified.json`.
+- Thử chồng bước dò thông tin video lên khởi tạo OCR ở 12 lượt chuẩn `--video --once`. Trung vị thời gian từ lúc chạy lệnh tới khi nhận JSON là 437,51 ms, so với 444,83 ms của bản hiện tại. Thử nghiệm trong `startup-recheck/overlap-report.json` chưa được đưa vào bộ đọc chính.
+- Kiểm thử đạt 16/16 Python và 177/177 Node. Chiến dịch tại lần cập nhật này có 40 mục đã xong và sáu chương đang OCR. Nguồn Dishsoap `2901713662` đã qua kiểm tra trùng và bắt đầu tải. Kiểm tra heartbeat để biết trạng thái mới.
+
+## Hồi quy con trỏ và vùng đọc giá ngày 24/11/2026
+
+- Lượt chấm lại ảnh tĩnh Dishsoap và Setsuko với profile phù hợp đạt 154/154 mẫu shop thường, tăng từ 153/154 sau khi khôi phục tên và giá 3 của Kog’Maw. Khi cố tình áp sai profile cho Setsuko, cả 39 giá từng được chấp nhận sai đều chuyển thành `null`. Các giá trong vùng cắt sai khác cũng có thể bị loại. Ba khung Phantom Armor đã ghi riêng trong lượt trước.
+- Bốn đoạn 1080p từ VOD k3soju `2910735765` chạy đủ 144/144 mẫu ở 4 Hz. Profile cũ bỏ trống cấp ở 17 mốc HUD rõ. Profile `scripts/hud-campaign/k3soju-2910735765-1080p.json` đạt 17/17 mốc đúng và kịp 250 ms trên lượt chạy lại, gồm 77 tên tướng, 77 giá, 17 trường vàng và 17 trường cấp. P95 sau khởi động là 71,42 ms, 0/140 mẫu sau khởi động vượt 250 ms. Cả bốn mẫu đầu vượt hạn. Hai đoạn cấp bị che có trong báo cáo độ trễ và được loại khỏi tỷ lệ chính xác của HUD rõ.
+- Bộ kiểm thử đạt 15/15 Python và 177/177 Node. Dữ liệu đối chiếu gồm `new-source-hls/cursor-and-price-guard.json` và `production-cursor-price-guard/report-k3soju-calibrated.json` dưới thư mục `whole-match-prototype`. Các lượt chiến dịch đang chạy vẫn dùng snapshot ghim riêng.
+
+## Tiến độ cập nhật 24/11/2026
+
+Ưu tiên kiểm chứng vàng, cấp, tên và giá hiển thị theo từng ô shop khi HUD rõ. Replay giữ lịch 4 Hz. Chấm riêng tỷ lệ đọc đúng, tỷ lệ mẫu đúng hạn 250 ms, trạng thái HUD ẩn và mẫu khởi động.
+
+- Lượt Frodan 1080p `2919423875` dài 31 phút 45 giây đã xử lý 7.620/7.620 mẫu và không bỏ mẫu. P95 là 141,08 ms, 13 mẫu sau khởi động vượt 250 ms. Cả 9 mốc HUD rõ chọn trước đều đúng và kịp. Trong phép kiểm tra riêng 13 mẫu trễ, một trong 5 mẫu HUD rõ bỏ sót Xayah vì viền thẻ lóe sáng.
+- Bộ đọc hiện khởi tạo Tesseract song song với FFmpeg, giảm nhận dạng lặp ở giá, đọc lại vàng và cấp khi đủ bằng chứng, rồi kiểm tra riêng nét sáng dưới tên tướng. Lượt hồi quy Xayah đạt 5/5 mốc đúng và kịp với 180/180 mẫu xử lý, trễ 0 sau khởi động. Bộ kiểm thử Python đạt 14/14 với ảnh Set 18.
+- Hai nguồn 1080p mới có 154 mẫu shop thường với HUD rõ. Dishsoap `2916057333` đạt 89/89. Setsuko `2911167981` đạt 0/65 khi áp vùng đọc từ nguồn khác và 64/65 sau hiệu chỉnh. Tính phép đo cuối của mỗi nguồn, vàng và cấp đúng 154/154, tên và giá đều đúng 699/700, toàn mẫu đúng 153/154. Đây là tỷ lệ trên các đoạn đã chấm. Các mẫu Setsuko sau hiệu chỉnh là lượt hồi quy trên cùng nguồn. Trường còn thiếu là Kog'Maw tại mẫu có con trỏ sát vùng giá. Ba thẻ Phantom Armor được chấm riêng và vẫn thiếu tên lẫn giá.
+- Bộ đọc có thể loại kết quả khi thiếu độ tin cậy, các mặt nạ bất đồng hoặc HUD chưa được xác nhận. Coach lưu cờ thiếu vàng, thiếu cấp hoặc ô chưa đọc khi nhận bản ghi schema 2. Kết quả được chấp nhận vẫn có thể sai do đặt lệch vùng ảnh. Cấu hình đầu của Setsuko từng trả giá 9 cho Yunara giá 2. Không có đối chiếu với ảnh đã gắn nhãn trong lúc chạy thật.
+- Profile hiệu chỉnh `scripts/hud-campaign/setsuko-2911167981-1080p.json` dùng riêng cho video này. Khi chạy lại, truyền profile qua `--profile`. Các bản ghi chạy khác phải lưu cấu hình thực tế đã dùng. Đừng dùng tỷ lệ của một profile cho các bố cục chưa đo.
+- Chiến dịch đã hoàn tất 40 mục và đang tải 6 chương mới, gồm ba nguồn 720p và ba nguồn 1080p. Tiến trình dùng snapshot `0983ecd7a1088a76`. `/workspace/scratch/tft-test-matches/campaign/status.json` có heartbeat, số mục tải và số mục đang OCR. Gói bàn giao nằm tại `/workspace/scratch/tft-handoff/tft-campaign-checkpoint.tar.gz`.
+- Trong `/workspace/scratch/tft-hud-optimization/full-match23-audit/whole-match-prototype/`, xem `production-full-2919423875/result.json`, `late-frame-audit/paced-regression.json` và `new-source-hls/report-calibrated.json`. Phiên này lưu nhãn, log nén và cấu hình. Giữ sổ nguồn để giao nhau theo VOD và thời gian, và dọn media mẫu sau khi có kết quả kiểm tra.
+
 Mục tiêu là đọc vàng, cấp, tên và giá của từng ô shop theo thời gian thực ở 4 Hz, rồi đối chiếu với ảnh gốc. Mục tiêu 100% vẫn đang mở. Bộ đọc dùng vùng ảnh từ HUD, Tesseract và danh mục Set 18. `cost` là bậc tướng, còn `price` là giá đang hiện trên thẻ. Một thẻ có tên hợp lệ và `price: null` vẫn được lưu, nhưng coach bỏ qua đề xuất mua thẻ đó. Xem [cách chạy và hiệu chỉnh đầu vào](docs/hud-reader.md).
 
 ## Trạng thái lúc bàn giao
