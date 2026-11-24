@@ -1,93 +1,58 @@
-# Kế hoạch thu thập và làm sạch dữ liệu (phiên bản 2)
+# Kế hoạch thu thập dữ liệu (điểm vào duy nhất)
 
-Cập nhật: 2026-11-24. Thay thế phiên bản trước. Quy tắc dữ liệu nằm ở `docs/data-rules.md`. File này nói cách chạy.
+Cập nhật: 2026-11-24 (16:40 UTC). Quy tắc chi tiết nằm ở `docs/data-rules.md`. Runbook chạy máy nằm ở `docs/collector-runbook.md`. File này là nơi bắt đầu.
 
-## 1. Nguyên tắc chi phí
+## 1. Dự án cần dữ liệu gì
 
-Chi phí token đến từ hai chỗ. Kế hoạch được thiết kế để tránh cả hai.
+| Trường | Dùng cho | Nguồn hiện tại | Trạng thái |
+|---|---|---|---|
+| Vàng, cấp, 5 ô shop, giá | engine (live), huấn luyện kinh tế, audit | OCR `hud_ocr.py` trên VOD | Chỉ kiểm chứng trên VOD Linux. Chưa trên client thật. |
+| Odds theo cấp, XP `x/y` | engine (so với hồ sơ), huấn luyện | chưa có vùng đọc (I11 phía HUD) | Không có nguồn. |
+| Stage, round, phase | engine, huấn luyện | OCR vùng nhãn (chưa kiểm chứng); `TFT.log` parse offline (`extract-live.js`) | Parse có, chưa nối vào engine. |
+| HP, streak | engine, huấn luyện | chưa có vùng đọc | Không có nguồn. |
+| Đội hình, trang bị | huấn luyện đội hình | khớp icon (CDragon có icon `.tex`), chưa làm | Chưa có. |
+| Kết quả trận | nhãn kết quả | màn hình kết thúc (chưa làm) | Chưa có. |
+| HP, bàn của 7 đối thủ | — | không có | Không có nguồn. |
+| EoG `TFTEoGStats.json` | HP, bàn cuối trận | file cục bộ trên Windows | Thời điểm ghi giữa trận chưa xác minh. |
 
-- **Vòng thu thập không dùng token.** OCR, hàng đợi, khóa, đĩa và ghi log là mã thường. Chạy bằng script, không bằng một phiên agent đang bật. Một lượt agent luôn tốn token theo kích thước ngữ cảnh.
-- **Model chỉ đọc phần OCR không chắc.** Mỗi lượt gọi model tốn token theo ảnh. Nên dùng ba lớp: khớp mẫu icon trước (không tốn token), OCR thứ hai, rồi mới đến model.
-- **Batch cho việc không cần trả lời ngay.** Message Batches của Claude giảm chi phí khoảng một nửa so với gọi đồng bộ, và không cần ngữ cảnh lớn. Dùng cho đọc dự phòng và gán nhãn.
-- **Prompt cố định được cache.** Đặc tả và hướng dẫn đọc ảnh đặt đầu prompt và giữ nguyên, để tái sử dụng cache.
+Không trường nào đã được kiểm chứng trên client thật của người dùng. Đây là khoảng trống lớn nhất, và chỉ có một phiên trên máy Windows lấp được.
 
-## 2. Model
+## 2. Đang chạy (lúc 16:40 UTC)
 
-Quy tắc của skill `claude-api`: mặc định dùng `claude-opus-5-5`, trừ khi người dùng chỉ định khác. Giá theo triệu token (vào / ra):
+- **Thu thập:** `scripts/hud-campaign/run.py` trên máy cloud, thư mục `/home/user/campaign/campaign`, 45 nguồn seed. Đã sửa hai lỗi: cgroup không có sẵn, và đo CPU chỉ tính tiến trình cha (đã đổi sang `/proc/stat`). Tiến trình chạy trước khi sửa đã bị cách ly tại `/home/user/campaign/campaign/discarded-before-cpu-fix/`.
+- **Claim:** `docs/agents/sources/collector-claude-seed.md` (45 key seed, trên `claude/nifty-lovelace-252i30`).
+- **Nơi lưu dữ liệu:** nhánh `claude/hud-data-set18`, thư mục `data/hud-logs/set18/`, chỉ `.jsonl.gz` đã hoàn tất và `done-keys.txt`. Đẩy bằng `/home/user/campaign/push_results.sh`.
+- **Lịch đánh thức:** trigger `trig_01Na6BicueyYv2gi9FFigFXr`, mỗi 50 phút kiểm tra và đẩy kết quả. Hủy bằng `delete_trigger` với ID này.
+- **Đĩa:** giảm nhanh, khoảng 14 GB lúc 16:38. `verified-matches.json` chưa được tạo, nên MP4 không bị xóa tự động. Khi đĩa dưới 4 GB, tải tạm dừng. Cần biết danh sách trận đã kiểm chứng (khóa là `row['match']`, số 1–45) để bật dọn MP4.
+- **Dừng thủ công:** `pkill -f "hud-campaign/run.py"`, rồi `pkill -f ffmpeg`.
 
-| Model | ID | Vào | Ra | Dùng cho |
-|---|---|---|---|---|
-| Opus 5.5 | `claude-opus-5-5` | $4 | $20 | Đọc dự phòng trên ảnh, gán nhãn mù (mặc định) |
-| Sonnet 5.5 | `claude-sonnet-5-5` | $2 | $10 | Pipeline làm sạch, kiểm tra không cần thị giác |
-| Haiku 5.5 | `claude-haiku-5-5` | $0,10 | $0,50 | Chỉ khi người dùng chọn để giảm chi phí |
+## 3. Quy trình chuẩn
 
-Chọn Haiku cho đọc dự phòng sẽ rẻ hơn Opus khoảng 40 lần ở đầu vào. Đây là quyết định của người dùng, không phải của agent. Trước khi chọn, cần đo độ chính xác của Haiku trên lượt audit, vì lỗi nhãn làm sai chính chỉ số đang đo.
+1. **Claim:** nguồn được ghi trong `docs/agents/sources/` trước khi tải.
+2. **Tải:** `media.py` (yt-dlp, HLS, ffmpeg).
+3. **OCR:** `hud_ocr.py` theo profile của bố cục, đầu ra theo mẫu 4 Hz.
+4. **Log:** `results/<key>.jsonl.gz` (không ảnh, không MP4).
+5. **Đẩy:** `push_results.sh` lên `claude/hud-data-set18`.
+6. **Làm sạch:** theo đặc tả trong `data-rules.md` mục 3 (đồng thuận k mẫu, kiểm catalog, không bổ sung giá trị).
+7. **Audit:** lượt mù trên crop, đọc viên khác với đọc viên đang đo.
+8. **Đọc dự phòng bằng Gemini:** chỉ khi crop đã được xuất. Hiện chưa có.
 
-## 3. Vai trò
+## 4. Prompt để dán (không tự khởi chạy được từ phiên này)
 
-Chỉ hai hoặc ba vai trò. Không mở nhiều lane như phiên bản trước.
+**Codex (`hud`), trên nhánh được giao, làm trong repo:**
+> Đọc `docs/data-plan.md` và `docs/data-rules.md` trên `origin/master`. Việc của bạn: (1) thêm trường confidence cho từng trường vào bản ghi đầu ra, tăng `hudSchema`; (2) xuất crop vùng HUD của ô không đạt ngưỡng vào scratch, không commit; (3) thêm tham số set cho `scripts/hud_ocr.py` thay cho catalog cố định; (4) xuất 16 crop audit không kèm kết quả OCR; (5) hợp nhất bản vá `run.py` tại commit `d5d6bdf` và `f8b021a`, không viết lại file này. Seed đã được collector Claude sở hữu (`docs/agents/sources/collector-claude-seed.md`), nên bạn không xử lý lại các seed đó, chỉ xử lý nguồn mới.
 
-1. **Thu thập (script + một phiên Claude).** Script chạy hàng đợi, OCR, khớp mẫu và đọc dự phòng theo batch. Phiên Claude chỉ được đánh thức khi có batch xong hoặc sau ít nhất 20 phút, kiểm tra trần, ghi checkpoint, rồi khởi động lại script. Phiên này không đọc lại toàn bộ log.
-2. **Audit (phiên Claude riêng).** Cứ mỗi N trận, lấy mẫu mù, gán nhãn bằng đọc viên không phải đọc viên đang đo. Ghi tỷ lệ sai tự tin theo từng trường.
-3. **Codex (`hud`).** Tiếp tục chiến dịch hiện có trong phân vùng streamer riêng. Phối hợp qua file trong repo, không qua tin nhắn trực tiếp.
+**Cursor (vai trò `engine`, chỉ catalog):**
+> Đọc `docs/data-plan.md` trên `origin/master`. Tạo `src/data/catalogs/<set>.json` cho các mùa cũ từ snapshot CDragon có phiên bản ghi rõ. Chỉ dùng các set có trong dump (3, 7, 16, 17, 18). Ánh xạ `TFT17_*` và ID cũ, ghi rõ ánh xạ không chắc. Không sửa `src/engine/` hay `src/ingest/`.
 
-## 4. Vòng chạy
+**Phiên Claude sau này (đọc Gemini, sau khi có crop):**
+> Đọc `docs/data-plan.md` mục 3 bước 8 và `docs/data-rules.md` mục 2–3. Viết script sidecar đọc crop ô không chắc, gọi model qua gateway đã cấu hình (proxy gắn khóa, không đưa khóa vào file), ghi `src: model`, không bao giờ ghi đè giá trị OCR. Đo độ đồng ý trên 30 crop có OCR tự tin trước khi bật.
 
-Vòng chạy là script. Mỗi batch:
+## 5. Blocker
 
-1. Kiểm tra trần chi phí, đĩa, và điều kiện dừng (`docs/data-rules.md` mục 6–7).
-2. Lấy nguồn từ hàng đợi đã claim trong `docs/agents/sources/`.
-3. Chạy OCR, khớp mẫu icon, rồi đọc dự phòng cho khung không đạt ngưỡng.
-4. Ghi log theo mẫu (nén, không ảnh), ledger, và chi phí của batch.
-5. Commit checkpoint lên bộ lưu trữ bền.
-6. Nếu điều kiện dừng được kích hoạt, ghi lý do và dừng.
-
-## 5. Điều kiện dừng
-
-Không có vòng chạy nào vượt các điều kiện này, kể cả khi mục tiêu là "không dừng":
-
-- trần chi phí ngày, trần đĩa, trần fallback mỗi trận;
-- tỷ lệ fallback tăng đột biến;
-- lượt audit vượt ngưỡng sai tự tin;
-- nguồn lỗi liên tục.
-
-## 6. Lộ trình
-
-Mỗi bước có cổng. Không mở rộng trước khi cổng trước đạt.
-
-**Bước 0: kiểm tra (không tốn token model).**
-- Quét mọi nhánh tìm yêu cầu và phản hồi từ `hud`.
-- Đo số trường confidence đã có trong bản ghi OCR. Hiện có ngưỡng nội bộ nhưng chưa thấy trường confidence trong bản ghi đầu ra. Cần thêm vào.
-- Kiểm tra `run.py` và thêm trần chi phí, trần fallback nếu thiếu. Hiện có kiểm soát bộ nhớ, CPU, đĩa và `status.json`.
-
-**Bước 1: pilot một trận.**
-- Chạy toàn bộ chuỗi trên một trận: OCR, khớp mẫu, fallback, làm sạch, audit.
-- Đo: chi phí USD và token theo trận, tỷ lệ fallback theo từng trường, tỷ lệ sai tự tin của từng đọc viên.
-- Dùng số đo để đặt trần cho bước 2.
-- **Cổng 1:** báo cáo pilot đạt. Chi phí dự kiến trong trần. Tỷ lệ sai tự tin của đọc viên dự phòng được đo độc lập.
-
-**Bước 2: chạy có giới hạn.**
-- Vài trận, trong phân vùng của từng agent.
-- **Cổng 2:** tỷ lệ phủ và tỷ lệ sai tự tin theo từng trường đã có số, cỡ mẫu đã ghi.
-
-**Bước 3: mở rộng.**
-- Chỉ sau cổng 2. Thêm streamer, mùa cũ (cần catalog theo set), và phần PBE được gắn nhãn riêng.
-
-**Bước 4: chuyển sang phiên mô hình chuyên trách.**
-- Quyết định mô hình học gì. Không thuộc kế hoạch này.
-
-## 7. Quyết định của người dùng
-
-Bốn quyết định không thể thay bằng suy đoán:
-
-1. **Khóa API Anthropic cho vòng chạy.** Script gọi API từng crop tiết kiệm hơn nhiều so với để một phiên agent đọc ảnh. Cần cấp qua `request_credential` hoặc biến môi trường. Phiên này không tự tạo hay lưu khóa.
-2. **Trần chi phí USD mỗi ngày.** Con số này quyết định mọi thứ phía trên. Chưa có trần thì không chạy vòng không dừng.
-3. **Mô hình đọc dự phòng:** Opus 5.5 (mặc định theo skill, chính xác hơn) hay Haiku 5.5 (rẻ hơn khoảng 40 lần, cần đo trước).
-4. **Phân vùng streamer cho từng agent.** Không có phân vùng, hai agent có thể tải trùng VOD.
-
-Thêm một lưu ý: môi trường cloud có giới hạn tài nguyên của phiên. Tài liệu hướng dẫn nói phiên có thể hết hạn mức và chuyển sang máy mới. Vì vậy công việc đang chạy phải được commit và đẩy lên sau mỗi bước, không để trong bộ nhớ phiên.
-
-## 8. Việc đã có và việc còn thiếu
-
-- **Có sẵn:** OCR gán vàng, cấp, shop, giá; hàng đợi VOD với SQLite; kiểm soát bộ nhớ, CPU, đĩa; `status.json`; ngưỡng độ tin cậy nội bộ.
-- **Còn thiếu:** trường confidence trong bản ghi; trần chi phí; đọc dự phòng; khớp mẫu icon; catalog theo set; bộ làm sạch; lượt audit tự động; sổ nguồn có claim.
+- Chưa kiểm chứng trên client thật. Cần một phiên Windows.
+- Đọc dự phòng chưa bật, vì chưa có crop.
+- Đĩa sẽ đầy trước khi có danh sách trận đã kiểm chứng để dọn MP4.
+- Đường gateway Gemini: model trả về có tên khác (`gemini-3.8-flash-n`), chưa xác nhận là Gemini 3.8 Flash thật. Phải đo trên ảnh có nhãn.
+- Chưa có danh sách khóa được claim từ phiên Codex (chưa có phản hồi `responses/`).
+- Các trận chạy trước khi sửa CPU đã bị cách ly, không trộn vào dữ liệu.
