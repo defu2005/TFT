@@ -90,7 +90,7 @@ Riot không ghi tộc bị gỡ. Chỉ ghi tộc mới.
 - **Ivern:** "Now an Elderwood". Đoạn mở: "We went back and forth on whether to make Maokai or Ivern an Elderwood unit, but eventually landed on Ivern". Maokai không được thêm.
 - **Kruggs:** "Now a Summoner". Kèm hai số: "Kruglettes gain 15% more max health when summoned" và "Kruglettes Base HP: 50/100/180 ⇒ 50/75/150".
 
-Client CommunityDragon `latest` (cộng đồng, bản sao file game) không phải bản 18.7. `content-metadata.json` đọc ngày 2026-11-24 ghi `"version": "16.23.8413489+branch.releases-16-23.content.release"`. Trong `cdragon/tft/en_us.json` cùng nhánh, `DA_18_Kennen` là Inferno + Executioner, `DA_18_Ivern` là Greenfather, `DA_Krug18` (tên hiển thị Krug, giá 3) là Riftbeast + Brawler. Đó là ảnh client 16.23, dùng để biết trạng thái trước, không để bác ghi chú 18.7.
+Ảnh CommunityDragon mà repo gọi là 18.7 **chưa** có các đổi tộc này. File `tft-sim/data/cdragon/cdragon_18.7_2026-11-23.json.gz` giải nén ra sha256 `caed07e9b1602557b8bce09ed2c80a29d67a1d3fa83c676d85592a52b11c3a9e`. Tải lại `https://raw.communitydragon.org/latest/cdragon/tft/en_us.json` ngày 2026-11-24 ra đúng sha256 đó. `content-metadata.json` cùng nhánh `latest` ghi `"version": "16.23.8413489+branch.releases-16-23.content.release"`. Trong file, `DA_18_Kennen` là Inferno + Executioner, `DA_18_Ivern` là Greenfather, `DA_Krug18` (tên hiển thị Krug, giá 3) là Riftbeast + Brawler. File không có bảng shop odds. Nhãn "18.7" trong `tft-sim/data/cdragon/README.md` và `tft-sim/README.md` mâu thuẫn với chuỗi phiên bản 16.23 và với ghi chú Riot 18.7. Dùng ảnh này làm trạng thái trước, không dùng để bác trang 18.7.
 
 ### Tộc, số in trên cùng trang
 
@@ -134,6 +134,6 @@ Kiểm tra lại 2026-11-25:
 ## 6. Việc còn lại
 
 1. Dump client đúng bản 18.7 cho tỉ lệ cửa hàng và XP. Kết luận hiện tại là lần Riot in cuối cùng, chưa phải file 18.7.
-2. Tộc cũ của Kennen, Ivern và Kruggs trên client 18.7: ghi chú không nói tộc nào bị gỡ. Ảnh 16.23 ở mục 4 chỉ là trạng thái trước.
+2. Tộc cũ của Kennen, Ivern và Kruggs trên client đúng bản 18.7: ghi chú không nói tộc nào bị gỡ. Ảnh CDragon trong repo vẫn là client 16.23 (mục 4), dù README đặt tên file là 18.7.
 3. Số tướng theo cost của Set 18 vẫn là nguồn cộng đồng.
 4. Không sửa `src/`, `ingest/` hay `src/data/set18.json` trong lần này. File dữ liệu tướng trong repo, nếu còn lấy từ client 16.23, chưa có Kennen Sprykin, Ivern Elderwood và Kruggs Summoner.
