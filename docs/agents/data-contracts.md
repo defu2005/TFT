@@ -11,36 +11,51 @@ Dùng ID này để gọi nhau. Tên nhánh do phiên cấp và có thể đổi
 | `engine` | Engine, coach, MCP, ingest trạng thái | `claude/dazzling-feynman-g7a0b9` (chưa merge) |
 | `hud` | OCR HUD Set 18, chiến dịch VOD | `codex/hud-realtime-handoff` (chưa merge) |
 | `sim` | Mô phỏng và học chính sách `tft-sim/` | `claude/claude-fable-5-2-awwmf5` (chưa merge) |
-| `user` | Người điều phối và máy ingest của người dùng | `master`, và máy người dùng |
+| `user` | Người điều phối và máy ingest của người dùng | `master`, và máy người dùng (không có nhánh riêng) |
 
 ## 2. Cách trao đổi
 
-Mỗi agent chỉ **ghi lên nhánh của chính mình**. Đọc nhánh của người khác bằng `git show`. Không ai sửa file của workstream khác, nên không có xung đột.
+Mỗi agent chỉ **ghi lên nhánh của chính mình**. Đọc nhánh của người khác bằng `git show` hoặc `git ls-tree`. Không ai sửa file của workstream khác, nên không có xung đột.
 
 ### Yêu cầu (request)
 
 - Đường dẫn: `docs/agents/requests/<YYYYMMDD>-<from>-to-<to>-<slug>.md`, nằm trên **nhánh của bên yêu cầu**.
-- Nội dung bắt buộc:
-  - `dataset`: tên dữ liệu.
-  - `fields`: các trường cần, kèm kiểu và đơn vị.
-  - `schema`: phiên bản schema mong muốn.
-  - `why`: vì sao cần.
-  - `unblocks`: việc nào bị chặn nếu thiếu.
-  - `deadline`: nếu có.
-  - `status`: `mở` khi tạo. Bên yêu cầu đổi sang `đóng` khi đã kiểm chứng.
+- Mẫu, đúng thứ tự, và dòng `status:` phải nằm ở đầu một dòng để máy đọc được:
+
+```markdown
+# Yêu cầu: <tiêu đề ngắn>
+
+dataset: <tên dữ liệu>
+fields: <trường, kiểu, đơn vị>
+schema: <phiên bản mong muốn>
+why: <vì sao cần>
+unblocks: <việc nào bị chặn>
+deadline: <nếu có, nếu không để trống>
+status: mở
+```
+
+- Bên yêu cầu đổi `status: mở` thành `status: đóng` khi đã kiểm chứng. Đổi trên **nhánh của mình**.
 
 ### Trả lời (response)
 
 - Đường dẫn: `docs/agents/responses/<cùng-id>.md`, nằm trên **nhánh của bên sinh dữ liệu**.
-- Trạng thái:
-  - `nhận`: đã nhận, đang làm.
-  - `từ chối`: kèm lý do.
-  - `đã giao`: kèm commit hash, đường dẫn file, phiên bản schema.
+- Dòng `status:` phải là một trong ba giá trị:
+  - `status: nhận`: đã nhận, đang làm.
+  - `status: từ chối`: kèm lý do ở dòng sau.
+  - `status: đã giao`: kèm `commit:`, `path:`, `schema:`.
+
+### Người dùng là bên sinh dữ liệu
+
+`user` không có nhánh và không chạy quét git. Vì vậy:
+
+- Yêu cầu gửi cho `user` **phải được nêu trong tin nhắn cuối cùng** của agent trong chat, và **ghi trong handoff** của nhánh (mục "Yêu cầu dữ liệu").
+- Người dùng trả lời bằng một trong hai cách: trả lời trong chat, hoặc commit `docs/agents/responses/<id>.md` lên `master`.
+- Agent khi quét thấy câu trả lời trên `master` thì ghi lại trong file yêu cầu của mình: đường dẫn, commit, và đổi `status` theo đó.
 
 ### Đóng yêu cầu
 
 - Bên yêu cầu kiểm chứng dữ liệu theo đúng commit đã giao (bằng test hoặc đọc thử).
-- Sau đó đổi `status` thành `đóng` trong file yêu cầu của mình.
+- Sau đó đổi `status: đóng` trong file yêu cầu của mình.
 
 ### Ghim commit
 
@@ -48,19 +63,25 @@ Mỗi agent chỉ **ghi lên nhánh của chính mình**. Đọc nhánh của ng
 
 ### Quét đầu phiên
 
-Mỗi agent chạy khi bắt đầu phiên, và trước khi sửa vùng dùng dữ liệu của người khác:
+Mỗi agent chạy khi bắt đầu phiên, và trước khi sửa vùng dùng dữ liệu của người khác. Đặt `ME` là ID của mình:
 
 ```bash
 git fetch origin --prune
-# Yêu cầu gửi cho tôi (thay <me> bằng ID của mình, ví dụ engine)
+ME=engine   # ID của mình: engine, hud, hoặc sim
 for b in $(git branch -r | grep -v HEAD); do
-  git ls-tree --name-only "$b" docs/agents/requests/ 2>/dev/null | grep -- "-to-<me>-" | sed "s|^|$b: |"
+  # Yêu cầu gửi cho tôi
+  git ls-tree --name-only "$b" docs/agents/requests/ 2>/dev/null | grep -- "-to-$ME-" | sed "s|^|$b: |"
+  # Trả lời cho yêu cầu tôi đã gửi (quét mọi nhánh, vì bên sinh dữ liệu ở nhánh khác)
+  git ls-tree --name-only "$b" docs/agents/responses/ 2>/dev/null | grep -- "-$ME-to-" | sed "s|^|$b: |"
 done
-# Trả lời cho yêu cầu tôi đã gửi
-git ls-tree --name-only origin/<nhánh-của-tôi> docs/agents/responses/ 2>/dev/null
 ```
 
-Lưu ý: quét chỉ thấy các nhánh **đã push**. Nhánh chỉ có trên máy cá nhân thì không ai thấy.
+Lưu ý:
+
+- Dấu `/` cuối tên thư mục là bắt buộc. Không có nó, `git ls-tree` chỉ in tên thư mục.
+- Nếu thư mục không tồn tại trên nhánh đó, lệnh in rỗng và không báo lỗi.
+- Quét chỉ thấy các nhánh **đã push**. Nhánh chỉ có trên máy cá nhân thì không ai thấy.
+- Yêu cầu gửi cho `user` không nằm trong vòng quét này. Xem mục trên.
 
 ## 3. Nguyên tắc dữ liệu
 
@@ -77,14 +98,16 @@ Mỗi dòng là một điểm trao đổi đã xác định từ các tài liệ
 |---|---|---|---|---|
 | Trường HUD: `shop[].price`, `hudGoldUnknown`, `hudLevelUnknown`, `shopUnknownSlots` | `hud` | `engine` | Đã có hợp đồng và đã được engine xử lý (I10) | `hud`: `docs/hud-reader.md`. `engine`: `needs.md` I10 |
 | Hàng odds (5 tỷ lệ theo cấp) và ngưỡng XP `x/y` từ HUD | `hud` | `engine` | **Mở**, chưa có ai nhận. Engine cần để so với hồ sơ odds | `engine`: `needs.md` I11 |
-| `set` và `patch` từ nguồn | `user` (xác nhận client gửi chuỗi nào) | `engine` | **Mở**. Chưa rõ số patch nào dùng | `engine`: `needs.md` I8 |
-| Offer Wisp (loại, tướng ẩn, giá, shop nào có) | `hud` (cần xác nhận có đọc được) | `engine` | **Mở**. Phụ thuộc capture | `engine`: `needs.md` I9 |
-| Id Lux nhiều mục (`DA_Lux18_*`, `DA_18_Lux_*`) | `user` (cần xác nhận) | `engine` | **Mở**. Ảnh hưởng cách đếm bản | `engine`: `needs.md` I6 |
+| `set` và `patch` từ nguồn | `hud` (fallback `user` nếu cần máy live để xác nhận) | `engine` | **Mở**. Chưa rõ số patch nào dùng | `engine`: `needs.md` I8 |
+| Offer Wisp (loại, tướng ẩn, giá, shop nào có) | `hud` (fallback `user`: cần capture) | `engine` | **Mở**. Phụ thuộc capture | `engine`: `needs.md` I9 |
+| Id Lux nhiều mục (`DA_Lux18_*`, `DA_18_Lux_*`) | `hud` (fallback `user`: cần xác nhận trên client) | `engine` | **Mở**. Ảnh hưởng cách đếm bản | `engine`: `needs.md` I6 |
 | Bản chụp shop thật (`captures/`) | `user` (máy ingest) | `engine`, `hud` | **Chưa có trong repo**. Script `watch-and-capture.py` ghi đường dẫn Windows | `engine`: `needs.md` mục 2, U10 |
 | Bảng XP theo cấp | `user` hoặc nguồn ngoài | `engine` | **Mở**. Đề xuất từ wiki, chưa xác minh | `engine`: `needs.md` U1 |
 | Bảng odds theo cấp | `user` hoặc nguồn ngoài | `engine`, `sim` | **Mở**. Lệch Set 17 ở cấp 8, 9 | `engine`: `needs.md` U2 |
 | Roster và trait Set 18 | **Ba bên sinh, chưa chọn** | `engine`, `sim` | **Cần quyết định của người dùng** (xem mục 5) | xem mục 5 |
 | Snapshot CDragon đúng patch cho mô phỏng | `sim` | `sim` | **Chặn Gate 0** trên nội dung thật | `sim`: `tft-sim/README.md` |
+
+Dòng I6 và I8 được gán cho `hud` theo mục "Từ phiên ingest" của `needs.md`, trong đó nhánh `codex/hud-realtime-handoff` được nêu là nhánh ingest. `user` chỉ là bên dự phòng khi cần máy người dùng.
 
 ## 5. Quyết định người dùng cần đưa ra
 

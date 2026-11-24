@@ -12,7 +12,7 @@ Mỗi workstream có một thư mục chính. Agent của workstream đó là ch
 | OCR HUD Set 18 | `scripts/hud*.py`, `scripts/hud_*.py`, `scripts/hud-campaign/`, `src/data/set18-hud.json` | Workstream codex |
 | Mô phỏng và BC | `tft-sim/` | Workstream fable, không chạm `src/` |
 | Tài liệu sản phẩm | `docs/` (trừ `docs/agents/`) | Có thể xung đột khi nhiều agent cùng sửa một tài liệu |
-| Quy tắc agent | `docs/agents/`, `CLAUDE.md`, `AGENTS.md` | Chỉ sửa qua người điều phối |
+| Quy tắc agent | `docs/agents/`, `CLAUDE.md`, `AGENTS.md` | Chỉ sửa qua người điều phối. **Ngoại lệ:** `docs/agents/requests/`, `docs/agents/responses/`, `docs/agents/contracts/` do mỗi workstream ghi trên nhánh của chính mình, không ghi lên nhánh khác |
 
 ## ID workstream
 
