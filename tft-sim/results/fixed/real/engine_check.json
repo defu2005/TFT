@@ -1,0 +1,31 @@
+{
+  "n": 30,
+  "seconds_null": 27.7,
+  "seconds_vs_hybrid": 27.2,
+  "null_v3_vs_v3": {
+    "lobbies": 30,
+    "completed": 30,
+    "mean_placement_A": 4.341666666666667,
+    "mean_placement_B": 4.658333333333333,
+    "diff_A_minus_B": -0.31666666666666665,
+    "ci95_diff": [
+      -0.8833333333333333,
+      0.21666666666666667
+    ],
+    "illegal_A": 0,
+    "illegal_B": 0
+  },
+  "v3_vs_hybrid": {
+    "lobbies": 30,
+    "completed": 30,
+    "mean_placement_A": 4.6,
+    "mean_placement_B": 4.4,
+    "diff_A_minus_B": 0.2,
+    "ci95_diff": [
+      -0.45,
+      0.8333333333333334
+    ],
+    "illegal_A": 0,
+    "illegal_B": 0
+  }
+}
