@@ -1,5 +1,5 @@
 import { BUY_XP_COST, LEVEL_BY_STAGE, LEVEL_BY_STAGE_GUIDE, REROLL_COST, DEFAULT_PROFILE } from "../data/profile.js"
-import { hitChance, hitChanceOverRolls, interestGold } from "./odds.js"
+import { hitChance, hitChanceOverRolls, hitAtLeastKOverRolls, interestGold } from "./odds.js"
 
 export const HOLD = 0
 export const BUY = 1
@@ -187,6 +187,10 @@ export function decide(state, out, trace = null, rules, profile) {
       free: freeRolls,
       rolls,
       hitWithin,
+      // Trace only (no decision change). Two copies within the budget, and the budget after
+      // setting aside one buy at the target's tier price (copies needed is not in the state; 1 is assumed).
+      hitAtLeast2Within: goldKnown && levelKnown && target && target.cost && !targetInShop ? hitAtLeastKOverRolls(level, target.cost, target.copiesLeft, target.champsAtCost, 2, rolls, p) : 0,
+      rollsAfterTarget: goldKnown && target && target.cost ? Math.max(0, freeRolls + ((gold - target.cost - reserve) > 0 ? ((gold - target.cost - reserve) / REROLL_COST) | 0 : 0)) : 0,
       note: !target ? "không có mục tiêu (set_target chưa được gọi)" : targetInShop ? "mục tiêu đang có trong shop" : !goldKnown ? "chưa đọc được vàng" : !levelKnown ? "chưa đọc được cấp" : !rollAffordable ? `thiếu vàng để roll (cần ${rollNeeds})` : "",
     })
   }
