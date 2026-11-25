@@ -3,7 +3,7 @@
   "vod_id": "twitch-2897608176",
   "slot": "P9",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       400,
@@ -18,6 +18,10 @@
       6400
     ],
     [
+      6800,
+      8400
+    ],
+    [
       8800,
       10800
     ],
@@ -26,22 +30,18 @@
       12623
     ]
   ],
-  "remaining_ranges_s": [
-    [
-      6400,
-      8800
-    ]
-  ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2897608176-g400",
     "twitch-2897608176-g2800",
     "twitch-2897608176-g4800",
     "twitch-2897608176-g8800",
-    "twitch-2897608176-g11000"
+    "twitch-2897608176-g11000",
+    "twitch-2897608176-g6800"
   ],
   "counts": {
-    "games": 5,
-    "fights": 12,
+    "games": 6,
+    "fights": 14,
     "others": 0
   },
   "validator": {
@@ -114,5 +114,5 @@
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "optional densify 6400-8800 ranked after MATCH ACCEPTED; 5 games pushed"
+  "remaining": "VOD done 6 ranked games; boards partial winner_null OK"
 }
