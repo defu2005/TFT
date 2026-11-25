@@ -35,6 +35,6 @@
     }
   },
   "needs_review": 5,
-  "commit": null,
+  "commit": "91a9ee2",
   "remaining": "g270 densified (placement 8 @~1760). Continue FULL density game2 from ~2040; no thin survey."
 }
