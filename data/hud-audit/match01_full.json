@@ -792,9 +792,8 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "no_damage_pattern",
-    "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "value": "PvE carousel (664-688 s sandy arena with monsters)",
+    "tag": "read"
    },
    "opponent": {
     "value": null,
@@ -802,8 +801,24 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "frame_s": 692,
+     "gold": 5,
+     "counter": "not legible in this frame",
+     "panel": {
+      "Juggernaut": 2,
+      "Brawler": 1,
+      "Fae": 1,
+      "Hunter": 1,
+      "Vanguard": 1,
+      "Coven": 1,
+      "Elderwood": 1,
+      "Solar": 1
+     },
+     "board": "3 bodies visible, not named",
+     "bench": "6 occupied bench slots, not named"
+    },
+    "tag": "read"
    },
    "combat": {
     "value": null,
