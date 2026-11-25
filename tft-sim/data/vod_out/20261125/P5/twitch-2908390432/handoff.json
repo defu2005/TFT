@@ -3,37 +3,52 @@
   "vod_id": "twitch-2908390432",
   "slot": "P5",
   "role": "primary",
-  "status": "done",
+  "status": "working",
   "covered_ranges_s": [
     [
       0,
+<<<<<<< HEAD
       18000
+=======
+      1600
+    ],
+    [
+      2100,
+      4500
+    ],
+    [
+      4500,
+      7000
     ]
   ],
-  "remaining_ranges_s": [],
+  "remaining_ranges_s": [
+    [
+      1600,
+      2100
+    ],
+    [
+      7000,
+      99999
+>>>>>>> 1ad3dd2e (P5: densify-full thin souless stubs 288530/289057/290839)
+    ]
+  ],
   "game_ids": [
     "twitch-2908390432-g0",
     "twitch-2908390432-g2100",
-    "twitch-2908390432-g4500",
-    "twitch-2908390432-g1600",
-    "twitch-2908390432-g7000",
-    "twitch-2908390432-g10000",
-    "twitch-2908390432-g14000"
+    "twitch-2908390432-g4500"
   ],
   "counts": {
-    "games": 7,
-    "fights": 98,
-    "others": 98
-  },
-  "notes": "Densify thin stub+rem → 7g/98f; agent bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
-  "claim": {
-    "agent": "bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
-    "claimed_at": "2026-11-25T19:22:19Z"
+    "games": 3,
+    "fights": 43,
+    "others": 43
   },
   "validator": {
-    "ok": 84,
+    "ok": 0,
     "skipped": {
-      "winner_null": 14
+      "winner_null": 43
     }
-  }
+  },
+  "needs_review": 43,
+  "commit": null,
+  "remaining": "Densify-full Set18 PvP g0/g2100/g4500; nm-locked IronBog@2-1 + Msian Emilywang@3-6; seeds kept; units []; winner null. Dropped unknown volume games."
 }
