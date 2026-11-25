@@ -7571,12 +7571,7 @@
   "source": "round_results_derived.json eliminations; 1 and 2 from 6-6 frames"
  },
  "blind_reread": {
-  "summary": "Cross-source check, not a blind frame re-read. 10 seeded rounds (seed 7): 3-5, 3-6, 4-1, 4-2, 4-6, 5-1, 5-2, 5-5, 5-6, 6-2. Reader rows within 0.5 s of frame_s are compared; the same frames were read earlier, so this is not blind.",
-  "gold_match": "9 of 10 (5-5: frame 7, reader 9, unresolved)",
-  "shop_name_match": "28 of 37 master names found in reader slots (misses: Mama Beak vs reader id CrimsonRaptor, Aphelios 5-1, 5-5 all four, 5-6 Murkwolf and Salvager, 6-2 Sett)",
-  "level": "not measured: reader rows carry level None in these windows",
-  "panel_xp_streak": "not measured by machine",
-  "seed": 7
+  "summary": "Blind re-read of 10 sampled rounds (blind_pick seed 7): gold 4/10 (0.40) and streak 9/10 (0.90) from script OCR on fixed crops, script did not open the master; gold misses look like neighbouring digits leaking into the crop (4-1, 5-5, 6-2). Panel, shop, counter, level and XP were NOT re-read blind (already seen in this session), so no rate is claimed for them. See data/hud-audit/blind_reread_rates.json and blind_ocr.py."
  },
  "final_comps": {
   "P1_6-6": {

@@ -37,3 +37,10 @@ print("OPEN per field (not closed):")
 for f, c in open_counts.items(): print(f"  {f}: {c}")
 total_open = sum(open_counts.values())
 print("TOTAL OPEN:", total_open)
+
+import os
+if os.path.exists('data/hud-audit/blind_reread_rates.json'):
+    b=json.load(open('data/hud-audit/blind_reread_rates.json'))
+    print("BLIND RE-READ (script OCR, 10 rounds):")
+    print("  protocol:", b['protocol'])
+    for f,v in b['rates'].items(): print(f"  {f}: {v['matched']}/{v['of']} = {v['rate']}")

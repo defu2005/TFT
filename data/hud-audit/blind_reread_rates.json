@@ -1,0 +1,15 @@
+{
+ "protocol": "tesseract digit-only on fixed crops, 3x upscale, psm 7; script never opened master; master compared after OCR; panel and shop not blind (seen earlier)",
+ "rates": {
+  "gold": {
+   "matched": 4,
+   "of": 10,
+   "rate": 0.4
+  },
+  "streak": {
+   "matched": 9,
+   "of": 10,
+   "rate": 0.9
+  }
+ }
+}
