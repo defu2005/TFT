@@ -75,7 +75,7 @@
       "winner_null": 117
     }
   },
-  "needs_review": 99,
+  "needs_review": 101,
   "commit": null,
-  "remaining": "P4 densify: g0=12; g2085=12; g4750=16 scoring. Next g7200."
+  "remaining": "P4 densify: g0=12 g2085=12 g4750=16 g7200=4. Next g9000."
 }

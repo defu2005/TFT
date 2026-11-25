@@ -19,7 +19,7 @@
     ],
     [
       6700,
-      8000
+      8900
     ]
   ],
   "remaining_ranges_s": [
@@ -36,7 +36,7 @@
       6700
     ],
     [
-      8000,
+      8900,
       23928
     ]
   ],
@@ -48,16 +48,16 @@
   ],
   "counts": {
     "games": 4,
-    "fights": 38,
-    "others": 38
+    "fights": 58,
+    "others": 58
   },
   "validator": {
-    "ok": 30,
+    "ok": 51,
     "skipped": {
-      "winner_null": 8
+      "winner_null": 7
     }
   },
-  "needs_review": 8,
-  "commit": "b829bf1",
-  "remaining": "g6700 early 3 fights. Densify 6600+. Ranked only."
+  "needs_review": 7,
+  "commit": "a3cc90a",
+  "remaining": "g6700 densified full PvP. Next densify g4380/g2410/g30 boards. Priority: complete fights."
 }
