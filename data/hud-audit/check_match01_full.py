@@ -25,10 +25,13 @@ br = d.get('blind_reread')
 print("blind_reread:", 'missing' if not br else br.get('summary', 'present'))
 
 # closed = resolved, or unresolved with attempt and reason recorded
+BAD = ['not yet run', 'not read', 'not performed', 'no solver run', 'not done', 'not run', 'not attempted']
 def closed(v):
     if not isinstance(v, dict): return False
     if resolved(v): return True
-    return v.get('tag') == 'unresolved' and bool(v.get('attempt')) and bool(v.get('reason') or v.get('note'))
+    a = str(v.get('attempt') or '').lower()
+    if any(b in a for b in BAD): return False
+    return v.get('tag') == 'unresolved' and bool(a) and bool(v.get('reason') or v.get('note'))
 open_counts = {f: 0 for f in FULL + REQUIRED}
 for r in d['rounds']:
     for f in FULL + REQUIRED:

@@ -52,8 +52,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
-    "reason": "no unique board available from the reads recorded so far",
+    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
+    "reason": "no panel read for this round",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -178,8 +178,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
-    "reason": "no unique board available from the reads recorded so far",
+    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
+    "reason": "no panel read for this round",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -335,8 +335,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
-    "reason": "no unique board available from the reads recorded so far",
+    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
+    "reason": "no panel read for this round",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -517,8 +517,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
-    "reason": "no unique board available from the reads recorded so far",
+    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
+    "reason": "no panel read for this round",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -719,8 +719,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
-    "reason": "no unique board available from the reads recorded so far",
+    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
+    "reason": "no panel read for this round",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -878,11 +878,14 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
-    "reason": "no unique board available from the reads recorded so far",
-    "note": "hexes unresolved"
+    "value": [
+     "Alistar",
+     "Caitlyn",
+     "Rakan",
+     "Sejuani"
+    ],
+    "tag": "derived",
+    "basis": "solver on planning panel (N=4, hidden k=0): unique solution"
    },
    "bench_units": {
     "value": null,
@@ -1070,11 +1073,14 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
-    "reason": "no unique board available from the reads recorded so far",
-    "note": "hexes unresolved"
+    "value": [
+     "Alistar",
+     "Caitlyn",
+     "Rakan",
+     "Sejuani"
+    ],
+    "tag": "derived",
+    "basis": "solver on planning panel (N=4, hidden k=0): unique solution"
    },
    "bench_units": {
     "value": null,
@@ -1257,8 +1263,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
-    "reason": "no unique board available from the reads recorded so far",
+    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
+    "reason": "no panel read for this round",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -1423,11 +1429,15 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
-    "reason": "no unique board available from the reads recorded so far",
-    "note": "hexes unresolved"
+    "value": [
+     "Alistar",
+     "Kobuko",
+     "LeBlanc",
+     "Mama Beak",
+     "Xayah"
+    ],
+    "tag": "derived",
+    "basis": "solver on planning panel (N=5, hidden k=0): unique solution"
    },
    "bench_units": {
     "value": null,
@@ -1627,9 +1637,24 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
-    "reason": "no unique board available from the reads recorded so far",
-    "note": "hexes unresolved"
+    "candidates": [
+     [
+      "Ahri",
+      "Alistar",
+      "Kobuko",
+      "LeBlanc",
+      "Mama Beak"
+     ],
+     [
+      "Alistar",
+      "Karma",
+      "Kobuko",
+      "LeBlanc",
+      "Mama Beak"
+     ]
+    ],
+    "attempt": "solver on planning panel (N=5, hidden k=0) returned 2 solutions; listed in candidates",
+    "reason": "panel does not fix one board"
    },
    "bench_units": {
     "value": null,
@@ -1824,8 +1849,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
-    "reason": "no unique board available from the reads recorded so far",
+    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
+    "reason": "no panel read for this round",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -2721,8 +2746,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
-    "reason": "no unique board available from the reads recorded so far",
+    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
+    "reason": "no panel read for this round",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -2886,8 +2911,19 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "candidate set recorded: Alistar, Ezreal, Kobuko, Malphite, Mama Beak, Rek'Sai, Xayah; three solutions on the 1186 s planning panel (N=7, k=1); other two omit Kobuko or Alistar; 3-3 units favour this one but a sold unit is unconfirmed",
-    "reason": "board not confirmed by a second independent read; candidates listed",
+    "candidates": [
+     [
+      "Alistar",
+      "Ezreal",
+      "Kobuko",
+      "Malphite",
+      "Mama Beak",
+      "Rek'Sai",
+      "Xayah"
+     ]
+    ],
+    "attempt": "solver on the 1186 s planning panel (N=7, hidden k=1) returned 3 solutions; listed candidates include the one with all 3-3 units",
+    "reason": "panel does not fix one board; the second Kobuko from 3-3 is gone but the sold unit is not identified",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -3193,8 +3229,19 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "candidate set recorded: Alistar, Ezreal, Hecarim, Krug, LeBlanc, Mama Beak, Xayah; planning counter unresolved; solver on the 1250 s panel with assumed N=7, k=0; one unexplained Hecarim buy",
-    "reason": "board not confirmed by a second independent read; candidates listed",
+    "candidates": [
+     [
+      "Alistar",
+      "Ezreal",
+      "Hecarim",
+      "Krug",
+      "LeBlanc",
+      "Mama Beak",
+      "Xayah"
+     ]
+    ],
+    "attempt": "planning counter unresolved at 1250 s; panel solve with assumed N=7, k=0 gives this set; one Hecarim buy has no purchase event",
+    "reason": "counter not read, so N is assumed",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -3408,8 +3455,19 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "candidate set recorded: Alistar, Ezreal, Hecarim, Krug, LeBlanc, Mama Beak, Xayah; planning counter and board unresolved at 1316 s; solver assumed N=7, k=0",
-    "reason": "board not confirmed by a second independent read; candidates listed",
+    "candidates": [
+     [
+      "Alistar",
+      "Ezreal",
+      "Hecarim",
+      "Krug",
+      "LeBlanc",
+      "Mama Beak",
+      "Xayah"
+     ]
+    ],
+    "attempt": "planning counter unresolved at 1316 s; panel solve with assumed N=7, k=0 gives this set",
+    "reason": "counter not read, so N is assumed",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -3612,9 +3670,40 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "candidate set recorded: Alistar, Ezreal, Hecarim, Krug, LeBlanc, Mama Beak, Xayah, Zyra; three solutions on the 1364 s planning panel (N=8, k=1); Ornn and Gromp/Murkwolf variants also fit; Zyra pinned by Thornmaiden 1",
-    "reason": "board not confirmed by a second independent read; candidates listed",
-    "note": "hexes unresolved"
+    "candidates": [
+     [
+      "Alistar",
+      "Ezreal",
+      "Hecarim",
+      "Krug",
+      "LeBlanc",
+      "Mama Beak",
+      "Xayah",
+      "Zyra"
+     ],
+     [
+      "Alistar",
+      "Ezreal",
+      "Krug",
+      "LeBlanc",
+      "Lux (Elderwood)",
+      "Mama Beak",
+      "Xayah",
+      "Zyra"
+     ],
+     [
+      "Alistar",
+      "Ezreal",
+      "Krug",
+      "LeBlanc",
+      "Mama Beak",
+      "Ornn",
+      "Xayah",
+      "Zyra"
+     ]
+    ],
+    "attempt": "solver on planning panel (N=8, hidden k=1) returned 3 solutions; listed in candidates",
+    "reason": "panel does not fix one board"
    },
    "bench_units": {
     "value": null,
@@ -3872,8 +3961,7 @@
      "Sett"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits); gold ledger (reader rows): 4-1 planning gold 1 at 1364 s, 2 at 1413 s, then +8 (1445.8), +8 (1447.5), +4 (1449.0), +5 (1468.0) to 27 at planning: consistent with selling the four units that leave the 4-1 board, but the individual sells are not identified; earlier re-read differs from planning read; duplicate test: N-1 and N-2 solve to 0",
-    "note": "hexes unresolved"
+    "basis": "solver on planning panel (N=8, hidden k=1): unique solution"
    },
    "bench_units": {
     "value": null,
@@ -4093,8 +4181,7 @@
      "Sett"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits); earlier re-read differs from planning read; duplicate test: N-1 and N-2 solve to 0",
-    "note": "hexes unresolved"
+    "basis": "solver on planning panel (N=8, hidden k=1): unique solution"
    },
    "bench_units": {
     "value": null,
@@ -4302,8 +4389,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
-    "reason": "no unique board available from the reads recorded so far",
+    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
+    "reason": "no panel read for this round",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -4440,8 +4527,20 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "candidate set recorded: Alistar, Draven, Ezreal, Gnar, Hecarim, Krug, Maokai, Sett; planning-panel solve is unique (N=8, k=1), but the earlier panel re-read disagrees (Elderwood 3, Juggernaut 2, Inferno 1); pixel adjudication not done",
-    "reason": "board not confirmed by a second independent read; candidates listed",
+    "candidates": [
+     [
+      "Alistar",
+      "Draven",
+      "Ezreal",
+      "Gnar",
+      "Hecarim",
+      "Krug",
+      "Maokai",
+      "Sett"
+     ]
+    ],
+    "attempt": "solver on the planning-frame panel returned one solution, but an earlier panel read for this round disagrees; timing of the two reads not yet checked",
+    "reason": "two panel reads disagree; the board that fought is not chosen yet",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -4667,8 +4766,7 @@
      "Sett"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
-    "note": "hexes unresolved"
+    "basis": "solver on planning panel (N=8, hidden k=1): unique solution"
    },
    "bench_units": {
     "value": null,
@@ -5073,8 +5171,20 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "candidate set recorded: Alistar, Draven, Ezreal, Gnar, Hecarim, Krug, Maokai, Sett; planning-panel solve is unique (N=8, k=1), but the earlier re-read (Greenfather 1, marker 2+) disagrees; pixel adjudication not done",
-    "reason": "board not confirmed by a second independent read; candidates listed",
+    "candidates": [
+     [
+      "Alistar",
+      "Draven",
+      "Ezreal",
+      "Gnar",
+      "Hecarim",
+      "Krug",
+      "Maokai",
+      "Sett"
+     ]
+    ],
+    "attempt": "solver on the planning-frame panel returned one solution, but an earlier panel read for this round disagrees; timing of the two reads not yet checked",
+    "reason": "two panel reads disagree; the board that fought is not chosen yet",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -5402,8 +5512,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "re-solved 5-2 panel (Emerald Aspect 1, Brawler 3, Elderwood 3, Executioner 2, Inferno 1, Juggernaut 1, Bounty Seeker 1, Greenfather 1, Old Growth 1, marker 3+) at N=8, k=0..4: zero solutions; previous candidate has no Taric despite Emerald Aspect 1",
-    "reason": "panel conflicts with previous candidate; needs a clean full-height re-read or the 5-2 planning frame",
+    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
+    "reason": "no panel read for this round",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -5673,8 +5783,7 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
-    "note": "hexes unresolved"
+    "basis": "solver on planning panel (N=9, hidden k=2): unique solution"
    },
    "bench_units": {
     "value": null,
@@ -5917,8 +6026,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
-    "reason": "no unique board available from the reads recorded so far",
+    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
+    "reason": "no panel read for this round",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -6075,8 +6184,7 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
-    "note": "hexes unresolved"
+    "basis": "solver on planning panel (N=9, hidden k=2): unique solution"
    },
    "bench_units": {
     "value": null,
@@ -6344,8 +6452,21 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "candidate set recorded: Alistar, Amumu, Draven, Ezreal, Gnar, Ivern, Kennen, Maokai, Taric; planning-panel solve is unique (N=9, k=2), but the earlier re-read (not a copy of 5-5) disagrees; pixel adjudication not done",
-    "reason": "board not confirmed by a second independent read; candidates listed",
+    "candidates": [
+     [
+      "Alistar",
+      "Amumu",
+      "Draven",
+      "Ezreal",
+      "Gnar",
+      "Ivern",
+      "Kennen",
+      "Maokai",
+      "Taric"
+     ]
+    ],
+    "attempt": "solver on the planning-frame panel returned one solution, but an earlier panel read for this round disagrees; timing of the two reads not yet checked",
+    "reason": "two panel reads disagree; the board that fought is not chosen yet",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -6601,8 +6722,7 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
-    "note": "hexes unresolved"
+    "basis": "solver on planning panel (N=9, hidden k=2): unique solution"
    },
    "bench_units": {
     "value": null,
@@ -6819,8 +6939,21 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "candidate set recorded: Alistar, Amumu, Draven, Ezreal, Gnar, Ivern, Kennen, Maokai, Taric; no panel read at the 6-1 planning frame; propagated from 5-3 without its own read",
-    "reason": "board not confirmed by a second independent read; candidates listed",
+    "candidates": [
+     [
+      "Alistar",
+      "Amumu",
+      "Draven",
+      "Ezreal",
+      "Gnar",
+      "Ivern",
+      "Kennen",
+      "Maokai",
+      "Taric"
+     ]
+    ],
+    "attempt": "no panel or counter read at the 6-1 planning frame; the 5-3 solution was carried over",
+    "reason": "carried over from 5-3 without its own read",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -7018,8 +7151,7 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
-    "note": "hexes unresolved"
+    "basis": "solver on planning panel (N=9, hidden k=2): unique solution"
    },
    "bench_units": {
     "value": null,
@@ -7270,8 +7402,7 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
-    "note": "hexes unresolved"
+    "basis": "solver on planning panel (N=9, hidden k=2): unique solution"
    },
    "bench_units": {
     "value": null,
@@ -7485,8 +7616,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
-    "reason": "no unique board available from the reads recorded so far",
+    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
+    "reason": "no panel read for this round",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -7650,8 +7781,7 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
-    "note": "hexes unresolved"
+    "basis": "solver on planning panel (N=9, hidden k=2): unique solution"
    },
    "bench_units": {
     "value": null,
@@ -7933,8 +8063,7 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
-    "note": "hexes unresolved"
+    "basis": "solver on planning panel (N=9, hidden k=2): unique solution"
    },
    "bench_units": {
     "value": null,
