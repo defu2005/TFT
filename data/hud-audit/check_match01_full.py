@@ -25,7 +25,7 @@ br = d.get('blind_reread')
 print("blind_reread:", 'missing' if not br else br.get('summary', 'present'))
 
 # closed = resolved, or unresolved with attempt and reason recorded
-BAD = ['not yet run', 'not read', 'not performed', 'no solver run', 'not done', 'not run', 'not attempted']
+BAD = ['not yet run', 'not read', 'not performed', 'no solver run', 'not done', 'not run', 'not attempted', 'not rerun', 'not calibrated']
 def closed(v):
     if not isinstance(v, dict): return False
     if resolved(v): return True

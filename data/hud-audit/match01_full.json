@@ -123,8 +123,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 316 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 316 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "board is off screen in the arena or carousel frame at this round"
    },
    "frame_A_read": {
     "frame_s": 316,
@@ -286,8 +286,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 340 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 340 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 340,
@@ -479,8 +479,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 364.1 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 364.1 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 364.1,
@@ -683,8 +683,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 399.9 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 399.9 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 399.9,
@@ -880,13 +880,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 438.8 to 526.1 s. Scan runs flagged at 460 to 462 s. Owner not established for these runs, so no panel is attached to this round.",
+    "reason": "owner not established for the flagged scouting runs in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 438.8 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 438.8 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 438.8,
@@ -1079,13 +1081,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 526.1 to 597.9 s. Scan runs flagged at 542 to 546 s. Owner not established for these runs, so no panel is attached to this round.",
+    "reason": "owner not established for the flagged scouting runs in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 526.1 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 526.1 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "panel_visual_check": {
     "value": "8 rows, no marker, ninth slot empty on the frame read at t_planning_s + 3",
@@ -1303,13 +1307,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 597.9 to 664.0 s. Scan runs flagged at 606 to 608 s, 662 to 664 s. Owner not established for these runs, so no panel is attached to this round.",
+    "reason": "owner not established for the flagged scouting runs in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 597.9 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 597.9 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "panel_visual_check": {
     "value": "8 rows, no marker, ninth slot empty on the frame read at t_planning_s + 3",
@@ -1504,8 +1510,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 664.0 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 664.0 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "board is off screen in the arena or carousel frame at this round"
    },
    "frame_A_read": {
     "frame_s": 664.0,
@@ -1711,13 +1717,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 700.7 to 759.3 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
+    "reason": "no scouting-window frame at 2 s cadence in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 700.7 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 700.7 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 700.7,
@@ -1963,13 +1971,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 759.3 to 835.1 s. Scan runs flagged at 778 to 778 s. Owner not established for these runs, so no panel is attached to this round.",
+    "reason": "owner not established for the flagged scouting runs in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 759.3 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 759.3 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "panel_visual_check": {
     "value": null,
@@ -2195,8 +2205,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 835.1 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 835.1 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "planning_frame_check": {
     "frame_s": 838,
@@ -2440,13 +2450,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 881.1 to 956.3 s. Scan runs flagged at 888 to 890 s. Owner not established for these runs, so no panel is attached to this round.",
+    "reason": "owner not established for the flagged scouting runs in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 881.1 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 881.1 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 881.1,
@@ -2731,13 +2743,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 956.3 to 1048.2 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
+    "reason": "no scouting-window frame at 2 s cadence in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 956.3 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 956.3 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 956.3,
@@ -2983,13 +2997,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 1048.2 to 1128.5 s. Scan runs flagged at 1068 to 1070 s, 1126 to 1140 s. Owner not established for these runs, so no panel is attached to this round.",
+    "reason": "owner not established for the flagged scouting runs in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 1048.2 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 1048.2 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 1048.2,
@@ -3170,8 +3186,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 1128.5 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 1128.5 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "board is off screen in the arena or carousel frame at this round"
    },
    "frame_A_read": {
     "frame_s": 1128.5,
@@ -3488,13 +3504,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 1165.4 to 1236.1 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
+    "reason": "no scouting-window frame at 2 s cadence in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 1186 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 1186 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 1186,
@@ -3755,13 +3773,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 1236.1 to 1317.1 s. Scan runs flagged at 1260 to 1260 s. Owner not established for these runs, so no panel is attached to this round.",
+    "reason": "owner not established for the flagged scouting runs in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 1250 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 1250 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 1250,
@@ -3997,8 +4017,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 1316 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 1316 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 1316,
@@ -4310,13 +4330,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 1355.3 to 1433.8 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
+    "reason": "no scouting-window frame at 2 s cadence in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 1364 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 1364 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 1364,
@@ -4564,13 +4586,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 1433.8 to 1529.7 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
+    "reason": "no scouting-window frame at 2 s cadence in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 1468 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 1468 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 1468,
@@ -4813,13 +4837,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 1529.7 to 1604.0 s. Scan runs flagged at 1532 to 1536 s, 1542 to 1546 s, 1602 to 1602 s. Owner not established for these runs, so no panel is attached to this round.",
+    "reason": "owner not established for the flagged scouting runs in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 1540 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 1540 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 1540,
@@ -4994,8 +5020,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 1604.0 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 1604.0 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "board is off screen in the arena or carousel frame at this round"
    },
    "frame_A_read": {
     "frame_s": 1604.0,
@@ -5240,13 +5266,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 1640.8 to 1716.5 s. Scan runs flagged at 1716 to 1716 s. Owner not established for these runs, so no panel is attached to this round.",
+    "reason": "owner not established for the flagged scouting runs in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 1652 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 1652 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 1652,
@@ -5485,13 +5513,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 1716.5 to 1792.5 s. Scan runs flagged at 1724 to 1724 s, 1730 to 1730 s. Owner not established for these runs, so no panel is attached to this round. The 4-6 nameplate read gave P8, which conflicts with the P2 candidate owners at 1724 and 1730 s; the conflict is kept open.",
+    "reason": "owner not established for the flagged scouting runs in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 1722 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 1722 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 1722,
@@ -5720,8 +5750,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 1816 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 1816 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 1816,
@@ -6075,13 +6105,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 1829.7 to 1907.9 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
+    "reason": "no scouting-window frame at 2 s cadence in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 1836 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 1836 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 1836,
@@ -6387,13 +6419,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 1907.9 to 1993.3 s. Scan runs flagged at 1972 to 1984 s. Owner not established for these runs, so no panel is attached to this round.",
+    "reason": "owner not established for the flagged scouting runs in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 1914 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 1914 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 1914,
@@ -6686,13 +6720,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 1993.3 to 2062.8 s. Scan runs flagged at 2060 to 2076 s. Owner not established for these runs, so no panel is attached to this round.",
+    "reason": "owner not established for the flagged scouting runs in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 2000 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 2000 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 2000,
@@ -6863,8 +6899,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 2062.8 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 2062.8 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "board is off screen in the arena or carousel frame at this round"
    },
    "frame_A_read": {
     "frame_s": 2062.8,
@@ -7156,13 +7192,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 2087.5 to 2165.3 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
+    "reason": "no scouting-window frame at 2 s cadence in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 2094 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 2094 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 2094,
@@ -7448,13 +7486,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 2165.3 to 2230.8 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
+    "reason": "no scouting-window frame at 2 s cadence in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 2172 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 2172 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 2172,
@@ -7722,8 +7762,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 2236 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 2236 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 2236,
@@ -7878,14 +7918,9 @@
     "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     "P2",
-     "P4"
-    ],
-    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P2, P4",
-    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
+    "value": "P4",
+    "tag": "read",
+    "basis": "2311 s nameplate in the pool, written from the 6-1 frame read"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -7956,13 +7991,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 2269.1 to 2335.2 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
+    "reason": "no scouting-window frame at 2 s cadence in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 2296 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 2296 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "board is off screen in the arena or carousel frame at this round"
    },
    "frame_A_read": {
     "frame_s": 2296,
@@ -8239,13 +8276,15 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Round window 2335.2 to 2398.9 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
+    "reason": "no scouting-window frame at 2 s cadence in this round"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 2342 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 2342 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 2342,
@@ -8501,8 +8540,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 2404 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 2404 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "planning_rail_observation": {
     "frame_s": 2410,
@@ -8712,8 +8751,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 2463.3 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 2463.3 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "board is off screen in the arena or carousel frame at this round"
    },
    "frame_A_read": {
     "frame_s": 2463.3,
@@ -8984,14 +9023,14 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Scouted P2 panel at 2486 to 2508 s (sweep 1063, 1072, 1074), marker 6+. Solver at hidden 6 was not rerun, because the 6-3 search already timed out at hidden 5. Earlier hidden 0 to 2 runs gave zero solutions.",
-    "reason": "the hidden-6 search is too large to finish in the time allowed, so the panel is unresolved"
+    "attempt": "Scouted P2 panel at 2486 to 2508 s (sweep 1063, 1072, 1074). Hidden 0 to 2: no consistent board. Hidden 6 under timeout 120 s: no result before the time limit at N 7.",
+    "reason": "hidden-6 search exceeds the time limit, and lower hidden counts give no consistent board"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 2488 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 2488 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 2488,
@@ -9285,14 +9324,14 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Scouted P2 panel at 2572 s (sweep 1106), marker 6+. Solver at hidden 6 was not rerun, for the same reason as 6-5. Earlier hidden 0 to 2 runs gave zero solutions.",
-    "reason": "the hidden-6 search is too large to finish in the time allowed, so the panel is unresolved"
+    "attempt": "Scouted P2 panel at 2572 s (sweep 1106). Hidden 0 to 2: no consistent board. Hidden 6 under timeout 120 s: no result before the time limit at N 7.",
+    "reason": "hidden-6 search exceeds the time limit, and lower hidden counts give no consistent board"
    },
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Frame A at 2554 s. The arena grid was not calibrated, and the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "one hovered card per frame gives one hex at most, and no grid calibration exists, so the full hex map cannot be recovered"
+    "attempt": "Frame A at 2554 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
+    "reason": "sprites carry no name text at 720p and the grid is not drawn, so no hex coordinate can be read (board_bench_probe)"
    },
    "frame_A_read": {
     "frame_s": 2554,
@@ -9847,9 +9886,10 @@
     "Sprykin": 1
    },
    "owner_arrow_row": null,
-   "owner_status": "candidate, not confirmed",
+   "owner_status": "not established",
    "attached_to_round": null,
-   "note": "dim frame in the choose-one period; owner not readable"
+   "note": "dim frame in the choose-one period; owner not readable",
+   "owner": "not established"
   },
   {
    "t_s": 544,
@@ -9862,9 +9902,10 @@
     "Juggernaut": 1
    },
    "owner_arrow_row": null,
-   "owner_status": "candidate, not confirmed",
+   "owner_status": "not established",
    "attached_to_round": null,
-   "note": "owner not readable"
+   "note": "owner not readable",
+   "owner": "not established"
   },
   {
    "t_s": 778,
@@ -9878,9 +9919,10 @@
     "Riftbeast": 1
    },
    "owner_arrow_row": "P8 or P6 (unclear)",
-   "owner_status": "candidate, not confirmed",
+   "owner_status": "not established",
    "attached_to_round": null,
-   "note": "owner ambiguous"
+   "note": "owner ambiguous",
+   "owner": "not established"
   },
   {
    "t_s": 888,
@@ -9895,9 +9937,10 @@
     "Primal": 1
    },
    "owner_arrow_row": "P5 candidate",
-   "owner_status": "candidate, not confirmed",
+   "owner_status": "not established",
    "attached_to_round": null,
-   "note": "a two-star popup sits under the same row; owner candidate P5"
+   "note": "a two-star popup sits under the same row; owner candidate P5",
+   "owner": "not established"
   },
   {
    "t_s": 1068,
@@ -9913,9 +9956,10 @@
     "Vanguard": 1
    },
    "owner_arrow_row": null,
-   "owner_status": "candidate, not confirmed",
+   "owner_status": "not established",
    "attached_to_round": null,
-   "note": "owner not readable"
+   "note": "owner not readable",
+   "owner": "not established"
   },
   {
    "t_s": 1132,
@@ -9929,9 +9973,10 @@
     "Sprykin": 1
    },
    "owner_arrow_row": null,
-   "owner_status": "candidate, not confirmed",
+   "owner_status": "not established",
    "attached_to_round": null,
-   "note": "owner not readable"
+   "note": "owner not readable",
+   "owner": "not established"
   },
   {
    "t_s": 1260,
@@ -9948,9 +9993,10 @@
     "Vanguard": 1
    },
    "owner_arrow_row": null,
-   "owner_status": "candidate, not confirmed",
+   "owner_status": "not established",
    "attached_to_round": null,
-   "note": "owner not readable"
+   "note": "owner not readable",
+   "owner": "not established"
   },
   {
    "t_s": 1534,
@@ -9967,9 +10013,10 @@
     "Riftbeast": 1
    },
    "owner_arrow_row": "P7 candidate",
-   "owner_status": "candidate, not confirmed",
+   "owner_status": "not established",
    "attached_to_round": null,
-   "note": "owner candidate"
+   "note": "owner candidate",
+   "owner": "not established"
   },
   {
    "t_s": 1544,
@@ -9986,9 +10033,10 @@
     "Blossom": 1
    },
    "owner_arrow_row": null,
-   "owner_status": "candidate, not confirmed",
+   "owner_status": "not established",
    "attached_to_round": null,
-   "note": "owner not readable"
+   "note": "owner not readable",
+   "owner": "not established"
   },
   {
    "t_s": 1602,
@@ -10005,9 +10053,10 @@
     "Riftbeast": 1
    },
    "owner_arrow_row": null,
-   "owner_status": "candidate, not confirmed",
+   "owner_status": "not established",
    "attached_to_round": null,
-   "note": "owner not readable"
+   "note": "owner not readable",
+   "owner": "not established"
   },
   {
    "t_s": 1716,
@@ -10024,9 +10073,10 @@
     "Blossom": 1
    },
    "owner_arrow_row": "P2 candidate",
-   "owner_status": "candidate, not confirmed",
+   "owner_status": "not established",
    "attached_to_round": null,
-   "note": "conflicts with the 4-6 nameplate read of P8"
+   "note": "conflicts with the 4-6 nameplate read of P8",
+   "owner": "not established"
   },
   {
    "t_s": 1724,
@@ -10043,9 +10093,10 @@
     "Spellweaver": 2
    },
    "owner_arrow_row": "P2 candidate",
-   "owner_status": "candidate, not confirmed",
+   "owner_status": "P2 candidate by 8 shared rows with the 2406 s P2 panel; not confirmed",
    "attached_to_round": null,
-   "note": "conflicts with the P8 read"
+   "note": "conflicts with the P8 read",
+   "owner": "P2"
   },
   {
    "t_s": 1730,
@@ -10062,9 +10113,10 @@
     "Spellweaver": 2
    },
    "owner_arrow_row": "P2 candidate",
-   "owner_status": "candidate, not confirmed",
+   "owner_status": "P2 candidate by 8 shared rows with the 2406 s P2 panel; not confirmed",
    "attached_to_round": null,
-   "note": "conflicts with the P8 read"
+   "note": "conflicts with the P8 read",
+   "owner": "P2"
   },
   {
    "t_s": 1978,
@@ -10079,9 +10131,10 @@
     "Sprykin": 1
    },
    "owner_arrow_row": "P2 candidate",
-   "owner_status": "candidate, not confirmed",
+   "owner_status": "not established",
    "attached_to_round": null,
-   "note": "5-2 opponent not otherwise read"
+   "note": "5-2 opponent not otherwise read",
+   "owner": "not established"
   },
   {
    "t_s": 2406,
@@ -10097,8 +10150,8 @@
     "Defender": 2,
     "Fae": 2
    },
-   "owner": "P2",
-   "owner_status": "derived by alive rule (only P2 alive after P4 eliminated at 6-2)",
+   "owner": "not established",
+   "owner_status": "not established",
    "solver": "N 1 to 9, hidden 0 to 2: no consistent board",
    "attached_to_round": "6-3"
   },
@@ -10116,8 +10169,8 @@
     "Lunar": 2,
     "Defender": 2
    },
-   "owner": "P2",
-   "owner_status": "derived by alive rule",
+   "owner": "not established",
+   "owner_status": "not established",
    "solver": "N 1 to 9, hidden 0 to 2: no consistent board",
    "attached_to_round": "6-5"
   },
@@ -10135,10 +10188,27 @@
     "Lunar": 2,
     "Defender": 2
    },
-   "owner": "P2",
-   "owner_status": "derived by alive rule",
+   "owner": "not established",
+   "owner_status": "not established",
    "solver": "N 1 to 9, hidden 0 to 2: no consistent board",
    "attached_to_round": "6-6"
+  },
+  {
+   "t_s": 1128.5,
+   "sweep_idx": null,
+   "panel": {
+    "Caustic": 1,
+    "Invoker": 3,
+    "Riftbeast": 3,
+    "Adaptor": 2,
+    "Juggernaut": 2,
+    "Primal": 1,
+    "Sprykin": 1
+   },
+   "owner": "not established",
+   "owner_status": "not established",
+   "attached_to_round": null,
+   "note": "3-4 Frame A, another player panel"
   }
  ]
 }
