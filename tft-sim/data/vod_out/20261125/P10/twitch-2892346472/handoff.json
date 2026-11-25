@@ -1,0 +1,99 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2892346472",
+  "slot": "P10",
+  "role": "primary",
+  "status": "pending",
+  "covered_ranges_s": [
+    [
+      300,
+      1800
+    ],
+    [
+      3400,
+      4700
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      1800,
+      3400
+    ],
+    [
+      4700,
+      null
+    ]
+  ],
+  "game_ids": [
+    "twitch-2892346472-g300",
+    "twitch-2892346472-g3400"
+  ],
+  "counts": {
+    "games": 2,
+    "fights": 17,
+    "others": 0
+  },
+  "validator": {
+    "ok": 6,
+    "skipped": {
+      "winner_null": 11
+    },
+    "rows": [
+      {
+        "line": 1,
+        "source": "twitch-2892346472-g300:2-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 2,
+        "source": "twitch-2892346472-g300:2-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 4,
+        "source": "twitch-2892346472-g300:3-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 6,
+        "source": "twitch-2892346472-g300:3-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 8,
+        "source": "twitch-2892346472-g300:4-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 9,
+        "source": "twitch-2892346472-g300:4-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 10,
+        "source": "twitch-2892346472-g3400:2-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 12,
+        "source": "twitch-2892346472-g3400:2-3",
+        "reason": "winner_null"
+      },
+      {
+        "line": 14,
+        "source": "twitch-2892346472-g3400:3-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 16,
+        "source": "twitch-2892346472-g3400:3-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 17,
+        "source": "twitch-2892346472-g3400:4-1",
+        "reason": "winner_null"
+      }
+    ]
+  }
+}

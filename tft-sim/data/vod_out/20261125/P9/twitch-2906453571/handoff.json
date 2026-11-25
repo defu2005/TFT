@@ -3,7 +3,7 @@
   "vod_id": "twitch-2906453571",
   "slot": "P9",
   "role": "primary",
-  "status": "done",
+  "status": "working",
   "covered_ranges_s": [
     [
       400,
@@ -27,11 +27,14 @@
     "twitch-2906453571-g600",
     "twitch-2906453571-g5000",
     "twitch-2906453571-g10000",
-    "twitch-2906453571-g16000"
+    "twitch-2906453571-g16000",
+    "twitch-2906453571-g2295",
+    "twitch-2906453571-g7100",
+    "twitch-2906453571-g8900"
   ],
   "counts": {
-    "games": 4,
-    "fights": 5,
+    "games": 7,
+    "fights": 53,
     "others": 0
   },
   "validator": {
@@ -42,5 +45,5 @@
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "VOD done; tiếp P9 VOD khác"
+  "remaining": "densify g600+g2295 from HUD; other games pending"
 }

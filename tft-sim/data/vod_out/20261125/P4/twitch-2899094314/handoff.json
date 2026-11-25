@@ -66,16 +66,16 @@
   ],
   "counts": {
     "games": 6,
-    "fights": 118,
+    "fights": 146,
     "others": 0
   },
   "validator": {
-    "ok": 1,
+    "ok": 55,
     "skipped": {
-      "winner_null": 117
+      "winner_null": 91
     }
   },
-  "needs_review": 101,
+  "needs_review": 91,
   "commit": null,
-  "remaining": "P4 densify: g0=12 g2085=12 g4750=16 g7200=4. Next g9000."
+  "remaining": "P4 densify: g0=12 g2085=12 g4750=16 g7200=15. Next g9000."
 }

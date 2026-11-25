@@ -1,0 +1,113 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2896531401",
+  "slot": "P10",
+  "role": "primary",
+  "status": "pending",
+  "covered_ranges_s": [
+    [
+      300,
+      1800
+    ],
+    [
+      2300,
+      3600
+    ],
+    [
+      4500,
+      5400
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      1800,
+      2300
+    ],
+    [
+      3600,
+      4500
+    ],
+    [
+      5400,
+      null
+    ]
+  ],
+  "game_ids": [
+    "twitch-2896531401-g300",
+    "twitch-2896531401-g2300",
+    "twitch-2896531401-g4700"
+  ],
+  "counts": {
+    "games": 3,
+    "fights": 21,
+    "others": 0
+  },
+  "validator": {
+    "ok": 9,
+    "skipped": {
+      "winner_null": 12
+    },
+    "rows": [
+      {
+        "line": 1,
+        "source": "twitch-2896531401-g300:2-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 3,
+        "source": "twitch-2896531401-g300:2-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 4,
+        "source": "twitch-2896531401-g300:3-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 6,
+        "source": "twitch-2896531401-g300:3-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 8,
+        "source": "twitch-2896531401-g300:4-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 9,
+        "source": "twitch-2896531401-g300:5-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 10,
+        "source": "twitch-2896531401-g2300:2-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 12,
+        "source": "twitch-2896531401-g2300:2-3",
+        "reason": "winner_null"
+      },
+      {
+        "line": 14,
+        "source": "twitch-2896531401-g2300:3-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 16,
+        "source": "twitch-2896531401-g4700:2-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 19,
+        "source": "twitch-2896531401-g4700:3-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 21,
+        "source": "twitch-2896531401-g4700:3-5",
+        "reason": "winner_null"
+      }
+    ]
+  }
+}

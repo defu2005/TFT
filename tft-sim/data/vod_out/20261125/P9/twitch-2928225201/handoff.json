@@ -71,7 +71,7 @@
   ],
   "counts": {
     "games": 7,
-    "fights": 23,
+    "fights": 58,
     "others": 0
   },
   "validator": {
@@ -129,5 +129,5 @@
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "densify g400 expanded; other games pending"
+  "remaining": "g2800 densified; g4500/7000/9000/12200/14000 pending"
 }
