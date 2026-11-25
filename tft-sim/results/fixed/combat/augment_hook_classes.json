@@ -1,0 +1,164 @@
+{
+ "total_hits": 70,
+ "timed_or_event": [
+  {
+   "id": "TFT6_Augment_SecondWind1",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT6_Augment_SecondWind2",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT9_Augment_Commander_Ascension",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT9_Augment_Commander_PartialAscension",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT_Augment_ArcaneViktory",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT_Augment_AwakenedSoul",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT_Augment_ClimbTheLadder1",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT_Augment_ClimbTheLadder2",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT_Augment_ClockworkAccelerator",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT_Augment_Corrosion",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT_Augment_FuriousBlows",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT9_Augment_HealingOrbsI",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT_Augment_ItemSpiritVisage",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT_Augment_MarksMan",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT_Augment_PlotArmor",
+   "approx_marked": false
+  },
+  {
+   "id": "TFT_Augment_SideEffects",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT_Augment_TheBaronsLair",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT_Augment_TwoTanky",
+   "approx_marked": false
+  },
+  {
+   "id": "TFT_Augment_ChargeTransfer1",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT_Augment_ChargeTransfer2",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT6_Augment_Electrocharge1",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT6_Augment_Electrocharge2",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT6_Augment_SunfireBoard",
+   "approx_marked": true
+  }
+ ],
+ "progression_across_rounds": [
+  {
+   "id": "TFT_Augment_EarlyLearning",
+   "approx_marked": false
+  },
+  {
+   "id": "TFT_Augment_Unforgotten",
+   "approx_marked": false
+  },
+  {
+   "id": "TFT_Augment_LateGameScaling",
+   "approx_marked": true
+  },
+  {
+   "id": "TFT_Augment_BodyguardTraining",
+   "approx_marked": false
+  },
+  {
+   "id": "TFT_Augment_NoScoutNoPivot",
+   "approx_marked": true
+  }
+ ],
+ "static_or_combat_start": [
+  "TFT10_Augment_CrashTestDummies",
+  "TFT10_Augment_LittleBuddies",
+  "TFT11_Augment_TinyButDeadly",
+  "TFT6_Augment_CyberneticImplants2",
+  "TFT6_Augment_CyberneticUplink2",
+  "TFT6_Augment_Distancing",
+  "TFT6_Augment_Distancing2",
+  "TFT6_Augment_Diversify1",
+  "TFT6_Augment_MakeshiftArmor1",
+  "TFT6_Augment_MakeshiftArmor2",
+  "TFT7_Augment_BestFriends1",
+  "TFT7_Augment_BestFriends2",
+  "TFT7_Augment_CursedCrown",
+  "TFT9_Augment_GreaterJeweledLotus",
+  "TFT9_Augment_JeweledLotus",
+  "TFT9_Augment_TonsOfStats",
+  "TFT9_Augment_YouHaveMyBow",
+  "TFT_Augment_BeltOverflow",
+  "TFT_Augment_BoxingLessons",
+  "TFT_Augment_BronzeForLife2",
+  "TFT_Augment_ComebackStory",
+  "TFT_Augment_FindYourCenter",
+  "TFT_Augment_GiantAndMighty",
+  "TFT_Augment_GlassCannonI",
+  "TFT_Augment_GlassCannonII",
+  "TFT_Augment_GroupHug1",
+  "TFT_Augment_GroupHug2",
+  "TFT_Augment_GuardbreakerSpirit",
+  "TFT_Augment_HoldTheLine",
+  "TFT_Augment_ItemGargoyleStoneplate",
+  "TFT_Augment_LegionOfThrees",
+  "TFT_Augment_Lineup",
+  "TFT_Augment_Misfits",
+  "TFT_Augment_Retribution",
+  "TFT_Augment_SweetTreats",
+  "TFT_Augment_SwordOverflow",
+  "TFT_Augment_TheDarkinBlade",
+  "TFT_Augment_Trifecta1",
+  "TFT_Augment_Trifecta2",
+  "TFT_Augment_TwinGuardians",
+  "TFT_Augment_WandOverflow",
+  "TFT_Augment_WeStickTogether"
+ ],
+ "rule": "T = mechanic inside a fight triggered by time, proc, event or every-N; P = effect that grows across rounds; S = others (static or combat-start conditional)"
+}

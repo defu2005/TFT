@@ -2,6 +2,7 @@
 Usage: python fidelity.py records.jsonl[.gz] [n_seeds=20] [seed0=0]
 Quy tac (co dinh, khong doi sau khi co du lieu):
   - Cham ban ghi label 'real', result.winner khac null, set 18 (muc 11.7). Ban ghi label khac 'real' lam dung ca file.
+  - Moi ban ghi duoc kiem trong try: exception nao cung thanh ly do bo qua (exception:<loai>), khong lam dung file.
   - Ban ghi hong bi BO QUA va dem theo ly do (skipped): json hong, schema, set khong ho tro, items null,
     vi tri, tuong la, winner null, dryrun-*.
   - Ten item khong co trong noi dung duoc dem (unknown_items); ban ghi van duoc cham.
@@ -30,8 +31,8 @@ set_content(18, _C18)  # Set 18 dung noi dung da alias (xem combat-public-data.m
 SUPPORTED_SETS = (18,)  # muc 11.7 chi ap dung cho Set 18
 MIN_GAMES = 30
 BOOT = 2000
-PRIMARY = dict(ability="generic", items=True, augments=True, traits=True, emblems=False)
-SECONDARY = dict(PRIMARY, emblems=True)
+PRIMARY = dict(ability="generic", items=True, augments=True, traits=True, emblems=False, traits_table=False)
+SECONDARY = dict(PRIMARY, emblems=True, traits_table=True)  # muc 11.9: emblem + bang trait
 
 
 def strength(side: dict, content) -> float:
@@ -57,12 +58,41 @@ def credit(p: float, y: float) -> float:
     return 1.0 if (p > 0.5) == (y == 1.0) else 0.0
 
 
+def _validate(r, allow_dryrun=False) -> str | None:
+    """Ly do bo qua (None neu hop le). Moi kiem tra nam o day, khong de exception lan ra ngoai."""
+    if "source" not in r:
+        return "source_thieu"
+    src = str(r["source"])
+    if src.startswith("dryrun-") and not allow_dryrun:
+        return "dryrun"
+    if ":" not in src or not src.split(":")[0]:
+        return "source_sin_game"  # game = phan truoc ':'; thieu thi moi fight thanh mot cum, CI sai
+    if r.get("set") not in SUPPORTED_SETS:
+        return f"set_khong_ho_tro:{r.get('set')}"  # set 17 va 19 nam ngoai muc 11.7
+    try:
+        F.check_record(r)
+    except (ValueError, KeyError, TypeError) as e:
+        return f"schema:{e}"[:90]
+    if r.get("result", {}).get("winner") is None:
+        return "winner_null"
+    for side in ("a", "b"):
+        if r[side].get("augments") is None and "augments" in r[side]:
+            return "augments_null"
+        for u in r[side]["units"]:
+            if u.get("items") is None and "items" in u:
+                return "items_null"
+            if not isinstance(u.get("star"), int) or isinstance(u.get("star"), bool):
+                return "star_khong_hop_le"
+            if u["api"] not in F._CONTENT[r["set"]].champions:
+                return f"tuong_la:{u['api']}"
+    return None
+
+
 def read_real(path, allow_dryrun=False):
     """Doc tung dong. Tra ve (ban ghi cham duoc, Counter ly do bo qua, Counter item la)."""
     good, skipped, unk = [], Counter(), Counter()
     p = Path(path)
-    text = (gzip.open(p, "rt", encoding="utf-8").read() if p.suffix == ".gz"
-            else p.read_text(encoding="utf-8"))
+    text = (gzip.open(p, "rt", encoding="utf-8").read() if p.suffix == ".gz" else p.read_text(encoding="utf-8"))
     for line in text.splitlines():
         if not line.strip():
             continue
@@ -76,34 +106,18 @@ def read_real(path, allow_dryrun=False):
             continue
         if r.get("label") != "real":
             raise SystemExit(f"tu choi: co ban ghi label={r.get('label')} trong file do luong")
-        if str(r.get("source", "")).startswith("dryrun-") and not allow_dryrun:
-            skipped["dryrun"] += 1
-            continue
-        if r.get("set") not in SUPPORTED_SETS:
-            skipped[f"set_khong_ho_tro:{r.get('set')}"] += 1  # set 17 va set 19 nam ngoai muc 11.7
-            continue
         try:
-            check_ok = F.check_record(r)  # noqa: F841
-        except (ValueError, KeyError, TypeError) as e:
-            skipped[f"schema:{e}"[:90]] += 1
+            reason = _validate(r, allow_dryrun)
+        except Exception as e:  # bat moi loi con lai theo tung ban ghi
+            reason = f"exception:{type(e).__name__}"
+        if reason:
+            skipped[reason] += 1
             continue
-        if r.get("result", {}).get("winner") is None:
-            skipped["winner_null"] += 1
-            continue
-        content = F._CONTENT[r["set"]]
-        bad = None
         for side in ("a", "b"):
             for u in r[side]["units"]:
-                if u.get("items") is None and "items" in u:
-                    bad = "items_null"
-                if u["api"] not in content.champions:
-                    bad = f"tuong_la:{u['api']}"
                 for it in (u.get("items") or []):
-                    if it not in content.items:
+                    if it not in F._CONTENT[r["set"]].items:
                         unk[it] += 1
-        if bad:
-            skipped[bad] += 1
-            continue
         good.append(r)
     return good, skipped, unk
 
@@ -114,7 +128,7 @@ def _game(r) -> str:
 
 def _cfg_p(rec, cfg, n, seed0):
     return predict_win(rec, n, cfg["ability"], cfg["items"], seed0, cfg["augments"], cfg["traits"],
-                       False, cfg["emblems"])["p_a"]
+                       False, cfg["emblems"], cfg.get("traits_table", False))["p_a"]
 
 
 def _boot_mean_diff(games, per_fight_diff, rng):
@@ -131,6 +145,14 @@ def _boot_mean_diff(games, per_fight_diff, rng):
     return float(np.percentile(vals, 2.5)), float(np.percentile(vals, 97.5))
 
 
+def _commit(path) -> str:
+    import subprocess
+    try:
+        return subprocess.check_output(["git", "-C", str(path), "rev-parse", "HEAD"], text=True).strip()
+    except Exception:
+        return "unknown"
+
+
 def score(path, n=20, seed0=0, allow_dryrun=False):
     good, skipped, unk = read_real(path, allow_dryrun)
     if not good:
@@ -141,8 +163,8 @@ def score(path, n=20, seed0=0, allow_dryrun=False):
         try:
             p1 = _cfg_p(r, PRIMARY, n, seed0)
             p2 = _cfg_p(r, SECONDARY, n, seed0)
-        except ValueError as e:
-            skipped[f"predict:{str(e)[:60]}"] += 1
+        except Exception as e:
+            skipped[f"predict:{type(e).__name__}:{str(e)[:50]}"] += 1
             continue
         y = 1.0 if r["result"]["winner"] == 0 else 0.0
         rule = rule_credit(strength(r["a"], F._CONTENT[r["set"]]), strength(r["b"], F._CONTENT[r["set"]]), y)
@@ -165,7 +187,8 @@ def score(path, n=20, seed0=0, allow_dryrun=False):
             return "inconclusive"
         return "PASS" if lo_ > 0 else ("FAIL" if hi_ < 0 else "chua_ket_luan")
     return dict(base, fights=len(rows), games=G, inconclusive=inconclusive,
-                n_seeds=n, seed0=seed0,
+                n_seeds=n, seed0=seed0, repo_commit=_commit(Path(__file__).resolve().parents[2]),
+                engine_commit=_commit(Path("/root/work/tft_goat")),
                 share_side_a_won=round(float(y.mean()), 4),
                 primary={"config": PRIMARY, "accuracy_credit": round(float(c1.mean()), 4),
                          "brier": round(float(np.mean((p1 - y) ** 2)), 4)},

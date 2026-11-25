@@ -51,6 +51,66 @@ def emblem_trait_of(item_api: str, content):
     return base if any(t.name == base for t in content.traits.values()) else None
 
 
+# Bang trait Set 18 (muc 11.7, khoa 2026-11-25). Chi hieu ung STAT TINH, khong dieu kien, khong theo thoi gian.
+# Moi muc: {khoa_bien_CDragon: (thuoc_tinh, pham_vi)}. pham_vi: 'team' (ca doi) hoac 'members' (tuong thuoc trait).
+# Gia tri lay tu effect cua moc dat duoc (min_units). Khoa bang hash ({...}) la SUY RA tu thu tu/gia tri,
+# chua xac minh boi mo ta; ghi 'suy_ra' trong bang de khong bi coi la da xac minh.
+TRAIT_TABLE = {
+    "DA_18_Executioner": {"CritChance": ("crit", "members", "named")},            # Executioner moc 2: +15% crit (ten khoa)
+    "DA_18_Brawler": {"{da2472a7}": ("hp", "team", "suy_ra"),                     # BrawlerTeamHealth 120 phang (ca doi)
+                      "{f1ed73eb}": ("hp", "members", "suy_ra")},                  # BrawlerHealthPercent 25/40/65% (thanh vien)
+    "DA_Juggernaut18": {"{6eab9c5e}": ("dr", "team", "suy_ra"),                   # TeamDurability (ca doi)
+                        "{f8c73243}": ("dr", "members", "suy_ra")},                # JuggernautDurability (thanh vien)
+}
+TABLE_MAPPED = sum(len(v) for v in TRAIT_TABLE.values())
+
+
+def _counts(units, content, with_emblem: bool) -> dict:
+    """So diem trait: tuong duy nhat + holder emblem (khi with_emblem)."""
+    held = [{t for api in u.item_apis if (t := emblem_trait_of(api, content))} if with_emblem else set() for u in units]
+    cnt = dict(_trait_counts([u.champion_api for u in units], content))
+    for u, hs in zip(units, held):
+        own = content.champions[u.champion_api].traits if u.champion_api in content.champions else ()
+        for t in hs:
+            if t not in own:
+                cnt[t] = cnt.get(t, 0) + 1
+    return cnt, held
+
+
+def _table_extra(units, content, with_emblem: bool) -> None:
+    """Ap dung TRAIT_TABLE sau khi engine (va emblem) da chay."""
+    if not units:
+        return
+    cnt, held = _counts(units, content, with_emblem)
+    by_name = {t.name: t for t in content.traits.values()}
+    for api, mapping in TRAIT_TABLE.items():
+        trait = content.traits.get(api)
+        if trait is None:
+            continue
+        c = cnt.get(trait.name, 0)
+        tier = sum(1 for bp in trait.breakpoints if c >= bp)
+        if tier == 0:
+            continue
+        effs = sorted(trait.effects, key=lambda e: e.min_units)
+        cur = min(tier - 1, len(effs) - 1)
+        members = [u for u, hs in zip(units, held)
+                   if trait.name in (content.champions[u.champion_api].traits if u.champion_api in content.champions else ())
+                   or trait.name in hs]
+        for key, (attr, scope, _status) in mapping.items():
+            # Hieu ung cong don: lay gia tri cua moc gan nhat <= moc hien tai co chua khoa nay.
+            src = next((effs[i].variables[key] for i in range(cur, -1, -1) if key in effs[i].variables), None)
+            if src is None:
+                continue
+            val = float(src)
+            if val == 0:
+                continue
+            for u in (units if scope == "team" else members):
+                if attr == "crit":
+                    u.crit_chance += val
+                else:
+                    TE._apply_stat(u, attr, val)
+
+
 def _emblem_traits(units, content, bonus_units: int = 0) -> None:
     """Giong TE.apply_team_traits, cong them: moi tuong giu emblem cua trait T (khong co T tu nhien)
     tinh them 1 diem T, va nhan buff cua T nhu mot thanh vien."""
@@ -237,8 +297,18 @@ def coverage(record: dict) -> dict:
     return out
 
 
+def _set18_traits(units, content, bonus_units: int = 0, *, emblems: bool = False, table: bool = False) -> None:
+    if emblems:
+        _emblem_traits(units, content, bonus_units)
+    else:
+        _orig_apply_team_traits(units, content, bonus_units=bonus_units)
+    if table:
+        _table_extra(units, content, emblems)
+
+
 def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = True, seed0: int = 0,
-                augments: bool = True, traits: bool = True, novars: bool = False, emblems: bool = False) -> dict:
+                augments: bool = True, traits: bool = True, novars: bool = False, emblems: bool = False,
+                traits_table: bool = False) -> dict:
     """Xac suat A thang tu n lan chay engine (RNG seed0..seed0+n-1). augments=False: bo augment."""
     if record["set"] == 18 and ability == "hand":
         raise ValueError("Set 18 chua co logic ability viet tay: dung 'generic' hoac 'none'")
@@ -252,12 +322,13 @@ def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = 
     content = _CONTENT[record["set"]]
     wins = [0, 0, 0]
     skip = record["set"] == 18
-    if emblems and record["set"] != 18:
-        raise ValueError("emblems chi cho Set 18")
+    if (emblems or traits_table) and record["set"] != 18:
+        raise ValueError("emblems va traits_table chi cho Set 18")
     if skip:
         TE.attrs_for = _attrs_for_set18
-    if emblems:
-        S.apply_team_traits = _emblem_traits
+    if emblems or traits_table:
+        S.apply_team_traits = lambda u, c, bonus_units=0: _set18_traits(
+            u, c, bonus_units, emblems=emblems, table=traits_table)
     try:
         with fight_context(ability, pos, content, traits, novars):
             for i in range(n):
@@ -268,4 +339,4 @@ def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = 
         TE.attrs_for = _orig_attrs_for
         S.apply_team_traits = _orig_apply_team_traits
     return {"p_a": wins[0] / n, "a": wins[0], "b": wins[1], "draw": wins[2], "n": n,
-            "ability": ability, "items": items, "emblems": emblems, "coverage": cov}
+            "ability": ability, "items": items, "emblems": emblems, "traits_table": traits_table, "coverage": cov}

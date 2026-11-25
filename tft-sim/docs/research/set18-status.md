@@ -14,6 +14,7 @@ Cập nhật: 2026-11-25. Mọi con số là của sim/engine, không phải tr�
 
 ## Trait (36 trait trong CDragon)
 - 11 trait có ánh xạ stat (`generic_stat_applied`), 25 trait không có ánh xạ stat (`no_stat_mapping`). Nguồn: `results/fixed/combat/coverage_items_traits.json`.
+- Bảng trait (mục 11.11): đã ánh xạ 3 trên 25 (Executioner xác minh; Brawler và Juggernaut suy ra từ khóa hash, chưa xác minh). Phủ 19% bộ (tướng, trait chưa ánh xạ) trong mẫu. Sau bảng có cờ `traits_table`, mặc định tắt.
 - Vanguard `MaxHealthShield` và Spellweaver `APPerCast` bị bỏ trong đường Set 18 (`_SET18_BAD_KEYS` trong `fight.py`). Selftest mục 9 và mục 10e.
 - 25 trait chưa ánh xạ: danh sách và thứ tự ở mục 11.5.
 
@@ -28,8 +29,8 @@ Cập nhật: 2026-11-25. Mọi con số là của sim/engine, không phải tr�
 - Tên item phía client của Set 18 (`DA_*` hay `TFT_Item_*`) chưa biết. Bản ghi thật có thể dùng tên nào cũng được; tên lạ được đếm trong `unknown_items`.
 
 ## Augment
-- 594 augment Set 18. 70 trùng id với hook của Set 17, và nội dung CDragon của 70 id này giống hệt Set 17 (mục 11.8 của `docs/model-plan.md`). Không có id nào bị loại.
-- Hook là xấp xỉ: 46 trên 70 có cơ chế theo thời gian, theo đòn hoặc sự kiện, và hook xấp xỉ nhiều trong số này (39 được đánh dấu "approx"), 7 không được đánh dấu.
+- 594 augment Set 18. 70 trùng id với hook của Set 17. Mọi id đều có trong danh sách Set 18 và mọi khóa biến hook đọc đều có mặt (mục 11.8 của `docs/model-plan.md`). So sánh nội dung hai set không có sức phân biệt, vì cùng một dòng dữ liệu snapshot.
+- Phân loại thủ công: 23 id cơ chế theo thời gian/đòn/sự kiện (T), 5 id tích lũy qua vòng (P), 42 id còn lại (S). Hook của T và P là xấp xỉ; 5 trong số này không được đánh dấu xấp xỉ (PlotArmor, TwoTanky, EarlyLearning, Unforgotten, BodyguardTraining).
 - Trong mẫu sim: 1008/3616 slot augment (27,9%) chạy hook. Con số này chỉ đúng với mẫu sim.
 
 ## Quy ước engine đã xác định
@@ -60,5 +61,6 @@ Lưu ý: `emblem_sensitivity.py` đọc file `.jsonl`, không đọc `.gz`. Cầ
 
 Tái lập dữ liệu thô:
 - `pairs17_v2.jsonl` (Set 17, 67122 cặp): `python3 study17.py collect 288000 288100 pairs17_v2.jsonl` (từ `scripts/combat`, cùng `PYTHONPATH`). Ledger 288000–288099.
-- `pairs18_alias.jsonl` (6839 cặp Set 18 đã alias): KHÔNG có trong repo. Script sinh nằm trong thư mục scratchpad của phiên, chưa commit. Cần viết lại trước khi tái lập đầy đủ. Mẫu `pairs18_sample.jsonl.gz` (1000 cặp) đã commit để tái lập các số trong mục 11.5 và 11.9.
+- `pairs18_alias.jsonl` (6839 cặp Set 18 đã alias): sinh bởi `python3 alias18.py collect 288100 288110 pairs18_alias.jsonl` (từ `scripts/combat`). Đã kiểm tra: chạy lại lobby 288100 cho ra 629 dòng trùng khớp từng dòng với file đã lưu. File không commit vì kích thước (7 MB); lệnh trên tái lập. Mẫu `pairs18_sample.jsonl.gz` (1000 cặp, lấy từ file này) đã commit.
+- Tên và api: `data/set18_names.json`. Liên kết từ `docs/agents/requests/20261125-sim-to-hud-state-fields.md`.
 - Side bias (mục 11.9): 300 cặp mẫu, bootstrap theo lobby, kết quả: trung bình p(a,b)+p(b,a)−1 = +0,0023, CI95 [−0,0037; +0,0079]. CI chứa 0, nên không bắt buộc chấm cả hai hướng.

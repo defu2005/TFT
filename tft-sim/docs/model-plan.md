@@ -363,14 +363,17 @@ Lưu ý khi đọc: flip nhỏ có thể do trait chưa có ánh xạ stat (xem 
 - Chưa có bản ghi thật: không có kết quả nào được báo cáo.
 - Augment (11.8): không loại id nào; giữ hook như đã khóa. Cấu hình chính dùng augments bật, và phải ghi chú sai số xấp xỉ của hook.
 
-### 11.8 Augment Set 18 trùng id với hook Set 17 (đã kiểm tra 2026-11-25)
-- 70 trên 594 augment Set 18 có id trùng với hook trong `AUGMENT_REGISTRY` (Set 17).
-- So sánh nội dung CDragon của 70 id này giữa Set 17 và Set 18 (tên, mô tả, bảng effects): cả 70 đều giống hệt. Không có id nào khác nội dung. Đây là cùng một augment dùng lại, không phải hook Set 17 chạy nhầm.
-- Mọi biến số mà hook đọc đều có trong effects của Set 18 (trừ `MissingHealth`, hook có đọc cả `Missinghealth` và khóa này có trong effects; không thiếu).
-- Quyết định: giữ cả 70 hook, như quy tắc đã khóa. Không có id nào bị loại.
-- Điểm yếu vẫn còn: 46 trên 70 mô tả có cơ chế theo thời gian, theo đòn hoặc theo sự kiện (ví dụ Clockwork Accelerator tăng tốc đánh mỗi `frequency` giây, Electrocharge proc theo số đòn nhận). Hook của 39 trong số đó được đánh dấu "approx" và xấp xỉ một lần lúc đầu trận. 7 augment không được đánh dấu nhưng cũng có cơ chế theo thời gian hoặc sự kiện mà hook không mô phỏng: PlotArmor, TwoTanky, Unforgotten, EarlyLearning, TinyButDeadly, TonsOfStats, YouHaveMyBow. Danh sách đầy đủ: `results/fixed/combat/augment_hook_periodic_flags.json`.
-- Hệ quả: đây là sai số xấp xỉ có sẵn của engine Set 17, áp dụng cho Set 18 với cùng mức chính xác. Không phải lỗi gán nhầm. Cần ghi rõ khi báo cáo kết quả Phase 4.
-- Chỉ số: 1008/3616 slot augment trong mẫu sim (27,9%) chạy hook. Con số này tính trên mẫu sim, không phải tần suất augment thật.
+### 11.8 Augment Set 18 trùng id với hook Set 17 (đã kiểm tra lại 2026-11-25)
+- 70 trên 594 augment Set 18 có id trùng với hook trong `AUGMENT_REGISTRY` (Set 17). Mọi id này có mặt trong danh sách augment Set 18 và mọi khóa biến mà hook đọc đều có trong effects của Set 18 (trừ `MissingHealth`, hook có đọc cả `Missinghealth`, khóa này có trong effects).
+- Lưu ý khi đọc: so sánh nội dung Set 17 và Set 18 KHÔNG có sức phân biệt. Cả hai bộ được nạp từ cùng một bảng item toàn cục trong snapshot 18.7 (`tft_goat/data/content.py`), nên so sánh "giống hệt" chỉ chứng minh cùng một dòng dữ liệu, không chứng minh cơ chế giống nhau.
+- Phân loại thủ công 70 augment (đọc mô tả đầy đủ, không dùng regex):
+  - T, cơ chế theo thời gian, theo đòn hoặc theo sự kiện trong trận: 23 id. Trong đó 21 có hook đánh dấu xấp xỉ, 2 không đánh dấu (PlotArmor, TwoTanky).
+  - P, cơ chế tích lũy qua các vòng: 5 id. Trong đó 2 có hook đánh dấu xấp xỉ, 3 không đánh dấu (EarlyLearning, Unforgotten, BodyguardTraining).
+  - S, còn lại (stat tĩnh hoặc điều kiện lúc đầu trận): 42 id.
+- Con số 46 trong bản trước là sai: regex khớp nhầm "Attack Speed", "Attack Damage" và "for every", và đưa vào cả augment tĩnh (Tiny But Deadly, Tons of Stats, You Have My Bow).
+- Quyết định: giữ cả 70 hook, không loại id nào. Hook T và P là xấp xỉ theo nghĩa cũ của Set 17. Cấu hình chính của Phase 4 bật augments và phải ghi rõ sai số này khi báo cáo.
+- Dữ liệu phân loại: `results/fixed/combat/augment_hook_classes.json`.
+- Chỉ số: 1008/3616 slot augment trong mẫu sim (27,9%) chạy hook. Con số này chỉ đúng với mẫu sim.
 
 ### 11.9 Khóa bổ sung cho Phase 4 (2026-11-25, trước khi có dữ liệu thật)
 - Công thức chấm: đúng phía = 1; sai phía = 0; p = 0,5 chính xác, hoặc hai bên bằng sức mạnh, = 0,5 điểm.
@@ -379,3 +382,22 @@ Lưu ý khi đọc: flip nhỏ có thể do trait chưa có ánh xạ stat (xem 
 - Thiên vị phía (side bias): đo trên 300 cặp mẫu sim. Nếu CI95 của trung bình (p(a,b) + p(b,a) − 1) không chứa 0, thì khi có dữ liệu thật phải chấm cả hai hướng và lấy trung bình. Kết quả đo sẽ ghi bên dưới.
 - Chỉ số kèm theo: số fight, số game, tỷ lệ bên a thắng, trung bình điểm của mỗi cấu hình, chênh lệch với quy tắc sức mạnh, chênh lệch chính − phụ (cấu hình phụ = emblem bật).
 - Lưu ý: game id lấy từ phần trước `:` của `source`.
+
+### 11.10 Sửa 11.7 và bảng trait (2026-11-25)
+- Cấu hình phụ (secondary) = emblem BẬT + bảng trait BẬT (`traits_table=True`). Cấu hình chính không đổi.
+- Hiệu phụ − chính trên dữ liệu thật là phép thử của bảng trait cùng emblem. Không chạy thêm sim để chọn bảng.
+- Cả hai cấu hình đóng băng tại commit repo và commit engine ở lần đầu tiên bản ghi thật được chấm. Scorer in `repo_commit` và `engine_commit` trong đầu ra.
+- Đầu ra của scorer: số fight, số game, tỷ lệ bên a thắng, độ chính xác (có điểm 0,5 cho hòa), Brier, chênh lệch với quy tắc sức mạnh, CI theo game, và trạng thái (inconclusive khi dưới 30 game).
+
+### 11.11 Bảng trait Set 18 (phạm vi có giới hạn, 2026-11-25)
+- Đã ánh xạ 3 trên 25 trait không có stat (`TRAIT_TABLE` trong `fight.py`):
+  - Executioner (khóa `CritChance`, tên khóa có sẵn, xác minh): +15% crit cho thành viên, cộng dồn qua các mốc. Đã kiểm tra mốc 2 và mốc 3 trong selftest.
+  - Brawler (khóa hash, SUY RA từ thứ tự và giá trị, chưa xác minh bằng mô tả): 120 HP phẳng cho cả đội; 25/40/65% máu tối đa cho thành viên.
+  - Juggernaut (khóa hash, SUY RA): độ bền (dr) cho cả đội và cho thành viên.
+- Chưa ánh xạ 22 trait, lý do:
+  - Hiệu ứng có điều kiện hoặc theo đòn/sự kiện: Ravager (omnivamp, sát thương kép dưới 50% máu), Adaptor, Rival, Rapidfire (cộng dồn theo đòn), Inferno (đốt theo giây), Riftbeast (tăng mỗi 5 giây), Eclipse (theo thời gian, 0 thành viên).
+  - Hiệu ứng engine không có thuộc tính: Coven (kinh tế), Flora Fatalis (mana, hồi máu khi hạ gục), Invoker (hồi mana), Caustic (giảm kháng), Solar (khiên, sát thương phép bổ sung).
+  - Triệu hồi, vật thể hoặc khác: Elderwood (cây), Greenfather (hạt giống), Summoner (triệu hồi), Primal (chọn lựa, không biến số).
+  - Không có stat: Avatar, Bounty Seeker, Apex Predator, Emerald Aspect, Old Growth (tích lũy theo hạ gục), Defender (giá trị không rõ đơn vị, để lại).
+- Phủ: trong 1000 cặp mẫu, 16394 bộ (tướng, trait chưa ánh xạ) thì 3110 (19%) được bảng xử lý. Riftbeast, Elderwood, Ravager, Defender, Coven là các trait nhiều thành viên nhất và chưa được ánh xạ.
+- Cờ "suy_ra" trên khóa hash: phải xác minh bằng mô tả hoặc số liệu tooltip trước khi tin vào kết quả Brawler và Juggernaut.

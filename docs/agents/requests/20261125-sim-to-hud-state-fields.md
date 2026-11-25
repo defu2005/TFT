@@ -52,3 +52,9 @@ Thứ tự ưu tiên: (a) bàn của người được quay, (b) bàn đối th�
 
 - Với Set 18, cùng một tên trang bị có thể có hai apiName: `DA_*` (công thức ghép, `effects` rỗng trong CDragon) và `TFT_Item_*` (có hiệu ứng). Chưa biết client gửi apiName nào trong dữ liệu chụp thật.
 - Đề nghị: bản ghi trận phải ghi đúng apiName client gửi, và kèm trường tên hiển thị để đối chiếu. Chưa quyết định ánh xạ nào được dùng trong mô phỏng.
+
+
+## Danh sách tên Set 18 (bổ sung 2026-11-25)
+- File: `tft-sim/data/set18_names.json` (91 tướng, 776 item gồm cả `DA_*` và `TFT_Item_*` có twin, 594 augment, 36 trait). Dùng `api` làm khóa; tên hiển thị là `name`.
+- Trường `twin_tft_item` cho biết item `DA_*` tương ứng với `TFT_Item_*` nào (37 cặp alias). Tên phía client Set 18 vẫn chưa biết; nếu client ghi `TFT_Item_*` thì đối chiếu qua trường này.
+- Định dạng dữ liệu giả định: JSONL fight-v1 (mỗi dòng là một fight), `source` dạng `game:round`, `api` lấy từ file tên.

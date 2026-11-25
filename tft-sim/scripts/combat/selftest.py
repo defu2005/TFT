@@ -76,7 +76,7 @@ import json, tempfile, fidelity as FD
 tmp = Path(tempfile.mkdtemp()) / "real.jsonl"
 rs = []
 for r in fx[:5]:
-    rr = json.loads(json.dumps(r)); rr["label"] = "real"; rr["result"] = {"winner": 0}; rs.append(rr)
+    rr = json.loads(json.dumps(r)); rr["label"] = "real"; rr["result"] = {"winner": 0}; rr["source"] = "selftest:1-1"; rs.append(rr)
 tmp.write_text("\n".join(json.dumps(x) for x in rs), encoding="utf-8")
 out = FD.score(str(tmp), 5, 0, allow_dryrun=True)
 print("fidelity set17 (ngoai muc 11.7)", {k: out.get(k) for k in ("fights", "skipped")})
@@ -222,7 +222,7 @@ ok11 &= sk.get("winner_null") == 1 and sk.get("tuong_la:TFT_NotAChampion_Dryrun"
 ok11 &= any(k.startswith("schema:") for k in sk) and sk.get("set_khong_ho_tro:19") == 1 and sk.get("items_null") == 1
 ok11 &= out11["unknown_items"].get("TFT_Item_NoSuchItem_Dryrun") == 1
 out11b = FD2.score(str(fx_path), 5, 0)  # mac dinh: dryrun bi bo
-ok11 &= out11b["fights"] == 0 and out11b["skipped"].get("dryrun") == 10
+ok11 &= out11b["fights"] == 0 and out11b["skipped"].get("dryrun") == 13
 # quy tac suc manh tinh tay: 1 tuong gia 1 (sao 1) + 1 tuong gia 5 (sao 2) = 1 + 15 = 16 ; doi b: gia 4 sao 1 = 4
 c1 = next(a for a, c in c18.champions.items() if c.cost == 1 and c.stats)
 c5 = next(a for a, c in c18.champions.items() if c.cost == 5 and c.stats)
@@ -235,4 +235,53 @@ ok11 &= FD2.rule_credit(4.0, 4.0, 1.0) == 0.5 and FD2.credit(0.5, 0.0) == 0.5
 print("strength rule hand check", FD2.strength(sa, c18), FD2.strength(sb, c18))
 ok &= ok11
 print("fidelity block", "PASS" if ok11 else "FAIL")
+# 12) Bang trait Set 18 (muc 11.7): moi gia tri ap dung phai khop CDragon; ngoai bang khong doi
+import gzip as _gz  # noqa: E402
+F.set_content(18, c18)
+ok12 = True
+exe = c18.traits["DA_18_Executioner"]
+eff2 = sorted(exe.effects, key=lambda e: e.min_units)[0]
+ok12 &= abs(eff2.variables["CritChance"] - 0.15) < 1e-6  # khop CDragon: Executioner moc 2 = 15%
+ok12 &= F.TRAIT_TABLE["DA_18_Executioner"]["CritChance"][0] == "crit"
+brw = c18.traits["DA_18_Brawler"]
+eb2 = sorted(brw.effects, key=lambda e: e.min_units)[0]
+ok12 &= abs(eb2.variables["{da2472a7}"] - 120.0) < 1e-6 and abs(eb2.variables["{f1ed73eb}"] - 0.25) < 1e-6
+# Executioner x2 (tier 1): crit tang 0.15 cho ca hai thanh vien (ca hai la Executioner)
+ex = [a for a, c in c18.champions.items() if "Executioner" in c.traits and c.stats][:2]
+if len(ex) == 2:
+    bx = [BU(a, 1, on_board=True) for a in ex]
+    S9.apply_team_traits = lambda u, c, bonus_units=0: F._set18_traits(u, c, bonus_units, emblems=False, table=True)
+    cr = [u.crit_chance for u in S9._build_team(bx, 0, c18, 0)]
+    S9.apply_team_traits = F._orig_apply_team_traits
+    cr0 = [u.crit_chance for u in S9._build_team(bx, 0, c18, 0)]
+    print("executioner crit table", cr0, "->", cr)
+    ex3 = [a for a, c in c18.champions.items() if "Executioner" in c.traits and c.stats][:3]
+    if len(ex3) == 3:  # moc 3 khong co khoa CritChance: crit van phai con +0.15 (cong don)
+        b3 = [BU(a, 1, on_board=True) for a in ex3]
+        S9.apply_team_traits = lambda u, c, bonus_units=0: F._set18_traits(u, c, bonus_units, emblems=False, table=True)
+        c3 = [u.crit_chance for u in S9._build_team(b3, 0, c18, 0)]
+        S9.apply_team_traits = F._orig_apply_team_traits
+        c30 = [u.crit_chance for u in S9._build_team(b3, 0, c18, 0)]
+        print("executioner crit moc 3", c30, "->", c3)
+        ok12 &= all(abs((a - b) - 0.15) < 1e-6 for a, b in zip(c3, c30))
+    ok12 &= all(abs((a - b) - 0.15) < 1e-6 for a, b in zip(cr, cr0))
+# Brawler: doi gom 120 HP phang cho ca doi (tier 1 = 2 Brawler)
+bw = [a for a, c in c18.champions.items() if "Brawler" in c.traits and c.stats][:2]
+other = [a for a, c in c18.champions.items() if "Brawler" not in c.traits and c.stats][:1]
+if len(bw) == 2 and other:
+    bb12 = [BU(a, 1, on_board=True) for a in bw + other]
+    S9.apply_team_traits = lambda u, c, bonus_units=0: F._set18_traits(u, c, bonus_units, emblems=False, table=True)
+    h_t = [u.max_hp for u in S9._build_team(bb12, 0, c18, 0)]
+    S9.apply_team_traits = F._orig_apply_team_traits
+    h_0 = [u.max_hp for u in S9._build_team(bb12, 0, c18, 0)]
+    print("brawler hp table", h_0, "->", h_t)
+    ok12 &= h_t[2] - h_0[2] >= 120 - 1e-6  # tuong khong phai Brawler van nhan 120 HP phang (ca doi)
+# Predict_win: bang tat thi khong doi, bat thi doi duoc; patch duoc khoi phuc
+rec12 = fixture(names18, 18)
+x0 = F.predict_win(rec12, 3, "generic", True, 0, traits_table=False)
+x1 = F.predict_win(rec12, 3, "generic", True, 0, traits_table=True)
+ok12 &= F.S.apply_team_traits is F._orig_apply_team_traits
+print("table predict_win off/on", (x0["a"], x0["b"]), (x1["a"], x1["b"]), "mapped", F.TABLE_MAPPED)
+ok &= ok12
+print("trait table block", "PASS" if ok12 else "FAIL")
 print("SELFTEST", "PASS" if ok else "FAIL")
