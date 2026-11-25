@@ -1,15 +1,9 @@
 {
- "ok": 75,
+ "ok": 76,
  "skipped": {
-  "tuong_la:None": 1,
   "winner_null": 1
  },
  "rows": [
-  {
-   "line": 72,
-   "source": "twitch-2895864677-g2410:4-6",
-   "reason": "tuong_la:None"
-  },
   {
    "line": 77,
    "source": "twitch-2895864677-g2410:5-6",
