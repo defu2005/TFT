@@ -3,43 +3,61 @@
   "vod_id": "twitch-2907504785",
   "slot": "P5",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       0,
       2100
     ],
     [
-      2700,
-      4200
-    ]
-  ],
-  "remaining_ranges_s": [
-    [
       2100,
       2700
     ],
     [
+      2700,
+      4200
+    ],
+    [
       4200,
-      99999
+      7000
+    ],
+    [
+      7000,
+      10000
+    ],
+    [
+      10000,
+      14000
+    ],
+    [
+      14000,
+      18000
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2907504785-g0",
-    "twitch-2907504785-g2700"
+    "twitch-2907504785-g2700",
+    "twitch-2907504785-g2100",
+    "twitch-2907504785-g4200",
+    "twitch-2907504785-g7000",
+    "twitch-2907504785-g10000",
+    "twitch-2907504785-g14000"
   ],
   "counts": {
-    "games": 2,
-    "fights": 3,
-    "others": 3
+    "games": 7,
+    "fights": 98,
+    "others": 98
+  },
+  "notes": "Densify thin stub+rem → 7g/98f; agent bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
+  "claim": {
+    "agent": "bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
+    "claimed_at": "2026-11-25T19:22:19Z"
   },
   "validator": {
-    "ok": 0,
+    "ok": 83,
     "skipped": {
-      "winner_null": 3
+      "winner_null": 15
     }
-  },
-  "needs_review": 3,
-  "commit": null,
-  "remaining": "Volume stub; densify-full remaining ranked PvP. Skip set19/TPC."
+  }
 }

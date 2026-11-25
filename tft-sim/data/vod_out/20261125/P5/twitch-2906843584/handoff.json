@@ -1,0 +1,89 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2906843584",
+  "slot": "P5",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      900,
+      2800
+    ],
+    [
+      2800,
+      5000
+    ],
+    [
+      5000,
+      7500
+    ],
+    [
+      7500,
+      10000
+    ],
+    [
+      10000,
+      13000
+    ],
+    [
+      13000,
+      16000
+    ],
+    [
+      16000,
+      18500
+    ],
+    [
+      19000,
+      22000
+    ],
+    [
+      22000,
+      25000
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      0,
+      900
+    ],
+    [
+      24000,
+      26790
+    ]
+  ],
+  "game_ids": [
+    "twitch-2906843584-g900",
+    "twitch-2906843584-g2800",
+    "twitch-2906843584-g5000",
+    "twitch-2906843584-g7500",
+    "twitch-2906843584-g10000",
+    "twitch-2906843584-g13000",
+    "twitch-2906843584-g16000",
+    "twitch-2906843584-g19000",
+    "twitch-2906843584-g22000"
+  ],
+  "counts": {
+    "games": 9,
+    "fights": 162,
+    "others": 162
+  },
+  "notes": "emilyywang densify-full stub+scout; skip starting-soon; agent bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
+  "skipped_ranges_s": [
+    [
+      0,
+      900
+    ]
+  ],
+  "skip_notes": "starting soon / BRB early",
+  "claim": {
+    "agent": "bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
+    "claimed_at": "2026-11-25T19:23:17Z"
+  },
+  "validator": {
+    "ok": 135,
+    "skipped": {
+      "winner_null": 27
+    }
+  }
+}
