@@ -3,7 +3,7 @@
   "vod_id": "twitch-2896215312",
   "slot": "P4",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       60,
@@ -20,48 +20,47 @@
     [
       7200,
       9000
-    ]
-  ],
-  "remaining_ranges_s": [
-    [
-      0,
-      60
-    ],
-    [
-      1600,
-      2000
-    ],
-    [
-      4200,
-      5000
-    ],
-    [
-      6500,
-      7200
     ],
     [
       9000,
+      11000
+    ],
+    [
+      11500,
+      13200
+    ],
+    [
+      13500,
+      15200
+    ],
+    [
+      15500,
       17500
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2896215312-g60",
     "twitch-2896215312-g2000",
     "twitch-2896215312-g5000",
-    "twitch-2896215312-g7200"
+    "twitch-2896215312-g7200",
+    "twitch-2896215312-g9000",
+    "twitch-2896215312-g11500",
+    "twitch-2896215312-g13500",
+    "twitch-2896215312-g15500"
   ],
   "counts": {
-    "games": 4,
-    "fights": 89,
+    "games": 8,
+    "fights": 153,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 89
+      "winner_null": 153
     }
   },
-  "needs_review": 89,
+  "needs_review": 153,
   "commit": null,
-  "remaining": "continue ranked gaps + after 9000s"
+  "remaining": "VOD2 done for ranked ladder segments; gaps were queue/break. No tourney blocked on this VOD."
 }
