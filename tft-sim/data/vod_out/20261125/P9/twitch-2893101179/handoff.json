@@ -42,5 +42,5 @@
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "densify: g400 ~14 fights (late boards empty pending OCR); densify g2500/g7000/g14000 next"
+  "remaining": "g400 densified (~14); g2500/g7000/g14000 frames grabbed — need HUD stage catalog before densify"
 }
