@@ -94,7 +94,7 @@ def main() -> int:
     primary_by_streamer = defaultdict(set)
     expected = {}  # (slot, vod_id) -> role
     for r in rows:
-        vid, slot, role = r["vod_id"], r["slot"], r["role"]
+        vid, slot, role = r["vod_id"], r["slot"], r.get("role") or "primary"
         if not VOD_RE.match(vid) or ":" in vid:
             err("bad_id", where="manifest", vod_id=vid)
         if slot not in slots:
