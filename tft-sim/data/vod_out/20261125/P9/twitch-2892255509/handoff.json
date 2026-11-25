@@ -165,6 +165,11 @@
         "5-3"
       ],
       "note": "corrected start~380 end~2060 Seasons lobby; boards unread"
+    },
+    "twitch-2892255509-g6200": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "status": "in_progress",
+      "note": "densify to ~12"
     }
   }
 }
