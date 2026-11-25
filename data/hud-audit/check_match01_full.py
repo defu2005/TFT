@@ -1,20 +1,15 @@
-import json, sys
+import json
 d = json.load(open('data/hud-audit/match01_full.json'))
-rounds = d['rounds']
 FIELDS = ['hp','hp_changed_in_round','panels','roster_candidates','augment','board_units','bench_units','stars','items','shop_purchases','round_type','opponent']
-unresolved = {}
-complete = 0
-for r in rounds:
-    missing = []
+ok_tags = {'read','derived','assigned'}
+complete = 0; missing_all = {}
+for r in d['rounds']:
+    miss = []
     for f in FIELDS:
         v = r.get(f)
-        if v is None:
-            missing.append(f); continue
-        tag = v.get('tag') if isinstance(v, dict) else None
-        if tag == 'unresolved' or (isinstance(v, dict) and v.get('value') is None and tag != 'read'):
-            missing.append(f)
-    if not missing: complete += 1
-    if missing: unresolved[r['round']] = missing
-print(f"rounds total: {len(rounds)}; rounds with every field resolved: {complete}")
-print("unresolved per round:")
-for k, v in unresolved.items(): print(f"  {k}: {', '.join(v)}")
+        if not isinstance(v, dict): miss.append(f); continue
+        if v.get('tag') not in ok_tags or v.get('value') is None: miss.append(f)
+    if miss: missing_all[r['round']] = miss
+    else: complete += 1
+print(f"rounds total: {len(d['rounds'])}; fully resolved: {complete}")
+for k, v in missing_all.items(): print(f"  {k}: {', '.join(v)}")

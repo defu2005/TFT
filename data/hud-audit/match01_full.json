@@ -6,38 +6,27 @@
    "round": "1-1",
    "t_planning_s": 313.8,
    "hp": {
-    "P1": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 100,
-     "tag": "read"
-    }
+    "value": [
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -56,7 +45,10 @@
     "value": null,
     "tag": "unresolved"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -78,8 +70,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no_damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
@@ -91,38 +84,27 @@
    "round": "1-2",
    "t_planning_s": 328.5,
    "hp": {
-    "P1": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 100,
-     "tag": "read"
-    }
+    "value": [
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -141,7 +123,10 @@
     "value": null,
     "tag": "unresolved"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -163,8 +148,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no_damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
@@ -176,38 +162,27 @@
    "round": "1-3",
    "t_planning_s": 364.1,
    "hp": {
-    "P1": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 100,
-     "tag": "read"
-    }
+    "value": [
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -226,7 +201,10 @@
     "value": null,
     "tag": "unresolved"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -248,51 +226,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no_damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 0,
+    "tag": "read",
+    "frame_s": 384.0
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Leona",
+     "DA_18_Leona",
+     "DA_18_Akali_AD",
+     null,
+     null
+    ],
+    "tag": "read",
+    "frame_s": 384.0
+   }
   },
   {
    "round": "1-4",
    "t_planning_s": 399.9,
    "hp": {
-    "P1": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 100,
-     "tag": "read"
-    }
+    "value": [
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -312,7 +296,10 @@
     "value": null,
     "tag": "unresolved"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -334,51 +321,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no_damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 0,
+    "tag": "read",
+    "frame_s": 420.0
+   },
+   "shop_20s": {
+    "value": [
+     "DA_Murkwolf18",
+     "DA_18_Rakan",
+     "DA_18_Rakan",
+     "DA_18_Ornn",
+     null
+    ],
+    "tag": "read",
+    "frame_s": 420.0
+   }
   },
   {
    "round": "2-1",
    "t_planning_s": 438.8,
    "hp": {
-    "P1": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 100,
-     "tag": "read"
-    }
+    "value": [
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -423,51 +416,45 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "result": {
+    "value": "lost",
+    "tag": "derived"
+   }
   },
   {
    "round": "2-2",
    "t_planning_s": 526.1,
    "hp": {
-    "P1": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 95,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 95,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 100,
-     "tag": "read"
-    }
+    "value": [
+     97,
+     95,
+     100,
+     100,
+     96,
+     100,
+     95,
+     100
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -487,7 +474,10 @@
     "value": null,
     "tag": "unresolved"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -509,51 +499,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 0,
+    "tag": "read",
+    "frame_s": 548.5
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Akali_AD",
+     null,
+     "DA_18_Kobuko",
+     null,
+     null
+    ],
+    "tag": "read",
+    "frame_s": 548.5
+   }
   },
   {
    "round": "2-3",
    "t_planning_s": 597.9,
    "hp": {
-    "P1": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 95,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 100,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 87,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 90,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 93,
-     "tag": "read"
-    }
+    "value": [
+     97,
+     95,
+     100,
+     96,
+     87,
+     97,
+     90,
+     93
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model+sharp_recheck_602s",
    "hp_changed_in_round": {
@@ -577,7 +573,10 @@
     "value": null,
     "tag": "unresolved"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -599,51 +598,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 5,
+    "tag": "read",
+    "frame_s": 617.75
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Sejuani",
+     "DA_Karma18",
+     "DA_18_LeBlanc",
+     "DA_Gromp18_AP",
+     null
+    ],
+    "tag": "read",
+    "frame_s": 617.75
+   }
   },
   {
    "round": "2-4",
    "t_planning_s": 664.0,
    "hp": {
-    "P1": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 90,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 95,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 81,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 91,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 90,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 93,
-     "tag": "read"
-    }
+    "value": [
+     97,
+     90,
+     95,
+     96,
+     81,
+     91,
+     90,
+     93
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -667,7 +672,10 @@
     "value": null,
     "tag": "unresolved"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -689,8 +697,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no_damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
@@ -702,38 +711,27 @@
    "round": "2-5",
    "t_planning_s": 700.7,
    "hp": {
-    "P1": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 90,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 95,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 81,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 91,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 90,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 93,
-     "tag": "read"
-    }
+    "value": [
+     97,
+     90,
+     95,
+     96,
+     81,
+     91,
+     90,
+     93
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -768,7 +766,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -790,51 +791,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 6,
+    "tag": "read",
+    "frame_s": 720.75
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Ornn",
+     "DA_18_Varus",
+     "DA_18_Yunara",
+     "DA_18_Warwick",
+     null
+    ],
+    "tag": "read",
+    "frame_s": 720.75
+   }
   },
   {
    "round": "2-6",
    "t_planning_s": 759.3,
    "hp": {
-    "P1": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 84,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 90,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 74,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 91,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 83,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 93,
-     "tag": "read"
-    }
+    "value": [
+     97,
+     84,
+     90,
+     96,
+     74,
+     91,
+     83,
+     93
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -858,7 +865,10 @@
     "value": null,
     "tag": "unresolved"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -880,51 +890,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 19,
+    "tag": "read",
+    "frame_s": 780.25
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Shen",
+     null,
+     null,
+     "DA_18_Alistar",
+     "DA_18_Alistar"
+    ],
+    "tag": "read",
+    "frame_s": 780.25
+   }
   },
   {
    "round": "2-7",
    "t_planning_s": 835.1,
    "hp": {
-    "P1": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 84,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 86,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 67,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 85,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 83,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 88,
-     "tag": "read"
-    }
+    "value": [
+     97,
+     84,
+     86,
+     96,
+     67,
+     85,
+     83,
+     88
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -948,7 +964,10 @@
     "value": null,
     "tag": "unresolved"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -970,51 +989,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no_damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 27,
+    "tag": "read",
+    "frame_s": 855.0
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Sentry",
+     "DA_18_Azir",
+     "DA_Vi18",
+     null,
+     "DA_18_Sejuani"
+    ],
+    "tag": "read",
+    "frame_s": 855.0
+   }
   },
   {
    "round": "3-1",
    "t_planning_s": 881.1,
    "hp": {
-    "P1": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 84,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 86,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 67,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 85,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 83,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 88,
-     "tag": "read"
-    }
+    "value": [
+     97,
+     84,
+     86,
+     96,
+     67,
+     85,
+     83,
+     88
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -1049,7 +1074,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": [
      "Alistar",
@@ -1084,8 +1112,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
@@ -1104,44 +1133,49 @@
      "Sprykin": 1
     },
     "tag": "read"
+   },
+   "gold_20s": {
+    "value": 39,
+    "tag": "read",
+    "frame_s": 901.0
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Sejuani",
+     "DA_18_Elise",
+     "DA_18_Warwick",
+     "DA_18_MasterYi_AD",
+     null
+    ],
+    "tag": "read",
+    "frame_s": 901.0
    }
   },
   {
    "round": "3-2",
    "t_planning_s": 956.3,
    "hp": {
-    "P1": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 74,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 76,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 67,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 76,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 81,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 88,
-     "tag": "read"
-    }
+    "value": [
+     97,
+     74,
+     76,
+     96,
+     67,
+     76,
+     81,
+     88
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -1188,8 +1222,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
@@ -1251,44 +1286,49 @@
      "Cinderling"
     ],
     "tag": "read"
+   },
+   "gold_20s": {
+    "value": 51,
+    "tag": "read",
+    "frame_s": 983.75
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Teemo",
+     "DA_18_Sentry",
+     "DA_18_Sejuani",
+     "DA_18_LeBlanc",
+     "DA_Cinderling18"
+    ],
+    "tag": "read",
+    "frame_s": 983.75
    }
   },
   {
    "round": "3-3",
    "t_planning_s": 1048.2,
    "hp": {
-    "P1": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 64,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 65,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 67,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 76,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 70,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 79,
-     "tag": "read"
-    }
+    "value": [
+     97,
+     64,
+     65,
+     96,
+     67,
+     76,
+     70,
+     79
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -1317,7 +1357,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved",
@@ -1340,8 +1383,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
@@ -1378,44 +1422,49 @@
     ],
     "tag": "read",
     "note": "other slots not read"
+   },
+   "gold_20s": {
+    "value": 49,
+    "tag": "read",
+    "frame_s": 1067.25
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Sivir",
+     null,
+     "DA_Murkwolf18",
+     "DA_18_Rakan",
+     null
+    ],
+    "tag": "read",
+    "frame_s": 1067.25
    }
   },
   {
    "round": "3-4",
    "t_planning_s": 1128.5,
    "hp": {
-    "P1": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 53,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 65,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 60,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 76,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 62,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 66,
-     "tag": "read"
-    }
+    "value": [
+     97,
+     53,
+     65,
+     96,
+     60,
+     76,
+     62,
+     66
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -1439,7 +1488,10 @@
     "value": null,
     "tag": "unresolved"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -1461,8 +1513,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no_damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
@@ -1474,38 +1527,27 @@
    "round": "3-5",
    "t_planning_s": 1165.4,
    "hp": {
-    "P1": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 53,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 65,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 60,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 76,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 62,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 66,
-     "tag": "read"
-    }
+    "value": [
+     97,
+     53,
+     65,
+     96,
+     60,
+     76,
+     62,
+     66
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -1536,7 +1578,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -1558,51 +1603,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 25,
+    "tag": "read",
+    "frame_s": 1185.5
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Azir",
+     "DA_18_Cassiopeia",
+     null,
+     "DA_18_Kayle",
+     "DA_18_LeBlanc"
+    ],
+    "tag": "read",
+    "frame_s": 1185.5
+   }
   },
   {
    "round": "3-6",
    "t_planning_s": 1236.1,
    "hp": {
-    "P1": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 41,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 65,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 52,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 76,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 51,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 56,
-     "tag": "read"
-    }
+    "value": [
+     97,
+     41,
+     65,
+     96,
+     52,
+     76,
+     51,
+     56
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -1640,7 +1691,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -1662,51 +1716,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 45,
+    "tag": "read",
+    "frame_s": 1256.25
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Alistar",
+     "DA_18_Akali_AD",
+     "DA_18_Varus",
+     "DA_18_Caitlyn",
+     "DA_KogMaw18_AD"
+    ],
+    "tag": "read",
+    "frame_s": 1256.25
+   }
   },
   {
    "round": "3-7",
    "t_planning_s": 1317.1,
    "hp": {
-    "P1": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 56,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 52,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 66,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 51,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 43,
-     "tag": "read"
-    }
+    "value": [
+     97,
+     30,
+     56,
+     96,
+     52,
+     66,
+     51,
+     43
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -1731,7 +1791,10 @@
     "value": null,
     "tag": "unresolved"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -1753,51 +1816,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no_damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 53,
+    "tag": "read",
+    "frame_s": 1337.0
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Diana",
+     null,
+     null,
+     "DA_18_Rengar",
+     null
+    ],
+    "tag": "read",
+    "frame_s": 1337.0
+   }
   },
   {
    "round": "4-1",
    "t_planning_s": 1355.3,
    "hp": {
-    "P1": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 56,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 52,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 66,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 51,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 43,
-     "tag": "read"
-    }
+    "value": [
+     97,
+     30,
+     56,
+     96,
+     52,
+     66,
+     51,
+     43
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -1828,7 +1897,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -1850,51 +1922,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 1,
+    "tag": "read",
+    "frame_s": 1373.75
+   },
+   "shop_20s": {
+    "value": [
+     null,
+     "DA_18_KhaZix",
+     null,
+     null,
+     "DA_18_Ahri"
+    ],
+    "tag": "read",
+    "frame_s": 1373.75
+   }
   },
   {
    "round": "4-2",
    "t_planning_s": 1433.8,
    "hp": {
-    "P1": {
-     "value": 97,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 43,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 44,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 53,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 51,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 31,
-     "tag": "read"
-    }
+    "value": [
+     97,
+     30,
+     43,
+     96,
+     44,
+     53,
+     51,
+     31
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -1945,51 +2023,61 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 22,
+    "tag": "read",
+    "frame_s": 1454.0
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Leona",
+     "DA_18_Malphite",
+     "DA_Gromp18_AP",
+     "DA_Cinderling18",
+     "DA_18_Tristana"
+    ],
+    "tag": "read",
+    "frame_s": 1454.0
+   },
+   "result": {
+    "value": "lost",
+    "tag": "derived"
+   }
   },
   {
    "round": "4-3",
    "t_planning_s": 1529.7,
    "hp": {
-    "P1": {
-     "value": 88,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 35,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 44,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 53,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 39,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 22,
-     "tag": "read"
-    }
+    "value": [
+     88,
+     30,
+     35,
+     96,
+     44,
+     53,
+     39,
+     22
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -2020,7 +2108,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -2042,51 +2133,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 37,
+    "tag": "read",
+    "frame_s": 1549.25
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Hecarim",
+     "DA_18_Leona",
+     "DA_18_Yunara",
+     "DA_18_Varus",
+     "DA_18_Veigar"
+    ],
+    "tag": "read",
+    "frame_s": 1549.25
+   }
   },
   {
    "round": "4-4",
    "t_planning_s": 1604.0,
    "hp": {
-    "P1": {
-     "value": 88,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 25,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 33,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 41,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 39,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 7,
-     "tag": "read"
-    }
+    "value": [
+     88,
+     30,
+     25,
+     96,
+     33,
+     41,
+     39,
+     7
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -2117,7 +2214,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -2139,8 +2239,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no_damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
@@ -2152,38 +2253,27 @@
    "round": "4-5",
    "t_planning_s": 1640.8,
    "hp": {
-    "P1": {
-     "value": 88,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 25,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 96,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 33,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 41,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 39,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 7,
-     "tag": "read"
-    }
+    "value": [
+     88,
+     30,
+     25,
+     96,
+     33,
+     41,
+     39,
+     7
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -2214,7 +2304,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -2236,51 +2329,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 62,
+    "tag": "read",
+    "frame_s": 1660.75
+   },
+   "shop_20s": {
+    "value": [
+     "DA_Fiddlesticks18",
+     "DA_18_Cassiopeia",
+     "DA_18_Rengar",
+     "DA_Vi18",
+     "DA_18_Hecarim"
+    ],
+    "tag": "read",
+    "frame_s": 1660.75
+   }
   },
   {
    "round": "4-6",
    "t_planning_s": 1716.5,
    "hp": {
-    "P1": {
-     "value": 88,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 13,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 84,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 21,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 29,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 39,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 7,
-     "tag": "read"
-    }
+    "value": [
+     88,
+     30,
+     13,
+     84,
+     21,
+     29,
+     39,
+     7
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -2311,7 +2410,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -2333,51 +2435,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 71,
+    "tag": "read",
+    "frame_s": 1736.5
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Cassiopeia",
+     "DA_18_Aphelios",
+     "DA_Brambleback18",
+     "DA_18_Leona",
+     "DA_CrimsonRaptor18"
+    ],
+    "tag": "read",
+    "frame_s": 1736.5
+   }
   },
   {
    "round": "4-7",
    "t_planning_s": 1792.5,
    "hp": {
-    "P1": {
-     "value": 88,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 13,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 72,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 12,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 17,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 39,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 0,
-     "tag": "read"
-    }
+    "value": [
+     88,
+     30,
+     13,
+     72,
+     12,
+     17,
+     39,
+     0
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -2417,7 +2525,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -2439,51 +2550,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no_damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 86,
+    "tag": "read",
+    "frame_s": 1812.5
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Morgana",
+     "DA_18_Azir",
+     null,
+     "DA_18_MasterYi_AD",
+     "DA_18_Ahri"
+    ],
+    "tag": "read",
+    "frame_s": 1812.5
+   }
   },
   {
    "round": "5-1",
    "t_planning_s": 1829.7,
    "hp": {
-    "P1": {
-     "value": 88,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 13,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 72,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 12,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 17,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 39,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 0,
-     "tag": "read"
-    }
+    "value": [
+     88,
+     30,
+     13,
+     72,
+     12,
+     17,
+     39,
+     0
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -2515,7 +2632,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -2537,51 +2657,61 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 13,
+    "tag": "read",
+    "frame_s": 1849.75
+   },
+   "shop_20s": {
+    "value": [
+     null,
+     "DA_Gromp18_AP",
+     "DA_18_Ezreal",
+     "DA_Lux18_Base",
+     "DA_KogMaw18_AD"
+    ],
+    "tag": "read",
+    "frame_s": 1849.75
+   },
+   "result": {
+    "value": "lost",
+    "tag": "derived"
+   }
   },
   {
    "round": "5-2",
    "t_planning_s": 1907.9,
    "hp": {
-    "P1": {
-     "value": 74,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 13,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 72,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 4,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 39,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 0,
-     "tag": "read"
-    }
+    "value": [
+     74,
+     30,
+     13,
+     72,
+     0,
+     4,
+     39,
+     0
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -2622,7 +2752,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -2644,51 +2777,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 9,
+    "tag": "read",
+    "frame_s": 1928.75
+   },
+   "shop_20s": {
+    "value": [
+     "DA_KogMaw18_AD",
+     "DA_18_Diana",
+     "DA_18_Kobuko",
+     "DA_18_Soraka",
+     "DA_18_Shen"
+    ],
+    "tag": "read",
+    "frame_s": 1928.75
+   }
   },
   {
    "round": "5-3",
    "t_planning_s": 1993.3,
    "hp": {
-    "P1": {
-     "value": 74,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 72,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 28,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 0,
-     "tag": "read"
-    }
+    "value": [
+     74,
+     30,
+     0,
+     72,
+     0,
+     0,
+     28,
+     0
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -2729,7 +2868,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -2751,51 +2893,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 2,
+    "tag": "read",
+    "frame_s": 2013.25
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Soraka",
+     "DA_Gromp18_AP",
+     "DA_Lux18_Base",
+     "DA_18_Yunara",
+     null
+    ],
+    "tag": "read",
+    "frame_s": 2013.25
+   }
   },
   {
    "round": "5-4",
    "t_planning_s": 2062.8,
    "hp": {
-    "P1": {
-     "value": 74,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 57,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 14,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 0,
-     "tag": "read"
-    }
+    "value": [
+     74,
+     30,
+     0,
+     57,
+     0,
+     0,
+     14,
+     0
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -2821,7 +2969,10 @@
     "value": null,
     "tag": "unresolved"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -2843,8 +2994,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no_damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
@@ -2856,38 +3008,27 @@
    "round": "5-5",
    "t_planning_s": 2087.5,
    "hp": {
-    "P1": {
-     "value": 74,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 57,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 14,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 0,
-     "tag": "read"
-    }
+    "value": [
+     74,
+     30,
+     0,
+     57,
+     0,
+     0,
+     14,
+     0
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -2928,7 +3069,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -2950,51 +3094,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 5,
+    "tag": "read",
+    "frame_s": 2107.5
+   },
+   "shop_20s": {
+    "value": [
+     null,
+     "DA_18_Aphelios",
+     "DA_18_Ahri",
+     "DA_18_Rammus",
+     "DA_18_Azir"
+    ],
+    "tag": "read",
+    "frame_s": 2107.5
+   }
   },
   {
    "round": "5-6",
    "t_planning_s": 2165.3,
    "hp": {
-    "P1": {
-     "value": 74,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 40,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 0,
-     "tag": "read"
-    }
+    "value": [
+     74,
+     30,
+     0,
+     40,
+     0,
+     0,
+     0,
+     0
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -3036,7 +3186,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -3058,51 +3211,61 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 6,
+    "tag": "read",
+    "frame_s": 2185.75
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Teemo",
+     "DA_Murkwolf18",
+     "DA_18_Lillia",
+     "DA_18_Ashe",
+     "DA_Cinderling18"
+    ],
+    "tag": "read",
+    "frame_s": 2185.75
+   },
+   "result": {
+    "value": "lost",
+    "tag": "derived"
+   }
   },
   {
    "round": "5-7",
    "t_planning_s": 2230.8,
    "hp": {
-    "P1": {
-     "value": 59,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 23,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 0,
-     "tag": "read"
-    }
+    "value": [
+     59,
+     30,
+     0,
+     23,
+     0,
+     0,
+     0,
+     0
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -3143,7 +3306,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -3165,51 +3331,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no_damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 6,
+    "tag": "read",
+    "frame_s": 2250.75
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Kayle",
+     "DA_18_Xayah",
+     null,
+     "DA_18_MasterYi_AD",
+     "DA_18_LeBlanc"
+    ],
+    "tag": "read",
+    "frame_s": 2250.75
+   }
   },
   {
    "round": "6-1",
    "t_planning_s": 2269.1,
    "hp": {
-    "P1": {
-     "value": 59,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 30,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 23,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 0,
-     "tag": "read"
-    }
+    "value": [
+     59,
+     30,
+     0,
+     23,
+     0,
+     0,
+     0,
+     0
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -3250,7 +3422,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -3272,51 +3447,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 16,
+    "tag": "read",
+    "frame_s": 2289.0
+   },
+   "shop_20s": {
+    "value": [
+     "DA_Nidalee18_AP",
+     null,
+     "DA_KogMaw18_AD",
+     "DA_18_Azir",
+     "DA_18_Rengar"
+    ],
+    "tag": "read",
+    "frame_s": 2289.0
+   }
   },
   {
    "round": "6-2",
    "t_planning_s": 2335.2,
    "hp": {
-    "P1": {
-     "value": 59,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 16,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 10,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 0,
-     "tag": "read"
-    }
+    "value": [
+     59,
+     16,
+     0,
+     10,
+     0,
+     0,
+     0,
+     0
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -3357,7 +3538,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -3379,51 +3563,61 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 8,
+    "tag": "read",
+    "frame_s": 2354.75
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Sett",
+     "DA_18_Malphite",
+     "DA_18_MasterYi_AD",
+     "DA_18_Ahri",
+     "DA_KogMaw18_AD"
+    ],
+    "tag": "read",
+    "frame_s": 2354.75
+   },
+   "result": {
+    "value": "lost",
+    "tag": "derived"
+   }
   },
   {
    "round": "6-3",
    "t_planning_s": 2398.9,
    "hp": {
-    "P1": {
-     "value": 43,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 16,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 0,
-     "tag": "read"
-    }
+    "value": [
+     43,
+     16,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -3464,7 +3658,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -3486,51 +3683,61 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 3,
+    "tag": "read",
+    "frame_s": 2419.0
+   },
+   "shop_20s": {
+    "value": [
+     "DA_Murkwolf18",
+     "DA_18_Ahri",
+     "DA_18_KhaZix",
+     "DA_18_Kobuko",
+     "DA_18_Tristana"
+    ],
+    "tag": "read",
+    "frame_s": 2419.0
+   },
+   "result": {
+    "value": "lost",
+    "tag": "derived"
+   }
   },
   {
    "round": "6-4",
    "t_planning_s": 2463.3,
    "hp": {
-    "P1": {
-     "value": 27,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 16,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 0,
-     "tag": "read"
-    }
+    "value": [
+     27,
+     16,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -3571,7 +3778,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -3593,51 +3803,57 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no_damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 10,
+    "tag": "read",
+    "frame_s": 2483.25
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Rengar",
+     "DA_18_ElderDragon",
+     "DA_18_Ashe",
+     "DA_Nidalee18_AP",
+     "DA_18_Rammus"
+    ],
+    "tag": "read",
+    "frame_s": 2483.25
+   }
   },
   {
    "round": "6-5",
    "t_planning_s": 2481.8,
    "hp": {
-    "P1": {
-     "value": 27,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 16,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 0,
-     "tag": "read"
-    }
+    "value": [
+     27,
+     16,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -3669,7 +3885,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -3691,51 +3910,61 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 10,
+    "tag": "read",
+    "frame_s": 2501.75
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Ezreal",
+     "DA_18_Xayah",
+     "DA_18_Elise",
+     "DA_CrimsonRaptor18",
+     null
+    ],
+    "tag": "read",
+    "frame_s": 2501.75
+   },
+   "result": {
+    "value": "lost",
+    "tag": "derived"
+   }
   },
   {
    "round": "6-6",
    "t_planning_s": 2547.4,
    "hp": {
-    "P1": {
-     "value": 9,
-     "tag": "read"
-    },
-    "P2": {
-     "value": 16,
-     "tag": "read"
-    },
-    "P3": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P4": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P5": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P6": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P7": {
-     "value": 0,
-     "tag": "read"
-    },
-    "P8": {
-     "value": 0,
-     "tag": "read"
-    }
+    "value": [
+     9,
+     16,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "tag": "read",
+    "players": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ]
    },
    "hp_source": "model",
    "hp_changed_in_round": {
@@ -3776,7 +4005,10 @@
     },
     "tag": "derived"
    },
-   "augment": null,
+   "augment": {
+    "value": null,
+    "tag": "unresolved"
+   },
    "board_units": {
     "value": null,
     "tag": "unresolved"
@@ -3798,14 +4030,31 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no_damage_pattern",
+    "tag": "derived",
+    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "gold_20s": {
+    "value": 0,
+    "tag": "read",
+    "frame_s": 2567.5
+   },
+   "shop_20s": {
+    "value": [
+     "DA_18_Zyra",
+     "DA_18_Tristana",
+     null,
+     "DA_Lux18_Base",
+     "DA_18_Shen"
+    ],
+    "tag": "read",
+    "frame_s": 2567.5
+   }
   }
  ],
  "board_bench_probe": {
