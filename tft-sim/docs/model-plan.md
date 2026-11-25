@@ -493,3 +493,13 @@ Bản đầu của mục này kết luận "CDragon thiếu chỉ số item". K�
   - Mobafire 18.1 trực tiếp và tactics.tools/info/units: không truy cập được (DNS lỗi).
 - Kết quả: không nguồn nào phân biệt được "thêm" với "tổng" cho Defender (25 hay 37), và không xác định được phần trăm Brawler áp lên cái gì. Hai điểm này vẫn là giả định, không đổi bảng.
 - Đối chiếu với snapshot: các số cả đội và mốc cao nhất khớp nguồn ngoài. Chỗ lệch duy nhất là bản 18.3 so với snapshot ở mức phụ; chưa rõ có phải lệch bản vá không.
+
+### 11.18 Quyết định về chưng cất (2026-11-25)
+- Không chưng cất gì lúc này. Không huấn luyện mới.
+- Ba nghĩa của "chưng cất model lớn", và quyết định cho từng nghĩa:
+  1. LLM làm thầy, mô hình dự đoán trận nhỏ làm học trò: BỎ. LLM không có sự thật nền về ai thắng trận Set 18, nên nhãn của nó chỉ là phỏng đoán; không bao giờ gắn `label: real` trong fight-v1.
+  2. Simulator làm thầy, mạng nơ-ron nhanh làm học trò: HOÃN. Mô phỏng chỉ khoảng 0.23 s mỗi trận, nên tốc độ không phải nút thắt. Học trò sẽ sao chép các khuyết điểm đã biết: khả năng chung (chưa có khả năng riêng cho từng tướng), 7/36 trait trong bảng, PRIMARY không có chỉ số item riêng lẫn hook, và SECONDARY vừa đổi (`item_alias`). Chỉ mở lại khi đủ hai điều kiện: (a) điểm trên bản ghi thật cho thấy mô phỏng thắng luật sức mạnh; (b) có tiêu thụ (ví dụ HUD) cần độ trễ mà mô phỏng không đạt.
+  3. LLM/mô hình thị giác trích xuất quan sát thật từ ảnh màn hình hoặc video: là hướng duy nhất có giá trị. Cần video hoặc ảnh do người dùng cung cấp và quyền gọi API qua form thông tin xác thực.
+- Bối cảnh: student behavior-cloning cũ (`bc_v2.log`, `clone_v5_seed0.pt`) học bắt chước hành động của policy trong sim, độ chính xác theo hành động ~0.997. Nó không dự đoán thắng thua và không đo fidelity.
+- Ngưỡng dữ liệu: đo chênh lệch ±0.05 cần khoảng 545 trận thật (mục 11.14), nên huấn luyện trên kết quả thật còn xa.
+- Đã từ chối chưng cất model bên thứ ba (sản phẩm thương mại hoặc model đóng) theo câu trả lời trước.
