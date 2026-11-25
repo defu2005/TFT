@@ -610,3 +610,24 @@ So sánh theo cặp (per-lobby): b−a = +0,126 [0,004; 0,244]; c−b = −1,809
 - Nội dung là `TFTSet17` (real_content, dữ liệu CDragon), không phải 8 tướng synthetic. Vẫn là mô phỏng: không có bằng chứng so với trận thật.
 - Điều kiện c vẫn còn ẩn augment (khớp PICK_AUGMENT 0,44 so với 0,999 ở full), và full chưa được chơi. Vì vậy khoảng +0,50 của c **bị lẫn** với việc thiếu augment. Không được kết luận "clone kém teacher" từ c. Cần chơi full để có mốc.
 
+## Kiểm soát hậu kỳ: full và giải đấu hỗn hợp (2026-11-25, bằng chứng bot)
+
+**Full (hậu kỳ, không có trong đăng ký 10.6):** clone `mask_full` (185 chiều) vs teacher v4, seed 260000–260999, EngineResolver. A−B = −0,051 [−0,157; +0,057]. Full không khác teacher. Vậy khoảng +0,50 của điều kiện c so với teacher là do các chiều bị ẩn (augment, gods, opponents), không do bàn hay bàn chờ.
+
+**Giải đấu hỗn hợp (đăng ký 10.8):** seed 270000–270999, 1000 lobby, 8 ghế, mỗi ghế chọn policy từ pool bằng `default_rng(seed)`, có thể trùng. Trung bình placement (CI95 bootstrap theo lobby, số ghế):
+
+| Policy | Placement TB | CI95 | Ghế |
+|---|---|---|---|
+| v4 | 3,944 | [3,774; 4,024] | 1365 |
+| mask_full | 4,018 | [3,801; 4,045] | 1377 |
+| v4_null | 4,104 | [3,956; 4,212] | 1276 |
+| mask_c | 4,306 | [4,201; 4,448] | 1316 |
+| v3 | 4,583 | [4,466; 4,717] | 1392 |
+| scripted | 6,122 | [6,112; 6,353] | 1274 |
+
+Đọc kết quả:
+- v4 và v4_null là cùng một policy nhưng cách nhau 0,16 điểm. Đây là nhiễu của giải đấu không cân bằng. Chưa đủ để kết luận harness lệch, nhưng vượt ngưỡng 0,2 đã đăng ký? Không vượt, nhưng gần; cần chạy lại với nhiều lobby hơn trước khi dùng bảng này để xếp hạng.
+- Bảng này là placement trung bình trong lobby hỗn hợp, không phải đấu trực tiếp. Phụ thuộc vào 7 đối thủ còn lại.
+- Thứ tự chung: teacher ≈ full < c < v3 < scripted. Phù hợp với các kết quả trước.
+- valuemax và CEM chưa đưa vào pool (monkeypatch toàn cục).
+

@@ -183,6 +183,8 @@ Mọi bằng chứng dưới đây là sim hoặc nội dung tổng hợp (8 tư
 
 **Quy tắc diễn giải:** khác biệt dưới khoảng 0,2 không phân giải được. Với v4_null, khoảng cách của nó đến v4 phải chứa 0; nếu không, lệch harness.
 
+**Kết quả (2026-11-25):** xem README mục "Kiểm soát hậu kỳ". Full ≈ teacher (−0,05 [−0,16; +0,06]); giải đấu: v4 3,94, mask_full 4,02, v4_null 4,10, mask_c 4,31, v3 4,58, scripted 6,12. Chênh v4 với v4_null 0,16 cho thấy giải đấu chưa đủ cân bằng để xếp hạng; cần thêm lobby.
+
 **Giới hạn:** valuemax và CEM bị bỏ vì monkeypatch `ACT._equip` toàn cục; chưa xác nhận có tách được theo ghế.
 
 ### 10.7 Việc tiếp theo (sim)
