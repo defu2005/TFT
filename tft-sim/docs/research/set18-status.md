@@ -14,7 +14,7 @@ Cập nhật: 2026-11-25. Mọi con số là của sim/engine, không phải tr�
 
 ## Trait (36 trait trong CDragon)
 - 11 trait có ánh xạ stat (`generic_stat_applied`), 25 trait không có ánh xạ stat (`no_stat_mapping`). Nguồn: `results/fixed/combat/coverage_items_traits.json`.
-- Bảng trait (mục 11.11): đã ánh xạ 6 trên 36 trait (9 khóa, hash đã giải mã FNV-1a; mô tả CDragon đã đối chiếu; thêm Hunter ở vòng này). Giả định còn lại: Defender lấy max (25) hay cộng (37); % Brawler tính trên HP nào; đơn vị cộng/nhân của Juggernaut dr và Rapidfire AS. Phủ 19% đo trên bảng 3 trait trước khi mở rộng, chưa đo lại. Sau bảng có cờ `traits_table`, mặc định tắt.
+- Bảng trait (mục 11.11): đã ánh xạ 7 trên 36 trait (10 khóa, gồm Spellweaver thêm 2026-11-25, hash đã giải mã FNV-1a; mô tả CDragon đã đối chiếu; thêm Hunter ở vòng này). Giả định còn lại: Defender lấy max (25) hay cộng (37); % Brawler tính trên HP nào; đơn vị cộng/nhân của Juggernaut dr và Rapidfire AS. Phủ 19% đo trên bảng 3 trait trước khi mở rộng, chưa đo lại. Sau bảng có cờ `traits_table`, mặc định tắt.
 - Vanguard `MaxHealthShield` và Spellweaver `APPerCast` bị bỏ trong đường Set 18 (`_SET18_BAD_KEYS` trong `fight.py`). Selftest mục 9 và mục 10e.
 - 25 trait chưa ánh xạ: danh sách và thứ tự ở mục 11.5.
 

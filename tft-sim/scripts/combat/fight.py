@@ -26,6 +26,7 @@ import numpy as np
 
 import tft_goat.engine.simulate as S
 import tft_goat.engine.trait_effects as TE
+from tft_goat.engine.config import BASE_AP
 
 # Set 18: hai khoa trait bi ap sai (xem docs/research/combat-public-data.md muc 8). Chi bo o duong Set 18.
 _SET18_BAD_KEYS = ("MaxHealthShield", "APPerCast")
@@ -66,6 +67,7 @@ TRAIT_TABLE = {
     "DA_18_Defender": {"{0eb6405e}": ("resist", "team"),                      # NonDefenderDefenseGain: ca doi (mo ta "Your team gains")
                        "{8c16b281}": ("resist", "members")},                    # DefenderDefenseGain: GIA DINH Defender lay MAX (mo ta khong noi ro, xem 11.11)
     "DA_18_Rapidfire": {"{1d98dcec}": ("as", "team")},                          # TeamAS
+    "DA_18_Spellweaver": {"{b012bed0}": ("ap", "members")},                   # SpellweaverAP: mo ta "Spellweavers gain more"; cong don voi TeamwideAP (tier 2: 0.10 + 0.10)
     "DA_18_Hunter": {"{641254b6}": ("ad", "members")},                        # HunterAD: "Hunters gain Attack Damage" (don, khong dieu kien)
 }
 TABLE_MAPPED = sum(len(v) for v in TRAIT_TABLE.values())
@@ -81,6 +83,15 @@ def _counts(units, content, with_emblem: bool) -> dict:
             if t not in own:
                 cnt[t] = cnt.get(t, 0) + 1
     return cnt, held
+
+
+def _stat_table(u, attr: str, v: float, frac_ap: bool) -> None:
+    """Ap mot thuoc tinh. Khi frac_ap (chi bat cung co traits_table): AP tinh theo DIEM (BASE_AP = 100),
+    nen gia tri |v|<=1 la PHAN TRAM cua AP goc: +0.10 -> +10 diem AP. PRIMARY khong dung nhanh nay."""
+    if frac_ap and attr == "ap" and abs(v) <= 1.0:
+        u.ap += v * BASE_AP
+    else:
+        TE._apply_stat(u, attr, v)
 
 
 def _table_extra(units, content, with_emblem: bool, bonus_units: int = 0) -> None:
@@ -123,8 +134,8 @@ def _table_extra(units, content, with_emblem: bool, bonus_units: int = 0) -> Non
             u.max_hp += d; u.hp += d
         elif attr == "crit":
             u.crit_chance += v
-        else:  # as
-            TE._apply_stat(u, attr, v)
+        else:  # as, ad, ap
+            _stat_table(u, attr, v, True)
     for (_, attr), (u, v) in mx.items():
         if attr == "resist":
             u.armor += v; u.mr += v
@@ -132,7 +143,7 @@ def _table_extra(units, content, with_emblem: bool, bonus_units: int = 0) -> Non
             TE._apply_stat(u, "dr", v)
 
 
-def _emblem_traits(units, content, bonus_units: int = 0, skip=frozenset()) -> None:
+def _emblem_traits(units, content, bonus_units: int = 0, skip=frozenset(), frac_ap: bool = False) -> None:
     """Giong TE.apply_team_traits, cong them: moi tuong giu emblem cua trait T (khong co T tu nhien)
     tinh them 1 diem T, va nhan buff cua T nhu mot thanh vien."""
     if not units:
@@ -165,15 +176,19 @@ def _emblem_traits(units, content, bonus_units: int = 0, skip=frozenset()) -> No
             targets = units if "teamwide" in key.lower() else members
             for attr in TE.attrs_for(key):
                 for u in targets:
-                    TE._apply_stat(u, attr, float(val))
+                    _stat_table(u, attr, float(val), frac_ap)
 
 
 # Chi bo khoa khi bat co traits_table (PRIMARY khong doi). Attuned: 2 nua "either/or" (moon <=half: Durability;
 # moon >half: DamageAmp) deu bi engine ap cung luc -> bo ca hai, de Attuned khong dong gop gi.
-SKIP18_TABLE = frozenset({("Attuned", "Durability"), ("Attuned", "DamageAmp")})
+SKIP18_TABLE = frozenset({
+    ("Attuned", "Durability"), ("Attuned", "DamageAmp"),   # either/or: engine bat ca hai nua
+    ("Spellweaver", "APPerCast"),                          # cong don theo don danh, khong phai gia tri tinh
+    ("Vanguard", "MaxHealthShield"),                       # khien theo % HP, khong phai max HP (nhu _SET18_BAD_KEYS)
+})
 
 
-def _engine_apply_skip(units, content, bonus_units: int = 0, skip=frozenset()) -> None:
+def _engine_apply_skip(units, content, bonus_units: int = 0, skip=frozenset(), frac_ap: bool = False) -> None:
     """Ban sao dung cua TE.apply_team_traits co bo qua (ten trait, khoa) trong skip.
     Voi skip rong phai cho ket qua giong het engine (selftest kiem tra)."""
     from tft_goat.env.traits import active_traits
@@ -195,7 +210,7 @@ def _engine_apply_skip(units, content, bonus_units: int = 0, skip=frozenset()) -
             targets = units if "teamwide" in key.lower() else members
             for attr in TE.attrs_for(key):
                 for u in targets:
-                    TE._apply_stat(u, attr, float(val))
+                    _stat_table(u, attr, float(val), frac_ap)
 
 
 from tft_goat.engine.abilities import default_ability
@@ -351,9 +366,9 @@ def coverage(record: dict) -> dict:
 def _set18_traits(units, content, bonus_units: int = 0, *, emblems: bool = False, table: bool = False) -> None:
     skip = SKIP18_TABLE if table else frozenset()
     if emblems:
-        _emblem_traits(units, content, bonus_units, skip)
+        _emblem_traits(units, content, bonus_units, skip, frac_ap=table)
     elif skip:
-        _engine_apply_skip(units, content, bonus_units, skip)
+        _engine_apply_skip(units, content, bonus_units, skip, frac_ap=table)
     else:
         _orig_apply_team_traits(units, content, bonus_units=bonus_units)
     if table:

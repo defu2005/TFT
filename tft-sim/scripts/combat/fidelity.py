@@ -187,6 +187,7 @@ def score(path, n=20, seed0=0, allow_dryrun=False):
     d_sec = c2 - c1
     lo, hi = _boot_mean_diff(games, d_rule, rng)
     lo2, hi2 = _boot_mean_diff(games, d_sec, rng)
+    lo3, hi3 = _boot_mean_diff(games, c2 - rule, rng)  # SECONDARY - rule (them 2026-11-25, sau sua AP/Attuned/Spellweaver)
     G = len(set(games))
     inconclusive = G < MIN_GAMES
     def verdict(lo_, hi_):
@@ -206,6 +207,8 @@ def score(path, n=20, seed0=0, allow_dryrun=False):
                 strength_rule={"accuracy_credit": round(float(rule.mean()), 4)},
                 primary_minus_rule={"diff": round(float(d_rule.mean()), 4), "ci95": [round(lo, 4), round(hi, 4)],
                                     "verdict": verdict(lo, hi)},
+                secondary_minus_rule={"diff": round(float((c2 - rule).mean()), 4), "ci95": [round(lo3, 4), round(hi3, 4)],
+                                      "verdict": verdict(lo3, hi3)},
                 secondary_minus_primary={"diff": round(float(d_sec.mean()), 4), "ci95": [round(lo2, 4), round(hi2, 4)],
                                          "verdict": verdict(lo2, hi2)},
                 note="PASS = CI95 cua (chinh - quy tac suc manh) nam tren 0 (muc 11.7)")

@@ -277,8 +277,8 @@ if len(bw) == 2 and other:
     print("brawler hp table", h_0, "->", h_t)
     ok12 &= h_t[2] - h_0[2] >= 120 - 1e-6  # tuong khong phai Brawler van nhan 120 HP phang (ca doi)
 # Juggernaut / Defender / Rapidfire: dinh danh nhom (ai nhan gia tri nao), so sanh bat/tat bang
-def _onoff(board, attrs):
-    S9.apply_team_traits = lambda u, c, bonus_units=0: F._set18_traits(u, c, bonus_units, emblems=False, table=True)
+def _onoff(board, attrs, emblems=False):
+    S9.apply_team_traits = lambda u, c, bonus_units=0: F._set18_traits(u, c, bonus_units, emblems=emblems, table=True)
     on = S9._build_team(board, 0, c18, 0)
     S9.apply_team_traits = F._orig_apply_team_traits
     off = S9._build_team(board, 0, c18, 0)
@@ -364,4 +364,26 @@ F._engine_apply_skip(_raw, c18, 0, frozenset())
 _same = all(all(abs(x - y) < 1e-9 for x, y in zip(_snap18(a), _snap18(b))) for a, b in zip(_raw, _ua))
 print("engine copy == engine (skip rong):", _same)
 ok &= _same
+# --- Nhanh SECONDARY (emblems=True, table=True) va nhanh table: Attuned, AP, Vanguard ---
+for _em in (False, True):
+    at = _pick("Attuned", 1); atn = _pick("Attuned", 1, other=True)
+    if at and atn:
+        on, off = _onoff([BU(a, 1, on_board=True) for a in at + atn], ("incoming_reduction", "damage_amp"), emblems=_em)
+        ok &= on[0] == (0.0, 0.0) and off[0][0] > 0 and off[0][1] > 0
+    sw = _pick("Spellweaver", 2); swo = _pick("Spellweaver", 1, other=True)
+    if len(sw) == 2 and swo:
+        on, off = _onoff([BU(a, 1, on_board=True) for a in sw + swo], ("ap",), emblems=_em)
+        dm = on[0][0] - off[0][0]; dn = on[2][0] - off[2][0]
+        print("spellweaver AP on-off emblems", _em, "member", round(dm, 3), "nonmember", round(dn, 3))
+        # tier 2 (2 Spellweaver): member = TeamwideAP 10 + SpellweaverAP 10 (tru ~0.1 flat cu cua engine); nonmember = 10
+        ok &= abs(dm - 19.9) < 0.5 and abs(dn - 9.9) < 0.5
+    vg = _pick("Vanguard", 2)
+    if len(vg) == 2:
+        S9.apply_team_traits = lambda *a, **k: None
+        base = [u.max_hp for u in S9._build_team([BU(a, 1, on_board=True) for a in vg], 0, c18, 0)]
+        S9.apply_team_traits = F._orig_apply_team_traits
+        on, _off = _onoff([BU(a, 1, on_board=True) for a in vg], ("max_hp",), emblems=_em)
+        print("vanguard max_hp table on vs no-trait baseline emblems", _em, [round(x[0], 3) for x in on], [round(b, 3) for b in base])
+        # Vanguard khong co muc nao trong bang; MaxHealthShield bi bo -> HP bang nen (khong them 18% khien)
+        ok &= all(abs(x[0] - b) < 1e-6 for x, b in zip(on, base))
 print("SELFTEST", "PASS" if ok else "FAIL")
