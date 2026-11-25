@@ -1,28 +1,36 @@
 {
- "check": "reader shop and gold vs visual readings at pilot times",
+ "check": "reader gold and shop vs visual, using only match-01 file 2924500482-210000",
+ "file_rows": 9802,
+ "rows_with_shop_in_file": null,
+ "correction": "Earlier counts of 35,032 rows and 6,218 shop rows came from four files and are wrong for match 01. Earlier shop mismatch at 718.7 came from the wrong files.",
  "rows": [
   {
    "time_s": 718.7,
    "reader_gold": 6,
    "visual_gold": 6,
-   "reader_shop": [
-    "LeBlanc",
-    "Kog'Maw",
-    "Sejuani",
-    "Rek'Sai",
-    "Veigar"
-   ],
+   "reader_shop": [],
    "visual_shop": [
     "Ornn",
     "Varus",
     "Yunara",
     "Warwick"
    ],
-   "result": "gold agrees, shop disagrees completely"
+   "result": "gold agrees; reader shop empty"
+  },
+  {
+   "time_s": 735.7,
+   "reader_gold": 9,
+   "visual_gold": 9,
+   "reader_shop": [],
+   "visual_shop": [
+    "Yunara",
+    "Warwick"
+   ],
+   "result": "gold agrees; reader shop empty"
   },
   {
    "time_s": 1183.4,
-   "reader_gold": 25,
+   "reader_gold": 27,
    "visual_gold": 27,
    "reader_shop": [
     "Azir",
@@ -38,8 +46,34 @@
     "Kayle",
     "LeBlanc"
    ],
-   "result": "shop agrees 5/5, gold within 2"
+   "result": "gold and shop agree 5/5"
+  },
+  {
+   "time_s": 2105.5,
+   "reader_gold": 5,
+   "visual_gold": 5,
+   "reader_shop": [],
+   "visual_shop": [
+    "Aphelios",
+    "Ahri",
+    "Rammus",
+    "Azir"
+   ],
+   "result": "gold agrees; reader shop empty"
+  },
+  {
+   "time_s": 2122.5,
+   "reader_gold": 1,
+   "visual_gold": 1,
+   "reader_shop": [],
+   "visual_shop": [
+    "Aphelios",
+    "Ahri",
+    "Rammus",
+    "Azir"
+   ],
+   "result": "gold agrees; reader shop empty"
   }
  ],
- "verdict": "Reader shop is right at 3-5 and wrong at 2-5 in this check. Use shop only where it agrees with visual reads; do not use it to confirm roster changes until the disagreement is explained."
+ "verdict": "Reader gold agrees 5/5 with visual reads. Reader shop agrees only once, and is empty in the other four planning frames. Shop is not yet usable for purchase detection."
 }
