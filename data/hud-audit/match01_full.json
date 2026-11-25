@@ -1987,9 +1987,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "note": "3-6 label at 1236 s shows damage from 3-5 combat; 3-6 combat not yet read"
    },
    "opponent": {
     "value": null,
@@ -1997,8 +1997,58 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "frame_s": 1296,
+    "tag": "read",
+    "value": {
+     "timer": 3,
+     "level": 7,
+     "xp": "4/56",
+     "gold": {
+      "value": 50,
+      "tag": "read"
+     },
+     "streak": {
+      "value": 9,
+      "tag": "read"
+     },
+     "panel": {
+      "value": {
+       "Elderwood": 5,
+       "Rapidfire": 2,
+       "Brawler": 2,
+       "Riftbeast": 2,
+       "Executioner": 1,
+       "Fae": 1,
+       "Spellweaver": 1,
+       "Summoner": 1,
+       "Vanguard": 1
+      },
+      "tag": "read"
+     },
+     "shop": {
+      "value": [
+       "Alistar",
+       "Akali",
+       "Varus",
+       "Caitlyn",
+       "Kog'Maw"
+      ],
+      "tag": "read"
+     },
+     "counter": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved",
+      "note": "units visible in the centre of the arena, not named"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     }
+    }
    },
    "combat": {
     "value": null,
@@ -2093,8 +2143,57 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "frame_s": 1316,
+    "tag": "read",
+    "value": {
+     "banner": "Planning",
+     "timer": 14,
+     "level": 7,
+     "gold": {
+      "value": 63,
+      "tag": "read"
+     },
+     "streak": {
+      "value": 9,
+      "tag": "read"
+     },
+     "panel": {
+      "value": {
+       "Elderwood": 5,
+       "Rapidfire": 2,
+       "Brawler": 2,
+       "Riftbeast": 2,
+       "Executioner": 1,
+       "Fae": 1,
+       "Spellweaver": 1,
+       "Summoner": 1,
+       "Vanguard": 1
+      },
+      "tag": "read"
+     },
+     "shop": {
+      "value": [
+       "Diana",
+       "Vi",
+       "Azir",
+       "Rengar",
+       "Ezreal"
+      ],
+      "tag": "read"
+     },
+     "counter": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     }
+    }
    },
    "combat": {
     "value": null,
