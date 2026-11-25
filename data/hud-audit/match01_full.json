@@ -8412,7 +8412,9 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Scouted P2 panel at 2406 s (sweep 1023) and 2412 to 2424 s (sweep 1026, 1032). Solver over N 1 to 9 and hidden 0 to 2 finds no consistent board, so the panel reading or trait names need checking before any board is recorded.",
+    "reason": "the panel read does not solve to any board under N up to 9 and hidden up to 2"
    },
    "hexes": {
     "value": null,
@@ -8895,7 +8897,9 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Scouted P2 panel at 2486 to 2508 s (sweep 1063, 1072, 1074). Solver over N 1 to 9 and hidden 0 to 2 finds no consistent board.",
+    "reason": "the panel read does not solve to any board under N up to 9 and hidden up to 2"
    },
    "hexes": {
     "value": null,
@@ -9192,7 +9196,9 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Scouted P2 panel at 2572 s (sweep 1106) with a 6+ marker. Solver over N 1 to 9 and hidden 0 to 2 finds no consistent board.",
+    "reason": "the panel read does not solve to any board under N up to 9 and hidden up to 2"
    },
    "hexes": {
     "value": null,
@@ -9986,6 +9992,63 @@
    "owner_status": "candidate, not confirmed",
    "attached_to_round": null,
    "note": "5-2 opponent not otherwise read"
+  },
+  {
+   "t_s": 2406,
+   "sweep_idx": 1023,
+   "panel": {
+    "Attuned": 1,
+    "Avatar": 1,
+    "Emerald Aspect": 1,
+    "Vanguard": 4,
+    "Coven": 3,
+    "Invoker": 2,
+    "Lunar": 2,
+    "Defender": 2,
+    "Fae": 2
+   },
+   "owner": "P2",
+   "owner_status": "derived by alive rule (only P2 alive after P4 eliminated at 6-2)",
+   "solver": "N 1 to 9, hidden 0 to 2: no consistent board",
+   "attached_to_round": "6-3"
+  },
+  {
+   "t_s": 2504,
+   "sweep_idx": 1072,
+   "panel": {
+    "Attuned": 1,
+    "Avatar": 1,
+    "Emerald Aspect": 1,
+    "Old Growth": 1,
+    "Vanguard": 4,
+    "Coven": 3,
+    "Invoker": 2,
+    "Lunar": 2,
+    "Defender": 2
+   },
+   "owner": "P2",
+   "owner_status": "derived by alive rule",
+   "solver": "N 1 to 9, hidden 0 to 2: no consistent board",
+   "attached_to_round": "6-5"
+  },
+  {
+   "t_s": 2572,
+   "sweep_idx": 1106,
+   "panel": {
+    "Attuned": 1,
+    "Avatar": 1,
+    "Emerald Aspect": 1,
+    "Old Growth": 1,
+    "Vanguard": 4,
+    "Coven": 3,
+    "Invoker": 2,
+    "Lunar": 2,
+    "Defender": 2
+   },
+   "owner": "P2",
+   "owner_status": "derived by alive rule",
+   "solver": "N 1 to 9, hidden 0 to 2: no consistent board",
+   "attached_to_round": "6-6"
   }
  ]
 }
