@@ -16,17 +16,21 @@
       99999
     ]
   ],
-  "game_ids": [],
+  "game_ids": [
+    "twitch-2907970518-g60"
+  ],
   "counts": {
-    "games": 0,
-    "fights": 0,
+    "games": 1,
+    "fights": 14,
     "others": 0
   },
   "validator": {
     "ok": 0,
-    "skipped": {}
+    "skipped": {
+      "winner_null": 14
+    }
   },
-  "needs_review": 0,
+  "needs_review": 14,
   "commit": null,
-  "remaining": "More ranked games after first; denser HLS pass pending."
+  "remaining": "More ranked after g60; denser HLS pending."
 }
