@@ -35,7 +35,7 @@ Mục đích: xác định có thể mô phỏng combat TFT từ dữ liệu cô
 
 ## 5. Đo sơ bộ v1 (ĐÃ THAY THẾ bởi mục 6; không dùng để kết luận)
 
-Lý do thay thế: v1 không có augment (bug đọc sai trường), chỉ có cặp cùng vòng, và chế độ public tắt cả ability lẫn trang bị nên không tách được hai yếu tố.
+Lý do thay thế: v1 không có augment (bug đọc sai trường), chỉ có cặp cùng vòng, và chế độ public tắt cả ability lẫn trang bị nên không tách được hai yếu tố. Lưu ý: bỏ augment chỉ đổi khoảng 2 điểm nên bug augment **không** giải thích khoảng cách v1–v2.
 
 Số liệu v1 (giữ để đối chiếu): 
 
@@ -78,15 +78,22 @@ Nguồn: `scripts/combat/analyze17_v3.py`. Test 300 cùng vòng + 300 xuyên vò
 
 Số cặp quyết định: 85% cùng vòng, 92% xuyên vòng. Tỷ lệ A thắng trong cặp quyết định: 51% cùng vòng.
 
+**Kiểm tra ghép cặp (cùng vòng, 256 cặp quyết định, bootstrap theo lobby):**
+- Trang bị so với ability (none − hand_noitems): +0,027 [−0,041; +0,097]. **Không phân biệt được** ở cùng vòng. Xuyên vòng: +0,036 [0,000; +0,077]. Vì vậy không kết luận "trang bị quan trọng hơn ability".
+- generic − none (cùng vòng): +0,004 [−0,043; +0,046]. Trung bình không khác, nhưng |p_generic − p_none| trung bình là 0,158 và 13,7% cặp đổi bên thắng (chênh > 0,5). Nuke mặc định **có thay đổi kết quả từng trận**, chỉ là các chiều triệt tiêu khi lấy trung bình. Không được kết luận nuke mặc định "không tạo khác biệt".
+- Augment: bỏ augment đổi khoảng 2 điểm đồng thuận (98%). Không giải thích được khoảng cách v1–v2.
+- v1 `public` 72% được tái lập ở đây: public 75% (cùng vòng).
+
 **Hồi quy logistic (sức mạnh đơn giản):**
-- Cùng vòng: **68,0%** trên cặp quyết định (baseline luôn đoán A: 50,8%). Theo tercile điểm mô hình: 65%, 63%, 74%.
-- Xuyên vòng: 92,0% (baseline 47,8%).
+- Huấn luyện chỉ trên cặp cùng vòng: **66,4%** [59,1; 73,3] trên cặp quyết định cùng vòng (baseline luôn đoán A: 50,8%).
+- Huấn luyện trên cả cùng vòng và xuyên vòng: 68,0%. Không khác biệt đáng kể so với chỉ cùng vòng.
+- Xuyên vòng: 92,0% (baseline 47,8%). Không nên trộn vào con số chính.
 - Tổng hợp v2 (80,5%) bị thổi phồng bởi cặp xuyên vòng.
 
 **Đọc kết quả (cho cặp cùng vòng, dạng thực tế):**
-- Trong engine, trang bị quan trọng hơn ability: bỏ trang bị làm mất khoảng 17 điểm đồng thuận, bỏ ability làm mất khoảng 14 điểm.
-- Ability generic gần như không khác không ability (85,9% so với 85,6%). Nuke mặc định không thêm thông tin so với bỏ hẳn ability.
+- Bỏ trang bị và bỏ ability đều làm giảm đồng thuận, nhưng khi so cặp với nhau không khác biệt rõ ở cùng vòng.
+- Nuke mặc định đổi kết quả một số trận riêng lẻ (13,7% cặp), nhưng không thiên về một chiều.
 - Augment đóng góp nhỏ (khoảng 2 điểm).
-- Sức mạnh đơn giản chỉ giải thích được một phần cho cặp cùng vòng (68% so với baseline 51%).
+- Sức mạnh đơn giản giải thích được một phần cho cặp cùng vòng: 66% (CI 59–73), so với baseline 51%.
 
-**Giới hạn**: chỉ là engine tự đối chiếu với bot v4; 300 cặp mỗi loại; ngưỡng quyết định 0,9 theo 20 lần chạy; chưa đo với trận thật.
+**Giới hạn**: chỉ là engine tự đối chiếu với bot v4; 256 cặp quyết định cùng vòng; ngưỡng quyết định 0,9 theo 20 lần chạy; chưa đo với trận thật.
