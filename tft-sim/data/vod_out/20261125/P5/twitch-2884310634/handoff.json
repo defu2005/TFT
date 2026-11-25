@@ -35,16 +35,16 @@
   ],
   "counts": {
     "games": 3,
-    "fights": 3,
-    "others": 3
+    "fights": 32,
+    "others": 32
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 3
+      "winner_null": 32
     }
   },
-  "needs_review": 3,
+  "needs_review": 32,
   "commit": null,
-  "remaining": "Volume stub; densify-full remaining ranked PvP. Skip set19/TPC."
+  "remaining": "Densify toward 10-15f/game; boards when readable."
 }
