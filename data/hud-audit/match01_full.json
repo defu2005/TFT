@@ -875,7 +875,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: sweep 50 row 4 owner P5. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P4; flagged scouting runs at 460-462 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 50: row 4, P5.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -1090,7 +1090,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: sweep 91 row 1 owner not established. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P7; flagged scouting runs at 542-546 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 91: row 1, code unresolved.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -1309,7 +1309,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: no scouting run for this stage. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P5; flagged scouting runs at 606-608 s, 662-664 s; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -1733,7 +1733,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: no scouting run for this stage. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P2; no flagged scouting run in this round; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -1994,7 +1994,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: sweep 209 row 3 owner P8. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P6; flagged scouting runs at 778-778 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 209: row 3, P8.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -2487,7 +2487,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: sweep 264 row 2 owner not established. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P3; flagged scouting runs at 888-890 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 264: row 2, code unresolved.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -2774,7 +2774,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: no scouting run for this stage. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P8; no flagged scouting run in this round; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -3021,7 +3021,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: sweep 354 row 2 owner P4. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P7; flagged scouting runs at 1068-1070 s, 1126-1140 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 354: row 2, P4.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -3528,7 +3528,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: no scouting run for this stage. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P5; no flagged scouting run in this round; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -3797,7 +3797,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: sweep 450 row 2 owner not established. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P2; flagged scouting runs at 1260-1260 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 450: row 2, code unresolved.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -4347,7 +4347,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: no scouting run for this stage. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P3; no flagged scouting run in this round; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -4596,7 +4596,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: no scouting run for this stage. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P4; no flagged scouting run in this round; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -4840,7 +4840,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: sweep 587 row 5 owner not established; sweep 592 row 5 owner not established. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P6; flagged scouting runs at 1532-1536 s, 1542-1546 s, 1602-1602 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 587: row 5, code unresolved; sweep 592: row 5, code unresolved.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -5257,7 +5257,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: no scouting run for this stage. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P5; flagged scouting runs at 1716-1716 s; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -5504,7 +5504,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: sweep 678 row 3 owner not established; sweep 682 row 4 owner not established; sweep 685 row 4 owner not established. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P8; flagged scouting runs at 1724-1724 s, 1730-1730 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 678: row 3, code unresolved; sweep 682: row 4, code unresolved; sweep 685: row 4, code unresolved.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -6091,7 +6091,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: no scouting run for this stage. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P2; no flagged scouting run in this round; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -6412,8 +6412,8 @@
      "solver": "panel read; unit list not solved (no duplicate-tested board)"
     },
     "tag": "derived",
-    "basis": "Scouting run 806-812 s; the panel is identical at sweeps 808, 809, 810 and 812, and differs from the streamer's 814 home panel. Owner marker reads P3 at sweep 809 (known-answer test passed).",
-    "attempt": "Panel attached to P3: owner marker on the P3 row at sweep 809, matching the 5-2 opponent. Panel differs from the streamer's home panel at 814.",
+    "basis": "Scouting run at sweeps 808-812 (1976-1984 s), stage 5-2 timer 4. Panel identical across 808, 809, 810 and 812; differs from the streamer's 814 home panel. Owner marker reads P3 at sweep 809.",
+    "attempt": "Panel attached to P3: owner marker at sweep 809 reads P3 (row 5), matching the 5-2 opponent. Second panel at sweeps 806-807 is unattached (marker weak, code unresolved).",
     "reason": "unit list not solved"
    },
    "hexes": {
@@ -6714,7 +6714,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: no scouting run for this stage. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P7; flagged scouting runs at 2060-2076 s; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -7196,7 +7196,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: no scouting run for this stage. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P4; no flagged scouting run in this round; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -7490,7 +7490,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: no scouting run for this stage. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent not fixed; no flagged scouting run in this round; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -7995,7 +7995,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: no scouting run for this stage. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent is P4; no flagged scouting run in this round; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -8280,7 +8280,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "No panel attached: no scouting run for this stage. Owner marker is recorded per sweep; none matches this round's opponent or the marker did not resolve.",
+    "attempt": "opponent not fixed; no flagged scouting run in this round; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -9531,7 +9531,7 @@
    "300": 34.9
   },
   "threshold": "MAD < 8 flagged as scouting-like",
-  "status": "flagged scouting runs read per sheet; owner marker validated on four known rows; panels attached at 5-2 (P3) and 6-3, 6-5, 6-6 (P2)",
+  "status": "flagged scouting runs read per sheet; panels attached at 5-2 (P3) and 6-3, 6-5, 6-6 (P2); other owner marks recorded only",
   "runs_by_round_candidate": {
    "2-1": [
     {
@@ -9920,7 +9920,7 @@
   },
   "frame_s": "t = 362 + (index - 1) * 2",
   "note": "run index i maps to t = 362 + (i-1)*2; checked on the 3-1 window (index 264 = 888 s)",
-  "owner_check": "Stage reads from the top strip: sweep 1023 (2406 s) 6-3 timer 20 with two rail rows alive; sweep 1072 (2504 s) 6-5 timer 5; sweep 1106 (2572 s) 6-6 timer 3; sweep 809 (1978 s) 5-2 timer 4. The owner edge marker is read by pixel and name-matched against the private map. Known rows pass: 809 row 5 gives P3, 1023 row 2 gives P2, 1072 row 2 gives P2, 1106 row 1 gives P2. Panels attached where the marked owner equals the stage opponent: 6-3, 6-5 and 6-6 to P2, 5-2 to P3. Other reads are recorded only, because they differ from their opponents or did not resolve to a code."
+  "owner_check": "Stage reads from the top strip: sweep 1023 (2406 s) 6-3 timer 20 with two rail rows alive; sweep 1072 (2504 s) 6-5 timer 5; sweep 1106 (2572 s) 6-6 timer 3; sweep 809 (1978 s) 5-2 timer 4. 6-3, 6-5 and 6-6 panels attach to P2 by the alive rule (only one other player is alive after 6-2) and match the owner marker at sweeps 1023, 1072 and 1106. The 5-2 panel attaches to P3 by the owner marker at sweep 809 (row 5 reads P3). Marker rows at 682 and 685 do not resolve to a code. The second 5-2 panel at 806-807 is unattached."
  },
  "scouted_panels": [
   {
@@ -9934,7 +9934,7 @@
     "Solar": 1,
     "Sprykin": 1
    },
-   "owner_arrow_row": "row 4",
+   "owner_arrow_row": "row 4, P5",
    "owner_status": "P5 by marker",
    "attached_to_round": null,
    "note": "marker row 4 reads P5; 2-1 opponent is P4, so recorded only",
@@ -9950,7 +9950,7 @@
     "Adaptor": 1,
     "Juggernaut": 1
    },
-   "owner_arrow_row": "row 1",
+   "owner_arrow_row": "row 1, code unresolved",
    "owner_status": "not established",
    "attached_to_round": null,
    "note": "owner not established",
@@ -9967,7 +9967,7 @@
     "Summoner": 1,
     "Riftbeast": 1
    },
-   "owner_arrow_row": "row 3",
+   "owner_arrow_row": "row 3, P8",
    "owner_status": "P8 by marker",
    "attached_to_round": null,
    "note": "marker row 3 reads P8; 2-6 opponent is P6, so recorded only",
@@ -9985,7 +9985,7 @@
     "Brawler": 1,
     "Primal": 1
    },
-   "owner_arrow_row": "row 2",
+   "owner_arrow_row": "row 2, code unresolved",
    "owner_status": "not established",
    "attached_to_round": null,
    "note": "owner not established",
@@ -10004,7 +10004,7 @@
     "Primal": 1,
     "Vanguard": 1
    },
-   "owner_arrow_row": "row 2",
+   "owner_arrow_row": "row 2, P4",
    "owner_status": "P4 by marker",
    "attached_to_round": null,
    "note": "marker row 2 reads P4; 3-3 opponent is P7, so recorded only",
@@ -10021,7 +10021,7 @@
     "Defender": 1,
     "Sprykin": 1
    },
-   "owner_arrow_row": "row 7",
+   "owner_arrow_row": "row 7, P5",
    "owner_status": "P5 by marker",
    "attached_to_round": null,
    "note": "marker row 7 reads P5; 3-4 has no PvP opponent, so recorded only",
@@ -10041,7 +10041,7 @@
     "Summoner": 1,
     "Vanguard": 1
    },
-   "owner_arrow_row": "row 2",
+   "owner_arrow_row": "row 2, code unresolved",
    "owner_status": "not established",
    "attached_to_round": null,
    "note": "owner not established",
@@ -10061,7 +10061,7 @@
     "Blossom": 1,
     "Riftbeast": 1
    },
-   "owner_arrow_row": "row 5",
+   "owner_arrow_row": "row 5, code unresolved",
    "owner_status": "not established",
    "attached_to_round": null,
    "note": "owner not established",
@@ -10081,7 +10081,7 @@
     "Vanguard": 1,
     "Blossom": 1
    },
-   "owner_arrow_row": "row 5",
+   "owner_arrow_row": "row 5, code unresolved",
    "owner_status": "not established",
    "attached_to_round": null,
    "note": "owner not established",
@@ -10101,7 +10101,7 @@
     "Blossom": 1,
     "Riftbeast": 1
    },
-   "owner_arrow_row": "none (carousel)",
+   "owner_arrow_row": "no marker (carousel)",
    "owner_status": "not established",
    "attached_to_round": null,
    "note": "owner not established",
@@ -10121,7 +10121,7 @@
     "Vanguard": 1,
     "Blossom": 1
    },
-   "owner_arrow_row": "row 3",
+   "owner_arrow_row": "row 3, code unresolved",
    "owner_status": "not established",
    "attached_to_round": null,
    "owner": "not established",
@@ -10141,7 +10141,7 @@
     "Fae": 2,
     "Spellweaver": 2
    },
-   "owner_arrow_row": "row 4",
+   "owner_arrow_row": "row 4, code unresolved",
    "owner_status": "not established",
    "attached_to_round": null,
    "owner": "not established",
@@ -10161,7 +10161,7 @@
     "Fae": 2,
     "Spellweaver": 2
    },
-   "owner_arrow_row": "row 4",
+   "owner_arrow_row": "row 4, code unresolved",
    "owner_status": "not established",
    "attached_to_round": null,
    "owner": "not established",
@@ -10179,7 +10179,7 @@
     "Flora Fatalis": 1,
     "Sprykin": 1
    },
-   "owner_arrow_row": "row 5",
+   "owner_arrow_row": "row 5, P3",
    "owner_status": "P3 by marker",
    "attached_to_round": "5-2",
    "note": "5-2 panel attached to P3: marker row 5 reads P3 (known-answer test passed), matching the 5-2 opponent. Panel identical through 808-812, differs from the 814 home panel.",
@@ -10203,7 +10203,7 @@
    "owner_status": "P2 by marker",
    "solver": "N 1 to 9, hidden 0 to 2: no consistent board",
    "attached_to_round": "6-3",
-   "owner_arrow_row": "row 2",
+   "owner_arrow_row": "row 2, P2",
    "note": "panel attached to 6-3: marker reads P2 and the stage opponent is P2"
   },
   {
@@ -10224,7 +10224,7 @@
    "owner_status": "P2 by marker",
    "solver": "N 1 to 9, hidden 0 to 2: no consistent board",
    "attached_to_round": "6-5",
-   "owner_arrow_row": "row 2",
+   "owner_arrow_row": "row 2, P2",
    "note": "panel attached to 6-5: marker reads P2 and the stage opponent is P2"
   },
   {
@@ -10245,7 +10245,7 @@
    "owner_status": "P2 by marker",
    "solver": "N 1 to 9, hidden 0 to 2: no consistent board",
    "attached_to_round": "6-6",
-   "owner_arrow_row": "row 1",
+   "owner_arrow_row": "row 1, P2",
    "note": "panel attached to 6-6: marker reads P2 and the stage opponent is P2"
   },
   {
@@ -10264,6 +10264,26 @@
    "owner_status": "not established",
    "attached_to_round": null,
    "note": "3-4 Frame A, another player panel"
+  },
+  {
+   "t_s": 1972,
+   "sweep_idx": 806,
+   "panel": null,
+   "owner_arrow_row": "marker row 7 (weak), code unresolved",
+   "owner_status": "not established",
+   "attached_to_round": null,
+   "note": "Second panel on the 5-2 run: arena different from 808-812; marker weak; code unresolved; not attached.",
+   "owner": "not established"
+  },
+  {
+   "t_s": 1974,
+   "sweep_idx": 807,
+   "panel": null,
+   "owner_arrow_row": "marker row 5 (weak), code unresolved",
+   "owner_status": "not established",
+   "attached_to_round": null,
+   "note": "Second panel on the 5-2 run: marker weak; code unresolved; not attached.",
+   "owner": "not established"
   }
  ]
 }
