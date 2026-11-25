@@ -301,7 +301,7 @@ Kiểm tra cặp (cùng 1675 cặp quyết định, `phase1_pairs.csv.gz`, boots
 - `generic` không gần hand hơn `none` một cách đo được: chênh lệch cặp -1,8%, CI [-3,9; +0,3] (bao gồm 0). Đây là giới hạn chính khi dự đoán Set 18, vì `hand` đang bị chặn ở Set 18.
 - `generic_novars` gần hand hơn `none` (-2,5%, CI [-3,6; -1,2]), nhưng khác biệt này không có ý nghĩa khi so với `generic`.
 
-Thứ tự Phase 3 đã ghi (ban đầu): ability trước, rồi trait, rồi augment. Lựa chọn Phase 3 đã ghi: dùng số generic thô cho ability KHÔNG được coi là cải thiện. Mục tiêu tiếp theo là template ability Set 18 (mục 9) lấy từ mô tả và biến số CDragon, rồi đo lại với `none` làm mốc. Bảng trait (25 trait không có ánh xạ stat) làm sau, vì Phase 1 cho thấy trait chỉ đổi 4,9%.
+Thứ tự Phase 3 đã ghi (ban đầu): ability trước, rồi trait, rồi augment. Ghi chú: mục cổng template đã đóng ở 11.2 (FAIL), không còn là bước kế tiếp. Lựa chọn Phase 3 đã ghi: dùng số generic thô cho ability KHÔNG được coi là cải thiện. Mục tiêu tiếp theo là template ability Set 18 (mục 9) lấy từ mô tả và biến số CDragon, rồi đo lại với `none` làm mốc. Bảng trait (25 trait không có ánh xạ stat) làm sau, vì Phase 1 cho thấy trait chỉ đổi 4,9%.
 
 
 
@@ -342,12 +342,29 @@ Chỉ số tách riêng:
 (c) chênh lệch cặp trung bình kèm bootstrap theo lobby (cặp không tách được lobby: tính theo nguồn `same`/`cross`).
 Lưu ý khi đọc: flip nhỏ có thể do trait chưa có ánh xạ stat (xem mục 9 của bảng trait), không có nghĩa là emblem không quan trọng. Kết quả chỉ là độ nhạy của sim, không phải độ đúng.
 
-- Kết quả (`results/fixed/combat/emblem_sensitivity.json`, 1000 cặp, generic, N=20): 432 cặp có emblem; 108 cặp (10,8%) có ít nhất một trait đổi tier khi bật emblem; 3 cặp có p đổi hơn 0,05; flip 0,2% (CI95 [0,0; 0,5]); chênh lệch trung bình 0,001.
-- Đọc: emblem đã đổi tier ở 10,8% cặp nhưng gần như không đổi kết quả. Nguyên nhân chính là bảng trait: trong 588 slot emblem của mẫu này, chỉ 33,5% thuộc trait có ánh xạ stat (Fae, Spellweaver, Sprykin, Lunar, Vanguard, Blossom, Hunter, Blackthorn). 66,5% thuộc trait chưa có ánh xạ (Ravager 110, Inferno 101, Brawler 70, và các trait khác). Vì vậy độ nhạy thấp là do thiếu bảng trait, chưa phải kết luận emblem không quan trọng.
-- Quyết định: giữ `emblems=False` làm mặc định cho đến khi bảng trait xong. Bước 5 (bảng 25 trait chưa ánh xạ) là việc tiếp theo, thứ tự theo số thành viên: Riftbeast 10, Avatar 10, Elderwood 8, Juggernaut 7, Ravager 6, Inferno 6, Defender 6, Coven 6, Brawler 6, Rapidfire 5, Invoker 5, Executioner 5, Adaptor 5, Summoner 4, Solar 4, Primal 4, Rival 2, Flora Fatalis 2, rồi 1 thành viên: Old Growth, Greenfather, Emerald Aspect, Caustic, Bounty Seeker, Apex Predator; Eclipse 0.
-- Brawler (`DA_18_Brawler`) có cờ `name_referenced_in_engine`: phải đọc mã engine trước khi ánh xạ.
+- Kết quả (`results/fixed/combat/emblem_sensitivity.json`, từng cặp trong `emblem_sensitivity.pairs.csv.gz`; 1000 cặp, 10 lobby, generic, N=20): 432 cặp có emblem; 108 cặp (10,8%) có trait đổi tier; 31 cặp đổi tier ở trait có ánh xạ stat; trong 31 cặp đó trung bình |Δp| = 0,026 và 2 cặp (6,5%) đảo bên thắng. Trên toàn mẫu: flip 0,2% (CI95 theo lobby [0,0; 0,5]), 3 cặp có |Δp| > 0,05.
+- Đọc: tác động của emblem nhỏ, nhưng mẫu này không đủ để kết luận vì 876/1000 cặp là quyết định (p ≤ 0,1 hoặc ≥ 0,9), nên gần như mọi cặp đã bão hòa và không thể đảo. Đây là lỗi thiết kế mẫu, không phải bằng chứng emblem không quan trọng. Cần đo lại trên cặp không quyết định (xem 11.7 và bước đo lại sau khi có bảng trait).
+- Sửa: CI trong bản trước được bootstrap theo cặp; bản này bootstrap theo lobby (10 cụm), chỉ có 10 lobby nên CI rất rộng.
+- Quyết định: giữ `emblems=False` làm mặc định. Bảng trait (25 trait chưa ánh xạ) vẫn cần làm, nhưng không còn là kết luận duy nhất từ độ nhạy này.
 
 ### 11.6 Cập nhật 2026-11-25 (bổ sung)
 - Mục 11.4: không đuổi theo Riot key trong lượt này. Người dùng sẽ cung cấp dữ liệu. Không xin credential.
 - Yêu cầu bản ghi (`docs/agents/requests/20261125-sim-to-hud-state-fields.md`): bản ghi là từng cặp bàn tại thời điểm đánh (fight-v1), không phải bảng cuối game. Điểm thứ hạng (placement) không chấm được bằng sim này; cần bản ghi per-fight để chạy Phase 4.
 - Bước 5 (bảng trait) và bước đo lại sau bảng trait: chưa làm.
+
+
+### 11.7 Khóa Phase 4 trước khi có bản ghi thật (2026-11-25)
+- Cấu hình chính: ability generic, items bật, augments bật, traits bật, emblems tắt. Cấu hình phụ: như chính nhưng emblems bật. Không thêm cấu hình nào khác.
+- Chỉ số: độ chính xác và Brier, trên các fight có người thắng đã biết. CI bootstrap theo ván (game), không theo fight.
+- Mốc so sánh: 50%; và quy tắc sức mạnh không tham số: bên có tổng giá × 3^(sao−1) cao hơn thắng. Giá lấy từ Set 18.
+- Đạt: hiệu cặp (chính − quy tắc sức mạnh) có CI95 nằm hoàn toàn trên 0.
+- Loại trừ: người thắng null, tướng không rõ. Đếm và báo cáo số bị loại, kèm lý do.
+- Cỡ mẫu: với độ chính xác khoảng 60%, CI rộng khoảng ±10 điểm ở 100 fight và ±5–6 điểm ở 300 fight; khi gom theo ván thì rộng hơn.
+- Chưa có bản ghi thật: không có kết quả nào được báo cáo.
+
+### 11.8 Augment Set 18 chạy hook Set 17 (2026-11-25)
+- 70 trong 594 augment Set 18 có cùng id với hook trong `AUGMENT_REGISTRY` (Set 17). Trong mẫu `pairs18_sample.jsonl`: 1008 trên 3616 slot augment (27,9%) chạy hook Set 17.
+- Đọc mẫu: cùng tên nhưng cơ chế có thể khác. Ví dụ Clockwork Accelerator: Set 18 là tăng tốc đánh định kỳ mỗi `frequency` giây; hook Set 17 chỉ áp dụng một lần lúc bắt đầu trận (ghi chú "approx"). Electrocharge I: Set 18 là proc theo số đòn nhận; hook Set 17 là một đợt sát thương duy nhất (ghi chú "approx"). Cybernetic Uplink và Giant and Mighty: hook đọc cùng tên biến, có thể đúng về số nhưng chưa kiểm chứng.
+- Quyết định: không coi các hook này là đúng cho Set 18. Đề xuất: thêm công tắc `augment_hooks` cho Set 18 để bỏ hook Set 17 (chưa làm). Cấu hình chính của Phase 4 (11.7) cần chọn một trong hai và ghi rõ.
+- Đã làm (2026-11-25): `fidelity.py` đọc từng dòng, bỏ qua bản ghi hỏng và đếm theo lý do (`skipped`), đếm tên item lạ (`unknown_items`). Bản ghi sim hoặc label khác `real` làm dừng cả file. Bản ghi `dryrun-*` bị bỏ mặc định. Bộ thử `tests/fixtures/set18_dryrun.jsonl` có selftest mục 11 (PASS).
+- Trạng thái đầy đủ và lệnh tái lập: `docs/research/set18-status.md`.

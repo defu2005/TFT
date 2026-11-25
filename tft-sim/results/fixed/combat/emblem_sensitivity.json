@@ -5,10 +5,14 @@
  "share_tier_change": 0.108,
  "pairs_p_change_gt_0.05": 3,
  "flip_rate_all": 0.002,
- "flip_all_ci95": [
+ "flip_all_ci95_by_lobby": [
   0.0,
-  0.005
+  0.0049
  ],
+ "n_lobbies": 10,
+ "pairs_stat_mapped_tier_change": 31,
+ "mean_abs_dp_stat_mapped": 0.0258,
+ "flip_stat_mapped": 0.0645,
  "flip_rate_decisive_off": 0.0,
  "n_decisive_off": 876,
  "mean_abs_gap": 0.001

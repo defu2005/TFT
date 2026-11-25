@@ -211,4 +211,17 @@ print("e) spellweaver ap full", ap_full, "skip", ap_skip)
 ok10 &= any(abs(a - b) > 1e-6 for a, b in zip(ap_full, ap_skip))
 ok &= ok10
 print("emblem block", "PASS" if ok10 else "FAIL")
+# 11) Duong ban ghi that Set 18 (fidelity): fixture 8 ban ghi, bo qua va dem ly do, khong dung ca file
+import fidelity as FD2  # noqa: E402
+fx_path = Path(__file__).resolve().parents[2] / "tests" / "fixtures" / "set18_dryrun.jsonl"
+out11 = FD2.score(str(fx_path), "generic", True, 5, False, allow_dryrun=True)
+print("fidelity set18 fixture", {k: out11[k] for k in ("n", "skipped", "unknown_items")})
+ok11 = out11["n"] == 5
+ok11 &= out11["skipped"].get("winner_null") == 1 and out11["skipped"].get("tuong_la:TFT_NotAChampion_Dryrun") == 1
+ok11 &= any(k.startswith("schema:") for k in out11["skipped"])
+ok11 &= out11["unknown_items"].get("TFT_Item_NoSuchItem_Dryrun") == 1
+out11b = FD2.score(str(fx_path), "generic", True, 5, False)  # mac dinh: dryrun bi bo
+ok11 &= out11b["n"] == 0 and out11b["skipped"].get("dryrun") == 7
+ok &= ok11
+print("fidelity block", "PASS" if ok11 else "FAIL")
 print("SELFTEST", "PASS" if ok else "FAIL")
