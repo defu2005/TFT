@@ -8,24 +8,69 @@
     [
       60,
       1740
+    ],
+    [
+      2600,
+      4300
+    ],
+    [
+      4400,
+      6500
+    ],
+    [
+      6800,
+      8400
+    ],
+    [
+      8600,
+      10800
+    ],
+    [
+      11000,
+      12700
+    ],
+    [
+      13400,
+      15100
+    ],
+    [
+      15800,
+      17500
+    ],
+    [
+      18200,
+      19900
+    ],
+    [
+      20600,
+      22000
     ]
   ],
   "remaining_ranges_s": [],
   "game_ids": [
-    "twitch-2904494754-g60"
+    "twitch-2904494754-g60",
+    "twitch-2904494754-g2600",
+    "twitch-2904494754-g4400",
+    "twitch-2904494754-g6800",
+    "twitch-2904494754-g8600",
+    "twitch-2904494754-g11000",
+    "twitch-2904494754-g13400",
+    "twitch-2904494754-g15800",
+    "twitch-2904494754-g18200",
+    "twitch-2904494754-g20600"
   ],
   "counts": {
-    "games": 1,
-    "fights": 14,
+    "games": 10,
+    "fights": 122,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 14
+      "winner_null": 122
     }
   },
-  "needs_review": 14,
+  "needs_review": 122,
   "commit": null,
-  "remaining": "Short VOD (~29min); single ranked game Challenger through stage5-5@4200 near VOD end."
+  "remaining": "Denser ranked stubs across full ~6h VOD; skipped non-TFT (desktop/anagrams/depth) gaps. Prior handoff wrongly marked short."
 }

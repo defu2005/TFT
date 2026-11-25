@@ -10,32 +10,57 @@
       2000
     ],
     [
+      6600,
+      9500
+    ],
+    [
       2400,
       4000
     ],
     [
-      6600,
-      9500
+      11000,
+      12000
+    ],
+    [
+      13000,
+      14500
+    ],
+    [
+      15000,
+      16500
+    ],
+    [
+      17000,
+      18500
+    ],
+    [
+      19000,
+      20500
     ]
   ],
   "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2887388624-g60",
     "twitch-2887388624-g6600",
-    "twitch-2887388624-g2400"
+    "twitch-2887388624-g2400",
+    "twitch-2887388624-g11000",
+    "twitch-2887388624-g13000",
+    "twitch-2887388624-g15000",
+    "twitch-2887388624-g17000",
+    "twitch-2887388624-g19000"
   ],
   "counts": {
-    "games": 3,
-    "fights": 38,
+    "games": 8,
+    "fights": 98,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 38
+      "winner_null": 98
     }
   },
-  "needs_review": 38,
+  "needs_review": 98,
   "commit": null,
-  "remaining": "Ranked segments done; non-TFT (krillion) gaps skipped."
+  "remaining": "Denser ranked stubs expand; +5 games this batch."
 }
