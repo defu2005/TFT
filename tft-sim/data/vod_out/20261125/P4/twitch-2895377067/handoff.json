@@ -12,25 +12,50 @@
     [
       2400,
       4000
+    ],
+    [
+      5200,
+      7000
+    ],
+    [
+      14800,
+      16800
+    ],
+    [
+      17200,
+      19000
+    ],
+    [
+      19600,
+      21500
+    ],
+    [
+      22000,
+      23200
     ]
   ],
   "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2895377067-g60",
-    "twitch-2895377067-g2400"
+    "twitch-2895377067-g2400",
+    "twitch-2895377067-g5200",
+    "twitch-2895377067-g14800",
+    "twitch-2895377067-g17200",
+    "twitch-2895377067-g19600",
+    "twitch-2895377067-g22000"
   ],
   "counts": {
-    "games": 2,
-    "fights": 26,
+    "games": 7,
+    "fights": 86,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 26
+      "winner_null": 86
     }
   },
-  "needs_review": 26,
+  "needs_review": 86,
   "commit": null,
-  "remaining": "Ranked early games done; mid VOD trivia/non-TFT skipped."
+  "remaining": "Denser ranked stubs; SKIP BoxBox Bash ~8200-14700 (tourney)."
 }
