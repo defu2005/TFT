@@ -11,7 +11,7 @@ fields: theo thứ tự ưu tiên dưới đây. Mỗi trường kèm `confidenc
   7. Log của set thứ hai (ràng buộc chính: mọi dữ liệu hiện tại là Set 18).
 schema: hudSchema 3 (tăng phiên bản theo data-contracts mục 3). Schema 2 giữ nguyên để đọc file cũ.
 why: mô hình thích ứng nhiều mùa cần dữ liệu đến dần theo từng loại. Mỗi loại mở khóa một bước đo khác (`tft-sim/docs/model-plan.md` mục 10). Thứ tự trên theo thứ tự mở khóa, không theo độ tiện làm. Hiện không trường nào trong schema 2 đủ để chạy `decide.js`: nó coi `hp` và `stage` thiếu là 0.
-unblocks: harness đo tỷ lệ đồng ý của `decide.js` (Phase 4); thí nghiệm mask của sim (`model-plan.md` 10.6); tiêu chí placement của sim.
+unblocks: harness đo tỷ lệ đồng ý của `decide.js` (Phase 4); thí nghiệm mask của sim (`model-plan.md` 10.6); tiêu chí placement của sim.; bàn (3) và kết quả round (4) còn dùng để kiểm độ trung thực của simulator (nhân nhóm `tft-sim`, xem model-plan 10.8)
 deadline:
 status: mở
 
