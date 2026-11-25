@@ -28,6 +28,18 @@
     [
       13000,
       16000
+    ],
+    [
+      16500,
+      18000
+    ],
+    [
+      18300,
+      20000
+    ],
+    [
+      21000,
+      22400
     ]
   ],
   "remaining_ranges_s": [],
@@ -37,20 +49,23 @@
     "twitch-2911484335-g4800",
     "twitch-2911484335-g6600",
     "twitch-2911484335-g9000",
-    "twitch-2911484335-g13000"
+    "twitch-2911484335-g13000",
+    "twitch-2911484335-g16500",
+    "twitch-2911484335-g18300",
+    "twitch-2911484335-g21000"
   ],
   "counts": {
-    "games": 6,
-    "fights": 80,
+    "games": 9,
+    "fights": 116,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 80
+      "winner_null": 116
     }
   },
-  "needs_review": 80,
+  "needs_review": 116,
   "commit": null,
-  "remaining": "Ranked spans covered."
+  "remaining": "Denser ranked stubs expand; +3 games this batch."
 }
