@@ -148,9 +148,9 @@ Báo cáo cuối: đã tìm được gì, còn thiếu gì, mâu thuẫn giữa 
 ## Prompt E (kiểm định clone v5, chỉ sau khi DT xong)
 
 ```
-Bạn là agent E cho dự án TFT (workstream sim). Nhánh được giao: codex/sim-e. Nhánh gốc của phiên này là codex/sim-dt (đã có checkpoint).
+Bạn là agent E cho dự án TFT (workstream sim). Nhánh được giao: codex/sim-e (đã tạo từ codex/sim-dt @ 01d2339, có checkpoint).
 
-Bước 0: kiểm tra tft-sim/results/checkpoints/clone_v5_seed0.pt có trong repo. Nếu thiếu, dừng và báo "DT chưa xong".
+Bước 0: kiểm tra tft-sim/results/checkpoints/clone_v5_seed0.pt có trong repo, sha256 phải là 5e80ab4c889b52af58028020e8ca57140b50a10b742f2589b755c4a4f14e4f68. Nếu thiếu hoặc khác, dừng và báo.
 
 Đọc trước: tft-sim/docs/handoff/cloud-agents.md (mục 0, 2, 5).
 
@@ -161,7 +161,7 @@ Các phép (mỗi phép 1000 ván, seed 241000–241999, chưa dùng). Từ thư
 - python scripts/play_v4.py clone_v4 results/checkpoints/clone_v5_seed0.pt 241000 242000 v5
 - python scripts/play_v4.py clone_v3 results/checkpoints/clone_v5_seed0.pt 241000 242000 v5
 - python scripts/play_v4.py clone_scr results/checkpoints/clone_v5_seed0.pt 241000 242000 v5
-Tối đa 4 tiến trình song song. Mỗi tiến trình ghi results/fixed/real/play_v5_<mode>.json.
+Chạy 2 tiến trình cùng lúc: đầu tiên v4null và clone_v4, sau đó clone_v3 và clone_scr. Mỗi tiến trình ghi results/fixed/real/play_v5_<mode>.json. Ngay khi mỗi file xong: git add, commit, git push origin codex/sim-e (không force), để kết quả không mất nếu phiên dừng sớm.
 
 Lưu ý: v4null là kiểm tra âm (v4 với v4, kỳ vọng CI chứa 0). Các phép còn lại: clone_v4 kỳ vọng CI chứa 0 nếu clone bắt chước được v4; clone_v3 và clone_scr kỳ vọng hiệu âm nếu clone tốt hơn.
 
@@ -169,14 +169,14 @@ Tính CI95 bằng bootstrap 2000 lần trên per_lobby_diff_A_minus_B (cùng cá
 
 Ràng buộc: không chọn tham số hay checkpoint trên 241000–241999; không chạy lại với seed khác để tìm kết quả đẹp; không sửa src/, ingest/; không tạo PR.
 
-Báo cáo cuối: bảng 4 phép (hiệu, CI95, n, số lượt đi không hợp lệ nếu có), kết luận đạt/không đạt từng tiêu chí, nhánh và commit hash.
+Ghi nhãn kết quả là "v5 rút gọn (500 ván train), seed0". Báo cáo cuối: bảng 4 phép (hiệu, CI95, n, số lượt đi không hợp lệ nếu có), kết luận đạt/không đạt từng tiêu chí, nhánh và commit hash.
 ```
 
 ---
 
 ## Ghi chú cho người dùng
 
-- Phiên DT và phiên C, R có thể chạy song song ngay. Phiên E phải đợi DT push xong.
+- Nhánh codex/sim-e đã tạo sẵn từ codex/sim-dt @ 01d2339. Phiên E có thể chạy ngay.
 - Nếu một dịch vụ không cho chọn nhánh khi tạo phiên, dán tên nhánh vào prompt và yêu cầu agent đổi nhánh ngay đầu phiên (bước 0 kiểm tra nhánh).
 - Vai P (định vị) chưa giao. Chỉ giao khi C và E đã có kết quả.
 </content>

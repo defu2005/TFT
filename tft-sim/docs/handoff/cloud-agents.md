@@ -62,9 +62,9 @@ cd tft-sim && python scripts/collect_v4.py 900000 900002 /tmp/smoke.npz
 | 220000–220199 | dev CEM | đã dùng (dev, được tái dùng) |
 | 230000–230999 | giữ-lại CEM cũ | đã dùng |
 | 900000–900099 | kiểm thử cài đặt (không phải dữ liệu) | dành cho smoke |
-| **300000–301999** | **dữ liệu DT: train 300000–301499, val 301500–301599, test 301600–301999** | **dành riêng cho vai DT** |
-| **240000–240999** | **kiểm định cuối CEM (vai C)** | dành riêng |
-| **241000–241999** | **kiểm định cuối clone (vai E)** | dành riêng |
+| **300000–301999** | **dữ liệu DT: train 300000–301499, val 301500–301599, test 301600–301999** | **đã dùng một phần (DT, chế độ rút gọn): 300000–300499 và 301500–301999. 300500–301499 chưa dùng, để dành** |
+| **240000–240999** | **kiểm định cuối CEM (vai C)** | **đã dùng (C, 2026-11-24)** |
+| **241000–241999** | **kiểm định cuối clone (vai E)** | dành riêng, chưa dùng (E) |
 | **242000–249999** | **dự trữ cho vai P (định vị)** | dành riêng |
 
 Không chồng dải. Không dùng 230000–230999 hay 240000+ để huấn luyện.
@@ -115,9 +115,9 @@ Kiểm tra bắt buộc trước khi báo xong:
 - Dữ liệu thô chỉ rời máy khi người dùng yêu cầu rõ.
 
 
-## Dang chay / bi chan (cap nhat tu dong 2026-11-24)
+## Dang chay / bi chan (cap nhat 2026-11-25)
 
-- **DT:** chay che do giam (`reduced_low_memory`): train 500 van (300000–300499), khong phai 1.500. Seed 300500–301499 chua thu thap va van de trong. Can quyet dinh co chay them shard `s2`, `s3` hay chap nhan clone v5 o muc nay. RAM dinh 6.350 MB, duoi nguong 16 GB.
-- **R:** commit `bcf9ebe` noi snapshot CDragon trong repo la version 16.23, trong khi README ghi 18.7. Chua xac minh (snapshot khong chua chuoi version). Doc ghi ngay "2026-11-25" (tuong lai). Can kiem tra truoc khi dung so Set 18 cua R.
-- **E:** cho nhanh `codex/sim-e`. Checkpoint `clone_v5_seed0.pt` da co tren `codex/sim-dt`.
-- **C:** chua co commit.
+- **DT:** chap nhan clone v5 o che do rut gon (500 van train, seed 300000–300499; val + test 301500–301999). Seed 300500–301499 de danh, khong dung. Khong chay lai tren may cung.
+- **R:** snapshot CDragon trong repo la trang thai truoc 18.7 (chuoi version 16.23). Du lieu Set 18 trong mo phong khong khop 18.7. Can lay file dung ban 18.7 truoc khi dung cho Set 18. Set 17 (E) khong bi chan boi viec nay.
+- **E:** nhanh `codex/sim-e` da tao tu `codex/sim-dt` @ 01d2339. Checkpoint da kiem tra nap duoc (smoke 900000–900002, 0 luot khong hop le).
+- **C:** xong. CEM tren 240000–240999 (xem README).

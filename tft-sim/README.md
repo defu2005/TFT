@@ -522,9 +522,9 @@ Quet `origin` sau commit `0ba34f3`. Hai nhanh co commit moi; hai nhanh chua co g
 - Checkpoint `results/checkpoints/clone_v5_seed0.pt` (188.905 byte) da commit.
 - **Chua co so placement cho v5.** Chua co CI95; vong E chua chay.
 
-**R — `cursor/sim-r` @ `bcf9ebe`.** `docs/handoff/set18-sources.md` cap nhat: cap 7 = 19/30/40/10/1 (Riot 17.1, da kiem nguon cong khai); XP 2→7 = 2/6/10/20/36 (Riot 14.15, khop 13.23). Chua duoc xac minh doc lap:
+**R — `cursor/sim-r` @ `bcf9ebe`.** `docs/handoff/set18-sources.md` cap nhat: cap 7 = 19/30/40/10/1 (Riot 17.1, da kiem nguon cong khai); XP 2→7 = 2/6/10/20/36 (Riot 14.15, khop 13.23). Da doi chieu (2026-11-25): doc R dan `content-metadata.json` ghi version 16.23; snapshot co `DA_18_Kennen` = Inferno + Executioner, `DA_18_Ivern` = Greenfather, `DA_Krug18` = Riftbeast + Brawler, la trang thai truoc 18.7. Nhan "18.7" cho snapshot la sai. Anh huong: du lieu Set 18 (DA) trong mo phong khong khop 18.7. Set 17 (dung cho E) khong duoc kiem tra rieng, nen nhan "18.7" tren snapshot can sua khi co file dung.
 - Commit `bcf9ebe` noi snapshot CDragon trong repo co version string **16.23**, khong phai 18.7. Toi kiem tra snapshot `tft-sim/data/cdragon/cdragon_18.7_2026-11-23.json.gz`: sha256 khop README, nhung khong tim thay chuoi version nao trong noi dung. **Chua giai quyet duoc; can kiem tra truoc khi tin nhan 18.7 cho Set 18.**
-- File ghi "Cap nhat: 2026-11-25", la ngay sau ngay hom nay (2026-11-24). Can kiem tra lai.
+- File ghi "Cap nhat: 2026-11-25 (gio Bangkok)". Day la dung: 21:00 UTC ngay 24 la 04:00 ngay 25 o Bangkok, khong phai loi.
 
 **C — `codex/sim-c`:** chua co commit moi (van `0ba34f3`).
 
@@ -532,8 +532,6 @@ Quet `origin` sau commit `0ba34f3`. Hai nhanh co commit moi; hai nhanh chua co g
 
 Commit ket qua nay chi them muc moi; so cu khong sua.
 
-Co-Authored-By: Claude Haiku 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_014HR84uNjNyg8fiD4KjHhVE
 
 ## Ket qua CEM trang bi (vai C, codex/sim-c @ 65f6c1c, 2026-11-24)
 
@@ -546,5 +544,3 @@ Nguon: `results/fixed/real/cem_item_v2.json` va `item_valuemax_vs_default_240000
 
 Trang thai: vai C xong ve trang bi. Chua co placement cho clone v5 (vai E chua chay).
 
-Co-Authored-By: Claude Haiku 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_014HR84uNjNyg8fiD4KjHhVE
