@@ -151,7 +151,7 @@
     "5-5": "alias P4 (top nameplate at 2122.5 s), consistent with HP loss"
   },
   "trait_solver": {
-    "method": "exact trait-count match over catalog champions (set18.json), N = board counter; retry with N-1, N-2",
+    "method": "exact trait-count match over catalog champions (set18.json); panels with 2+/1+ markers need extra-trait allowance; retries with N-1 and N-2",
     "2-5_frame_A_N5": {
       "exact_solutions": 1,
       "solution": [
@@ -161,21 +161,47 @@
         "LeBlanc",
         "Mama Beak"
       ],
-      "status": "contradicted_by_eye: board crop shows an Ornn-like horned unit, Ornn carries Defender, and Defender is absent from the panel"
+      "status": "unverified: visual check disputed, not confirmed; a horned unit may be Ornn, which the panel lacks Defender for"
     },
     "3-5_frame_A_N7": {
       "exact_solutions": 0,
       "retry_N6_solutions": 1,
-      "status": "no exact solution; N-1 retry breaks the 7/7 counter, so rejected"
+      "retry_N6_solution": [
+        "Xayah",
+        "Ezreal",
+        "Rek'Sai",
+        "Kobuko",
+        "Alistar",
+        "Mama Beak"
+      ],
+      "status": "unverified: N=6 conflicts with the 7/7 counter; counter not natively checked"
     },
     "5-5_frame_A_N9": {
       "exact_solutions": 0,
-      "status": "no exact solution; panel traits Bounty Seeker, Emerald Aspect, Greenfather and Old Growth are not explained by champion traits (likely augment or emblem sources)"
+      "extra2_solutions": 1,
+      "solution": [
+        "Alistar",
+        "Amumu",
+        "Draven",
+        "Ezreal",
+        "Gnar",
+        "Ivern",
+        "Kennen",
+        "Maokai",
+        "Taric"
+      ],
+      "status": "unverified: single solution with listed traits matched exactly and two unlisted traits allowed"
+    },
+    "3-5_frame_B_N7_extra2": {
+      "solutions": "50+ (cap reached)",
+      "status": "underdetermined; trait panel alone does not identify units here"
     }
   },
   "counts": {
     "named_confirmed": 0,
     "unknown": "all board and bench units",
-    "contradicted": 1
-  }
+    "contradicted": 0,
+    "unverified_solutions": 4
+  },
+  "correction": "Earlier statement that augments explained the 5-5 traits was wrong: those traits are in the champion catalog."
 }
