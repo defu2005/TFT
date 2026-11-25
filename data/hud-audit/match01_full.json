@@ -1169,7 +1169,7 @@
      "Mama Beak"
     ],
     "tag": "derived",
-    "basis": "unique exact solver solution for the 990 s panel (only 1 of combos from the 7 traits-compatible champions); counter 5/6 means 5 unique, one duplicate; names not confirmed per hex"
+    "basis": "counter 5/6 at level 6 = 5 units fielded out of cap 6 (not unique count); exact solver solution for the 990 s panel; names not confirmed per hex"
    },
    "bench_units": {
     "value": null,
@@ -1320,7 +1320,8 @@
    "augment": null,
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "panel equals the 5-unit 3-2 solution (Xayah, Ezreal, Kobuko, Alistar, Mama Beak); 6th model has no roster trait that fits the panel; exact solver with and without duplicates returns 0 solutions for 6 units; needs a check of the 6th model (summon or trait-less unit?)"
    },
    "bench_units": {
     "value": null,
@@ -1346,7 +1347,38 @@
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "trait_panel_1058_planning": {
+    "value": {
+     "Elderwood": 3,
+     "Rapidfire": 2,
+     "Brawler": 2,
+     "Executioner": 1,
+     "Fae": 1,
+     "Summoner": 1,
+     "Riftbeast": 1,
+     "Sprykin": 1
+    },
+    "tag": "read",
+    "frame_s": 1058,
+    "phase": "planning",
+    "timer": 18,
+    "gold": 49,
+    "level": 6,
+    "xp": "2/36"
+   },
+   "board_counter_1058": {
+    "value": "6/6",
+    "tag": "read"
+   },
+   "shop_1058": {
+    "value": [
+     "Sivir",
+     "Murkwolf"
+    ],
+    "tag": "read",
+    "note": "other slots not read"
+   }
   },
   {
    "round": "3-4",
