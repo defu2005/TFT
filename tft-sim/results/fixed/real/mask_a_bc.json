@@ -1,0 +1,20 @@
+{
+  "cond": "a",
+  "dims": 14,
+  "train_rows": 1184548,
+  "test_rows": 590424,
+  "overall_test": 0.6355,
+  "per_type_ge2": {
+    "BENCH_BOARD": 0.0858,
+    "BUY_SHOP": 0.5886,
+    "BUY_XP": 1.0,
+    "EQUIP": 1.0,
+    "FIELD": 0.4622,
+    "PASS": 0.9591,
+    "PICK_AUGMENT": 0.4619,
+    "PICK_GOD": 1.0,
+    "REROLL": 1.0,
+    "REROLL_AUGMENT": 0.0,
+    "SELL_BENCH": 0.564
+  }
+}
