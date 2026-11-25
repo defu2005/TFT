@@ -4198,7 +4198,7 @@
      "counter": "8/8",
      "level": 8,
      "xp": "2/68",
-     "gold": 27,
+     "gold": 22,
      "streak": 10,
      "panel": {
       "Bounty Seeker": 1,
@@ -4294,6 +4294,35 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
+   },
+   "frame_A_read": {
+    "frame_s": 1468,
+    "timer": 14,
+    "counter": "8/8",
+    "level": 8,
+    "xp": "2/68",
+    "gold": 22,
+    "streak": 10,
+    "shop": "not shown (sell tooltip covers the shop)",
+    "panel": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1,
+     "marker": "1+"
+    },
+    "gold_conflict": "master planning gold at 1468 s is 27; this frame shows 22 with a sell tooltip; reader row says 27 at 1468.0",
+    "rail_hp_rows": "nonzero HP on the visible rows",
+    "bench": "six portraits in the bottom bench strip; units not identifiable at 720p",
+    "board_units_rowcol": "eight units on hexes, not identifiable at 720p by sprite; not read by row and column",
+    "stars_items": "not resolvable at 720p",
+    "tag": "read",
+    "source": "frame at 1468 s, viewed in this session"
    }
   },
   {
