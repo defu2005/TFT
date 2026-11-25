@@ -2810,7 +2810,8 @@
      "note": "re-read full height; Brawler 3"
     },
     "tag": "read",
-    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled",
+    "test": "snapshot test (advisor step 1): restored panels_prev_read solve at N-1/N/N+1 do not give neighbours of the board at the same N (e.g. 5-1 has no solution at N=8; solvable only at 9 with 1 solution); hypothesis not confirmed"
    },
    "panels_planning_read": {
     "value": {
@@ -3661,7 +3662,8 @@
      "note": "full-height re-read; no marker visible"
     },
     "tag": "read",
-    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled",
+    "test": "snapshot test (advisor step 1): restored panels_prev_read solve at N-1/N/N+1 do not give neighbours of the board at the same N (e.g. 5-1 has no solution at N=8; solvable only at 9 with 1 solution); hypothesis not confirmed"
    },
    "panels_planning_read": {
     "value": {
@@ -3858,7 +3860,8 @@
      "marker": "1+"
     },
     "tag": "read",
-    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled",
+    "test": "snapshot test (advisor step 1): restored panels_prev_read solve at N-1/N/N+1 do not give neighbours of the board at the same N (e.g. 5-1 has no solution at N=8; solvable only at 9 with 1 solution); hypothesis not confirmed"
    },
    "panels_planning_read": {
     "value": {
@@ -4186,7 +4189,8 @@
      "marker": "1+"
     },
     "tag": "read",
-    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled",
+    "test": "snapshot test (advisor step 1): restored panels_prev_read solve at N-1/N/N+1 do not give neighbours of the board at the same N (e.g. 5-1 has no solution at N=8; solvable only at 9 with 1 solution); hypothesis not confirmed"
    },
    "panels_planning_read": {
     "value": {
@@ -4383,7 +4387,8 @@
      "marker": "1+"
     },
     "tag": "read",
-    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled",
+    "test": "snapshot test (advisor step 1): restored panels_prev_read solve at N-1/N/N+1 do not give neighbours of the board at the same N (e.g. 5-1 has no solution at N=8; solvable only at 9 with 1 solution); hypothesis not confirmed"
    },
    "panels_planning_read": {
     "value": {
@@ -4874,7 +4879,8 @@
      "note": "re-read full height; no Emerald Aspect"
     },
     "tag": "read",
-    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled",
+    "test": "snapshot test (advisor step 1): restored panels_prev_read solve at N-1/N/N+1 do not give neighbours of the board at the same N (e.g. 5-1 has no solution at N=8; solvable only at 9 with 1 solution); hypothesis not confirmed"
    },
    "panels_planning_read": {
     "value": {
@@ -5363,7 +5369,8 @@
      "marker": "2+"
     },
     "tag": "read",
-    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled",
+    "test": "snapshot test (advisor step 1): restored panels_prev_read solve at N-1/N/N+1 do not give neighbours of the board at the same N (e.g. 5-1 has no solution at N=8; solvable only at 9 with 1 solution); hypothesis not confirmed"
    },
    "panels_planning_read": {
     "value": {
@@ -5739,7 +5746,8 @@
      "marker": "2+"
     },
     "tag": "read",
-    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled",
+    "test": "snapshot test (advisor step 1): restored panels_prev_read solve at N-1/N/N+1 do not give neighbours of the board at the same N (e.g. 5-1 has no solution at N=8; solvable only at 9 with 1 solution); hypothesis not confirmed"
    },
    "panels_planning_read": {
     "value": {
@@ -5974,7 +5982,8 @@
      "note": "re-read full height; not a copy of 5-5"
     },
     "tag": "read",
-    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled",
+    "test": "snapshot test (advisor step 1): restored panels_prev_read solve at N-1/N/N+1 do not give neighbours of the board at the same N (e.g. 5-1 has no solution at N=8; solvable only at 9 with 1 solution); hypothesis not confirmed"
    },
    "panels_planning_read": {
     "value": {
@@ -6189,7 +6198,8 @@
      "marker": "2+"
     },
     "tag": "read",
-    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled",
+    "test": "snapshot test (advisor step 1): restored panels_prev_read solve at N-1/N/N+1 do not give neighbours of the board at the same N (e.g. 5-1 has no solution at N=8; solvable only at 9 with 1 solution); hypothesis not confirmed"
    },
    "panels_planning_read": {
     "value": {
@@ -6598,7 +6608,8 @@
      "marker": "2+"
     },
     "tag": "read",
-    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled",
+    "test": "snapshot test (advisor step 1): restored panels_prev_read solve at N-1/N/N+1 do not give neighbours of the board at the same N (e.g. 5-1 has no solution at N=8; solvable only at 9 with 1 solution); hypothesis not confirmed"
    },
    "panels_planning_read": {
     "value": {
@@ -6804,7 +6815,8 @@
      "marker": "2+"
     },
     "tag": "read",
-    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled",
+    "test": "snapshot test (advisor step 1): restored panels_prev_read solve at N-1/N/N+1 do not give neighbours of the board at the same N (e.g. 5-1 has no solution at N=8; solvable only at 9 with 1 solution); hypothesis not confirmed"
    },
    "panels_planning_read": {
     "value": {
@@ -7208,7 +7220,8 @@
      "note": "re-read from +10 s and +26 s frames; earlier tooltip occlusion resolved"
     },
     "tag": "read",
-    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled",
+    "test": "snapshot test (advisor step 1): restored panels_prev_read solve at N-1/N/N+1 do not give neighbours of the board at the same N (e.g. 5-1 has no solution at N=8; solvable only at 9 with 1 solution); hypothesis not confirmed"
    },
    "panels_planning_read": {
     "value": {
@@ -7461,7 +7474,8 @@
      "marker": "2+"
     },
     "tag": "read",
-    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled",
+    "test": "snapshot test (advisor step 1): restored panels_prev_read solve at N-1/N/N+1 do not give neighbours of the board at the same N (e.g. 5-1 has no solution at N=8; solvable only at 9 with 1 solution); hypothesis not confirmed"
    },
    "panels_planning_read": {
     "value": {
