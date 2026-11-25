@@ -8,6 +8,10 @@
     [
       30,
       1980
+    ],
+    [
+      2100,
+      4100
     ]
   ],
   "remaining_ranges_s": [
@@ -17,25 +21,30 @@
     ],
     [
       1980,
+      2100
+    ],
+    [
+      4100,
       99999
     ]
   ],
   "game_ids": [
-    "twitch-2909338557-g30"
+    "twitch-2909338557-g30",
+    "twitch-2909338557-g2100"
   ],
   "counts": {
-    "games": 1,
-    "fights": 19,
-    "others": 19
+    "games": 2,
+    "fights": 23,
+    "others": 23
   },
   "validator": {
     "ok": 17,
     "skipped": {
       "star_khong_hop_le": 1,
-      "winner_null": 1
+      "winner_null": 5
     }
   },
-  "needs_review": 1,
-  "commit": "ee6e499",
-  "remaining": "Priority densify complete fights. Boards when readable."
+  "needs_review": 5,
+  "commit": "537e227",
+  "remaining": "Early games pushed; densify more PvP when frames allow."
 }

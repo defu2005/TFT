@@ -3,39 +3,120 @@
   "vod_id": "twitch-2918556483",
   "slot": "P1",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       3200,
       4600
+    ],
+    [
+      5000,
+      6800
+    ],
+    [
+      8080,
+      10080
+    ],
+    [
+      10300,
+      12300
+    ],
+    [
+      12900,
+      14500
+    ],
+    [
+      14700,
+      16400
+    ],
+    [
+      16500,
+      18600
+    ],
+    [
+      18700,
+      20300
+    ],
+    [
+      20800,
+      22900
+    ],
+    [
+      22950,
+      24900
     ]
   ],
   "remaining_ranges_s": [
     [
       0,
-      3200
+      3199
     ],
     [
-      4600,
+      4601,
+      4999
+    ],
+    [
+      6801,
+      8079
+    ],
+    [
+      10081,
+      10299
+    ],
+    [
+      12301,
+      12899
+    ],
+    [
+      14501,
+      14699
+    ],
+    [
+      16401,
+      16499
+    ],
+    [
+      18601,
+      18699
+    ],
+    [
+      20301,
+      20799
+    ],
+    [
+      22901,
+      22949
+    ],
+    [
+      24901,
       25070
     ]
   ],
   "game_ids": [
-    "twitch-2918556483-g3200"
+    "twitch-2918556483-g3200",
+    "twitch-2918556483-g5000",
+    "twitch-2918556483-g8080",
+    "twitch-2918556483-g10300",
+    "twitch-2918556483-g12900",
+    "twitch-2918556483-g14700",
+    "twitch-2918556483-g16500",
+    "twitch-2918556483-g18700",
+    "twitch-2918556483-g20800",
+    "twitch-2918556483-g22950"
   ],
   "counts": {
-    "games": 1,
-    "fights": 3,
-    "others": 3
+    "games": 10,
+    "fights": 189,
+    "others": 189
   },
   "validator": {
-    "ok": 0,
+    "ok": 178,
     "skipped": {
-      "winner_null": 3
+      "winner_null": 11
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "1 ranked. Mixed VOD (regionals board + patch notes + ranked). Tiếp ranked sau 4600s @995LP.",
-  "notes": "Title: high octane ranked. Skip non-ranked segments. winner_null OK."
+  "remaining": "Non-ranked gaps only (patch notes / watch party / desktop / queue). All 10 ranked games densified.",
+  "notes": "10 ranked Set18 games densified (~16–21 PvP each). Early/gap segments non-ranked skipped. winner_null OK."
 }

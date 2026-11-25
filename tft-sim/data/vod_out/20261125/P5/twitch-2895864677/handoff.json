@@ -20,6 +20,10 @@
     [
       6700,
       8900
+    ],
+    [
+      9600,
+      11600
     ]
   ],
   "remaining_ranges_s": [
@@ -37,6 +41,10 @@
     ],
     [
       8900,
+      9600
+    ],
+    [
+      11600,
       23928
     ]
   ],
@@ -44,20 +52,21 @@
     "twitch-2895864677-g120",
     "twitch-2895864677-g2410",
     "twitch-2895864677-g4380",
-    "twitch-2895864677-g6700"
+    "twitch-2895864677-g6700",
+    "twitch-2895864677-g9600"
   ],
   "counts": {
-    "games": 4,
-    "fights": 67,
-    "others": 67
+    "games": 5,
+    "fights": 81,
+    "others": 81
   },
   "validator": {
-    "ok": 60,
+    "ok": 79,
     "skipped": {
-      "winner_null": 7
+      "winner_null": 2
     }
   },
-  "needs_review": 7,
-  "commit": "b83c1d1",
-  "remaining": "Densify priority: g2410 boards+more stages still sparse mid-game."
+  "needs_review": 2,
+  "commit": "aa41c50",
+  "remaining": "Early games pushed; densify more PvP when frames allow."
 }
