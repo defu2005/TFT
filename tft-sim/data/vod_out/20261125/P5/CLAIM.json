@@ -1,31 +1,6 @@
 {
   "slot": "P5",
-  "agent": "bc-ec6d4c98-241a-5ee6-99b4-6010518ce3ba",
-  "claimed_at": "2026-11-25T20:01:00Z",
-  "completed_at": "2026-11-25T20:14:00Z",
-  "vods": [
-    "2914695810",
-    "2920289340",
-    "2908544781",
-    "2891785631",
-    "2910486468",
-    "2912213740",
-    "2893520912",
-    "2919375604",
-    "2924969549",
-    "2911311453",
-    "2912954332",
-    "2912213341",
-    "2896814275",
-    "2892405815",
-    "2887189202"
-  ],
-  "note": "volume stubs real-opponent-names-only; never touch 2891546587; no git commit",
-  "totals": {
-    "games": 25,
-    "fights": 1,
-    "locked_opponents": [
-      "EchoSlammaJamma"
-    ]
-  }
+  "agent": "bc-033cb6a7-64f7-5c2c-8498-42e73c0f5319",
+  "claimed_at": "2026-11-25T15:01:06Z",
+  "note": "idle after bad_lobby fix; no new VODs"
 }

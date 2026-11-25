@@ -36,5 +36,6 @@
   "real_opponents": [
     "EchoSlammaJamma"
   ],
-  "remaining": "Real-name fights only; densify more PvP when readable."
+  "remaining": "Real-name fights only; densify more PvP when readable.",
+  "needs_review": 1
 }
