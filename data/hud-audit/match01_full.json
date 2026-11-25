@@ -1161,9 +1161,15 @@
     "tag": "derived"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "counter not legible at 1018 combat frame; planning frame for 3-2 not yet found (HUD windows 1010-1032 are combat)"
+    "value": [
+     "Xayah",
+     "Ezreal",
+     "Kobuko",
+     "Alistar",
+     "Mama Beak"
+    ],
+    "tag": "derived",
+    "basis": "unique exact solver solution for the 990 s panel (only 1 of combos from the 7 traits-compatible champions); counter 5/6 means 5 unique, one duplicate; names not confirmed per hex"
    },
    "bench_units": {
     "value": null,
@@ -1211,6 +1217,40 @@
      "HUD_present": "1010.5-1032 s, combat at 1018 s"
     },
     "tag": "derived"
+   },
+   "trait_panel_990_planning": {
+    "value": {
+     "Elderwood": 3,
+     "Rapidfire": 2,
+     "Brawler": 2,
+     "Executioner": 1,
+     "Fae": 1,
+     "Summoner": 1,
+     "Riftbeast": 1,
+     "Sprykin": 1
+    },
+    "tag": "read",
+    "frame_s": 990,
+    "phase": "planning",
+    "timer": 14,
+    "gold": 47,
+    "level": 6,
+    "xp": "0/36",
+    "streak": 5
+   },
+   "board_counter_990": {
+    "value": "5/6",
+    "tag": "read"
+   },
+   "shop_990": {
+    "value": [
+     "Teemo",
+     "Pebbles",
+     "Sejuani",
+     "LeBlanc",
+     "Cinderling"
+    ],
+    "tag": "read"
    }
   },
   {
