@@ -849,7 +849,7 @@
      "read": "PvP at 505 s (HUD); a top-strip tactician plate at level 4 is visible at 508 s; HP flags show P1 and P2 lost HP"
     },
     "tag": "read",
-    "note": "restored; the earlier PvE monsters read conflicts with the 508 s tactician plate; recorded conflict"
+    "note": "restored; a tactician plate at level 4 is visible at 508 s, which conflicts with the earlier PvE read"
    },
    "actions": {
     "value": {
@@ -1000,7 +1000,11 @@
      "counter": "4/4",
      "level": 4,
      "xp": "2/10",
-     "gold": 0,
+     "gold": {
+      "value": 4,
+      "tag": "read",
+      "basis": "Frame A frame shows 4 gold (blind digit OCR agrees); previous master value 0 corrected"
+     },
      "panel": {
       "Juggernaut": 2,
       "Brawler": 1,
@@ -1635,7 +1639,11 @@
      "counter": "5/5",
      "level": 5,
      "xp": "0/20",
-     "gold": 6,
+     "gold": {
+      "value": 7,
+      "tag": "read",
+      "basis": "Frame A frame shows 7 gold (blind digit OCR agrees); previous master value 6 corrected"
+     },
      "streak": 2,
      "panel": {
       "Elderwood": 3,
@@ -1886,7 +1894,11 @@
      "counter": "5/5",
      "level": 5,
      "xp": "2/20",
-     "gold": 15,
+     "gold": {
+      "value": 17,
+      "tag": "read",
+      "basis": "Frame A frame shows 17 gold (blind digit OCR agrees); previous master value 15 corrected"
+     },
      "streak": 3,
      "panel": {
       "Brawler": 2,
@@ -2118,7 +2130,11 @@
      "counter": "partly hidden (/5); level 5 so 5 units",
      "level": 5,
      "xp": "4/20",
-     "gold": 29,
+     "gold": {
+      "value": 28,
+      "tag": "read",
+      "basis": "Frame A frame shows 28 gold (blind digit OCR agrees); previous master value 29 corrected"
+     },
      "streak": 4,
      "panel": {
       "Elderwood": 3,
@@ -9401,7 +9417,7 @@
   "source": "round_results_derived.json eliminations; 1 and 2 from 6-6 frames"
  },
  "blind_reread": {
-  "summary": "Blind re-read of 10 sampled rounds (digit OCR on fixed crops, script never opened the master): gold 10/10 with the coin-free crop (610-640); 4/10 with the original crop, whose misses are the coin glyph and neighbouring digits leaking in. Streak 9/10: the one miss (6-2) is an empty OCR read; the frame shows 1, matching the master. Panel, shop, counter, level and XP were not re-read blind. See data/hud-audit/blind_reread_rates.json."
+  "summary": "Blind re-read of the 10 sampled rounds: gold 9/10 against the master as it stood (5-5 was a master error, now 9), streak 9/10 (one empty OCR read at 6-2; the frame shows 1). A second run over the other 28 Frame A frames: 13 of 21 gold values matched the master before correction; the 4 mismatches with a visible gold box were master errors (2-2, 2-5, 2-6, 2-7) and were corrected from the frame; 4 frames show no gold box (2-4, 3-2, 6-1, 6-6). Panel, shop, counter, level and XP were not re-read blind. See data/hud-audit/blind_reread_rates.json."
  },
  "final_comps": {
   "P1_6-6": {
@@ -9828,7 +9844,7 @@
   },
   "frame_s": "t = 362 + (index - 1) * 2",
   "note": "run index i maps to t = 362 + (i-1)*2; checked on the 3-1 window (index 264 = 888 s)",
-  "owner_check": "Rail pointer test on 4-3 (1574.7 s) and 3-3 (1093.2 s): status icons sit on several rows in the same frame, so there is no single viewed-row mark. Test inconclusive; scouting owners stay unresolved."
+  "owner_check": "Pointer test: a viewed-row pointer appears in the 888 s scouting frame and at 2412 s, but not at 2504 or 2572 s where the panel is on screen. One hit is not enough to attach panels; scouting owners stay unresolved."
  },
  "scouted_panels": [
   {

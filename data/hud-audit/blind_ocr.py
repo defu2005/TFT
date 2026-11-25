@@ -3,7 +3,7 @@ from PIL import Image
 V='/home/user/campaign/01-boxbox-2924500482-00210.mp4'
 S='/tmp/claude-0/-home-user-TFT/91722103-108d-57a1-a27d-f308a4301820/scratchpad/blind'
 pick=json.load(open('/tmp/claude-0/-home-user-TFT/91722103-108d-57a1-a27d-f308a4301820/scratchpad/blind_pick.json'))
-CROPS={'gold':(596,584,650,612),'streak':(678,586,706,610)}
+CROPS={'gold':(610,586,640,610),'streak':(678,586,706,610)}
 def ocr(img, digits=True):
     p=f'{S}/_c.png'; img.save(p)
     cmd=f"OMP_THREAD_LIMIT=1 tesseract {p} - --psm 7 " + ("-c tessedit_char_whitelist=0123456789" if digits else "") + " 2>/dev/null"

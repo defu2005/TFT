@@ -1,15 +1,17 @@
 {
- "protocol": "tesseract digit-only on fixed crops, 3x upscale, psm 7; script never opened master; master compared after OCR; panel and shop not blind (seen earlier)",
+ "protocol": "Digit OCR (tesseract, psm 7, digit whitelist, 3x upscale) on fixed crops; the script never opens the master, which is compared after OCR. The coin-free crop is (610,586,640,610). Compared against the master as it stood before corrections.",
  "rates": {
   "gold": {
-   "matched": 4,
+   "matched": 9,
    "of": 10,
-   "rate": 0.4
+   "rate": 0.9,
+   "note": "sampled 10; 5-5 is the master error found in this run"
   },
   "streak": {
    "matched": 9,
    "of": 10,
-   "rate": 0.9
+   "rate": 0.9,
+   "note": "6-2 OCR empty; frame shows 1, master 1"
   }
  },
  "gold_masked_near_white": {
@@ -73,5 +75,30 @@
   "miss": {
    "6-2": "OCR returned empty; frame at 2342 s shows 1, master 1 confirmed"
   }
+ },
+ "gold_rest_28": {
+  "frames_with_master_gold": 21,
+  "matched_before_correction": 13,
+  "master_corrected_from_frame": {
+   "2-2": "0 to 4",
+   "2-5": "6 to 7",
+   "2-6": "15 to 17",
+   "2-7": "29 to 28"
+  },
+  "not_comparable_no_gold_box_visible": [
+   "2-4",
+   "3-2",
+   "6-1",
+   "6-6"
+  ],
+  "no_master_gold_field": [
+   "1-1",
+   "1-2",
+   "2-1",
+   "3-4",
+   "4-4",
+   "5-4",
+   "6-4"
+  ]
  }
 }
