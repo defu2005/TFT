@@ -53,3 +53,20 @@ if __name__ == "__main__":
     print("aliases", len(m))
     for k, v in sorted(m.items()):
         print(k, "->", v)
+
+
+def build_set18_records():
+    """Noi dung cho DUONG GHI BAN GHI THAT (fight_cli, fidelity): giu nguyen toan bo item tu CDragon
+    (TFT_Item_* co hieu ung khong bi bo) va bo sung hieu ung cho DA_* rong tu twin cung ten. Dang ky hook cua twin."""
+    full = build_real("TFTSet18")
+    amap = alias_map(full)
+    items = dict(full.items)
+    for da, tw in amap.items():
+        items[da] = items[da].model_copy(update={"effects": full.items[tw].effects})
+    out = full.model_copy(update={"items": items, "patch": full.patch + "-records-aliased"})
+    for table in _HOOK_TABLES:
+        d = getattr(S, table)
+        for da, tw in amap.items():
+            if tw in d and da not in d:
+                d[da] = d[tw]
+    return out, amap

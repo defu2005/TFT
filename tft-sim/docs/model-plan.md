@@ -249,3 +249,36 @@ Người dùng giả định app capture được mọi dữ liệu realtime c�
 - `heldout.py`, `heldout_swap.py`, `play_clone_v2.py` và `collect_real.py` dùng `build_real_set18_clean`, nên các trận Set 18 trong các lần chạy đó dùng item `DA_*` không có hiệu ứng riêng. Chỉ có bonus chung của engine (xem `combat-public-data.md` mục 8). Không chạy lại; ghi lại để đánh giá sau.
 - Alias item Set 18 có sẵn trong `tft_sim/item_alias.py` (37 alias). Quyết định (2026-11-25, theo advisor): KHÔNG chuyển các script trên sang nội dung đã alias và KHÔNG chạy lại các đánh giá cũ. `build_real_set18_clean` vẫn là mặc định cho huấn luyện và đánh giá đã có, để số liệu trong file này còn so sánh được. Đường ghi bản ghi trận thật (`fight_cli.py`, `fidelity.py`) dùng nội dung đã alias.
 - Điều kiện xét lại: khi có bản ghi trận Set 18 thật, hoặc khi lên kế hoạch huấn luyện Set 18 mới. Lần đó chạy trên nội dung đã alias với seed mới, báo cáo riêng, không ghi đè số cũ.
+
+
+## 11. Kế hoạch phát triển Set 18 (2026-11-25, theo advisor)
+
+Lý do ưu tiên: Set 19 đang PBE. Khi Set 19 lên sóng, trận Set 18 mới sẽ dừng, nên thu bản ghi thật là việc có hạn thời gian.
+
+Phase 0 (chặn): sửa đường ghi bản ghi thật
+- Nội dung cho bản ghi thật = `build_real("TFTSet18")` + alias (`build_set18_records`). Bản cũ (từ bản clean) làm mất 57 item `TFT_Item_*` có hiệu ứng không phải twin.
+- Selftest: item `TFT_Item_*` không phải twin cho `items_unknown == 0`. ĐÃ LÀM.
+
+Phase 1: xếp hạng đòn bẩy trên Set 17 (sim, rẻ)
+- Dùng bảng v3 đã có (`hand_noaug`, `hand_noitems`, `none`), thêm `hand_notraits` và generic với biến bị gỡ, trên các cặp đã lưu. Nếu file không còn, thu lại seed 288000–288099.
+- Báo tỷ lệ đảo chiều so với `hand` kèm CI theo lobby. Quy tắc xếp hạng khóa trước khi chạy.
+- Set 17 chỉ là sim, không phải kiểm chứng thật.
+
+Phase 2: bản ghi thật (cổng cho mọi khẳng định về độ chính xác)
+- Hỏi khóa API Riot một lần qua `request_credential`, nêu rõ nó mở khóa gì. Kiểm tra tài liệu Riot trước: host (nền tảng cho danh sách ladder, khu vực cho trận), tên header, thời hạn khóa phát triển.
+- Thăm dò một trận: set number, dạng apiName item (`DA_*` hay `TFT_Item_*`), có trường vòng cuối cho mỗi người chơi không, có augment không.
+- Nếu dùng được: commit pre-registration, rồi thu trận cuối của Set 18 từ tài khoản ladder công khai, không lưu ID người chơi. Chấm điểm: coin flip, hồi quy logistic theo sức mạnh, engine.
+
+Phase 3: phủ Set 18 (wrapper theo set, không sửa `tft_goat`)
+- Gỡ hai buff sai ngay (Vanguard `MaxHealthShield` là khiên, Spellweaver `APPerCast` là cộng dồn theo lần thi triển). Đây là lỗi theo mô tả dữ liệu, không cần tham chiếu.
+- Trait: bảng ánh xạ tường minh cho 25 trait chưa ánh xạ, đọc từ mô tả; trait không phải chỉ số ghi là chưa hiện thực. Emblem tính vào trait.
+- Ability: đưa số Blitz vào generic ability, đổi giá trị tooltip sang đơn vị engine. Lưu ý: trên Set 18 generic rơi về `ad*2` cho 88/91 tướng, nên đây là đòn bẩy thật, không phải tiểu tiết.
+- Augment: chỉ làm khi có dữ liệu tần suất.
+
+Phase 4: đánh giá
+- Mỗi thay đổi Phase 3 đo bằng chênh lệch cặp trên bộ Set 18 thật; giữ những gì giúp.
+- Nếu Set 19 lên mà chưa có bản ghi thật: giao engine ghi nhãn "chưa kiểm chứng" kèm báo cáo phủ, rồi dừng.
+
+Xuyên suốt
+- Mọi giá trị đặc thù set gom vào một cấu hình theo set, để Set 19 chỉ cần chạy lại.
+- Quyết định duy nhất cần người dùng: khóa Riot. Nếu từ chối, Phase 0, 1 và 3 vẫn chạy.

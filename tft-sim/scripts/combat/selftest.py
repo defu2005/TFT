@@ -120,4 +120,17 @@ print("alias path counts DA", (oda["a"], oda["b"], oda["draw"]), "TW", (otw["a"]
 alias_ok &= same_counts
 ok &= alias_ok
 
+# 8) Phase 0: duong ban ghi that khong lam mat TFT_Item_* khong phai twin
+from tft_sim.item_alias import build_set18_records
+rec_content, amap2 = build_set18_records()
+F.set_content(18, rec_content)
+twins = set(amap2.values())
+nontwin = next(k for k, v in rec_content.items.items() if k.startswith("TFT_Item_") and v.effects and k not in twins)
+rec_nt = fixture(names18, 18)
+rec_nt["a"]["units"][0]["items"] = [nontwin]
+cov_nt = F.coverage(rec_nt)
+print("records content: non-twin", nontwin, "items_unknown", cov_nt["a"]["items_unknown"])
+ok &= cov_nt["a"]["items_unknown"] == 0
+F.set_content(18, c18)
+
 print("SELFTEST", "PASS" if ok else "FAIL")
