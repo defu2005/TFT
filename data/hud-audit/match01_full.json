@@ -448,9 +448,21 @@
     "tag": "unresolved"
    },
    "augment": {
-    "value": "Warpath",
-    "tag": "read",
-    "basis": "augments_check.json: offered at pick screen, owned at 2170 s"
+    "value": {
+     "choice_442_458": [
+      "U.R.F",
+      "Replication",
+      "Capital Gains II"
+     ],
+     "choice_459": [
+      "U.R.F",
+      "Replication",
+      "Warpath"
+     ],
+     "pick": "Warpath"
+    },
+    "tag": "derived",
+    "basis": "offered at pick screen plus owned box at 2170 s; no click frame"
    },
    "board_units": {
     "value": null,
@@ -482,12 +494,9 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": {
-     "streamer_hp_loss": 3,
-     "outcome": "lost"
-    },
+    "value": "lost",
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
     "value": {
@@ -506,9 +515,11 @@
     "tag": "read"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_s": 505,
+     "phase": "PvE combat (monsters), home view"
+    },
+    "tag": "read"
    },
    "actions": {
     "value": null,
@@ -1495,8 +1506,8 @@
    },
    "augment": {
     "value": "Heroic Grab Bag+",
-    "tag": "read",
-    "basis": "augments_check.json: offered at pick screen, owned at 2170 s"
+    "tag": "derived",
+    "basis": "offered at pick screen plus owned box at 2170 s; no click frame"
    },
    "board_units": {
     "value": [
@@ -2132,7 +2143,7 @@
    "round_type": {
     "value": "PvP",
     "tag": "derived",
-    "note": "3-6 label at 1236 s shows damage from 3-5 combat; 3-6 combat not yet read"
+    "basis": "opponent nameplate visible post-combat (1296 s)"
    },
    "opponent": {
     "value": null,
@@ -2140,19 +2151,20 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "frame_s": 1296,
+    "frame_s": 1250,
     "tag": "read",
     "value": {
-     "timer": 3,
+     "timer": 14,
      "level": 7,
      "xp": "4/56",
      "gold": {
-      "value": 50,
+      "value": 33,
       "tag": "read"
      },
      "streak": {
-      "value": 9,
-      "tag": "read"
+      "value": 8,
+      "tag": "read",
+      "note": "8 at 1240 and 1250; 9 appears only after combat"
      },
      "panel": {
       "value": {
@@ -2176,27 +2188,27 @@
        "Caitlyn",
        "Kog'Maw"
       ],
-      "tag": "read"
-     },
-     "counter": {
-      "value": null,
-      "tag": "unresolved"
+      "tag": "read",
+      "note": "shop empty at 1240, filled at 1250"
      },
      "board": {
       "value": null,
       "tag": "unresolved",
-      "note": "units visible in the centre of the arena, not named"
+      "note": "bodies on the board not named"
      },
-     "bench": {
+     "counter": {
       "value": null,
       "tag": "unresolved"
      }
     }
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "window_s": "approx 1262-1290",
+     "opponent_alias": "P2",
+     "basis": "alias matched by sidebar HP to labels; outcome not read"
+    },
+    "tag": "derived"
    },
    "actions": {
     "value": null,
@@ -2204,12 +2216,9 @@
     "note": "shop and level log not yet derived for this round"
    },
    "result": {
-    "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
-    },
-    "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "value": null,
+    "tag": "unresolved",
+    "note": "no 3-7 HP label to take the 3-6 damage from"
    }
   },
   {
@@ -2531,8 +2540,8 @@
    },
    "augment": {
     "value": "Cybernetic Implants",
-    "tag": "read",
-    "basis": "augments_check.json: offered at pick screen, owned at 2170 s"
+    "tag": "derived",
+    "basis": "offered at pick screen plus owned box at 2170 s; no click frame"
    },
    "board_units": {
     "value": null,
@@ -2565,12 +2574,9 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": {
-     "streamer_hp_loss": 9,
-     "outcome": "lost"
-    },
+    "value": "lost",
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
     "value": null,
@@ -3247,12 +3253,9 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": {
-     "streamer_hp_loss": 14,
-     "outcome": "lost"
-    },
+    "value": "lost",
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
     "value": null,
@@ -3843,12 +3846,9 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": {
-     "streamer_hp_loss": 15,
-     "outcome": "lost"
-    },
+    "value": "lost",
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
     "value": null,
@@ -4209,12 +4209,9 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": {
-     "streamer_hp_loss": 16,
-     "outcome": "lost"
-    },
+    "value": "lost",
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
     "value": null,
@@ -4331,12 +4328,9 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": {
-     "streamer_hp_loss": 16,
-     "outcome": "lost"
-    },
+    "value": "lost",
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
     "value": null,
@@ -4566,12 +4560,9 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": {
-     "streamer_hp_loss": 18,
-     "outcome": "lost"
-    },
+    "value": "lost",
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
     "value": null,
