@@ -4,21 +4,37 @@
   "slot": "P8",
   "role": "primary",
   "status": "working",
-  "covered_ranges_s": [],
+  "covered_ranges_s": [
+    [
+      270,
+      1600
+    ]
+  ],
   "remaining_ranges_s": [
     [
       0,
-      null
+      270
+    ],
+    [
+      1600,
+      29230
     ]
   ],
-  "game_ids": [],
+  "game_ids": [
+    "twitch-2898072550-g270"
+  ],
   "counts": {
-    "games": 0,
-    "fights": 0,
+    "games": 1,
+    "fights": 3,
     "others": 0
   },
-  "validator": {},
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 3
+    }
+  },
   "needs_review": 0,
   "commit": null,
-  "remaining": "helper claim; probing RANKED Set18"
+  "remaining": "continue ranked after ~1600s; refine boards/lobby OCR; more PvP stages"
 }
