@@ -753,8 +753,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P3",
+     "P4",
+     "P6",
+     "P8"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 lost HP, so the opponent did not lose HP in this round; pool = P3, P4, P6, P8",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -917,8 +923,15 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P4, P5, P6, P7, P8",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -1112,8 +1125,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P2",
+     "P3",
+     "P5",
+     "P6"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P2, P3, P5, P6",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -1469,8 +1488,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P2",
+     "P3",
+     "P5",
+     "P7"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P2, P3, P5, P7",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -1686,8 +1711,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P3",
+     "P5",
+     "P6",
+     "P8"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P3, P5, P6, P8",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -2086,8 +2117,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P2",
+     "P3",
+     "P6",
+     "P7"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P2, P3, P6, P7",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "trait_panel_886": {
@@ -2282,8 +2319,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P2",
+     "P3",
+     "P7",
+     "P8"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P2, P3, P7, P8",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "trait_panel_1018_combat": {
@@ -2555,8 +2598,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P2",
+     "P5",
+     "P7",
+     "P8"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P2, P5, P7, P8",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "trait_panel_1058_planning": {
@@ -2956,8 +3005,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P2",
+     "P5",
+     "P7",
+     "P8"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P2, P5, P7, P8",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -3735,8 +3790,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P3",
+     "P5",
+     "P6",
+     "P8"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P3, P5, P6, P8",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -3993,8 +4054,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P2",
+     "P4",
+     "P5",
+     "P6"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 lost HP, so the opponent did not lose HP in this round; pool = P2, P4, P5, P6",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -4213,8 +4280,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P3",
+     "P5",
+     "P6",
+     "P8"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P3, P5, P6, P8",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -4573,8 +4646,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P3",
+     "P4",
+     "P5",
+     "P6"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P3, P4, P5, P6",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -4798,8 +4877,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P4",
+     "P5",
+     "P6",
+     "P8"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P4, P5, P6, P8",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -5217,8 +5302,15 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P2",
+     "P3",
+     "P4",
+     "P7",
+     "P8"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 lost HP, so the opponent did not lose HP in this round; pool = P2, P3, P4, P7, P8",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -5546,8 +5638,13 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P3",
+     "P6",
+     "P7"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P3, P6, P7",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -5815,8 +5912,12 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P4",
+     "P7"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P4, P7",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -6216,8 +6317,12 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P4",
+     "P7"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P4, P7",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -6499,8 +6604,16 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P2",
+     "P3",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 lost HP, so the opponent did not lose HP in this round; pool = P2, P3, P5, P6, P7, P8",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -6986,8 +7099,12 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P2",
+     "P4"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P2, P4",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -7183,8 +7300,16 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
-    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
+    "candidates": [
+     "P2",
+     "P3",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ],
+    "attempt": "HP-loss flags enumerated: P1 lost HP, so the opponent did not lose HP in this round; pool = P2, P3, P5, P6, P7, P8",
+    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
    "result": {
