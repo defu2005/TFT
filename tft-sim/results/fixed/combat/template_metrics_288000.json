@@ -1,0 +1,38 @@
+{
+  "n_pairs": 2000,
+  "decisive_frac": 0.8375,
+  "n_decisive": 1675,
+  "template": {
+    "agree_on_decisive": 0.8293,
+    "mean_abs_gap_vs_hand": 0.2093
+  },
+  "generic": {
+    "agree_on_decisive": 0.834,
+    "mean_abs_gap_vs_hand": 0.2059
+  },
+  "none": {
+    "agree_on_decisive": 0.8161,
+    "mean_abs_gap_vs_hand": 0.2212
+  },
+  "template_minus_none": [
+    0.0131,
+    [
+      -0.0073,
+      0.034
+    ]
+  ],
+  "template_minus_generic": [
+    -0.0048,
+    [
+      -0.0107,
+      0.0012
+    ]
+  ],
+  "generic_minus_none": [
+    0.0179,
+    [
+      -0.0018,
+      0.0379
+    ]
+  ]
+}

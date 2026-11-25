@@ -115,3 +115,26 @@ Số cặp quyết định: 85% cùng vòng, 92% xuyên vòng. Tỷ lệ A thắ
 **Hệ quả:** trước khi viết template cho Set 18, cần nguồn số liệu ability khác (mô tả đầy đủ có số, hoặc dữ liệu tay). Template chỉ dựa trên biến CDragon sẽ không đo được Set 18. Đây là điểm dừng hợp lý cho đến khi quyết định nguồn dữ liệu.
 
 **Chưa làm:** mẫu template, đo đồng thuận template với `none` và `hand`, phạm vi trang bị và trait Set 18 có hiệu ứng.
+
+## 9. Template từ mô tả + biến (Set 17), đo trên 2000 cặp cùng vòng từ cả 100 lobby
+
+Template: `scripts/combat/templates.py`. Quy tắc cố định trước khi đo: loại sát thương từ tag mô tả, giá trị từ biến `damage`, tỷ lệ AP/AD từ `scaleAP`/`scaleAD`, choáng nếu có `stun` và biến `duration`. Tướng không áp dụng được dùng `default_ability`.
+
+Phủ: Set 17 61/88 tướng (69%). Set 18 1/91 (1%).
+
+Kết quả (sim, cặp quyết định 1.675/2.000, bootstrap theo lobby). Chỉ số là đồng thuận với engine viết tay (hand):
+
+| Cấu hình | Đồng thuận | |p − p_hand| TB |
+|---|---|---|
+| template | 82,9% | 0,209 |
+| generic (nuke mặc định) | 83,4% | 0,206 |
+| none | 81,6% | 0,221 |
+
+Hiệu theo cặp:
+- template − none: +1,3 điểm [−0,7; +3,4]. Không khác 0.
+- template − generic: −0,5 điểm [−1,1; +0,1]. Không khác 0.
+- generic − none: +1,8 điểm [−0,2; +3,8]. Không khác 0.
+
+**Đọc kết quả**: template theo mô tả không cải thiện đồng thuận so với nuke mặc định ở Set 17, và không khác biệt rõ với không ability. Đồng thời phủ Set 18 chỉ 1%, nên con đường template không đủ cho Set 18 khi dữ liệu biến trống. Không có căn cứ để tiếp tục mở rộng template cho Set 18 trên nguồn hiện có.
+
+Giới hạn: tham chiếu là engine viết tay, không phải trận thật; mỗi tướng chỉ có một template đơn giản (sát thương đơn mục tiêu, choáng); chưa thử template hồi máu, khiên, nhiều mục tiêu.
