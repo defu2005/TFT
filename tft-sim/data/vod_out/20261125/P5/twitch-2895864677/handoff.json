@@ -57,16 +57,16 @@
   ],
   "counts": {
     "games": 5,
-    "fights": 81,
-    "others": 81
+    "fights": 92,
+    "others": 96
   },
   "validator": {
-    "ok": 79,
+    "ok": 89,
     "skipped": {
-      "winner_null": 2
+      "winner_null": 3
     }
   },
-  "needs_review": 2,
+  "needs_review": 3,
   "commit": "aa41c50",
-  "remaining": "Early games pushed; densify more PvP when frames allow."
+  "remaining": "Densify g9600 done; continue after 11600 + other VODs."
 }

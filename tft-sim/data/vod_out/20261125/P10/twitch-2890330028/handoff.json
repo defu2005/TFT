@@ -16,113 +16,60 @@
     [
       4200,
       5800
-    ]
-  ],
-  "remaining_ranges_s": [
-    [
-      0,
-      600
-    ],
-    [
-      2100,
-      2200
-    ],
-    [
-      4000,
-      4200
     ],
     [
       5800,
-      null
+      6900
+    ],
+    [
+      7500,
+      9800
+    ],
+    [
+      11800,
+      13800
+    ],
+    [
+      15000,
+      16800
+    ],
+    [
+      16800,
+      20500
     ]
   ],
+  "skipped_ranges_s": [
+    [
+      6900,
+      7500
+    ],
+    [
+      9800,
+      11800
+    ],
+    [
+      13800,
+      15000
+    ],
+    [
+      20500,
+      25560
+    ]
+  ],
+  "skip_notes": "Hollow Knight/Reddit ~7000 & ~10000; YouTube ~14000; paint tool ~21000+",
   "game_ids": [
     "twitch-2890330028-g600",
     "twitch-2890330028-g2200",
-    "twitch-2890330028-g4200"
+    "twitch-2890330028-g4200",
+    "twitch-2890330028-g6000",
+    "twitch-2890330028-g8000",
+    "twitch-2890330028-g12000",
+    "twitch-2890330028-g15600",
+    "twitch-2890330028-g17000"
   ],
   "counts": {
-    "games": 3,
-    "fights": 26,
+    "games": 8,
+    "fights": 86,
     "others": 0
-  },
-  "skip_notes": "early ~0-500 Hollow Knight non-TFT",
-  "validator": {
-    "ok": 12,
-    "skipped": {
-      "winner_null": 14
-    },
-    "rows": [
-      {
-        "line": 1,
-        "source": "twitch-2890330028-g600:2-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 3,
-        "source": "twitch-2890330028-g600:3-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 5,
-        "source": "twitch-2890330028-g600:4-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 7,
-        "source": "twitch-2890330028-g600:5-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 9,
-        "source": "twitch-2890330028-g2200:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 11,
-        "source": "twitch-2890330028-g2200:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 13,
-        "source": "twitch-2890330028-g2200:3-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 15,
-        "source": "twitch-2890330028-g2200:4-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 17,
-        "source": "twitch-2890330028-g2200:5-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 18,
-        "source": "twitch-2890330028-g4200:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 20,
-        "source": "twitch-2890330028-g4200:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 22,
-        "source": "twitch-2890330028-g4200:4-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 24,
-        "source": "twitch-2890330028-g4200:5-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 26,
-        "source": "twitch-2890330028-g4200:6-1",
-        "reason": "winner_null"
-      }
-    ]
   }
 }

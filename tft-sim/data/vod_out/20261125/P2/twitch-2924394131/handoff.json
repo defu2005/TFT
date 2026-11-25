@@ -4,21 +4,62 @@
   "slot": "P2",
   "role": "primary",
   "status": "working",
-  "covered_ranges_s": [],
+  "covered_ranges_s": [
+    [
+      400,
+      2200
+    ],
+    [
+      3000,
+      5000
+    ],
+    [
+      5200,
+      7200
+    ],
+    [
+      7400,
+      9400
+    ],
+    [
+      9600,
+      11600
+    ],
+    [
+      11800,
+      13800
+    ]
+  ],
   "remaining_ranges_s": [
     [
       0,
+      400
+    ],
+    [
+      2200,
       null
     ]
   ],
-  "game_ids": [],
+  "game_ids": [
+    "twitch-2924394131-g400",
+    "twitch-2924394131-g3000",
+    "twitch-2924394131-g5200",
+    "twitch-2924394131-g7400",
+    "twitch-2924394131-g9600",
+    "twitch-2924394131-g11800"
+  ],
   "counts": {
-    "games": 0,
-    "fights": 0,
+    "games": 6,
+    "fights": 42,
     "others": 0
   },
-  "validator": {},
+  "validator": {
+    "ok": 26,
+    "skipped": {
+      "winner_null": 16
+    }
+  },
   "needs_review": 0,
   "commit": null,
-  "remaining": "voids1n; probing RANKED Set18"
+  "remaining": "multi densify stub 6g/42f; expand densify-full later"
 }

@@ -3,7 +3,7 @@
   "vod_id": "twitch-2887732371",
   "slot": "P9",
   "role": "primary",
-  "status": "done",
+  "status": "working",
   "covered_ranges_s": [
     [
       150,
@@ -116,7 +116,7 @@
   ],
   "counts": {
     "games": 21,
-    "fights": 77,
+    "fights": 224,
     "others": 0
   },
   "validator": {
@@ -127,5 +127,91 @@
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "VOD2 done; chuyển VOD kurumx tiếp theo trong manifest"
+  "remaining": "VOD2 done; chuyển VOD kurumx tiếp theo trong manifest",
+  "densify_claims": {
+    "twitch-2887732371-g150": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g3200": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g5000": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g7000": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g9600": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g11200": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g14400": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g16800": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g18800": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g20400": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g23200": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g25200": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g27600": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g30000": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g32000": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g34800": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g37200": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g38800": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g40800": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g43200": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    },
+    "twitch-2887732371-g45200": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "note": "densify-full claimed"
+    }
+  }
 }

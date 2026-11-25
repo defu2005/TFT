@@ -3,7 +3,7 @@
   "vod_id": "twitch-2897608176",
   "slot": "P9",
   "role": "primary",
-  "status": "done",
+  "status": "working",
   "covered_ranges_s": [
     [
       400,
@@ -41,7 +41,7 @@
   ],
   "counts": {
     "games": 6,
-    "fights": 14,
+    "fights": 81,
     "others": 0
   },
   "validator": {
