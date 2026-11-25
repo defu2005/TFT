@@ -7,12 +7,12 @@
   "covered_ranges_s": [
     [
       400,
-      1900
+      2200
     ]
   ],
   "remaining_ranges_s": [
     [
-      1900,
+      2200,
       29590
     ]
   ],
@@ -21,16 +21,16 @@
   ],
   "counts": {
     "games": 1,
-    "fights": 7,
+    "fights": 14,
     "others": 0
   },
   "validator": {
-    "ok": 0,
+    "ok": 9,
     "skipped": {
-      "winner_null": 7
+      "winner_null": 5
     }
   },
-  "needs_review": 7,
-  "commit": "76e02ee",
-  "remaining": "P8-primary (bc-23b889d7) OWNS entire twitch-2898942726 — P2 helper: do NOT write this vod_id; take other P8 VODs (e.g. twitch-2899798909+). Continue this VOD from ~1900s (game1 late / game2+)."
+  "needs_review": 5,
+  "commit": "a61be70",
+  "remaining": "densify-full g400 2-1..5-1 (14 fights). Continue late 5-2+/game2 from ~2200. P8-primary owns VOD."
 }
