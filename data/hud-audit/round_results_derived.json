@@ -1,0 +1,16 @@
+{
+  "note": "Derived from alias HP labels (hp_rounds_labels.jsonl). Alias P1=streamer. Damage in round N = HP(row N) - HP(row N+1). Win/loss only inferred from streamer damage; no-damage does not prove a win. Final-round 6-6 has no next row.",
+  "streamer_damage_by_round": {"2-1":3,"4-2":9,"5-1":14,"5-6":15,"6-2":16,"6-3":16,"6-5":18},
+  "streamer_lost_rounds": ["2-1","4-2","5-1","5-6","6-2","6-3","6-5"],
+  "eliminations": [
+    {"placement":8,"alias":"P8","round":"4-6"},
+    {"placement":7,"alias":"P5","round":"5-1"},
+    {"placement":6,"alias":"P6","round":"5-2","tie_note":"same round as P3; sidebar order used"},
+    {"placement":5,"alias":"P3","round":"5-2","tie_note":"same round as P6; sidebar order used"},
+    {"placement":4,"alias":"P7","round":"5-5"},
+    {"placement":3,"alias":"P4","round":"6-2"}
+  ],
+  "placements_confirmed_elsewhere": {"2":"P1 (streamer), from standings screen"},
+  "placement_1": "P2 (only player left alive besides streamer)",
+  "unverified": ["placements 5/6 tie order", "round outcomes for rounds with no streamer damage", "round 6-6 result"]
+}
