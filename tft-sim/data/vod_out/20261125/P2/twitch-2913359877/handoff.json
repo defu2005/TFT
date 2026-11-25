@@ -8,6 +8,26 @@
     [
       300,
       3200
+    ],
+    [
+      3000,
+      5000
+    ],
+    [
+      5200,
+      7200
+    ],
+    [
+      7400,
+      9400
+    ],
+    [
+      9600,
+      11600
+    ],
+    [
+      11800,
+      13800
     ]
   ],
   "remaining_ranges_s": [
@@ -21,20 +41,25 @@
     ]
   ],
   "game_ids": [
-    "twitch-2913359877-g300"
+    "twitch-2913359877-g300",
+    "twitch-2913359877-g3000",
+    "twitch-2913359877-g5200",
+    "twitch-2913359877-g7400",
+    "twitch-2913359877-g9600",
+    "twitch-2913359877-g11800"
   ],
   "counts": {
-    "games": 1,
-    "fights": 8,
+    "games": 6,
+    "fights": 38,
     "others": 0
   },
   "validator": {
-    "ok": 3,
+    "ok": 23,
     "skipped": {
-      "winner_null": 5
+      "winner_null": 15
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "stub densify g300: 8 PvP; continue densify-full later games"
+  "remaining": "multi densify stub 6g/38f; expand densify-full later"
 }
