@@ -1,0 +1,46 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2891354525",
+  "slot": "P9",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      400,
+      3000
+    ],
+    [
+      3500,
+      7500
+    ],
+    [
+      8000,
+      11500
+    ],
+    [
+      12000,
+      14553
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2891354525-g500",
+    "twitch-2891354525-g4000",
+    "twitch-2891354525-g8000",
+    "twitch-2891354525-g12000"
+  ],
+  "counts": {
+    "games": 4,
+    "fights": 4,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 4
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "VOD done"
+}
