@@ -1,6 +1,6 @@
 {
  "match": "match-01 livestream VOD 01-boxbox-2924500482-00210.mp4, window 311.8-2620 s",
- "schema": "each field: value + tag in {read, derived, unresolved}",
+ "schema": "each field: value + tag in {read, derived, unresolved}; opponent_board.bench: value, tag, attempt, reason (not visible in scouting frames)",
  "rounds": [
   {
    "round": "1-1",
@@ -876,7 +876,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P4; flagged scouting runs at 460-462 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 50: row 4, P5.",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -1091,7 +1097,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P7; flagged scouting runs at 542-546 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 91: row 1, code unresolved.",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -1310,7 +1322,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P5; flagged scouting runs at 606-608 s, 662-664 s; owner not established, so no panel is attached",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -1734,7 +1752,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P2; no flagged scouting run in this round; owner not established, so no panel is attached",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -1995,7 +2019,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P6; flagged scouting runs at 778-778 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 209: row 3, P8.",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -2488,7 +2518,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P3; flagged scouting runs at 888-890 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 264: row 2, code unresolved.",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -2775,7 +2811,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P8; no flagged scouting run in this round; owner not established, so no panel is attached",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -3022,7 +3064,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P7; flagged scouting runs at 1068-1070 s, 1126-1140 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 354: row 2, P4.",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -3529,7 +3577,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P5; no flagged scouting run in this round; owner not established, so no panel is attached",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -3798,7 +3852,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P2; flagged scouting runs at 1260-1260 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 450: row 2, code unresolved.",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -4348,7 +4408,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P3; no flagged scouting run in this round; owner not established, so no panel is attached",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -4597,7 +4663,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P4; no flagged scouting run in this round; owner not established, so no panel is attached",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -4841,7 +4913,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P6; flagged scouting runs at 1532-1536 s, 1542-1546 s, 1602-1602 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 587: row 5, code unresolved; sweep 592: row 5, code unresolved.",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -5258,7 +5336,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P5; flagged scouting runs at 1716-1716 s; owner not established, so no panel is attached",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -5505,7 +5589,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P8; flagged scouting runs at 1724-1724 s, 1730-1730 s; owner not established, so no panel is attached Scouted runs in this stage: sweep 678: row 3, code unresolved; sweep 682: row 4, code unresolved; sweep 685: row 4, code unresolved.",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -6092,7 +6182,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P2; no flagged scouting run in this round; owner not established, so no panel is attached",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -6414,7 +6510,13 @@
     "tag": "derived",
     "basis": "Scouting run at sweeps 808-812 (1976-1984 s), stage 5-2 timer 4. Panel identical across 808, 809, 810 and 812; differs from the streamer's 814 home panel. Owner marker reads P3 at sweep 809, the only level-6 row at 1978 s; P3 is level 6 on the 5-2 opponent basis.",
     "attempt": "Panel attached to P3: owner marker at sweep 809 reads P3 (row 5), matching the 5-2 opponent. Second panel at sweep 806 (nine rows, sum 18) is unattached; its marker is on a level-8 row.",
-    "reason": "unit list not solved"
+    "reason": "unit list not solved",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "Scouting frame at sweep 809 shows the opponent board only; the bench strip is not on screen, so the opponent bench was not read.",
+     "reason": "bench not visible in scouting frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -6715,7 +6817,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P7; flagged scouting runs at 2060-2076 s; owner not established, so no panel is attached",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -7197,7 +7305,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P4; no flagged scouting run in this round; owner not established, so no panel is attached",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -7491,7 +7605,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent not fixed; no flagged scouting run in this round; owner not established, so no panel is attached",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -7996,7 +8116,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent is P4; no flagged scouting run in this round; owner not established, so no panel is attached",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -8281,7 +8407,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "opponent not fixed; no flagged scouting run in this round; owner not established, so no panel is attached",
-    "reason": "owner of the flagged scouting runs not established"
+    "reason": "owner of the flagged scouting runs not established",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "reason": "no owner-attributed frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -8553,7 +8685,13 @@
     },
     "tag": "derived",
     "basis": "foreign panel at 2406 s; P2 is the only player alive from 6-3, so P2 is the owner by the alive rule",
-    "attempt": "Panel attached to P2: owner marker on the P2 row at this stage's scouting frame (sweep 1023), name-matched P2; matched the alive rule."
+    "attempt": "Panel attached to P2: owner marker on the P2 row at this stage's scouting frame (sweep 1023), name-matched P2; matched the alive rule.",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "Scouting frame at sweep 1023 shows the opponent board only; the bench strip is not on screen, so the opponent bench was not read.",
+     "reason": "bench not visible in scouting frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -9057,7 +9195,13 @@
     },
     "tag": "derived",
     "basis": "foreign panel at 2504 s; P2 is the only player alive from 6-3, so P2 is the owner by the alive rule",
-    "attempt": "Panel attached to P2: owner marker on the P2 row at this stage's scouting frame (sweep 1072), name-matched P2; matched the alive rule."
+    "attempt": "Panel attached to P2: owner marker on the P2 row at this stage's scouting frame (sweep 1072), name-matched P2; matched the alive rule.",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "Scouting frame at sweep 1072 shows the opponent board only; the bench strip is not on screen, so the opponent bench was not read.",
+     "reason": "bench not visible in scouting frame"
+    }
    },
    "hexes": {
     "value": null,
@@ -9373,7 +9517,13 @@
     },
     "tag": "derived",
     "basis": "foreign panel at 2572 s; P2 is the only player alive from 6-3, so P2 is the owner by the alive rule",
-    "attempt": "Panel attached to P2: owner marker on the P2 row at this stage's scouting frame (sweep 1106), name-matched P2; matched the alive rule."
+    "attempt": "Panel attached to P2: owner marker on the P2 row at this stage's scouting frame (sweep 1106), name-matched P2; matched the alive rule.",
+    "bench": {
+     "value": null,
+     "tag": "unresolved",
+     "attempt": "Scouting frame at sweep 1106 shows the opponent board only; the bench strip is not on screen, so the opponent bench was not read.",
+     "reason": "bench not visible in scouting frame"
+    }
    },
    "hexes": {
     "value": null,
