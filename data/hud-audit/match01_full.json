@@ -3091,41 +3091,34 @@
    },
    "combat_frame_t_s": null,
    "planning": {
+    "frame_s": 1364,
+    "tag": "read",
     "value": {
+     "timer": 18,
+     "counter": "8/8",
+     "level": 8,
+     "xp": "0/68",
+     "gold": 1,
      "panel": {
-      "value": null,
-      "tag": "unresolved"
+      "Thornmaiden": 1,
+      "Elderwood": 5,
+      "Rapidfire": 2,
+      "Summoner": 2,
+      "Brawler": 2,
+      "Riftbeast": 2,
+      "Executioner": 1,
+      "Fae": 1,
+      "Spellweaver": 1
      },
-     "board": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "bench": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "gold": {
-      "value": 37,
-      "tag": "derived"
-     },
-     "level": {
-      "value": null,
-      "tag": "derived"
-     },
-     "shop_ids": {
-      "value": [
-       "Zyra",
-       "DA_Murkwolf18",
-       "DA_KogMaw18_AD",
-       "DA_Karma18",
-       "Rengar"
-      ],
-      "tag": "derived"
-     }
-    },
-    "tag": "derived",
-    "basis": "reader row nearest t_planning_s",
-    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
+     "panel_note": "a hidden 1+ row sits below the panel; not read",
+     "shop": [
+      "LeBlanc",
+      "Kha'Zix",
+      "Amumu",
+      null,
+      "Ahri"
+     ]
+    }
    },
    "combat": {
     "value": {
@@ -3301,41 +3294,31 @@
     "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
+    "frame_s": 1462,
+    "tag": "read",
     "value": {
-     "panel": {
-      "value": null,
-      "tag": "unresolved"
+     "timer": 11,
+     "counter": "8/8",
+     "level": 8,
+     "xp": "2/68",
+     "gold": 27,
+     "shop": [
+      "Leona",
+      "Malphite",
+      "Gromp",
+      "Cinderling",
+      "Tristana"
+     ],
+     "panel_partial": {
+      "Bounty Seeker": 1,
+      "Old Growth": 1,
+      "Brawler": 4,
+      "Elderwood": 4,
+      "Executioner": 1
      },
-     "board": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "bench": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "gold": {
-      "value": 2,
-      "tag": "derived"
-     },
-     "level": {
-      "value": null,
-      "tag": "derived"
-     },
-     "shop_ids": {
-      "value": [
-       null,
-       "KhaZix",
-       null,
-       null,
-       "Ahri"
-      ],
-      "tag": "derived"
-     }
+     "panel_note": "tooltip covers the lower rows; panel not complete"
     },
-    "tag": "derived",
-    "basis": "reader row nearest t_planning_s",
-    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
+    "note": "partial: panel incomplete"
    },
    "combat": {
     "value": {
@@ -3458,41 +3441,9 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": {
-     "panel": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "board": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "bench": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "gold": {
-      "value": 40,
-      "tag": "derived"
-     },
-     "level": {
-      "value": null,
-      "tag": "derived"
-     },
-     "shop_ids": {
-      "value": [
-       "Hecarim",
-       "Leona",
-       "Yunara",
-       "Varus",
-       null
-      ],
-      "tag": "derived"
-     }
-    },
-    "tag": "derived",
-    "basis": "reader row nearest t_planning_s",
-    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
+    "value": null,
+    "tag": "unresolved",
+    "note": "sand map carousel-like frame at 1548 s; no planning board"
    },
    "combat": {
     "value": {
@@ -3615,41 +3566,9 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": {
-     "panel": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "board": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "bench": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "gold": {
-      "value": 52,
-      "tag": "derived"
-     },
-     "level": {
-      "value": null,
-      "tag": "derived"
-     },
-     "shop_ids": {
-      "value": [
-       null,
-       "Leona",
-       "Yunara",
-       "Varus",
-       "Veigar"
-      ],
-      "tag": "derived"
-     }
-    },
-    "tag": "derived",
-    "basis": "reader row nearest t_planning_s",
-    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
+    "value": null,
+    "tag": "unresolved",
+    "note": "shared arena with eight nameplates; combat frame at 1622 s; no planning"
    },
    "combat": {
     "value": {
@@ -3767,41 +3686,34 @@
    },
    "combat_frame_t_s": null,
    "planning": {
+    "frame_s": 1654,
+    "tag": "read",
     "value": {
+     "timer": 16,
+     "counter": "8/8",
+     "level": 8,
+     "xp": "6/68",
+     "gold": 62,
      "panel": {
-      "value": null,
-      "tag": "unresolved"
+      "Bounty Seeker": 1,
+      "Old Growth": 1,
+      "Brawler": 4,
+      "Elderwood": 4,
+      "Executioner": 1,
+      "Juggernaut": 1,
+      "Vanguard": 1,
+      "Blossom": 1,
+      "Riftbeast": 1
      },
-     "board": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "bench": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "gold": {
-      "value": 62,
-      "tag": "derived"
-     },
-     "level": {
-      "value": null,
-      "tag": "derived"
-     },
-     "shop_ids": {
-      "value": [
-       "DA_Fiddlesticks18",
-       "Cassiopeia",
-       "Rengar",
-       "DA_Vi18",
-       "Hecarim"
-      ],
-      "tag": "derived"
-     }
-    },
-    "tag": "derived",
-    "basis": "reader row nearest t_planning_s",
-    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
+     "shop": [
+      "Fiddlesticks",
+      "Cassiopeia",
+      "Rengar",
+      "Vi",
+      "Hecarim"
+     ],
+     "hidden_rows": "1+ below panel not read"
+    }
    },
    "combat": {
     "value": {
