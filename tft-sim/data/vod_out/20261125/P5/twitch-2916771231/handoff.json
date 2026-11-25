@@ -1,0 +1,25 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2916771231",
+  "slot": "P5",
+  "role": "primary",
+  "status": "pending",
+  "covered_ranges_s": [],
+  "remaining_ranges_s": [
+    [
+      0,
+      17550
+    ]
+  ],
+  "game_ids": [],
+  "counts": {
+    "games": 0,
+    "fights": 0,
+    "others": 0
+  },
+  "notes": "Claimed for emilyywang densify; agent bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
+  "claim": {
+    "agent": "bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
+    "claimed_at": "2026-11-25T19:23:17Z"
+  }
+}

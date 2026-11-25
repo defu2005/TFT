@@ -1,0 +1,45 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2898702915",
+  "slot": "P5",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      0,
+      800
+    ],
+    [
+      3000,
+      3900
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      800,
+      3000
+    ],
+    [
+      3900,
+      99999
+    ]
+  ],
+  "game_ids": [
+    "twitch-2898702915-g0",
+    "twitch-2898702915-g3000"
+  ],
+  "counts": {
+    "games": 2,
+    "fights": 2,
+    "others": 2
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 2
+    }
+  },
+  "needs_review": 2,
+  "commit": null,
+  "remaining": "Volume stub; densify-full remaining."
+}
