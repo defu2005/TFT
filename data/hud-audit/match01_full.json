@@ -70,9 +70,8 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "no_damage_pattern",
-    "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "value": "shared arena (PvE-style or shared board), same pattern as 3-4",
+    "tag": "derived"
    },
    "opponent": {
     "value": null,
@@ -85,13 +84,9 @@
     "reason": "322 s frame: eight nameplates on one arena, shared-board round; not a planning phase"
    },
    "combat": {
-    "value": {
-     "frame_t_s": null,
-     "hp_losers_this_round": {},
-     "streamer_hp_loss": 0
-    },
-    "tag": "derived",
-    "note": "opponent alias not yet read from frame"
+    "value": null,
+    "tag": "n/a",
+    "reason": "shared arena, no PvP combat read"
    },
    "actions": {
     "value": {
@@ -102,12 +97,9 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
-    "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
-    },
-    "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "value": null,
+    "tag": "n/a",
+    "reason": "shared arena: no streamer-vs-opponent result"
    }
   },
   {
@@ -3580,9 +3572,8 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "no_damage_pattern",
-    "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "value": "shared arena (PvE-style or shared board), same pattern as 3-4",
+    "tag": "derived"
    },
    "opponent": {
     "value": null,
@@ -3595,13 +3586,9 @@
     "reason": "shared arena with eight nameplates; combat frame at 1622 s; no planning"
    },
    "combat": {
-    "value": {
-     "frame_t_s": null,
-     "hp_losers_this_round": {},
-     "streamer_hp_loss": 0
-    },
-    "tag": "derived",
-    "note": "opponent alias not yet read from frame"
+    "value": null,
+    "tag": "n/a",
+    "reason": "shared arena, no PvP combat read"
    },
    "actions": {
     "value": {
@@ -3612,12 +3599,9 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
-    "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
-    },
-    "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "value": null,
+    "tag": "n/a",
+    "reason": "shared arena: no streamer-vs-opponent result"
    }
   },
   {
@@ -4027,24 +4011,9 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "frame_s": 1816,
-    "tag": "read",
-    "value": {
-     "timer": 22,
-     "level": 8,
-     "xp": "10/68",
-     "gold": 91,
-     "streak": 3,
-     "shop": [
-      "Morgana",
-      "Azir",
-      "Master Yi",
-      "Ahri",
-      null
-     ],
-     "board": "not read, arena has spell effects",
-     "note": "shop read; board unresolved"
-    }
+    "value": null,
+    "tag": "unresolved",
+    "note": "f_00719 (1798 s) is the PvE bounty Choose One screen; f_00728 (1816 s) shows spell effects on the arena; no clean planning frame found"
    },
    "combat": {
     "value": {
@@ -4749,9 +4718,8 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "no_damage_pattern",
-    "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "value": "shared arena (PvE-style or shared board), same pattern as 3-4",
+    "tag": "derived"
    },
    "opponent": {
     "value": null,
@@ -4764,13 +4732,9 @@
     "reason": "2068 s frame: shared pink arena with eight nameplates, not planning"
    },
    "combat": {
-    "value": {
-     "frame_t_s": null,
-     "hp_losers_this_round": {},
-     "streamer_hp_loss": 0
-    },
-    "tag": "derived",
-    "note": "opponent alias not yet read from frame"
+    "value": null,
+    "tag": "n/a",
+    "reason": "shared arena, no PvP combat read"
    },
    "actions": {
     "value": {
@@ -4781,12 +4745,9 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
-    "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
-    },
-    "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "value": null,
+    "tag": "n/a",
+    "reason": "shared arena: no streamer-vs-opponent result"
    }
   },
   {
@@ -5902,9 +5863,8 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "no_damage_pattern",
-    "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "value": "shared arena (PvE-style or shared board), same pattern as 3-4",
+    "tag": "derived"
    },
    "opponent": {
     "value": null,
@@ -5917,13 +5877,9 @@
     "reason": "2470 s frame: PvE-style pet arena at timer 8, not planning"
    },
    "combat": {
-    "value": {
-     "frame_t_s": null,
-     "hp_losers_this_round": {},
-     "streamer_hp_loss": 0
-    },
-    "tag": "derived",
-    "note": "opponent alias not yet read from frame"
+    "value": null,
+    "tag": "n/a",
+    "reason": "shared arena, no PvP combat read"
    },
    "actions": {
     "value": {
@@ -5945,12 +5901,9 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
-    "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
-    },
-    "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "value": null,
+    "tag": "n/a",
+    "reason": "shared arena: no streamer-vs-opponent result"
    }
   },
   {
