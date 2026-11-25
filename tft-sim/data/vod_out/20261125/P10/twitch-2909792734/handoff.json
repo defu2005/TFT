@@ -4,19 +4,23 @@
   "slot": "P10",
   "role": "primary",
   "status": "skipped",
-  "skip_reason": "Regional Finals tournament — not ranked",
+  "skip_reason": "Regional Finals tournament \u2014 not ranked",
   "covered_ranges_s": [],
-  "remaining_ranges_s": [
-    [
-      0,
-      null
-    ]
-  ],
+  "remaining_ranges_s": [],
   "game_ids": [],
   "counts": {
     "games": 0,
     "fights": 0,
     "others": 0
   },
-  "validator": {}
+  "validator": {},
+  "skipped_ranges_s": [
+    [
+      0,
+      17119
+    ]
+  ],
+  "skip_notes": "Regional Finals / Enchanted Wilds tournament overlay (WEEK1 G1\u2013G5) \u2014 not Challenger ranked ladder; skip TPC/tourney",
+  "remaining": "none",
+  "notes": "Regional Finals / Enchanted Wilds tournament overlay (WEEK1 G1\u2013G5) \u2014 not Challenger ranked ladder; skip TPC/tourney"
 }

@@ -1,0 +1,37 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2900629324",
+  "slot": "P1",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      840,
+      3000
+    ],
+    [
+      3240,
+      4920
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2900629324-g840",
+    "twitch-2900629324-g3240"
+  ],
+  "counts": {
+    "games": 2,
+    "fights": 41,
+    "others": 41
+  },
+  "validator": {
+    "ok": 37,
+    "skipped": {
+      "winner_null": 4
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "Scrim/tourney/watch-party segments skipped.",
+  "notes": "Ranked early; Boxbox Bash scrims after ~5400s skipped."
+}
