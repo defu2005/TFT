@@ -84,9 +84,13 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {},
+     "phase_hint": "possible PvE or no damage"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -193,9 +197,13 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {},
+     "phase_hint": "possible PvE or no damage"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -302,9 +310,13 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {},
+     "phase_hint": "possible PvE or no damage"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -422,9 +434,13 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {},
+     "phase_hint": "possible PvE or no damage"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -580,10 +596,17 @@
    },
    "combat": {
     "value": {
-     "frame_s": 505,
-     "phase": "PvE combat (monsters), home view"
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P1": 3,
+      "P2": 5,
+      "P5": 4,
+      "P7": 5
+     },
+     "phase_hint": "PvP"
     },
-    "tag": "read"
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -715,9 +738,19 @@
     "tag": "read"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P4": 4,
+      "P5": 9,
+      "P6": 3,
+      "P7": 5,
+      "P8": 7
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -873,9 +906,18 @@
     "tag": "read"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P2": 5,
+      "P3": 5,
+      "P5": 6,
+      "P6": 6
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -1011,9 +1053,13 @@
     "tag": "read"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {},
+     "phase_hint": "possible PvE or no damage"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -1166,9 +1212,18 @@
     "tag": "read"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P2": 6,
+      "P3": 5,
+      "P5": 7,
+      "P7": 7
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -1338,9 +1393,18 @@
     "tag": "read"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P3": 4,
+      "P5": 7,
+      "P6": 6,
+      "P8": 5
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -1504,9 +1568,13 @@
     "tag": "read"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {},
+     "phase_hint": "possible PvE or no damage"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -1672,9 +1740,18 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P2": 10,
+      "P3": 10,
+      "P6": 9,
+      "P7": 2
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -1850,9 +1927,18 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P2": 10,
+      "P3": 11,
+      "P7": 11,
+      "P8": 9
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -2034,9 +2120,18 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P2": 11,
+      "P5": 7,
+      "P7": 8,
+      "P8": 13
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -2180,9 +2275,13 @@
     "tag": "read"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {},
+     "phase_hint": "possible PvE or no damage"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -2348,9 +2447,18 @@
     }
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P2": 12,
+      "P5": 8,
+      "P7": 11,
+      "P8": 10
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -2578,11 +2686,17 @@
    },
    "combat": {
     "value": {
-     "window_s": "approx 1262-1290",
-     "opponent_alias": "P2",
-     "basis": "alias matched by sidebar HP to labels; outcome not read"
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P2": 11,
+      "P3": 9,
+      "P6": 10,
+      "P8": 13
+     },
+     "phase_hint": "PvP"
     },
-    "tag": "derived"
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -2758,9 +2872,13 @@
     }
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {},
+     "phase_hint": "possible PvE or no damage"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -2889,9 +3007,18 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P3": 13,
+      "P5": 8,
+      "P6": 13,
+      "P8": 12
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -3058,9 +3185,18 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P1": 9,
+      "P3": 8,
+      "P7": 12,
+      "P8": 9
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -3180,9 +3316,18 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P3": 10,
+      "P5": 11,
+      "P6": 12,
+      "P8": 15
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -3301,9 +3446,13 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {},
+     "phase_hint": "possible PvE or no damage"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -3422,9 +3571,18 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P3": 12,
+      "P4": 12,
+      "P5": 12,
+      "P6": 12
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -3552,9 +3710,18 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P4": 12,
+      "P5": 9,
+      "P6": 12,
+      "P8": 7
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -3682,9 +3849,13 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {},
+     "phase_hint": "possible PvE or no damage"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -3826,9 +3997,17 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P1": 14,
+      "P5": 12,
+      "P6": 13
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -4018,9 +4197,17 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P3": 13,
+      "P6": 4,
+      "P7": 11
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -4186,9 +4373,16 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P4": 15,
+      "P7": 14
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -4329,9 +4523,13 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {},
+     "phase_hint": "possible PvE or no damage"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -4460,9 +4658,16 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P4": 17,
+      "P7": 14
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -4638,9 +4843,16 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P1": 15,
+      "P4": 17
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -4786,9 +4998,13 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {},
+     "phase_hint": "possible PvE or no damage"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -4926,9 +5142,16 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P2": 14,
+      "P4": 13
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -5072,9 +5295,16 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P1": 16,
+      "P4": 10
+     },
+     "phase_hint": "PvP"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -5219,9 +5449,15 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P1": 16
+     },
+     "phase_hint": "single loser"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -5342,9 +5578,13 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {},
+     "phase_hint": "possible PvE or no damage"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -5479,9 +5719,15 @@
     "tag": "unresolved"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "value": {
+     "frame_t_s": null,
+     "hp_losers_this_round": {
+      "P1": 18
+     },
+     "phase_hint": "single loser"
+    },
+    "tag": "derived",
+    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
    },
    "actions": {
     "value": {
@@ -5631,7 +5877,7 @@
    "combat": {
     "value": null,
     "tag": "unresolved",
-    "note": "combat frames not yet read for this round"
+    "note": "no next HP row"
    },
    "actions": {
     "value": {
