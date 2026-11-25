@@ -408,7 +408,19 @@
     "tag": "unresolved"
    },
    "augment": {
-    "value": "Warpath",
+    "value": {
+     "choice_442_458": [
+      "U.R.F",
+      "Replication",
+      "Capital Gains II"
+     ],
+     "choice_459": [
+      "U.R.F",
+      "Replication",
+      "Warpath"
+     ],
+     "pick": "Warpath"
+    },
     "tag": "derived"
    },
    "board_units": {
@@ -432,9 +444,8 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
-    "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "value": "PvE (monsters at 505 s)",
+    "tag": "read"
    },
    "opponent": {
     "value": null,
@@ -446,12 +457,27 @@
     "tag": "derived"
    },
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "frame_s": 440,
+     "timer": 47,
+     "counter": "3/3",
+     "panel_partial": {
+      "Brawler": 1,
+      "Hunter": 1,
+      "Coven": 1,
+      "Elderwood": 1
+     },
+     "board_bench": "not counted; 2 green, pink, teal bodies on board; 2 on bench",
+     "popups": "Camille, Pebbles (other players units)"
+    },
+    "tag": "read"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "frame_s": 505,
+     "phase": "PvE combat (monsters), home view"
+    },
+    "tag": "read"
    },
    "actions": {
     "value": null,
