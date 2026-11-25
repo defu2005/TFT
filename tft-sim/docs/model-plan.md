@@ -137,11 +137,35 @@ Mọi bằng chứng dưới đây là sim hoặc nội dung tổng hợp (8 tư
 - Mỗi set cần HUD profile riêng.
 - Không báo cỡ mẫu chưa đo. Lập đường cong học theo số VOD khi đã có thứ hạng cuối.
 
-### 10.6 Thí nghiệm sim: mask nhóm
+### 10.6 Thí nghiệm sim: mask nhóm (đăng ký trước khi chạy)
 
-Huấn luyện lại clone với mask nhóm: (a) chỉ HUD hiện có; (b) + HP và stage; (c) + bàn và bàn chờ. So thứ hạng trên khối seed **260000–260999** (dự trữ trong sổ `cloud-agents.md` trước khi chạy). Nhãn: bằng chứng bot, không phải kết quả trên dữ liệu thật.
+**Mục đích:** xếp hạng nhóm dữ liệu HUD theo tác động lên chơi, trên đầu vào mà teacher thực sự đọc. Không phải dự đoán cho set mới.
 
-Trạng thái: xem `tft-sim/docs/handoff/` và README; chạy khi harness hỗ trợ mask.
+**Hạn chế đã biết trước khi chạy:**
+- Teacher v4 chỉ đọc đầu vào mà nó dùng. Nếu nó không đọc HP hay round, điều kiện (b) bằng (a) theo cấu trúc, và kết quả chỉ nói về teacher, không nói về TFT. Mục kiểm tra bất biến (`scripts/mask_leak_test.py`) xác nhận điều này trước khi diễn giải.
+- Rò rỉ: "copies owned" và "trait trùng đội" của slot đọc bench/board. Trong (a) và (b) hai dim này bị ẩn, cùng với mọi dim bench/board.
+- Vì teacher đọc bench/board khi quyết định, (a) và (b) bị giới hạn bởi thông tin, không phải bởi kiến trúc.
+
+**Dữ liệu huấn luyện:** `collect_v4.py` (teacher v4, EngineResolver, TFTSet17, cùng nội dung như README), seed 150000–150399 (train), 151000–151199 (test). Các khối này đã dùng cho v4 trước đây; `ledger` cho phép huấn luyện trên đó. Không huấn luyện trên 240000 trở lên.
+
+**Điều kiện** (định nghĩa trong `scripts/mask_exp.py`; 185 chiều universal_features_v4):
+- a: gold, level, xp, streak; slot filled, cost/5 (14 chiều)
+- b: a + hp, round (16 chiều)
+- c: b + bench/board 94 chiều + slot owned, traits (120 chiều)
+- full: 185 chiều. Đối chứng: mask toàn 1 phải cho độ đồng ý kiểm tra khớp với huấn luyện đầy đủ.
+- Luôn ẩn: opponents, gods, augment tier và flags, scalars 6–9.
+
+**Huấn luyện:** `scripts/mask_train.py`, 40 epoch, seed 0, cùng hàm `bc_train.train`. Mask áp lên X trước khi chuẩn hóa, nên cột ẩn có mu=0, sd=1 và đầu vào bằng 0. Checkpoint lưu `fmask` và `cond`.
+
+**Chỉ số BC:** độ đồng ý với teacher v4 trên test, theo loại hành động (hàng có ≥2 hợp lệ).
+
+**Chỉ số chơi:** `scripts/mask_play.py`, seed **260000–260999** (1000 lobby, dự trữ trong sổ). A = clone (một điều kiện), B = teacher v4, EngineResolver. Mỗi điều kiện chạy riêng. Null = v4 vs v4 trên cùng seed.
+- Chỉ số chính: diff A−B (âm = clone tốt hơn), CI95 bootstrap theo lobby (`summarize`), n lobby hoàn tất, và per-lobby diff.
+- So sánh đã đăng ký: (b)−(a) và (c)−(b) theo cặp per-lobby; mỗi điều kiện so với null.
+
+**Quy tắc diễn giải:** với 1000 lobby, khác biệt dưới khoảng 0,2 không phân giải được. Khi đó báo "không phân biệt được", không xếp hạng. Không dùng số mẫu chưa đo.
+
+**Không thuộc lần chạy này:** mô hình dropout nhóm đơn. Làm sau, trên khối seed dự trữ mới.
 
 ### 10.7 Việc tiếp theo (sim)
 
