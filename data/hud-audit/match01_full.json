@@ -6350,8 +6350,9 @@
    },
    "opponent": {
     "value": "P3",
-    "tag": "derived",
-    "basis": "1952.9 s rail badges: P3 level 6 matches plate 6; P6 level 9 and P7 level 8 do not. The streamer's own plate (9) is visible top-left in the same frame. Unique in the pool."
+    "tag": "read",
+    "basis": "Combat tooltip at sweep 809 (stage 5-2 timer 4, inside the 5-2 span of sweeps 773-815) names P3 (name match 1.0).",
+    "attempt": "Read from the combat tooltip at sweep 809, which matches P3."
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -7474,7 +7475,7 @@
      "P2",
      "ghost"
     ],
-    "attempt": "Banner window 2200-2340 s (video time, 2 s steps) and 2230-2280 s (1 s steps) was chosen from file labels and is not confirmed to lie in this round's stage; no banner with a name match of 0.7 or more appeared there. Banner check passes on a known frame (1978 s), so the opponent stays unresolved from banner.",
+    "attempt": "checked 2210.3 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost Stage span from the stage read table: sweeps 902-933 (2164-2226 s). Tooltip OCR over every sweep in that span returned no combat tooltip, so no opponent was read from it.",
     "reason": "no legible opponent nameplate in the checked frame"
    },
    "combat_frame_t_s": null,
@@ -8280,7 +8281,7 @@
      "P2",
      "ghost"
     ],
-    "attempt": "Banner window 2380-2500 s (video time, 2 s steps) and 2400-2450 s (1 s steps) was chosen from file labels and covers stages 6-3 to 6-5 as well; it is not confirmed to lie in this round's stage. No banner with a name match of 0.7 or more appeared there. Banner check passes on a known frame (1978 s), so the opponent stays unresolved from banner.",
+    "attempt": "checked 2380.2 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost Stage span from the stage read table: sweeps 987-1017 (2334-2394 s). Tooltip OCR over every sweep in that span returned no combat tooltip, so no opponent was read from it.",
     "reason": "no legible opponent nameplate in the checked frame"
    },
    "combat_frame_t_s": null,
