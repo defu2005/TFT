@@ -2639,7 +2639,7 @@
       "Xayah"
      ]
     },
-    "tag": "derived",
+    "tag": "candidate",
     "basis": "re-read 3-5 panel with Brawler 3; hidden 1 = marker; 3 candidates"
    },
    "bench_units": {
@@ -2888,10 +2888,17 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "panel solver run",
-    "reason": "panel incomplete or multiple solutions; not written"
+    "value": [
+     "Alistar",
+     "Ezreal",
+     "Hecarim",
+     "Krug",
+     "LeBlanc",
+     "Mama Beak",
+     "Xayah"
+    ],
+    "tag": "candidate",
+    "basis": "panel solver N=7 k=0; assumes no emblem; 3-3 to 3-6 adds Hecarim with no purchase event (1 unexplained)"
    },
    "bench_units": {
     "value": null,
@@ -3084,8 +3091,17 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Ezreal",
+     "Hecarim",
+     "Krug",
+     "LeBlanc",
+     "Mama Beak",
+     "Xayah"
+    ],
+    "tag": "candidate",
+    "basis": "panel solver N=7 k=0; assumes no emblem"
    },
    "bench_units": {
     "value": null,
@@ -3545,8 +3561,8 @@
      "Maokai",
      "Sett"
     ],
-    "tag": "derived",
-    "basis": "panel solver, hidden rows 1 = marker; unique",
+    "tag": "candidate",
+    "basis": "panel solver, hidden rows 1 = marker; unique; validation: 3-7 to 4-2 adds Draven, Gnar, Maokai, Sett with no purchase event before 1470 s; purchase log is lossy (39 of 96 cost-consistent), so the set is a candidate, not derived",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -3705,8 +3721,18 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Hecarim",
+     "Krug",
+     "Maokai",
+     "Sett"
+    ],
+    "tag": "candidate",
+    "basis": "propagated from 4-2; assumes no emblem and no change between rounds; hexes unresolved; validation: 3-7 to 4-2 adds Draven, Gnar, Maokai, Sett with no purchase event before 1470 s; purchase log is lossy (39 of 96 cost-consistent), so the set is a candidate, not derived"
    },
    "bench_units": {
     "value": null,
@@ -3984,8 +4010,18 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Hecarim",
+     "Krug",
+     "Maokai",
+     "Sett"
+    ],
+    "tag": "candidate",
+    "basis": "propagated from 4-2; assumes no emblem and no change between rounds; hexes unresolved; validation: 3-7 to 4-2 adds Draven, Gnar, Maokai, Sett with no purchase event before 1470 s; purchase log is lossy (39 of 96 cost-consistent), so the set is a candidate, not derived"
    },
    "bench_units": {
     "value": null,
@@ -4148,8 +4184,18 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Hecarim",
+     "Krug",
+     "Maokai",
+     "Sett"
+    ],
+    "tag": "candidate",
+    "basis": "propagated from 4-2; assumes no emblem and no change between rounds; hexes unresolved; validation: 3-7 to 4-2 adds Draven, Gnar, Maokai, Sett with no purchase event before 1470 s; purchase log is lossy (39 of 96 cost-consistent), so the set is a candidate, not derived"
    },
    "bench_units": {
     "value": null,
@@ -4313,8 +4359,18 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Hecarim",
+     "Krug",
+     "Maokai",
+     "Sett"
+    ],
+    "tag": "candidate",
+    "basis": "propagated from 4-2; assumes no emblem and no change between rounds; hexes unresolved; validation: 3-7 to 4-2 adds Draven, Gnar, Maokai, Sett with no purchase event before 1470 s; purchase log is lossy (39 of 96 cost-consistent), so the set is a candidate, not derived"
    },
    "bench_units": {
     "value": null,
@@ -4489,8 +4545,8 @@
      "Maokai",
      "Sett"
     ],
-    "tag": "derived",
-    "basis": "panel solver, hidden rows 1 = marker; unique",
+    "tag": "candidate",
+    "basis": "panel solver, hidden rows 1 = marker; unique; validation: 3-7 to 4-2 adds Draven, Gnar, Maokai, Sett with no purchase event before 1470 s; purchase log is lossy (39 of 96 cost-consistent), so the set is a candidate, not derived",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -5024,8 +5080,8 @@
      "Maokai",
      "Taric"
     ],
-    "tag": "derived",
-    "basis": "panel solver, hidden rows 2 = marker; unique",
+    "tag": "candidate",
+    "basis": "panel solver, hidden rows 2 = marker; unique; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -5349,8 +5405,19 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "tag": "candidate",
+    "basis": "propagated from 5-3; assumes no emblem and no change between rounds; hexes unresolved; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)"
    },
    "bench_units": {
     "value": null,
@@ -5566,8 +5633,19 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "tag": "candidate",
+    "basis": "propagated from 5-3; assumes no emblem and no change between rounds; hexes unresolved; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)"
    },
    "bench_units": {
     "value": null,
@@ -5758,8 +5836,19 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "tag": "candidate",
+    "basis": "propagated from 5-3; assumes no emblem and no change between rounds; hexes unresolved; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)"
    },
    "bench_units": {
     "value": null,
@@ -5931,8 +6020,19 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "tag": "candidate",
+    "basis": "propagated from 5-3; assumes no emblem and no change between rounds; hexes unresolved; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)"
    },
    "bench_units": {
     "value": null,
@@ -6097,8 +6197,19 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "tag": "candidate",
+    "basis": "propagated from 5-3; assumes no emblem and no change between rounds; hexes unresolved; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)"
    },
    "bench_units": {
     "value": null,
@@ -6286,8 +6397,19 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "tag": "candidate",
+    "basis": "propagated from 5-3; assumes no emblem and no change between rounds; hexes unresolved; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)"
    },
    "bench_units": {
     "value": null,
@@ -6591,8 +6713,19 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "tag": "candidate",
+    "basis": "propagated from 5-3; assumes no emblem and no change between rounds; hexes unresolved; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)"
    },
    "bench_units": {
     "value": null,
@@ -6823,8 +6956,8 @@
      "Maokai",
      "Taric"
     ],
-    "tag": "derived",
-    "basis": "panel solver, hidden rows 2 = marker; unique",
+    "tag": "candidate",
+    "basis": "panel solver, hidden rows 2 = marker; unique; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)",
     "note": "hexes unresolved"
    },
    "bench_units": {
