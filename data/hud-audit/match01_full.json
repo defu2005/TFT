@@ -665,8 +665,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "PvE (monsters at 505 s)",
-    "tag": "read"
+    "value": "PvP",
+    "tag": "derived",
+    "basis": "streak icon from planning frames on disk (p2/p3 crops)"
    },
    "opponent": {
     "value": null,
@@ -674,9 +675,11 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": "lost",
+    "value": {
+     "outcome": "loss"
+    },
     "tag": "derived",
-    "basis": "HP labels, streamer damage > 0"
+    "basis": "2-2 planning blue 1 after loss; matches streak_crosscheck"
    },
    "planning": {
     "value": {
@@ -806,9 +809,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak icon from planning frames on disk (p2/p3 crops)"
    },
    "opponent": {
     "value": null,
@@ -896,11 +899,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "win"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "2-3 planning orange 1 after 2-2"
    }
   },
   {
@@ -976,9 +978,10 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
-    "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "same gap",
+    "reason": "split between 2-3 and 2-4"
    },
    "opponent": {
     "value": null,
@@ -1058,12 +1061,10 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
-    "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
-    },
-    "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "2-4 planning not read",
+    "reason": "one of 2-3 and 2-4 won; the other had no PvP"
    }
   },
   {
@@ -1139,8 +1140,10 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "PvE carousel (664-688 s sandy arena with monsters)",
-    "tag": "read"
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "same gap",
+    "reason": "split between 2-3 and 2-4"
    },
    "opponent": {
     "value": null,
@@ -1200,12 +1203,10 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
-    "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
-    },
-    "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "2-4 planning not read",
+    "reason": "one of 2-3 and 2-4 won; the other had no PvP"
    }
   },
   {
@@ -1288,9 +1289,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak icon from planning frames on disk (p2/p3 crops)"
    },
    "opponent": {
     "value": null,
@@ -1372,11 +1373,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "win"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "streak icon from planning frames on disk (p2/p3 crops)"
    }
   },
   {
@@ -1468,9 +1468,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak icon from planning frames on disk (p2/p3 crops)"
    },
    "opponent": {
     "value": null,
@@ -1556,11 +1556,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "win"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "streak icon from planning frames on disk (p2/p3 crops)"
    }
   },
   {
@@ -1643,9 +1642,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "no_damage_pattern",
+    "value": "PvE",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged"
    },
    "opponent": {
     "value": null,
@@ -1728,11 +1727,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "no change in streak"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "2-7 planning 4 equals 3-1 planning 4"
    }
   },
   {
@@ -1832,9 +1830,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak icon from planning frames on disk (p2/p3 crops)"
    },
    "opponent": {
     "value": null,
@@ -1930,11 +1928,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "win"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "streak icon from planning frames on disk (p2/p3 crops)"
    }
   },
   {
@@ -2009,9 +2006,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak icon from planning frames on disk (p2/p3 crops)"
    },
    "opponent": {
     "value": null,
@@ -2169,11 +2166,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "win"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "streak icon from planning frames on disk (p2/p3 crops)"
    }
   },
   {
@@ -2263,9 +2259,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
-    "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "value": "PvP",
+    "tag": "read",
+    "basis": "3-3 PvP already read from HP labels"
    },
    "opponent": {
     "value": null,
@@ -2385,12 +2381,10 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
-    "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
-    },
-    "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "3-4 planning not read",
+    "reason": "count 6 to 7 spans 3-3 and carousel 3-4"
    }
   },
   {
@@ -6349,7 +6343,7 @@
     "reason": "2470 s frame: PvE-style pet arena at timer 8, not planning"
    },
    "combat": {
-    "value": null,
+    "value": "n/a: shared arena, no PvP combat read",
     "tag": "n/a",
     "reason": "shared arena, no PvP combat read"
    },
@@ -6386,9 +6380,9 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
-    "value": null,
+    "value": "n/a: shared arena, no streamer result",
     "tag": "n/a",
-    "reason": "shared arena: no streamer result"
+    "reason": "shared arena, no streamer result"
    },
    "opponent_board": {
     "value": "n/a: no PvP opponent this round",
