@@ -1,0 +1,40 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2896215312",
+  "slot": "P4",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      60,
+      1600
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      0,
+      60
+    ],
+    [
+      1600,
+      17500
+    ]
+  ],
+  "game_ids": [
+    "twitch-2896215312-g60"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 17,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 17
+    }
+  },
+  "needs_review": 17,
+  "commit": null,
+  "remaining": "continue ranked after break ~1800+"
+}
