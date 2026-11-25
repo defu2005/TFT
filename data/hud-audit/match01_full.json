@@ -1831,8 +1831,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "PvP (home board with counter, 1165-1236 s)",
-    "tag": "derived"
+    "value": "PvP",
+    "tag": "derived",
+    "note": "HP labels: 3-5 combat damage appears in the 3-6 label (1236 s), so 3-5 was a PvP round"
    },
    "opponent": {
     "value": null,
@@ -1840,35 +1841,55 @@
    },
    "combat_frame_t_s": null,
    "planning": {
+    "frame_s": 1186,
+    "tag": "read",
     "value": {
-     "frame_s": 1186,
      "timer": 7,
      "counter": "7/7",
      "level": 7,
      "xp": "2/56",
-     "gold": 25,
-     "streak": 7,
-     "panel": {
-      "Monolith": 1,
-      "Brawler": 2,
-      "Elderwood": 3,
-      "Rapidfire": 2,
-      "Blackthorn": 2,
-      "Executioner": 1,
-      "Fae": 1,
-      "Summoner": 1,
-      "Riftbeast": 1
+     "gold": {
+      "value": 25,
+      "tag": "read"
      },
-     "shop": [
-      "Azir",
-      "Cassiopeia",
-      "Kayle",
-      "LeBlanc"
-     ],
-     "board": "7 bodies, not named",
-     "bench": "not named"
-    },
-    "tag": "read"
+     "streak": {
+      "value": 7,
+      "tag": "read",
+      "note": "flame badge beside gold at bottom centre"
+     },
+     "panel": {
+      "value": {
+       "Monolith": 1,
+       "Brawler": 2,
+       "Elderwood": 3,
+       "Rapidfire": 2,
+       "Blackthorn": 2,
+       "Executioner": 1,
+       "Fae": 1,
+       "Summoner": 1,
+       "Riftbeast": 1
+      },
+      "tag": "read"
+     },
+     "shop": {
+      "value": [
+       "Azir",
+       "Cassiopeia",
+       "Kayle",
+       "LeBlanc"
+      ],
+      "tag": "read"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved",
+      "note": "7 bodies counted, names not confirmed per hex"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     }
+    }
    },
    "combat": {
     "value": null,
