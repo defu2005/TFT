@@ -1,0 +1,57 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2899735762",
+  "slot": "P1",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      1230,
+      3120
+    ],
+    [
+      3660,
+      5100
+    ],
+    [
+      5460,
+      6720
+    ],
+    [
+      7500,
+      8790
+    ],
+    [
+      9150,
+      10590
+    ],
+    [
+      11040,
+      12720
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2899735762-g1230",
+    "twitch-2899735762-g3660",
+    "twitch-2899735762-g5460",
+    "twitch-2899735762-g7500",
+    "twitch-2899735762-g9150",
+    "twitch-2899735762-g11040"
+  ],
+  "counts": {
+    "games": 6,
+    "fights": 91,
+    "others": 91
+  },
+  "validator": {
+    "ok": 82,
+    "skipped": {
+      "winner_null": 9
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "Scrim/tourney/watch-party segments skipped.",
+  "notes": "bash tomorrow lock-in: ranked Set18 densify; PTL/bash/desktop after ~12810 skipped."
+}
