@@ -8,6 +8,10 @@
     [
       270,
       1760
+    ],
+    [
+      2040,
+      3560
     ]
   ],
   "remaining_ranges_s": [
@@ -17,24 +21,29 @@
     ],
     [
       1760,
+      2040
+    ],
+    [
+      3560,
       29230
     ]
   ],
   "game_ids": [
+    "twitch-2898072550-g2040",
     "twitch-2898072550-g270"
   ],
   "counts": {
-    "games": 1,
-    "fights": 11,
+    "games": 2,
+    "fights": 26,
     "others": 0
   },
   "validator": {
-    "ok": 6,
+    "ok": 18,
     "skipped": {
-      "winner_null": 5
+      "winner_null": 8
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "g270 densified (placement 8 @~1760). Continue FULL density game2 from ~2040; no thin survey."
+  "remaining": "g270+g2040 densify-full pushed; continue game3+ / late VOD; voids1n CLAIM still empty"
 }
