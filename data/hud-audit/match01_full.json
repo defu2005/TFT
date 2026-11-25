@@ -6545,9 +6545,12 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "final combat still running at 2615 s; placement not read within window"
+    "value": {
+     "outcome": "loss",
+     "streamer_placement": 2,
+     "basis": "2615 s sidebar: streamer row shows red X and grey portrait, Ruvalis row shows tick"
+    },
+    "tag": "read"
    }
   }
  ],
@@ -6616,5 +6619,16 @@
   "887-891 s": "hudDetected False (scouting window)",
   "891.25 s on": "True again"
  },
- "counting_rule": "trait counts are per unique champion (verified: 3-3 panel equals 3-2 five-unit panel with a duplicate Kobuko). Counter = units out of level cap."
+ "counting_rule": "trait counts are per unique champion (verified: 3-3 panel equals 3-2 five-unit panel with a duplicate Kobuko). Counter = units out of level cap.",
+ "placements": {
+  "1": "P2",
+  "2": "P1 (streamer)",
+  "3": "P4 (6-2)",
+  "4": "P7 (5-5)",
+  "5": "P3 (5-2, tie with P6, sidebar order, unverified)",
+  "6": "P6 (5-2, tie with P3, sidebar order, unverified)",
+  "7": "P5 (5-1)",
+  "8": "P8 (4-6)",
+  "source": "round_results_derived.json eliminations; 1 and 2 from 6-6 frames"
+ }
 }

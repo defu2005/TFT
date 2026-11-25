@@ -1,13 +1,25 @@
 import json, sys
 d = json.load(open('data/hud-audit/match01_full.json'))
 REQUIRED = ['planning', 'combat', 'result', 'round_type', 'augment', 'actions']
+FULL = ['board_units', 'bench_units', 'stars', 'items', 'opponent', 'opponent_board']
 ok = {'read', 'derived', 'assigned', 'n/a'}
 def resolved(v):
     return isinstance(v, dict) and v.get('tag') in ok and v.get('value') is not None
 complete, report = 0, {}
+full_counts = {f: 0 for f in FULL}
 for r in d['rounds']:
     miss = [f for f in REQUIRED if not resolved(r.get(f))]
     if not miss: complete += 1
     else: report[r['round']] = miss
-print(f"rounds total {len(d['rounds'])}; complete {complete}")
+    for f in FULL:
+        if resolved(r.get(f)): full_counts[f] += 1
+n = len(d['rounds'])
+print(f"REQUIRED rounds complete: {complete} of {n}")
 for k, v in report.items(): print(f"  {k}: {', '.join(v)}")
+print("FULL fields resolved per round (of %d):" % n)
+for f in FULL: print(f"  {f}: {full_counts[f]}")
+pl = d.get('placements')
+print("placements:", 'missing' if not pl else pl)
+print("final_comps:", 'missing' if not d.get('final_comps') else 'present')
+br = d.get('blind_reread')
+print("blind_reread:", 'missing' if not br else br.get('summary', 'present'))
