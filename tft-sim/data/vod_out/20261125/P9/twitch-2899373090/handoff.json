@@ -53,43 +53,119 @@
   ],
   "counts": {
     "games": 5,
-    "fights": 5,
+    "fights": 16,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 5
+      "winner_null": 16
     },
     "rows": [
       {
         "line": 1,
-        "source": "twitch-2899373090-g400:2-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 2,
         "source": "twitch-2899373090-g7000:5-2",
         "reason": "winner_null"
       },
       {
-        "line": 3,
+        "line": 2,
         "source": "twitch-2899373090-g11000:4-7",
         "reason": "winner_null"
       },
       {
-        "line": 4,
+        "line": 3,
         "source": "twitch-2899373090-g5000:4-6",
         "reason": "winner_null"
       },
       {
-        "line": 5,
+        "line": 4,
         "source": "twitch-2899373090-g12500:3-3",
+        "reason": "winner_null"
+      },
+      {
+        "line": 5,
+        "source": "twitch-2899373090-g400:2-3",
+        "reason": "winner_null"
+      },
+      {
+        "line": 6,
+        "source": "twitch-2899373090-g400:2-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 7,
+        "source": "twitch-2899373090-g400:3-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 8,
+        "source": "twitch-2899373090-g400:3-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 9,
+        "source": "twitch-2899373090-g400:3-3",
+        "reason": "winner_null"
+      },
+      {
+        "line": 10,
+        "source": "twitch-2899373090-g400:3-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 11,
+        "source": "twitch-2899373090-g400:3-6",
+        "reason": "winner_null"
+      },
+      {
+        "line": 12,
+        "source": "twitch-2899373090-g400:4-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 13,
+        "source": "twitch-2899373090-g400:4-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 14,
+        "source": "twitch-2899373090-g400:4-3",
+        "reason": "winner_null"
+      },
+      {
+        "line": 15,
+        "source": "twitch-2899373090-g400:4-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 16,
+        "source": "twitch-2899373090-g400:5-1",
         "reason": "winner_null"
       }
     ]
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "5 games densified; gaps remain"
+  "remaining": "g400 densified. Thin left: g5000,g7000,g11000,g12500 then 2892255509.",
+  "densify_claims": {
+    "twitch-2899373090-g400": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "fights": 12,
+      "stages": [
+        "2-3",
+        "2-5",
+        "3-1",
+        "3-2",
+        "3-3",
+        "3-5",
+        "3-6",
+        "4-1",
+        "4-2",
+        "4-3",
+        "4-5",
+        "5-1"
+      ],
+      "note": "corrected end ~1580; skip carousel/PvE"
+    }
+  }
 }

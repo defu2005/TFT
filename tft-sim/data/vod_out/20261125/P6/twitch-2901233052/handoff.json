@@ -18,16 +18,16 @@
   ],
   "counts": {
     "games": 3,
-    "fights": 18,
-    "others": 18
+    "fights": 34,
+    "others": 34
   },
   "validator": {
-    "ok": 0,
+    "ok": 29,
     "skipped": {
-      "winner_null": 18
+      "winner_null": 5
     }
   },
-  "needs_review": 18,
+  "needs_review": 5,
   "commit": null,
-  "remaining": "candidate [0,5670] xong — 3 ranked Set18. Next primary: twitch-2922039251"
+  "remaining": "densify full-PvP: fights=34 both_board=2 winner_set=29 ok=29. Next block 2922039251 tourney; probe kiyoon."
 }
