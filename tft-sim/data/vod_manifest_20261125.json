@@ -2,7 +2,7 @@
   "schema": "vod-manifest-v1",
   "batch": "2026-11-25-set18-vod",
   "dispatcher": "claude (phiên điều phối mở rộng manifest 1000)",
-  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash).",
+  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash). | 2026-11-25 expand depleted P2/P5/P6/P7/P8/P10: +voids1n/emilyywang/kiyoon/imriveting/loltyler1/dogdog+ (~420h ranked ladder, filter PBE/tourney/bash/custom/Normal).",
   "slots": {
     "P1": {
       "role": "primary",
@@ -14,7 +14,8 @@
       "role": "primary",
       "streamers": [
         "Dishsoap",
-        "k3soju"
+        "k3soju",
+        "voids1n"
       ]
     },
     "P3": {
@@ -49,19 +50,22 @@
     "P5": {
       "role": "primary",
       "streamers": [
-        "souless"
+        "souless",
+        "emilyywang"
       ]
     },
     "P6": {
       "role": "primary",
       "streamers": [
-        "cambulee"
+        "cambulee",
+        "kiyoon"
       ]
     },
     "P7": {
       "role": "primary",
       "streamers": [
-        "traviscwat"
+        "traviscwat",
+        "imriveting"
       ]
     },
     "P8": {
@@ -70,7 +74,8 @@
         "disguisedtoast",
         "imaqtpie",
         "dankmemes011",
-        "scarra"
+        "scarra",
+        "loltyler1"
       ],
       "note": "disguisedtoast 3 VOD blocked (Normal/PBE/set≠18). Bổ sung NA ladder Set18: imaqtpie/dankmemes011/scarra."
     },
@@ -83,7 +88,11 @@
     "P10": {
       "role": "primary",
       "streamers": [
-        "spencer_tft"
+        "spencer_tft",
+        "dogdog",
+        "upsetmaxtft",
+        "dpeitft",
+        "tleyds"
       ]
     }
   },
@@ -447,6 +456,358 @@
       "source_refs": [
         "hud:scripts/hud-campaign/seed-sources.json"
       ]
+    },
+    {
+      "vod_id": "twitch-2924394131",
+      "url": "https://www.twitch.tv/videos/2924394131",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          51050
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1583 LP RANK 9 GOING FOR RANK 1 COACHING @ 8PM EST TYLER1 LET ME COACH U BIG DAWG? !youtube  |!coaching"
+    },
+    {
+      "vod_id": "twitch-2900777498",
+      "url": "https://www.twitch.tv/videos/2900777498",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          36900
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1617 LP RANK 2 GOING FOR RANK 1 DONT PLAY WITH ME????? | !youtube !coaching"
+    },
+    {
+      "vod_id": "twitch-2913359877",
+      "url": "https://www.twitch.tv/videos/2913359877",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          33530
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1484 LP PUSHING RANK 1 ASK ME ANYTHING ABOUT TFT AND I WILL ANSWER LMFAOOO XP!!! NEW YOUTUBE VIDEO OUT  !youtube  |!coac"
+    },
+    {
+      "vod_id": "twitch-2887436861",
+      "url": "https://www.twitch.tv/videos/2887436861",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          30870
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1292 LP RANK 10 START WRITING EVERY SINGLE THING LEARNED IN NOTEPAD AND GETTING RANK 1 HELLOOOOO !scores | !coaching"
+    },
+    {
+      "vod_id": "twitch-2926217576",
+      "url": "https://www.twitch.tv/videos/2926217576",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          30710
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "RANK 1 1782 LP COACHING RAFFLE @ 7PM EST TODAY JOIN MY DISCORD TO ENTER PUSHING 2K LP  LMAOOOO !discord  |!coaching"
+    },
+    {
+      "vod_id": "twitch-2912481574",
+      "url": "https://www.twitch.tv/videos/2912481574",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          27100
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1288 LP PREVIOUS RANK 1 SHOWS ALL IN HIS NOTES FOR NEW C PATCH JUST ASK BIGGEST OF DAWGS!! | !youtube !coaching"
+    },
+    {
+      "vod_id": "twitch-2886608690",
+      "url": "https://www.twitch.tv/videos/2886608690",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          27112
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1179 LP RANK 16 GETTING RANK 1 COACHING AT 7PM EST BE THERE OR BE OZEMPIC !scores | !coaching"
+    },
+    {
+      "vod_id": "twitch-2919644856",
+      "url": "https://www.twitch.tv/videos/2919644856",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          25940
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1615 LP RANK 10  SLEEPY AND TIRED BUT RANK 1 IS WITHIN GRASP #GRASPOFTHEUNDYING !youtube  |!coaching"
+    },
+    {
+      "vod_id": "twitch-2888321139",
+      "url": "https://www.twitch.tv/videos/2888321139",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          25060
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1231 LP START MOST INFORMATIONAL TFT STREAM IN EXISTENCE LETS GET RANK 1 - KOREAN HEART GESTURES-| !coaching"
+    },
+    {
+      "vod_id": "twitch-2917959025",
+      "url": "https://www.twitch.tv/videos/2917959025",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          23800
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1474LP RANK 16 GOING FOR RANK 1 OR ELSE I CAN'T EAT DINNER !youtube  |!coaching"
+    },
+    {
+      "vod_id": "twitch-2923642545",
+      "url": "https://www.twitch.tv/videos/2923642545",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          22980
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1674 LP RANK 4 GOING FOR RANK 1 SO I CAN GET AN UBER EATS SPONSORSHIP #STAYFED !youtube  |!coaching"
+    },
+    {
+      "vod_id": "twitch-2918831038",
+      "url": "https://www.twitch.tv/videos/2918831038",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          22880
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1509 LP RANK 13  RANK 1 TIME #DOITFORTHEKIDS #MAMABEAKONFLEEK !youtube  |!coaching"
+    },
+    {
+      "vod_id": "twitch-2896091260",
+      "url": "https://www.twitch.tv/videos/2896091260",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19330
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1358 LP NEW PATCH GOING FOR RANK 1, NOTEPAD CONSTANTLY UPDATED WITH FINDINGS | !youtube !coaching"
+    },
+    {
+      "vod_id": "twitch-2920522029",
+      "url": "https://www.twitch.tv/videos/2920522029",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18470
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1619 LP RANK 10 NEW PATCH ASK FOR NOTEPAD FOR LEARNINGS #STAYEDUCATED !youtube  |!coaching"
+    },
+    {
+      "vod_id": "twitch-2892166725",
+      "url": "https://www.twitch.tv/videos/2892166725",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17160
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1316 LP START WITNESS THE HISTORIC CLIMB OF A MAN WITH NOTHING LEFT TO LOSE!!!!| !coaching"
+    },
+    {
+      "vod_id": "twitch-2911535297",
+      "url": "https://www.twitch.tv/videos/2911535297",
+      "streamer": "voids1n",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          30820
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "GOING FOR RANK 1 AGAIN TO FEEL SOMETHING | !youtube !coaching"
     },
     {
       "vod_id": "twitch-2926729138",
@@ -2072,6 +2433,292 @@
       ]
     },
     {
+      "vod_id": "twitch-2906843584",
+      "url": "https://www.twitch.tv/videos/2906843584",
+      "streamer": "emilyywang",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          26790
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "[CHALLENGER] 1K LP BY MONDAY OR 100 SUBS"
+    },
+    {
+      "vod_id": "twitch-2916771231",
+      "url": "https://www.twitch.tv/videos/2916771231",
+      "streamer": "emilyywang",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17550
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1038 lp start -> 1200 end | 1 solo queue game of val later"
+    },
+    {
+      "vod_id": "twitch-2894368027",
+      "url": "https://www.twitch.tv/videos/2894368027",
+      "streamer": "emilyywang",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          23480
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "CHALLENGER FINALLY NEW PATCH TIME!!!!"
+    },
+    {
+      "vod_id": "twitch-2892617818",
+      "url": "https://www.twitch.tv/videos/2892617818",
+      "streamer": "emilyywang",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          22960
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "bot 4 = spin wheel | +150 lp in one day or else"
+    },
+    {
+      "vod_id": "twitch-2920289340",
+      "url": "https://www.twitch.tv/videos/2920289340",
+      "streamer": "emilyywang",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          22730
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "💙NEW PATCH💙NEW CLIENT💙NEW ME💙+300 LP TODAY COME AND LEARN!!!💙"
+    },
+    {
+      "vod_id": "twitch-2908544781",
+      "url": "https://www.twitch.tv/videos/2908544781",
+      "streamer": "emilyywang",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18810
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "826 lp start no end til 1k"
+    },
+    {
+      "vod_id": "twitch-2891785631",
+      "url": "https://www.twitch.tv/videos/2891785631",
+      "streamer": "emilyywang",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17970
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "+200 LP TODAY!!!"
+    },
+    {
+      "vod_id": "twitch-2910486468",
+      "url": "https://www.twitch.tv/videos/2910486468",
+      "streamer": "emilyywang",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17230
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "inspired by tyler1... i shall reach greater heights of tft (1k lp today or else)"
+    },
+    {
+      "vod_id": "twitch-2912213740",
+      "url": "https://www.twitch.tv/videos/2912213740",
+      "streamer": "emilyywang",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          22090
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "bot 4 = gift a sub+spin wheel | !announcement | valo w/ friends @12 pm PT"
+    },
+    {
+      "vod_id": "twitch-2893520912",
+      "url": "https://www.twitch.tv/videos/2893520912",
+      "streamer": "emilyywang",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          21880
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "bot 4 = ban boof + spin wheel"
+    },
+    {
+      "vod_id": "twitch-2919375604",
+      "url": "https://www.twitch.tv/videos/2919375604",
+      "streamer": "emilyywang",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          20960
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "new patch/client later today SAJ"
+    },
+    {
+      "vod_id": "twitch-2924969549",
+      "url": "https://www.twitch.tv/videos/2924969549",
+      "streamer": "emilyywang",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19480
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "top 4s only today -> demoting in league with EE...."
+    },
+    {
+      "vod_id": "twitch-2911311453",
+      "url": "https://www.twitch.tv/videos/2911311453",
+      "streamer": "emilyywang",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19060
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "1k today | EXCITING ANNOUNCEMENT @10 AM PT | games with friends later?"
+    },
+    {
       "vod_id": "twitch-2886223848",
       "url": "https://www.twitch.tv/videos/2886223848",
       "streamer": "cambulee",
@@ -2408,6 +3055,226 @@
       ]
     },
     {
+      "vod_id": "twitch-2898781298",
+      "url": "https://www.twitch.tv/videos/2898781298",
+      "streamer": "kiyoon",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          24420
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "climb | !yt"
+    },
+    {
+      "vod_id": "twitch-2888926440",
+      "url": "https://www.twitch.tv/videos/2888926440",
+      "streamer": "kiyoon",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          21460
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "rank 1 is coming and hair is growing there is nothing to worry about in life | !yt"
+    },
+    {
+      "vod_id": "twitch-2889791265",
+      "url": "https://www.twitch.tv/videos/2889791265",
+      "streamer": "kiyoon",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19970
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "rank 1 is coming and hair is somehow getting worse it might be time to shav... uhh go first | !yt"
+    },
+    {
+      "vod_id": "twitch-2894215421",
+      "url": "https://www.twitch.tv/videos/2894215421",
+      "streamer": "kiyoon",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          34050
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "new patch new hair new me | !yt"
+    },
+    {
+      "vod_id": "twitch-2885509323",
+      "url": "https://www.twitch.tv/videos/2885509323",
+      "streamer": "kiyoon",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          33290
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "another day another day clocking in at the riot games factory !notes | !yt"
+    },
+    {
+      "vod_id": "twitch-2884614268",
+      "url": "https://www.twitch.tv/videos/2884614268",
+      "streamer": "kiyoon",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          30900
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "brain neuron activate !scores notes | !yt"
+    },
+    {
+      "vod_id": "twitch-2899695275",
+      "url": "https://www.twitch.tv/videos/2899695275",
+      "streamer": "kiyoon",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          25400
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "T game | !yt"
+    },
+    {
+      "vod_id": "twitch-2895082218",
+      "url": "https://www.twitch.tv/videos/2895082218",
+      "streamer": "kiyoon",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          24850
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "mortdog plz fix my hair and tft... wait mortd... where he go? :( oh... :< | !yt"
+    },
+    {
+      "vod_id": "twitch-2895960262",
+      "url": "https://www.twitch.tv/videos/2895960262",
+      "streamer": "kiyoon",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          24620
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "good morning good friday good teammates good gameplay bad hair :( | !yt"
+    },
+    {
+      "vod_id": "twitch-2888047517",
+      "url": "https://www.twitch.tv/videos/2888047517",
+      "streamer": "kiyoon",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          22960
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "laugh about hair = bad karma  choji cosplay 187lbs/200 need uber eats fund for cosplay | !yt"
+    },
+    {
       "vod_id": "twitch-2926729138",
       "url": "https://www.twitch.tv/videos/2926729138",
       "streamer": "Frodan",
@@ -2580,6 +3447,270 @@
         "twitch-gql:2026-11-25"
       ],
       "notes": "auto-added title=#TPC Blossom cup day 1. published=2026-10-02T15:09:53Z"
+    },
+    {
+      "vod_id": "twitch-2892567756",
+      "url": "https://www.twitch.tv/videos/2892567756",
+      "streamer": "imriveting",
+      "slot": "P7",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          52200
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "CHALLENGER 1268 LP start no end till 1500 very serious very calm"
+    },
+    {
+      "vod_id": "twitch-2924100853",
+      "url": "https://www.twitch.tv/videos/2924100853",
+      "streamer": "imriveting",
+      "slot": "P7",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          30560
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "challenger 1150 lp start would you sacrifice your lp for a chinese spy"
+    },
+    {
+      "vod_id": "twitch-2888559076",
+      "url": "https://www.twitch.tv/videos/2888559076",
+      "streamer": "imriveting",
+      "slot": "P7",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          23150
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "CHALLENGER 1318 lp start very very serious today"
+    },
+    {
+      "vod_id": "twitch-2886843355",
+      "url": "https://www.twitch.tv/videos/2886843355",
+      "streamer": "imriveting",
+      "slot": "P7",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          22490
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "CHALLENGER 1301 lp start waiting for you all at the top!"
+    },
+    {
+      "vod_id": "twitch-2925450703",
+      "url": "https://www.twitch.tv/videos/2925450703",
+      "streamer": "imriveting",
+      "slot": "P7",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          21400
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "challenger 1186 lp start chill guy chill stream :D"
+    },
+    {
+      "vod_id": "twitch-2927224984",
+      "url": "https://www.twitch.tv/videos/2927224984",
+      "streamer": "imriveting",
+      "slot": "P7",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17810
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "challenger 1187 lp start FOR FUN AWESOME STREAMER"
+    },
+    {
+      "vod_id": "twitch-2895667434",
+      "url": "https://www.twitch.tv/videos/2895667434",
+      "streamer": "imriveting",
+      "slot": "P7",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          16650
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "CHALLENGER 1399 LP start grumpy gromp connoisseur"
+    },
+    {
+      "vod_id": "twitch-2923824882",
+      "url": "https://www.twitch.tv/videos/2923824882",
+      "streamer": "imriveting",
+      "slot": "P7",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          13660
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "challenger 1099 lp start late night gaming for fun :D"
+    },
+    {
+      "vod_id": "twitch-2896064286",
+      "url": "https://www.twitch.tv/videos/2896064286",
+      "streamer": "imriveting",
+      "slot": "P7",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          12360
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "CHALLENGER 1429 LP start calm and zen today"
+    },
+    {
+      "vod_id": "twitch-2926229330",
+      "url": "https://www.twitch.tv/videos/2926229330",
+      "streamer": "imriveting",
+      "slot": "P7",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          10080
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "challenger 1311 lp start set 18 warrior"
+    },
+    {
+      "vod_id": "twitch-2894036035",
+      "url": "https://www.twitch.tv/videos/2894036035",
+      "streamer": "imriveting",
+      "slot": "P7",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          9090
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "CHALLENGER 1399 LP start grumpy gromp connoisseur"
+    },
+    {
+      "vod_id": "twitch-2913078904",
+      "url": "https://www.twitch.tv/videos/2913078904",
+      "streamer": "imriveting",
+      "slot": "P7",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          24080
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "challenger start chill stream"
     },
     {
       "vod_id": "twitch-2935422428",
@@ -2871,6 +4002,116 @@
       "title_hint": "to help others i must first help myself !coaching !bash"
     },
     {
+      "vod_id": "twitch-2901683273",
+      "url": "https://www.twitch.tv/videos/2901683273",
+      "streamer": "loltyler1",
+      "slot": "P8",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          27841
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "STEADY SHIPS !! ROCKY ROAD WATERS BEFORE !! carefulness as said me for the what CLIMB ! huh thank you !! kindNESS WORLD "
+    },
+    {
+      "vod_id": "twitch-2921307667",
+      "url": "https://www.twitch.tv/videos/2921307667",
+      "streamer": "loltyler1",
+      "slot": "P8",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          24625
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "FREEZE COLDS WATER MELTS ICE TURNED SUN FOR FIRE LIGHT SHADE DARK BRIGHT MIXED GATHER FOR TIMER TICK TICK TICK !!!!!! ER"
+    },
+    {
+      "vod_id": "twitch-2918715614",
+      "url": "https://www.twitch.tv/videos/2918715614",
+      "streamer": "loltyler1",
+      "slot": "P8",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18284
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "GEE WILKERS !!! CANT STAND STOOD HAPPEN BUILT !!! DIFFERENT !! AHHAAHAH classic know expect T1 !!! unlessed ?? thoughtfu"
+    },
+    {
+      "vod_id": "twitch-2910906989",
+      "url": "https://www.twitch.tv/videos/2910906989",
+      "streamer": "loltyler1",
+      "slot": "P8",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          16343
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "NOT TITLED MORE BE FOR DESCRIBE WAY PROCESS THINK JOURNEY LESS MORE GIVED !! PERFECT THANKED !!!!! deep thinks time .. C"
+    },
+    {
+      "vod_id": "twitch-2909976321",
+      "url": "https://www.twitch.tv/videos/2909976321",
+      "streamer": "loltyler1",
+      "slot": "P8",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          15352
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "GRRR !! darkness cloud skied air water !! RAWWWRRR ! SCARED WAY THEY ALL THEM !!!! YAY YIPPIE ! BIGS T DO AGAINS LIKE KN"
+    },
+    {
       "vod_id": "twitch-2887732371",
       "url": "https://www.twitch.tv/videos/2887732371",
       "streamer": "kurumx",
@@ -3133,6 +4374,160 @@
         "twitch-gql:2026-11-25"
       ],
       "notes": "auto-added title=1095 start I LOVE DIXON MAYAZ !coaching !gay published=2026-10-03T01:22:25Z"
+    },
+    {
+      "vod_id": "twitch-2898291795",
+      "url": "https://www.twitch.tv/videos/2898291795",
+      "streamer": "dogdog",
+      "slot": "P10",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          27180
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "tft day! Dia start plat end"
+    },
+    {
+      "vod_id": "twitch-2886052682",
+      "url": "https://www.twitch.tv/videos/2886052682",
+      "streamer": "upsetmaxtft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18229
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "2hrs Group Coaching -> Soloq Adventures Continue | !coaching !youtube !discord  !website"
+    },
+    {
+      "vod_id": "twitch-2885983609",
+      "url": "https://www.twitch.tv/videos/2885983609",
+      "streamer": "tleyds",
+      "slot": "P10",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          29150
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "Road to rank 1 mr consistency 3/3 !discord !helix !scores"
+    },
+    {
+      "vod_id": "twitch-2919464852",
+      "url": "https://www.twitch.tv/videos/2919464852",
+      "streamer": "dpeitft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          26800
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "🔴TPC PLAYER YAHOO🔴Getting Rank 1 now !scores !youtube !disciples"
+    },
+    {
+      "vod_id": "twitch-2918686469",
+      "url": "https://www.twitch.tv/videos/2918686469",
+      "streamer": "dpeitft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          25900
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "🔴TPC PLAYER YAHOO🔴Getting Rank 1 now !scores !youtube !disciples"
+    },
+    {
+      "vod_id": "twitch-2902294335",
+      "url": "https://www.twitch.tv/videos/2902294335",
+      "streamer": "dpeitft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          25330
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "🔴LADDER DOMINATION PART 2🔴2.0 AVP i promise !youtube !disciples"
+    },
+    {
+      "vod_id": "twitch-2924223130",
+      "url": "https://www.twitch.tv/videos/2924223130",
+      "streamer": "dpeitft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          25080
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:expand-depleted-slots-800"
+      ],
+      "title_hint": "🔴TFT MAESTRO🔴Climbing to 1500 !scores !youtube !disciples"
     },
     {
       "vod_id": "twitch-2939521723",
