@@ -1,0 +1,27 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2915088506",
+  "slot": "P2",
+  "role": "primary",
+  "status": "blocked",
+  "covered_ranges_s": [],
+  "remaining_ranges_s": [
+    [
+      0,
+      16844
+    ]
+  ],
+  "game_ids": [],
+  "counts": {
+    "games": 0,
+    "fights": 0,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {}
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "mode≠ranked: CUSTOM - NORMAL; REGIONAL FINALS AMER (t≈600). Không ghi fights primary."
+}
