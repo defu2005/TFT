@@ -58,6 +58,6 @@
     }
   },
   "needs_review": 7,
-  "commit": null,
+  "commit": "a3cc90a",
   "remaining": "g6700 densified full PvP. Next densify g4380/g2410/g30 boards. Priority: complete fights."
 }
