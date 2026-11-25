@@ -8,6 +8,10 @@
     [
       1150,
       2950
+    ],
+    [
+      3100,
+      4550
     ]
   ],
   "remaining_ranges_s": [
@@ -17,25 +21,30 @@
     ],
     [
       2950,
+      3100
+    ],
+    [
+      4550,
       23280
     ]
   ],
   "game_ids": [
-    "twitch-2907727372-g1150"
+    "twitch-2907727372-g1150",
+    "twitch-2907727372-g3100"
   ],
   "counts": {
-    "games": 1,
-    "fights": 4,
-    "others": 4
+    "games": 2,
+    "fights": 7,
+    "others": 7
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 4
+      "winner_null": 7
     }
   },
   "needs_review": 0,
-  "commit": "0a7a6d2",
-  "remaining": "g1150 ranked. Tiếp sau 2950s (game2 ~3100+). Intro 0-1150 just chatting/starting-soon.",
-  "notes": "Ranked Set18 Challenger. winner_null OK. Không phải tourney dù có fantasy TFT promo đầu VOD."
+  "commit": "9013a4c",
+  "remaining": "g1150+g3100. Tiếp sau 4550s.",
+  "notes": "Ranked Set18. winner_null OK."
 }
