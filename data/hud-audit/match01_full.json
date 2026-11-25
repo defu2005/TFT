@@ -2600,8 +2600,65 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "candidates": [
+      [
+       "Alistar",
+       "Ezreal",
+       "Kha'Zix",
+       "Malphite",
+       "Mama Beak",
+       "Rek'Sai",
+       "Xayah"
+      ],
+      [
+       "Alistar",
+       "Ezreal",
+       "Malphite",
+       "Mama Beak",
+       "Rek'Sai",
+       "Rengar",
+       "Xayah"
+      ],
+      [
+       "Alistar",
+       "Ezreal",
+       "Ivern",
+       "Malphite",
+       "Mama Beak",
+       "Rek'Sai",
+       "Xayah"
+      ],
+      [
+       "Alistar",
+       "Ezreal",
+       "Lux",
+       "Malphite",
+       "Mama Beak",
+       "Rek'Sai",
+       "Xayah"
+      ],
+      [
+       "Alistar",
+       "Draven",
+       "Ezreal",
+       "Malphite",
+       "Mama Beak",
+       "Rek'Sai",
+       "Xayah"
+      ]
+     ],
+     "core_in_all": [
+      "Alistar",
+      "Ezreal",
+      "Malphite",
+      "Mama Beak",
+      "Rek'Sai",
+      "Xayah"
+     ]
+    },
+    "tag": "derived",
+    "basis": "panel solver, 5 candidates at hidden 1; not unique; core listed"
    },
    "bench_units": {
     "value": null,
@@ -2849,7 +2906,9 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "panel solver run",
+    "reason": "panel incomplete or multiple solutions; not written"
    },
    "bench_units": {
     "value": null,
@@ -3232,7 +3291,9 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "panel solver run",
+    "reason": "panel incomplete or multiple solutions; not written"
    },
    "bench_units": {
     "value": null,
@@ -3459,8 +3520,19 @@
     "basis": "offered at pick screen plus owned box at 2170 s; no click frame"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Hecarim",
+     "Krug",
+     "Maokai",
+     "Sett"
+    ],
+    "tag": "derived",
+    "basis": "panel solver, hidden rows allowed 2; unique solution; hexes unresolved",
+    "note": "same panel and counter as 4-2 and 5-1; hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -4392,8 +4464,19 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Hecarim",
+     "Krug",
+     "Maokai",
+     "Sett"
+    ],
+    "tag": "derived",
+    "basis": "panel solver, hidden rows allowed 2; unique solution; hexes unresolved",
+    "note": "same panel and counter as 4-2 and 5-1; hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -4666,8 +4749,19 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Krug",
+     "Maokai"
+    ],
+    "tag": "derived",
+    "basis": "panel solver, hidden rows allowed 2; unique solution; hexes unresolved",
+    "note": "unique at hidden 2; hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -4904,8 +4998,20 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "tag": "derived",
+    "basis": "panel solver, hidden rows allowed 2; unique solution; hexes unresolved",
+    "note": "same panel and counter as 5-3 and 6-6; hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -6691,8 +6797,20 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "tag": "derived",
+    "basis": "panel solver, hidden rows allowed 2; unique solution; hexes unresolved",
+    "note": "same panel and counter as 5-3 and 6-6; hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -6917,5 +7035,22 @@
   "level": "not measured: reader rows carry level None in these windows",
   "panel_xp_streak": "not measured by machine",
   "seed": 7
+ },
+ "final_comps": {
+  "P1_6-6": {
+   "value": [
+    "Alistar",
+    "Amumu",
+    "Draven",
+    "Ezreal",
+    "Gnar",
+    "Ivern",
+    "Kennen",
+    "Maokai",
+    "Taric"
+   ],
+   "tag": "derived",
+   "basis": "6-6 panel solver, unique at hidden 2; hexes unresolved"
+  }
  }
 }
