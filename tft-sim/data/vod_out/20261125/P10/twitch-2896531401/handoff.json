@@ -18,63 +18,41 @@
       5400
     ],
     [
-      5450,
-      6800
-    ],
-    [
-      6900,
-      9200
-    ],
-    [
-      9400,
-      11500
-    ],
-    [
-      11600,
-      15500
-    ]
-  ],
-  "remaining_ranges_s": [],
-  "skipped_ranges_s": [
-    [
-      1800,
-      2300
-    ],
-    [
-      4200,
-      4500
-    ],
-    [
-      6800,
+      5400,
       6900
     ],
     [
-      9200,
-      9400
+      7200,
+      9200
     ],
     [
-      11500,
+      9300,
       11600
     ],
     [
-      15500,
-      16050
+      11650,
+      13800
+    ],
+    [
+      13950,
+      16000
     ]
   ],
-  "skip_notes": "queue/black gaps; YT tyler1 ~16000",
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2896531401-g300",
     "twitch-2896531401-g2300",
     "twitch-2896531401-g4700",
-    "twitch-2896531401-g5600",
-    "twitch-2896531401-g7000",
-    "twitch-2896531401-g10000",
-    "twitch-2896531401-g12000"
+    "twitch-2896531401-g5500",
+    "twitch-2896531401-g7400",
+    "twitch-2896531401-g9400",
+    "twitch-2896531401-g11700",
+    "twitch-2896531401-g14100"
   ],
   "counts": {
-    "games": 7,
-    "fights": 49,
+    "games": 8,
+    "fights": 88,
     "others": 0
   },
-  "remaining": "none"
+  "rem_notes": "Union coord+P6; prefer denser on overlap; remap fights. remaining empty."
 }
