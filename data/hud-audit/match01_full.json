@@ -78,7 +78,19 @@
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
+   }
   },
   {
    "round": "1-2",
@@ -156,7 +168,19 @@
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
+   }
   },
   {
    "round": "1-3",
@@ -235,21 +259,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 0,
-    "tag": "read",
-    "frame_s": 384.0
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Leona",
-     "DA_18_Leona",
-     "DA_18_Akali_AD",
-     null,
-     null
-    ],
-    "tag": "read",
-    "frame_s": 384.0
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -330,21 +350,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 0,
-    "tag": "read",
-    "frame_s": 420.0
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_Murkwolf18",
-     "DA_18_Rakan",
-     "DA_18_Rakan",
-     "DA_18_Ornn",
-     null
-    ],
-    "tag": "read",
-    "frame_s": 420.0
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -428,6 +444,18 @@
    "result": {
     "value": "lost",
     "tag": "derived"
+   },
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -508,21 +536,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 0,
-    "tag": "read",
-    "frame_s": 548.5
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Akali_AD",
-     null,
-     "DA_18_Kobuko",
-     null,
-     null
-    ],
-    "tag": "read",
-    "frame_s": 548.5
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -607,21 +631,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 5,
-    "tag": "read",
-    "frame_s": 617.75
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Sejuani",
-     "DA_Karma18",
-     "DA_18_LeBlanc",
-     "DA_Gromp18_AP",
-     null
-    ],
-    "tag": "read",
-    "frame_s": 617.75
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -705,7 +725,19 @@
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
+   }
   },
   {
    "round": "2-5",
@@ -800,21 +832,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 6,
-    "tag": "read",
-    "frame_s": 720.75
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Ornn",
-     "DA_18_Varus",
-     "DA_18_Yunara",
-     "DA_18_Warwick",
-     null
-    ],
-    "tag": "read",
-    "frame_s": 720.75
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -899,21 +927,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 19,
-    "tag": "read",
-    "frame_s": 780.25
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Shen",
-     null,
-     null,
-     "DA_18_Alistar",
-     "DA_18_Alistar"
-    ],
-    "tag": "read",
-    "frame_s": 780.25
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -998,21 +1022,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 27,
-    "tag": "read",
-    "frame_s": 855.0
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Sentry",
-     "DA_18_Azir",
-     "DA_Vi18",
-     null,
-     "DA_18_Sejuani"
-    ],
-    "tag": "read",
-    "frame_s": 855.0
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -1134,21 +1154,17 @@
     },
     "tag": "read"
    },
-   "gold_20s": {
-    "value": 39,
-    "tag": "read",
-    "frame_s": 901.0
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Sejuani",
-     "DA_18_Elise",
-     "DA_18_Warwick",
-     "DA_18_MasterYi_AD",
-     null
-    ],
-    "tag": "read",
-    "frame_s": 901.0
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -1287,21 +1303,17 @@
     ],
     "tag": "read"
    },
-   "gold_20s": {
-    "value": 51,
-    "tag": "read",
-    "frame_s": 983.75
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Teemo",
-     "DA_18_Sentry",
-     "DA_18_Sejuani",
-     "DA_18_LeBlanc",
-     "DA_Cinderling18"
-    ],
-    "tag": "read",
-    "frame_s": 983.75
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -1431,21 +1443,17 @@
     "tag": "read",
     "note": "other slots not read"
    },
-   "gold_20s": {
-    "value": 49,
-    "tag": "read",
-    "frame_s": 1067.25
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Sivir",
-     null,
-     "DA_Murkwolf18",
-     "DA_18_Rakan",
-     null
-    ],
-    "tag": "read",
-    "frame_s": 1067.25
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -1529,7 +1537,19 @@
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
+   }
   },
   {
    "round": "3-5",
@@ -1620,21 +1640,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 25,
-    "tag": "read",
-    "frame_s": 1185.5
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Azir",
-     "DA_18_Cassiopeia",
-     null,
-     "DA_18_Kayle",
-     "DA_18_LeBlanc"
-    ],
-    "tag": "read",
-    "frame_s": 1185.5
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -1733,21 +1749,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 45,
-    "tag": "read",
-    "frame_s": 1256.25
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Alistar",
-     "DA_18_Akali_AD",
-     "DA_18_Varus",
-     "DA_18_Caitlyn",
-     "DA_KogMaw18_AD"
-    ],
-    "tag": "read",
-    "frame_s": 1256.25
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -1833,21 +1845,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 53,
-    "tag": "read",
-    "frame_s": 1337.0
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Diana",
-     null,
-     null,
-     "DA_18_Rengar",
-     null
-    ],
-    "tag": "read",
-    "frame_s": 1337.0
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -1939,21 +1947,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 1,
-    "tag": "read",
-    "frame_s": 1373.75
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     null,
-     "DA_18_KhaZix",
-     null,
-     null,
-     "DA_18_Ahri"
-    ],
-    "tag": "read",
-    "frame_s": 1373.75
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -2040,25 +2044,21 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 22,
-    "tag": "read",
-    "frame_s": 1454.0
-   },
-   "shop_20s": {
-    "value": [
-     "DA_18_Leona",
-     "DA_18_Malphite",
-     "DA_Gromp18_AP",
-     "DA_Cinderling18",
-     "DA_18_Tristana"
-    ],
-    "tag": "read",
-    "frame_s": 1454.0
-   },
    "result": {
     "value": "lost",
     "tag": "derived"
+   },
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -2150,21 +2150,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 37,
-    "tag": "read",
-    "frame_s": 1549.25
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Hecarim",
-     "DA_18_Leona",
-     "DA_18_Yunara",
-     "DA_18_Varus",
-     "DA_18_Veigar"
-    ],
-    "tag": "read",
-    "frame_s": 1549.25
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -2255,7 +2251,19 @@
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
+   }
   },
   {
    "round": "4-5",
@@ -2346,21 +2354,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 62,
-    "tag": "read",
-    "frame_s": 1660.75
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_Fiddlesticks18",
-     "DA_18_Cassiopeia",
-     "DA_18_Rengar",
-     "DA_Vi18",
-     "DA_18_Hecarim"
-    ],
-    "tag": "read",
-    "frame_s": 1660.75
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -2452,21 +2456,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 71,
-    "tag": "read",
-    "frame_s": 1736.5
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Cassiopeia",
-     "DA_18_Aphelios",
-     "DA_Brambleback18",
-     "DA_18_Leona",
-     "DA_CrimsonRaptor18"
-    ],
-    "tag": "read",
-    "frame_s": 1736.5
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -2567,21 +2567,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 86,
-    "tag": "read",
-    "frame_s": 1812.5
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Morgana",
-     "DA_18_Azir",
-     null,
-     "DA_18_MasterYi_AD",
-     "DA_18_Ahri"
-    ],
-    "tag": "read",
-    "frame_s": 1812.5
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -2674,25 +2670,21 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 13,
-    "tag": "read",
-    "frame_s": 1849.75
-   },
-   "shop_20s": {
-    "value": [
-     null,
-     "DA_Gromp18_AP",
-     "DA_18_Ezreal",
-     "DA_Lux18_Base",
-     "DA_KogMaw18_AD"
-    ],
-    "tag": "read",
-    "frame_s": 1849.75
-   },
    "result": {
     "value": "lost",
     "tag": "derived"
+   },
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -2794,21 +2786,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 9,
-    "tag": "read",
-    "frame_s": 1928.75
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_KogMaw18_AD",
-     "DA_18_Diana",
-     "DA_18_Kobuko",
-     "DA_18_Soraka",
-     "DA_18_Shen"
-    ],
-    "tag": "read",
-    "frame_s": 1928.75
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -2910,21 +2898,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 2,
-    "tag": "read",
-    "frame_s": 2013.25
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Soraka",
-     "DA_Gromp18_AP",
-     "DA_Lux18_Base",
-     "DA_18_Yunara",
-     null
-    ],
-    "tag": "read",
-    "frame_s": 2013.25
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -3010,7 +2994,19 @@
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
+   }
   },
   {
    "round": "5-5",
@@ -3111,21 +3107,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 5,
-    "tag": "read",
-    "frame_s": 2107.5
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     null,
-     "DA_18_Aphelios",
-     "DA_18_Ahri",
-     "DA_18_Rammus",
-     "DA_18_Azir"
-    ],
-    "tag": "read",
-    "frame_s": 2107.5
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -3228,25 +3220,21 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 6,
-    "tag": "read",
-    "frame_s": 2185.75
-   },
-   "shop_20s": {
-    "value": [
-     "DA_18_Teemo",
-     "DA_Murkwolf18",
-     "DA_18_Lillia",
-     "DA_18_Ashe",
-     "DA_Cinderling18"
-    ],
-    "tag": "read",
-    "frame_s": 2185.75
-   },
    "result": {
     "value": "lost",
     "tag": "derived"
+   },
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -3348,21 +3336,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 6,
-    "tag": "read",
-    "frame_s": 2250.75
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Kayle",
-     "DA_18_Xayah",
-     null,
-     "DA_18_MasterYi_AD",
-     "DA_18_LeBlanc"
-    ],
-    "tag": "read",
-    "frame_s": 2250.75
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -3464,21 +3448,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 16,
-    "tag": "read",
-    "frame_s": 2289.0
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_Nidalee18_AP",
-     null,
-     "DA_KogMaw18_AD",
-     "DA_18_Azir",
-     "DA_18_Rengar"
-    ],
-    "tag": "read",
-    "frame_s": 2289.0
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -3580,25 +3560,21 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 8,
-    "tag": "read",
-    "frame_s": 2354.75
-   },
-   "shop_20s": {
-    "value": [
-     "DA_18_Sett",
-     "DA_18_Malphite",
-     "DA_18_MasterYi_AD",
-     "DA_18_Ahri",
-     "DA_KogMaw18_AD"
-    ],
-    "tag": "read",
-    "frame_s": 2354.75
-   },
    "result": {
     "value": "lost",
     "tag": "derived"
+   },
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -3700,25 +3676,21 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 3,
-    "tag": "read",
-    "frame_s": 2419.0
-   },
-   "shop_20s": {
-    "value": [
-     "DA_Murkwolf18",
-     "DA_18_Ahri",
-     "DA_18_KhaZix",
-     "DA_18_Kobuko",
-     "DA_18_Tristana"
-    ],
-    "tag": "read",
-    "frame_s": 2419.0
-   },
    "result": {
     "value": "lost",
     "tag": "derived"
+   },
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -3820,21 +3792,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 10,
-    "tag": "read",
-    "frame_s": 2483.25
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Rengar",
-     "DA_18_ElderDragon",
-     "DA_18_Ashe",
-     "DA_Nidalee18_AP",
-     "DA_18_Rammus"
-    ],
-    "tag": "read",
-    "frame_s": 2483.25
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -3927,25 +3895,21 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 10,
-    "tag": "read",
-    "frame_s": 2501.75
-   },
-   "shop_20s": {
-    "value": [
-     "DA_18_Ezreal",
-     "DA_18_Xayah",
-     "DA_18_Elise",
-     "DA_CrimsonRaptor18",
-     null
-    ],
-    "tag": "read",
-    "frame_s": 2501.75
-   },
    "result": {
     "value": "lost",
     "tag": "derived"
+   },
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   },
   {
@@ -4047,21 +4011,17 @@
     "tag": "unresolved"
    },
    "combat_frame_t_s": null,
-   "gold_20s": {
-    "value": 0,
-    "tag": "read",
-    "frame_s": 2567.5
+   "planning": {
+    "value": null,
+    "tag": "unresolved"
    },
-   "shop_20s": {
-    "value": [
-     "DA_18_Zyra",
-     "DA_18_Tristana",
-     null,
-     "DA_Lux18_Base",
-     "DA_18_Shen"
-    ],
-    "tag": "read",
-    "frame_s": 2567.5
+   "combat": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "actions": {
+    "value": null,
+    "tag": "unresolved"
    }
   }
  ],

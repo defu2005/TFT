@@ -1,15 +1,13 @@
-import json
+import json, sys
 d = json.load(open('data/hud-audit/match01_full.json'))
-FIELDS = ['hp','hp_changed_in_round','panels','roster_candidates','augment','board_units','bench_units','stars','items','shop_purchases','round_type','opponent']
-ok_tags = {'read','derived','assigned'}
-complete = 0; missing_all = {}
+REQUIRED = ['planning', 'combat', 'result', 'round_type', 'augment', 'actions']
+ok = {'read', 'derived', 'assigned', 'n/a'}
+def resolved(v):
+    return isinstance(v, dict) and v.get('tag') in ok and v.get('value') is not None
+complete, report = 0, {}
 for r in d['rounds']:
-    miss = []
-    for f in FIELDS:
-        v = r.get(f)
-        if not isinstance(v, dict): miss.append(f); continue
-        if v.get('tag') not in ok_tags or v.get('value') is None: miss.append(f)
-    if miss: missing_all[r['round']] = miss
-    else: complete += 1
-print(f"rounds total: {len(d['rounds'])}; fully resolved: {complete}")
-for k, v in missing_all.items(): print(f"  {k}: {', '.join(v)}")
+    miss = [f for f in REQUIRED if not resolved(r.get(f))]
+    if not miss: complete += 1
+    else: report[r['round']] = miss
+print(f"rounds total {len(d['rounds'])}; complete {complete}")
+for k, v in report.items(): print(f"  {k}: {', '.join(v)}")
