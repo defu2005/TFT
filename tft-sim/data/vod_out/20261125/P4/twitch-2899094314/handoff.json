@@ -31,6 +31,6 @@
     }
   },
   "needs_review": 20,
-  "commit": null,
+  "commit": "ce1b39b",
   "remaining": "continue ranked game2+ from ~2085s (stage1 after queue@1920). Denser board OCR for g0 fights."
 }
