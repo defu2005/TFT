@@ -1,0 +1,23 @@
+{
+ "owned_augments_box": [
+  "Warpath",
+  "Heroic Grab Bag+",
+  "Cybernetic Implants"
+ ],
+ "box_seen_at_s": [
+  2170.0,
+  2180.3
+ ],
+ "augment_pick_screen_1493.9": {
+  "options": [
+   "Sunfire Cape",
+   "Giant Slayer",
+   "Edge of Night",
+   "Protector's (cut off)"
+  ],
+  "owned_in_options": [],
+  "note": "none of the three owned augments appear on this screen; which pick it belongs to is not resolved"
+ },
+ "status": "box names confirmed at two times; pick round for each name not yet confirmed",
+ "next": "find pick screens for Warpath, Heroic Grab Bag+, Cybernetic Implants in other frames (near 2-1, 3-2, 4-2 +/- 20 s)"
+}
