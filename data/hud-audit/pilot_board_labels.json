@@ -2,36 +2,152 @@
   "note": "Pilot of 3 rounds (2-5, 3-5, 5-5), two full 720p frames each, read by eye once. Champion identity on the board is NOT legible at 720p (no text labels on board units), so board units are 'unknown'. Shop, trait panel, gold, level/XP, streak are read from text.",
   "rounds": {
     "2-5": {
-      "frame_a_718.7s": {"gold": 6, "level": 5, "xp": "0/20", "streak": 2,
-        "traits_left_panel": {"Elderwood": 3, "Rapidfire": 2, "Brawler": 2, "Fae": 1, "Spellweaver": 1, "Summoner": 1, "Riftbeast": 1, "Sprykin": 1},
-        "shop": ["Ornn", "Varus", "Yunara", "Warwick"], "bench": "empty", "board_units": "unknown"},
-      "frame_b_735.7s": {"gold": 9, "level": 5, "xp": "unknown", "streak": 2,
+      "frame_a_718.7s": {
+        "gold": 6,
+        "level": 5,
+        "xp": "0/20",
+        "streak": 2,
+        "traits_left_panel": {
+          "Elderwood": 3,
+          "Rapidfire": 2,
+          "Brawler": 2,
+          "Fae": 1,
+          "Spellweaver": 1,
+          "Summoner": 1,
+          "Riftbeast": 1,
+          "Sprykin": 1
+        },
+        "shop": [
+          "Ornn",
+          "Varus",
+          "Yunara",
+          "Warwick"
+        ],
+        "bench": "6 of 9 pads occupied (identity unknown)",
+        "board_units": "unknown",
+        "board_counter": "5/5"
+      },
+      "frame_b_735.7s": {
+        "gold": 9,
+        "level": 5,
+        "xp": "unknown",
+        "streak": 2,
         "traits_left_panel": "unknown (chat overlay covers panel)",
-        "shop": ["Yunara", "Warwick"], "note": "Ornn and Varus slots empty; purchase or roll not determined", "board_units": "unknown"}
+        "shop": [
+          "Yunara",
+          "Warwick"
+        ],
+        "note": "Ornn and Varus slots empty; purchase or roll not determined",
+        "board_units": "unknown",
+        "bench": "7 pads occupied (identity unknown), per advisor count; not re-counted natively"
+      }
     },
     "3-5": {
-      "frame_a_1183.4s": {"gold": 27, "level": 7, "xp": "2/56", "streak": 7,
-        "traits_left_panel": {"Brawler": 3, "Elderwood": 3, "Rapidfire": 2, "Blackthorn": 1, "Executioner": 1, "Fae": 1, "Summoner": 1, "Riftbeast": 1, "Sprykin": 1},
-        "shop": ["Azir", "Cassiopeia", "Malphite", "Kayle", "LeBlanc"], "bench": "not legible", "board_units": "unknown"},
-      "frame_b_1200.4s": {"gold": 27, "level": 7, "xp": "2/56", "streak": 7,
-        "traits_left_panel": {"Elderwood": 5, "Rapidfire": 2, "Brawler": 2, "Blackthorn": 1, "Executioner": 1, "Fae": 1, "Summoner": 1, "Spellweaver": 1, "Vanguard": 1},
-        "shop": "hidden by 'Sell for 1g' overlay", "note": "trait counts differ from frame a: a unit was sold between frames", "board_units": "unknown"}
+      "frame_a_1183.4s": {
+        "gold": 27,
+        "level": 7,
+        "xp": "2/56",
+        "streak": 7,
+        "traits_left_panel": {
+          "Brawler": 3,
+          "Elderwood": 3,
+          "Rapidfire": 2,
+          "Blackthorn": 1,
+          "Executioner": 1,
+          "Fae": 1,
+          "Summoner": 1,
+          "Riftbeast": 1,
+          "Sprykin": 1
+        },
+        "shop": [
+          "Azir",
+          "Cassiopeia",
+          "Malphite",
+          "Kayle",
+          "LeBlanc"
+        ],
+        "bench": "not legible",
+        "board_units": "unknown",
+        "board_counter": "7/7"
+      },
+      "frame_b_1200.4s": {
+        "gold": 27,
+        "level": 7,
+        "xp": "2/56",
+        "streak": 7,
+        "traits_left_panel": {
+          "Elderwood": 5,
+          "Rapidfire": 2,
+          "Brawler": 2,
+          "Blackthorn": 1,
+          "Executioner": 1,
+          "Fae": 1,
+          "Summoner": 1,
+          "Spellweaver": 1,
+          "Vanguard": 1
+        },
+        "shop": "hidden by 'Sell for 1g' overlay",
+        "note": "trait counts differ from frame a: a unit was sold between frames",
+        "board_units": "unknown"
+      }
     },
     "5-5": {
-      "frame_a_2105.5s": {"gold": 5, "level": 9, "xp": "6/68", "streak": 2,
-        "traits_left_panel": {"Bounty Seeker": 1, "Emerald Aspect": 1, "Greenfather": 1, "Old Growth": 1, "Elderwood": 3, "Executioner": 2, "Inferno": 2, "Brawler": 2, "Juggernaut": 2},
-        "shop": ["Aphelios", "Ahri", "Rammus", "Azir"], "board_units": "unknown", "tooltip_covers": "part of board"},
-      "frame_b_2122.5s": {"gold": 1, "level": 9, "xp": "6/68", "streak": 2,
+      "frame_a_2105.5s": {
+        "gold": 5,
+        "level": 9,
+        "xp": "6/68",
+        "streak": 2,
+        "traits_left_panel": {
+          "Bounty Seeker": 1,
+          "Emerald Aspect": 1,
+          "Greenfather": 1,
+          "Old Growth": 1,
+          "Elderwood": 3,
+          "Executioner": 2,
+          "Inferno": 2,
+          "Brawler": 2,
+          "Juggernaut": 2
+        },
+        "shop": [
+          "Aphelios",
+          "Ahri",
+          "Rammus",
+          "Azir"
+        ],
+        "board_units": "unknown",
+        "tooltip_covers": "part of board",
+        "board_counter": "9/9"
+      },
+      "frame_b_2122.5s": {
+        "gold": 1,
+        "level": 9,
+        "xp": "6/68",
+        "streak": 2,
         "traits_left_panel": "same list as frame a",
-        "shop": ["Aphelios", "Ahri", "Rammus", "Azir"], "note": "shop dimmed; gold fell 5 to 1, cause not determined", "board_units": "unknown"}
+        "shop": [
+          "Aphelios",
+          "Ahri",
+          "Rammus",
+          "Azir"
+        ],
+        "note": "shop dimmed; gold fell 5 to 1, cause not determined",
+        "board_units": "unknown"
+      }
     }
   },
   "legibility_findings": [
-    "Trait panel text and counts: legible at 720p.",
+    "Trait panel and counts: legible at 720p.",
     "Shop card names and costs: legible at 720p.",
-    "Board unit identity: not legible from text; portrait recognition not reliable at 720p. Needs item/hover data or a different method.",
-    "Bench units: not legible unless the unit name appears; empty slots are visible.",
-    "Gold, level, XP and streak: legible at 720p.",
-    "Source video is 1280x720, so no higher-resolution frame exists for this match."
-  ]
+    "Board unit identity: not established. No text labels on board units; no tested portrait method yet.",
+    "Bench: occupied pads countable; identity not established.",
+    "Gold, level, XP, streak, board counter: legible at 720p.",
+    "Opponent nameplate: legible during combat and matches HP losses.",
+    "Source is h264 1280x720 at ~3.1 Mb/s, so no higher-resolution frame exists.",
+    "Units named: 0. Unknown: all board and bench units in the 3 pilot rounds."
+  ],
+  "opponent_nameplate": {
+    "2-5": "alias P2 (top nameplate at 735.7 s), consistent with HP loss",
+    "3-5": "alias P5 (top nameplate at 1200.4 s), consistent with HP loss",
+    "5-5": "alias P4 (top nameplate at 2122.5 s), consistent with HP loss"
+  }
 }
