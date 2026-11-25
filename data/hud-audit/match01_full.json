@@ -9011,8 +9011,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Scouted P2 panel at 2486 to 2508 s (sweep 1063, 1072, 1074). Hidden 0 to 2: no consistent board. Hidden 6 under timeout 120 s: no result before the time limit at N 7.",
-    "reason": "hidden-6 search exceeds the time limit, and lower hidden counts give no consistent board"
+    "attempt": "Scouted P2 panel B (2504 to 2508 s for 6-5; 2572 s for 6-6), marker 6+. Pinned champions Alune (Attuned), Taric (Emerald Aspect), Maokai (Old Growth). Pinned branching solver with hidden at most 6: N 3 to 9 gives zero boards. P2 badge reads 10 at these frames: N 10 gives 50 boards (cap reached), so the board is not unique.",
+    "reason": "the pinned search at N 10 hits the 50-board cap, so no unique board is recorded"
    },
    "hexes": {
     "value": null,
@@ -9312,8 +9312,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Scouted P2 panel at 2572 s (sweep 1106). Hidden 0 to 2: no consistent board. Hidden 6 under timeout 120 s: no result before the time limit at N 7.",
-    "reason": "hidden-6 search exceeds the time limit, and lower hidden counts give no consistent board"
+    "attempt": "Scouted P2 panel B (2504 to 2508 s for 6-5; 2572 s for 6-6), marker 6+. Pinned champions Alune (Attuned), Taric (Emerald Aspect), Maokai (Old Growth). Pinned branching solver with hidden at most 6: N 3 to 9 gives zero boards. P2 badge reads 10 at these frames: N 10 gives 50 boards (cap reached), so the board is not unique.",
+    "reason": "the pinned search at N 10 hits the 50-board cap, so no unique board is recorded"
    },
    "hexes": {
     "value": null,
