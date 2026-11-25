@@ -7,12 +7,12 @@
   "covered_ranges_s": [
     [
       0,
-      12100
+      14400
     ]
   ],
   "remaining_ranges_s": [
     [
-      12100,
+      14400,
       29353
     ]
   ],
@@ -22,20 +22,31 @@
     "twitch-2886223848-g4150",
     "twitch-2886223848-g6350",
     "twitch-2886223848-g7900",
-    "twitch-2886223848-g10200"
+    "twitch-2886223848-g10200",
+    "twitch-2886223848-g12600"
   ],
   "counts": {
-    "games": 6,
-    "fights": 38,
-    "others": 40
+    "games": 7,
+    "fights": 45,
+    "others": 47
   },
   "validator": {
     "ok": 2,
     "skipped": {
-      "winner_null": 36
+      "winner_null": 43
     }
   },
-  "needs_review": 36,
-  "commit": "6e035e5",
-  "remaining": "tiếp từ 12100s (ván 7+ ranked)"
+  "needs_review": 43,
+  "commit": "b072ed6",
+  "remaining": "sau 14400: CUSTOM Blind Pick (skip); tìm ranked tiếp",
+  "skipped_segments": [
+    {
+      "range_s": [
+        14400,
+        null
+      ],
+      "reason": "CUSTOM Blind Pick (DORI2 lobby) — not ranked",
+      "status": "skip"
+    }
+  ]
 }
