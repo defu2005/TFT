@@ -808,14 +808,9 @@
     "basis": "HP flags: P1 and P2 lost HP"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     "P4",
-     "P8"
-    ],
-    "attempt": "508 s montage: the arena figure under the plate is a board sprite, but the controls do not give a valid figure test: the 2132.5 s P4 control and the 1488 s figure are a static HUD splash on the right edge, not board sprites, so the figure cannot be matched to a portrait. The plate bar is purple at 508 s; purple also appears on P4 (2132.5 s) and P6 (1574.7 s), so colour alone is not validated. HP-flag pool kept: P4, P8. Two candidates remain.",
-    "reason": "P4 and P8 both show level 4 at 508 s"
+    "value": "P4",
+    "tag": "derived",
+    "basis": "508 s: the tactician figure beside the plate (level 4, purple bar) is the Ahri-type figure; the same figure is at P4's plate at 2132.5 s and matches the P4 rail portrait. P8's figure at 1026 s is the poro-type portrait with a blue bar, so the 508 s figure is not P8. Level 4 matches P4's rail badge at 508 s. Pool: P3, P4, P6, P8; P3 and P6 are level 3 at 508 s."
    },
    "combat_frame_t_s": null,
    "result": {
@@ -880,8 +875,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified; flagged scouting runs at 460-462 s; no sprites tied to a panel",
-    "reason": "opponent not identified, so no panel can be attached"
+    "attempt": "opponent is P4 (derived); flagged scouting runs at 460-462 s; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -4493,15 +4488,9 @@
     "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     "P2",
-     "P4",
-     "P6"
-    ],
-    "attempt": "1488 s top-right plate: level 8 with a purple bar, at the top edge. Rail badges at 1488 s: P2 8, P4 8, P5 7, P6 8. Three pool members sit at level 8. The tall figure at the right edge is the same static HUD splash in 1488 to 1518 s, not a board sprite, so the portrait test is not valid. Three candidates remain: P2, P4, P6.",
-    "reason": "three pool members match level 8 at 1488 s"
+    "value": "P4",
+    "tag": "derived",
+    "basis": "1488 s: the tactician figure beside the top-right plate (level 8, purple bar) is the Ahri-type figure, the same figure seen at P4's plate in 1503 s and 2132.5 s and matching the P4 rail portrait. Pool P2, P4, P6 at 1488 s: P2 shows a blonde portrait and P6 a blue spirit portrait, so only P4 matches the figure; P4's rail badge at 1488 s is 8, equal to the plate."
    },
    "combat_frame_t_s": null,
    "result": {
@@ -4607,8 +4596,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified; no flagged scouting run in this round; no sprites tied to a panel",
-    "reason": "opponent not identified, so no panel can be attached"
+    "attempt": "opponent is P4 (derived); no flagged scouting run in this round; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
