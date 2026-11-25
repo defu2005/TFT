@@ -266,5 +266,90 @@
    "Taric"
   ]
  },
- "_note": "Trait-consistent roster candidates only. Board counter read from planning frames where legible. Panels read by eye. Zero solutions mean the panel and counter do not fit the catalog under these rules. Several rounds repeat the same panel, so identical solutions are expected there. Not confirmed on sprites."
+ "_note": "Trait-consistent roster candidates only. Board counter read from planning frames where legible. Panels read by eye. Zero solutions mean the panel and counter do not fit the catalog under these rules. Several rounds repeat the same panel, so identical solutions are expected there. Not confirmed on sprites.",
+ "retry_with_extra_traits": {
+  "3-3": {
+   "N": 6,
+   "extra": 1,
+   "solutions": 5,
+   "first": [
+    "Alistar",
+    "Draven",
+    "Ezreal",
+    "Kobuko",
+    "Mama Beak",
+    "Xayah"
+   ],
+   "status": "candidate, loose"
+  },
+  "3-5": {
+   "N": 7,
+   "extra": 2,
+   "solutions": 20,
+   "first": [
+    "Alistar",
+    "Draven",
+    "Ezreal",
+    "Kobuko",
+    "Lux (Blackthorn)",
+    "Mama Beak",
+    "Xayah"
+   ],
+   "status": "underdetermined"
+  },
+  "4-1": {
+   "N": 8,
+   "extra": "<=2",
+   "solutions": 0,
+   "status": "panel likely misread"
+  },
+  "4-3": {
+   "N": 8,
+   "extra": "<=2",
+   "solutions": 0,
+   "status": "panel likely misread"
+  },
+  "4-4": {
+   "N": 8,
+   "extra": "<=2",
+   "solutions": 0,
+   "status": "panel likely misread"
+  },
+  "4-5": {
+   "N": 8,
+   "extra": "<=2",
+   "solutions": 0,
+   "status": "panel likely misread"
+  },
+  "4-6": {
+   "N": 8,
+   "extra": "<=2",
+   "solutions": 0,
+   "status": "panel likely misread"
+  },
+  "5-1": {
+   "N": 9,
+   "extra": 1,
+   "solutions": 1,
+   "first": [
+    "Alistar",
+    "Draven",
+    "Ezreal",
+    "Gnar",
+    "Ivern",
+    "Kennen",
+    "Maokai",
+    "Sett",
+    "Taric"
+   ],
+   "status": "candidate"
+  },
+  "6-5": {
+   "N": 9,
+   "extra": "<=2",
+   "solutions": 0,
+   "status": "panel partly hidden by tooltip"
+  }
+ },
+ "_note2": "Retry used extra unlisted traits; these loosened results are candidates only and are not proof."
 }
