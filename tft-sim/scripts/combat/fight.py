@@ -24,6 +24,17 @@ from pathlib import Path
 import numpy as np
 
 import tft_goat.engine.simulate as S
+import tft_goat.engine.trait_effects as TE
+
+# Set 18: hai khoa trait bi ap sai (xem docs/research/combat-public-data.md muc 8). Chi bo o duong Set 18.
+_SET18_BAD_KEYS = ("MaxHealthShield", "APPerCast")
+_orig_attrs_for = TE.attrs_for
+
+
+def _attrs_for_set18(key: str):
+    if key in _SET18_BAD_KEYS:
+        return []
+    return _orig_attrs_for(key)
 from tft_goat.engine.abilities import default_ability
 from tft_goat.env.state import BoardUnit
 from tft_goat.engine.simulate import run_combat
@@ -186,10 +197,16 @@ def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = 
         aa, ab = (), ()
     content = _CONTENT[record["set"]]
     wins = [0, 0, 0]
-    with fight_context(ability, pos, content, traits, novars):
-        for i in range(n):
-            r = run_combat(ba, bb, content, np.random.default_rng(seed0 + i), aa, ab)
-            w = r.winner
-            wins[0 if w == 0 else 1 if w == 1 else 2] += 1
+    skip = record["set"] == 18
+    if skip:
+        TE.attrs_for = _attrs_for_set18
+    try:
+        with fight_context(ability, pos, content, traits, novars):
+            for i in range(n):
+                r = run_combat(ba, bb, content, np.random.default_rng(seed0 + i), aa, ab)
+                w = r.winner
+                wins[0 if w == 0 else 1 if w == 1 else 2] += 1
+    finally:
+        TE.attrs_for = _orig_attrs_for
     return {"p_a": wins[0] / n, "a": wins[0], "b": wins[1], "draw": wins[2], "n": n,
             "ability": ability, "items": items, "coverage": cov}

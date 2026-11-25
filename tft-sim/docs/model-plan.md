@@ -283,3 +283,16 @@ Phase 4: đánh giá
 Xuyên suốt
 - Mọi giá trị đặc thù set gom vào một cấu hình theo set, để Set 19 chỉ cần chạy lại.
 - Quyết định duy nhất cần người dùng: khóa Riot. Nếu từ chối, Phase 0, 1 và 3 vẫn chạy.
+
+
+### 11.1 Kết quả Phase 1 (sim Set 17, 2000 cặp, quy tắc khóa ở trên)
+Tỷ lệ đảo chiều so với `hand` trên 1675 cặp quyết định của hand, CI bootstrap theo lobby:
+- none: 18.4% [16.4; 20.3]
+- hand_noitems: 17.2% [15.2; 19.2]
+- generic: 16.6% [14.4; 18.7]
+- generic_novars: 15.9% [14.1; 17.8]
+- hand_notraits: 4.9% [3.8; 6.0]
+- hand_noaug: 4.1% [3.1; 5.2]
+
+Đọc kết quả: trên Set 17, ability và trang bị làm đổi kết quả nhiều nhất (16–18%); trait và augment đổi ít (4–5%). Biến của generic không tạo khác biệt có ý nghĩa (16,6% so với 15,9%, CI chồng lên nhau). Đây là độ nhạy của sim so với `hand`, không phải độ đúng so với thật.
+Phase 3 thứ tự ưu tiên theo kết quả này: ability (Set 18 generic) trước, trait sau, augment cuối.

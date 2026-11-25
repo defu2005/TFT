@@ -1,0 +1,61 @@
+{
+ "n_pairs": 2000,
+ "n_decisive": 1675,
+ "rule": "dao chieu so voi hand tren cap quyet dinh cua hand; bootstrap theo lobby 2000",
+ "configs": {
+  "hand_noaug": {
+   "flip_rate_decisive": 0.0412,
+   "ci95": [
+    0.0315,
+    0.0522
+   ],
+   "pairs_changed_any": 565,
+   "mean_abs_gap_vs_hand": 0.0805
+  },
+  "hand_noitems": {
+   "flip_rate_decisive": 0.1725,
+   "ci95": [
+    0.1525,
+    0.1919
+   ],
+   "pairs_changed_any": 791,
+   "mean_abs_gap_vs_hand": 0.1917
+  },
+  "hand_notraits": {
+   "flip_rate_decisive": 0.049,
+   "ci95": [
+    0.038,
+    0.0605
+   ],
+   "pairs_changed_any": 640,
+   "mean_abs_gap_vs_hand": 0.0937
+  },
+  "generic": {
+   "flip_rate_decisive": 0.166,
+   "ci95": [
+    0.1442,
+    0.1873
+   ],
+   "pairs_changed_any": 849,
+   "mean_abs_gap_vs_hand": 0.2059
+  },
+  "generic_novars": {
+   "flip_rate_decisive": 0.1594,
+   "ci95": [
+    0.1415,
+    0.1783
+   ],
+   "pairs_changed_any": 817,
+   "mean_abs_gap_vs_hand": 0.2031
+  },
+  "none": {
+   "flip_rate_decisive": 0.1839,
+   "ci95": [
+    0.1644,
+    0.2035
+   ],
+   "pairs_changed_any": 865,
+   "mean_abs_gap_vs_hand": 0.2212
+  }
+ }
+}

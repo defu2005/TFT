@@ -229,3 +229,7 @@ File: `tft-sim/data/blitz_set18_numbers.json`. 74 trang Blitz (patch 18.7).
 - Biến CDragon Set 18 gần như trống (70/71 tướng không có biến), nên không đối chiếu được số bằng biến.
 - Tầm đánh Ashe, Draven, Lux và AS Master Yi-AP lệch so với CDragon. Số giữ nguyên theo Blitz.
 - Điều khoản Blitz: chỉ dùng cá nhân phi thương mại. Người dùng đã chấp nhận rủi ro và cho phép dùng dữ liệu, kể cả cho mô hình.
+
+
+## 11. Hai khóa trait Set 18 sai (Phase 3 bước 8, 2026-11-25)
+Vanguard `MaxHealthShield` (là khiên theo phần trăm máu tối đa) và Spellweaver `APPerCast` (là AP cộng dồn theo lần thi triển) đã được bỏ trong đường Set 18 của `fight.py` (`_SET18_BAD_KEYS`). Selftest: máu tối đa Vanguard không còn bị cộng, trait không liên quan (Blossom) không đổi. Không áp dụng cho script huấn luyện.

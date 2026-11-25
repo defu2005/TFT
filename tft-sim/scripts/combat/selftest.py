@@ -133,4 +133,27 @@ print("records content: non-twin", nontwin, "items_unknown", cov_nt["a"]["items_
 ok &= cov_nt["a"]["items_unknown"] == 0
 F.set_content(18, c18)
 
+from tft_goat.engine import simulate as S9  # noqa
+# 9) Set 18: Vanguard khong con tang max HP tu MaxHealthShield; trait khac (Blossom/Sprykin...) van ap dung
+F.set_content(18, c18)
+vg = [a for a, c in c18.champions.items() if "Vanguard" in c.traits]
+from tft_goat.env.state import BoardUnit as BU
+board = [BU(a, 1, on_board=True) for a in vg[:2]]
+F.TE.attrs_for = F._orig_attrs_for
+hp_full = [u.max_hp for u in S9._build_team(board, 0, c18, 0)]
+F.TE.attrs_for = F._attrs_for_set18
+hp_skip = [u.max_hp for u in S9._build_team(board, 0, c18, 0)]
+F.TE.attrs_for = F._orig_attrs_for
+print("vanguard max_hp full", hp_full, "skip", hp_skip)
+ok &= hp_full != hp_skip
+bl = [a for a, c in c18.champions.items() if "Blossom" in c.traits][:3]
+if len(bl) >= 2:
+    bb = [BU(a, 1, on_board=True) for a in bl]
+    F.TE.attrs_for = F._orig_attrs_for
+    ad_full = [u.ad for u in S9._build_team(bb, 0, c18, 0)]
+    F.TE.attrs_for = F._attrs_for_set18
+    ad_skip = [u.ad for u in S9._build_team(bb, 0, c18, 0)]
+    F.TE.attrs_for = F._orig_attrs_for
+    print("blossom ad full", ad_full, "skip", ad_skip)
+    ok &= ad_full == ad_skip  # trait khong lien quan khong bi anh huong
 print("SELFTEST", "PASS" if ok else "FAIL")
