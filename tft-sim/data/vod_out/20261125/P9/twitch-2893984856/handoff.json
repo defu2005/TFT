@@ -476,6 +476,11 @@
         "5-3"
       ],
       "note": "corrected start ~11750; skip carousel/PvE; boards unread"
+    },
+    "twitch-2893984856-g14200": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "status": "in_progress",
+      "note": "densify to ~12"
     }
   }
 }
