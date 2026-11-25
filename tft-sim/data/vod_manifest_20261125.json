@@ -47,7 +47,7 @@
         "loltyler1",
         "dogdog"
       ],
-      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue). | +loltyler1 ranked Set18 Emerald ladder (wasian/voltariux/shurkou/aphromoo archives depleted of clean ranked). | +dogdog Diamond ranked Set18; +more loltyler1. | 2026-11-25 scout: wasian ranked empty \u2192 +dogdog 2905342718 +shurkou ranked VODs."
+      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue). | +loltyler1 ranked Set18 Emerald ladder (wasian/voltariux/shurkou/aphromoo archives depleted of clean ranked). | +dogdog Diamond ranked Set18; +more loltyler1. | 2026-11-25 scout: wasian ranked empty → +dogdog 2905342718 +shurkou ranked VODs."
     },
     "P5": {
       "role": "primary",
@@ -1016,7 +1016,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "claimed",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1028,7 +1028,9 @@
       ],
       "source_refs": [
         "hud:scripts/hud-campaign/seed-sources.json"
-      ]
+      ],
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:24:00Z"
     },
     {
       "vod_id": "twitch-2912449718",
@@ -1515,7 +1517,7 @@
       "streamer": "boxbox",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "pending",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1536,7 +1538,7 @@
       "streamer": "boxbox",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "pending",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1557,7 +1559,7 @@
       "streamer": "boxbox",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "pending",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1599,7 +1601,7 @@
       "streamer": "robinsongz",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "pending",
       "patch_claims": [
         "18.5C/18.6"
       ],
@@ -1620,7 +1622,7 @@
       "streamer": "boxbox",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "pending",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1641,7 +1643,7 @@
       "streamer": "robinsongz",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "pending",
       "patch_claims": [
         "18.5C/18.6"
       ],
@@ -1662,7 +1664,7 @@
       "streamer": "boxbox",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "pending",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1683,7 +1685,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "claimed",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1696,7 +1698,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:24:00Z"
     },
     {
       "vod_id": "twitch-2897329575",
@@ -1704,7 +1708,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "claimed",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1717,7 +1721,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:13:00Z"
     },
     {
       "vod_id": "twitch-2893654871",
@@ -1725,7 +1731,7 @@
       "streamer": "robinsongz",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "pending",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1746,7 +1752,7 @@
       "streamer": "robinsongz",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "pending",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1767,7 +1773,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "claimed",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1780,7 +1786,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:13:00Z"
     },
     {
       "vod_id": "twitch-2887368861",
@@ -1788,7 +1796,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "claimed",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1801,7 +1809,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:13:00Z"
     },
     {
       "vod_id": "twitch-2899094314",
@@ -5005,7 +5015,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "18.x"
       ],
@@ -5019,7 +5029,10 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "mr consistent is here"
+      "notes": "mr consistent is here",
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:24:00Z",
+      "block_reason": "Not Set18 (Sonic Spark/Ambusher/Pit Fighter traits)"
     },
     {
       "vod_id": "twitch-2939299142",
@@ -5093,7 +5106,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "claimed",
       "patch_claims": [
         "18.x"
       ],
@@ -5107,7 +5120,9 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "what the hellyante"
+      "notes": "what the hellyante",
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:24:00Z"
     },
     {
       "vod_id": "twitch-2910216143",
@@ -5115,7 +5130,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "claimed",
       "patch_claims": [
         "18.x"
       ],
@@ -5129,7 +5144,9 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "hello"
+      "notes": "hello",
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:24:00Z"
     },
     {
       "vod_id": "twitch-2909100763",
@@ -5137,7 +5154,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "claimed",
       "patch_claims": [
         "18.x"
       ],
@@ -5151,7 +5168,9 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "preparing for hatewatch"
+      "notes": "preparing for hatewatch",
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:24:00Z"
     },
     {
       "vod_id": "twitch-2907084959",
@@ -6963,7 +6982,7 @@
         "twitch:yt-dlp-archive-scout-20261125",
         "coord:p4-ranked-empty-expand"
       ],
-      "notes": "scout-expand: mixed HS\u2192TFT; RANKED Master Set18 ~2300-7300 only (NORMAL after)"
+      "notes": "scout-expand: mixed HS→TFT; RANKED Master Set18 ~2300-7300 only (NORMAL after)"
     },
     {
       "vod_id": "twitch-2927528194",
