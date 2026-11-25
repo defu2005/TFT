@@ -1,0 +1,31 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2904494754",
+  "slot": "P4",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      60,
+      1740
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2904494754-g60"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 14,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 14
+    }
+  },
+  "needs_review": 14,
+  "commit": null,
+  "remaining": "Short VOD (~29min); single ranked game Challenger through stage5-5@4200 near VOD end."
+}

@@ -7,12 +7,12 @@
   "covered_ranges_s": [
     [
       0,
-      10120
+      14550
     ]
   ],
   "remaining_ranges_s": [
     [
-      10120,
+      14550,
       23973
     ]
   ],
@@ -21,20 +21,22 @@
     "twitch-2898582839-g2000",
     "twitch-2898582839-g3750",
     "twitch-2898582839-g6000",
-    "twitch-2898582839-g8300"
+    "twitch-2898582839-g8300",
+    "twitch-2898582839-g10650",
+    "twitch-2898582839-g12850"
   ],
   "counts": {
-    "games": 5,
-    "fights": 25,
-    "others": 25
+    "games": 7,
+    "fights": 36,
+    "others": 36
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 25
+      "winner_null": 36
     }
   },
-  "needs_review": 25,
-  "commit": "a8dc4d2",
-  "remaining": "tiếp ranked từ ~10120s (GeoGuessr break rồi ván 6+)"
+  "needs_review": 36,
+  "commit": "bf6580d",
+  "remaining": "tiếp ranked từ ~14550s (ván 8+)"
 }

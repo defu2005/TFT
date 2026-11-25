@@ -3,34 +3,49 @@
   "vod_id": "twitch-2914203830",
   "slot": "P4",
   "role": "primary",
-  "status": "partial",
+  "status": "done",
   "covered_ranges_s": [
     [
       200,
       2200
-    ]
-  ],
-  "remaining_ranges_s": [
+    ],
     [
-      2200,
-      99999
+      2400,
+      4500
+    ],
+    [
+      5400,
+      7800
+    ],
+    [
+      8200,
+      10500
+    ],
+    [
+      10800,
+      13000
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
-    "twitch-2914203830-g200"
+    "twitch-2914203830-g200",
+    "twitch-2914203830-g2400",
+    "twitch-2914203830-g5400",
+    "twitch-2914203830-g8200",
+    "twitch-2914203830-g10800"
   ],
   "counts": {
-    "games": 1,
-    "fights": 14,
+    "games": 5,
+    "fights": 70,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 14
+      "winner_null": 70
     }
   },
-  "needs_review": 14,
+  "needs_review": 70,
   "commit": null,
-  "remaining": "More ranked games after first; denser HLS pass pending."
+  "remaining": "Ranked segments covered via HLS; VOD late frames still Challenger ranked through g10800."
 }

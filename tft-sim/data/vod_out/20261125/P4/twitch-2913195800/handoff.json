@@ -1,0 +1,31 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2913195800",
+  "slot": "P4",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      60,
+      2000
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2913195800-g60"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 14,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 14
+    }
+  },
+  "needs_review": 14,
+  "commit": null,
+  "remaining": "g60 RANKED (loading Challenger). Remaining after ~2400 = TFT NORMAL lobby (explicit TEAMFIGHT TACTICS NORMAL) → skip/block non-ranked."
+}

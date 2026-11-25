@@ -3,23 +3,14 @@
   "vod_id": "twitch-2906219397",
   "slot": "P2",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       520,
       2720
     ]
   ],
-  "remaining_ranges_s": [
-    [
-      0,
-      520
-    ],
-    [
-      2720,
-      18571
-    ]
-  ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2906219397-g520"
   ],
@@ -36,5 +27,5 @@
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "0-520 pregame. 520-2720: ranked g520 done (partial fights). 2720+: client; NORMAL party games (Hafu/CLE ~3k-5.5k; Frodan/setsuko lobby NORMAL @~6100) — skip mode≠ranked. Quét thêm chỉ khi thấy queue RANKED trên HUD."
+  "remaining": "DONE scan: chỉ 1 ván ranked g520 (520–2720). Phần còn lại VOD: NORMAL party / BoxBox Bash scoresheet / off-client — không ghi. Twitch archives Dishsoap+k3soju hiện chỉ còn tourney (đã block)."
 }

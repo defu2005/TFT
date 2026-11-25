@@ -1,0 +1,41 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2888310409",
+  "slot": "P4",
+  "role": "primary",
+  "status": "partial",
+  "covered_ranges_s": [
+    [
+      60,
+      2000
+    ],
+    [
+      3600,
+      5500
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      5500,
+      99999
+    ]
+  ],
+  "game_ids": [
+    "twitch-2888310409-g60",
+    "twitch-2888310409-g3600"
+  ],
+  "counts": {
+    "games": 2,
+    "fights": 28,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 28
+    }
+  },
+  "needs_review": 28,
+  "commit": null,
+  "remaining": "More ranked denser HLS pending."
+}
