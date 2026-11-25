@@ -361,10 +361,21 @@ Lưu ý khi đọc: flip nhỏ có thể do trait chưa có ánh xạ stat (xem 
 - Loại trừ: người thắng null, tướng không rõ. Đếm và báo cáo số bị loại, kèm lý do.
 - Cỡ mẫu: với độ chính xác khoảng 60%, CI rộng khoảng ±10 điểm ở 100 fight và ±5–6 điểm ở 300 fight; khi gom theo ván thì rộng hơn.
 - Chưa có bản ghi thật: không có kết quả nào được báo cáo.
+- Augment (11.8): không loại id nào; giữ hook như đã khóa. Cấu hình chính dùng augments bật, và phải ghi chú sai số xấp xỉ của hook.
 
-### 11.8 Augment Set 18 chạy hook Set 17 (2026-11-25)
-- 70 trong 594 augment Set 18 có cùng id với hook trong `AUGMENT_REGISTRY` (Set 17). Trong mẫu `pairs18_sample.jsonl`: 1008 trên 3616 slot augment (27,9%) chạy hook Set 17.
-- Đọc mẫu: cùng tên nhưng cơ chế có thể khác. Ví dụ Clockwork Accelerator: Set 18 là tăng tốc đánh định kỳ mỗi `frequency` giây; hook Set 17 chỉ áp dụng một lần lúc bắt đầu trận (ghi chú "approx"). Electrocharge I: Set 18 là proc theo số đòn nhận; hook Set 17 là một đợt sát thương duy nhất (ghi chú "approx"). Cybernetic Uplink và Giant and Mighty: hook đọc cùng tên biến, có thể đúng về số nhưng chưa kiểm chứng.
-- Quyết định: không coi các hook này là đúng cho Set 18. Đề xuất: thêm công tắc `augment_hooks` cho Set 18 để bỏ hook Set 17 (chưa làm). Cấu hình chính của Phase 4 (11.7) cần chọn một trong hai và ghi rõ.
-- Đã làm (2026-11-25): `fidelity.py` đọc từng dòng, bỏ qua bản ghi hỏng và đếm theo lý do (`skipped`), đếm tên item lạ (`unknown_items`). Bản ghi sim hoặc label khác `real` làm dừng cả file. Bản ghi `dryrun-*` bị bỏ mặc định. Bộ thử `tests/fixtures/set18_dryrun.jsonl` có selftest mục 11 (PASS).
-- Trạng thái đầy đủ và lệnh tái lập: `docs/research/set18-status.md`.
+### 11.8 Augment Set 18 trùng id với hook Set 17 (đã kiểm tra 2026-11-25)
+- 70 trên 594 augment Set 18 có id trùng với hook trong `AUGMENT_REGISTRY` (Set 17).
+- So sánh nội dung CDragon của 70 id này giữa Set 17 và Set 18 (tên, mô tả, bảng effects): cả 70 đều giống hệt. Không có id nào khác nội dung. Đây là cùng một augment dùng lại, không phải hook Set 17 chạy nhầm.
+- Mọi biến số mà hook đọc đều có trong effects của Set 18 (trừ `MissingHealth`, hook có đọc cả `Missinghealth` và khóa này có trong effects; không thiếu).
+- Quyết định: giữ cả 70 hook, như quy tắc đã khóa. Không có id nào bị loại.
+- Điểm yếu vẫn còn: 46 trên 70 mô tả có cơ chế theo thời gian, theo đòn hoặc theo sự kiện (ví dụ Clockwork Accelerator tăng tốc đánh mỗi `frequency` giây, Electrocharge proc theo số đòn nhận). Hook của 39 trong số đó được đánh dấu "approx" và xấp xỉ một lần lúc đầu trận. 7 augment không được đánh dấu nhưng cũng có cơ chế theo thời gian hoặc sự kiện mà hook không mô phỏng: PlotArmor, TwoTanky, Unforgotten, EarlyLearning, TinyButDeadly, TonsOfStats, YouHaveMyBow. Danh sách đầy đủ: `results/fixed/combat/augment_hook_periodic_flags.json`.
+- Hệ quả: đây là sai số xấp xỉ có sẵn của engine Set 17, áp dụng cho Set 18 với cùng mức chính xác. Không phải lỗi gán nhầm. Cần ghi rõ khi báo cáo kết quả Phase 4.
+- Chỉ số: 1008/3616 slot augment trong mẫu sim (27,9%) chạy hook. Con số này tính trên mẫu sim, không phải tần suất augment thật.
+
+### 11.9 Khóa bổ sung cho Phase 4 (2026-11-25, trước khi có dữ liệu thật)
+- Công thức chấm: đúng phía = 1; sai phía = 0; p = 0,5 chính xác, hoặc hai bên bằng sức mạnh, = 0,5 điểm.
+- n_seeds = 20, seed0 = 0 cố định. Không đổi sau khi có dữ liệu.
+- Cỡ tối thiểu: dưới 30 game thì CI được báo là `inconclusive`, không đạt cũng không trượt.
+- Thiên vị phía (side bias): đo trên 300 cặp mẫu sim. Nếu CI95 của trung bình (p(a,b) + p(b,a) − 1) không chứa 0, thì khi có dữ liệu thật phải chấm cả hai hướng và lấy trung bình. Kết quả đo sẽ ghi bên dưới.
+- Chỉ số kèm theo: số fight, số game, tỷ lệ bên a thắng, trung bình điểm của mỗi cấu hình, chênh lệch với quy tắc sức mạnh, chênh lệch chính − phụ (cấu hình phụ = emblem bật).
+- Lưu ý: game id lấy từ phần trước `:` của `source`.

@@ -18,6 +18,7 @@ Set 18: chi cho ability "generic" hoac "none" (tranh am tham dung default_abilit
 from __future__ import annotations
 
 import contextlib
+import gzip
 import json
 from pathlib import Path
 
@@ -199,7 +200,9 @@ def check_record(record: dict) -> None:
 
 
 def load_jsonl(path) -> list[dict]:
-    rows = [json.loads(l) for l in Path(path).read_text(encoding="utf-8").splitlines() if l.strip()]
+    p = Path(path)
+    text = (gzip.open(p, "rt", encoding="utf-8").read() if p.suffix == ".gz" else p.read_text(encoding="utf-8"))
+    rows = [json.loads(l) for l in text.splitlines() if l.strip()]
     for r in rows:
         check_record(r)
     return rows

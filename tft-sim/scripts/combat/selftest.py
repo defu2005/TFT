@@ -78,9 +78,9 @@ rs = []
 for r in fx[:5]:
     rr = json.loads(json.dumps(r)); rr["label"] = "real"; rr["result"] = {"winner": 0}; rs.append(rr)
 tmp.write_text("\n".join(json.dumps(x) for x in rs), encoding="utf-8")
-out = FD.score(str(tmp), "none", True, 5)
-print("fidelity", out)
-ok &= out["n"] == 5 and 0.0 <= out["accuracy"] <= 1.0
+out = FD.score(str(tmp), 5, 0, allow_dryrun=True)
+print("fidelity set17 (ngoai muc 11.7)", {k: out.get(k) for k in ("fights", "skipped")})
+ok &= out["fights"] == 0 and out["skipped"].get("set_khong_ho_tro:17") == 5
 sim_file = Path(tempfile.mkdtemp()) / "sim.jsonl"
 rr = json.loads(json.dumps(fx[0])); rr["result"] = {"winner": 0}
 sim_file.write_text(json.dumps(rr), encoding="utf-8")
@@ -211,17 +211,28 @@ print("e) spellweaver ap full", ap_full, "skip", ap_skip)
 ok10 &= any(abs(a - b) > 1e-6 for a, b in zip(ap_full, ap_skip))
 ok &= ok10
 print("emblem block", "PASS" if ok10 else "FAIL")
-# 11) Duong ban ghi that Set 18 (fidelity): fixture 8 ban ghi, bo qua va dem ly do, khong dung ca file
+# 11) Duong ban ghi that Set 18 (fidelity, muc 11.7): fixture 10 ban ghi
 import fidelity as FD2  # noqa: E402
 fx_path = Path(__file__).resolve().parents[2] / "tests" / "fixtures" / "set18_dryrun.jsonl"
-out11 = FD2.score(str(fx_path), "generic", True, 5, False, allow_dryrun=True)
-print("fidelity set18 fixture", {k: out11[k] for k in ("n", "skipped", "unknown_items")})
-ok11 = out11["n"] == 5
-ok11 &= out11["skipped"].get("winner_null") == 1 and out11["skipped"].get("tuong_la:TFT_NotAChampion_Dryrun") == 1
-ok11 &= any(k.startswith("schema:") for k in out11["skipped"])
+out11 = FD2.score(str(fx_path), 5, 0, allow_dryrun=True)
+print("fidelity set18 fixture", {k: out11.get(k) for k in ("fights", "games", "skipped", "unknown_items")})
+ok11 = out11["fights"] == 5 and out11["games"] == 4 and out11["inconclusive"] is True
+sk = out11["skipped"]
+ok11 &= sk.get("winner_null") == 1 and sk.get("tuong_la:TFT_NotAChampion_Dryrun") == 1
+ok11 &= any(k.startswith("schema:") for k in sk) and sk.get("set_khong_ho_tro:19") == 1 and sk.get("items_null") == 1
 ok11 &= out11["unknown_items"].get("TFT_Item_NoSuchItem_Dryrun") == 1
-out11b = FD2.score(str(fx_path), "generic", True, 5, False)  # mac dinh: dryrun bi bo
-ok11 &= out11b["n"] == 0 and out11b["skipped"].get("dryrun") == 7
+out11b = FD2.score(str(fx_path), 5, 0)  # mac dinh: dryrun bi bo
+ok11 &= out11b["fights"] == 0 and out11b["skipped"].get("dryrun") == 10
+# quy tac suc manh tinh tay: 1 tuong gia 1 (sao 1) + 1 tuong gia 5 (sao 2) = 1 + 15 = 16 ; doi b: gia 4 sao 1 = 4
+c1 = next(a for a, c in c18.champions.items() if c.cost == 1 and c.stats)
+c5 = next(a for a, c in c18.champions.items() if c.cost == 5 and c.stats)
+c4 = next(a for a, c in c18.champions.items() if c.cost == 4 and c.stats)
+sa = {"units": [{"api": c1, "star": 1}, {"api": c5, "star": 2}]}
+sb = {"units": [{"api": c4, "star": 1}]}
+ok11 &= FD2.strength(sa, c18) == 16.0 and FD2.strength(sb, c18) == 4.0
+ok11 &= FD2.rule_credit(16.0, 4.0, 1.0) == 1.0 and FD2.rule_credit(16.0, 4.0, 0.0) == 0.0
+ok11 &= FD2.rule_credit(4.0, 4.0, 1.0) == 0.5 and FD2.credit(0.5, 0.0) == 0.5
+print("strength rule hand check", FD2.strength(sa, c18), FD2.strength(sb, c18))
 ok &= ok11
 print("fidelity block", "PASS" if ok11 else "FAIL")
 print("SELFTEST", "PASS" if ok else "FAIL")

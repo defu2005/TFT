@@ -1,31 +1,69 @@
-"""Doi chieu do trung thuc: xac suat engine du doan vs ket qua that (muc 11.7).
-Args: records.jsonl [ability=hand|generic|none] [items=1|0] [n=40] [emblems=0|1]
-Quy tac:
-  - Chi cham ban ghi label 'real' co result.winner khac null. Ban ghi sim bi tu choi ca file.
-  - Ban ghi hong (sai schema, tuong la, winner la) bi BO QUA va dem theo ly do; khong dung ca file.
-  - Ban ghi source 'dryrun-*' la du lieu thu nghiem, luon bi bo qua (khong phai ket qua that).
-  - Ten item khong co trong noi dung duoc dem trong 'unknown_items' (ban ghi van cham, engine bo qua item do).
-Tra ve dict co n, accuracy, brier, skipped{ly do: so}, unknown_items{ten: so}."""
-import json, sys
-from collections import Counter
+"""Doi chieu do trung thuc: xac suat engine du doan vs ket qua that (muc 11.7, khoa 2026-11-25).
+Usage: python fidelity.py records.jsonl[.gz] [n_seeds=20] [seed0=0]
+Quy tac (co dinh, khong doi sau khi co du lieu):
+  - Cham ban ghi label 'real', result.winner khac null, set 18 (muc 11.7). Ban ghi label khac 'real' lam dung ca file.
+  - Ban ghi hong bi BO QUA va dem theo ly do (skipped): json hong, schema, set khong ho tro, items null,
+    vi tri, tuong la, winner null, dryrun-*.
+  - Ten item khong co trong noi dung duoc dem (unknown_items); ban ghi van duoc cham.
+  - Game = phan truoc ':' cua source. Nhieu fight cung game duoc gom cum khi bootstrap.
+  - Hai cau hinh: PRIMARY (ability generic, items, augments, traits, khong emblem) va SECONDARY (them emblem).
+  - Moc: 50% va quy tac suc manh (tong gia * 3^(sao-1), ben cao hon thang; hoa = 0,5 diem).
+  - Diem cua mot fight: 1 neu dung phia, 0 neu sai, 0,5 neu p = 0,5 hoac hoa theo quy tac suc manh.
+  - CI95: bootstrap theo game, 2000 lan. Duoi MIN_GAMES game thi bao 'inconclusive'.
+"""
+import gzip, json, sys
+from collections import Counter, defaultdict
 from pathlib import Path
 
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
 import fight as F  # noqa: E402
-from fight import predict_win, set_content, check_record  # noqa: E402
+from fight import predict_win, set_content  # noqa: E402
 from tft_sim.item_alias import build_set18_records  # noqa: E402
 from tft_sim.real_content import build_real  # noqa: E402
+
 set_content(17, build_real('TFTSet17'))
 _C18 = build_set18_records()[0]
 set_content(18, _C18)  # Set 18 dung noi dung da alias (xem combat-public-data.md 8b)
 
+SUPPORTED_SETS = (18,)  # muc 11.7 chi ap dung cho Set 18
+MIN_GAMES = 30
+BOOT = 2000
+PRIMARY = dict(ability="generic", items=True, augments=True, traits=True, emblems=False)
+SECONDARY = dict(PRIMARY, emblems=True)
+
+
+def strength(side: dict, content) -> float:
+    tot = 0.0
+    for u in side["units"]:
+        ch = content.champions.get(u["api"])
+        cost = float(ch.cost) if ch else 0.0
+        tot += cost * 3 ** (int(u["star"]) - 1)
+    return tot
+
+
+def rule_credit(a_strength: float, b_strength: float, y: float) -> float:
+    """Diem cua quy tac suc manh tren mot fight: 1 dung, 0 sai, 0,5 neu hoa (ca hai bang nhau)."""
+    if a_strength == b_strength:
+        return 0.5
+    pick_a = a_strength > b_strength
+    return 1.0 if pick_a == (y == 1.0) else 0.0
+
+
+def credit(p: float, y: float) -> float:
+    if p == 0.5:
+        return 0.5
+    return 1.0 if (p > 0.5) == (y == 1.0) else 0.0
+
 
 def read_real(path, allow_dryrun=False):
-    """Doc tung dong, tra ve (ban ghi cham duoc, Counter ly do bo qua, Counter item la)."""
+    """Doc tung dong. Tra ve (ban ghi cham duoc, Counter ly do bo qua, Counter item la)."""
     good, skipped, unk = [], Counter(), Counter()
-    for line in Path(path).read_text(encoding="utf-8").splitlines():
+    p = Path(path)
+    text = (gzip.open(p, "rt", encoding="utf-8").read() if p.suffix == ".gz"
+            else p.read_text(encoding="utf-8"))
+    for line in text.splitlines():
         if not line.strip():
             continue
         try:
@@ -33,26 +71,34 @@ def read_real(path, allow_dryrun=False):
         except json.JSONDecodeError:
             skipped["json_hong"] += 1
             continue
-        try:
-            check_record(r)
-        except (ValueError, KeyError, TypeError) as e:
-            skipped[f"schema:{e}"] += 1
+        if not isinstance(r, dict):
+            skipped["khong_phai_object"] += 1
             continue
         if r.get("label") != "real":
             raise SystemExit(f"tu choi: co ban ghi label={r.get('label')} trong file do luong")
         if str(r.get("source", "")).startswith("dryrun-") and not allow_dryrun:
             skipped["dryrun"] += 1
             continue
+        if r.get("set") not in SUPPORTED_SETS:
+            skipped[f"set_khong_ho_tro:{r.get('set')}"] += 1  # set 17 va set 19 nam ngoai muc 11.7
+            continue
+        try:
+            check_ok = F.check_record(r)  # noqa: F841
+        except (ValueError, KeyError, TypeError) as e:
+            skipped[f"schema:{e}"[:90]] += 1
+            continue
         if r.get("result", {}).get("winner") is None:
             skipped["winner_null"] += 1
             continue
-        bad = None
         content = F._CONTENT[r["set"]]
+        bad = None
         for side in ("a", "b"):
             for u in r[side]["units"]:
+                if u.get("items") is None and "items" in u:
+                    bad = "items_null"
                 if u["api"] not in content.champions:
                     bad = f"tuong_la:{u['api']}"
-                for it in u.get("items", []):
+                for it in (u.get("items") or []):
                     if it not in content.items:
                         unk[it] += 1
         if bad:
@@ -62,33 +108,78 @@ def read_real(path, allow_dryrun=False):
     return good, skipped, unk
 
 
-def score(path, ability=None, items=True, n=40, emblems=False, allow_dryrun=False):
+def _game(r) -> str:
+    return str(r["source"]).split(":")[0]
+
+
+def _cfg_p(rec, cfg, n, seed0):
+    return predict_win(rec, n, cfg["ability"], cfg["items"], seed0, cfg["augments"], cfg["traits"],
+                       False, cfg["emblems"])["p_a"]
+
+
+def _boot_mean_diff(games, per_fight_diff, rng):
+    """Bootstrap theo game: trung binh chenh lech tren fight, gom theo game."""
+    G = sorted(set(games))
+    idx = {g: [] for g in G}
+    for i, g in enumerate(games):
+        idx[g].append(i)
+    vals = []
+    for _ in range(BOOT):
+        pick = rng.choice(len(G), len(G), replace=True)
+        ii = np.concatenate([idx[G[k]] for k in pick])
+        vals.append(per_fight_diff[ii].mean())
+    return float(np.percentile(vals, 2.5)), float(np.percentile(vals, 97.5))
+
+
+def score(path, n=20, seed0=0, allow_dryrun=False):
     good, skipped, unk = read_real(path, allow_dryrun)
     if not good:
-        return {"n": 0, "note": "chua co ban ghi real co ket qua", "skipped": dict(skipped), "unknown_items": dict(unk)}
-    def mode(r):
-        return ability or ("hand" if r["set"] == 17 else "generic")
-    p, y, kept = [], [], 0
+        return {"skipped": dict(skipped), "unknown_items": dict(unk), "n_min_games": MIN_GAMES,
+                "fights": 0, "games": 0, "note": "chua co ban ghi real co ket qua"}
+    rows = []
     for r in good:
         try:
-            p.append(predict_win(r, n, mode(r), items, emblems=emblems and r["set"] == 18)["p_a"])
+            p1 = _cfg_p(r, PRIMARY, n, seed0)
+            p2 = _cfg_p(r, SECONDARY, n, seed0)
         except ValueError as e:
             skipped[f"predict:{str(e)[:60]}"] += 1
             continue
-        y.append(1.0 if r["result"]["winner"] == 0 else 0.0)
-        kept += 1
-    if not kept:
-        return {"n": 0, "note": "moi ban ghi real deu bi bo", "skipped": dict(skipped), "unknown_items": dict(unk)}
-    p, y = np.array(p), np.array(y)
-    return {"n": kept, "ability": ability or "auto(hand Set17, generic Set18)", "items": items, "emblems": emblems,
-            "accuracy": round(float(np.mean((p > 0.5) == (y > 0.5))), 4),
-            "brier": round(float(np.mean((p - y) ** 2)), 4),
-            "skipped": dict(skipped), "unknown_items": dict(unk)}
+        y = 1.0 if r["result"]["winner"] == 0 else 0.0
+        rule = rule_credit(strength(r["a"], F._CONTENT[r["set"]]), strength(r["b"], F._CONTENT[r["set"]]), y)
+        rows.append((_game(r), y, p1, p2, rule, credit(p1, y), credit(p2, y)))
+    base = {"skipped": dict(skipped), "unknown_items": dict(unk), "n_min_games": MIN_GAMES}
+    if not rows:
+        return dict(base, fights=0, games=0, note="moi ban ghi real deu bi bo")
+    games = [x[0] for x in rows]
+    y = np.array([x[1] for x in rows]); p1 = np.array([x[2] for x in rows]); p2 = np.array([x[3] for x in rows])
+    rule = np.array([x[4] for x in rows]); c1 = np.array([x[5] for x in rows]); c2 = np.array([x[6] for x in rows])
+    rng = np.random.default_rng(0)
+    d_rule = c1 - rule
+    d_sec = c2 - c1
+    lo, hi = _boot_mean_diff(games, d_rule, rng)
+    lo2, hi2 = _boot_mean_diff(games, d_sec, rng)
+    G = len(set(games))
+    inconclusive = G < MIN_GAMES
+    def verdict(lo_, hi_):
+        if inconclusive:
+            return "inconclusive"
+        return "PASS" if lo_ > 0 else ("FAIL" if hi_ < 0 else "chua_ket_luan")
+    return dict(base, fights=len(rows), games=G, inconclusive=inconclusive,
+                n_seeds=n, seed0=seed0,
+                share_side_a_won=round(float(y.mean()), 4),
+                primary={"config": PRIMARY, "accuracy_credit": round(float(c1.mean()), 4),
+                         "brier": round(float(np.mean((p1 - y) ** 2)), 4)},
+                secondary={"config": SECONDARY, "accuracy_credit": round(float(c2.mean()), 4),
+                           "brier": round(float(np.mean((p2 - y) ** 2)), 4)},
+                strength_rule={"accuracy_credit": round(float(rule.mean()), 4)},
+                primary_minus_rule={"diff": round(float(d_rule.mean()), 4), "ci95": [round(lo, 4), round(hi, 4)],
+                                    "verdict": verdict(lo, hi)},
+                secondary_minus_primary={"diff": round(float(d_sec.mean()), 4), "ci95": [round(lo2, 4), round(hi2, 4)],
+                                         "verdict": verdict(lo2, hi2)},
+                note="PASS = CI95 cua (chinh - quy tac suc manh) nam tren 0 (muc 11.7)")
 
 
 if __name__ == "__main__":
-    ab = sys.argv[2] if len(sys.argv) > 2 else None
-    it = (sys.argv[3] if len(sys.argv) > 3 else "1") == "1"
-    nn = int(sys.argv[4]) if len(sys.argv) > 4 else 40
-    em = (sys.argv[5] if len(sys.argv) > 5 else "0") == "1"
-    print(json.dumps(score(sys.argv[1], ab, it, nn, em), ensure_ascii=False, indent=1))
+    n = int(sys.argv[2]) if len(sys.argv) > 2 else 20
+    s0 = int(sys.argv[3]) if len(sys.argv) > 3 else 0
+    print(json.dumps(score(sys.argv[1], n, s0), ensure_ascii=False, indent=1))

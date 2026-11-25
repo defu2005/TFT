@@ -1,0 +1,232 @@
+[
+ [
+  "TFT10_Augment_CrashTestDummies",
+  true,
+  "Gain @Numdummies@ Training Dummies. Combat start: Your Training Dummies launch themselves towards a group of e"
+ ],
+ [
+  "TFT10_Augment_LittleBuddies",
+  true,
+  "Your 4-cost and 5-cost champions gain @health@ Health and @AttackSpeed*100@% Attack Speed for every 1-cost and"
+ ],
+ [
+  "TFT11_Augment_TinyButDeadly",
+  false,
+  "Your team becomes small, gaining @AttackSpeed*100@% Attack Speed and Movement Speed."
+ ],
+ [
+  "TFT6_Augment_CyberneticImplants2",
+  true,
+  "Allies holding an item gain @HP@ Health and @AD*100@% Attack Damage. Gain a B.F. Sword."
+ ],
+ [
+  "TFT6_Augment_Distancing",
+  true,
+  "Your champions that start combat with no adjacent champions gain a @MaxHealthShield@% max Health shield for @S"
+ ],
+ [
+  "TFT6_Augment_Distancing2",
+  true,
+  "Your champions that start combat with no adjacent champions gain a @MaxHealthShield@% max Health shield for @S"
+ ],
+ [
+  "TFT6_Augment_Diversify1",
+  true,
+  "Gain @AD*100@% Attack Damage and @AP@% Ability Power for each non-unique Trait active across your team.Current"
+ ],
+ [
+  "TFT6_Augment_Electrocharge1",
+  true,
+  "Every @AttacksToProc@ attacks an ally takes, they deal @Damage1@-@Damage4@ (based on current Stage) magic dama"
+ ],
+ [
+  "TFT6_Augment_Electrocharge2",
+  true,
+  "Every @AttacksToProc@ attacks an ally takes, they deal @Damage1@-@Damage4@ (based on current Stage) magic dama"
+ ],
+ [
+  "TFT6_Augment_SecondWind1",
+  true,
+  "After @Delay@ seconds of combat, your team heals @HealPercent@% of their missing Health."
+ ],
+ [
+  "TFT6_Augment_SecondWind2",
+  true,
+  "After @Delay@ seconds of combat, your team heals @HealPercent@% of their missing Health."
+ ],
+ [
+  "TFT6_Augment_SunfireBoard",
+  true,
+  "Combat Start: Burn all enemies for @TotalBurnPercent@% of their max Health over @Duration@ seconds and reduce "
+ ],
+ [
+  "TFT7_Augment_BestFriends1",
+  true,
+  "Allies isolated in pairs gain @AS*100@% Attack Speed and @Armor@ Armor and Magic Resist at the start of combat"
+ ],
+ [
+  "TFT7_Augment_BestFriends2",
+  true,
+  "Allies isolated in pairs gain @AS*100@% Attack Speed and @Armor@ Armor and Magic Resist at the start of combat"
+ ],
+ [
+  "TFT7_Augment_CursedCrown",
+  true,
+  "Gain +@MaxArmySizeIncrease@ max team size and your team gains @DurabilityBonus*100@% Durability, but you take "
+ ],
+ [
+  "TFT9_Augment_Commander_Ascension",
+  true,
+  "After @Delay@ seconds of combat, your team gains @DamageAmp@% Damage Amp."
+ ],
+ [
+  "TFT9_Augment_Commander_PartialAscension",
+  true,
+  "After @Delay@ seconds of combat, your team gains @DamageAmp@% Damage Amp."
+ ],
+ [
+  "TFT9_Augment_HealingOrbsI",
+  true,
+  "When an enemy dies, the nearest ally is healed for @Heal@."
+ ],
+ [
+  "TFT9_Augment_TonsOfStats",
+  false,
+  "Your team gains @Health@ Health, @AttackDamage@% Attack Damage, @AbilityPower@% Ability Power, @Armor@ Armor, "
+ ],
+ [
+  "TFT9_Augment_YouHaveMyBow",
+  false,
+  "Gain a Recurve Bow. Your team gains @AS@% Attack Speed. "
+ ],
+ [
+  "TFT_Augment_ArcaneViktory",
+  true,
+  "After @FirstStunSeconds@ seconds of combat, stun the enemy team for @StunDuration@ seconds. Repeat this after "
+ ],
+ [
+  "TFT_Augment_AwakenedSoul",
+  true,
+  "Combat start: Your team gains @StatsPerSecond@% Attack Damage and Ability Power per second for @MaxStacks@ sec"
+ ],
+ [
+  "TFT_Augment_ClimbTheLadder1",
+  true,
+  "Each time an ally dies, allies that share at least one trait with them gain @BonusAP@% Ability Power, @BonusAD"
+ ],
+ [
+  "TFT_Augment_ClimbTheLadder2",
+  true,
+  "Each time an ally dies, allies that share at least one trait with them gain @BonusAP@% Ability Power, @BonusAD"
+ ],
+ [
+  "TFT_Augment_ClockworkAccelerator",
+  true,
+  "Your team gains @attackspeed*100@% Attack Speed every @frequency@ seconds in combat."
+ ],
+ [
+  "TFT_Augment_ComebackStory",
+  true,
+  "Your team gains @HPPerMissingHP@ Health and @ASPerMissingHP@% Attack Speed per missing player Health.@TFTUnitP"
+ ],
+ [
+  "TFT_Augment_Corrosion",
+  true,
+  "Enemies in the first two rows lose @ResistLoss@ Armor and Magic Resist every @Time@ seconds."
+ ],
+ [
+  "TFT_Augment_EarlyLearning",
+  false,
+  "Your team gains @NumADAP@% Attack Damage & Ability Power. This increases by @IncPerPlayerCombat@% after each p"
+ ],
+ [
+  "TFT_Augment_FuriousBlows",
+  true,
+  "Every @NumAttacks@th attack deals bonus true damage equal to @PercentAD*100@% Basic Attack Damage. "
+ ],
+ [
+  "TFT_Augment_HoldTheLine",
+  true,
+  "Allies in your back 2 rows gain @AP@% Ability Power and @AD*100@% Attack Damage for each ally that starts comb"
+ ],
+ [
+  "TFT_Augment_ItemSpiritVisage",
+  true,
+  "Gain a Spirit Visage. Every @Frequency@ seconds, Spirit Visage heals allies within @HexRadius@ hex for @Missin"
+ ],
+ [
+  "TFT_Augment_LateGameScaling",
+  true,
+  "Gain @XPGain@ XP at the start of player combat rounds. Your 5-cost champions gain @BonusHealth*100@% Health an"
+ ],
+ [
+  "TFT_Augment_LegionOfThrees",
+  true,
+  "Gain a random Emblem. Your 3-cost champions and all allies equipped with an Emblem gain @HealthAmount@ Health "
+ ],
+ [
+  "TFT_Augment_MarksMan",
+  true,
+  "Your team gains @BaselineAD*100@% Attack Damage. Every @ProcDelay@ seconds, they gain @ADPerProc*100@% more."
+ ],
+ [
+  "TFT_Augment_NoScoutNoPivot",
+  true,
+  "Champions that fight in player combat cannot be benched or sold. Your team gains @HPScale*100@% Health, and @A"
+ ],
+ [
+  "TFT_Augment_PlotArmor",
+  false,
+  "Your team gains @BaseResists@ Armor and Magic Resist. After falling below @HealthThreshold*100@% Health, incre"
+ ],
+ [
+  "TFT_Augment_SideEffects",
+  true,
+  "When an ally is healed, they deal @HealConversionPct*100@% of the healing to their target as magic damage. Eve"
+ ],
+ [
+  "TFT_Augment_SwordOverflow",
+  true,
+  "Gain @NumItems@ B.F. Swords. Your B.F. Swords grant +@BonusStat*100@% Attack Speed."
+ ],
+ [
+  "TFT_Augment_TheBaronsLair",
+  true,
+  "Gain a random Tank item. After @StartSeconds@ seconds of combat, your team gains @Stats@% bonus Attack Damage "
+ ],
+ [
+  "TFT_Augment_TheDarkinBlade",
+  true,
+  "Gain a Bloodthirster. Combat start: Allies holding Bloodthirsters lose @HPLossPercent*100@% Health but gain a "
+ ],
+ [
+  "TFT_Augment_Trifecta1",
+  true,
+  "Gain @numunits@ @Tier@-cost champions.Combat Start: @BuffedNumber@ random @Tier@-cost champions gain @Health@ "
+ ],
+ [
+  "TFT_Augment_Trifecta2",
+  true,
+  "Gain @numunits@ @Tier@-cost champions. Allies gain @TeamAttackSpeed*100@% Attack Speed. Combat Start: @BuffedN"
+ ],
+ [
+  "TFT_Augment_TwoTanky",
+  false,
+  "When you field exactly 2 copies of a champion, they both gain @BonusHealth@ Health. When one copy dies, the ot"
+ ],
+ [
+  "TFT_Augment_Unforgotten",
+  false,
+  "Every round, your team gain @Stats@% Attack Damage and Ability Power. Champions start with @StartingStacks@ st"
+ ],
+ [
+  "TFT_Augment_WandOverflow",
+  true,
+  "Gain @NumItems@ Needlessly Large Rods. Your Needlessly Large Rods grant +@BonusStat*100@% Attack Speed."
+ ],
+ [
+  "TFT_Augment_WeStickTogether",
+  true,
+  "Gain a random Emblem and a completed item anvil. Allies that share a trait with that Emblem gain @ASPercent@% "
+ ]
+]

@@ -28,8 +28,9 @@ Cập nhật: 2026-11-25. Mọi con số là của sim/engine, không phải tr�
 - Tên item phía client của Set 18 (`DA_*` hay `TFT_Item_*`) chưa biết. Bản ghi thật có thể dùng tên nào cũng được; tên lạ được đếm trong `unknown_items`.
 
 ## Augment
-- 594 augment Set 18. 70 cái trùng id với hook của Set 17 (`AUGMENT_REGISTRY`).
-- Trong mẫu sim: 1008/3616 slot augment (27,9%) chạy hook Set 17. Đọc mẫu cho thấy có khác biệt về cơ chế (mục 11.8). Chưa có công tắc để bỏ hook; đề xuất thêm `augment_hooks` cho Set 18.
+- 594 augment Set 18. 70 trùng id với hook của Set 17, và nội dung CDragon của 70 id này giống hệt Set 17 (mục 11.8 của `docs/model-plan.md`). Không có id nào bị loại.
+- Hook là xấp xỉ: 46 trên 70 có cơ chế theo thời gian, theo đòn hoặc sự kiện, và hook xấp xỉ nhiều trong số này (39 được đánh dấu "approx"), 7 không được đánh dấu.
+- Trong mẫu sim: 1008/3616 slot augment (27,9%) chạy hook. Con số này chỉ đúng với mẫu sim.
 
 ## Quy ước engine đã xác định
 - Trang bị: hiệu ứng riêng của item cộng thêm bonus generic theo số item (`_GENERIC_ITEM`). Cộng gộp là quy ước của engine; `fight.py` tái tạo đúng (mục 8).
@@ -40,6 +41,9 @@ Cập nhật: 2026-11-25. Mọi con số là của sim/engine, không phải tr�
 - Bộ dry-run cho đường thật: `tests/fixtures/set18_dryrun.jsonl` (8 bản ghi, source `dryrun-*`, mặc định bị bỏ).
 - Yêu cầu dữ liệu từ người dùng: `docs/agents/requests/20261125-sim-to-hud-state-fields.md`. Bản ghi là từng fight, không phải bảng cuối game.
 
+## Nguồn engine
+- `/root/work/tft_goat` ở commit `d5358e9402569f745bea81b61c5aed0500c57d66`, không nằm trong repo này. Container là tạm thời: cần cài lại engine từ commit này để tái lập.
+
 ## Lệnh tái lập
 Môi trường cần `PYTHONPATH` trỏ tới engine và `tft-sim/src`, và cần `httpx`:
 
@@ -49,7 +53,12 @@ export PYTHONPATH=/root/work/tft_goat/src:/home/user/TFT/tft-sim/src
 cd /home/user/TFT/tft-sim/scripts/combat
 python3 selftest.py
 python3 emblem_sensitivity.py ../../data/sim/pairs18_sample.jsonl.gz ../../results/fixed/combat/emblem_sensitivity.json
-python3 fidelity.py ../../tests/fixtures/set18_dryrun.jsonl generic 1 5 0
+python3 fidelity.py ../../tests/fixtures/set18_dryrun.jsonl 20 0
 ```
 
 Lưu ý: `emblem_sensitivity.py` đọc file `.jsonl`, không đọc `.gz`. Cần giải nén trước: `gunzip -k ../../data/sim/pairs18_sample.jsonl.gz`.
+
+Tái lập dữ liệu thô:
+- `pairs17_v2.jsonl` (Set 17, 67122 cặp): `python3 study17.py collect 288000 288100 pairs17_v2.jsonl` (từ `scripts/combat`, cùng `PYTHONPATH`). Ledger 288000–288099.
+- `pairs18_alias.jsonl` (6839 cặp Set 18 đã alias): KHÔNG có trong repo. Script sinh nằm trong thư mục scratchpad của phiên, chưa commit. Cần viết lại trước khi tái lập đầy đủ. Mẫu `pairs18_sample.jsonl.gz` (1000 cặp) đã commit để tái lập các số trong mục 11.5 và 11.9.
+- Side bias (mục 11.9): 300 cặp mẫu, bootstrap theo lobby, kết quả: trung bình p(a,b)+p(b,a)−1 = +0,0023, CI95 [−0,0037; +0,0079]. CI chứa 0, nên không bắt buộc chấm cả hai hướng.
