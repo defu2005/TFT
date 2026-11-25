@@ -875,7 +875,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P4 (derived); flagged scouting runs at 460-462 s; owner not established, so no panel is attached",
+    "attempt": "opponent is P4; flagged scouting runs at 460-462 s; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -1090,8 +1090,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 526.1 to 597.9 s. Scan runs flagged at 542 to 546 s. Owner not established for these runs, so no panel is attached to this round.",
-    "reason": "owner not established for the flagged scouting runs in this round"
+    "attempt": "opponent is P7; flagged scouting runs at 542-546 s; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -1733,8 +1733,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 700.7 to 759.3 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
-    "reason": "no scouting-window frame at 2 s cadence in this round"
+    "attempt": "opponent is P2; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -1994,7 +1994,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P6 (derived); flagged scouting runs at 778-778 s; owner not established, so no panel is attached",
+    "attempt": "opponent is P6; flagged scouting runs at 778-778 s; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -2487,8 +2487,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 881.1 to 956.3 s. Scan runs flagged at 888 to 890 s. Owner not established for these runs, so no panel is attached to this round.",
-    "reason": "owner not established for the flagged scouting runs in this round"
+    "attempt": "opponent is P3; flagged scouting runs at 888-890 s; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -3528,8 +3528,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 1165.4 to 1236.1 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
-    "reason": "no scouting-window frame at 2 s cadence in this round"
+    "attempt": "opponent is P5; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -3797,8 +3797,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 1236.1 to 1317.1 s. Scan runs flagged at 1260 to 1260 s. Owner not established for these runs, so no panel is attached to this round.",
-    "reason": "owner not established for the flagged scouting runs in this round"
+    "attempt": "opponent is P2; flagged scouting runs at 1260-1260 s; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -4596,7 +4596,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P4 (derived); no flagged scouting run in this round; owner not established, so no panel is attached",
+    "attempt": "opponent is P4; no flagged scouting run in this round; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -5257,7 +5257,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P5 (derived); flagged scouting runs at 1716-1716 s; owner not established, so no panel is attached",
+    "attempt": "opponent is P5; flagged scouting runs at 1716-1716 s; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -5504,8 +5504,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 1722 to 1754 s. Runs 1724 and 1730 s are foreign panels with owner P2 (shared rows with the 2406 s P2 panel). The 4-6 opponent is P8 by nameplate, so the P2 panels are not attached to this round.",
-    "reason": "owner P2 does not match the round opponent P8, so no panel is attached"
+    "attempt": "opponent is P8; flagged scouting runs at 1724-1724 s, 1730-1730 s; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -6091,8 +6091,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 1829.7 to 1907.9 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
-    "reason": "no scouting-window frame at 2 s cadence in this round"
+    "attempt": "opponent is P2; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -6399,7 +6399,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P3 (derived); flagged scouting runs at 1972-1984 s; owner not established, so no panel is attached",
+    "attempt": "opponent is P3; flagged scouting runs at 1972-1984 s; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -6700,8 +6700,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 2000 to 2094 s. The only scan run (2060 to 2076 s) is the 5-4 carousel showing our own panel; no foreign panel was seen in this round.",
-    "reason": "no foreign scouting panel in this round"
+    "attempt": "opponent is P7; flagged scouting runs at 2060-2076 s; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -7182,7 +7182,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P4 (derived); no flagged scouting run in this round; owner not established, so no panel is attached",
+    "attempt": "opponent is P4; no flagged scouting run in this round; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -7476,8 +7476,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified; no flagged scouting run in this round; no sprites tied to a panel",
-    "reason": "opponent not identified, so no panel can be attached"
+    "attempt": "opponent not fixed; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -7981,8 +7981,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 2269.1 to 2335.2 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
-    "reason": "no scouting-window frame at 2 s cadence in this round"
+    "attempt": "opponent is P4; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -8266,8 +8266,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified; no flagged scouting run in this round; no sprites tied to a panel",
-    "reason": "opponent not identified, so no panel can be attached"
+    "attempt": "opponent not fixed; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -8521,10 +8521,24 @@
     "frame_s": 2404
    },
    "opponent_board": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "Scouted P2 panel at 2406 to 2424 s, marker 5+. Every row name exists in set18 traits with champions (Attuned 1, Emerald Aspect 1, Avatar 10, Vanguard 6, Coven 6, Invoker 5, Lunar 4, Defender 6, Fae 5). The 1/1 rows pin Alune (Attuned) and Taric (Emerald Aspect). With both pinned and hidden at most 5: N 3 to 9 gives zero boards, which covers the owner badge of 9. N 10 gives many boards, above the badge.",
-    "reason": "no board fits N up to the owner badge of 9 with the pinned champions, so the panel is inconsistent with P2 at this badge"
+    "value": {
+     "panel": {
+      "Attuned": 1,
+      "Avatar": 1,
+      "Emerald Aspect": 1,
+      "Vanguard": 4,
+      "Coven": 3,
+      "Invoker": 2,
+      "Lunar": 2,
+      "Defender": 2,
+      "Fae": 2
+     },
+     "panel_size": 18,
+     "units": null,
+     "solver": "panel read; unit list not solved (no duplicate-tested board)"
+    },
+    "tag": "derived",
+    "basis": "foreign panel at 2406 s; P2 is the only player alive from 6-3, so P2 is the owner by the alive rule"
    },
    "hexes": {
     "value": null,
@@ -9010,10 +9024,24 @@
     "frame_s": 2488
    },
    "opponent_board": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "Scouted P2 panel B (2504 to 2508 s for 6-5; 2572 s for 6-6), marker 6+. Pinned champions Alune (Attuned), Taric (Emerald Aspect), Maokai (Old Growth). Pinned branching solver with hidden at most 6: N 3 to 9 gives zero boards. P2 badge reads 10 at these frames: N 10 gives 50 boards (cap reached), so the board is not unique.",
-    "reason": "the pinned search at N 10 hits the 50-board cap, so no unique board is recorded"
+    "value": {
+     "panel": {
+      "Attuned": 1,
+      "Avatar": 1,
+      "Emerald Aspect": 1,
+      "Old Growth": 1,
+      "Vanguard": 4,
+      "Coven": 3,
+      "Invoker": 2,
+      "Lunar": 2,
+      "Defender": 2
+     },
+     "panel_size": 17,
+     "units": null,
+     "solver": "panel read; pinned solver reached the 50-solution cap at N 10, so no unique board"
+    },
+    "tag": "derived",
+    "basis": "foreign panel at 2504 s; P2 is the only player alive from 6-3, so P2 is the owner by the alive rule"
    },
    "hexes": {
     "value": null,
@@ -9311,10 +9339,24 @@
     "frame_s": 2554
    },
    "opponent_board": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "Scouted P2 panel B (2504 to 2508 s for 6-5; 2572 s for 6-6), marker 6+. Pinned champions Alune (Attuned), Taric (Emerald Aspect), Maokai (Old Growth). Pinned branching solver with hidden at most 6: N 3 to 9 gives zero boards. P2 badge reads 10 at these frames: N 10 gives 50 boards (cap reached), so the board is not unique.",
-    "reason": "the pinned search at N 10 hits the 50-board cap, so no unique board is recorded"
+    "value": {
+     "panel": {
+      "Attuned": 1,
+      "Avatar": 1,
+      "Emerald Aspect": 1,
+      "Old Growth": 1,
+      "Vanguard": 4,
+      "Coven": 3,
+      "Invoker": 2,
+      "Lunar": 2,
+      "Defender": 2
+     },
+     "panel_size": 17,
+     "units": null,
+     "solver": "panel read; pinned solver reached the 50-solution cap at N 10, so no unique board"
+    },
+    "tag": "derived",
+    "basis": "foreign panel at 2572 s; P2 is the only player alive from 6-3, so P2 is the owner by the alive rule"
    },
    "hexes": {
     "value": null,
@@ -9861,7 +9903,7 @@
   },
   "frame_s": "t = 362 + (index - 1) * 2",
   "note": "run index i maps to t = 362 + (i-1)*2; checked on the 3-1 window (index 264 = 888 s)",
-  "owner_check": "888 s rail crop (scouting run 264): a yellow pointer sits beside the second row, and a hover card covers the third row, which marks the mouse position, not the viewed owner. The scouted board has no owner nameplate. Owners stay unresolved; no panel is attached on this evidence."
+  "owner_check": "Owner cue at 2504 s and 2572 s (P2 is the only other player alive): the rail shows the streamer and the P2 row, and no mark or tactician figure on the board identifies the owner beyond the alive rule. Panels at 6-3, 6-5 and 6-6 are attached to P2 by the alive rule. Other flagged runs stay unattached: no cue was validated for them."
  },
  "scouted_panels": [
   {
