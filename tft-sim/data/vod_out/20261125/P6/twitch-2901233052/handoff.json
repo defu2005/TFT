@@ -1,0 +1,37 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2901233052",
+  "slot": "P6",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      0,
+      3580
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      3580,
+      5670
+    ]
+  ],
+  "game_ids": [
+    "twitch-2901233052-g60",
+    "twitch-2901233052-g2000"
+  ],
+  "counts": {
+    "games": 2,
+    "fights": 10,
+    "others": 10
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 10
+    }
+  },
+  "needs_review": 10,
+  "commit": null,
+  "remaining": "tiếp ranked g3 ~3700–5600 tới 5670"
+}
