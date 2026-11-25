@@ -449,24 +449,33 @@ Lưu ý khi đọc: flip nhỏ có thể do trait chưa có ánh xạ stat (xem 
 - Bản ghi trận thật: vẫn chưa có. Không có converter.
 
 ### 11.15 Tóm tắt những gì cờ `traits_table` làm (cập nhật 2026-11-25, bổ sung trước dữ liệu)
+- Cờ `item_alias` (SECONDARY, thêm 2026-11-25, mục 11.16): đổi id item `DA_*` sang `TFT_Item_*` có chỉ số và hook. PRIMARY không đổi.
 - Cờ `traits_table` (SECONDARY) áp: (1) `TRAIT_TABLE` gồm 10 khóa, 7 trait (Executioner, Brawler, Juggernaut, Defender, Rapidfire, Hunter, Spellweaver); (2) bỏ 4 khóa `SKIP18_TABLE`; (3) đổi thang AP cho khóa phần trăm (`_stat_table`).
 - PRIMARY không có gì trong số này (`traits_table=False`, không đổi `_SET18_BAD_KEYS`).
 - `fidelity.score` báo thêm `secondary_minus_rule` (SECONDARY − luật sức mạnh) kèm CI. Đây là bổ sung trước dữ liệu thật: headline vẫn là `primary_minus_rule`, nhưng SECONDARY đã gồm các sửa, nên cũng cần đọc `secondary_minus_rule`. Không dùng để chọn cấu hình sau khi có dữ liệu.
 
 
-### 11.16 Probe trang bị Set 18 (sửa 2026-11-25 sau kiểm tra của advisor)
-Bản đầu của mục này kết luận "CDragon thiếu chỉ số item". Kết luận đó SAI, và bản này thay thế nó.
-- Công cụ: `scripts/combat/item_probe.py` -> `results/fixed/combat/item_probe.json`. 20 item phổ biến nhất trong mẫu sim-sinh (không tính emblem) + 8 thành phần: 28 item. Champion cố định `DA_Krug18`. Bản đầu dùng nhầm `TFT_Krug` (AD 110) nên số AD 16.5 sai; đúng là 8.25. Alias lấy từ `data/set18_names.json` (trường `twin_tft_item`), không đoán theo tên hiển thị (đoán theo tên đã cho cặp sai, ví dụ DA_SteadfastHeart -> TFT_Item_NightHarvester).
-- Đo (số liệu, không suy diễn):
-  1. Đường đi như sim (`items=1, item_apis=(DA_x,)`): mọi item cho cùng chênh lệch: max_hp +150, armor +15, MR +15, AD +8.25, AP +15. Đây là `_GENERIC_ITEM`, không có chỉ số riêng nào được áp.
-  2. Đối chứng: `items=1, item_apis=()` cho đúng chênh lệch trên; `items=0, item_apis=(DA_x,)` cho 0. Bonus chung đến từ bộ đếm `items`, không từ item.
-  3. 18/18 item probe có alias `TFT_Item_*` đều có `effects` khác rỗng. Ví dụ DA_HandOfJustice -> TFT_Item_UnstableConcoction (CritChance 20, AP 15, ...); DA_GuinsoosRageblade -> TFT_Item_GuinsoosRageblade (AP 10, AS 10, ...); DA_Bloodthirster -> TFT_Item_Bloodthirster (LifeSteal 20, MR 20, ...). Khi đưa id `TFT_*` vào `build_unit`, chênh lệch khác (Guinsoo: AP +25, AS +6).
-  4. `content.items['DA_*'].effects` rỗng với mọi item trong mẫu. Nên chỉ số riêng bị MẤT khi content build không đi theo alias. Bản snapshot CDragon cho DA_* cũng rỗng (`effects`, `desc`); dữ liệu nằm ở bản `TFT_Item_*`.
-- Phạm vi trên mẫu sim-sinh (`data/sim/pairs18_sample.jsonl.gz`): 1,002 ô item, 39 item duy nhất. Mọi ô đều là DA_* không có chỉ số trong content, 100% ô. Đây là phạm vi, không phải độ lớn sai số: độ lớn ảnh hưởng lên fidelity CHƯA ĐO. 37/39 item trong mẫu có alias trong `names18`, cả 37 alias đều có effects. Hai item không alias: DA_TacticiansShield, DA_TacticiansCrown.
-- Thành phần `DA_Component_*` (10 item probe): không có alias trong `names18`, và không có trong mẫu (n=0). Không ảnh hưởng số liệu trên mẫu. Chưa xác định id đúng cho chúng.
-- Hai lỗi riêng biệt:
-  (a) Mất chỉ số riêng: content build không đi theo alias, nên `DA_*` không có chỉ số riêng.
-  (b) Bonus chung cộng cho MỌI item: `fight.py` dòng 292-293 truyền `items=len(its)`; `simulate.py:321` truyền `generic_items=bu.items`. Mọi item có tên vẫn nhận `_GENERIC_ITEM` đầy đủ. Nếu sửa (a) mà giữ (b), chỉ số sẽ bị cộng trùng (chỉ số riêng + bonus chung).
-- Khác với lỗi AP (11.13, 11.15): lỗi AP ảnh hưởng vài khóa trait; lỗi item ảnh hưởng mọi item có chỉ số. Phạm vi lớn hơn, độ lớn chưa đo.
-- Chưa sửa gì. PRIMARY giữ nguyên; content và engine không đổi.
-- Cần quyết định trước khi sửa: (i) `_GENERIC_ITEM` áp cho item thật hay chỉ cho item trừu tượng (bộ đếm env)? (ii) id đúng cho 10 `DA_Component_*`.
+
+### 11.16 Probe trang bị Set 18 (sửa 2026-11-25 sau hai vòng kiểm tra của advisor)
+Bản đầu của mục này kết luận "CDragon thiếu chỉ số item". Kết luận đó SAI. Bản này thay thế nó.
+- Công cụ: `scripts/combat/item_probe.py` -> `results/fixed/combat/item_probe.json`. 20 item phổ biến nhất trong mẫu sim-sinh (không tính emblem) + 8 thành phần: 28 item. Champion `DA_Krug18` (bản đầu dùng nhầm `TFT_Krug`, AD 110, nên số AD 16.5 sai; đúng là 8.25). Alias lấy từ `twin_tft_item`, không đoán theo tên.
+- Đo:
+  1. Đường đi như sim (`items=1, item_apis=(DA_x,)`): mọi item cho cùng chênh lệch: max_hp +150, armor +15, MR +15, AD +8.25, AP +15. Đây là `_GENERIC_ITEM`, không có chỉ số riêng nào.
+  2. Đối chứng: `items=1, item_apis=()` cho đúng chênh lệch trên; `items=0, item_apis=(DA_x,)` cho 0.
+  3. 18/18 item probe có alias `TFT_Item_*` đều có `effects` khác rỗng. Ví dụ DA_HandOfJustice -> TFT_Item_UnstableConcoction (CritChance 20); DA_GuinsoosRageblade -> TFT_Item_GuinsoosRageblade (AP 10, AS 10, mỗi tầng +7 AS). Đưa id `TFT_*` vào `build_unit`: crit +0.2 (HoJ), AP +25 và AS +6 (Guinsoo) so với chỉ bonus chung.
+  4. Hook engine: các bảng `ITEM_*` (`engine/items_set17`) chỉ có khóa `TFT_Item_*` (và vài `TFT17_*`). Với 39 id mẫu, 0 id `DA_*` khớp hook; 27 id có alias khớp hook, chiếm 740/1002 ô item. Vậy có MẤT THỨ BA: hook không bao giờ chạy với id `DA_*`.
+  5. `content.items['DA_*'].effects` rỗng; bản snapshot CDragon cho DA_* cũng rỗng. Chỉ số nằm ở `TFT_Item_*`.
+- Phạm vi (mẫu sim-sinh, `data/sim/pairs18_sample.jsonl.gz`): 1,002 ô item, 39 item duy nhất; 37 item có alias, cả 37 đều có effects. Hai item không alias: DA_TacticiansShield, DA_TacticiansCrown. Đây là phạm vi; độ lớn ảnh hưởng lên fidelity CHƯA ĐO.
+- Thành phần `DA_Component_*` (10 item probe): không có alias trong names18 và không có trong mẫu (n=0). Không ảnh hưởng số liệu mẫu.
+- Hai vấn đề về cộng dồn và một vấn đề về trạng thái toàn cục:
+  (a) Bonus chung cộng cho mọi item có tên: `fight.py` `boards_of` truyền `items=len(its)`; `simulate.py:321` truyền `generic_items=bu.items`. Đây là QUY ƯỚC của engine: `tft_goat/env/actions.py::_equip` tăng `items` cho item thật (`items += 1` và thêm vào `item_apis`). Nên bonus chung cộng thêm cho item thật là hành vi có sẵn của engine, không phải lỗi của wrapper. Ghi nhận và giữ. Mâu thuẫn với chú thích `_GENERIC_ITEM` ("items abstraits (compteur env)") cần làm rõ với tác giả engine; chưa quyết.
+  (b) Trạng thái toàn cục: `tft_sim/item_alias.py::build_set18_aliased` và `build_set18_records` ghi hook `DA_*` vào bảng `ITEM_*` của engine (toàn cục). Selftest và `fight_cli.py` gọi chúng, nên tiến trình đó có hook DA_* (đã kiểm: selftest thấy khóa DA_* trong bảng sau khi gọi). Fidelity không gọi (chỉ import), nên điểm PRIMARY/SECONDARY không bị ảnh hưởng bởi lệnh này; nhưng mọi kết quả đo trong cùng tiến trình sau lệnh đó là không sạch. Cần thay bằng remap id (dưới đây) rồi bỏ đăng ký toàn cục.
+- Sửa đã làm (2026-11-25, theo advisor): cờ `item_alias` (chỉ Set 18, mặc định False):
+  - `names18.item_alias_map()` đọc cặp `twin_tft_item`.
+  - `fight.boards_of(record, items, item_alias)` thay id `DA_*` bằng `TFT_Item_*` khi có bản đồ; số lượng `items` không đổi.
+  - `predict_win(..., item_alias=False)`: chỉ dùng bản đồ có đích trong `content.items`.
+  - `fidelity.PRIMARY` có `item_alias=False` (đóng băng, không đổi). `fidelity.SECONDARY` có `item_alias=True` (cùng với `emblems`, `traits_table`).
+  - Cách này sửa cả hai: chỉ số (content) và hook (khóa TFT_*), không đăng ký toàn cục.
+  - Selftest: `crit TFT +0.2, DA 0.0`; `boards` ra `TFT_Item_GuinsoosRageblade`; `predict_win` chạy với cờ.
+- Chưa chạy lại điểm (theo chỉ dẫn: không rerun). Mọi con số SECONDARY cũ (kể cả dryrun) không còn áp dụng cho cấu hình mới; phải ghi rõ khi báo cáo.
+- Việc còn lại (không làm trong bước này): (i) thay `build_set18_*` để không đăng ký hook toàn cục; (ii) id đúng của 10 `DA_Component_*`; (iii) làm rõ chú thích `_GENERIC_ITEM` với tác giả engine.

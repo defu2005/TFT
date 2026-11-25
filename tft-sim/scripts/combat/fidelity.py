@@ -31,8 +31,8 @@ set_content(18, _C18)  # Set 18 dung noi dung da alias (xem combat-public-data.m
 SUPPORTED_SETS = (18,)  # muc 11.7 chi ap dung cho Set 18
 MIN_GAMES = 30
 BOOT = 2000
-PRIMARY = dict(ability="generic", items=True, augments=True, traits=True, emblems=False, traits_table=False)
-SECONDARY = dict(PRIMARY, emblems=True, traits_table=True)  # muc 11.9: emblem + bang trait
+PRIMARY = dict(ability="generic", items=True, augments=True, traits=True, emblems=False, traits_table=False, item_alias=False)
+SECONDARY = dict(PRIMARY, emblems=True, traits_table=True, item_alias=True)  # muc 11.9: emblem + bang trait; 11.16: alias item
 
 
 def strength(side: dict, content) -> float:
@@ -128,7 +128,8 @@ def _game(r) -> str:
 
 def _cfg_p(rec, cfg, n, seed0):
     return predict_win(rec, n, cfg["ability"], cfg["items"], seed0, cfg["augments"], cfg["traits"],
-                       False, cfg["emblems"], cfg.get("traits_table", False))["p_a"]
+                       False, cfg["emblems"], cfg.get("traits_table", False),
+                       cfg.get("item_alias", False))["p_a"]
 
 
 def _boot_mean_diff(games, per_fight_diff, rng):

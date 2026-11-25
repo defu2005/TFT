@@ -282,13 +282,16 @@ def fight_context(ability: str = "hand", positions=None, content=None, traits: b
         _STATE.update(old)
 
 
-def boards_of(record: dict, items: bool = True):
-    """(board_a, board_b, positions, augments_a, augments_b) cho run_combat."""
+def boards_of(record: dict, items: bool = True, item_alias: dict | None = None):
+    """(board_a, board_b, positions, augments_a, augments_b) cho run_combat.
+    item_alias: {DA_*: TFT_Item_*}; khi co, thay id item bang id co chi so (noi dung + hook engine)."""
     sides, pos, augs = [], [], []
     for k in ("a", "b"):
         units, plist = [], []
         for u in record[k]["units"]:
             its = list(u.get("items", [])) if items else []
+            if item_alias:
+                its = [item_alias.get(a, a) for a in its]
             units.append(BoardUnit(u["api"], int(u["star"]), on_board=True,
                                    items=len(its), item_apis=tuple(its)))
             plist.append(u.get("pos"))
@@ -377,15 +380,22 @@ def _set18_traits(units, content, bonus_units: int = 0, *, emblems: bool = False
 
 def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = True, seed0: int = 0,
                 augments: bool = True, traits: bool = True, novars: bool = False, emblems: bool = False,
-                traits_table: bool = False) -> dict:
-    """Xac suat A thang tu n lan chay engine (RNG seed0..seed0+n-1). augments=False: bo augment."""
+                traits_table: bool = False, item_alias: bool = False) -> dict:
+    """Xac suat A thang tu n lan chay engine (RNG seed0..seed0+n-1). augments=False: bo augment.
+    item_alias=True (chi Set 18): doi id DA_* sang alias TFT_Item_* co chi so (muc 11.16)."""
     if record["set"] == 18 and ability == "hand":
         raise ValueError("Set 18 chua co logic ability viet tay: dung 'generic' hoac 'none'")
     cov = coverage(record)
     for k in ("a", "b"):
         if cov[k]["unknown_champions"]:
             raise ValueError(f"{k}: tuong khong co trong noi dung set {record['set']}: {cov[k]['unknown_champions']}")
-    ba, bb, pos, aa, ab = boards_of(record, items)
+    if item_alias and record["set"] != 18:
+        raise ValueError("item_alias chi cho Set 18")
+    alias = None
+    if item_alias:
+        from tft_sim.names18 import item_alias_map
+        alias = {a: t for a, t in item_alias_map().items() if t in _CONTENT[record["set"]].items}
+    ba, bb, pos, aa, ab = boards_of(record, items, alias)
     if not augments:
         aa, ab = (), ()
     content = _CONTENT[record["set"]]
@@ -408,4 +418,5 @@ def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = 
         TE.attrs_for = _orig_attrs_for
         S.apply_team_traits = _orig_apply_team_traits
     return {"p_a": wins[0] / n, "a": wins[0], "b": wins[1], "draw": wins[2], "n": n,
-            "ability": ability, "items": items, "emblems": emblems, "traits_table": traits_table, "coverage": cov}
+            "ability": ability, "items": items, "emblems": emblems, "traits_table": traits_table,
+            "item_alias": item_alias, "coverage": cov}

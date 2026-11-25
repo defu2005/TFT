@@ -386,4 +386,28 @@ for _em in (False, True):
         print("vanguard max_hp table on vs no-trait baseline emblems", _em, [round(x[0], 3) for x in on], [round(b, 3) for b in base])
         # Vanguard khong co muc nao trong bang; MaxHealthShield bi bo -> HP bang nen (khong them 18% khien)
         ok &= all(abs(x[0] - b) < 1e-6 for x, b in zip(on, base))
+# --- item alias (muc 11.16): DA_* -> TFT_Item_* ---
+from tft_goat.engine import items_set17 as _IS
+from tft_sim.names18 import item_alias_map as _iam
+_al = _iam()
+_content18 = F._CONTENT[18]
+ok &= _al.get("DA_HandOfJustice") == "TFT_Item_UnstableConcoction"
+_b0 = S9._build_team([BU("DA_Krug18", 1, on_board=True)], 0, _content18, 0)[0]
+def _crit(api):
+    u = S9._build_team([BU("DA_Krug18", 1, on_board=True, items=1, item_apis=(api,))], 0, _content18, 0)[0]
+    return round(u.crit_chance - _b0.crit_chance, 6)
+ok &= abs(_crit("TFT_Item_UnstableConcoction") - 0.2) < 1e-6   # ten chi so CritChance 20 -> +0.2
+ok &= abs(_crit("DA_HandOfJustice")) < 1e-6                     # DA rong: khong co chi so rieng
+ok &= "TFT_Item_GuinsoosRageblade" in _IS.ITEM_ON_ATTACK
+# Luu y: build_set18_* ben tren dang ky hook DA_* toan cuc (tft_sim/item_alias.py); khong kiem tra o day.
+_rec = {"set": 18, "a": {"units": [{"api": "DA_Krug18", "star": 1, "items": ["DA_GuinsoosRageblade"]}], "augments": []},
+        "b": {"units": [{"api": "DA_Krug18", "star": 1, "items": []}], "augments": []}}
+_ba, _bb, _, _, _ = F.boards_of(_rec, True, _al)
+ok &= _ba[0].item_apis == ("TFT_Item_GuinsoosRageblade",) and _ba[0].items == 1
+_ba0, _, _, _, _ = F.boards_of(_rec, True, None)
+ok &= _ba0[0].item_apis == ("DA_GuinsoosRageblade",)
+_r = F.predict_win(_rec, n=2, ability="generic", emblems=True, traits_table=True, item_alias=True)
+ok &= _r["item_alias"] is True and _r["n"] == 2
+print("item alias: crit TFT", _crit("TFT_Item_UnstableConcoction"), "DA", _crit("DA_HandOfJustice"),
+      "boards", _ba[0].item_apis, "predict ok", _r["n"])
 print("SELFTEST", "PASS" if ok else "FAIL")

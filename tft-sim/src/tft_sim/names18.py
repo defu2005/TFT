@@ -80,3 +80,11 @@ def ambiguous_report() -> dict[str, dict[str, list[str]]]:
     """Moi kind: cac ten hien thi tro toi nhieu apiName."""
     return {kind: {n: apis for n, apis in idx.items() if len(apis) > 1}
             for kind, idx in _idx().items()}
+
+
+def item_alias_map(path: Path = NAMES) -> dict[str, str]:
+    """{apiName DA_*: apiName TFT_Item_* co chi so}: cap twin_tft_item trong data/set18_names.json.
+    Khong gop: day la ban do ID, dung de dua item vao dung khoa content va hook engine."""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {r["api"]: r["twin_tft_item"] for r in data["items"] if r.get("twin_tft_item")}
+
