@@ -1,0 +1,57 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2895200738",
+  "slot": "P1",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      1080,
+      2760
+    ],
+    [
+      3000,
+      4860
+    ],
+    [
+      4920,
+      6180
+    ],
+    [
+      6240,
+      8520
+    ],
+    [
+      9000,
+      10800
+    ],
+    [
+      11160,
+      13140
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2895200738-g1080",
+    "twitch-2895200738-g3000",
+    "twitch-2895200738-g4920",
+    "twitch-2895200738-g6240",
+    "twitch-2895200738-g9000",
+    "twitch-2895200738-g11160"
+  ],
+  "counts": {
+    "games": 6,
+    "fights": 112,
+    "others": 112
+  },
+  "validator": {
+    "ok": 95,
+    "skipped": {
+      "winner_null": 17
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "Scrim/tourney/watch-party segments skipped.",
+  "notes": "Patch grind ranked densify; BoxBox Bash draft tail skipped."
+}
