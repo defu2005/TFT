@@ -32,6 +32,6 @@
     }
   },
   "needs_review": 16,
-  "commit": null,
+  "commit": "6cd9096d",
   "remaining": "densify-full g200+g2800 (24f). Continue games from ~5200+. P8-primary."
 }
