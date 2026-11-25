@@ -34,5 +34,12 @@
     "fights": 46,
     "others": 0
   },
-  "rem_notes": "After ~7800 LoL queue then MapleStory \u2014 no more Set18 TFT. Tiny inter-game gaps not new games. Late-extend densify +10f."
+  "rem_notes": "After ~7800 LoL queue then MapleStory — no more Set18 TFT. Tiny inter-game gaps not new games. Late-extend densify +10f.",
+  "skipped_ranges_s": [
+    [
+      7800,
+      null
+    ]
+  ],
+  "skip_notes": "After ~7800: LoL/Maple — not TFT densify"
 }
