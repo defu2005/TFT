@@ -9348,7 +9348,7 @@
    "300": 34.9
   },
   "threshold": "MAD < 8 flagged as scouting-like",
-  "status": "candidate runs only; owner and panel not yet confirmed for any run",
+  "status": "flagged candidate runs; panels read per sheet; owners not yet confirmed",
   "runs_by_round_candidate": {
    "2-1": [
     {
@@ -9736,8 +9736,7 @@
    ]
   },
   "frame_s": "t = 362 + (index - 1) * 2",
-  "note": "indices corrected: run index i maps to t = 362 + (i-1)*2 (earlier version used indices as seconds and is void). See scan_runs_corrected.json.",
-  "finding": "The template scan is not specific. Frames at 1282 s (3-6) and 1448 s (4-2) show our own trait panel, not a scouted one, so a template match alone does not identify a scouting window. A scouting window needs its left panel to differ from our own panel for that round."
+  "note": "run index i maps to t = 362 + (i-1)*2; checked on the 3-1 window (index 264 = 888 s)"
  },
  "scouted_panels": [
   {
