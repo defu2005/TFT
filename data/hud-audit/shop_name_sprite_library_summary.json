@@ -57,5 +57,13 @@
   "Sett": 23
  },
  "caveat": "Shop cards show card art, not the 3D board model. Matching board models to these crops is not validated, so board/bench identities remain unresolved.",
- "next": "validate a board-vs-shop match on a unit confirmed by info card (Ezreal, Zyra, Sett) before using the library for board or bench."
+ "next": "validate a board-vs-shop match on a unit confirmed by info card (Ezreal, Zyra, Sett) before using the library for board or bench.",
+ "validation": {
+  "unit": "Ezreal",
+  "board_frame_s": 2180.3,
+  "board_crop": "hovered unit with blue selection ring, about (815,430) at 1280x720; card at top right reads Ezreal, Elderwood, Executioner, 2 stars",
+  "shop_refs": "4 Ezreal shop cards from lib/Ezreal (at 1800, 1840, 1992, 2096 s)",
+  "result": "visually consistent (blonde hair, green armour, same pose family). One visual check only; no measured match rate.",
+  "status": "board naming still not automated and not validated across units"
+ }
 }
