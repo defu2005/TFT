@@ -7,30 +7,31 @@
   "covered_ranges_s": [
     [
       350,
-      1000
+      2500
     ]
   ],
   "remaining_ranges_s": [
     [
-      1000,
+      2500,
       32500
     ]
   ],
   "game_ids": [
-    "twitch-2899798909-g350"
+    "twitch-2899798909-g350",
+    "twitch-2899798909-g2500"
   ],
   "counts": {
-    "games": 1,
-    "fights": 2,
+    "games": 2,
+    "fights": 4,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 2
+      "winner_null": 4
     }
   },
-  "needs_review": 2,
-  "commit": "694339d",
-  "remaining": "P8-primary owns twitch-2899798909. RANKED confirmed. Continue from ~1000s. P2: other unclaimed P8 VODs only."
+  "needs_review": 4,
+  "commit": null,
+  "remaining": "P8-primary owns VOD. Densified g350 to 5-7; g2 started @2500 after ranked queue. Continue from 2500s. P2: other VODs only."
 }
