@@ -3,7 +3,7 @@
   "vod_id": "twitch-2893101179",
   "slot": "P9",
   "role": "primary",
-  "status": "done",
+  "status": "working",
   "covered_ranges_s": [
     [
       400,
@@ -31,7 +31,7 @@
   ],
   "counts": {
     "games": 4,
-    "fights": 7,
+    "fights": 19,
     "others": 0
   },
   "validator": {
@@ -42,5 +42,5 @@
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "VOD cuối P9 manifest xong; cần expand thêm VOD kurumx ranked"
+  "remaining": "densify: g400 ~14 fights (late boards empty pending OCR); densify g2500/g7000/g14000 next"
 }
