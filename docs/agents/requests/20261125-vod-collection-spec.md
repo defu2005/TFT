@@ -21,7 +21,7 @@ Lưu ý về các mục chưa xác nhận được: đánh dấu rõ `PROVISIONA
 |---|---|---|
 | `schema` | `"fight-v1"` | |
 | `label` | `"real"` | file có nhãn khác `real` làm `fidelity.score` dừng toàn bộ file |
-| `source` | `"<game_id>:<stage_round>"` | ví dụ `vod-07-g2:3-2`. Phần trước `:` là game, dùng để gom cụm |
+| `source` | `"<game_id>:<stage_round>"` | ví dụ `twitch-900000001-g3612:3-2`. Phần trước `:` là `game_id` dạng `<vod_id>-g<giây>`. Ingest viết lại thành `<lobby_id>:<stage_round>` trước khi chấm (mục 10.2) |
 | `set` | `18` | |
 | `a.units[i].api`, `star` | bắt buộc | `api` phải là apiName có trong danh mục tướng Set 18, ví dụ `DA_Krug18` |
 | `items` | nếu có khóa thì không được `null` | item không có trong danh mục chỉ bị đếm |
@@ -61,7 +61,7 @@ Thu một lần cho mỗi ván. Đây là nơi chứa bằng chứng về ván v
 | Trường | Kiểu | Quy tắc |
 |---|---|---|
 | `type` | `"game"` | |
-| `game_id` | chuỗi | cố định cho cả lobby, ví dụ `vod-07-g2`. Hai streamer cùng lobby dùng cùng `game_id` |
+| `game_id` | chuỗi | `<vod_id>-g<giây bắt đầu ván>`, ví dụ `twitch-900000001-g3612`. Không có `:`. Hai streamer cùng lobby có hai `game_id` khác nhau; khử trùng ở ingest (mục 10.2) |
 | `vod_url` | chuỗi | đường dẫn VOD gốc |
 | `vod_start_s`, `vod_end_s` | số hoặc `null` | đoạn ván nằm trong VOD |
 | `date_evidence` | `{"text": chuỗi, "frame": chuỗi}` hoặc `null` | ngày nhìn thấy trong VOD (tiêu đề, dòng chat, màn hình); không có thì `null` |
@@ -80,11 +80,11 @@ Thu một lần cho mỗi ván. Đây là nơi chứa bằng chứng về ván v
 Ví dụ (minh họa, nhãn `fixture`):
 
 ```json
-{"type": "game", "game_id": "vod-test-01", "vod_url": "https://example.invalid/vod/01",
+{"type": "game", "game_id": "twitch-900000001-g3612", "vod_url": "https://example.invalid/vod/01",
  "vod_start_s": 3600.0, "vod_end_s": 4500.0,
  "date_evidence": null, "streamer": "example_streamer",
  "rank_displayed": "Diamond 2", "region_evidence": null,
- "patch_evidence": null, "mode_evidence": {"text": "Ranked", "frame": "frames/vod-test-01_3610000.png"},
+ "patch_evidence": null, "mode_evidence": {"text": "Ranked", "frame": "frames/twitch-900000001-g3612_3610000.png"},
  "client_language": "en_US", "resolution": "1080p",
  "lobby_names": ["Name1", "Name2", "Name3", "Name4", "Name5", "Name6", "Name7", "Name8"],
  "final_placement": 2, "game_start_mechanic": null, "capture_notes": ""}
@@ -96,8 +96,8 @@ Một bản ghi cho một trận PvP. Thời điểm chụp là **"lúc bắt đ
 
 ### 4.1 Khóa định danh
 
-- `fight_key = game_id + "|" + stage_round + "|" + sorted(hai tên người chơi)`. Hai streamer cùng ván sẽ tạo cùng `fight_key`. Chỉ giữ **một** bản ghi cho mỗi `fight_key`, ưu tiên khung hình rõ hơn. Các nguồn còn lại liệt kê trong `fight_extra.sources` (mục 5).
-- `source`: `game_id:stage_round`, theo đúng mục 1.
+- `fight_key = game_id + "|" + stage_round + "|" + sorted(hai tên người chơi)`. Trong một VOD, mỗi (ván, `stage_round`) chỉ có **một** bản ghi, và `merge_check_vod.py` coi trùng `source` là lỗi. Hai streamer cùng ván có `game_id` khác nhau nên `fight_key` thô **khác nhau**. Khử trùng là việc của ingest theo `lobby_id` (mục 10.2), giữ một bản và liệt kê nguồn còn lại trong `fight_extra.sources` (mục 5).
+- `source`: `game_id:stage_round` (dữ liệu thô); ingest viết lại thành `lobby_id:stage_round`.
 
 ### 4.2 Hai bàn
 
@@ -112,7 +112,7 @@ Mỗi bên (`a` và `b`):
   - `items_display`: tên hiển thị để đối chiếu;
   - `screen_pos`: xem mục 4.4;
   - `pos`: xem mục 4.4;
-  - `frames`: danh sách khung hình nguồn, ví dụ `["frames/vod-07-g2_3612400.png"]`.
+  - `frames`: danh sách khung hình nguồn, ví dụ `["frames/twitch-900000001-g3612_3612400.png"]`.
 
 ### 4.3 Kết quả
 
@@ -139,19 +139,19 @@ Vì sao giữ `screen_pos`: nếu sau này kiểm chứng ra quy ước khác, d
 
 ```json
 {"schema": "fight-v1", "type": "fight", "set": 18, "label": "fixture",
- "source": "vod-test-01:3-2", "fight_key": "vod-test-01|3-2|NameA|NameB",
+ "source": "twitch-900000001-g3612:3-2", "fight_key": "twitch-900000001-g3612|3-2|NameA|NameB",
  "patch": null, "side_of_streamer": "a",
  "a": {"level": 6, "augments": ["DA_18_BlossomTraitAugment"], "augments_display": ["Blossom's Call"],
        "units": [{"api_display": "Krug", "cost": 3, "traits_display": ["Riftbeast", "Brawler"],
                   "api": "DA_Krug18", "star": 2,
                   "items": ["DA_HandOfJustice", "DA_18_EmblemBlossom"], "items_display": ["Hand of Justice", "Blossom Emblem"],
                   "screen_pos": {"row_from_back": 3, "col_from_own_left": 3}, "pos": null,
-                  "frames": ["frames/vod-test-01_3612400.png"]}]},
+                  "frames": ["frames/twitch-900000001-g3612_3612400.png"]}]},
  "b": {"level": 6, "augments": [], "augments_display": [],
        "units": [{"api_display": "Krug", "cost": 1, "traits_display": [],
                   "api": "TFT_Krug", "star": 1, "items": [], "items_display": [],
                   "screen_pos": {"row_from_back": 3, "col_from_own_left": 2}, "pos": null,
-                  "frames": ["frames/vod-test-01_3612400.png"]}]},
+                  "frames": ["frames/twitch-900000001-g3612_3612400.png"]}]},
  "result": {"winner": 0}}
 ```
 
@@ -183,12 +183,12 @@ Một bản ghi cho mỗi `fight_key`.
 Ví dụ:
 
 ```json
-{"type": "fight_extra", "fight_key": "vod-test-01|3-2|NameA|NameB",
+{"type": "fight_extra", "fight_key": "twitch-900000001-g3612|3-2|NameA|NameB",
  "sources": [{"streamer": "example_streamer", "vod_url": "https://example.invalid/vod/01", "timestamp_s": 3612.4}],
  "fought_at": "home", "result_detail": "win", "summoned_units": null, "stacked_stats": null,
  "board_size_vs_level": {"a": {"units": 1, "level": 6}, "b": {"units": 1, "level": 6}},
  "damage_taken": null, "opponent_flags": {"ghost": false, "copied": null},
- "frames": ["frames/vod-test-01_3612400.png"]}
+ "frames": ["frames/twitch-900000001-g3612_3612400.png"]}
 ```
 
 ## 6. Sự kiện theo từng hành động (loại `action`)
@@ -234,12 +234,12 @@ Mỗi bản ghi:
 Ví dụ:
 
 ```json
-{"type": "action", "game_id": "vod-test-01", "seq": 14, "timestamp_s": 3570.2, "stage_round": "2-5",
+{"type": "action", "game_id": "twitch-900000001-g3612", "seq": 14, "timestamp_s": 3570.2, "stage_round": "2-5",
  "action": "BUY_SHOP", "index": 2,
  "payload": {"api_display": "Krug", "cost": 3},
  "state_before": {"gold": 12, "level": 6, "xp": "10/40", "hp": 60, "streak": 2},
  "state_after": {"gold": 9, "level": 6, "xp": "10/40", "hp": 60, "streak": 2},
- "frames": ["frames/vod-test-01_3570200.png"],
+ "frames": ["frames/twitch-900000001-g3612_3570200.png"],
  "field_status": {"action": "observed", "payload.cost": "observed"},
  "field_confidence": {"action": 0.95, "payload.cost": 0.9}}
 ```
@@ -265,12 +265,12 @@ Mẫu cấu trúc, **không phải JSON hợp lệ** (có ký hiệu `int|null`)
 Một bản ghi cho mỗi round, ngay trước khi combat bắt đầu.
 
 ```json
-{"type": "state", "game_id": "vod-test-01", "stage_round": "3-2", "timestamp_s": 3610.0,
+{"type": "state", "game_id": "twitch-900000001-g3612", "stage_round": "3-2", "timestamp_s": 3610.0,
  "state": {"gold": 24, "level": 6, "xp": "20/40", "hp": 54, "streak": -1, "lock": false,
            "board": [], "bench": [], "item_bench": null,
            "shop": [{"slot": 0, "api_display": "Krug", "cost": 3}]},
  "other_players_hp": {"NameB": 42},
- "frames": ["frames/vod-test-01_3610000.png"],
+ "frames": ["frames/twitch-900000001-g3612_3610000.png"],
  "field_status": {"state.gold": "observed"}, "field_confidence": {"state.gold": 0.95}}
 ```
 
@@ -281,9 +281,9 @@ Một bản ghi cho mỗi round, ngay trước khi combat bắt đầu.
 Ghi mỗi lần cửa hàng thay đổi: đầu round, sau `REROLL`, và khi bị làm mới khác.
 
 ```json
-{"type": "shop_refresh", "game_id": "vod-test-01", "stage_round": "3-2", "timestamp_s": 3601.0,
+{"type": "shop_refresh", "game_id": "twitch-900000001-g3612", "stage_round": "3-2", "timestamp_s": 3601.0,
  "cause": "round_start|reroll|other", "shop": [{"slot": 0, "api_display": "Krug", "cost": 3}],
- "lock": false, "frames": ["frames/vod-test-01_3601000.png"]}
+ "lock": false, "frames": ["frames/twitch-900000001-g3612_3601000.png"]}
 ```
 
 ### 8.2 Khoảng mất hình (loại `gap`)
@@ -291,7 +291,7 @@ Ghi mỗi lần cửa hàng thay đổi: đầu round, sau `REROLL`, và khi b�
 Ghi khi khung hình bị che hoặc streamer rời màn hình. Không suy hành động trong khoảng này.
 
 ```json
-{"type": "gap", "game_id": "vod-test-01", "t_from": 3640.0, "t_to": 3652.5,
+{"type": "gap", "game_id": "twitch-900000001-g3612", "t_from": 3640.0, "t_to": 3652.5,
  "reason": "tab_away|covered|overlay|unknown", "note": "chuỗi hoặc null"}
 ```
 
@@ -307,28 +307,28 @@ Ghi đủ mọi lựa chọn được đưa ra và lựa chọn đã chọn:
 Ví dụ phần thưởng PvE kiểu orb:
 
 ```json
-{"type": "reward", "game_id": "vod-test-01", "stage_round": "2-1", "timestamp_s": 3300.0,
+{"type": "reward", "game_id": "twitch-900000001-g3612", "stage_round": "2-1", "timestamp_s": 3300.0,
  "reward_type": "pve_orb", "offered": null, "picked": null,
  "orb_contents": [{"kind": "item|gold|unit|other", "api_display": chuỗi|null, "value": int|null}],
  "inventory_delta": {"gold": 0, "items": ["Hand of Justice"], "units": []},
- "frames": ["frames/vod-test-01_3300000.png"]}
+ "frames": ["frames/twitch-900000001-g3612_3300000.png"]}
 ```
 
 Ví dụ augment (mọi lần đề nghị và làm mới):
 
 ```json
-{"type": "reward", "game_id": "vod-test-01", "stage_round": "2-1", "timestamp_s": 3450.0,
+{"type": "reward", "game_id": "twitch-900000001-g3612", "stage_round": "2-1", "timestamp_s": 3450.0,
  "reward_type": "augment", "offered": [{"api_display": "Blossom's Call", "api": "DA_18_BlossomTraitAugment"}],
  "picked": {"api_display": "Blossom's Call", "api": "DA_18_BlossomTraitAugment"},
- "inventory_delta": {"gold": 0, "items": [], "units": []}, "frames": ["frames/vod-test-01_3450000.png"]}
+ "inventory_delta": {"gold": 0, "items": [], "units": []}, "frames": ["frames/twitch-900000001-g3612_3450000.png"]}
 ```
 
 ### 8.4 Thu nhập vàng theo round (loại `income`)
 
 ```json
-{"type": "income", "game_id": "vod-test-01", "stage_round": "3-2", "timestamp_s": 3608.0,
+{"type": "income", "game_id": "twitch-900000001-g3612", "stage_round": "3-2", "timestamp_s": 3608.0,
  "base": int|null, "interest": int|null, "streak_bonus": int|null, "round_result_bonus": int|null,
- "other": int|null, "total": int|null, "frames": ["frames/vod-test-01_3608000.png"]}
+ "other": int|null, "total": int|null, "frames": ["frames/twitch-900000001-g3612_3608000.png"]}
 ```
 
 ### 8.5 Trạng thái cả lobby theo round (loại `round_lobby`)
@@ -336,9 +336,9 @@ Ví dụ augment (mọi lần đề nghị và làm mới):
 Mỗi round một bản ghi, cho cả 8 người chơi:
 
 ```json
-{"type": "round_lobby", "game_id": "vod-test-01", "stage_round": "3-2", "timestamp_s": 3612.0,
+{"type": "round_lobby", "game_id": "twitch-900000001-g3612", "stage_round": "3-2", "timestamp_s": 3612.0,
  "players": [{"name": "NameA", "hp": 54, "alive": true}, {"name": "NameB", "hp": 42, "alive": true}],
- "pairings": [["NameA", "NameB"]], "eliminated": [], "frames": ["frames/vod-test-01_3612000.png"]}
+ "pairings": [["NameA", "NameB"]], "eliminated": [], "frames": ["frames/twitch-900000001-g3612_3612000.png"]}
 ```
 
 ### 8.6 Xem bàn người khác (loại `scout`)
@@ -346,8 +346,8 @@ Mỗi round một bản ghi, cho cả 8 người chơi:
 Khi streamer xem bàn của người khác:
 
 ```json
-{"type": "scout", "game_id": "vod-test-01", "timestamp_s": 3590.0, "target_name": "NameC",
- "board": [{"api_display": "Krug", "star": 1, "items_display": []}], "frames": ["frames/vod-test-01_3590000.png"]}
+{"type": "scout", "game_id": "twitch-900000001-g3612", "timestamp_s": 3590.0, "target_name": "NameC",
+ "board": [{"api_display": "Krug", "star": 1, "items_display": []}], "frames": ["frames/twitch-900000001-g3612_3590000.png"]}
 ```
 
 ### 8.7 Chụp hiệu chuẩn (loại `calibration`)
@@ -355,12 +355,12 @@ Khi streamer xem bàn của người khác:
 Mỗi khi streamer mở bảng chỉ số của một tướng hoặc tooltip của một trait:
 
 ```json
-{"type": "calibration", "kind": "unit_stat_panel", "game_id": "vod-test-01", "timestamp_s": 3600.0,
+{"type": "calibration", "kind": "unit_stat_panel", "game_id": "twitch-900000001-g3612", "timestamp_s": 3600.0,
  "unit_api_display": "Krug", "unit_star": 2, "unit_cost": 3,
  "active_traits": {"Defender": 2, "Brawler": 2, "Spellweaver": 2},
  "items_display": ["Hand of Justice"],
  "numbers": {"Armor": 40, "Max HP": 1100, "AP": 100},
- "frames": ["frames/vod-test-01_3600000.png"]}
+ "frames": ["frames/twitch-900000001-g3612_3600000.png"]}
 ```
 
 Quy tắc: mỗi lần chụp chỉ ghi **một** tướng với **một** tổ hợp trait và item cố định. Không gộp các tổ hợp khác nhau. Bản ghi này dùng để giải quyết các giả định còn mở trong `docs/model-plan.md` mục 11.17 (Defender 25 là phần thêm hay tổng, Brawler áp phần trăm lên gì, Spellweaver là tổng hay cộng thêm).
@@ -381,12 +381,16 @@ Quy tắc: mỗi lần chụp chỉ ghi **một** tướng với **một** tổ 
 - Chỉ ranked Set 18 tiêu chuẩn. Loại PBE, Double Up, mọi chế độ khác, vòng PvE (khi thấy rõ là PvE).
 - Lấy **mọi trận PvP** của mỗi ván, không chỉ đoạn nổi bật. **Giữ cả trận thua.**
 - Ưu tiên lấy **trọn ván**, trải đều giữa nhiều streamer, không để một người chiếm phần lớn.
-- Mục tiêu theo số **ván** (không phải số trận combat): khoảng **137 ván** để ước lượng chênh lệch ±0,10, và khoảng **545 ván** để ±0,05. Mỗi trận combat một bản ghi `fight`; các trận cùng ván được gom theo `game_id` khi tính khoảng tin cậy.
+- Mục tiêu theo số **ván** (không phải số trận combat): khoảng **137 ván** để ước lượng chênh lệch ±0,10, và khoảng **545 ván** để ±0,05. Mỗi trận combat một bản ghi `fight`; khi tính khoảng tin cậy, các trận cùng ván được gom theo `lobby_id` **sau khi khử trùng ở ingest** (mục 10.2), không theo `game_id` thô.
 
 ### 10.2 Khử trùng
 
-- Một `game_id` cho mỗi lobby.
-- Hai streamer cùng lobby: một bản ghi `fight` cho mỗi `fight_key` (mục 4.1). Mọi nguồn ghi vào `fight_extra.sources`.
+Việc này thuộc bước **ingest**, chạy sau khi gộp (`merge_check_vod.py`). **Chưa cài đặt**: đây là đặc tả, và chưa được chấm điểm cho đến khi có script ingest.
+
+- `lobby_id` = `sha1` của 8 tên lobby đã chuẩn hóa (NFC, casefold, bỏ khoảng trắng đầu cuối, sắp xếp), lấy 12 ký tự đầu. Hai VOD cùng lobby có cùng `lobby_id` dù `game_id` khác nhau.
+- Với mỗi (`lobby_id`, `stage_round`, cặp người chơi): giữ **một** bản ghi `fight`, ưu tiên khung hình rõ hơn. Các nguồn còn lại ghi vào `fight_extra.sources`.
+- Viết lại `source` thành `lobby_id:stage_round`. Đây là khóa dùng cho cụm ván (mục 10.1).
+- `merge_check_vod.py` báo WARN `shared_lobby_needs_ingest` và `duplicate_fight_key_needs_ingest` để ingest biết cần khử trùng ở đâu.
 
 ### 10.3 Kiểm tra chéo (ngưỡng tạm thời, do người viết đặt; **PROVISIONAL**)
 
@@ -403,11 +407,11 @@ Quy tắc: mỗi lần chụp chỉ ghi **một** tướng với **một** tổ 
 
 ### 11.1 Lệnh kiểm tra cho collector
 
-Chạy trên file **trận** (`fight`) đã ghép:
+Chạy trên file **trận** (`fight`) của từng VOD (mục 11.2):
 
 ```bash
 cd tft-sim
-python3 scripts/combat/validate_vod.py path/to/YYYYMMDD-streamer-game.jsonl --out path/to/result.json
+python3 scripts/combat/validate_vod.py data/vod_out/20261125/<S>/<vod_id>/fights.jsonl --out data/vod_out/20261125/<S>/<vod_id>/validate.json
 ```
 
 - Lệnh in số bản ghi hợp lệ, số bị bỏ, và lý do từng loại. Ví dụ dòng: `winner_null`, `items_null`, `augments_null`, `tuong_la:<api>`, `star_khong_hop_le`, `source_sin_game`, `label_khong_phai_real:<nhãn>`, `schema:<lỗi>`.
@@ -416,10 +420,11 @@ python3 scripts/combat/validate_vod.py path/to/YYYYMMDD-streamer-game.jsonl --ou
 
 ### 11.2 Bàn giao
 
-- JSONL, mỗi dòng một bản ghi, UTF-8.
-- Mỗi streamer một file trận: `YYYYMMDD-<streamer>-<game_id>.jsonl`.
-- Các loại khác (game, fight_extra, action, state, shop_refresh, gap, reward, income, round_lobby, scout, calibration) đi trong **file riêng**, đặt tên theo loại: `*_games.jsonl`, `*_extras.jsonl`, `*_actions.jsonl`, `*_states.jsonl`, v.v.
-- Một README ngắn kèm mỗi lô: số ván, số trận hợp lệ, số bị bỏ theo lý do, số trận chuyển vào `*_needs_review.jsonl`, và kết quả kiểm tra chéo.
+- Thư mục bàn giao: `tft-sim/data/vod_out/20261125/<S>/<vod_id>/` với `<S>` là slot (P1, P2, P3, V1). Layout và quy tắc khôi phục, reassign, khử trùng nằm trong `tft-sim/docs/handoff/vod-collection.md`.
+- Mỗi VOD có: `handoff.json` (`vod-handoff-v1`), `games.jsonl`, `fights.jsonl`, `others.jsonl`. Tên file cố định, không ghép thêm tên streamer.
+- `others.jsonl` chứa mọi loại khác (action, state, shop_refresh, gap, reward, income, round_lobby, scout, calibration). Không trộn vào `fights.jsonl`.
+- Trận có `winner: null` vẫn ghi vào `fights.jsonl`. Validator và bộ chấm bỏ chúng; số lượng ghi vào `needs_review` trong `handoff.json`.
+- Mỗi lô: người ghép chạy `merge_check_vod.py` (thoát 0 khi không có ERR), sau đó ingest khử trùng (mục 10.2), rồi mới chạy chấm điểm. Báo cáo lô gồm số ván, số trận hợp lệ, số bị bỏ theo lý do, số `needs_review`, và kết quả kiểm tra chéo (mục 10.3).
 
 ## 12. Việc còn mở (không được tự giải quyết)
 

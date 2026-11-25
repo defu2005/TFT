@@ -1,0 +1,744 @@
+{
+ "schema": "vod-manifest-v1",
+ "batch": "2026-11-25-set18-vod",
+ "dispatcher": "claude (phiên điều phối)",
+ "note": "Chỉ đọc đối với agent. Nguồn: nhánh origin/claude/hud-data-set18. Không tự thêm VOD; thêm/bớt chỉ do điều phối.",
+ "slots": {
+  "P1": {
+   "role": "primary",
+   "streamers": [
+    "Frodan"
+   ]
+  },
+  "P2": {
+   "role": "primary",
+   "streamers": [
+    "Dishsoap",
+    "k3soju"
+   ]
+  },
+  "P3": {
+   "role": "primary",
+   "streamers": [
+    "robinsongz",
+    "boxbox",
+    "setsuko"
+   ]
+  },
+  "V1": {
+   "role": "second_label",
+   "streamers": [
+    "Frodan (1 VOD)",
+    "Dishsoap (1 VOD)"
+   ]
+  },
+  "none": {
+   "role": "none",
+   "note": "VOD hud đã xử lý, agent bỏ qua"
+  }
+ },
+ "vods": [
+  {
+   "vod_id": "twitch-2924500482",
+   "url": "https://www.twitch.tv/videos/2924500482",
+   "streamer": "boxbox",
+   "slot": "none",
+   "role": "hud_processed",
+   "status": "done_by_hud",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     210,
+     2940
+    ],
+    [
+     3180,
+     5350
+    ],
+    [
+     5380,
+     7920
+    ],
+    [
+     8240,
+     10740
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json",
+    "hud:docs/hud-validation/set18-campaign.json",
+    "hud:data/hud-logs/set18/done-keys.txt"
+   ]
+  },
+  {
+   "vod_id": "twitch-2925294495",
+   "url": "https://www.twitch.tv/videos/2925294495",
+   "streamer": "robinsongz",
+   "slot": "none",
+   "role": "hud_processed",
+   "status": "done_by_hud",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     4190,
+     5944
+    ],
+    [
+     6040,
+     8410
+    ],
+    [
+     8410,
+     9895
+    ],
+    [
+     9895,
+     11750
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json",
+    "hud:docs/hud-validation/set18-campaign.json",
+    "hud:data/hud-logs/set18/done-keys.txt"
+   ]
+  },
+  {
+   "vod_id": "twitch-2926218384",
+   "url": "https://www.twitch.tv/videos/2926218384",
+   "streamer": "boxbox",
+   "slot": "none",
+   "role": "hud_processed",
+   "status": "done_by_hud",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     3852,
+     5840
+    ],
+    [
+     6030,
+     7980
+    ],
+    [
+     8080,
+     10535
+    ],
+    [
+     10725,
+     12670
+    ],
+    [
+     1390,
+     3850
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json",
+    "hud:docs/hud-validation/set18-campaign.json",
+    "hud:data/hud-logs/set18/done-keys.txt"
+   ]
+  },
+  {
+   "vod_id": "twitch-2927052824",
+   "url": "https://www.twitch.tv/videos/2927052824",
+   "streamer": "robinsongz",
+   "slot": "none",
+   "role": "hud_processed",
+   "status": "done_by_hud",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     4150,
+     6010
+    ],
+    [
+     6300,
+     8290
+    ],
+    [
+     10590,
+     13040
+    ],
+    [
+     13230,
+     15920
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json",
+    "hud:docs/hud-validation/set18-campaign.json",
+    "hud:data/hud-logs/set18/done-keys.txt"
+   ]
+  },
+  {
+   "vod_id": "twitch-2928060890",
+   "url": "https://www.twitch.tv/videos/2928060890",
+   "streamer": "boxbox",
+   "slot": "none",
+   "role": "hud_processed",
+   "status": "done_by_hud",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     525,
+     2730
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json",
+    "hud:docs/hud-validation/set18-campaign.json",
+    "hud:data/hud-logs/set18/done-keys.txt"
+   ]
+  },
+  {
+   "vod_id": "twitch-2915091249",
+   "url": "https://www.twitch.tv/videos/2915091249",
+   "streamer": "setsuko",
+   "slot": "none",
+   "role": "hud_processed",
+   "status": "done_by_hud",
+   "patch_claims": [
+    "18.5C"
+   ],
+   "candidate_ranges_s": [
+    [
+     485,
+     2955
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json",
+    "hud:docs/hud-validation/set18-campaign.json",
+    "hud:data/hud-logs/set18/done-keys.txt"
+   ]
+  },
+  {
+   "vod_id": "twitch-2916058832",
+   "url": "https://www.twitch.tv/videos/2916058832",
+   "streamer": "setsuko",
+   "slot": "none",
+   "role": "hud_processed",
+   "status": "done_by_hud",
+   "patch_claims": [
+    "18.5C"
+   ],
+   "candidate_ranges_s": [
+    [
+     2635,
+     4860
+    ],
+    [
+     8210,
+     10440
+    ],
+    [
+     13285,
+     15540
+    ],
+    [
+     10560,
+     12680
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json",
+    "hud:docs/hud-validation/set18-campaign.json",
+    "hud:data/hud-logs/set18/done-keys.txt"
+   ]
+  },
+  {
+   "vod_id": "twitch-2922368556",
+   "url": "https://www.twitch.tv/videos/2922368556",
+   "streamer": "Frodan",
+   "slot": "none",
+   "role": "hud_processed",
+   "status": "done_by_hud",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     17580
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json",
+    "hud:docs/hud-validation/set18-campaign.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2919423875",
+   "url": "https://www.twitch.tv/videos/2919423875",
+   "streamer": "Frodan",
+   "slot": "none",
+   "role": "hud_processed",
+   "status": "done_by_hud",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     19690
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json",
+    "hud:docs/hud-validation/set18-campaign.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2925380903",
+   "url": "https://www.twitch.tv/videos/2925380903",
+   "streamer": "boxbox",
+   "slot": "P3",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     11107
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2924334199",
+   "url": "https://www.twitch.tv/videos/2924334199",
+   "streamer": "robinsongz",
+   "slot": "P3",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     17773
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2927534195",
+   "url": "https://www.twitch.tv/videos/2927534195",
+   "streamer": "Dishsoap",
+   "slot": "P2",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     18310
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2928507453",
+   "url": "https://www.twitch.tv/videos/2928507453",
+   "streamer": "Dishsoap",
+   "slot": "P2",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     19416
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2929523431",
+   "url": "https://www.twitch.tv/videos/2929523431",
+   "streamer": "Dishsoap",
+   "slot": "P2",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     22117
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2926729138",
+   "url": "https://www.twitch.tv/videos/2926729138",
+   "streamer": "Frodan",
+   "slot": "P1",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     17720
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2925794541",
+   "url": "https://www.twitch.tv/videos/2925794541",
+   "streamer": "Frodan",
+   "slot": "P1",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     13350
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2924915856",
+   "url": "https://www.twitch.tv/videos/2924915856",
+   "streamer": "Frodan",
+   "slot": "P1",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     19970
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2924101300",
+   "url": "https://www.twitch.tv/videos/2924101300",
+   "streamer": "Frodan",
+   "slot": "P1",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     15820
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2923262621",
+   "url": "https://www.twitch.tv/videos/2923262621",
+   "streamer": "Frodan",
+   "slot": "P1",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     19460
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2921260340",
+   "url": "https://www.twitch.tv/videos/2921260340",
+   "streamer": "Frodan",
+   "slot": "P1",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     21230
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2920305475",
+   "url": "https://www.twitch.tv/videos/2920305475",
+   "streamer": "Frodan",
+   "slot": "P1",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     25630
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2918556483",
+   "url": "https://www.twitch.tv/videos/2918556483",
+   "streamer": "Frodan",
+   "slot": "P1",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "18.5C/18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     25070
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2916057333",
+   "url": "https://www.twitch.tv/videos/2916057333",
+   "streamer": "Dishsoap",
+   "slot": "P2",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "Set 18, exact patch pending visual confirmation"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     7232
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2910735765",
+   "url": "https://www.twitch.tv/videos/2910735765",
+   "streamer": "k3soju",
+   "slot": "P2",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "Set 18, exact patch pending visual confirmation"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     5709
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2911167981",
+   "url": "https://www.twitch.tv/videos/2911167981",
+   "streamer": "setsuko",
+   "slot": "P3",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "Set 18, exact patch pending visual confirmation"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     15419
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2912449718",
+   "url": "https://www.twitch.tv/videos/2912449718",
+   "streamer": "robinsongz",
+   "slot": "P3",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "Set 18, exact patch pending visual confirmation"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     21475
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2906219397",
+   "url": "https://www.twitch.tv/videos/2906219397",
+   "streamer": "Dishsoap",
+   "slot": "P2",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "Set 18, exact patch pending visual confirmation"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     18571
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2913998942",
+   "url": "https://www.twitch.tv/videos/2913998942",
+   "streamer": "Frodan",
+   "slot": "P1",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "Set 18, exact patch pending visual confirmation"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     19510
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2901713662",
+   "url": "https://www.twitch.tv/videos/2901713662",
+   "streamer": "Dishsoap",
+   "slot": "P2",
+   "role": "primary",
+   "status": "todo",
+   "patch_claims": [
+    "Set 18, exact patch pending visual confirmation"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     14564
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ]
+  },
+  {
+   "vod_id": "twitch-2926729138",
+   "url": "https://www.twitch.tv/videos/2926729138",
+   "streamer": "Frodan",
+   "slot": "V1",
+   "role": "second_label",
+   "status": "todo",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     17720
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ],
+   "pairs_with_primary_slot": "P1"
+  },
+  {
+   "vod_id": "twitch-2927534195",
+   "url": "https://www.twitch.tv/videos/2927534195",
+   "streamer": "Dishsoap",
+   "slot": "V1",
+   "role": "second_label",
+   "status": "todo",
+   "patch_claims": [
+    "18.6"
+   ],
+   "candidate_ranges_s": [
+    [
+     0,
+     18310
+    ]
+   ],
+   "source_refs": [
+    "hud:scripts/hud-campaign/seed-sources.json"
+   ],
+   "pairs_with_primary_slot": "P2"
+  }
+ ]
+}
