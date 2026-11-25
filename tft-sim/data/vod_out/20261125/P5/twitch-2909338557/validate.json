@@ -1,38 +1,12 @@
 {
- "ok": 17,
+ "ok": 31,
  "skipped": {
-  "star_khong_hop_le": 1,
-  "winner_null": 5
+  "winner_null": 1
  },
  "rows": [
   {
-   "line": 6,
-   "source": "twitch-2909338557-g30:3-2",
-   "reason": "star_khong_hop_le"
-  },
-  {
    "line": 19,
    "source": "twitch-2909338557-g30:6-1",
-   "reason": "winner_null"
-  },
-  {
-   "line": 20,
-   "source": "twitch-2909338557-g2100:3-2",
-   "reason": "winner_null"
-  },
-  {
-   "line": 21,
-   "source": "twitch-2909338557-g2100:3-6",
-   "reason": "winner_null"
-  },
-  {
-   "line": 22,
-   "source": "twitch-2909338557-g2100:5-2",
-   "reason": "winner_null"
-  },
-  {
-   "line": 23,
-   "source": "twitch-2909338557-g2100:6-2",
    "reason": "winner_null"
   }
  ]
