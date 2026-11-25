@@ -59,4 +59,34 @@ except ValueError:
 for mode in ("generic", "none"):
     print("set18", mode, F.predict_win({**fixture(names18, 18), "set": 18}, 5, mode))
 
+# 5) Vi tri: ghi de pos theo toa do TUYET DOI (khong xoay cho doi B). Kiem tren _build_team truc tiep.
+import tft_goat.engine.simulate as S
+rec = fixture(names17)
+rec["a"]["units"][0]["pos"] = [2, 3]; rec["b"]["units"][0]["pos"] = [5, 1]
+ba, bb, pos, aa, ab = F.boards_of(rec, True)
+with F.fight_context("hand", pos):
+    ua = S._build_team(ba, 0, c17, 0)
+    ub = S._build_team(bb, 1, c17, 0)
+got_a = ua[0].pos; got_b = ub[0].pos
+print("pos team0", got_a, "team1", got_b, "(ky vong (2,3) va (5,1))")
+ok &= got_a == (2, 3) and got_b == (5, 1)
+
+# 6) Duong cham diem fidelity: ban ghi real co ket qua; sim bi tu choi
+import json, tempfile, fidelity as FD
+tmp = Path(tempfile.mkdtemp()) / "real.jsonl"
+rs = []
+for r in fx[:5]:
+    rr = json.loads(json.dumps(r)); rr["label"] = "real"; rr["result"] = {"winner": 0}; rs.append(rr)
+tmp.write_text("\n".join(json.dumps(x) for x in rs), encoding="utf-8")
+out = FD.score(str(tmp), "none", True, 5)
+print("fidelity", out)
+ok &= out["n"] == 5 and 0.0 <= out["accuracy"] <= 1.0
+sim_file = Path(tempfile.mkdtemp()) / "sim.jsonl"
+rr = json.loads(json.dumps(fx[0])); rr["result"] = {"winner": 0}
+sim_file.write_text(json.dumps(rr), encoding="utf-8")
+try:
+    FD.score(str(sim_file), "hand", True, 2); ok = False; print("SIM REJECT FAIL")
+except SystemExit:
+    print("SIM REJECT ok")
+
 print("SELFTEST", "PASS" if ok else "FAIL")

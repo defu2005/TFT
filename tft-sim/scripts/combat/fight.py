@@ -118,11 +118,14 @@ def set_content(set_no: int, content) -> None:
     _CONTENT[set_no] = content
 
 
-def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = True, seed0: int = 0) -> dict:
-    """Xac suat A thang tu n lan chay engine (RNG seed0..seed0+n-1)."""
+def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = True, seed0: int = 0,
+                augments: bool = True) -> dict:
+    """Xac suat A thang tu n lan chay engine (RNG seed0..seed0+n-1). augments=False: bo augment."""
     if record["set"] == 18 and ability == "hand":
         raise ValueError("Set 18 chua co logic ability viet tay: dung 'generic' hoac 'none'")
     ba, bb, pos, aa, ab = boards_of(record, items)
+    if not augments:
+        aa, ab = (), ()
     content = _CONTENT[record["set"]]
     wins = [0, 0, 0]
     with fight_context(ability, pos):
