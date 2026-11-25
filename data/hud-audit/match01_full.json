@@ -74,8 +74,8 @@
     "tag": "derived"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "n/a: no PvP opponent this round",
+    "tag": "n/a"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -107,6 +107,10 @@
     "value": "shared arena: no streamer result or combat read",
     "tag": "n/a",
     "reason": "shared arena: no streamer-vs-opponent result"
+   },
+   "opponent_board": {
+    "value": "n/a: no PvP opponent this round",
+    "tag": "n/a"
    }
   },
   {
@@ -3050,8 +3054,8 @@
     "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "n/a: no PvP opponent this round",
+    "tag": "n/a"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -3148,6 +3152,10 @@
     },
     "tag": "derived",
     "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
+   },
+   "opponent_board": {
+    "value": "n/a: no PvP opponent this round",
+    "tag": "n/a"
    }
   },
   {
@@ -3617,10 +3625,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "same two-round gap",
-    "reason": "streak transition not isolated"
+    "value": "PvP",
+    "tag": "derived",
+    "basis": "streak changed with HP held"
    },
    "opponent": {
     "value": null,
@@ -3687,10 +3694,11 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "streak transition spans the shared round N+1 with no planning read",
-    "reason": "two-round gap"
+    "value": {
+     "outcome": "win",
+     "basis": "streak reset blue 1 to orange 1 across 4-3 and shared 4-4; streamer HP 88 unchanged 4-3 to 4-4"
+    },
+    "tag": "derived"
    }
   },
   {
@@ -3777,8 +3785,8 @@
     "tag": "derived"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "n/a: no PvP opponent this round",
+    "tag": "n/a"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -3810,6 +3818,10 @@
     "value": "shared arena: no streamer result or combat read",
     "tag": "n/a",
     "reason": "shared arena: no streamer-vs-opponent result"
+   },
+   "opponent_board": {
+    "value": "n/a: no PvP opponent this round",
+    "tag": "n/a"
    }
   },
   {
@@ -4226,8 +4238,8 @@
     "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "n/a: no PvP opponent this round",
+    "tag": "n/a"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -4300,6 +4312,10 @@
     },
     "tag": "derived",
     "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
+   },
+   "opponent_board": {
+    "value": "n/a: no PvP opponent this round",
+    "tag": "n/a"
    }
   },
   {
@@ -4895,10 +4911,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "same two-round gap",
-    "reason": "streak transition not isolated"
+    "value": "PvP",
+    "tag": "derived",
+    "basis": "streak changed with HP held"
    },
    "opponent": {
     "value": null,
@@ -5005,10 +5020,11 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "streak transition spans the shared round N+1 with no planning read",
-    "reason": "two-round gap"
+    "value": {
+     "outcome": "win",
+     "basis": "streak 1 to 2 across 5-3 and shared 5-4; streamer HP 74 unchanged 5-3 to 5-4"
+    },
+    "tag": "derived"
    }
   },
   {
@@ -5090,8 +5106,8 @@
     "tag": "derived"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "n/a: no PvP opponent this round",
+    "tag": "n/a"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -5123,6 +5139,10 @@
     "value": "shared arena: no streamer result or combat read",
     "tag": "n/a",
     "reason": "shared arena: no streamer-vs-opponent result"
+   },
+   "opponent_board": {
+    "value": "n/a: no PvP opponent this round",
+    "tag": "n/a"
    }
   },
   {
@@ -5629,8 +5649,8 @@
     "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "n/a: no PvP opponent this round",
+    "tag": "n/a"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -5701,6 +5721,10 @@
     },
     "tag": "derived",
     "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
+   },
+   "opponent_board": {
+    "value": "n/a: no PvP opponent this round",
+    "tag": "n/a"
    }
   },
   {
@@ -6311,13 +6335,12 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "PvE",
-    "tag": "derived",
-    "basis": "streak unchanged = no PvP; otherwise PvP"
+    "value": "shared arena, same pattern as 3-4",
+    "tag": "derived"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "n/a: no PvP opponent this round",
+    "tag": "n/a"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -6326,7 +6349,7 @@
     "reason": "2470 s frame: PvE-style pet arena at timer 8, not planning"
    },
    "combat": {
-    "value": "shared arena: no streamer result or combat read",
+    "value": null,
     "tag": "n/a",
     "reason": "shared arena, no PvP combat read"
    },
@@ -6363,11 +6386,13 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
-    "value": {
-     "outcome": "no PvP (streak unchanged after 6-3 loss)"
-    },
-    "tag": "derived",
-    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
+    "value": null,
+    "tag": "n/a",
+    "reason": "shared arena: no streamer result"
+   },
+   "opponent_board": {
+    "value": "n/a: no PvP opponent this round",
+    "tag": "n/a"
    }
   },
   {
