@@ -1,0 +1,1482 @@
+{
+ "status": "v3 (supersedes purchases_match01_v2.json and purchases_match01_candidates.json)",
+ "method": "reader rows with hudDetected=true, gold and shopSlots present. A change = a non-empty slot id becomes empty between consecutive rows at most 2 s apart. Dropout discarded if the same id reappears within 3 s. gold_before = last reading in [t-1s, t] before the change; gold_after = median reading in [t+0.5s, t+1.5s]. Cost = slot price, or catalog cost when price is null.",
+ "counts": {
+  "changes": 96,
+  "cost_consistent": 39
+ },
+ "checks": {
+  "DA_18_Kobuko 909.25 s": "cost-consistent (gold 40 -> 39, cost 1). Regression PASS.",
+  "Krug 1235.5 s": "cost-consistent (gold 52 -> 49, cost 3). Regression PASS.",
+  "Rek'Sai 1169.25 s": "NOT cost-consistent: drop 3 vs cost 1, inside a 2-s cluster with Alistar (1168.5 s) and Shen (1170.0 s). Gold reads overlap. Ambiguous.",
+  "Scuttlecrab 526.5 s": "visually confirmed in shop slot 5 at 526.4 s, cost 2. Reader id correct.",
+  "Mama Beak (DA_CrimsonRaptor18) 700.5 s": "visually confirmed at cost 3 in shop slot 5 at 700.2 s. Reader id correct; the name is the catalog name Mama Beak.",
+  "Alistar 400.75 s and 468.75 s": "now cost-consistent. v2's 'gold flat' was a window artifact."
+ },
+ "caveats": [
+  "gold OCR can lag or double-count inside clusters of 2+ purchases in 2 s",
+  "1234.0 s (Azir+Cassiopeia slots, gold 40 -> 50.5): gold rose, so it is not a purchase; likely income or a sell, unclassified",
+  "consistent is not proof of purchase; a level-up or interest can coincide",
+  "not yet joined to roster arrivals"
+ ],
+ "action_rules_to_apply": [
+  "full five-slot change with gold -2 and no other shop change = reroll (not yet applied)",
+  "gold -4 with no shop change = XP buy (not yet applied)"
+ ],
+ "events": [
+  {
+   "t_before_s": 364.25,
+   "t_change_s": 366.0,
+   "slots": [
+    3,
+    4
+   ],
+   "units": [
+    "DA_18_Veigar",
+    "DA_18_Camille"
+   ],
+   "price_sum": 2,
+   "gold_before": 2,
+   "gold_after_median": 0.0,
+   "gold_drop": 2.0,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 400.5,
+   "t_change_s": 400.75,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Alistar"
+   ],
+   "price_sum": 2,
+   "gold_before": 2,
+   "gold_after_median": 0,
+   "gold_drop": 2,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 431.25,
+   "t_change_s": 431.75,
+   "slots": [
+    1,
+    2
+   ],
+   "units": [
+    "DA_18_Rakan",
+    "DA_18_Rakan"
+   ],
+   "price_sum": 2,
+   "gold_before": 2,
+   "gold_after_median": 0,
+   "gold_drop": 2,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 468.5,
+   "t_change_s": 468.75,
+   "slots": [
+    3
+   ],
+   "units": [
+    "DA_18_Alistar"
+   ],
+   "price_sum": 2,
+   "gold_before": 3,
+   "gold_after_median": 1.0,
+   "gold_drop": 2.0,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 526.25,
+   "t_change_s": 526.5,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_Scuttlecrab18"
+   ],
+   "price_sum": 2,
+   "gold_before": 4,
+   "gold_after_median": 2,
+   "gold_drop": 2,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 528.5,
+   "t_change_s": 529.25,
+   "slots": [
+    1,
+    3
+   ],
+   "units": [
+    "DA_18_Xayah",
+    "DA_18_Varus"
+   ],
+   "price_sum": 2,
+   "gold_before": 2,
+   "gold_after_median": 0.0,
+   "gold_drop": 2.0,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 631.0,
+   "t_change_s": 631.25,
+   "slots": [
+    2
+   ],
+   "units": [
+    "DA_18_LeBlanc"
+   ],
+   "price_sum": 2,
+   "gold_before": 4,
+   "gold_after_median": 2,
+   "gold_drop": 2,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 700.0,
+   "t_change_s": 700.5,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_CrimsonRaptor18"
+   ],
+   "price_sum": 3,
+   "gold_before": 7,
+   "gold_after_median": 4.0,
+   "gold_drop": 3.0,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 727.0,
+   "t_change_s": 728.0,
+   "slots": [
+    1
+   ],
+   "units": [
+    "DA_18_Varus"
+   ],
+   "price_sum": 1,
+   "gold_before": 11,
+   "gold_after_median": 10,
+   "gold_drop": 1,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 729.25,
+   "t_change_s": 730.0,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_18_Ornn"
+   ],
+   "price_sum": 1,
+   "gold_before": 10,
+   "gold_after_median": 9,
+   "gold_drop": 1,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 760.75,
+   "t_change_s": 761.0,
+   "slots": [
+    1
+   ],
+   "units": [
+    "DA_Karma18"
+   ],
+   "price_sum": 1,
+   "gold_before": 17,
+   "gold_after_median": 15.0,
+   "gold_drop": 2.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 761.0,
+   "t_change_s": 761.5,
+   "slots": [
+    2
+   ],
+   "units": [
+    "DA_18_Yorick"
+   ],
+   "price_sum": 1,
+   "gold_before": 16,
+   "gold_after_median": 15,
+   "gold_drop": 1,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 785.75,
+   "t_change_s": 787.0,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_18_Shen"
+   ],
+   "price_sum": 2,
+   "gold_before": 19,
+   "gold_after_median": 17,
+   "gold_drop": 2,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 845.75,
+   "t_change_s": 846.0,
+   "slots": [
+    3
+   ],
+   "units": [
+    "DA_18_Ezreal"
+   ],
+   "price_sum": 4,
+   "gold_before": 29,
+   "gold_after_median": 25,
+   "gold_drop": 4,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 878.5,
+   "t_change_s": 878.75,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Sejuani"
+   ],
+   "price_sum": 2,
+   "gold_before": 30,
+   "gold_after_median": 39.0,
+   "gold_drop": -9.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 909.0,
+   "t_change_s": 909.25,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Kobuko"
+   ],
+   "price_sum": 1,
+   "gold_before": 40,
+   "gold_after_median": 39,
+   "gold_drop": 1,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 994.25,
+   "t_change_s": 994.5,
+   "slots": [
+    3
+   ],
+   "units": [
+    "DA_18_LeBlanc"
+   ],
+   "price_sum": 2,
+   "gold_before": 47,
+   "gold_after_median": 45.0,
+   "gold_drop": 2.0,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 996.0,
+   "t_change_s": 996.25,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_Cinderling18"
+   ],
+   "price_sum": 1,
+   "gold_before": 45,
+   "gold_after_median": 44,
+   "gold_drop": 1,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1009.5,
+   "t_change_s": 1009.75,
+   "slots": [
+    2
+   ],
+   "units": [
+    "DA_18_Sejuani"
+   ],
+   "price_sum": 2,
+   "gold_before": 44,
+   "gold_after_median": 42,
+   "gold_drop": 2,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1048.5,
+   "t_change_s": 1048.75,
+   "slots": [
+    1
+   ],
+   "units": [
+    "DA_CrimsonRaptor18"
+   ],
+   "price_sum": 3,
+   "gold_before": 55,
+   "gold_after_median": 51,
+   "gold_drop": 4,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1075.75,
+   "t_change_s": 1076.0,
+   "slots": [
+    3
+   ],
+   "units": [
+    "DA_18_Rakan"
+   ],
+   "price_sum": 1,
+   "gold_before": 49,
+   "gold_after_median": 49.0,
+   "gold_drop": 0.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1168.0,
+   "t_change_s": 1168.5,
+   "slots": [
+    1
+   ],
+   "units": [
+    "DA_18_Alistar"
+   ],
+   "price_sum": 2,
+   "gold_before": 35,
+   "gold_after_median": 32,
+   "gold_drop": 3,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1168.5,
+   "t_change_s": 1169.25,
+   "slots": [
+    3
+   ],
+   "units": [
+    "DA_18_RekSai"
+   ],
+   "price_sum": 1,
+   "gold_before": 33,
+   "gold_after_median": 30.0,
+   "gold_drop": 3.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1169.5,
+   "t_change_s": 1170.0,
+   "slots": [
+    2
+   ],
+   "units": [
+    "DA_18_Shen"
+   ],
+   "price_sum": 2,
+   "gold_before": 32,
+   "gold_after_median": 30.0,
+   "gold_drop": 2.0,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1175.75,
+   "t_change_s": 1177.25,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Sejuani"
+   ],
+   "price_sum": 2,
+   "gold_before": 30,
+   "gold_after_median": 28.0,
+   "gold_drop": 2.0,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1183.5,
+   "t_change_s": 1184.25,
+   "slots": [
+    2
+   ],
+   "units": [
+    "DA_18_Malphite"
+   ],
+   "price_sum": 4,
+   "gold_before": 29,
+   "gold_after_median": 25,
+   "gold_drop": 4,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1197.5,
+   "t_change_s": 1197.75,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_LeBlanc"
+   ],
+   "price_sum": 2,
+   "gold_before": 29,
+   "gold_after_median": 27,
+   "gold_drop": 2,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1233.5,
+   "t_change_s": 1234.0,
+   "slots": [
+    0,
+    1
+   ],
+   "units": [
+    "DA_18_Azir",
+    "DA_18_Cassiopeia"
+   ],
+   "price_sum": 6,
+   "gold_before": 40,
+   "gold_after_median": 50.5,
+   "gold_drop": -10.5,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1235.0,
+   "t_change_s": 1235.5,
+   "slots": [
+    2
+   ],
+   "units": [
+    "DA_Krug18"
+   ],
+   "price_sum": 3,
+   "gold_before": 52,
+   "gold_after_median": 49,
+   "gold_drop": 3,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1238.5,
+   "t_change_s": 1240.25,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Azir"
+   ],
+   "price_sum": 3,
+   "gold_before": 49,
+   "gold_after_median": 35.0,
+   "gold_drop": 14.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1315.5,
+   "t_change_s": 1315.75,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Ezreal"
+   ],
+   "price_sum": 4,
+   "gold_before": 63,
+   "gold_after_median": 59.0,
+   "gold_drop": 4.0,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1317.25,
+   "t_change_s": 1317.5,
+   "slots": [
+    1
+   ],
+   "units": [
+    "DA_Vi18"
+   ],
+   "price_sum": 3,
+   "gold_before": 59,
+   "gold_after_median": 53,
+   "gold_drop": 6,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1317.75,
+   "t_change_s": 1318.0,
+   "slots": [
+    2
+   ],
+   "units": [
+    "DA_18_Azir"
+   ],
+   "price_sum": 3,
+   "gold_before": 56,
+   "gold_after_median": 53,
+   "gold_drop": 3,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1356.75,
+   "t_change_s": 1357.25,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_18_Zyra"
+   ],
+   "price_sum": 4,
+   "gold_before": 17,
+   "gold_after_median": 13.0,
+   "gold_drop": 4.0,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1357.75,
+   "t_change_s": 1358.0,
+   "slots": [
+    1
+   ],
+   "units": [
+    "DA_Murkwolf18"
+   ],
+   "price_sum": 2,
+   "gold_before": 13,
+   "gold_after_median": 12.5,
+   "gold_drop": 0.5,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1358.5,
+   "t_change_s": 1359.0,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Xayah"
+   ],
+   "price_sum": 1,
+   "gold_before": 13,
+   "gold_after_median": 12,
+   "gold_drop": 1,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1360.25,
+   "t_change_s": 1361.0,
+   "slots": [
+    2
+   ],
+   "units": [
+    "DA_18_Hecarim"
+   ],
+   "price_sum": 3,
+   "gold_before": 12,
+   "gold_after_median": 3.0,
+   "gold_drop": 9.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1361.0,
+   "t_change_s": 1361.25,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_Krug18"
+   ],
+   "price_sum": 3,
+   "gold_before": 9,
+   "gold_after_median": 3,
+   "gold_drop": 6,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1361.25,
+   "t_change_s": 1361.75,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_18_Azir"
+   ],
+   "price_sum": 3,
+   "gold_before": 9,
+   "gold_after_median": 3,
+   "gold_drop": 6,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1363.5,
+   "t_change_s": 1363.75,
+   "slots": [
+    3
+   ],
+   "units": [
+    "DA_18_Teemo"
+   ],
+   "price_sum": 2,
+   "gold_before": 3,
+   "gold_after_median": 4,
+   "gold_drop": -1,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1364.5,
+   "t_change_s": 1366.25,
+   "slots": [
+    0,
+    3
+   ],
+   "units": [
+    "DA_18_LeBlanc",
+    "DA_18_Hecarim"
+   ],
+   "price_sum": 5,
+   "gold_before": 4,
+   "gold_after_median": 2.0,
+   "gold_drop": 2.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1371.0,
+   "t_change_s": 1372.5,
+   "slots": [
+    2
+   ],
+   "units": [
+    "DA_Amumu18"
+   ],
+   "price_sum": 4,
+   "gold_before": 5,
+   "gold_after_median": 1,
+   "gold_drop": 4,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1527.5,
+   "t_change_s": 1527.75,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Tristana"
+   ],
+   "price_sum": 3,
+   "gold_before": 32,
+   "gold_after_median": 40.0,
+   "gold_drop": -8.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1714.0,
+   "t_change_s": 1714.5,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Hecarim"
+   ],
+   "price_sum": 3,
+   "gold_before": 63,
+   "gold_after_median": 74.0,
+   "gold_drop": -11.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1801.5,
+   "t_change_s": 1802.0,
+   "slots": [
+    2
+   ],
+   "units": [
+    "DA_18_Ezreal"
+   ],
+   "price_sum": 4,
+   "gold_before": 90,
+   "gold_after_median": 86,
+   "gold_drop": 4,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1827.5,
+   "t_change_s": 1828.0,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Ahri"
+   ],
+   "price_sum": 4,
+   "gold_before": 102,
+   "gold_after_median": 113,
+   "gold_drop": -11,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1840.5,
+   "t_change_s": 1840.75,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_18_Rammus"
+   ],
+   "price_sum": 3,
+   "gold_before": 55,
+   "gold_after_median": 44.0,
+   "gold_drop": 11.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1840.75,
+   "t_change_s": 1841.25,
+   "slots": [
+    2
+   ],
+   "units": [
+    "DA_Amumu18"
+   ],
+   "price_sum": 4,
+   "gold_before": 53,
+   "gold_after_median": 44,
+   "gold_drop": 9,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1842.5,
+   "t_change_s": 1842.75,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Ezreal"
+   ],
+   "price_sum": 4,
+   "gold_before": 44,
+   "gold_after_median": 40.5,
+   "gold_drop": 3.5,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1843.75,
+   "t_change_s": 1844.25,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_18_Alune"
+   ],
+   "price_sum": 5,
+   "gold_before": 43,
+   "gold_after_median": 28.5,
+   "gold_drop": 14.5,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1844.75,
+   "t_change_s": 1845.25,
+   "slots": [
+    1
+   ],
+   "units": [
+    "DA_18_Maokai"
+   ],
+   "price_sum": 5,
+   "gold_before": 36,
+   "gold_after_median": 26.0,
+   "gold_drop": 10.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1845.25,
+   "t_change_s": 1845.5,
+   "slots": [
+    3
+   ],
+   "units": [
+    "DA_18_Kennen"
+   ],
+   "price_sum": 5,
+   "gold_before": 31,
+   "gold_after_median": 26.0,
+   "gold_drop": 5.0,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1848.0,
+   "t_change_s": 1848.25,
+   "slots": [
+    2
+   ],
+   "units": [
+    "DA_18_Kennen"
+   ],
+   "price_sum": 5,
+   "gold_before": 22,
+   "gold_after_median": 13.0,
+   "gold_drop": 9.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1849.25,
+   "t_change_s": 1849.75,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_Lux18_Base"
+   ],
+   "price_sum": 5,
+   "gold_before": 13,
+   "gold_after_median": 10.0,
+   "gold_drop": 3.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1851.5,
+   "t_change_s": 1852.0,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_Draven18"
+   ],
+   "price_sum": 5,
+   "gold_before": 7,
+   "gold_after_median": 4,
+   "gold_drop": 3,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1853.75,
+   "t_change_s": 1854.0,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Maokai"
+   ],
+   "price_sum": 5,
+   "gold_before": 9,
+   "gold_after_median": 2,
+   "gold_drop": 7,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1906.0,
+   "t_change_s": 1906.75,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_Brambleback18"
+   ],
+   "price_sum": 4,
+   "gold_before": 14,
+   "gold_after_median": 20.5,
+   "gold_drop": -6.5,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1908.75,
+   "t_change_s": 1909.25,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Azir"
+   ],
+   "price_sum": 3,
+   "gold_before": 26,
+   "gold_after_median": 22.5,
+   "gold_drop": 3.5,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1910.75,
+   "t_change_s": 1911.25,
+   "slots": [
+    1
+   ],
+   "units": [
+    "DA_Sentinel18"
+   ],
+   "price_sum": 4,
+   "gold_before": 21,
+   "gold_after_median": 11.0,
+   "gold_drop": 10.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1911.25,
+   "t_change_s": 1911.5,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Aphelios"
+   ],
+   "price_sum": 4,
+   "gold_before": 17,
+   "gold_after_median": 11.0,
+   "gold_drop": 6.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1911.75,
+   "t_change_s": 1912.5,
+   "slots": [
+    3
+   ],
+   "units": [
+    "DA_18_Ivern"
+   ],
+   "price_sum": 5,
+   "gold_before": 11,
+   "gold_after_median": 11.0,
+   "gold_drop": 0.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1917.0,
+   "t_change_s": 1917.5,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_Taric18"
+   ],
+   "price_sum": 5,
+   "gold_before": 11,
+   "gold_after_median": 6.0,
+   "gold_drop": 5.0,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1921.0,
+   "t_change_s": 1921.25,
+   "slots": [
+    3
+   ],
+   "units": [
+    "DA_18_GnarSmall"
+   ],
+   "price_sum": 5,
+   "gold_before": 8,
+   "gold_after_median": 2.0,
+   "gold_drop": 6.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 1922.0,
+   "t_change_s": 1922.25,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_18_Caitlyn"
+   ],
+   "price_sum": 2,
+   "gold_before": 3,
+   "gold_after_median": 1.0,
+   "gold_drop": 2.0,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 1993.25,
+   "t_change_s": 1993.5,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Warwick"
+   ],
+   "price_sum": 2,
+   "gold_before": 7,
+   "gold_after_median": 5,
+   "gold_drop": 2,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 2003.0,
+   "t_change_s": 2003.25,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_Taric18"
+   ],
+   "price_sum": 5,
+   "gold_before": 25,
+   "gold_after_median": 13,
+   "gold_drop": 12,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2003.75,
+   "t_change_s": 2004.0,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_Draven18"
+   ],
+   "price_sum": 5,
+   "gold_before": 18,
+   "gold_after_median": 9.0,
+   "gold_drop": 9.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2004.5,
+   "t_change_s": 2004.75,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Ezreal"
+   ],
+   "price_sum": 4,
+   "gold_before": 13,
+   "gold_after_median": 9,
+   "gold_drop": 4,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 2007.0,
+   "t_change_s": 2007.25,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_Taric18"
+   ],
+   "price_sum": 5,
+   "gold_before": 7,
+   "gold_after_median": 2,
+   "gold_drop": 5,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 2094.25,
+   "t_change_s": 2094.5,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Ashe"
+   ],
+   "price_sum": 5,
+   "gold_before": 9,
+   "gold_after_median": 7.0,
+   "gold_drop": 2.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2095.75,
+   "t_change_s": 2096.0,
+   "slots": [
+    3
+   ],
+   "units": [
+    "DA_18_KhaZix"
+   ],
+   "price_sum": 3,
+   "gold_before": 7,
+   "gold_after_median": 5,
+   "gold_drop": 2,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2096.5,
+   "t_change_s": 2097.25,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_18_Ezreal"
+   ],
+   "price_sum": 4,
+   "gold_before": 5,
+   "gold_after_median": 5.0,
+   "gold_drop": 0.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2102.5,
+   "t_change_s": 2104.5,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_18_Ezreal"
+   ],
+   "price_sum": 4,
+   "gold_before": 5,
+   "gold_after_median": 5,
+   "gold_drop": 0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2107.75,
+   "t_change_s": 2108.25,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_18_Ezreal"
+   ],
+   "price_sum": 4,
+   "gold_before": 5,
+   "gold_after_median": 1,
+   "gold_drop": 4,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 2165.5,
+   "t_change_s": 2165.75,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Sett"
+   ],
+   "price_sum": 4,
+   "gold_before": 8,
+   "gold_after_median": 6,
+   "gold_drop": 2,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2228.25,
+   "t_change_s": 2228.5,
+   "slots": [
+    1
+   ],
+   "units": [
+    "DA_Murkwolf18"
+   ],
+   "price_sum": 2,
+   "gold_before": 6,
+   "gold_after_median": 1.0,
+   "gold_drop": 5.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2229.25,
+   "t_change_s": 2230.25,
+   "slots": [
+    2
+   ],
+   "units": [
+    "DA_18_Kennen"
+   ],
+   "price_sum": 5,
+   "gold_before": 1,
+   "gold_after_median": 6.0,
+   "gold_drop": -5.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2268.5,
+   "t_change_s": 2268.75,
+   "slots": [
+    1
+   ],
+   "units": [
+    "DA_Amumu18"
+   ],
+   "price_sum": 4,
+   "gold_before": 23,
+   "gold_after_median": 19,
+   "gold_drop": 4,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 2333.0,
+   "t_change_s": 2333.25,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Rengar"
+   ],
+   "price_sum": 3,
+   "gold_before": 17,
+   "gold_after_median": 18,
+   "gold_drop": -1,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2333.75,
+   "t_change_s": 2334.0,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_GnarSmall"
+   ],
+   "price_sum": 5,
+   "gold_before": 23,
+   "gold_after_median": 13,
+   "gold_drop": 10,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2334.25,
+   "t_change_s": 2334.5,
+   "slots": [
+    3
+   ],
+   "units": [
+    "DA_Draven18"
+   ],
+   "price_sum": 5,
+   "gold_before": 18,
+   "gold_after_median": 12.0,
+   "gold_drop": 6.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2335.0,
+   "t_change_s": 2336.0,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_18_Hecarim"
+   ],
+   "price_sum": 3,
+   "gold_before": 13,
+   "gold_after_median": 8,
+   "gold_drop": 5,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2398.0,
+   "t_change_s": 2398.25,
+   "slots": [
+    3
+   ],
+   "units": [
+    "DA_Draven18"
+   ],
+   "price_sum": 5,
+   "gold_before": 13,
+   "gold_after_median": 6,
+   "gold_drop": 7,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2398.5,
+   "t_change_s": 2398.75,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Varus"
+   ],
+   "price_sum": 1,
+   "gold_before": 8,
+   "gold_after_median": 3,
+   "gold_drop": 5,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2480.25,
+   "t_change_s": 2480.5,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_Scuttlecrab18"
+   ],
+   "price_sum": 2,
+   "gold_before": 9,
+   "gold_after_median": 7.0,
+   "gold_drop": 2.0,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 2480.75,
+   "t_change_s": 2481.0,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_Vi18"
+   ],
+   "price_sum": 3,
+   "gold_before": 9,
+   "gold_after_median": 8.5,
+   "gold_drop": 0.5,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2482.25,
+   "t_change_s": 2482.5,
+   "slots": [
+    1
+   ],
+   "units": [
+    "DA_Sentinel18"
+   ],
+   "price_sum": 4,
+   "gold_before": 12,
+   "gold_after_median": 8,
+   "gold_drop": 4,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 2483.25,
+   "t_change_s": 2483.5,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Rammus"
+   ],
+   "price_sum": 3,
+   "gold_before": 10,
+   "gold_after_median": 6,
+   "gold_drop": 4,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2489.5,
+   "t_change_s": 2489.75,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Akali_AD"
+   ],
+   "price_sum": 1,
+   "gold_before": 11,
+   "gold_after_median": 10,
+   "gold_drop": 1,
+   "cost_consistent": true
+  },
+  {
+   "t_before_s": 2546.5,
+   "t_change_s": 2546.75,
+   "slots": [
+    4
+   ],
+   "units": [
+    "DA_18_Soraka"
+   ],
+   "price_sum": 4,
+   "gold_before": 17,
+   "gold_after_median": 15,
+   "gold_drop": 2,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2547.75,
+   "t_change_s": 2548.0,
+   "slots": [
+    1
+   ],
+   "units": [
+    "DA_18_Morgana"
+   ],
+   "price_sum": 4,
+   "gold_before": 15,
+   "gold_after_median": 13.0,
+   "gold_drop": 2.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2548.5,
+   "t_change_s": 2548.75,
+   "slots": [
+    1
+   ],
+   "units": [
+    "DA_18_Maokai"
+   ],
+   "price_sum": 5,
+   "gold_before": 13,
+   "gold_after_median": 11,
+   "gold_drop": 2,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2549.0,
+   "t_change_s": 2549.5,
+   "slots": [
+    0,
+    4
+   ],
+   "units": [
+    "DA_18_Alune",
+    "DA_18_Zyra"
+   ],
+   "price_sum": 9,
+   "gold_before": 13,
+   "gold_after_median": 1,
+   "gold_drop": 12,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2556.5,
+   "t_change_s": 2556.75,
+   "slots": [
+    0
+   ],
+   "units": [
+    "DA_18_GnarSmall"
+   ],
+   "price_sum": 5,
+   "gold_before": 7,
+   "gold_after_median": 0,
+   "gold_drop": 7,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2563.0,
+   "t_change_s": 2563.5,
+   "slots": [
+    1,
+    3
+   ],
+   "units": [
+    "DA_Lux18_Base",
+    "DA_18_Ashe"
+   ],
+   "price_sum": 10,
+   "gold_before": 12,
+   "gold_after_median": 0.0,
+   "gold_drop": 12.0,
+   "cost_consistent": false
+  },
+  {
+   "t_before_s": 2564.0,
+   "t_change_s": 2564.5,
+   "slots": [
+    2
+   ],
+   "units": [
+    "DA_18_Ivern"
+   ],
+   "price_sum": 5,
+   "gold_before": 0,
+   "gold_after_median": 0,
+   "gold_drop": 0,
+   "cost_consistent": false
+  }
+ ]
+}

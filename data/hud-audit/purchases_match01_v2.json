@@ -3007,5 +3007,6 @@
    "cost_consistent": false,
    "dt_s": 0.5
   }
- ]
+ ],
+ "status": "SUPERSEDED by purchases_match01_v3.json: dropout test missing, gold window too narrow, price sum wrong"
 }

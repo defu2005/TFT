@@ -303,5 +303,6 @@
    "gold_before": 12,
    "gold_after": 7
   }
- ]
+ ],
+ "status": "SUPERSEDED by purchases_match01_v3.json"
 }
