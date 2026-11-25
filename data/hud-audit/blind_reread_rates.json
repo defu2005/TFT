@@ -5,7 +5,7 @@
    "matched": 9,
    "of": 10,
    "rate": 0.9,
-   "note": "sampled 10; 5-5 is the master error found in this run"
+   "note": "sampled 10; the one miss is 5-5, a frame-time offset (2094 s is timer 22; the planning read is timer 21 at 2095 s), not a master error"
   },
   "streak": {
    "matched": 9,
