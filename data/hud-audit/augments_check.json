@@ -18,6 +18,23 @@
   "owned_in_options": [],
   "note": "none of the three owned augments appear on this screen; which pick it belongs to is not resolved"
  },
- "status": "box names confirmed at two times; pick round for each name not yet confirmed",
- "next": "find pick screens for Warpath, Heroic Grab Bag+, Cybernetic Implants in other frames (near 2-1, 3-2, 4-2 +/- 20 s)"
+ "status": "one pick confirmed from screen (4-2); two picks inferred or unresolved (2-1, 3-2)",
+ "next": "find pick screens for Warpath, Heroic Grab Bag+, Cybernetic Implants in other frames (near 2-1, 3-2, 4-2 +/- 20 s)",
+ "pick_screens_swept": {
+  "2-1": {
+   "screen": "Choose One at about 443-463 s, three options (labels partly unreadable)",
+   "box_after": "Warpath (first seen in 2-5 pilot frame)",
+   "status": "pick likely Warpath; not read on screen"
+  },
+  "3-2": {
+   "screen": "Choose One at about 980-990 s, options Salvage Bin, Big Grab Bag, Magic Roll",
+   "box_after": "Warpath still; Heroic Grab Bag+ appears later",
+   "status": "pick not resolved; Heroic Grab Bag+ may be the upgrade of an option, unverified"
+  },
+  "4-2": {
+   "screen": "Choose One at about 1442 s, options Cybernetic Implants, Pandora's Items (partly cut), Jeweled Lotus",
+   "box_after": "Warpath, Heroic Grab Bag+, then Cybernetic Implants by 2170",
+   "status": "pick = Cybernetic Implants (option on screen and in box later)"
+  }
+ }
 }
