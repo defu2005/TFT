@@ -1,0 +1,85 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2893984856",
+  "slot": "P9",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      400,
+      2800
+    ],
+    [
+      3500,
+      6000
+    ],
+    [
+      7000,
+      10000
+    ],
+    [
+      11000,
+      14000
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      2800,
+      3500
+    ],
+    [
+      6000,
+      7000
+    ],
+    [
+      10000,
+      11000
+    ],
+    [
+      14000,
+      15853
+    ]
+  ],
+  "game_ids": [
+    "twitch-2893984856-g400",
+    "twitch-2893984856-g3500",
+    "twitch-2893984856-g7000",
+    "twitch-2893984856-g11000"
+  ],
+  "counts": {
+    "games": 4,
+    "fights": 4,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 4
+    },
+    "rows": [
+      {
+        "line": 1,
+        "source": "twitch-2893984856-g400:2-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 2,
+        "source": "twitch-2893984856-g3500:4-4",
+        "reason": "winner_null"
+      },
+      {
+        "line": 3,
+        "source": "twitch-2893984856-g7000:3-7",
+        "reason": "winner_null"
+      },
+      {
+        "line": 4,
+        "source": "twitch-2893984856-g11000:2-5",
+        "reason": "winner_null"
+      }
+    ]
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "4 survey ranked; densify gaps/end"
+}

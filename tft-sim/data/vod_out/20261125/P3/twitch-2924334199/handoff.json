@@ -1,0 +1,40 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2924334199",
+  "slot": "P3",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      350,
+      1950
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      0,
+      350
+    ],
+    [
+      1950,
+      17773
+    ]
+  ],
+  "game_ids": [
+    "twitch-2924334199-g350"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 17,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 17
+    }
+  },
+  "needs_review": 0,
+  "commit": "580f40c",
+  "remaining": "g350 Ranked done. Continue from ~1950 for next Ranked MATCH."
+}

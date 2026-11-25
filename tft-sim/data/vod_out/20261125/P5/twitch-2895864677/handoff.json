@@ -11,7 +11,11 @@
     ],
     [
       2410,
-      4080
+      4260
+    ],
+    [
+      4380,
+      6500
     ]
   ],
   "remaining_ranges_s": [
@@ -20,26 +24,31 @@
       2410
     ],
     [
-      4080,
+      4260,
+      4380
+    ],
+    [
+      6500,
       23928
     ]
   ],
   "game_ids": [
     "twitch-2895864677-g120",
-    "twitch-2895864677-g2410"
+    "twitch-2895864677-g2410",
+    "twitch-2895864677-g4380"
   ],
   "counts": {
-    "games": 2,
-    "fights": 24,
-    "others": 24
+    "games": 3,
+    "fights": 35,
+    "others": 35
   },
   "validator": {
-    "ok": 21,
+    "ok": 28,
     "skipped": {
-      "winner_null": 3
+      "winner_null": 7
     }
   },
-  "needs_review": 3,
-  "commit": "0c1639b",
-  "remaining": "g2410: 6 PvP from labels (2-1/2-2/2-3/2-6/4-2/5-3). Tiếp end g2410 + game3~4440+. Ranked Set18. Không invent names."
+  "needs_review": 7,
+  "commit": "5991e7c",
+  "remaining": "g4380 pushed early. Tiếp denser + game4~6600+. Ranked only. Không invent names."
 }

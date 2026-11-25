@@ -2,7 +2,7 @@
   "schema": "vod-manifest-v1",
   "batch": "2026-11-25-set18-vod",
   "dispatcher": "claude (phiên điều phối mở rộng manifest 1000)",
-  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash). | 2026-11-25 expand depleted P2/P5/P6/P7/P8/P10: +voids1n/emilyywang/kiyoon/imriveting/loltyler1/dogdog+ (~420h ranked ladder, filter PBE/tourney/bash/custom/Normal).",
+  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash). | P4 +loltyler1 ranked Set18 Emerald VODs for throughput. | 2026-11-25 expand depleted P2/P5/P6/P7/P8/P10: voids1n/emilyywang/kiyoon/imriveting/upsetmaxtft/tleyds/dpeitft (~ranked ladder; filter PBE/tourney/bash/custom/Normal).",
   "slots": {
     "P1": {
       "role": "primary",
@@ -43,9 +43,11 @@
         "wasianiverson",
         "voltariux",
         "shurkou",
-        "aphromoo"
+        "aphromoo",
+        "loltyler1",
+        "dogdog"
       ],
-      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue)."
+      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue). | +loltyler1 ranked Set18 Emerald ladder (wasian/voltariux/shurkou/aphromoo archives depleted of clean ranked). | +dogdog Diamond ranked Set18; +more loltyler1."
     },
     "P5": {
       "role": "primary",
@@ -75,9 +77,10 @@
         "imaqtpie",
         "dankmemes011",
         "scarra",
-        "loltyler1"
+        "upsetmaxtft",
+        "tleyds"
       ],
-      "note": "disguisedtoast 3 VOD blocked (Normal/PBE/set≠18). Bổ sung NA ladder Set18: imaqtpie/dankmemes011/scarra."
+      "note": "disguisedtoast 3 VOD blocked (Normal/PBE/set≠18). Bổ sung NA ladder Set18: imaqtpie/dankmemes011/scarra. | +upsetmaxtft/tleyds ranked ladder (loltyler1 already on P4)."
     },
     "P9": {
       "role": "primary",
@@ -89,11 +92,9 @@
       "role": "primary",
       "streamers": [
         "spencer_tft",
-        "dogdog",
-        "upsetmaxtft",
-        "dpeitft",
-        "tleyds"
-      ]
+        "dpeitft"
+      ],
+      "note": "+dpeitft ranked climb; dogdog already on P4."
     }
   },
   "vods": [
@@ -4002,9 +4003,9 @@
       "title_hint": "to help others i must first help myself !coaching !bash"
     },
     {
-      "vod_id": "twitch-2901683273",
-      "url": "https://www.twitch.tv/videos/2901683273",
-      "streamer": "loltyler1",
+      "vod_id": "twitch-2886052682",
+      "url": "https://www.twitch.tv/videos/2886052682",
+      "streamer": "upsetmaxtft",
       "slot": "P8",
       "role": "primary",
       "status": "todo",
@@ -4014,102 +4015,36 @@
       "candidate_ranges_s": [
         [
           0,
-          27841
+          18229
         ]
       ],
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:expand-depleted-slots-800"
       ],
-      "title_hint": "STEADY SHIPS !! ROCKY ROAD WATERS BEFORE !! carefulness as said me for the what CLIMB ! huh thank you !! kindNESS WORLD "
+      "title_hint": "2hrs Group Coaching -> Soloq Adventures Continue | !coaching !youtube !discord  !website"
     },
     {
-      "vod_id": "twitch-2921307667",
-      "url": "https://www.twitch.tv/videos/2921307667",
-      "streamer": "loltyler1",
+      "vod_id": "twitch-2885983609",
+      "url": "https://www.twitch.tv/videos/2885983609",
+      "streamer": "tleyds",
       "slot": "P8",
       "role": "primary",
       "status": "todo",
       "patch_claims": [
-        "18.6"
+        "Set 18, exact patch pending visual confirmation"
       ],
       "candidate_ranges_s": [
         [
           0,
-          24625
+          29150
         ]
       ],
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:expand-depleted-slots-800"
       ],
-      "title_hint": "FREEZE COLDS WATER MELTS ICE TURNED SUN FOR FIRE LIGHT SHADE DARK BRIGHT MIXED GATHER FOR TIMER TICK TICK TICK !!!!!! ER"
-    },
-    {
-      "vod_id": "twitch-2918715614",
-      "url": "https://www.twitch.tv/videos/2918715614",
-      "streamer": "loltyler1",
-      "slot": "P8",
-      "role": "primary",
-      "status": "todo",
-      "patch_claims": [
-        "18.5C/18.6"
-      ],
-      "candidate_ranges_s": [
-        [
-          0,
-          18284
-        ]
-      ],
-      "source_refs": [
-        "twitch:gql-archive-list-20261125",
-        "coord:expand-depleted-slots-800"
-      ],
-      "title_hint": "GEE WILKERS !!! CANT STAND STOOD HAPPEN BUILT !!! DIFFERENT !! AHHAAHAH classic know expect T1 !!! unlessed ?? thoughtfu"
-    },
-    {
-      "vod_id": "twitch-2910906989",
-      "url": "https://www.twitch.tv/videos/2910906989",
-      "streamer": "loltyler1",
-      "slot": "P8",
-      "role": "primary",
-      "status": "todo",
-      "patch_claims": [
-        "18.5C/18.6"
-      ],
-      "candidate_ranges_s": [
-        [
-          0,
-          16343
-        ]
-      ],
-      "source_refs": [
-        "twitch:gql-archive-list-20261125",
-        "coord:expand-depleted-slots-800"
-      ],
-      "title_hint": "NOT TITLED MORE BE FOR DESCRIBE WAY PROCESS THINK JOURNEY LESS MORE GIVED !! PERFECT THANKED !!!!! deep thinks time .. C"
-    },
-    {
-      "vod_id": "twitch-2909976321",
-      "url": "https://www.twitch.tv/videos/2909976321",
-      "streamer": "loltyler1",
-      "slot": "P8",
-      "role": "primary",
-      "status": "todo",
-      "patch_claims": [
-        "18.5C/18.6"
-      ],
-      "candidate_ranges_s": [
-        [
-          0,
-          15352
-        ]
-      ],
-      "source_refs": [
-        "twitch:gql-archive-list-20261125",
-        "coord:expand-depleted-slots-800"
-      ],
-      "title_hint": "GRRR !! darkness cloud skied air water !! RAWWWRRR ! SCARED WAY THEY ALL THEM !!!! YAY YIPPIE ! BIGS T DO AGAINS LIKE KN"
+      "title_hint": "Road to rank 1 mr consistency 3/3 !discord !helix !scores"
     },
     {
       "vod_id": "twitch-2887732371",
@@ -4374,72 +4309,6 @@
         "twitch-gql:2026-11-25"
       ],
       "notes": "auto-added title=1095 start I LOVE DIXON MAYAZ !coaching !gay published=2026-10-03T01:22:25Z"
-    },
-    {
-      "vod_id": "twitch-2898291795",
-      "url": "https://www.twitch.tv/videos/2898291795",
-      "streamer": "dogdog",
-      "slot": "P10",
-      "role": "primary",
-      "status": "todo",
-      "patch_claims": [
-        "Set 18, exact patch pending visual confirmation"
-      ],
-      "candidate_ranges_s": [
-        [
-          0,
-          27180
-        ]
-      ],
-      "source_refs": [
-        "twitch:gql-archive-list-20261125",
-        "coord:expand-depleted-slots-800"
-      ],
-      "title_hint": "tft day! Dia start plat end"
-    },
-    {
-      "vod_id": "twitch-2886052682",
-      "url": "https://www.twitch.tv/videos/2886052682",
-      "streamer": "upsetmaxtft",
-      "slot": "P10",
-      "role": "primary",
-      "status": "todo",
-      "patch_claims": [
-        "Set 18, exact patch pending visual confirmation"
-      ],
-      "candidate_ranges_s": [
-        [
-          0,
-          18229
-        ]
-      ],
-      "source_refs": [
-        "twitch:gql-archive-list-20261125",
-        "coord:expand-depleted-slots-800"
-      ],
-      "title_hint": "2hrs Group Coaching -> Soloq Adventures Continue | !coaching !youtube !discord  !website"
-    },
-    {
-      "vod_id": "twitch-2885983609",
-      "url": "https://www.twitch.tv/videos/2885983609",
-      "streamer": "tleyds",
-      "slot": "P10",
-      "role": "primary",
-      "status": "todo",
-      "patch_claims": [
-        "Set 18, exact patch pending visual confirmation"
-      ],
-      "candidate_ranges_s": [
-        [
-          0,
-          29150
-        ]
-      ],
-      "source_refs": [
-        "twitch:gql-archive-list-20261125",
-        "coord:expand-depleted-slots-800"
-      ],
-      "title_hint": "Road to rank 1 mr consistency 3/3 !discord !helix !scores"
     },
     {
       "vod_id": "twitch-2919464852",
@@ -6441,6 +6310,138 @@
         "twitch:gql-archive-list-20261125",
         "coord:p4-expand-secondary-throughput",
         "probe:tft-ranked-match-accepted"
+      ]
+    },
+    {
+      "vod_id": "twitch-2921307667",
+      "url": "https://www.twitch.tv/videos/2921307667",
+      "streamer": "loltyler1",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          24625
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-tyler-throughput",
+        "probe:ranked-emerald-set18"
+      ]
+    },
+    {
+      "vod_id": "twitch-2918715614",
+      "url": "https://www.twitch.tv/videos/2918715614",
+      "streamer": "loltyler1",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18284
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-tyler-throughput",
+        "probe:ranked-emerald-set18"
+      ]
+    },
+    {
+      "vod_id": "twitch-2910906989",
+      "url": "https://www.twitch.tv/videos/2910906989",
+      "streamer": "loltyler1",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          16343
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-tyler-throughput",
+        "probe:ranked-emerald-set18"
+      ]
+    },
+    {
+      "vod_id": "twitch-2909976321",
+      "url": "https://www.twitch.tv/videos/2909976321",
+      "streamer": "loltyler1",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          15352
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-tyler-throughput",
+        "probe:ranked-emerald-set18"
+      ]
+    },
+    {
+      "vod_id": "twitch-2898291795",
+      "url": "https://www.twitch.tv/videos/2898291795",
+      "streamer": "dogdog",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          27180
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-throughput",
+        "probe:diamond-ranked-set18"
+      ]
+    },
+    {
+      "vod_id": "twitch-2901683273",
+      "url": "https://www.twitch.tv/videos/2901683273",
+      "streamer": "loltyler1",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          27841
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-throughput",
+        "probe:diamond-loading-ranked"
       ]
     }
   ]
