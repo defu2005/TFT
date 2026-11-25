@@ -5712,6 +5712,48 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
+   },
+   "frame_A_read": {
+    "frame_s": 1836,
+    "timer": 21,
+    "counter": "8/9",
+    "level": 9,
+    "xp": "0/68",
+    "gold": 57,
+    "streak": 3,
+    "shop": [
+     "Gromp",
+     "Cinderling",
+     "Hecarim",
+     "Kayle",
+     "not identifiable at 720p (faded card)"
+    ],
+    "panel": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1,
+     "marker": "1+",
+     "greenfather_row": "absent in this frame"
+    },
+    "info_card": {
+     "unit": "Sett",
+     "stars_shown": 2,
+     "items_visible": 3,
+     "hp": "5183/5183",
+     "tag": "read"
+    },
+    "rail_hp_rows": "not read in this frame",
+    "bench": "bottom bench strip shows no units",
+    "board_units_rowcol": "not read by row and column",
+    "stars_items": "Sett card: two star pips and three item icons; item names not legible at 720p",
+    "tag": "read",
+    "source": "frame at 1836 s, viewed in this session"
    }
   },
   {
