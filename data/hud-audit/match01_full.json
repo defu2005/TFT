@@ -711,10 +711,11 @@
    },
    "combat": {
     "value": {
-     "note": "combat frame 505 s read as PvE monsters earlier; HP flags show PvP, read conflict kept"
+     "frame_t_s": 505,
+     "read": "PvE monsters at 505 s (home view, earlier read); HP flags show P1 and P2 lost HP, so the round is PvP"
     },
-    "tag": "derived",
-    "basis": "conflict flagged"
+    "tag": "read",
+    "note": "restored; conflict with round_type recorded"
    },
    "actions": {
     "value": {
@@ -2605,7 +2606,16 @@
       [
        "Alistar",
        "Ezreal",
-       "Kha'Zix",
+       "Malphite",
+       "Mama Beak",
+       "Rek'Sai",
+       "Sett",
+       "Xayah"
+      ],
+      [
+       "Ezreal",
+       "Gnar",
+       "Kobuko",
        "Malphite",
        "Mama Beak",
        "Rek'Sai",
@@ -2614,34 +2624,7 @@
       [
        "Alistar",
        "Ezreal",
-       "Malphite",
-       "Mama Beak",
-       "Rek'Sai",
-       "Rengar",
-       "Xayah"
-      ],
-      [
-       "Alistar",
-       "Ezreal",
-       "Ivern",
-       "Malphite",
-       "Mama Beak",
-       "Rek'Sai",
-       "Xayah"
-      ],
-      [
-       "Alistar",
-       "Ezreal",
-       "Lux",
-       "Malphite",
-       "Mama Beak",
-       "Rek'Sai",
-       "Xayah"
-      ],
-      [
-       "Alistar",
-       "Draven",
-       "Ezreal",
+       "Kobuko",
        "Malphite",
        "Mama Beak",
        "Rek'Sai",
@@ -2649,7 +2632,6 @@
       ]
      ],
      "core_in_all": [
-      "Alistar",
       "Ezreal",
       "Malphite",
       "Mama Beak",
@@ -2658,7 +2640,7 @@
      ]
     },
     "tag": "derived",
-    "basis": "panel solver, 5 candidates at hidden 1; not unique; core listed"
+    "basis": "re-read 3-5 panel with Brawler 3; hidden 1 = marker; 3 candidates"
    },
    "bench_units": {
     "value": null,
@@ -2706,7 +2688,7 @@
      "panel": {
       "value": {
        "Monolith": 1,
-       "Brawler": 2,
+       "Brawler": 3,
        "Elderwood": 3,
        "Rapidfire": 2,
        "Blackthorn": 2,
@@ -2715,7 +2697,8 @@
        "Summoner": 1,
        "Riftbeast": 1
       },
-      "tag": "read"
+      "tag": "read",
+      "note": "re-read at 3x from 1186 s: Brawler 3 (not 2)"
      },
      "shop": {
       "value": [
@@ -3290,10 +3273,42 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "panel solver run",
-    "reason": "panel incomplete or multiple solutions; not written"
+    "value": {
+     "candidates": [
+      [
+       "Alistar",
+       "Ezreal",
+       "Krug",
+       "LeBlanc",
+       "Mama Beak",
+       "Ornn",
+       "Xayah",
+       "Zyra"
+      ],
+      [
+       "Alistar",
+       "Ezreal",
+       "Hecarim",
+       "Krug",
+       "LeBlanc",
+       "Mama Beak",
+       "Xayah",
+       "Zyra"
+      ],
+      [
+       "Alistar",
+       "Ezreal",
+       "Krug",
+       "LeBlanc",
+       "Lux (Elderwood)",
+       "Mama Beak",
+       "Xayah",
+       "Zyra"
+      ]
+     ]
+    },
+    "tag": "derived",
+    "basis": "panel solver, hidden 1, multiple candidates; not written as unique"
    },
    "bench_units": {
     "value": null,
@@ -3531,8 +3546,8 @@
      "Sett"
     ],
     "tag": "derived",
-    "basis": "panel solver, hidden rows allowed 2; unique solution; hexes unresolved",
-    "note": "same panel and counter as 4-2 and 5-1; hexes unresolved"
+    "basis": "panel solver, hidden rows 1 = marker; unique",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -4475,8 +4490,8 @@
      "Sett"
     ],
     "tag": "derived",
-    "basis": "panel solver, hidden rows allowed 2; unique solution; hexes unresolved",
-    "note": "same panel and counter as 4-2 and 5-1; hexes unresolved"
+    "basis": "panel solver, hidden rows 1 = marker; unique",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -4760,8 +4775,8 @@
      "Maokai"
     ],
     "tag": "derived",
-    "basis": "panel solver, hidden rows allowed 2; unique solution; hexes unresolved",
-    "note": "unique at hidden 2; hexes unresolved"
+    "basis": "panel solver, hidden rows 1 = marker; unique",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -5010,8 +5025,8 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "panel solver, hidden rows allowed 2; unique solution; hexes unresolved",
-    "note": "same panel and counter as 5-3 and 6-6; hexes unresolved"
+    "basis": "panel solver, hidden rows 2 = marker; unique",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -6809,8 +6824,8 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "panel solver, hidden rows allowed 2; unique solution; hexes unresolved",
-    "note": "same panel and counter as 5-3 and 6-6; hexes unresolved"
+    "basis": "panel solver, hidden rows 2 = marker; unique",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
