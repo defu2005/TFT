@@ -3,7 +3,7 @@
   "vod_id": "twitch-2909338557",
   "slot": "P5",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       30,
@@ -12,35 +12,30 @@
     [
       2100,
       4100
-    ]
-  ],
-  "remaining_ranges_s": [
-    [
-      0,
-      30
     ],
     [
-      1980,
-      2100
-    ],
-    [
-      4100,
-      99999
+      5200,
+      13400
     ]
   ],
+  "remaining_ranges_s": null,
   "game_ids": [
     "twitch-2909338557-g30",
-    "twitch-2909338557-g2100"
+    "twitch-2909338557-g2100",
+    "twitch-2909338557-g5200",
+    "twitch-2909338557-g7200",
+    "twitch-2909338557-g9400",
+    "twitch-2909338557-g11400"
   ],
   "counts": {
-    "games": 2,
-    "fights": 32,
-    "others": 32
+    "games": 6,
+    "fights": 88,
+    "others": 88
   },
   "validator": {
     "ok": 31,
     "skipped": {
-      "winner_null": 1
+      "winner_null": 57
     }
   },
   "needs_review": 1,

@@ -7,34 +7,10 @@
   "covered_ranges_s": [
     [
       0,
-      2100
-    ],
-    [
-      2100,
-      2700
-    ],
-    [
-      2700,
-      4200
-    ],
-    [
-      4200,
-      7000
-    ],
-    [
-      7000,
-      10000
-    ],
-    [
-      10000,
-      14000
-    ],
-    [
-      14000,
-      18000
+      22000
     ]
   ],
-  "remaining_ranges_s": [],
+  "remaining_ranges_s": null,
   "game_ids": [
     "twitch-2907504785-g0",
     "twitch-2907504785-g2700",
@@ -42,12 +18,14 @@
     "twitch-2907504785-g4200",
     "twitch-2907504785-g7000",
     "twitch-2907504785-g10000",
-    "twitch-2907504785-g14000"
+    "twitch-2907504785-g14000",
+    "twitch-2907504785-g18000",
+    "twitch-2907504785-g20000"
   ],
   "counts": {
-    "games": 7,
-    "fights": 98,
-    "others": 98
+    "games": 9,
+    "fights": 126,
+    "others": 126
   },
   "notes": "Densify thin stub+rem → 7g/98f; agent bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
   "claim": {
@@ -57,7 +35,7 @@
   "validator": {
     "ok": 83,
     "skipped": {
-      "winner_null": 15
+      "winner_null": 43
     }
   }
 }
