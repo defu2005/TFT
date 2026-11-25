@@ -193,8 +193,33 @@
       "status": "unverified: single solution with listed traits matched exactly and two unlisted traits allowed"
     },
     "3-5_frame_B_N7_extra2": {
-      "solutions": "50+ (cap reached)",
-      "status": "underdetermined; trait panel alone does not identify units here"
+      "solutions": 4,
+      "status": "superseded by extra1 result"
+    },
+    "3-5_frame_B_N7_extra1": {
+      "panel_as_read": {
+        "Elderwood": 5,
+        "Rapidfire": 2,
+        "Brawler": 2,
+        "Blackthorn": 1,
+        "Executioner": 1,
+        "Fae": 1,
+        "Summoner": 1,
+        "Spellweaver": 1,
+        "Vanguard": 1
+      },
+      "exact_solutions_extra0": 0,
+      "extra1_solutions": 1,
+      "solution": [
+        "Alistar",
+        "Ezreal",
+        "Hecarim",
+        "LeBlanc",
+        "Mama Beak",
+        "Rek'Sai",
+        "Xayah"
+      ],
+      "status": "unverified: single solution; overlaps 2-5 solution on Alistar, Mama Beak, Xayah; LeBlanc is a shop card at 3-5; Ezreal appears in the overlay title. Not yet confirmed on sprites."
     }
   },
   "counts": {
