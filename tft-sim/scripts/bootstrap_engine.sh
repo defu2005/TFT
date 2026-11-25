@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Dung moi truong de chay tft-sim trong session moi.
 #   - clone engine tft_goat tai dung commit da ghim (khong dung nhanh main thoi),
-#   - cai thu vien Python engine can (httpx, pettingzoo) cung numpy, pandas,
+#   - cai dependencies cua engine tu pyproject.toml (tru torch) cung pandas,
 #   - in dong PYTHONPATH can export.
 # Dung:  bash scripts/bootstrap_engine.sh [thu_muc_engine]
-# Bien moi truong: TFT_GOAT_DIR (mac dinh ~/work/tft_goat)
+# Bien moi truong: TFT_GOAT_DIR (mac dinh ~/work/tft_goat), PYTHON (mac dinh python3)
 set -euo pipefail
 
 ENGINE_URL="https://github.com/MielPopsssssss/tft_goat"
@@ -24,7 +24,17 @@ if [ "$got" != "$ENGINE_REV" ]; then
     exit 1
 fi
 
-python3 -m pip install --quiet "httpx>=0.27" "pettingzoo>=1.24" numpy pandas
+# Cai dependencies cua engine tu pyproject.toml (ban dung cua engine, khong copy tay).
+# Bo torch: chi goi agent/ va surrogate/ import; duong mo phong combat (selftest) khong can.
+PY="${PYTHON:-python3}"
+mapfile -t DEPS < <("$PY" -c '
+import sys, tomllib
+d = tomllib.load(open(sys.argv[1], "rb"))
+for x in d["project"]["dependencies"]:
+    if not x.startswith("torch"):
+        print(x)
+' "$ENGINE_DIR/pyproject.toml")
+"$PY" -m pip install --quiet "${DEPS[@]}" pandas
 
 echo "Engine: $ENGINE_DIR @ $got"
 echo "Export truoc khi chay:"

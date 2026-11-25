@@ -296,6 +296,7 @@ if len(df) == 2 and do:
     on, off = _onoff([BU(a, 1, on_board=True) for a in df + do], ("armor", "mr"))
     d = [(round(a[0] - b[0], 6), round(a[1] - b[1], 6)) for a, b in zip(on, off)]
     print("defender armor/mr delta (def, def, nondef)", d)
+    # GIA DINH hien tai (xem 11.11): Defender lay MAX (25), khong cong thanh 37. Mo ta CDragon khong noi ro.
     ok12 &= all(abs(x - 25) < 1e-6 and abs(y - 25) < 1e-6 for x, y in d[:2]) and abs(d[2][0] - 12) < 1e-6 and abs(d[2][1] - 12) < 1e-6
 rf = _pick("Rapidfire", 2); rfo = _pick("Rapidfire", 1, other=True)
 if len(rf) == 2 and rfo:
@@ -308,6 +309,15 @@ rec12 = fixture(names18, 18)
 x0 = F.predict_win(rec12, 3, "generic", True, 0, traits_table=False)
 x1 = F.predict_win(rec12, 3, "generic", True, 0, traits_table=True)
 ok12 &= F.S.apply_team_traits is F._orig_apply_team_traits
+# bonus_units (augment Large Quest, engine trait_bonus): 1 Brawler + bonus 1 phai dat moc 2 -> +120 HP cho ca doi
+bb1 = [BU(bw[0], 1, on_board=True)] + [BU(other[0], 1, on_board=True)] if bw and other else []
+if bb1:
+    S9.apply_team_traits = lambda u, c, bonus_units=0: F._set18_traits(u, c, bonus_units, emblems=False, table=True)
+    hb1 = [u.max_hp for u in S9._build_team(bb1, 0, c18, 1)]
+    hb0 = [u.max_hp for u in S9._build_team(bb1, 0, c18, 0)]
+    S9.apply_team_traits = F._orig_apply_team_traits
+    print("bonus_units table (bonus 1 vs 0)", hb1, hb0)
+    ok12 &= abs((hb1[1] - hb0[1]) - 120) < 1e-6 and abs((hb1[0] - hb0[0]) - 395) < 1e-6  # khong Brawler +120; Brawler +120 + 25% of 1100
 print("table predict_win off/on", (x0["a"], x0["b"]), (x1["a"], x1["b"]), "mapped", F.TABLE_MAPPED)
 ok &= ok12
 print("trait table block", "PASS" if ok12 else "FAIL")

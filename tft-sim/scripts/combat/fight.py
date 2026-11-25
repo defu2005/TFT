@@ -64,7 +64,7 @@ TRAIT_TABLE = {
     "DA_Juggernaut18": {"{f8c73243}": ("dr", "team"),                           # TeamDurability (ten khoa da xac nhan)
                         "{6eab9c5e}": ("dr", "members")},                       # JuggernautDurability; dr lay MAX tren moi unit (khong cong don)
     "DA_18_Defender": {"{0eb6405e}": ("resist", "team"),                      # NonDefenderDefenseGain: ca doi (mo ta "Your team gains")
-                       "{8c16b281}": ("resist", "members")},                    # DefenderDefenseGain: Defender lay MAX (mo ta "Defenders gain more")
+                       "{8c16b281}": ("resist", "members")},                    # DefenderDefenseGain: GIA DINH Defender lay MAX (mo ta khong noi ro, xem 11.11)
     "DA_18_Rapidfire": {"{1d98dcec}": ("as", "team")},                          # TeamAS
 }
 TABLE_MAPPED = sum(len(v) for v in TRAIT_TABLE.values())
@@ -82,7 +82,7 @@ def _counts(units, content, with_emblem: bool) -> dict:
     return cnt, held
 
 
-def _table_extra(units, content, with_emblem: bool) -> None:
+def _table_extra(units, content, with_emblem: bool, bonus_units: int = 0) -> None:
     """Ap dung TRAIT_TABLE sau engine (va emblem). Moi delta tinh tren gia tri TRUOC bang nen khong phu thuoc thu tu."""
     if not units:
         return
@@ -93,7 +93,9 @@ def _table_extra(units, content, with_emblem: bool) -> None:
         trait = content.traits.get(api)
         if trait is None:
             continue
-        tier = sum(1 for bp in trait.breakpoints if cnt.get(trait.name, 0) >= bp)
+        bps = tuple(trait.breakpoints)
+        n = cnt.get(trait.name, 0) + (bonus_units if bps != (1,) else 0)  # cung quy tac voi _emblem_traits / engine
+        tier = sum(1 for bp in bps if n >= bp)
         if tier == 0:
             continue
         effs = sorted(trait.effects, key=lambda e: e.min_units)
@@ -321,7 +323,7 @@ def _set18_traits(units, content, bonus_units: int = 0, *, emblems: bool = False
     else:
         _orig_apply_team_traits(units, content, bonus_units=bonus_units)
     if table:
-        _table_extra(units, content, emblems)
+        _table_extra(units, content, emblems, bonus_units)
 
 
 def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = True, seed0: int = 0,
