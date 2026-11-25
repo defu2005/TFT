@@ -14,7 +14,7 @@ Tài liệu này trả lời: model nào học gì, dựa trên dữ liệu th�
 | `level` | 34,3% mẫu; **9/23 file gần như không có cấp** (0–1,6%) | Không dùng được để nhận dạng mua XP ở các file này. |
 | Shop đủ 5 tên | 18,6% mẫu | Phần lớn mẫu không đủ để tái dựng cửa hàng. |
 | Biến đổi cửa hàng giữa hai mẫu liên tiếp | 11.874 cặp | Gồm mua, làm mới, và lỗi OCR; chưa tách được. |
-| Biến thiên vàng bất thường | ~2.700 cặp giảm 1–9 vàng không khớp chi phí hợp lệ rõ ràng | Có thể là OCR sai, chưa phân loại. |
+| Biến thiên vàng bất thường | ~2.600 cặp giảm 1–9 vàng (đếm từ phân bố delta, giới hạn ở −10) không khớp chi phí hợp lệ rõ ràng | Có thể là OCR sai, chưa phân loại. |
 
 ## 2. Đầu vào mô hình có đủ không
 
