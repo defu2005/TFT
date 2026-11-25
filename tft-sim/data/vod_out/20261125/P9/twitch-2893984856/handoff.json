@@ -14,12 +14,24 @@
       6000
     ],
     [
+      6200,
+      6900
+    ],
+    [
       7000,
       10000
     ],
     [
+      10200,
+      11200
+    ],
+    [
       11000,
       14000
+    ],
+    [
+      14200,
+      15500
     ]
   ],
   "remaining_ranges_s": [
@@ -29,14 +41,18 @@
     ],
     [
       6000,
+      6200
+    ],
+    [
+      6900,
       7000
     ],
     [
       10000,
-      11000
+      10200
     ],
     [
-      14000,
+      15500,
       15853
     ]
   ],
@@ -44,17 +60,20 @@
     "twitch-2893984856-g400",
     "twitch-2893984856-g3500",
     "twitch-2893984856-g7000",
-    "twitch-2893984856-g11000"
+    "twitch-2893984856-g11000",
+    "twitch-2893984856-g6200",
+    "twitch-2893984856-g10200",
+    "twitch-2893984856-g14200"
   ],
   "counts": {
-    "games": 4,
-    "fights": 4,
+    "games": 7,
+    "fights": 7,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 4
+      "winner_null": 7
     },
     "rows": [
       {
@@ -75,6 +94,21 @@
       {
         "line": 4,
         "source": "twitch-2893984856-g11000:2-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 5,
+        "source": "twitch-2893984856-g6200:5-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 6,
+        "source": "twitch-2893984856-g10200:3-6",
+        "reason": "winner_null"
+      },
+      {
+        "line": 7,
+        "source": "twitch-2893984856-g14200:3-2",
         "reason": "winner_null"
       }
     ]
