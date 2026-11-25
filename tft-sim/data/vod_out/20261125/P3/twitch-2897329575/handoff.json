@@ -6,52 +6,55 @@
   "status": "partial",
   "covered_ranges_s": [
     [
-      50,
-      2200
+      20,
+      2180
     ],
     [
-      2400,
-      4500
+      2320,
+      4350
     ],
     [
-      4800,
-      6800
+      4650,
+      6950
     ],
     [
-      7200,
-      8800
+      7100,
+      8950
     ],
     [
-      9000,
-      11000
+      8980,
+      10800
     ],
     [
       11200,
-      13800
+      13400
     ],
     [
       14000,
-      15500
+      15400
     ],
     [
-      15800,
-      19000
+      15650,
+      17850
+    ],
+    [
+      17950,
+      19950
     ],
     [
       20200,
-      24800
+      22480
     ],
     [
-      25000,
-      26800
-    ]
-  ],
-  "remaining_ranges_s": [
+      22500,
+      25150
+    ],
     [
-      26800,
+      25300,
       26842
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2897329575-g50",
     "twitch-2897329575-g2400",
@@ -61,21 +64,23 @@
     "twitch-2897329575-g11200",
     "twitch-2897329575-g14000",
     "twitch-2897329575-g15800",
+    "twitch-2897329575-g18000",
     "twitch-2897329575-g20200",
+    "twitch-2897329575-g22500",
     "twitch-2897329575-g25000"
   ],
   "counts": {
-    "games": 10,
-    "fights": 26,
+    "games": 12,
+    "fights": 31,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 26
+      "winner_null": 31
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "Volume stubs Ranked Set18 Challenger; winner_null thin. Densify side_b/winners later. 2026-11-25T19:31:15Z"
+  "remaining": "Aligned to dense 12-game map (+2 splits g18000/g22500). 2026-11-25T19:36:22Z"
 }
