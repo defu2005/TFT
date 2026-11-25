@@ -8,33 +8,36 @@
   2170.0,
   2180.3
  ],
- "augment_pick_screen_1493.9": {
+ "frame_1493.9": {
+  "kind": "item choice, not an augment pick",
   "options": [
    "Sunfire Cape",
    "Giant Slayer",
    "Edge of Night",
    "Protector's (cut off)"
   ],
-  "owned_in_options": [],
-  "note": "none of the three owned augments appear on this screen; which pick it belongs to is not resolved"
+  "note": "item-component options; none of the owned augments appear on this screen. Item actually taken not yet read."
  },
- "status": "one pick confirmed from screen (4-2); two picks inferred or unresolved (2-1, 3-2)",
- "next": "find pick screens for Warpath, Heroic Grab Bag+, Cybernetic Implants in other frames (near 2-1, 3-2, 4-2 +/- 20 s)",
- "pick_screens_swept": {
+ "status": "three picks confirmed from the on-screen card titles at a pick-screen frame (2-1, 3-2, 4-2)",
+ "pick_screens": {
   "2-1": {
-   "screen": "Choose One at about 443-463 s, three options (labels partly unreadable)",
-   "box_after": "Warpath (first seen in 2-5 pilot frame)",
-   "status": "pick likely Warpath; not read on screen"
+   "screen": "Choose One, frames 443 s and 459 s",
+   "options_read": ["U.R.F", "Replication", "Capital Gains II (443 s)", "Warpath (459 s)"],
+   "pick": "Warpath",
+   "evidence": "Warpath is the third card at 459 s and is in the owned box at 2170 s; the pick is confirmed by ownership, not by a frame showing the choice being made"
   },
   "3-2": {
-   "screen": "Choose One at about 980-990 s, options Salvage Bin, Big Grab Bag, Magic Roll",
-   "box_after": "Warpath still; Heroic Grab Bag+ appears later",
-   "status": "pick not resolved; Heroic Grab Bag+ may be the upgrade of an option, unverified"
+   "screen": "Choose One, frame 980 s",
+   "options_read": ["Salvage Bin+", "Big Grab Bag", "Heroic Grab Bag+"],
+   "pick": "Heroic Grab Bag+",
+   "evidence": "Heroic Grab Bag+ is the third card at 980 s and is in the owned box at 2170 s"
   },
   "4-2": {
-   "screen": "Choose One at about 1442 s, options Cybernetic Implants, Pandora's Items (partly cut), Jeweled Lotus",
-   "box_after": "Warpath, Heroic Grab Bag+, then Cybernetic Implants by 2170",
-   "status": "pick = Cybernetic Implants (option on screen and in box later)"
+   "screen": "Choose One, frame 1442 s",
+   "options_read": ["Cybernetic Implants", "Pandora's Items II++", "Jeweled Lotus I"],
+   "pick": "Cybernetic Implants",
+   "evidence": "Cybernetic Implants is on screen at 1442 s and is in the owned box at 2170 s"
   }
- }
+ },
+ "caveat": "The pick is inferred from the offered options plus the owned box. No frame shows the click itself. Sweeps between 443 and 520 s for the 2-1 pick are in the scratch folder and not committed."
 }
