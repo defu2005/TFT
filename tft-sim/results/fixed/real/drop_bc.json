@@ -1,0 +1,43 @@
+{
+  "model": "drop",
+  "in_dim": 189,
+  "train_rows": 1184548,
+  "test_rows": 590424,
+  "train_cond_counts": {
+    "a": 394860,
+    "c": 395772,
+    "full": 393916
+  },
+  "test_fixed": {
+    "a": {
+      "drop": 0.6309,
+      "dedicated_mask": 0.6355,
+      "gap": -0.0046
+    },
+    "c": {
+      "drop": 0.9902,
+      "dedicated_mask": 0.9927,
+      "gap": -0.0025
+    },
+    "full": {
+      "drop": 0.9926,
+      "dedicated_mask": 0.9966,
+      "gap": -0.004
+    },
+    "mixed_test": 0.871
+  },
+  "leak": {
+    "a": {
+      "hidden_dims": 171,
+      "max_abs_logit_change": 0.0
+    },
+    "c": {
+      "hidden_dims": 65,
+      "max_abs_logit_change": 0.0
+    },
+    "full": {
+      "hidden_dims": 0,
+      "max_abs_logit_change": 0.0
+    }
+  }
+}
