@@ -1,0 +1,47 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2913998942",
+  "slot": "P1",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      9240,
+      11400
+    ],
+    [
+      12120,
+      13800
+    ],
+    [
+      14520,
+      17880
+    ],
+    [
+      18600,
+      19320
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2913998942-g9240",
+    "twitch-2913998942-g12120",
+    "twitch-2913998942-g14520",
+    "twitch-2913998942-g18600"
+  ],
+  "counts": {
+    "games": 4,
+    "fights": 68,
+    "others": 68
+  },
+  "validator": {
+    "ok": 62,
+    "skipped": {
+      "winner_null": 6
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "Scrim/tourney/watch-party segments skipped.",
+  "notes": "Regionals watch party skipped; 4 ranked ladder games densified. g18600 ends mid-VOD."
+}
