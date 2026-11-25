@@ -7770,6 +7770,40 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
+   },
+   "frame_A_read": {
+    "frame_s": 2342,
+    "timer": 21,
+    "counter": "9/9",
+    "level": 9,
+    "xp": "14/68",
+    "gold": 8,
+    "streak": 1,
+    "shop": [
+     "Sett",
+     "Malphite",
+     "Master Yi",
+     "Ahri",
+     "Kog'Maw"
+    ],
+    "panel": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "rail_hp_rows": "two non-streamer rows nonzero (16 and 10); the rest 0; streamer 59",
+    "bench": "not read",
+    "board_units_rowcol": "not read by row and column",
+    "stars_items": "not resolvable at 720p",
+    "tag": "read",
+    "source": "frame at 2342 s, viewed in this session"
    }
   },
   {
