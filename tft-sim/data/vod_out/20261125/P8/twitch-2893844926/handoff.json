@@ -21,16 +21,16 @@
   ],
   "counts": {
     "games": 1,
-    "fights": 12,
+    "fights": 14,
     "others": 0
   },
   "validator": {
-    "ok": 5,
+    "ok": 7,
     "skipped": {
       "winner_null": 7
     }
   },
   "needs_review": 7,
   "commit": "8fa15a19",
-  "remaining": "densify-full g0 12f. Continue games ~2000+. P8-primary dankmemes011."
+  "remaining": "densify-full g0 14f through 3-6. Next game after elim. P8-primary dankmemes011."
 }
