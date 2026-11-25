@@ -1,6 +1,6 @@
 {
  "match": "match-01 livestream VOD 01-boxbox-2924500482-00210.mp4, window 311.8-2620 s",
- "schema": "each field: value + tag in {read, derived, unresolved}; opponent_board.bench: value, tag, attempt, reason (not visible in scouting frames)",
+ "schema": "each field: value + tag in {read, derived, unresolved}; opponent_board.bench: count of sprites on the opponent pad row in a scouting frame (unresolved where no frame shows the pads)",
  "rounds": [
   {
    "round": "1-1",
@@ -880,7 +880,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -1101,7 +1101,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -1326,7 +1326,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -1756,7 +1756,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -2023,7 +2023,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -2522,7 +2522,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -2815,7 +2815,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -3068,7 +3068,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -3581,7 +3581,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -3856,7 +3856,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -4412,7 +4412,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -4667,7 +4667,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -4917,7 +4917,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -5340,7 +5340,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -5593,7 +5593,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -6186,7 +6186,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -6512,10 +6512,10 @@
     "attempt": "Panel attached to P3: owner marker at sweep 809 reads P3 (row 5), matching the 5-2 opponent. Second panel at sweep 806 (nine rows, sum 18) is unattached; its marker is on a level-8 row.",
     "reason": "unit list not solved",
     "bench": {
-     "value": null,
-     "tag": "unresolved",
-     "attempt": "Scouting frame at sweep 809 shows the opponent board only; the bench strip is not on screen, so the opponent bench was not read.",
-     "reason": "bench not visible in scouting frame"
+     "value": 5,
+     "tag": "read",
+     "basis": "Near pad row of the scouting frame at sweep 809 (720p crop 240,480,980,560, 3x): sprites on pads 1, 2, 3, 4 and 9; names unresolved (sprites carry no name text).",
+     "attempt": "Count of sprites on the near pad row at sweep 809; far pad row covered by the combat banner."
     }
    },
    "hexes": {
@@ -6821,7 +6821,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -7309,7 +7309,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -7609,7 +7609,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -8120,7 +8120,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -8411,7 +8411,7 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "No owner-attributed scouting frame for this round, so no opponent bench was read.",
+     "attempt": "No owner-attributed scouting frame for this round, so the opponent bench count is unresolved.",
      "reason": "no owner-attributed frame"
     }
    },
@@ -8689,8 +8689,8 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "Scouting frame at sweep 1023 shows the opponent board only; the bench strip is not on screen, so the opponent bench was not read.",
-     "reason": "bench not visible in scouting frame"
+     "attempt": "Near pad row at sweep 1023 shows no sprites; the far crop shows the arena, not a pad row, so the opponent bench count is unresolved for this frame.",
+     "reason": "far pad row not visible at sweep 1023"
     }
    },
    "hexes": {
@@ -9199,8 +9199,8 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "Scouting frame at sweep 1072 shows the opponent board only; the bench strip is not on screen, so the opponent bench was not read.",
-     "reason": "bench not visible in scouting frame"
+     "attempt": "Near pad row at sweep 1072 shows no sprites; the far crop shows the arena, not a pad row, so the opponent bench count is unresolved for this frame.",
+     "reason": "far pad row not visible at sweep 1072"
     }
    },
    "hexes": {
@@ -9521,8 +9521,8 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "Scouting frame at sweep 1106 shows the opponent board only; the bench strip is not on screen, so the opponent bench was not read.",
-     "reason": "bench not visible in scouting frame"
+     "attempt": "Near pad row at sweep 1106 shows no sprites; the far crop shows the arena, not a pad row, so the opponent bench count is unresolved for this frame.",
+     "reason": "far pad row not visible at sweep 1106"
     }
    },
    "hexes": {

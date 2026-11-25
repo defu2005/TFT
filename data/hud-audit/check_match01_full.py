@@ -42,6 +42,10 @@ print("OPEN PAIRS:")
 for r in d['rounds']:
     for f in FULL + REQUIRED:
         if not closed(r.get(f)): print(f"  {r['round']} {f}")
+bench_rounds=[r for r in d['rounds'] if isinstance(r.get('opponent_board'),dict) and r['opponent_board'].get('tag')!='n/a']
+bench_open=[r['round'] for r in bench_rounds if not closed(r['opponent_board'].get('bench'))]
+open_counts['opponent_bench']=len(bench_open)
+print(f"opponent_bench: {len(bench_rounds)-len(bench_open)} closed of {len(bench_rounds)} non-n/a rounds; open {len(bench_open)}")
 total_open = sum(open_counts.values())
 print("TOTAL OPEN:", total_open)
 
