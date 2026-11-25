@@ -1,0 +1,36 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2886223848",
+  "slot": "P6",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      0,
+      1605
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      1605,
+      29353
+    ]
+  ],
+  "game_ids": [
+    "twitch-2886223848-g150"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 11,
+    "others": 12
+  },
+  "validator": {
+    "ok": 2,
+    "skipped": {
+      "winner_null": 9
+    }
+  },
+  "needs_review": 9,
+  "commit": "38eca03",
+  "remaining": "tiếp tục từ 1605 s (ván 2+ ranked); CUSTOM/tourney thì blocked/skip"
+}
