@@ -3129,6 +3129,1590 @@
         "twitch-gql:2026-11-25"
       ],
       "notes": "auto-added title=1095 start I LOVE DIXON MAYAZ !coaching !gay published=2026-10-03T01:22:25Z"
+    },
+    {
+      "vod_id": "twitch-2939521723",
+      "url": "https://www.twitch.tv/videos/2939521723",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          25990
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "back off this dude going beast mode"
+    },
+    {
+      "vod_id": "twitch-2938534158",
+      "url": "https://www.twitch.tv/videos/2938534158",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          24960
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "every time he pop off..."
+    },
+    {
+      "vod_id": "twitch-2937525875",
+      "url": "https://www.twitch.tv/videos/2937525875",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          26930
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "can i get the mic a little higher"
+    },
+    {
+      "vod_id": "twitch-2936356991",
+      "url": "https://www.twitch.tv/videos/2936356991",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          24330
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "qt you one bad motha..."
+    },
+    {
+      "vod_id": "twitch-2935143797",
+      "url": "https://www.twitch.tv/videos/2935143797",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          25010
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "vertical imagine dragons"
+    },
+    {
+      "vod_id": "twitch-2933953393",
+      "url": "https://www.twitch.tv/videos/2933953393",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          23440
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "future vegas winner"
+    },
+    {
+      "vod_id": "twitch-2907761390",
+      "url": "https://www.twitch.tv/videos/2907761390",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          25610
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "bro qt you one of them ones my god"
+    },
+    {
+      "vod_id": "twitch-2906033424",
+      "url": "https://www.twitch.tv/videos/2906033424",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          25930
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "i play aphelios i implode irl"
+    },
+    {
+      "vod_id": "twitch-2903416965",
+      "url": "https://www.twitch.tv/videos/2903416965",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          23140
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "d button primed and ready"
+    },
+    {
+      "vod_id": "twitch-2902397159",
+      "url": "https://www.twitch.tv/videos/2902397159",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          28010
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "magic man do the thing one more time"
+    },
+    {
+      "vod_id": "twitch-2897139631",
+      "url": "https://www.twitch.tv/videos/2897139631",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          23690
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "Bankai."
+    },
+    {
+      "vod_id": "twitch-2896154266",
+      "url": "https://www.twitch.tv/videos/2896154266",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          24090
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "lose? win? the outcome means nothing because i will improve as a player and gain valuable experience to allow me to bett"
+    },
+    {
+      "vod_id": "twitch-2895277590",
+      "url": "https://www.twitch.tv/videos/2895277590",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          24070
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "winwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwinwin"
+    },
+    {
+      "vod_id": "twitch-2888219311",
+      "url": "https://www.twitch.tv/videos/2888219311",
+      "streamer": "scarra",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          27330
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "BACK FROM LA RQ AND EVERYRTHING YAPPING WHILE TFT"
+    },
+    {
+      "vod_id": "twitch-2940056711",
+      "url": "https://www.twitch.tv/videos/2940056711",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          25705
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "tft prodigy returns !anima"
+    },
+    {
+      "vod_id": "twitch-2923875867",
+      "url": "https://www.twitch.tv/videos/2923875867",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          18530
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "punishing myself with some low quality TFT games on the very high quality client 😂😂😂 #UE5 !overlay !project"
+    },
+    {
+      "vod_id": "twitch-2920958748",
+      "url": "https://www.twitch.tv/videos/2920958748",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          14852
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "punishing myself with some low quality TFT games on the very high quality client 😂😂😂 #UE5 !overlay !project"
+    },
+    {
+      "vod_id": "twitch-2916556972",
+      "url": "https://www.twitch.tv/videos/2916556972",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          15779
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "👻👻👻cosplaying a consistent streamer👻👻👻  !overlay !project"
+    },
+    {
+      "vod_id": "twitch-2914695810",
+      "url": "https://www.twitch.tv/videos/2914695810",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          8567
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "the daily life of a tier 2 chud 🥀🥀🥀🥀  !overlay !project"
+    },
+    {
+      "vod_id": "twitch-2912954332",
+      "url": "https://www.twitch.tv/videos/2912954332",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          17248
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "i miss him 🥀🥀🥀🥀  !overlay !project"
+    },
+    {
+      "vod_id": "twitch-2912213341",
+      "url": "https://www.twitch.tv/videos/2912213341",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          13987
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "will u be the back to my bramble? 🌹💋🥺🥺🥺😏😏😏  !overlay !project"
+    },
+    {
+      "vod_id": "twitch-2896814275",
+      "url": "https://www.twitch.tv/videos/2896814275",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          19768
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "magnet activated 🧲🧲🧲  !discord"
+    },
+    {
+      "vod_id": "twitch-2892405815",
+      "url": "https://www.twitch.tv/videos/2892405815",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          20375
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "feeling nice today feel free to ragebait for a surprise present 🎁 !discord"
+    },
+    {
+      "vod_id": "twitch-2887189202",
+      "url": "https://www.twitch.tv/videos/2887189202",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          15750
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "trying, very hard today 🍆 🫣😳👉👈!discord !operagx"
+    },
+    {
+      "vod_id": "twitch-2891042138",
+      "url": "https://www.twitch.tv/videos/2891042138",
+      "streamer": "robinsongz",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          8782
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "made day 2 24/32 !scores !handbook"
+    },
+    {
+      "vod_id": "twitch-2890057936",
+      "url": "https://www.twitch.tv/videos/2890057936",
+      "streamer": "robinsongz",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          24683
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "blossom cup !scores !handbook"
+    },
+    {
+      "vod_id": "twitch-2888417476",
+      "url": "https://www.twitch.tv/videos/2888417476",
+      "streamer": "robinsongz",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          16385
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "back from riftbound vacay !handbook"
+    },
+    {
+      "vod_id": "twitch-2940093869",
+      "url": "https://www.twitch.tv/videos/2940093869",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          38775
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "mr consistent is here"
+    },
+    {
+      "vod_id": "twitch-2939299142",
+      "url": "https://www.twitch.tv/videos/2939299142",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          6609
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "mr consistent is here"
+    },
+    {
+      "vod_id": "twitch-2939062388",
+      "url": "https://www.twitch.tv/videos/2939062388",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          31855
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "mr consistent is here"
+    },
+    {
+      "vod_id": "twitch-2938162691",
+      "url": "https://www.twitch.tv/videos/2938162691",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          39903
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "another 24 hour"
+    },
+    {
+      "vod_id": "twitch-2912836600",
+      "url": "https://www.twitch.tv/videos/2912836600",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          20445
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "what the hellyante"
+    },
+    {
+      "vod_id": "twitch-2910216143",
+      "url": "https://www.twitch.tv/videos/2910216143",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          20459
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "hello"
+    },
+    {
+      "vod_id": "twitch-2909100763",
+      "url": "https://www.twitch.tv/videos/2909100763",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          20264
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "preparing for hatewatch"
+    },
+    {
+      "vod_id": "twitch-2907084959",
+      "url": "https://www.twitch.tv/videos/2907084959",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          11422
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "new patch...."
+    },
+    {
+      "vod_id": "twitch-2904663392",
+      "url": "https://www.twitch.tv/videos/2904663392",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          6620
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "another 1.x"
+    },
+    {
+      "vod_id": "twitch-2903579596",
+      "url": "https://www.twitch.tv/videos/2903579596",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          20620
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "helo"
+    },
+    {
+      "vod_id": "twitch-2902350413",
+      "url": "https://www.twitch.tv/videos/2902350413",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          22399
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "woke up from dream that i got same points as tyler1 in bash, rage queueing"
+    },
+    {
+      "vod_id": "twitch-2896271382",
+      "url": "https://www.twitch.tv/videos/2896271382",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          17088
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "actual 1.x"
+    },
+    {
+      "vod_id": "twitch-2895746438",
+      "url": "https://www.twitch.tv/videos/2895746438",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          14702
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "play until bot 4(50 games)"
+    },
+    {
+      "vod_id": "twitch-2894958056",
+      "url": "https://www.twitch.tv/videos/2894958056",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          8361
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "play until bot 4(50 games)"
+    },
+    {
+      "vod_id": "twitch-2893963512",
+      "url": "https://www.twitch.tv/videos/2893963512",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          13650
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "play until bot 4(50 games)"
+    },
+    {
+      "vod_id": "twitch-2892828466",
+      "url": "https://www.twitch.tv/videos/2892828466",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          10709
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "hi"
+    },
+    {
+      "vod_id": "twitch-2891051843",
+      "url": "https://www.twitch.tv/videos/2891051843",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          18055
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "blossom cup #tpc"
+    },
+    {
+      "vod_id": "twitch-2890064639",
+      "url": "https://www.twitch.tv/videos/2890064639",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          17144
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "blossom cup[ #tpc"
+    },
+    {
+      "vod_id": "twitch-2886501398",
+      "url": "https://www.twitch.tv/videos/2886501398",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          20577
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "trying very hard today"
+    },
+    {
+      "vod_id": "twitch-2886176722",
+      "url": "https://www.twitch.tv/videos/2886176722",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          14353
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "very short"
+    },
+    {
+      "vod_id": "twitch-2929428465",
+      "url": "https://www.twitch.tv/videos/2929428465",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          7850
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "how many games of tft before i lose my mind !yt !coaching"
+    },
+    {
+      "vod_id": "twitch-2920925663",
+      "url": "https://www.twitch.tv/videos/2920925663",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          23150
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "BORED AND HORNY : ( !yt !coaching"
+    },
+    {
+      "vod_id": "twitch-2914485932",
+      "url": "https://www.twitch.tv/videos/2914485932",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          8210
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "SLAYYYYYYYYYY !coaching"
+    },
+    {
+      "vod_id": "twitch-2912788162",
+      "url": "https://www.twitch.tv/videos/2912788162",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          11440
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "SLAYYYYYYYYYY !coaching"
+    },
+    {
+      "vod_id": "twitch-2909792734",
+      "url": "https://www.twitch.tv/videos/2909792734",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          17059
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "F me if im wrong im straight !coaching"
+    },
+    {
+      "vod_id": "twitch-2902038983",
+      "url": "https://www.twitch.tv/videos/2902038983",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          19440
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "F me if im wrong im straight !coaching"
+    },
+    {
+      "vod_id": "twitch-2899533445",
+      "url": "https://www.twitch.tv/videos/2899533445",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          16310
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "anycockledoo !coaching !yt"
+    },
+    {
+      "vod_id": "twitch-2898659348",
+      "url": "https://www.twitch.tv/videos/2898659348",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          11290
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "short strim before bedge !coaching !yt"
+    },
+    {
+      "vod_id": "twitch-2896531401",
+      "url": "https://www.twitch.tv/videos/2896531401",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          15990
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "I can make u 'tuna sub' spelt backwards !coaching  !gay !lfd"
+    },
+    {
+      "vod_id": "twitch-2895679456",
+      "url": "https://www.twitch.tv/videos/2895679456",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          10550
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "cocoNUT !coaching"
+    },
+    {
+      "vod_id": "twitch-2893099069",
+      "url": "https://www.twitch.tv/videos/2893099069",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          11480
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "1284 start I LOVE MEAT !coaching"
+    },
+    {
+      "vod_id": "twitch-2892346472",
+      "url": "https://www.twitch.tv/videos/2892346472",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          22170
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "Girls are right, the big ones do hurt : ( !coaching"
+    },
+    {
+      "vod_id": "twitch-2892286899",
+      "url": "https://www.twitch.tv/videos/2892286899",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          6860
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "Girls are right, the big ones do hurt : ( !coaching"
+    },
+    {
+      "vod_id": "twitch-2886318258",
+      "url": "https://www.twitch.tv/videos/2886318258",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          18350
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "WAT TUH FUKAH !coaching !gay"
+    },
+    {
+      "vod_id": "twitch-2884536767",
+      "url": "https://www.twitch.tv/videos/2884536767",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          12860
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "HEY, DONT SAY THAT!  !coaching !gay !hotdog"
+    },
+    {
+      "vod_id": "twitch-2931098267",
+      "url": "https://www.twitch.tv/videos/2931098267",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          6119
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "1600 start | FINAL DAY OF SET18 🔴 GOING OVER !SET19 INFO IN Q 🙈 !twitter !discord"
+    },
+    {
+      "vod_id": "twitch-2906453571",
+      "url": "https://www.twitch.tv/videos/2906453571",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          21474
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "1069 start | REGIONALS DAY 1 ON SATURDAY 🔴 LOCKING IN TO MAKE IT BACK TO WORLDS, !PATCH TOMORROW"
+    },
+    {
+      "vod_id": "twitch-2891354525",
+      "url": "https://www.twitch.tv/videos/2891354525",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          14553
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "1043 start | RANK1 BEFORE REGIONALS GRIND ✅ CAN'T WAIT FOR RIOT MMO ANNOUNCEMENT AT CONVERGENCE FEST 🤠"
+    },
+    {
+      "vod_id": "twitch-2930220707",
+      "url": "https://www.twitch.tv/videos/2930220707",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          19024
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "1432 start | FINAL GOODBYES TO ENCHANTED WILDS"
+    },
+    {
+      "vod_id": "twitch-2928225201",
+      "url": "https://www.twitch.tv/videos/2928225201",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          18781
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "1137 start | BACK FROM BREAK 🔴 4 DAYS TIL !PBE"
+    },
+    {
+      "vod_id": "twitch-2927279982",
+      "url": "https://www.twitch.tv/videos/2927279982",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          20605
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "1137 start | BACK FROM BREAK, 5 DAYS TIL PBE"
+    },
+    {
+      "vod_id": "twitch-2897608176",
+      "url": "https://www.twitch.tv/videos/2897608176",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          12623
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "1057 start | LATE NIGHT QUICKIE 🔴 LEARNING EZREAL"
+    },
+    {
+      "vod_id": "twitch-2893984856",
+      "url": "https://www.twitch.tv/videos/2893984856",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          15793
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "929 start | QUICK SESH BEFORE MASSIVE !PATCH"
+    },
+    {
+      "vod_id": "twitch-2892255509",
+      "url": "https://www.twitch.tv/videos/2892255509",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          23319
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "977 start | NOT BALD ✅ RANK1 BEFORE !REGIONALS"
+    },
+    {
+      "vod_id": "twitch-2899373090",
+      "url": "https://www.twitch.tv/videos/2899373090",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          16328
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-continue",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "927 start | LOCKING IN FOR !BASH ON WEDNESDAY"
     }
   ]
 }
