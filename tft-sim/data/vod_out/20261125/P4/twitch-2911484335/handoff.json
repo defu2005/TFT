@@ -3,7 +3,7 @@
   "vod_id": "twitch-2911484335",
   "slot": "P4",
   "role": "primary",
-  "status": "partial",
+  "status": "done",
   "covered_ranges_s": [
     [
       60,
@@ -20,32 +20,37 @@
     [
       6600,
       8500
-    ]
-  ],
-  "remaining_ranges_s": [
+    ],
     [
-      8500,
-      99999
+      9000,
+      11500
+    ],
+    [
+      13000,
+      16000
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2911484335-g60",
     "twitch-2911484335-g2800",
     "twitch-2911484335-g4800",
-    "twitch-2911484335-g6600"
+    "twitch-2911484335-g6600",
+    "twitch-2911484335-g9000",
+    "twitch-2911484335-g13000"
   ],
   "counts": {
-    "games": 4,
-    "fights": 56,
+    "games": 6,
+    "fights": 80,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 56
+      "winner_null": 80
     }
   },
-  "needs_review": 56,
+  "needs_review": 80,
   "commit": null,
-  "remaining": "More ranked denser HLS pending."
+  "remaining": "Ranked spans covered."
 }
