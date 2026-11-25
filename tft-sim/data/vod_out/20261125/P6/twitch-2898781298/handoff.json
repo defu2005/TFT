@@ -7,32 +7,33 @@
   "covered_ranges_s": [
     [
       0,
-      5640
+      7880
     ]
   ],
   "remaining_ranges_s": [
     [
-      5640,
+      7880,
       24420
     ]
   ],
   "game_ids": [
     "twitch-2898781298-g60",
     "twitch-2898781298-g2100",
-    "twitch-2898781298-g4300"
+    "twitch-2898781298-g4300",
+    "twitch-2898781298-g6400"
   ],
   "counts": {
-    "games": 3,
-    "fights": 33,
-    "others": 33
+    "games": 4,
+    "fights": 46,
+    "others": 46
   },
   "validator": {
-    "ok": 26,
+    "ok": 38,
     "skipped": {
-      "winner_null": 7
+      "winner_null": 8
     }
   },
-  "needs_review": 7,
+  "needs_review": 8,
   "commit": null,
-  "remaining": "g60+g2100+g4300 densify fights=33 g3=13 both=1 win=10 ok=26; tiếp g4 ~5800s+ + kiyoon VODs khác"
+  "remaining": "g60..g6400 densify fights=46 g4=13 both=0 win=12; tiếp g5@8300 + kiyoon 2888926440 ranked"
 }
