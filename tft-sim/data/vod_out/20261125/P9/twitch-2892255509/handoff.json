@@ -260,59 +260,17 @@
     "twitch-2892255509-g400": {
       "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
       "fights": 12,
-      "stages": [
-        "2-3",
-        "2-5",
-        "3-1",
-        "3-2",
-        "3-3",
-        "3-5",
-        "3-6",
-        "4-1",
-        "4-2",
-        "4-3",
-        "4-5",
-        "5-3"
-      ],
-      "note": "Seasons lobby start~380 end~2060; boards unread"
+      "note": "Seasons ~380-2060"
     },
     "twitch-2892255509-g6200": {
       "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
       "fights": 12,
-      "stages": [
-        "2-1",
-        "2-3",
-        "2-5",
-        "3-1",
-        "3-2",
-        "3-3",
-        "3-5",
-        "3-6",
-        "4-1",
-        "4-2",
-        "4-5",
-        "4-6"
-      ],
-      "note": "bublz lobby start~5980 end~7700; skip carousel/PvE; boards unread"
+      "note": "bublz ~5980-7700"
     },
     "twitch-2892255509-g7500": {
       "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
       "fights": 12,
-      "stages": [
-        "2-1",
-        "2-2",
-        "2-3",
-        "3-1",
-        "3-2",
-        "3-3",
-        "3-6",
-        "4-1",
-        "4-2",
-        "4-3",
-        "4-6",
-        "5-3"
-      ],
-      "note": "remapped to spethom lobby ~2140-3900 (was overlapping g6200); boards unread"
+      "note": "spethom remapped ~2140-3900"
     }
   }
 }
