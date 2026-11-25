@@ -32,6 +32,10 @@
     [
       13600,
       15600
+    ],
+    [
+      16000,
+      17950
     ]
   ],
   "remaining_ranges_s": [
@@ -65,6 +69,10 @@
     ],
     [
       15600,
+      16000
+    ],
+    [
+      17950,
       25942
     ]
   ],
@@ -75,21 +83,22 @@
     "twitch-2913099253-g7600",
     "twitch-2913099253-g9350",
     "twitch-2913099253-g11400",
-    "twitch-2913099253-g13600"
+    "twitch-2913099253-g13600",
+    "twitch-2913099253-g16000"
   ],
   "counts": {
-    "games": 7,
-    "fights": 34,
-    "others": 34
+    "games": 8,
+    "fights": 39,
+    "others": 39
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 34
+      "winner_null": 39
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "7 ranked. Tiếp sau 15600s.",
+  "remaining": "8 ranked. Tiếp sau 17950s.",
   "notes": "Ranked Set18. winner_null OK."
 }
