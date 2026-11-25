@@ -58,9 +58,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 316 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -123,9 +121,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 316 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 316,
@@ -191,9 +187,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 340 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -287,9 +281,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 340 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 340,
@@ -361,9 +353,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 364.1 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -481,9 +471,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 364.1 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 364.1,
@@ -559,9 +547,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 399.9 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -686,9 +672,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 399.9 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 399.9,
@@ -784,9 +768,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 438.8 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -887,9 +869,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 438.8 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 438.8,
@@ -963,9 +943,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 526.1 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -1087,9 +1065,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 526.1 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "panel_visual_check": {
     "value": "8 rows, no marker, ninth slot empty on the frame read at t_planning_s + 3",
@@ -1189,9 +1165,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 597.9 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -1312,9 +1286,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 597.9 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "panel_visual_check": {
     "value": "8 rows, no marker, ninth slot empty on the frame read at t_planning_s + 3",
@@ -1410,9 +1382,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 664.0 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -1505,9 +1475,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 664.0 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 664.0,
@@ -1599,9 +1567,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 700.7 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -1717,9 +1683,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 700.7 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 700.7,
@@ -1842,9 +1806,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 759.3 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -1970,9 +1932,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 759.3 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "panel_visual_check": {
     "value": null,
@@ -2077,9 +2037,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 835.1 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -2194,9 +2152,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 835.1 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "planning_frame_check": {
     "frame_s": 838,
@@ -2313,9 +2269,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 881.1 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -2445,9 +2399,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 881.1 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 881.1,
@@ -2536,9 +2488,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 956.3 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -2736,9 +2686,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 956.3 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 956.3,
@@ -2825,9 +2773,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1048.2 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -2988,9 +2934,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1048.2 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 1048.2,
@@ -3083,9 +3027,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1128.5 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -3171,9 +3113,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1128.5 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 1128.5,
@@ -3495,9 +3435,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1186 s viewed; board units not mapped to hex coordinates at 720p",
-    "reason": "hex coordinates need a grid read not yet done"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 1186,
@@ -3611,7 +3549,8 @@
      "Xayah"
     ],
     "tag": "derived",
-    "basis": "1274 s sidebar panel (9 trait rows, no hidden marker so k=0): Elderwood 5, Rapidfire 2, Brawler 2, Riftbeast 2, Executioner 1, Fae 1, Spellweaver 1, Summoner 1, Vanguard 1. solve_panels: N=7 unique; N=5 and N=6 give zero solutions and N=8 to 10 give zero. Read in combat, so the counts could be survivors; the unique N=7 matches the level-7 bar."
+    "basis": "1274 s sidebar panel (9 trait rows, no hidden marker so k=0): Elderwood 5, Rapidfire 2, Brawler 2, Riftbeast 2, Executioner 1, Fae 1, Spellweaver 1, Summoner 1, Vanguard 1. solve_panels: N=7 unique; N=5 and N=6 give zero solutions and N=8 to 10 give zero. Read in combat, so the counts could be survivors; the unique N=7 matches the level-7 bar.",
+    "note": "one Hecarim buy has no purchase event in the 3-6 action log; kept as a check item"
    },
    "bench_units": {
     "value": null,
@@ -3762,9 +3701,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1250 s viewed; board units not mapped to hex coordinates at 720p",
-    "reason": "hex coordinates need a grid read not yet done"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 1250,
@@ -3873,9 +3810,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1316 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -4004,9 +3939,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1316 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 1316,
@@ -4323,9 +4256,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1364 s viewed; board units not mapped to hex coordinates at 720p",
-    "reason": "hex coordinates need a grid read not yet done"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 1364,
@@ -4578,9 +4509,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1468 s viewed; board units not mapped to hex coordinates at 720p",
-    "reason": "hex coordinates need a grid read not yet done"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 1468,
@@ -4687,9 +4616,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1540 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -4828,9 +4755,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1540 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 1540,
@@ -4932,9 +4857,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1604.0 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -4997,9 +4920,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1604.0 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 1604.0,
@@ -5100,9 +5021,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1652 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -5249,9 +5168,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1652 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 1652,
@@ -5495,9 +5412,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1722 s viewed; board units not mapped to hex coordinates at 720p",
-    "reason": "hex coordinates need a grid read not yet done"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 1722,
@@ -5619,9 +5534,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1816 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -5726,9 +5639,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1816 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 1816,
@@ -6090,9 +6001,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1836 s viewed; board units not mapped to hex coordinates at 720p",
-    "reason": "hex coordinates need a grid read not yet done"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 1836,
@@ -6403,9 +6312,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1914 s viewed; board units not mapped to hex coordinates at 720p",
-    "reason": "hex coordinates need a grid read not yet done"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 1914,
@@ -6528,9 +6435,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2000 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -6703,9 +6608,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2000 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 2000,
@@ -6802,9 +6705,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2062.8 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -6867,9 +6768,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2062.8 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 2062.8,
@@ -7165,9 +7064,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2094 s viewed; board units not mapped to hex coordinates at 720p",
-    "reason": "hex coordinates need a grid read not yet done"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 2094,
@@ -7458,9 +7355,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2172 s viewed; board units not mapped to hex coordinates at 720p",
-    "reason": "hex coordinates need a grid read not yet done"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 2172,
@@ -7591,9 +7486,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2236 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": {
@@ -7728,9 +7621,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2236 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 2236,
@@ -7859,9 +7750,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2296 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -7967,9 +7856,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2296 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 2296,
@@ -8251,9 +8138,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2342 s viewed; board units not mapped to hex coordinates at 720p",
-    "reason": "hex coordinates need a grid read not yet done"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 2342,
@@ -8376,9 +8261,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2404 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -8507,9 +8390,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2404 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "planning_rail_observation": {
     "frame_s": 2410,
@@ -8628,9 +8509,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2463.3 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -8710,9 +8589,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2463.3 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 2463.3,
@@ -8798,9 +8675,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2488 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -8987,9 +8862,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2488 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 2488,
@@ -9109,9 +8982,7 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2554 s viewed; bench units not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "stars": {
     "value": null,
@@ -9287,9 +9158,7 @@
    },
    "hexes": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2554 s viewed; hexes not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "tag": "open"
    },
    "frame_A_read": {
     "frame_s": 2554,
