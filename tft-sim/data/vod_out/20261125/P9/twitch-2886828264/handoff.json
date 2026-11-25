@@ -3,7 +3,7 @@
   "vod_id": "twitch-2886828264",
   "slot": "P9",
   "role": "primary",
-  "status": "done",
+  "status": "working",
   "covered_ranges_s": [
     [
       120,
@@ -51,7 +51,7 @@
   ],
   "counts": {
     "games": 8,
-    "fights": 67,
+    "fights": 110,
     "others": 0
   },
   "validator": {
@@ -62,5 +62,5 @@
   },
   "needs_review": 9,
   "commit": "7fbe286",
-  "remaining": "VOD h\u1ebft; 8 ranked games partial. Refine boards later if needed."
+  "remaining": "VOD hết; 8 ranked games partial. Refine boards later if needed."
 }
