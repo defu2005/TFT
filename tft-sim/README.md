@@ -576,7 +576,7 @@ Nguon: `results/fixed/real/item_valuemax_vs_default_250000.json` (gop 4 shard 25
 - **A−B = −1,016**, CI95 [−1,113; −0,913] (bootstrap 2.000 lan, n = 1.000). Am = valuemax tot hon.
 - Lan dau tren seed 240000–240999: −1,006, CI [−1,105; −0,899]. Hai khoi seed doc lap cho ket qua gan nhau.
 
-**Ket luan:** valuemax tot hon mac dinh khoang 1 vi tri tren teacher v4, lap lai duoc tren seed moi. Day la cai thien lon nhat trong sim, dat dung dai CI.
+**Ket luan:** valuemax tot hon mac dinh khoang 1 vi tri tren teacher v4. Day la lan lap lai thu ba tren khoi seed moi (190000, 240000, 250000), khong phai phat hien moi. Chua co noi dung nao trong engine (`decide.js`) su dung luat chon muc tieu trang bi, nen chua co noi nhan ket qua nay.
 
 **Cach doc:** ket qua nay do teacher, khong phai engine. Chua dua vao `decide.js` hay `src/`; viec do thuoc workstream `engine` va can kiem chung tren du lieu that (Phase 4 trong roadmap). Ket qua chon valuemax duoc mo ta trong sim, khong phai hoc trong so: CEM (−1,095) chua duoc so truc tiep voi valuemax va khong du bang chung de chon.
 

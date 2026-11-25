@@ -120,5 +120,5 @@ Kiểm tra bắt buộc trước khi báo xong:
 
 - **Vong cloud (DT, C, R, E):** xong. Giam sat tu dong da tat (`trig_01Q3BJGATHTNZP4ukGwkLgeG`).
 - **DT:** chap nhan clone v5 che do rut gon (500 van train). Khong thu them.
-- **R:** nhan \"18.7\" cua snapshot CDragon bi sai (trang thai truoc 18.7, chuoi 16.23). Da ghi canh bao trong `tft-sim/data/cdragon/README.md`. Chua tim file dung patch. Set 17 (E) khong bi anh huong.
+- **R:** nhan "18.7" cua snapshot CDragon bi sai (trang thai truoc 18.7, chuoi 16.23). Da ghi canh bao trong `tft-sim/data/cdragon/README.md`. Chua tim file dung patch. Ket qua E (Set 17) dung cung snapshot nen chi nhat quan noi bo; chua kiem tra Set 17 rieng.
 - **Teacher v4 khong dung valuemax:** teacher chon muc tieu trang bi theo unit cost cao nhat (mac dinh). Valuemax da duoc kiem dinh 2 lan (240000, 250000 block) va tot hon mac dinh khoang 1,0 vi tri. Chua dua vao engine (engine thuoc workstream `engine`).
