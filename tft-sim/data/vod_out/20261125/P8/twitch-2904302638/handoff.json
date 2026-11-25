@@ -7,12 +7,12 @@
   "covered_ranges_s": [
     [
       250,
-      1300
+      1980
     ]
   ],
   "remaining_ranges_s": [
     [
-      1300,
+      1980,
       29240
     ]
   ],
@@ -21,16 +21,16 @@
   ],
   "counts": {
     "games": 1,
-    "fights": 3,
+    "fights": 14,
     "others": 0
   },
   "validator": {
-    "ok": 0,
+    "ok": 7,
     "skipped": {
-      "winner_null": 3
+      "winner_null": 7
     }
   },
-  "needs_review": 3,
-  "commit": "17fe8df",
-  "remaining": "P8-primary owns VOD (ignore helper CLAIM for writes). Densified to 3-6. Continue ~1300s."
+  "needs_review": 7,
+  "commit": "91a9ee2",
+  "remaining": "densify-full g250 1-2..5-5 (14 fights). Continue late 5-6+/game2 from ~1980. P8-primary owns VOD."
 }
