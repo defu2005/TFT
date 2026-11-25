@@ -359,6 +359,11 @@
         "6-1"
       ],
       "note": "corrected start~6500 end~8460; skip carousel/PvE"
+    },
+    "twitch-2899373090-g11000": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "status": "in_progress",
+      "note": "densify to ~12"
     }
   }
 }
