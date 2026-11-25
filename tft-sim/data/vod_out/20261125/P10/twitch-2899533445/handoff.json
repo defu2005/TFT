@@ -3,7 +3,7 @@
   "vod_id": "twitch-2899533445",
   "slot": "P10",
   "role": "primary",
-  "status": "partial",
+  "status": "done",
   "covered_ranges_s": [
     [
       400,
@@ -15,18 +15,14 @@
     ],
     [
       5200,
-      7800
-    ],
-    [
-      7800,
       9180
     ],
     [
       9400,
-      11400
+      11500
     ],
     [
-      11800,
+      11600,
       13150
     ],
     [
@@ -50,14 +46,6 @@
     [
       9180,
       9400
-    ],
-    [
-      11400,
-      11800
-    ],
-    [
-      16300,
-      null
     ]
   ],
   "game_ids": [
@@ -71,16 +59,28 @@
   ],
   "counts": {
     "games": 7,
-    "fights": 86,
+    "fights": 89,
     "others": 0
   },
   "validator": {
-    "ok": 7,
+    "ok": 9,
     "skipped": {
-      "winner_null": 79
+      "winner_null": 80
     }
   },
-  "notes": "G1 G2 G3 G7 densify; rem mid partial games",
+  "notes": "Partial rem closed; leftover tiny mid gaps optional",
   "remaining": "G1–G7 densify done (g400/g3200/g5200/g7800/g9400/g11800/g13200). Rem: YT gaps + VOD tail after 16300.",
-  "needs_review": 79
+  "needs_review": 79,
+  "skipped_ranges_s": [
+    [
+      16300,
+      null
+    ],
+    [
+      2200,
+      3200
+    ]
+  ],
+  "skip_notes": "16300-end YT/non-TFT (VOD tail); mid YT ~2200-3200 already noted",
+  "rem_notes": "Rem 11400-11800 bridged (extend g9400/g11800); 16300-end skip YT"
 }

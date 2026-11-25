@@ -1,0 +1,51 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2910216143",
+  "slot": "P3",
+  "role": "primary",
+  "status": "partial",
+  "covered_ranges_s": [
+    [
+      50,
+      2500
+    ],
+    [
+      3000,
+      5500
+    ],
+    [
+      11000,
+      15000
+    ],
+    [
+      17000,
+      20000
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      20000,
+      20519
+    ]
+  ],
+  "game_ids": [
+    "twitch-2910216143-g50",
+    "twitch-2910216143-g3000",
+    "twitch-2910216143-g11000",
+    "twitch-2910216143-g17000"
+  ],
+  "counts": {
+    "games": 4,
+    "fights": 9,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 9
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "Volume stubs Ranked Set18 Challenger; winner_null thin. Densify side_b/winners later. 2026-11-25T19:31:15Z"
+}

@@ -7,31 +7,32 @@
   "covered_ranges_s": [
     [
       90,
-      4600
+      7000
     ]
   ],
   "remaining_ranges_s": [
     [
-      4600,
+      7000,
       28270
     ]
   ],
   "game_ids": [
     "twitch-2900671286-g300",
-    "twitch-2900671286-g2400"
+    "twitch-2900671286-g2400",
+    "twitch-2900671286-g5800"
   ],
   "counts": {
-    "games": 2,
-    "fights": 24,
+    "games": 3,
+    "fights": 36,
     "others": 0
   },
   "validator": {
-    "ok": 8,
+    "ok": 10,
     "skipped": {
-      "winner_null": 16
+      "winner_null": 26
     }
   },
-  "needs_review": 16,
-  "commit": "6cd9096d",
-  "remaining": "densify-full g300+g2400 (24f). Continue games from ~4600+. P8-primary."
+  "needs_review": 26,
+  "commit": "78eba6a0",
+  "remaining": "densify-full 3g/36f (g300,g2400,g5800). Continue ~7000+. P8-primary."
 }

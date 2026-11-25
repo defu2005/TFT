@@ -1,0 +1,7 @@
+{
+  "ok": 0,
+  "skipped": {
+    "winner_null": 9
+  },
+  "note": "winner_null OK for volume stubs"
+}

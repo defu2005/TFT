@@ -1,0 +1,68 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2892617818",
+  "slot": "P5",
+  "role": "primary",
+  "status": "ok",
+  "covered_ranges_s": [
+    [
+      300,
+      2000
+    ],
+    [
+      2200,
+      4200
+    ],
+    [
+      4500,
+      6500
+    ],
+    [
+      6800,
+      11000
+    ],
+    [
+      11200,
+      14000
+    ],
+    [
+      14500,
+      18000
+    ],
+    [
+      18200,
+      22000
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      0,
+      300
+    ],
+    [
+      22000,
+      null
+    ]
+  ],
+  "game_ids": [
+    "twitch-2892617818-g400",
+    "twitch-2892617818-g2400",
+    "twitch-2892617818-g4800",
+    "twitch-2892617818-g7200",
+    "twitch-2892617818-g11400",
+    "twitch-2892617818-g15000",
+    "twitch-2892617818-g18600"
+  ],
+  "counts": {
+    "games": 7,
+    "fights": 84,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 84
+    }
+  },
+  "notes": "coord densify-full emilyywang ranked GM"
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2940056711",
+  "slot": "P5",
+  "role": "primary",
+  "status": "blocked",
+  "covered_ranges_s": [],
+  "remaining_ranges_s": [
+    [
+      0,
+      99999
+    ]
+  ],
+  "game_ids": [],
+  "counts": {
+    "games": 0,
+    "fights": 0,
+    "others": 0
+  },
+  "validator": null,
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "Not Set18 ranked target: Set10/custom mix (Heartsteel/8-bit/Big Shot/Frontman/Prodigy/Arcanist/Umbral/Go Fong). Challenger TFT but wrong set."
+}

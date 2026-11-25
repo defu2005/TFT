@@ -6,6 +6,10 @@
   "status": "working",
   "covered_ranges_s": [
     [
+      300,
+      2000
+    ],
+    [
       400,
       2100
     ]
@@ -13,11 +17,7 @@
   "remaining_ranges_s": [
     [
       0,
-      400
-    ],
-    [
-      2100,
-      null
+      300
     ]
   ],
   "game_ids": [
@@ -29,13 +29,8 @@
     "fights": 24,
     "others": 0
   },
-  "validator": {
-    "ok": 9,
-    "skipped": {
-      "winner_null": 15
-    }
-  },
+  "validator": {},
   "needs_review": 0,
   "commit": null,
-  "remaining": "densify-full g400 12 PvP; continue later games"
+  "remaining": "densify 2g/24f after merge resolve"
 }

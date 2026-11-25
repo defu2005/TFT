@@ -1,0 +1,36 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2889247270",
+  "slot": "P8",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      800,
+      2800
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      2800,
+      25430
+    ]
+  ],
+  "game_ids": [
+    "twitch-2889247270-g1000"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 16,
+    "others": 0
+  },
+  "validator": {
+    "ok": 4,
+    "skipped": {
+      "winner_null": 12
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "densify-full g1000 16f incl late 5-2. Continue game2 ~2800+. P8-primary scarra."
+}

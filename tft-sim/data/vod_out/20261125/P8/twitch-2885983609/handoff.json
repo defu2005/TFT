@@ -1,0 +1,49 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2885983609",
+  "slot": "P8",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      300,
+      2200
+    ],
+    [
+      2400,
+      4200
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      0,
+      300
+    ],
+    [
+      2200,
+      2400
+    ],
+    [
+      4200,
+      29150
+    ]
+  ],
+  "game_ids": [
+    "twitch-2885983609-g600",
+    "twitch-2885983609-g2500"
+  ],
+  "counts": {
+    "games": 2,
+    "fights": 24,
+    "others": 0
+  },
+  "validator": {
+    "ok": 1,
+    "skipped": {
+      "winner_null": 23
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "densify-full 2g/24f. Continue ~4200+. P8-primary tleyds."
+}
