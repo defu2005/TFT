@@ -284,10 +284,9 @@
     "tag": "n/a"
    },
    "hexes": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "Planning frame at 364.1 s (1-3) checked: several green-barred units sit on and near the grid, and three bench sprites are on the pads. That count conflicts with the one-unit panel solve (Veigar, N=1), so the board itself is in doubt. No hex is recorded.",
-    "reason": "the visible unit count conflicts with the one-unit panel solve, so the single unit cannot be placed on a hex until the board is rechecked"
+    "value": "one ally unit, lower-right of the grid (front right; view-relative, not a coordinate)",
+    "tag": "read",
+    "basis": "340 s planning frame: the only green-barred sprite on the grid is a purple unit at the lower right, consistent with the one-unit Veigar panel. Bench pads hold the other units; no grid coordinate was calibrated, so the position is descriptive only."
    },
    "frame_A_read": {
     "frame_s": 340,
@@ -477,10 +476,9 @@
     "tag": "n/a"
    },
    "hexes": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "Planning frame at 364.1 s (1-3) checked: several green-barred units sit on and near the grid, and three bench sprites are on the pads. That count conflicts with the one-unit panel solve (Veigar, N=1), so the board itself is in doubt. No hex is recorded.",
-    "reason": "the visible unit count conflicts with the one-unit panel solve, so the single unit cannot be placed on a hex until the board is rechecked"
+    "value": "one ally unit, rear row, far right of the grid (view-relative, not a coordinate)",
+    "tag": "read",
+    "basis": "364.1 s planning frame, cropped at 2x: the three green-barred sprites on bench pads 1 to 3 belong to the bench; the one green-barred sprite on the grid is the purple unit at the far right of the rear row. Consistent with the one-unit Veigar panel and the bench count of 3."
    },
    "frame_A_read": {
     "frame_s": 364.1,
@@ -683,8 +681,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Planning frame at 364.1 s (1-3) checked: several green-barred units sit on and near the grid, and three bench sprites are on the pads. That count conflicts with the one-unit panel solve (Veigar, N=1), so the board itself is in doubt. No hex is recorded.",
-    "reason": "the visible unit count conflicts with the one-unit panel solve, so the single unit cannot be placed on a hex until the board is rechecked"
+    "attempt": "399.9 s planning frame (cropped at 2x): two green-barred purple sprites sit on the lower right of the grid, but the 1-4 panel is one unit (Veigar, N=1). The two sprites cannot both be the single panel unit.",
+    "reason": "two ally sprites on the grid conflict with the one-unit panel, so no single hex is recorded"
    },
    "frame_A_read": {
     "frame_s": 399.9,
