@@ -3,22 +3,34 @@
   "vod_id": "twitch-2904302638",
   "slot": "P8",
   "role": "primary",
-  "status": "working",
-  "covered_ranges_s": [],
-  "remaining_ranges_s": [
+  "status": "pending",
+  "covered_ranges_s": [
     [
-      0,
-      null
+      250,
+      1000
     ]
   ],
-  "game_ids": [],
+  "remaining_ranges_s": [
+    [
+      1000,
+      29240
+    ]
+  ],
+  "game_ids": [
+    "twitch-2904302638-g250"
+  ],
   "counts": {
-    "games": 0,
-    "fights": 0,
+    "games": 1,
+    "fights": 2,
     "others": 0
   },
-  "validator": {},
-  "needs_review": 0,
-  "commit": null,
-  "remaining": "helper claim; probing RANKED Set18"
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 2
+    }
+  },
+  "needs_review": 2,
+  "commit": "5b00f6b",
+  "remaining": "helper released; P8-primary owns collection"
 }

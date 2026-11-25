@@ -2,7 +2,7 @@
   "schema": "vod-manifest-v1",
   "batch": "2026-11-25-set18-vod",
   "dispatcher": "claude (phiên điều phối mở rộng manifest 1000)",
-  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash).",
+  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash). | P4 +loltyler1 ranked Set18 Emerald VODs for throughput.",
   "slots": {
     "P1": {
       "role": "primary",
@@ -42,9 +42,10 @@
         "wasianiverson",
         "voltariux",
         "shurkou",
-        "aphromoo"
+        "aphromoo",
+        "loltyler1"
       ],
-      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue)."
+      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue). | +loltyler1 ranked Set18 Emerald ladder (wasian/voltariux/shurkou/aphromoo archives depleted of clean ranked)."
     },
     "P5": {
       "role": "primary",
@@ -5046,6 +5047,94 @@
         "twitch:gql-archive-list-20261125",
         "coord:p4-expand-secondary-throughput",
         "probe:tft-ranked-match-accepted"
+      ]
+    },
+    {
+      "vod_id": "twitch-2921307667",
+      "url": "https://www.twitch.tv/videos/2921307667",
+      "streamer": "loltyler1",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          24625
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-tyler-throughput",
+        "probe:ranked-emerald-set18"
+      ]
+    },
+    {
+      "vod_id": "twitch-2918715614",
+      "url": "https://www.twitch.tv/videos/2918715614",
+      "streamer": "loltyler1",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18284
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-tyler-throughput",
+        "probe:ranked-emerald-set18"
+      ]
+    },
+    {
+      "vod_id": "twitch-2910906989",
+      "url": "https://www.twitch.tv/videos/2910906989",
+      "streamer": "loltyler1",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          16343
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-tyler-throughput",
+        "probe:ranked-emerald-set18"
+      ]
+    },
+    {
+      "vod_id": "twitch-2909976321",
+      "url": "https://www.twitch.tv/videos/2909976321",
+      "streamer": "loltyler1",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          15352
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-tyler-throughput",
+        "probe:ranked-emerald-set18"
       ]
     }
   ]

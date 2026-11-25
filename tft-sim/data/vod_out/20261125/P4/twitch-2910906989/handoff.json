@@ -1,0 +1,59 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2910906989",
+  "slot": "P4",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      60,
+      2260
+    ],
+    [
+      2400,
+      4600
+    ],
+    [
+      4800,
+      7000
+    ],
+    [
+      7200,
+      9400
+    ],
+    [
+      9600,
+      11800
+    ],
+    [
+      12000,
+      14200
+    ],
+    [
+      14400,
+      16343
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2910906989-g60",
+    "twitch-2910906989-g2400",
+    "twitch-2910906989-g4800",
+    "twitch-2910906989-g7200",
+    "twitch-2910906989-g9600",
+    "twitch-2910906989-g12000",
+    "twitch-2910906989-g14400"
+  ],
+  "counts": {
+    "games": 7,
+    "fights": 84,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": 0
+  },
+  "needs_review": 84,
+  "commit": null,
+  "remaining": "loltyler1 ranked Set18 Emerald densified done."
+}
