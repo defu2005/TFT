@@ -1,7 +1,7 @@
 {
  "ok": 0,
  "skipped": {
-  "winner_null": 41
+  "winner_null": 59
  },
  "rows": [
   {
@@ -207,6 +207,96 @@
   {
    "line": 41,
    "source": "twitch-2887732371-g14400:6-3",
+   "reason": "winner_null"
+  },
+  {
+   "line": 42,
+   "source": "twitch-2887732371-g16800:3-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 43,
+   "source": "twitch-2887732371-g16800:4-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 44,
+   "source": "twitch-2887732371-g16800:5-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 45,
+   "source": "twitch-2887732371-g16800:5-3",
+   "reason": "winner_null"
+  },
+  {
+   "line": 46,
+   "source": "twitch-2887732371-g16800:5-6",
+   "reason": "winner_null"
+  },
+  {
+   "line": 47,
+   "source": "twitch-2887732371-g18800:3-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 48,
+   "source": "twitch-2887732371-g18800:3-3",
+   "reason": "winner_null"
+  },
+  {
+   "line": 49,
+   "source": "twitch-2887732371-g18800:4-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 50,
+   "source": "twitch-2887732371-g18800:4-2",
+   "reason": "winner_null"
+  },
+  {
+   "line": 51,
+   "source": "twitch-2887732371-g20400:3-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 52,
+   "source": "twitch-2887732371-g20400:3-3",
+   "reason": "winner_null"
+  },
+  {
+   "line": 53,
+   "source": "twitch-2887732371-g20400:4-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 54,
+   "source": "twitch-2887732371-g20400:4-3",
+   "reason": "winner_null"
+  },
+  {
+   "line": 55,
+   "source": "twitch-2887732371-g23200:3-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 56,
+   "source": "twitch-2887732371-g23200:4-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 57,
+   "source": "twitch-2887732371-g23200:4-3",
+   "reason": "winner_null"
+  },
+  {
+   "line": 58,
+   "source": "twitch-2887732371-g23200:4-5",
+   "reason": "winner_null"
+  },
+  {
+   "line": 59,
+   "source": "twitch-2887732371-g23200:4-7",
    "reason": "winner_null"
   }
  ]
