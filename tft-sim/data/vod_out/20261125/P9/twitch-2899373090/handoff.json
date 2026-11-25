@@ -413,7 +413,7 @@
         "5-1",
         "6-1"
       ],
-      "note": "corrected start~6500 end~8460; skip carousel/PvE"
+      "note": "corrected start~6500 end~8460"
     },
     "twitch-2899373090-g11000": {
       "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
@@ -432,7 +432,12 @@
         "4-5",
         "5-3"
       ],
-      "note": "corrected start~10600 end~12240; skip carousel/PvE"
+      "note": "corrected start~10600 end~12240"
+    },
+    "twitch-2899373090-g12500": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "status": "in_progress",
+      "note": "densify to ~12"
     }
   }
 }
