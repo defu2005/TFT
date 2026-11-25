@@ -407,3 +407,7 @@ Lưu ý khi đọc: flip nhỏ có thể do trait chưa có ánh xạ stat (xem 
 - Kiểm tra engine về Brawler (grep 2026-11-25): không có tham chiếu trait Brawler phía engine. Chỉ có một dòng chú thích trong `trait_effects.py` và `_brawler_emblem` trong `items_set17/batch_1.py` (emblem, không phải trait). Bảng trait là nguồn duy nhất của hiệu ứng Brawler trong sim.
 - Các giả định còn lại: (1) Defender: lấy max (25) hay cộng (37) khi là Defender; (2) % Brawler tính trên HP nào; (3) Juggernaut dr và Rapidfire AS: cộng hay nhân và đơn vị in-game; (4) toàn bộ số liệu chưa đối chiếu với trận thật hay tooltip. Cách chốt: tooltip in-game của Defender và Brawler ở mốc 2, hoặc một trận thật có Defender và Brawler.
 - `bonus_units` (augment Large Quest, engine `trait_bonus`) được truyền vào bảng: đếm trait cộng 1 cho mọi trait không phải (1,), cùng quy tắc với `_emblem_traits` và engine. Selftest: một Brawler + bonus 1 đạt mốc 2.
+
+### 11.12 Bổ sung trước dữ liệu thật (2026-11-25)
+- Snapshot: kiểm tra lại sha256 của CDragon latest hôm nay khớp snapshot (xem `data/cdragon/README.md`). Không có bản mới để so sánh. Nhãn patch vẫn chưa xác định.
+- fight-v1 có trường tùy chọn `patch` (chuỗi hoặc `null`). `fidelity.score` trả thêm `per_patch` (số trận theo patch). Không loại bản ghi nào vì thiếu patch.

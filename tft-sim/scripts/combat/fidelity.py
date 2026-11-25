@@ -186,7 +186,9 @@ def score(path, n=20, seed0=0, allow_dryrun=False):
         if inconclusive:
             return "inconclusive"
         return "PASS" if lo_ > 0 else ("FAIL" if hi_ < 0 else "chua_ket_luan")
+    from collections import Counter
     return dict(base, fights=len(rows), games=G, inconclusive=inconclusive,
+                per_patch=dict(Counter(str(r.get("patch")) for r in good)),  # ghi nhan, KHONG loai ban ghi
                 n_seeds=n, seed0=seed0, repo_commit=_commit(Path(__file__).resolve().parents[2]),
                 engine_commit=_commit(Path("/root/work/tft_goat")),
                 share_side_a_won=round(float(y.mean()), 4),

@@ -20,12 +20,13 @@ status: mở
 Mỗi round có ít nhất một cặp (bàn, bàn đối thủ, kết quả). Định dạng dùng chung với `tft-sim/scripts/combat/fight.py`, schema `fight-v1`:
 
 ```
-{"schema": "fight-v1", "set": 18, "label": "real", "source": "<vod>:<round>",
+{"schema": "fight-v1", "set": 18, "label": "real", "source": "<vod>:<round>", "patch": "<chuoi patch hoac null>",
  "a": {"level": int, "augments": [apiName...], "units": [{"api": apiName, "star": 1|2|3, "items": [apiName...], "pos": [row, col] | null}]},
  "b": {...cùng cấu trúc...},
  "result": {"winner": 0 | 1 | null}}
 ```
 
+- `patch`: chuỗi patch của trận (ví dụ `"16.23"` hoặc `"18.x"` nếu biết). Không biết thì ghi `null`; bản ghi vẫn được nhận. `fidelity.py` báo số trận theo patch (`per_patch`) để thấy trận đến từ patch nào.
 - `api`: apiName CDragon (ví dụ `TFT_Krug`, không dùng tên hiển thị). Nếu chỉ đọc được tên hiển thị, ghi tên và đánh dấu; không đoán.
 - `pos`: hoặc có đủ cho mọi unit của bên đó (hàng 0–3 cho bên a, 4–7 cho bên b, cột 0–6, không trùng ô), hoặc `null` cho mọi unit. Không ghi nửa vời.
 - `result.winner`: 0 nếu bên a thắng round, 1 nếu bên b, `null` nếu không đọc được. Không suy từ HP nếu không chắc.
