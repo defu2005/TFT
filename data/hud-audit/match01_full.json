@@ -9740,21 +9740,252 @@
  },
  "scouted_panels": [
   {
-   "t_s": 1128.5,
-   "sweep_frame": null,
-   "source": "ffmpeg frame, Frame A of 3-4",
+   "t_s": 460,
+   "sweep_idx": 50,
    "panel": {
-    "Caustic": 1,
-    "Invoker": 3,
-    "Riftbeast": 3,
-    "Adaptor": 2,
-    "Juggernaut": 2,
-    "Primal": 1,
+    "Defender": 2,
+    "Spellweaver": 2,
+    "Flora Fatalis": 1,
+    "Blackthorn": 1,
+    "Solar": 1,
     "Sprykin": 1
    },
-   "owner": null,
-   "owner_status": "not confirmed",
-   "note": "not attached to any round"
+   "owner_arrow_row": null,
+   "owner_status": "candidate, not confirmed",
+   "attached_to_round": null,
+   "note": "dim frame in the choose-one period; owner not readable"
+  },
+  {
+   "t_s": 544,
+   "sweep_idx": 91,
+   "panel": {
+    "Caustic": 1,
+    "Invoker": 2,
+    "Riftbeast": 2,
+    "Adaptor": 1,
+    "Juggernaut": 1
+   },
+   "owner_arrow_row": null,
+   "owner_status": "candidate, not confirmed",
+   "attached_to_round": null,
+   "note": "owner not readable"
+  },
+  {
+   "t_s": 778,
+   "sweep_idx": 209,
+   "panel": {
+    "Blossom": 3,
+    "Juggernaut": 2,
+    "Executioner": 1,
+    "Spellweaver": 1,
+    "Summoner": 1,
+    "Riftbeast": 1
+   },
+   "owner_arrow_row": "P8 or P6 (unclear)",
+   "owner_status": "candidate, not confirmed",
+   "attached_to_round": null,
+   "note": "owner ambiguous"
+  },
+  {
+   "t_s": 888,
+   "sweep_idx": 264,
+   "panel": {
+    "Caustic": 1,
+    "Riftbeast": 3,
+    "Invoker": 2,
+    "Juggernaut": 2,
+    "Adaptor": 1,
+    "Brawler": 1,
+    "Primal": 1
+   },
+   "owner_arrow_row": "P5 candidate",
+   "owner_status": "candidate, not confirmed",
+   "attached_to_round": null,
+   "note": "a two-star popup sits under the same row; owner candidate P5"
+  },
+  {
+   "t_s": 1068,
+   "sweep_idx": 354,
+   "panel": {
+    "Caustic": 1,
+    "Juggernaut": 3,
+    "Riftbeast": 3,
+    "Adaptor": 2,
+    "Invoker": 2,
+    "Fae": 1,
+    "Primal": 1,
+    "Vanguard": 1
+   },
+   "owner_arrow_row": null,
+   "owner_status": "candidate, not confirmed",
+   "attached_to_round": null,
+   "note": "owner not readable"
+  },
+  {
+   "t_s": 1132,
+   "sweep_idx": 386,
+   "panel": {
+    "Elderwood": 3,
+    "Blackthorn": 2,
+    "Brawler": 2,
+    "Spellweaver": 2,
+    "Defender": 1,
+    "Sprykin": 1
+   },
+   "owner_arrow_row": null,
+   "owner_status": "candidate, not confirmed",
+   "attached_to_round": null,
+   "note": "owner not readable"
+  },
+  {
+   "t_s": 1260,
+   "sweep_idx": 450,
+   "panel": {
+    "Caustic": 1,
+    "Juggernaut": 4,
+    "Riftbeast": 3,
+    "Adaptor": 2,
+    "Invoker": 2,
+    "Fae": 1,
+    "Primal": 1,
+    "Summoner": 1,
+    "Vanguard": 1
+   },
+   "owner_arrow_row": null,
+   "owner_status": "candidate, not confirmed",
+   "attached_to_round": null,
+   "note": "owner not readable"
+  },
+  {
+   "t_s": 1534,
+   "sweep_idx": 587,
+   "panel": {
+    "Juggernaut": 6,
+    "Primal": 2,
+    "Adaptor": 1,
+    "Fae": 1,
+    "Inferno": 1,
+    "Summoner": 1,
+    "Vanguard": 1,
+    "Blossom": 1,
+    "Riftbeast": 1
+   },
+   "owner_arrow_row": "P7 candidate",
+   "owner_status": "candidate, not confirmed",
+   "attached_to_round": null,
+   "note": "owner candidate"
+  },
+  {
+   "t_s": 1544,
+   "sweep_idx": 592,
+   "panel": {
+    "Juggernaut": 6,
+    "Thornmaiden": 1,
+    "Summoner": 2,
+    "Primal": 2,
+    "Adaptor": 1,
+    "Fae": 1,
+    "Inferno": 1,
+    "Vanguard": 1,
+    "Blossom": 1
+   },
+   "owner_arrow_row": null,
+   "owner_status": "candidate, not confirmed",
+   "attached_to_round": null,
+   "note": "owner not readable"
+  },
+  {
+   "t_s": 1602,
+   "sweep_idx": 621,
+   "panel": {
+    "Bounty Seeker": 1,
+    "Old Growth": 1,
+    "Brawler": 4,
+    "Elderwood": 4,
+    "Executioner": 1,
+    "Juggernaut": 1,
+    "Vanguard": 1,
+    "Blossom": 1,
+    "Riftbeast": 1
+   },
+   "owner_arrow_row": null,
+   "owner_status": "candidate, not confirmed",
+   "attached_to_round": null,
+   "note": "owner not readable"
+  },
+  {
+   "t_s": 1716,
+   "sweep_idx": 678,
+   "panel": {
+    "Juggernaut": 6,
+    "Thornmaiden": 1,
+    "Summoner": 2,
+    "Primal": 2,
+    "Adaptor": 1,
+    "Fae": 1,
+    "Inferno": 1,
+    "Vanguard": 1,
+    "Blossom": 1
+   },
+   "owner_arrow_row": "P2 candidate",
+   "owner_status": "candidate, not confirmed",
+   "attached_to_round": null,
+   "note": "conflicts with the 4-6 nameplate read of P8"
+  },
+  {
+   "t_s": 1724,
+   "sweep_idx": 682,
+   "panel": {
+    "Attuned": 1,
+    "Avatar": 1,
+    "Coven": 3,
+    "Vanguard": 3,
+    "Invoker": 2,
+    "Lunar": 2,
+    "Defender": 2,
+    "Fae": 2,
+    "Spellweaver": 2
+   },
+   "owner_arrow_row": "P2 candidate",
+   "owner_status": "candidate, not confirmed",
+   "attached_to_round": null,
+   "note": "conflicts with the P8 read"
+  },
+  {
+   "t_s": 1730,
+   "sweep_idx": 685,
+   "panel": {
+    "Attuned": 1,
+    "Avatar": 1,
+    "Coven": 3,
+    "Vanguard": 3,
+    "Invoker": 2,
+    "Lunar": 2,
+    "Defender": 2,
+    "Fae": 2,
+    "Spellweaver": 2
+   },
+   "owner_arrow_row": "P2 candidate",
+   "owner_status": "candidate, not confirmed",
+   "attached_to_round": null,
+   "note": "conflicts with the P8 read"
+  },
+  {
+   "t_s": 1978,
+   "sweep_idx": 809,
+   "panel": {
+    "Spellweaver": 3,
+    "Elderwood": 3,
+    "Blackthorn": 2,
+    "Brawler": 2,
+    "Defender": 2,
+    "Flora Fatalis": 1,
+    "Sprykin": 1
+   },
+   "owner_arrow_row": "P2 candidate",
+   "owner_status": "candidate, not confirmed",
+   "attached_to_round": null,
+   "note": "5-2 opponent not otherwise read"
   }
  ]
 }
