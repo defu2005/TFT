@@ -36,6 +36,6 @@
     }
   },
   "needs_review": 30,
-  "commit": null,
+  "commit": "bcdeaac",
   "remaining": "tiếp ranked từ ~12380s (queue/GeoGuessr rồi ván 7+)"
 }
