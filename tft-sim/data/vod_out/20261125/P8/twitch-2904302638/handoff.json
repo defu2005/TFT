@@ -31,6 +31,6 @@
     }
   },
   "needs_review": 2,
-  "commit": null,
+  "commit": "5b00f6b",
   "remaining": "P8-primary (bc-23b889d7) owns this VOD — already has g250. Helper/P2: do NOT write here; take other open P8 VODs. Continue from ~1000s."
 }
