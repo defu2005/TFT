@@ -681,8 +681,34 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "frame_s": 604,
+     "timer": 22,
+     "counter": "4/4",
+     "level": 4,
+     "xp": "4/10",
+     "gold": 5,
+     "streak": 1,
+     "panel": {
+      "Juggernaut": 2,
+      "Brawler": 1,
+      "Fae": 1,
+      "Hunter": 1,
+      "Vanguard": 1,
+      "Coven": 1,
+      "Elderwood": 1,
+      "Solar": 1
+     },
+     "shop": [
+      "Sejuani",
+      "Karma",
+      "LeBlanc",
+      "Gromp",
+      "(augment-type card: Take One With Ya)"
+     ],
+     "board": "4 bodies, not named"
+    },
+    "tag": "read"
    },
    "combat": {
     "value": null,
