@@ -328,4 +328,16 @@ if bb1:
 print("table predict_win off/on", (x0["a"], x0["b"]), (x1["a"], x1["b"]), "mapped", F.TABLE_MAPPED)
 ok &= ok12
 print("trait table block", "PASS" if ok12 else "FAIL")
+# Names18: moi apiName phai nam trong candidates(ten cua no); ten trung phai nem AmbiguousName, khong doan
+from tft_sim import names18 as _N18  # noqa: E402
+_nm = json.loads((_N18.ROOT / "data" / "set18_names.json").read_text(encoding="utf-8"))
+_rt_bad = [(k, r["api"]) for k in _N18.KINDS for r in _nm[k] if r["api"] not in _N18.candidates(k, r["name"])]
+_amb_ok = True
+try:
+    _N18.resolve("champions", "Krug")
+    _amb_ok = False
+except _N18.AmbiguousName:
+    pass
+ok &= (not _rt_bad) and _amb_ok
+print("names18 roundtrip bad", len(_rt_bad), "ambiguous ok", _amb_ok)
 print("SELFTEST", "PASS" if ok else "FAIL")
