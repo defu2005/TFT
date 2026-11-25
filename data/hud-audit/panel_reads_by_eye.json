@@ -297,13 +297,14 @@
       "Bounty Seeker": 1,
       "Emerald Aspect": 1,
       "Greenfather": 1,
+      "Old Growth": 1,
       "Elderwood": 3,
       "Executioner": 2,
       "Inferno": 2,
       "Brawler": 2,
       "Juggernaut": 2,
       "marker": "2+",
-      "note": "Old Growth row hidden by tooltip"
+      "note": "re-read from +10 s and +26 s frames; earlier tooltip occlusion resolved"
     },
     "6-6": {
       "Bounty Seeker": 1,
