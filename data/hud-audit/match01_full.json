@@ -9903,7 +9903,7 @@
   },
   "frame_s": "t = 362 + (index - 1) * 2",
   "note": "run index i maps to t = 362 + (i-1)*2; checked on the 3-1 window (index 264 = 888 s)",
-  "owner_check": "Panel attachments were checked against scouting frames, not the home view. Stage reads from the top strip: sweep 1023 (2406 s) shows 6-3, timer 20, with two rail rows alive (streamer and the P2 row); sweep 1072 (2504 s) shows 6-5, timer 5; sweep 1106 (2572 s) shows 6-6, timer 3. Their trait panels match the stored panels for 6-3, 6-5 and 6-6 exactly. The frame extracted at 2504 s (op13/p2_2504.png) is the streamer's home view, timer 6, and its left panel differs from the stored panel. Owner is set by the alive rule (P2 is the only other player alive after 6-2); no owner-specific cue on the board was validated."
+  "owner_check": "Stage reads from the top strip: sweep 1023 (2406 s) shows 6-3, timer 20, with two rail rows alive; sweep 1072 (2504 s) shows 6-5, timer 5; sweep 1106 (2572 s) shows 6-6, timer 3. Their trait panels match the stored panels for 6-3, 6-5 and 6-6 exactly. A pointer marks one rail row in the scouting frames at 2406, 2504 and 2572 s, and is absent in the streamer's home view at 2504 s (op13/p2_2504.png, timer 6). The same row carries the pointer at 1978 s (sweep 809), where the 5-2 opponent is P3, so the pointer does not identify the owner. The 6-3, 6-5 and 6-6 attachments rest on the alive rule alone (only one other player is alive after 6-2); no owner cue was validated, and the 1978 s panel stays unattached."
  },
  "scouted_panels": [
   {
@@ -10162,7 +10162,7 @@
    "owner_arrow_row": "P2 candidate",
    "owner_status": "not established",
    "attached_to_round": null,
-   "note": "5-2 opponent is P3 (see rounds 5-2 opponent)",
+   "note": "5-2 opponent is P3. The owner pointer sits on the same row as in the 6-x frames, but that row is not the 5-2 opponent, so the pointer is not an owner cue.",
    "owner": "not established"
   },
   {
