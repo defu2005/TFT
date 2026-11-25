@@ -6412,8 +6412,8 @@
      "solver": "panel read; unit list not solved (no duplicate-tested board)"
     },
     "tag": "derived",
-    "basis": "Scouting run at sweeps 808-812 (1976-1984 s), stage 5-2 timer 4. Panel identical across 808, 809, 810 and 812; differs from the streamer's 814 home panel. Owner marker reads P3 at sweep 809.",
-    "attempt": "Panel attached to P3: owner marker at sweep 809 reads P3 (row 5), matching the 5-2 opponent. Second panel at sweeps 806-807 is unattached (marker weak, code unresolved).",
+    "basis": "Scouting run at sweeps 808-812 (1976-1984 s), stage 5-2 timer 4. Panel identical across 808, 809, 810 and 812; differs from the streamer's 814 home panel. Owner marker reads P3 at sweep 809, the only level-6 row at 1978 s; P3 is level 6 on the 5-2 opponent basis.",
+    "attempt": "Panel attached to P3: owner marker at sweep 809 reads P3 (row 5), matching the 5-2 opponent. Second panel at sweep 806 (nine rows, sum 18) is unattached; its marker is on a level-8 row.",
     "reason": "unit list not solved"
    },
    "hexes": {
@@ -8553,7 +8553,7 @@
     },
     "tag": "derived",
     "basis": "foreign panel at 2406 s; P2 is the only player alive from 6-3, so P2 is the owner by the alive rule",
-    "attempt": "Panel attached to P2: owner marker on the P2 row at this stage's scouting frame (sweep 1023), name-matched P2; known-answer test passed."
+    "attempt": "Panel attached to P2: owner marker on the P2 row at this stage's scouting frame (sweep 1023), name-matched P2; matched the alive rule."
    },
    "hexes": {
     "value": null,
@@ -9057,7 +9057,7 @@
     },
     "tag": "derived",
     "basis": "foreign panel at 2504 s; P2 is the only player alive from 6-3, so P2 is the owner by the alive rule",
-    "attempt": "Panel attached to P2: owner marker on the P2 row at this stage's scouting frame (sweep 1072), name-matched P2; known-answer test passed."
+    "attempt": "Panel attached to P2: owner marker on the P2 row at this stage's scouting frame (sweep 1072), name-matched P2; matched the alive rule."
    },
    "hexes": {
     "value": null,
@@ -9373,7 +9373,7 @@
     },
     "tag": "derived",
     "basis": "foreign panel at 2572 s; P2 is the only player alive from 6-3, so P2 is the owner by the alive rule",
-    "attempt": "Panel attached to P2: owner marker on the P2 row at this stage's scouting frame (sweep 1106), name-matched P2; known-answer test passed."
+    "attempt": "Panel attached to P2: owner marker on the P2 row at this stage's scouting frame (sweep 1106), name-matched P2; matched the alive rule."
    },
    "hexes": {
     "value": null,
@@ -9920,7 +9920,7 @@
   },
   "frame_s": "t = 362 + (index - 1) * 2",
   "note": "run index i maps to t = 362 + (i-1)*2; checked on the 3-1 window (index 264 = 888 s)",
-  "owner_check": "Stage reads from the top strip: sweep 1023 (2406 s) 6-3 timer 20 with two rail rows alive; sweep 1072 (2504 s) 6-5 timer 5; sweep 1106 (2572 s) 6-6 timer 3; sweep 809 (1978 s) 5-2 timer 4. 6-3, 6-5 and 6-6 panels attach to P2 by the alive rule (only one other player is alive after 6-2) and match the owner marker at sweeps 1023, 1072 and 1106. The 5-2 panel attaches to P3 by the owner marker at sweep 809 (row 5 reads P3). Marker rows at 682 and 685 do not resolve to a code. The second 5-2 panel at 806-807 is unattached."
+  "owner_check": "Stage reads from the top strip: sweep 1023 (2406 s) 6-3 timer 20 with two rail rows alive; sweep 1072 (2504 s) 6-5 timer 5; sweep 1106 (2572 s) 6-6 timer 3; sweep 809 (1978 s) 5-2 timer 4. 6-3, 6-5 and 6-6 panels attach to P2 by the alive rule (only one other player is alive after 6-2). The 5-2 panel attaches to P3 by the owner marker at sweep 809. The second 5-2 panel at sweep 806 is unattached."
  },
  "scouted_panels": [
   {
@@ -10102,10 +10102,10 @@
     "Riftbeast": 1
    },
    "owner_arrow_row": "no marker (carousel)",
-   "owner_status": "not established",
+   "owner_status": "own 4-4 carousel panel, matches the solved 4-4 rows",
    "attached_to_round": null,
-   "note": "owner not established",
-   "owner": "not established"
+   "note": "owner not readable",
+   "owner": "own"
   },
   {
    "t_s": 1716,
@@ -10142,7 +10142,7 @@
     "Spellweaver": 2
    },
    "owner_arrow_row": "row 4, code unresolved",
-   "owner_status": "not established",
+   "owner_status": "P2 candidate by shared rows with the 2406 s P2 panel; not attached (4-6 opponent is P8 by nameplate)",
    "attached_to_round": null,
    "owner": "not established",
    "note": "owner not established"
@@ -10162,7 +10162,7 @@
     "Spellweaver": 2
    },
    "owner_arrow_row": "row 4, code unresolved",
-   "owner_status": "not established",
+   "owner_status": "P2 candidate by shared rows with the 2406 s P2 panel; not attached (4-6 opponent is P8 by nameplate)",
    "attached_to_round": null,
    "owner": "not established",
    "note": "owner not established"
@@ -10268,22 +10268,23 @@
   {
    "t_s": 1972,
    "sweep_idx": 806,
-   "panel": null,
-   "owner_arrow_row": "marker row 7 (weak), code unresolved",
+   "panel": {
+    "Flora Fatalis": 2,
+    "Spellweaver": 4,
+    "Elderwood": 3,
+    "Blackthorn": 2,
+    "Brawler": 2,
+    "Defender": 2,
+    "Executioner": 1,
+    "Coven": 1,
+    "Sprykin": 1
+   },
+   "owner_arrow_row": "marker on the level-8, HP 0 row",
    "owner_status": "not established",
    "attached_to_round": null,
-   "note": "Second panel on the 5-2 run: arena different from 808-812; marker weak; code unresolved; not attached.",
-   "owner": "not established"
-  },
-  {
-   "t_s": 1974,
-   "sweep_idx": 807,
-   "panel": null,
-   "owner_arrow_row": "marker row 5 (weak), code unresolved",
-   "owner_status": "not established",
-   "attached_to_round": null,
-   "note": "Second panel on the 5-2 run: marker weak; code unresolved; not attached.",
-   "owner": "not established"
+   "note": "Second 5-2 panel (nine rows, sum 18). Not attached; 5-2 stands on the 808-812 panel.",
+   "owner": "level 8, HP 0 (code not established)",
+   "trait_count_sum": 18
   }
  ]
 }
