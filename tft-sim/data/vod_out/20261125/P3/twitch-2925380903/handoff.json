@@ -1,0 +1,40 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2925380903",
+  "slot": "P3",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      2230,
+      3800
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      0,
+      2230
+    ],
+    [
+      3800,
+      11107
+    ]
+  ],
+  "game_ids": [
+    "twitch-2925380903-g2230"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 17,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 17
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "ván g2230 Ranked (MATCH FOUND @2190). Tiếp ~0-2230 (ván1 chưa có chữ Ranked client) và từ 3800+; bổ sung board đối thủ/winner."
+}
