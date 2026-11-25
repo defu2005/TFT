@@ -3744,5 +3744,11 @@
    "method": "contact sheet of 38 sweep frames, 2 s apart, read by eye",
    "tag": "read"
   }
+ },
+ "scouting_check": {
+  "3-1 886 s": "streamer panel and home board (own gold, shop, level). Valid.",
+  "3-1 888 s": "SCOUTING: sidebar shows another player (Caustic, Riftbeast 3, Invoker, Juggernaut, Adaptor, Brawler, Primal) and a name popup (opponent, alias P-unknown). Not the streamer panel.",
+  "consequence": "any +18 s or planning read taken during scouting is not the streamer roster. Old panels that fall in scouting windows need re-reading. Confirmed at 3-1.",
+  "alias_note": "the player name shown on screen is not written to the repo; alias-only per policy"
  }
 }
