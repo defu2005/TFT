@@ -1,0 +1,27 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2927534195",
+  "slot": "P2",
+  "role": "primary",
+  "status": "blocked",
+  "covered_ranges_s": [],
+  "remaining_ranges_s": [
+    [
+      0,
+      18310
+    ]
+  ],
+  "game_ids": [],
+  "counts": {
+    "games": 0,
+    "fights": 0,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {}
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "mode≠ranked: VOD #TFTCROWN / CUSTOM-NORMAL (Enchanted Wilds Day1). Không ghi fights primary như ranked. Bỏ toàn bộ candidate_ranges."
+}
