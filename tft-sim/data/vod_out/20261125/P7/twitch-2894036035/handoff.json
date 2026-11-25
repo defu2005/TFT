@@ -1,0 +1,104 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2894036035",
+  "slot": "P7",
+  "role": "primary",
+  "status": "pending",
+  "covered_ranges_s": [
+    [
+      300,
+      2100
+    ],
+    [
+      2700,
+      4500
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      2100,
+      2700
+    ],
+    [
+      4500,
+      null
+    ]
+  ],
+  "game_ids": [
+    "twitch-2894036035-g300",
+    "twitch-2894036035-g2700"
+  ],
+  "counts": {
+    "games": 2,
+    "fights": 20,
+    "others": 0
+  },
+  "validator": {
+    "ok": 8,
+    "skipped": {
+      "winner_null": 12
+    },
+    "rows": [
+      {
+        "line": 1,
+        "source": "twitch-2894036035-g300:2-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 4,
+        "source": "twitch-2894036035-g300:3-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 6,
+        "source": "twitch-2894036035-g300:3-3",
+        "reason": "winner_null"
+      },
+      {
+        "line": 7,
+        "source": "twitch-2894036035-g300:3-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 9,
+        "source": "twitch-2894036035-g300:4-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 10,
+        "source": "twitch-2894036035-g300:5-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 11,
+        "source": "twitch-2894036035-g2700:2-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 13,
+        "source": "twitch-2894036035-g2700:2-3",
+        "reason": "winner_null"
+      },
+      {
+        "line": 15,
+        "source": "twitch-2894036035-g2700:3-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 17,
+        "source": "twitch-2894036035-g2700:3-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 18,
+        "source": "twitch-2894036035-g2700:4-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 20,
+        "source": "twitch-2894036035-g2700:5-1",
+        "reason": "winner_null"
+      }
+    ]
+  }
+}
