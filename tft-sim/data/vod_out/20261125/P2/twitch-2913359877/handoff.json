@@ -1,0 +1,40 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2913359877",
+  "slot": "P2",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      300,
+      3200
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      0,
+      300
+    ],
+    [
+      3200,
+      null
+    ]
+  ],
+  "game_ids": [
+    "twitch-2913359877-g300"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 8,
+    "others": 0
+  },
+  "validator": {
+    "ok": 3,
+    "skipped": {
+      "winner_null": 5
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "stub densify g300: 8 PvP; continue densify-full later games"
+}

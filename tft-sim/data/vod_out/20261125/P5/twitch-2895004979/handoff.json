@@ -3,22 +3,47 @@
   "vod_id": "twitch-2895004979",
   "slot": "P5",
   "role": "primary",
-  "status": "pending",
-  "covered_ranges_s": [],
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      60,
+      1680
+    ],
+    [
+      1980,
+      3000
+    ]
+  ],
   "remaining_ranges_s": [
     [
       0,
+      60
+    ],
+    [
+      1680,
+      1980
+    ],
+    [
+      3000,
       99999
     ]
   ],
-  "game_ids": [],
+  "game_ids": [
+    "twitch-2895004979-g60",
+    "twitch-2895004979-g1980"
+  ],
   "counts": {
-    "games": 0,
-    "fights": 0,
-    "others": 0
+    "games": 2,
+    "fights": 18,
+    "others": 18
   },
-  "validator": null,
-  "needs_review": 0,
+  "validator": {
+    "ok": 17,
+    "skipped": {
+      "winner_null": 1
+    }
+  },
+  "needs_review": 1,
   "commit": null,
-  "remaining": "Claimed after g2410 densify. Survey ranked Set18 next."
+  "remaining": "Volume push ranked Set18; densify more later."
 }
