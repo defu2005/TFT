@@ -1,17 +1,18 @@
 {
- "ok": 2,
+ "ok": 17,
  "skipped": {
-  "winner_null": 2
+  "star_khong_hop_le": 1,
+  "winner_null": 1
  },
  "rows": [
   {
-   "line": 2,
-   "source": "twitch-2909338557-g30:2-6",
-   "reason": "winner_null"
+   "line": 6,
+   "source": "twitch-2909338557-g30:3-2",
+   "reason": "star_khong_hop_le"
   },
   {
-   "line": 4,
-   "source": "twitch-2909338557-g30:5-6",
+   "line": 19,
+   "source": "twitch-2909338557-g30:6-1",
    "reason": "winner_null"
   }
  ]
