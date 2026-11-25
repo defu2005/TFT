@@ -6020,6 +6020,40 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
+   },
+   "frame_A_read": {
+    "frame_s": 1914,
+    "timer": 22,
+    "counter": "8/9",
+    "level": 9,
+    "xp": "2/68",
+    "gold": 11,
+    "streak": 1,
+    "shop": [
+     "Taric",
+     "Cassiopeia",
+     "Sett",
+     "Ivern",
+     "Lux"
+    ],
+    "panel": {
+     "Bounty Seeker": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Brawler": 3,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": "1 or 2 (720p)",
+     "Juggernaut": 1,
+     "Riftbeast": "1 (marker 1+)"
+    },
+    "emerald_aspect": "not on the sidebar; Taric is a shop card, so the master 5-2 Emerald Aspect 1 is a shop card, not a board trait",
+    "rail_hp_rows": "nonzero HP on rows 2 to 6 of the rail; rows with 0 HP at the bottom",
+    "bench": "not read",
+    "board_units_rowcol": "not read by row and column",
+    "stars_items": "not resolvable at 720p",
+    "tag": "read",
+    "source": "frame at 1914 s, viewed in this session"
    }
   },
   {
