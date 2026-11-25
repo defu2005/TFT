@@ -3,7 +3,7 @@
   "vod_id": "twitch-2888926440",
   "slot": "P6",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       0,
@@ -12,14 +12,17 @@
     [
       12800,
       14920
-    ]
-  ],
-  "remaining_ranges_s": [
+    ],
     [
-      14920,
-      21460
+      15500,
+      17280
+    ],
+    [
+      17600,
+      20120
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2888926440-g250",
     "twitch-2888926440-g2800",
@@ -27,20 +30,22 @@
     "twitch-2888926440-g6400",
     "twitch-2888926440-g8800",
     "twitch-2888926440-g11000",
-    "twitch-2888926440-g12800"
+    "twitch-2888926440-g12800",
+    "twitch-2888926440-g15500",
+    "twitch-2888926440-g17800"
   ],
   "counts": {
-    "games": 7,
-    "fights": 109,
-    "others": 109
+    "games": 9,
+    "fights": 140,
+    "others": 140
   },
   "validator": {
-    "ok": 99,
+    "ok": 127,
     "skipped": {
-      "winner_null": 10
+      "winner_null": 13
     }
   },
-  "needs_review": 10,
+  "needs_review": 13,
   "commit": null,
-  "remaining": "g12800 densify fights=15 1st; tiếp g8@15500+ (VOD còn ~6.5k s)"
+  "remaining": "VOD hết. densify g15500(~15 PvP 5th)+g17800(~16 PvP 2nd); gaps notes/browse after 20200 skip"
 }

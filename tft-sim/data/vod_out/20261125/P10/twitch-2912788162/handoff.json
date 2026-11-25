@@ -1,0 +1,101 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2912788162",
+  "slot": "P10",
+  "role": "primary",
+  "status": "pending",
+  "covered_ranges_s": [
+    [
+      200,
+      1700
+    ],
+    [
+      4400,
+      6200
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      6200,
+      null
+    ]
+  ],
+  "skipped_ranges_s": [
+    [
+      1700,
+      4400
+    ],
+    [
+      6200,
+      11500
+    ]
+  ],
+  "skip_notes": "mid YouTube reaction; late Summoners Rift LoL",
+  "game_ids": [
+    "twitch-2912788162-g200",
+    "twitch-2912788162-g4400"
+  ],
+  "counts": {
+    "games": 2,
+    "fights": 18,
+    "others": 0
+  },
+  "validator": {
+    "ok": 8,
+    "skipped": {
+      "winner_null": 10
+    },
+    "rows": [
+      {
+        "line": 1,
+        "source": "twitch-2912788162-g200:2-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 3,
+        "source": "twitch-2912788162-g200:2-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 5,
+        "source": "twitch-2912788162-g200:3-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 7,
+        "source": "twitch-2912788162-g200:4-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 9,
+        "source": "twitch-2912788162-g200:5-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 10,
+        "source": "twitch-2912788162-g4400:2-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 12,
+        "source": "twitch-2912788162-g4400:3-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 14,
+        "source": "twitch-2912788162-g4400:4-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 16,
+        "source": "twitch-2912788162-g4400:5-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 18,
+        "source": "twitch-2912788162-g4400:6-2",
+        "reason": "winner_null"
+      }
+    ]
+  }
+}
