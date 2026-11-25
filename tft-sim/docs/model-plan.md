@@ -320,4 +320,13 @@ Chỉ số: hiệu cặp của tỷ lệ đảo chiều so với hand, template 
 - Slot có hiệu ứng rỗng: 4375 (40,6%).
 - Trong đó 4016 (91,8%) là emblem (`DA_18_Emblem*`), 359 là Tactician's Shield/Crown.
 - Kết luận: phần lớn slot rỗng là emblem, mà emblem cộng điểm trait. Việc cần làm trước tiên cho Set 18 là ánh xạ emblem → điểm trait (bước 3a: bảng trait), không phải template ability.
-- Ghi chú: việc đếm slot rỗng không chứng minh emblem đang bị bỏ qua trong engine; cần kiểm tra cách engine đếm trait khi có emblem trước khi kết luận.
+- Đã kiểm tra mã engine: `env/traits.py::active_traits` chỉ đếm `champion_api` của từng tướng. Emblem không cộng điểm trait trong engine, nên đây là lỗ hổng thật, không chỉ là slot rỗng. Set 17 có cùng cơ chế (emblem có hook riêng nhưng không tính vào điểm trait).
+- Việc cần làm tiếp theo: thêm điểm trait từ emblem vào đường Set 18 (ánh xạ DA_18_Emblem* → trait) và đo lại. Chưa làm trong lần này.
+
+
+### 11.4 Phase 2 (Riot), cập nhật 2026-11-25
+- Sửa lại: lần trước ghi developer.riotgames.com bị DNS chặn là không đúng với sandbox này. `curl` qua proxy tới `developer.riotgames.com` và `na1.api.riotgames.com` trả về được (200 và 404 không khóa). Môi trường đang `network: unrestricted`, nên không cần đề xuất đổi allowlist.
+- Tài liệu đọc được: personal key hết hạn sau 24 giờ; giới hạn 20 yêu cầu/1 giây và 100 yêu cầu/2 phút; "một key cho một sản phẩm".
+- Chính sách (trang TFT Developer API Policy): không được dùng để theo dõi tướng đối thủ trên bàn (scouting), không tạo công cụ thời gian thực trong trận, không tạo MMR/ELO. Mục "Aggregate player stats (no specific players)" thuộc nhóm production key. Personal key chỉ cho dự án cá nhân nhỏ.
+- Chưa tìm được điều khoản về thời gian lưu trữ hay huấn luyện mô hình trong các trang đã đọc. Điều khoản pháp lý (Terms) chưa đọc, nên việc lưu trữ và dùng dữ liệu để huấn luyện vẫn chưa được xác minh.
+- Kết luận: Phase 2 cần người dùng trả lời một câu. Dự án là (a) nghiên cứu cá nhân trên dữ liệu tài khoản của chính họ bằng personal key, hay (b) mô hình tổng hợp trên dữ liệu nhiều người chơi, nên đăng ký production key? Nếu (b), việc cần làm là đăng ký sản phẩm, không phải chỉ xin key. Chưa xin credential.
