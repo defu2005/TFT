@@ -48,16 +48,16 @@
   ],
   "counts": {
     "games": 4,
-    "fights": 64,
-    "others": 64
+    "fights": 67,
+    "others": 67
   },
   "validator": {
-    "ok": 61,
+    "ok": 60,
     "skipped": {
-      "winner_null": 3
+      "winner_null": 7
     }
   },
-  "needs_review": 3,
-  "commit": "46e586d",
-  "remaining": "Priority densify complete fights. Boards when readable."
+  "needs_review": 7,
+  "commit": null,
+  "remaining": "Densify priority: g2410 boards+more stages still sparse mid-game."
 }
