@@ -1,0 +1,22 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2936177080",
+  "slot": "P10",
+  "role": "primary",
+  "status": "skipped",
+  "skip_reason": "not Set18 ranked (DUPER lobby / Set10 remix / Set19 PBE builder)",
+  "covered_ranges_s": [],
+  "remaining_ranges_s": [
+    [
+      0,
+      null
+    ]
+  ],
+  "game_ids": [],
+  "counts": {
+    "games": 0,
+    "fights": 0,
+    "others": 0
+  },
+  "validator": {}
+}
