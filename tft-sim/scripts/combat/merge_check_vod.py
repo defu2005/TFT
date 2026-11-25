@@ -63,7 +63,12 @@ def _jsonl(p: Path) -> list[dict]:
 
 
 def _overlap(a, b) -> bool:
-    return a[0] < b[1] and b[0] < a[1]
+    # remaining_ranges_s may use null end for open-ended tails (vod-handoff-v1)
+    a0 = a[0] if a[0] is not None else float("-inf")
+    a1 = a[1] if a[1] is not None else float("inf")
+    b0 = b[0] if b[0] is not None else float("-inf")
+    b1 = b[1] if b[1] is not None else float("inf")
+    return a0 < b1 and b0 < a1
 
 
 def main() -> int:
@@ -89,7 +94,7 @@ def main() -> int:
     primary_by_streamer = defaultdict(set)
     expected = {}  # (slot, vod_id) -> role
     for r in rows:
-        vid, slot, role = r["vod_id"], r["slot"], r["role"]
+        vid, slot, role = r["vod_id"], r["slot"], r.get("role") or "primary"
         if not VOD_RE.match(vid) or ":" in vid:
             err("bad_id", where="manifest", vod_id=vid)
         if slot not in slots:
@@ -140,7 +145,7 @@ def main() -> int:
                 err("handoff_mismatch", slot=slot, vod_id=vid,
                     handoff_vod=h.get("vod_id"), handoff_slot=h.get("slot"))
             ranges = []
-            for x in h.get("covered_ranges_s", []):
+            for x in (h.get("covered_ranges_s") or []):
                 if isinstance(x, list) and len(x) == 2 and x[0] < x[1]:
                     ranges.append(tuple(x))
                 else:
@@ -149,7 +154,7 @@ def main() -> int:
                 for j in range(i + 1, len(ranges)):
                     if _overlap(ranges[i], ranges[j]):
                         err("overlap_within_slot", slot=slot, vod_id=vid, a=ranges[i], b=ranges[j])
-            rem = [tuple(x) for x in h.get("remaining_ranges_s", []) if isinstance(x, list) and len(x) == 2]
+            rem = [tuple(x) for x in (h.get("remaining_ranges_s") or []) if isinstance(x, list) and len(x) == 2]
             for rg in rem:
                 for cg in ranges:
                     if _overlap(rg, cg):

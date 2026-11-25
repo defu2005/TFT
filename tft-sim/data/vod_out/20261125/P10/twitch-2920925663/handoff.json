@@ -11,18 +11,6 @@
     ],
     [
       6800,
-      8500
-    ],
-    [
-      8500,
-      10000
-    ],
-    [
-      10000,
-      11800
-    ],
-    [
-      11800,
       14800
     ],
     [
@@ -54,5 +42,5 @@
     "fights": 78,
     "others": 0
   },
-  "rem_notes": "+4g rem (g8700,g12000,g15200,g21000). Skip anime chat ~16800\u201320500. remaining empty."
+  "rem_notes": "+4g rem (g8700,g12000,g15200,g21000). Skip anime chat ~16800–20500. remaining empty."
 }

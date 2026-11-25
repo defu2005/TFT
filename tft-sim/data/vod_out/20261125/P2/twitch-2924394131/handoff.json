@@ -6,10 +6,6 @@
   "status": "working",
   "covered_ranges_s": [
     [
-      400,
-      2200
-    ],
-    [
       3000,
       5000
     ],
@@ -28,38 +24,33 @@
     [
       11800,
       13800
+    ],
+    [
+      400,
+      2100
     ]
   ],
   "remaining_ranges_s": [
     [
       0,
       400
-    ],
-    [
-      2200,
-      null
     ]
   ],
   "game_ids": [
-    "twitch-2924394131-g400",
     "twitch-2924394131-g3000",
     "twitch-2924394131-g5200",
     "twitch-2924394131-g7400",
     "twitch-2924394131-g9600",
-    "twitch-2924394131-g11800"
+    "twitch-2924394131-g11800",
+    "twitch-2924394131-g400"
   ],
   "counts": {
     "games": 6,
-    "fights": 42,
+    "fights": 76,
     "others": 0
   },
-  "validator": {
-    "ok": 26,
-    "skipped": {
-      "winner_null": 16
-    }
-  },
+  "validator": {},
   "needs_review": 0,
   "commit": null,
-  "remaining": "multi densify stub 6g/42f; expand densify-full later"
+  "remaining": "densify 6g/76f after merge resolve"
 }
