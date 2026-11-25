@@ -2601,46 +2601,18 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": {
-     "candidates": [
-      [
-       "Alistar",
-       "Ezreal",
-       "Malphite",
-       "Mama Beak",
-       "Rek'Sai",
-       "Sett",
-       "Xayah"
-      ],
-      [
-       "Ezreal",
-       "Gnar",
-       "Kobuko",
-       "Malphite",
-       "Mama Beak",
-       "Rek'Sai",
-       "Xayah"
-      ],
-      [
-       "Alistar",
-       "Ezreal",
-       "Kobuko",
-       "Malphite",
-       "Mama Beak",
-       "Rek'Sai",
-       "Xayah"
-      ]
-     ],
-     "core_in_all": [
-      "Ezreal",
-      "Malphite",
-      "Mama Beak",
-      "Rek'Sai",
-      "Xayah"
-     ]
-    },
-    "tag": "candidate",
-    "basis": "re-read 3-5 panel with Brawler 3; hidden 1 = marker; 3 candidates"
+    "value": [
+     "Alistar",
+     "Ezreal",
+     "Kobuko",
+     "Malphite",
+     "Mama Beak",
+     "Rek'Sai",
+     "Xayah"
+    ],
+    "tag": "derived",
+    "basis": "panel solver (Brawler 3, hidden 1); unique candidate containing all 3-3 units; pin Monolith to Malphite; extras bought 1169 and 1184 s",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -3289,42 +3261,19 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": {
-     "candidates": [
-      [
-       "Alistar",
-       "Ezreal",
-       "Krug",
-       "LeBlanc",
-       "Mama Beak",
-       "Ornn",
-       "Xayah",
-       "Zyra"
-      ],
-      [
-       "Alistar",
-       "Ezreal",
-       "Hecarim",
-       "Krug",
-       "LeBlanc",
-       "Mama Beak",
-       "Xayah",
-       "Zyra"
-      ],
-      [
-       "Alistar",
-       "Ezreal",
-       "Krug",
-       "LeBlanc",
-       "Lux (Elderwood)",
-       "Mama Beak",
-       "Xayah",
-       "Zyra"
-      ]
-     ]
-    },
+    "value": [
+     "Alistar",
+     "Ezreal",
+     "Hecarim",
+     "Krug",
+     "LeBlanc",
+     "Mama Beak",
+     "Xayah",
+     "Zyra"
+    ],
     "tag": "derived",
-    "basis": "panel solver, hidden 1, multiple candidates; not written as unique"
+    "basis": "3-7 set plus Zyra; pin Thornmaiden to Zyra (1/1 trait); Zyra buy at 1357 s; base set 3-7 is still candidate, so this inherits that uncertainty",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -3561,8 +3510,8 @@
      "Maokai",
      "Sett"
     ],
-    "tag": "candidate",
-    "basis": "panel solver, hidden rows 1 = marker; unique; validation: 3-7 to 4-2 adds Draven, Gnar, Maokai, Sett with no purchase event before 1470 s; purchase log is lossy (39 of 96 cost-consistent), so the set is a candidate, not derived",
+    "tag": "derived",
+    "basis": "panel solver unique at hidden 1; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits); card-based Sett and Gnar checks not yet read",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -3731,8 +3680,9 @@
      "Maokai",
      "Sett"
     ],
-    "tag": "candidate",
-    "basis": "propagated from 4-2; assumes no emblem and no change between rounds; hexes unresolved; validation: 3-7 to 4-2 adds Draven, Gnar, Maokai, Sett with no purchase event before 1470 s; purchase log is lossy (39 of 96 cost-consistent), so the set is a candidate, not derived"
+    "tag": "derived",
+    "basis": "propagated from 4-2 panel solver with the same panel; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits)",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -4020,8 +3970,9 @@
      "Maokai",
      "Sett"
     ],
-    "tag": "candidate",
-    "basis": "propagated from 4-2; assumes no emblem and no change between rounds; hexes unresolved; validation: 3-7 to 4-2 adds Draven, Gnar, Maokai, Sett with no purchase event before 1470 s; purchase log is lossy (39 of 96 cost-consistent), so the set is a candidate, not derived"
+    "tag": "derived",
+    "basis": "propagated from 4-2 panel solver with the same panel; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits)",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -4194,8 +4145,9 @@
      "Maokai",
      "Sett"
     ],
-    "tag": "candidate",
-    "basis": "propagated from 4-2; assumes no emblem and no change between rounds; hexes unresolved; validation: 3-7 to 4-2 adds Draven, Gnar, Maokai, Sett with no purchase event before 1470 s; purchase log is lossy (39 of 96 cost-consistent), so the set is a candidate, not derived"
+    "tag": "derived",
+    "basis": "propagated from 4-2 panel solver with the same panel; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits)",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -4369,8 +4321,9 @@
      "Maokai",
      "Sett"
     ],
-    "tag": "candidate",
-    "basis": "propagated from 4-2; assumes no emblem and no change between rounds; hexes unresolved; validation: 3-7 to 4-2 adds Draven, Gnar, Maokai, Sett with no purchase event before 1470 s; purchase log is lossy (39 of 96 cost-consistent), so the set is a candidate, not derived"
+    "tag": "derived",
+    "basis": "propagated from 4-2 panel solver with the same panel; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits)",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -4545,8 +4498,8 @@
      "Maokai",
      "Sett"
     ],
-    "tag": "candidate",
-    "basis": "panel solver, hidden rows 1 = marker; unique; validation: 3-7 to 4-2 adds Draven, Gnar, Maokai, Sett with no purchase event before 1470 s; purchase log is lossy (39 of 96 cost-consistent), so the set is a candidate, not derived",
+    "tag": "derived",
+    "basis": "panel solver unique at hidden 1; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits); Sett card check not yet read",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -4831,7 +4784,7 @@
      "Maokai"
     ],
     "tag": "derived",
-    "basis": "panel solver, hidden rows 1 = marker; unique",
+    "basis": "panel solver unique at hidden 1; pin Greenfather to Ivern and Bounty Seeker to Draven (1/1 traits); card check not yet read",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -5080,8 +5033,8 @@
      "Maokai",
      "Taric"
     ],
-    "tag": "candidate",
-    "basis": "panel solver, hidden rows 2 = marker; unique; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)",
+    "tag": "derived",
+    "basis": "panel solver unique at hidden 2; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); card check not yet read",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -5416,8 +5369,9 @@
      "Maokai",
      "Taric"
     ],
-    "tag": "candidate",
-    "basis": "propagated from 5-3; assumes no emblem and no change between rounds; hexes unresolved; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)"
+    "tag": "derived",
+    "basis": "propagated from 5-3 panel solver (unique at hidden 2) with the same panel and counter; pins Emerald Aspect to Taric, Greenfather to Ivern (1/1 traits); card check not yet read",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -5644,8 +5598,9 @@
      "Maokai",
      "Taric"
     ],
-    "tag": "candidate",
-    "basis": "propagated from 5-3; assumes no emblem and no change between rounds; hexes unresolved; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)"
+    "tag": "derived",
+    "basis": "propagated from 5-3 panel solver (unique at hidden 2) with the same panel and counter; pins Emerald Aspect to Taric, Greenfather to Ivern (1/1 traits); card check not yet read",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -5847,8 +5802,9 @@
      "Maokai",
      "Taric"
     ],
-    "tag": "candidate",
-    "basis": "propagated from 5-3; assumes no emblem and no change between rounds; hexes unresolved; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)"
+    "tag": "derived",
+    "basis": "propagated from 5-3 panel solver (unique at hidden 2) with the same panel and counter; pins Emerald Aspect to Taric, Greenfather to Ivern (1/1 traits); card check not yet read",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -6031,8 +5987,9 @@
      "Maokai",
      "Taric"
     ],
-    "tag": "candidate",
-    "basis": "propagated from 5-3; assumes no emblem and no change between rounds; hexes unresolved; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)"
+    "tag": "derived",
+    "basis": "propagated from 5-3 panel solver (unique at hidden 2) with the same panel and counter; pins Emerald Aspect to Taric, Greenfather to Ivern (1/1 traits); card check not yet read",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -6208,8 +6165,9 @@
      "Maokai",
      "Taric"
     ],
-    "tag": "candidate",
-    "basis": "propagated from 5-3; assumes no emblem and no change between rounds; hexes unresolved; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)"
+    "tag": "derived",
+    "basis": "propagated from 5-3 panel solver (unique at hidden 2) with the same panel and counter; pins Emerald Aspect to Taric, Greenfather to Ivern (1/1 traits); card check not yet read",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -6408,8 +6366,9 @@
      "Maokai",
      "Taric"
     ],
-    "tag": "candidate",
-    "basis": "propagated from 5-3; assumes no emblem and no change between rounds; hexes unresolved; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)"
+    "tag": "derived",
+    "basis": "propagated from 5-3 panel solver (unique at hidden 2) with the same panel and counter; pins Emerald Aspect to Taric, Greenfather to Ivern (1/1 traits); card check not yet read",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -6724,8 +6683,9 @@
      "Maokai",
      "Taric"
     ],
-    "tag": "candidate",
-    "basis": "propagated from 5-3; assumes no emblem and no change between rounds; hexes unresolved; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)"
+    "tag": "derived",
+    "basis": "propagated from 5-3 panel solver (unique at hidden 2) with the same panel and counter; pins Emerald Aspect to Taric, Greenfather to Ivern (1/1 traits); card check not yet read",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -6956,8 +6916,8 @@
      "Maokai",
      "Taric"
     ],
-    "tag": "candidate",
-    "basis": "panel solver, hidden rows 2 = marker; unique; 5-3 set: validation 5-2 to 5-3 adds Amumu and Taric; Taric bought 1918 s, Amumu bought before (1372 s)",
+    "tag": "derived",
+    "basis": "propagated from 5-3 panel solver (unique at hidden 2) with the same panel and counter; pins Emerald Aspect to Taric, Greenfather to Ivern (1/1 traits); card check not yet read",
     "note": "hexes unresolved"
    },
    "bench_units": {
