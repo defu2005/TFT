@@ -8522,8 +8522,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Scouted P2 panel at 2406 to 2424 s, marker 5+. Branching solver (branch on the largest unmet visible trait; hidden traits at most 5) finds zero boards for N 5 to 9. The exhaustive search at hidden 5 timed out at N 8 earlier.",
-    "reason": "no board fits this panel under the branching search for N 5 to 9, so the panel reading needs checking before any board is recorded"
+    "attempt": "Scouted P2 panel at 2406 to 2424 s, marker 5+. Every row name exists in set18 traits with champions (Attuned 1, Emerald Aspect 1, Avatar 10, Vanguard 6, Coven 6, Invoker 5, Lunar 4, Defender 6, Fae 5). The 1/1 rows pin Alune (Attuned) and Taric (Emerald Aspect). With both pinned and hidden at most 5: N 3 to 9 gives zero boards, which covers the owner badge of 9. N 10 gives many boards, above the badge.",
+    "reason": "no board fits N up to the owner badge of 9 with the pinned champions, so the panel is inconsistent with P2 at this badge"
    },
    "hexes": {
     "value": null,
