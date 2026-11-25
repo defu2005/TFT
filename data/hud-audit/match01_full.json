@@ -3697,5 +3697,19 @@
   "finding": "+18 s after round start is not always the planning phase: at 1451.8 s (4-2) the frame is a Choose One bounty screen. Planning frames need the timer check per round.",
   "finding_2": "Board and bench units are sprites with no name text in these frames. Naming needs a labelled sprite reference from this stream, which does not exist yet. Names are not filled in without it.",
   "status": "board and bench identities remain unresolved"
+ },
+ "observation_layer_probe": {
+  "frames": "bd/ at HP label time + 20 s, 10 rounds",
+  "3-1 (901.1 s)": {
+   "phase": "planning (bot-style board, counter 5/5 read)",
+   "units_listed": "not enumerated; health bar count is approximate (about 7 on board, about 3 on bench)",
+   "status": "partial, names not assigned"
+  },
+  "3-3 (1068.2 s)": {
+   "phase": "PvE combat on purple board (monsters), not planning",
+   "status": "no roster observation; +20 s offset is wrong for this round"
+  },
+  "conclusion": "+20 s from the HP label is not a reliable planning offset. Each round needs its own timer check before a board is read.",
+  "status": "observation layer incomplete; no names assigned"
  }
 }
