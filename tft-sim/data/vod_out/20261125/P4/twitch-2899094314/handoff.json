@@ -16,6 +16,18 @@
     [
       4750,
       7000
+    ],
+    [
+      7200,
+      8800
+    ],
+    [
+      9000,
+      10500
+    ],
+    [
+      10800,
+      12500
     ]
   ],
   "remaining_ranges_s": [
@@ -29,26 +41,41 @@
     ],
     [
       7000,
+      7200
+    ],
+    [
+      8800,
+      9000
+    ],
+    [
+      10500,
+      10800
+    ],
+    [
+      12500,
       19050
     ]
   ],
   "game_ids": [
     "twitch-2899094314-g0",
     "twitch-2899094314-g2085",
-    "twitch-2899094314-g4750"
+    "twitch-2899094314-g4750",
+    "twitch-2899094314-g7200",
+    "twitch-2899094314-g9000",
+    "twitch-2899094314-g10800"
   ],
   "counts": {
-    "games": 3,
-    "fights": 64,
+    "games": 6,
+    "fights": 118,
     "others": 0
   },
   "validator": {
     "ok": 1,
     "skipped": {
-      "winner_null": 63
+      "winner_null": 117
     }
   },
-  "needs_review": 60,
-  "commit": "c4a700f",
-  "remaining": "continue ranked game4+ from ~7200s (LP 1509)"
+  "needs_review": 114,
+  "commit": null,
+  "remaining": "SKIP [12500,19050] boxbox bash VOD review (tourney). Gaps=queue. Next other P4 VODs; then mark this VOD done/blocked for tail."
 }
