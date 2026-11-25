@@ -67,13 +67,13 @@
   ],
   "counts": {
     "games": 7,
-    "fights": 29,
+    "fights": 40,
     "others": 0
   },
   "validator": {
-    "ok": 8,
+    "ok": 13,
     "skipped": {
-      "winner_null": 21
+      "winner_null": 27
     },
     "rows": [
       {
@@ -123,69 +123,99 @@
       },
       {
         "line": 15,
-        "source": "twitch-2893984856-g6200:5-2",
-        "reason": "winner_null"
-      },
-      {
-        "line": 16,
         "source": "twitch-2893984856-g10200:3-6",
         "reason": "winner_null"
       },
       {
-        "line": 17,
+        "line": 16,
         "source": "twitch-2893984856-g14200:3-2",
         "reason": "winner_null"
       },
       {
-        "line": 18,
+        "line": 17,
         "source": "twitch-2893984856-g3500:3-3",
         "reason": "winner_null"
       },
       {
-        "line": 19,
+        "line": 18,
         "source": "twitch-2893984856-g3500:3-6",
         "reason": "winner_null"
       },
       {
-        "line": 21,
+        "line": 20,
         "source": "twitch-2893984856-g3500:4-2",
         "reason": "winner_null"
       },
       {
-        "line": 22,
+        "line": 21,
         "source": "twitch-2893984856-g3500:4-3",
         "reason": "winner_null"
       },
       {
-        "line": 23,
+        "line": 22,
         "source": "twitch-2893984856-g3500:4-5",
         "reason": "winner_null"
       },
       {
-        "line": 25,
+        "line": 24,
         "source": "twitch-2893984856-g3500:5-1",
         "reason": "winner_null"
       },
       {
-        "line": 26,
+        "line": 25,
         "source": "twitch-2893984856-g3500:5-2",
         "reason": "winner_null"
       },
       {
-        "line": 28,
+        "line": 27,
         "source": "twitch-2893984856-g3500:5-6",
         "reason": "winner_null"
       },
       {
-        "line": 29,
+        "line": 28,
         "source": "twitch-2893984856-g3500:6-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 31,
+        "source": "twitch-2893984856-g6200:3-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 32,
+        "source": "twitch-2893984856-g6200:3-6",
+        "reason": "winner_null"
+      },
+      {
+        "line": 33,
+        "source": "twitch-2893984856-g6200:4-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 34,
+        "source": "twitch-2893984856-g6200:4-3",
+        "reason": "winner_null"
+      },
+      {
+        "line": 38,
+        "source": "twitch-2893984856-g6200:5-3",
+        "reason": "winner_null"
+      },
+      {
+        "line": 39,
+        "source": "twitch-2893984856-g6200:5-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 40,
+        "source": "twitch-2893984856-g6200:5-6",
         "reason": "winner_null"
       }
     ]
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "densify done: g400,g3500 (bc-91a0c26f). Others: g6200/g7000/g10200/g11000/g14200 + remaining_ranges.",
+  "remaining": "densify done: g400,g3500,g6200 (bc-91a0c26f). Others: g7000/g10200/g11000/g14200.",
   "densify_claims": {
     "twitch-2893984856-g400": {
       "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
@@ -210,6 +240,25 @@
         "6-1"
       ],
       "note": "replaced carousel stub; mid/late densify"
+    },
+    "twitch-2893984856-g6200": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "fights": 12,
+      "stages": [
+        "3-2",
+        "3-3",
+        "3-5",
+        "3-6",
+        "4-2",
+        "4-3",
+        "4-5",
+        "4-6",
+        "5-2",
+        "5-3",
+        "5-5",
+        "5-6"
+      ],
+      "note": "extended start 5600; late densify; boards unread names"
     }
   }
 }
