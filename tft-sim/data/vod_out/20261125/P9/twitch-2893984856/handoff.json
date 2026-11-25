@@ -430,7 +430,7 @@
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "2893984856 densify complete (7 games x12). Next: 2899373090 / 2892255509.",
+  "remaining": "2893984856 densify complete (7x12). Next: 2899373090 / 2892255509.",
   "densify_claims": {
     "twitch-2893984856-g400": {
       "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
