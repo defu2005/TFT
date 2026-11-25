@@ -49,11 +49,12 @@
     "twitch-2899373090-g7000",
     "twitch-2899373090-g11000",
     "twitch-2899373090-g5000",
-    "twitch-2899373090-g12500"
+    "twitch-2899373090-g12500",
+    "twitch-2899373090-g1815"
   ],
   "counts": {
-    "games": 5,
-    "fights": 5,
+    "games": 6,
+    "fights": 23,
     "others": 0
   },
   "validator": {
@@ -91,5 +92,5 @@
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "5 games densified; gaps remain"
+  "remaining": "densify g400+g1815 from HUD; other games pending"
 }
