@@ -59,19 +59,20 @@
   }
  },
  "gold_planning_frames": {
-  "rounds_checked": 26,
-  "matched_at_recorded_frame_all": 22,
-  "not_comparable_no_gold_box": [
+  "rounds_read": 26,
+  "matched_at_recorded_frame": 22,
+  "no_gold_box": [
    "2-4",
    "6-1",
    "6-6"
   ],
+  "in_sample_miss": "5-5 at 2094 s (timer 22, gold 9); the planning entry is timer 21 at 2095 s (gold 7), which matches",
   "out_of_sample_comparable": 13,
-  "out_of_sample_matched_at_recorded_frame": "13 of 13 after 5-5 was moved to its timer-21 frame at 2095 s; the other 12 were OCR at their recorded frames, and 5-5 at 2095 s was checked visually (gold 7)",
-  "out_of_sample_miss": "5-5 at 2094 s (timer 22) reads 9; the planning entry is timer 21, so its recorded frame is 2095 s (gold 7). The earlier 9 was one second early."
+  "out_of_sample_matched": 13
  },
  "gold_frame_a_run": {
   "note": "Earlier run at Frame A times; superseded by the planning-frame run above"
  },
- "level_xp_protocol": "Calibration on one out-of-sample frame (2-3 at 604 s) before the sample run; the ten sample rounds read at their planning frames."
+ "level_xp_protocol": "Calibration on one out-of-sample frame (2-3 at 604 s) before the sample run; the ten sample rounds read at their planning frames.",
+ "script": "data/hud-audit/blind_ocr_planning.py (planning-frame OCR for gold, streak, level and XP; the sample rounds are fixed in the script)"
 }

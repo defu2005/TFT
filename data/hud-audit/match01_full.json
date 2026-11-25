@@ -4498,11 +4498,10 @@
     "candidates": [
      "P2",
      "P4",
-     "P5",
      "P6"
     ],
-    "attempt": "1503 s full frame, plus frames at 1488, 1496, 1504, 1512 and 1518 s (top 90 px checked): no opponent plate with a level is legible; the top right shows a tactician sprite under the rank overlay. HP-flag pool kept: P2, P4, P5, P6",
-    "reason": "no legible opponent plate in the top strip across five frames"
+    "attempt": "1488 s top-right plate: level 8 with a purple bar, at the top edge. Rail badges at 1488 s: P2 8, P4 8, P5 7, P6 8. Three pool members sit at level 8, so the plate does not pick one.",
+    "reason": "three pool members match level 8 at 1488 s"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -7070,7 +7069,7 @@
      },
      "observed_gold_change": {
       "tag": "derived",
-      "basis": "gold 9 at 2094 s to 7 at 2095 s; the one buy in the window (2094.5 s) costs 5 in src/data/set18.json, not 2, so the drop is not explained by a recorded purchase; the 2096 s buy falls after the read"
+      "basis": "gold 9 at 2094 s to 7 at 2095 s; the actions record a reroll at 2094.5 s with gold_change -2, which accounts for the drop. A buy at 2094.5 s has cost 5 in src/data/set18.json and is flagged cost-inconsistent, so it is not the cause."
      }
     }
    },
@@ -9446,7 +9445,7 @@
   "source": "round_results_derived.json eliminations; 1 and 2 from 6-6 frames"
  },
  "blind_reread": {
-  "summary": "Blind re-read. Sample of ten at planning frames: gold 9/10 (miss 5-5, one-second offset), streak 9/10 (one empty OCR read at 6-2), level 10/10, XP 10/10. The gold and streak crops were chosen after seeing the sample, so those figures are tuned. The level and XP crop was calibrated on an out-of-sample frame (2-3 at 604 s) before the run. Out-of-sample gold at recorded planning frames: 13/13 comparable; three frames show no gold box (2-4, 6-1, 6-6). Panel, shop and counter not re-read blind."
+  "summary": "Blind re-read. Sample of ten at planning frames: gold 9/10 (miss 5-5, one-second offset), streak 9/10 (one empty OCR read at 6-2), level 10/10, XP 10/10. The gold and streak crops were chosen after seeing the sample, so those figures are tuned. The level and XP crop was calibrated on an out-of-sample frame (2-3 at 604 s) before the run. Out-of-sample gold at recorded planning frames: 13/13 comparable; three frames show no gold box (2-4, 6-1, 6-6). Gold and streak were read at the blind-pick times; level and XP at planning frames. Only the gold crop was re-chosen after the sample. Panel, shop and counter not re-read blind."
  },
  "final_comps": {
   "P1_6-6": {
