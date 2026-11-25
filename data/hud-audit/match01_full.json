@@ -4027,9 +4027,24 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "1798 s frame is a PvE bounty Choose One screen, not planning"
+    "frame_s": 1816,
+    "tag": "read",
+    "value": {
+     "timer": 22,
+     "level": 8,
+     "xp": "10/68",
+     "gold": 91,
+     "streak": 3,
+     "shop": [
+      "Morgana",
+      "Azir",
+      "Master Yi",
+      "Ahri",
+      null
+     ],
+     "board": "not read, arena has spell effects",
+     "note": "shop read; board unresolved"
+    }
    },
    "combat": {
     "value": {
@@ -4168,41 +4183,34 @@
     "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
+    "frame_s": 1836,
+    "tag": "read",
     "value": {
+     "timer": 20,
+     "level": 9,
+     "xp": "0/68",
+     "gold": 57,
+     "streak": 3,
+     "counter": "8/9",
      "panel": {
-      "value": null,
-      "tag": "unresolved"
+      "Bounty Seeker": 1,
+      "Old Growth": 1,
+      "Brawler": 4,
+      "Elderwood": 4,
+      "Executioner": 1,
+      "Juggernaut": 1,
+      "Vanguard": 1,
+      "Blossom": 1,
+      "Riftbeast": 1
      },
-     "board": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "bench": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "gold": {
-      "value": 85,
-      "tag": "derived"
-     },
-     "level": {
-      "value": null,
-      "tag": "derived"
-     },
-     "shop_ids": {
-      "value": [
-       "DA_Gromp18_AP",
-       "DA_Cinderling18",
-       "Hecarim",
-       "Kayle",
-       null
-      ],
-      "tag": "derived"
-     }
-    },
-    "tag": "derived",
-    "basis": "reader row nearest t_planning_s",
-    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
+     "shop": [
+      "Gromp",
+      "Cinderling",
+      "Hecarim",
+      "Kayle",
+      "Aphelios"
+     ]
+    }
    },
    "combat": {
     "value": {
@@ -4391,41 +4399,29 @@
    },
    "combat_frame_t_s": null,
    "planning": {
+    "frame_s": 1914,
+    "tag": "read",
     "value": {
-     "panel": {
-      "value": null,
-      "tag": "unresolved"
+     "timer": 21,
+     "level": 9,
+     "xp": "2/68",
+     "gold": 11,
+     "streak": 1,
+     "counter": "8/9",
+     "panel_partial": {
+      "Bounty Seeker": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Brawler": 3,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 1,
+      "Juggernaut": 1,
+      "Riftbeast": 1
      },
-     "board": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "bench": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "gold": {
-      "value": 26,
-      "tag": "derived"
-     },
-     "level": {
-      "value": null,
-      "tag": "derived"
-     },
-     "shop_ids": {
-      "value": [
-       null,
-       "Kobuko",
-       "Ahri",
-       "Diana",
-       "Azir"
-      ],
-      "tag": "derived"
-     }
-    },
-    "tag": "derived",
-    "basis": "reader row nearest t_planning_s",
-    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
+     "shop": null,
+     "note": "shop hidden by sell tooltip; panel read from sidebar, may be incomplete"
+    }
    },
    "combat": {
     "value": {
@@ -4594,41 +4590,34 @@
    },
    "combat_frame_t_s": null,
    "planning": {
+    "frame_s": 2000,
+    "tag": "read",
     "value": {
+     "timer": 20,
+     "level": 9,
+     "xp": "4/68",
+     "gold": 5,
+     "streak": 1,
+     "counter": "9/9",
      "panel": {
-      "value": null,
-      "tag": "unresolved"
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 2,
+      "Brawler": 2,
+      "Juggernaut": 2
      },
-     "board": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "bench": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "gold": {
-      "value": 7,
-      "tag": "derived"
-     },
-     "level": {
-      "value": null,
-      "tag": "derived"
-     },
-     "shop_ids": {
-      "value": [
-       "DA_Gromp18_AP",
-       "DA_Krug18",
-       "Ezreal",
-       "Malphite",
-       "Warwick"
-      ],
-      "tag": "derived"
-     }
-    },
-    "tag": "derived",
-    "basis": "reader row nearest t_planning_s",
-    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
+     "shop": [
+      "Morgana",
+      "Yunara",
+      "Brambleback",
+      "Sivir",
+      "Barter"
+     ]
+    }
    },
    "combat": {
     "value": {
