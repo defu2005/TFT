@@ -8495,8 +8495,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Scouted P2 panel at 2406 s (sweep 1023) and 2412 to 2424 s (sweep 1026, 1032). Solver over N 1 to 9 and hidden 0 to 2 finds no consistent board, so the panel reading or trait names need checking before any board is recorded.",
-    "reason": "the panel read does not solve to any board under N up to 9 and hidden up to 2"
+    "attempt": "Scouted P2 panel at 2406 to 2424 s (sweep 1023, 1026, 1032), marker 5+. Solver at hidden 5: N 7 gives zero solutions; N 8 timed out at 120 s, so no board was recorded. Earlier hidden 0 to 2 runs gave zero solutions, and this panel has not been checked against set18 traits by hand.",
+    "reason": "the marker-based search returns zero at N 7 and times out at N 8, so no consistent board can be recorded"
    },
    "hexes": {
     "value": null,
@@ -8984,8 +8984,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Scouted P2 panel at 2486 to 2508 s (sweep 1063, 1072, 1074). Solver over N 1 to 9 and hidden 0 to 2 finds no consistent board.",
-    "reason": "the panel read does not solve to any board under N up to 9 and hidden up to 2"
+    "attempt": "Scouted P2 panel at 2486 to 2508 s (sweep 1063, 1072, 1074), marker 6+. Solver at hidden 6 was not rerun, because the 6-3 search already timed out at hidden 5. Earlier hidden 0 to 2 runs gave zero solutions.",
+    "reason": "the hidden-6 search is too large to finish in the time allowed, so the panel is unresolved"
    },
    "hexes": {
     "value": null,
@@ -9285,8 +9285,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Scouted P2 panel at 2572 s (sweep 1106) with a 6+ marker. Solver over N 1 to 9 and hidden 0 to 2 finds no consistent board.",
-    "reason": "the panel read does not solve to any board under N up to 9 and hidden up to 2"
+    "attempt": "Scouted P2 panel at 2572 s (sweep 1106), marker 6+. Solver at hidden 6 was not rerun, for the same reason as 6-5. Earlier hidden 0 to 2 runs gave zero solutions.",
+    "reason": "the hidden-6 search is too large to finish in the time allowed, so the panel is unresolved"
    },
    "hexes": {
     "value": null,
