@@ -48,16 +48,16 @@
   ],
   "counts": {
     "games": 4,
-    "fights": 73,
+    "fights": 74,
     "others": 0
   },
   "validator": {
-    "ok": 3,
+    "ok": 10,
     "skipped": {
-      "winner_null": 70
+      "winner_null": 64
     }
   },
   "needs_review": 0,
-  "commit": "d54c71f",
-  "remaining": "Densify g8780 pushed (2-side+winners). Next densify g6680/g4200/g2230/robin g350."
+  "commit": "c193939",
+  "remaining": "Densify g8780+g6680 done. Next densify g4200/g2230 + robin g350 (2 phía còn mỏng)."
 }

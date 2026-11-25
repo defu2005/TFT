@@ -6,34 +6,71 @@
   "status": "working",
   "covered_ranges_s": [
     [
-      0,
+      60,
+      1980
+    ],
+    [
+      2100,
+      3820
+    ],
+    [
+      4150,
+      5620
+    ],
+    [
+      6400,
       7880
+    ],
+    [
+      8250,
+      10450
+    ],
+    [
+      10650,
+      12780
+    ],
+    [
+      13100,
+      15150
+    ],
+    [
+      15600,
+      17750
+    ],
+    [
+      18000,
+      19950
     ]
   ],
   "remaining_ranges_s": [
     [
-      7880,
-      24420
+      19950,
+      21600
     ]
   ],
   "game_ids": [
     "twitch-2898781298-g60",
     "twitch-2898781298-g2100",
-    "twitch-2898781298-g4300",
-    "twitch-2898781298-g6400"
+    "twitch-2898781298-g6400",
+    "twitch-2898781298-g8300",
+    "twitch-2898781298-g10650",
+    "twitch-2898781298-g13100",
+    "twitch-2898781298-g15600",
+    "twitch-2898781298-g18000",
+    "twitch-2898781298-g4300"
   ],
   "counts": {
-    "games": 4,
-    "fights": 46,
-    "others": 46
+    "games": 9,
+    "fights": 125,
+    "others": 125
   },
   "validator": {
-    "ok": 38,
+    "ok": 113,
     "skipped": {
-      "winner_null": 8
+      "winner_null": 12
     }
   },
-  "needs_review": 8,
+  "needs_review": 12,
   "commit": null,
-  "remaining": "g60..g6400 densify fights=46 g4=13 both=0 win=12; tiếp g5@8300 + kiyoon 2888926440 ranked"
+  "remaining": "g4300 re-densify from labels fights=14 win=12; VOD remaining ~20000+"
 }
