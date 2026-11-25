@@ -50,13 +50,13 @@
   ],
   "counts": {
     "games": 6,
-    "fights": 38,
+    "fights": 68,
     "others": 0
   },
   "validator": {
     "ok": 23,
     "skipped": {
-      "winner_null": 15
+      "winner_null": 45
     }
   },
   "needs_review": 0,

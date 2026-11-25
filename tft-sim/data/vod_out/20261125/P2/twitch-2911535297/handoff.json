@@ -6,35 +6,36 @@
   "status": "working",
   "covered_ranges_s": [
     [
-      300,
-      2000
+      400,
+      2100
     ]
   ],
   "remaining_ranges_s": [
     [
       0,
-      300
+      400
     ],
     [
-      2000,
+      2100,
       null
     ]
   ],
   "game_ids": [
-    "twitch-2911535297-g300"
+    "twitch-2911535297-g300",
+    "twitch-2911535297-g400"
   ],
   "counts": {
-    "games": 1,
-    "fights": 5,
+    "games": 2,
+    "fights": 24,
     "others": 0
   },
   "validator": {
-    "ok": 2,
+    "ok": 10,
     "skipped": {
-      "winner_null": 3
+      "winner_null": 14
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "stub densify g300: 5 PvP; continue densify-full later games"
+  "remaining": "densify-full g400 12 PvP; continue later games"
 }
