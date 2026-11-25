@@ -483,3 +483,13 @@ Bản đầu của mục này kết luận "CDragon thiếu chỉ số item". K�
   - Selftest: `crit TFT +0.2, DA 0.0`; `boards` ra `TFT_Item_GuinsoosRageblade`; `predict_win` chạy với cờ.
 - Chưa chạy lại điểm (theo chỉ dẫn: không rerun). Mọi con số SECONDARY cũ (kể cả dryrun) không còn áp dụng cho cấu hình mới; phải ghi rõ khi báo cáo.
 - Việc còn lại (không làm trong bước này): (i) thay `build_set18_*` để không đăng ký hook toàn cục; (ii) id đúng của 10 `DA_Component_*`; (iii) làm rõ chú thích `_GENERIC_ITEM` với tác giả engine.
+
+### 11.17 Đối chiếu ba trait Defender / Brawler / Spellweaver với nguồn ngoài (2026-11-25)
+- Rút yêu cầu đọc chỉ số trong game: bỏ, không cần người dùng đọc số. Giả định vẫn là giả định.
+- Snapshot CDragon (đã có): Defender 12 giáp và kháng phép cho cả đội; Defender thêm 25/60/115 (mốc 2/4/6); Brawler 120 máu tối đa cho cả đội, Brawler thêm 25%/40%/65%; Spellweaver 10% AP cho cả đội, Spellweaver thêm 10%/30%/55%, mỗi lần thi triển thêm 1%/1%/2%.
+- Nguồn ngoài đã thử:
+  - Tìm kiếm web (chế độ thường và mở rộng): Mobafire 18.1 báo Brawler +120 máu cả đội và Spellweaver +10% AP cả đội (khớp snapshot). Một trang Indonesia (bản 18.3) ghi Spellweaver 55% AP, +2% mỗi lần thi triển (khớp mốc cao nhất của snapshot). Không có số Defender từ nguồn này.
+  - Mobalytics (trang Defender, Brawler, Spellweaver): không truy cập được (DNS lỗi).
+  - Mobafire 18.1 trực tiếp và tactics.tools/info/units: không truy cập được (DNS lỗi).
+- Kết quả: không nguồn nào phân biệt được "thêm" với "tổng" cho Defender (25 hay 37), và không xác định được phần trăm Brawler áp lên cái gì. Hai điểm này vẫn là giả định, không đổi bảng.
+- Đối chiếu với snapshot: các số cả đội và mốc cao nhất khớp nguồn ngoài. Chỗ lệch duy nhất là bản 18.3 so với snapshot ở mức phụ; chưa rõ có phải lệch bản vá không.
