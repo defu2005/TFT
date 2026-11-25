@@ -295,4 +295,12 @@ Tỷ lệ đảo chiều so với `hand` trên 1675 cặp quyết định của 
 - hand_noaug: 4.1% [3.1; 5.2]
 
 Đọc kết quả: trên Set 17, ability và trang bị làm đổi kết quả nhiều nhất (16–18%); trait và augment đổi ít (4–5%). Biến của generic không tạo khác biệt có ý nghĩa (16,6% so với 15,9%, CI chồng lên nhau). Đây là độ nhạy của sim so với `hand`, không phải độ đúng so với thật.
-Phase 3 thứ tự ưu tiên theo kết quả này: ability (Set 18 generic) trước, trait sau, augment cuối.
+Kiểm tra cặp (cùng 1675 cặp quyết định, `phase1_pairs.csv.gz`, bootstrap theo lobby 2000 lần, không chạy sim mới):
+- `generic` và `generic_novars` lệch nhau ở 12,4% cặp (CI [10,7; 14,1]): biến số thật sự đổi kết quả.
+- Nhưng tỷ lệ đảo chiều so với hand gần như bằng nhau (16,6% so với 15,9%; chênh lệch cặp +0,7%, CI [-1,1; +2,5]).
+- `generic` không gần hand hơn `none` một cách đo được: chênh lệch cặp -1,8%, CI [-3,9; +0,3] (bao gồm 0). Đây là giới hạn chính khi dự đoán Set 18, vì `hand` đang bị chặn ở Set 18.
+- `generic_novars` gần hand hơn `none` (-2,5%, CI [-3,6; -1,2]), nhưng khác biệt này không có ý nghĩa khi so với `generic`.
+
+Thứ tự Phase 3 theo kết quả: ability (sửa nền) trước, rồi trait, rồi augment.
+Lựa chọn Phase 3 đã ghi: dùng số generic thô cho ability KHÔNG được coi là cải thiện. Mục tiêu tiếp theo là template ability Set 18 (mục 9) lấy từ mô tả và biến số CDragon, rồi đo lại với `none` làm mốc. Bảng trait (25 trait không có ánh xạ stat) làm sau, vì Phase 1 cho thấy trait chỉ đổi 4,9%.
+Số item Set 18 (đã alias): 776 mục, phân loại none 619, stat 129, stat+hook 28 (`coverage_items_traits.json`).
