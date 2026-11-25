@@ -1,0 +1,40 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2886052682",
+  "slot": "P8",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      400,
+      2600
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      0,
+      400
+    ],
+    [
+      2600,
+      18229
+    ]
+  ],
+  "game_ids": [
+    "twitch-2886052682-g600"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 16,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 16
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "densify-full g600 16f incl late 4-3@. Continue game2 ~2600+. P8-primary upset."
+}

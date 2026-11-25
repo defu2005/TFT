@@ -1,0 +1,24 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2923875867",
+  "slot": "P5",
+  "role": "primary",
+  "status": "blocked",
+  "covered_ranges_s": [],
+  "remaining_ranges_s": [
+    [
+      0,
+      99999
+    ]
+  ],
+  "game_ids": [],
+  "counts": {
+    "games": 0,
+    "fights": 0,
+    "others": 0
+  },
+  "validator": null,
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "League of Legends Summoner's Rift Ranked Solo/Duo (Renekton), not TFT."
+}
