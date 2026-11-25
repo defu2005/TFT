@@ -452,3 +452,17 @@ Lưu ý khi đọc: flip nhỏ có thể do trait chưa có ánh xạ stat (xem 
 - Cờ `traits_table` (SECONDARY) áp: (1) `TRAIT_TABLE` gồm 10 khóa, 7 trait (Executioner, Brawler, Juggernaut, Defender, Rapidfire, Hunter, Spellweaver); (2) bỏ 4 khóa `SKIP18_TABLE`; (3) đổi thang AP cho khóa phần trăm (`_stat_table`).
 - PRIMARY không có gì trong số này (`traits_table=False`, không đổi `_SET18_BAD_KEYS`).
 - `fidelity.score` báo thêm `secondary_minus_rule` (SECONDARY − luật sức mạnh) kèm CI. Đây là bổ sung trước dữ liệu thật: headline vẫn là `primary_minus_rule`, nhưng SECONDARY đã gồm các sửa, nên cũng cần đọc `secondary_minus_rule`. Không dùng để chọn cấu hình sau khi có dữ liệu.
+
+### 11.16 Probe trang bị Set 18 (2026-11-25): dữ liệu CDragon thiếu chỉ số item
+- Công cụ: `scripts/combat/item_probe.py` -> `results/fixed/combat/item_probe.json`. Lấy 20 item phổ biến nhất trong mẫu (không tính emblem) cộng 8 thành phần cơ bản: 28 item. Với mỗi item, dựng Krug (DA_Krug18) có và không có item bằng `S9._build_team`, ghi chênh lệch thực tế trên max_hp, armor, mr, ad, ap, attack_speed, crit_chance, max_mana.
+- Kết quả (đo, không suy diễn):
+  - Cả 28 item cho cùng một chênh lệch: max_hp +150, armor +15, mr +15, ad +16.5, ap +15. Đây chính là `_GENERIC_ITEM` (150 HP, 15 giáp, 15 kháng phép, 15 AP, 0.15 AD nhân với hệ số AD). Không có chỉ số riêng nào của item được áp.
+  - `engine_effects` (`content.items[api].effects`) rỗng với cả 28 item.
+  - `raw_effects` (snapshot CDragon, `effects`) cũng rỗng với cả 28 item. Trường `desc` của DA_HandOfJustice là `None`.
+- Phạm vi: trong 1,002 ô item của mẫu `pairs18_sample.jsonl.gz` (39 item duy nhất), 100% có `raw_effects` rỗng trong snapshot. Mọi item trong mẫu đều có mặt trong snapshot (0 item lạ).
+- Snapshot có 4,231 bản ghi item; 2,746 có `effects` khác rỗng và 3,898 có `desc`. Nghĩa là dữ liệu item không rỗng toàn bộ: các item thường gặp của Set 18 là phần bị thiếu. Nhiều item (DA_* và thành phần) có `composition` nhưng `effects` = `{}`.
+- Kết luận:
+  - Lỗi nằm ở DỮ LIỆU (snapshot CDragon không có chỉ số item cho các item phổ biến), không phải ở engine loại bỏ chỉ số. Engine chỉ đọc những gì content có.
+  - Hệ quả trong mô phỏng hiện tại: mọi item, kể cả Bloodthirster, Infinity Edge, Guinsoo, Hand of Justice, đều cho cùng một bonus chung. Mô hình item trong cả PRIMARY lẫn SECONDARY không phân biệt được item. Đây là sai lệch lớn, lớn hơn lỗi thang AP.
+  - Chưa xác định: `desc` có chứa chỉ số item không (nhiều item có desc, nên có thể lấy chỉ số từ mô tả); và `_GENERIC_ITEM` có được cộng THÊM vào item có tên hay không (hiện không có item nào có tên để kiểm).
+- Chưa sửa gì. Bước tiếp theo đề xuất (chờ advisor): (1) kiểm tra `desc` của 39 item trong mẫu, đếm item nào có số trong mô tả; (2) chọn nguồn chỉ số item (snapshot khác, hoặc bảng tay có nguồn) trước khi sửa content; (3) không sửa PRIMARY (đóng băng); mọi thay đổi đi qua cờ.

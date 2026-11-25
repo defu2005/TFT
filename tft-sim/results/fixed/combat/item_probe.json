@@ -1,0 +1,407 @@
+{
+ "champion": "TFT_Krug",
+ "base": {
+  "max_hp": 1200.0,
+  "armor": 50.0,
+  "mr": 25.0,
+  "ad": 110.0,
+  "ap": 100.0,
+  "attack_speed": 0.800000011920929,
+  "crit_chance": 0.25,
+  "max_mana": 1000000000.0
+ },
+ "items": [
+  {
+   "api": "DA_HandOfJustice",
+   "name": "Hand Of Justice",
+   "in_sample_count": 57,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_SteadfastHeart",
+   "name": "Steadfast Heart",
+   "in_sample_count": 52,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_TacticiansCape",
+   "name": "Tactician's Cape",
+   "in_sample_count": 52,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_VoidStaff",
+   "name": "Void Staff",
+   "in_sample_count": 44,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_IonicSpark",
+   "name": "Ionic Spark",
+   "in_sample_count": 40,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_GuinsoosRageblade",
+   "name": "Guinsoo's Rageblade",
+   "in_sample_count": 37,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_Quicksilver",
+   "name": "Quicksilver",
+   "in_sample_count": 37,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_LastWhisper",
+   "name": "Last Whisper",
+   "in_sample_count": 36,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_Bloodthirster",
+   "name": "Bloodthirster",
+   "in_sample_count": 34,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_AdaptiveHelm",
+   "name": "Adaptive Helm",
+   "in_sample_count": 34,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_ArchangelsStaff",
+   "name": "Archangel's Staff",
+   "in_sample_count": 34,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_InfinityEdge",
+   "name": "Infinity Edge",
+   "in_sample_count": 33,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_Morellonomicon",
+   "name": "Morellonomicon",
+   "in_sample_count": 32,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_EdgeOfNight",
+   "name": "Edge of Night",
+   "in_sample_count": 31,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_NashorsTooth",
+   "name": "Nashor's Tooth",
+   "in_sample_count": 30,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_SpiritVisage",
+   "name": "Spirit Visage",
+   "in_sample_count": 29,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_TacticiansShield",
+   "name": "Tacticians Shield",
+   "in_sample_count": 28,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_TacticiansCrown",
+   "name": "Tacticians Crown",
+   "in_sample_count": 28,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_StrikersFlail",
+   "name": "Striker's Flail",
+   "in_sample_count": 27,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_HextechGunblade",
+   "name": "Hextech Gunblade",
+   "in_sample_count": 26,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_Component_BFSword",
+   "name": "B.F. Sword",
+   "in_sample_count": 0,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_Component_ChainVest",
+   "name": "Chain Vest",
+   "in_sample_count": 0,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_Component_FryingPan",
+   "name": "Frying Pan",
+   "in_sample_count": 0,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_Component_GiantsBelt",
+   "name": "Giant's Belt",
+   "in_sample_count": 0,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_Component_NeedlesslyLargeRod",
+   "name": "Needlessly Large Rod",
+   "in_sample_count": 0,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_Component_NegatronCloak",
+   "name": "Negatron Cloak",
+   "in_sample_count": 0,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_Component_RecurveBow",
+   "name": "Recurve Bow",
+   "in_sample_count": 0,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  },
+  {
+   "api": "DA_Component_SparringGloves",
+   "name": "Sparring Gloves",
+   "in_sample_count": 0,
+   "raw_effects": {},
+   "engine_effects": {},
+   "unit_delta": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 16.5,
+    "ap": 15.0
+   }
+  }
+ ]
+}
