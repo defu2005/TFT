@@ -82,7 +82,7 @@
    "planning": {
     "value": null,
     "tag": "unresolved",
-    "note": "322 s frame is the pre-round carousel (augment tooltip); no planning frame read"
+    "note": "322 s frame: eight nameplates on one arena, shared-board round; not a planning phase"
    },
    "combat": {
     "value": {
@@ -2724,8 +2724,9 @@
     "basis": "opponent nameplate visible post-combat (1296 s)"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "P2",
+    "tag": "derived",
+    "basis": "combat.value.opponent_alias"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -6454,8 +6455,9 @@
     "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "P2",
+    "tag": "read",
+    "basis": "2600 and 2615 s sidebar: P2 row alive, 16 HP"
    },
    "combat_frame_t_s": null,
    "planning": {
