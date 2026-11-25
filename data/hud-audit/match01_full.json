@@ -52,9 +52,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
-    "reason": "no panel read for this round",
-    "note": "hexes unresolved"
+    "attempt": "316 s frame shows the carousel landscape with no sidebar on screen, so no trait panel is visible to solve.",
+    "reason": "no sidebar on screen at this frame"
    },
    "bench_units": {
     "value": null,
@@ -543,11 +542,11 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
-    "reason": "no panel read for this round",
-    "note": "hexes unresolved"
+    "value": [
+     "Veigar"
+    ],
+    "tag": "derived",
+    "basis": "399.9 s planning sidebar: Blackthorn 1, Spellweaver 1, Sprykin 1, no hidden marker (k=0), same panel as 1-2 and 1-3. solve_panels: N=1 unique (Veigar); no other N at k=0."
    },
    "bench_units": {
     "value": 5,
@@ -765,11 +764,12 @@
     "basis": "offered at pick screen plus owned box at 2170 s; no click frame"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
-    "reason": "no panel read for this round",
-    "note": "hexes unresolved"
+    "value": [
+     "Alistar",
+     "Caitlyn"
+    ],
+    "tag": "derived",
+    "basis": "438.8 s planning sidebar (faded rows): Brawler 1, Hunter 1, Coven 1, Elderwood 1, no hidden marker (k=0). solve_panels: N=2 unique (Alistar, Caitlyn); N=1 has none. Read before the 463.8 s Choose One screen; the faded rows are the weakest point."
    },
    "bench_units": {
     "value": null,
