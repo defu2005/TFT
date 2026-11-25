@@ -24,11 +24,19 @@
     [
       8250,
       10450
+    ],
+    [
+      10650,
+      12780
+    ],
+    [
+      13100,
+      15150
     ]
   ],
   "remaining_ranges_s": [
     [
-      10450,
+      15150,
       21600
     ]
   ],
@@ -37,20 +45,22 @@
     "twitch-2898781298-g2100",
     "twitch-2898781298-g4300",
     "twitch-2898781298-g6400",
-    "twitch-2898781298-g8300"
+    "twitch-2898781298-g8300",
+    "twitch-2898781298-g10650",
+    "twitch-2898781298-g13100"
   ],
   "counts": {
-    "games": 5,
-    "fights": 61,
-    "others": 61
+    "games": 7,
+    "fights": 93,
+    "others": 93
   },
   "validator": {
-    "ok": 52,
+    "ok": 82,
     "skipped": {
-      "winner_null": 9
+      "winner_null": 11
     }
   },
-  "needs_review": 9,
+  "needs_review": 11,
   "commit": null,
-  "remaining": "g60..g8300 densify fights=61 g5=15 win=14; tiếp sau 10450 nếu còn"
+  "remaining": "g60..g13100 densify fights=93 g7=15 win=14; tiếp g8@15600+"
 }

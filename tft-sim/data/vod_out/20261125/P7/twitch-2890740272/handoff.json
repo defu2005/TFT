@@ -1,0 +1,22 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2890740272",
+  "slot": "P7",
+  "role": "primary",
+  "status": "skipped",
+  "covered_ranges_s": [],
+  "remaining_ranges_s": [
+    [
+      0,
+      null
+    ]
+  ],
+  "game_ids": [],
+  "counts": {
+    "games": 0,
+    "fights": 0,
+    "others": 0
+  },
+  "notes": "TPC EMEA custom Blind Pick — not ranked; skip for ranked goal",
+  "validator": {}
+}

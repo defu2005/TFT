@@ -1,0 +1,104 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2892286899",
+  "slot": "P10",
+  "role": "primary",
+  "status": "pending",
+  "covered_ranges_s": [
+    [
+      300,
+      2000
+    ],
+    [
+      3400,
+      4700
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      0,
+      300
+    ],
+    [
+      2000,
+      3400
+    ],
+    [
+      4700,
+      null
+    ]
+  ],
+  "game_ids": [
+    "twitch-2892286899-g300",
+    "twitch-2892286899-g3400"
+  ],
+  "counts": {
+    "games": 2,
+    "fights": 18,
+    "others": 0
+  },
+  "notes": "Skipped YouTube/non-TFT segments.",
+  "validator": {
+    "ok": 7,
+    "skipped": {
+      "winner_null": 11
+    },
+    "rows": [
+      {
+        "line": 1,
+        "source": "twitch-2892286899-g300:2-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 4,
+        "source": "twitch-2892286899-g300:3-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 5,
+        "source": "twitch-2892286899-g300:3-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 7,
+        "source": "twitch-2892286899-g300:4-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 8,
+        "source": "twitch-2892286899-g300:4-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 9,
+        "source": "twitch-2892286899-g300:4-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 11,
+        "source": "twitch-2892286899-g3400:2-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 13,
+        "source": "twitch-2892286899-g3400:3-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 15,
+        "source": "twitch-2892286899-g3400:3-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 16,
+        "source": "twitch-2892286899-g3400:3-6",
+        "reason": "winner_null"
+      },
+      {
+        "line": 18,
+        "source": "twitch-2892286899-g3400:4-2",
+        "reason": "winner_null"
+      }
+    ]
+  }
+}

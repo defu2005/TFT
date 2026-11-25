@@ -7,31 +7,33 @@
   "covered_ranges_s": [
     [
       0,
-      4180
+      8320
     ]
   ],
   "remaining_ranges_s": [
     [
-      4180,
+      8320,
       21460
     ]
   ],
   "game_ids": [
     "twitch-2888926440-g250",
-    "twitch-2888926440-g2800"
+    "twitch-2888926440-g2800",
+    "twitch-2888926440-g4400",
+    "twitch-2888926440-g6400"
   ],
   "counts": {
-    "games": 2,
-    "fights": 29,
-    "others": 29
+    "games": 4,
+    "fights": 64,
+    "others": 64
   },
   "validator": {
-    "ok": 26,
+    "ok": 58,
     "skipped": {
-      "winner_null": 3
+      "winner_null": 6
     }
   },
-  "needs_review": 3,
+  "needs_review": 6,
   "commit": null,
-  "remaining": "g250+g2800 densify fights=29 g2=13 win=11; tiếp g3@4400+"
+  "remaining": "g250..g6400 densify fights=64 g4=17 win=16; tiếp g5@8500+"
 }
