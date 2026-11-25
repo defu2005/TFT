@@ -1831,9 +1831,8 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
-    "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "value": "PvP (home board with counter, 1165-1236 s)",
+    "tag": "derived"
    },
    "opponent": {
     "value": null,
@@ -1841,8 +1840,35 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "frame_s": 1186,
+     "timer": 7,
+     "counter": "7/7",
+     "level": 7,
+     "xp": "2/56",
+     "gold": 25,
+     "streak": 7,
+     "panel": {
+      "Monolith": 1,
+      "Brawler": 2,
+      "Elderwood": 3,
+      "Rapidfire": 2,
+      "Blackthorn": 2,
+      "Executioner": 1,
+      "Fae": 1,
+      "Summoner": 1,
+      "Riftbeast": 1
+     },
+     "shop": [
+      "Azir",
+      "Cassiopeia",
+      "Kayle",
+      "LeBlanc"
+     ],
+     "board": "7 bodies, not named",
+     "bench": "not named"
+    },
+    "tag": "read"
    },
    "combat": {
     "value": null,
