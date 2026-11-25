@@ -58,6 +58,6 @@
     }
   },
   "needs_review": 7,
-  "commit": null,
+  "commit": "b83c1d1",
   "remaining": "Densify priority: g2410 boards+more stages still sparse mid-game."
 }
