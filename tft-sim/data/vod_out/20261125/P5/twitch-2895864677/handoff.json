@@ -8,27 +8,38 @@
     [
       120,
       2340
+    ],
+    [
+      2410,
+      3600
     ]
   ],
   "remaining_ranges_s": [
     [
       2340,
+      2410
+    ],
+    [
+      3600,
       23928
     ]
   ],
   "game_ids": [
-    "twitch-2895864677-g120"
+    "twitch-2895864677-g120",
+    "twitch-2895864677-g2410"
   ],
   "counts": {
-    "games": 1,
-    "fights": 18,
-    "others": 18
+    "games": 2,
+    "fights": 20,
+    "others": 20
   },
   "validator": {
     "ok": 18,
-    "skipped": {}
+    "skipped": {
+      "winner_null": 2
+    }
   },
-  "needs_review": 0,
-  "commit": "2f8bc35",
-  "remaining": "g120 done (18 PvP fights, skipped 5-3/5-6 opp unread + carousel/PvE/augment). Tiếp game2+ từ ~2460. Ranked Set 18."
+  "needs_review": 2,
+  "commit": null,
+  "remaining": "g2410 early push (2 fights winner_null). Tiếp denser PvP game2 rồi end; sau đó VOD souless khác (manifest 23 primary)."
 }
