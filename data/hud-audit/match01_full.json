@@ -6741,6 +6741,41 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
+   },
+   "frame_A_read": {
+    "frame_s": 2094,
+    "timer": 22,
+    "counter": "9/9",
+    "level": 9,
+    "xp": "6/68",
+    "gold": 9,
+    "streak": 2,
+    "shop": [
+     "Rengar",
+     "Zyra",
+     "Camille",
+     "Murkwolf",
+     "Ashe"
+    ],
+    "panel": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "conflict": "master 5-5 planning gold is 7 and master shop is Gromp, Sejuani, Rammus, Kha Zix, empty; this frame shows gold 9 and a different shop, consistent with a reroll near 2094 s",
+    "rail_hp_rows": "nonzero HP on rows 1 to 3 and 0 on the rest",
+    "bench": "not read",
+    "board_units_rowcol": "not read by row and column",
+    "stars_items": "a tooltip covers part of the arena; not resolvable at 720p",
+    "tag": "read",
+    "source": "frame at 2094 s, viewed in this session"
    }
   },
   {
