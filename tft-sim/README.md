@@ -552,3 +552,19 @@ Nguon: `results/fixed/real/play_v5_v4null.json` tren `codex/sim-e`. Nhan: v5 rut
 - **v4null (kiem tra am, v4 vs v4):** A−B = **−0,058**, CI95 [−0,164; +0,048] (bootstrap 2.000 lan, tu `per_lobby_diff`, n = 1.000). CI chua 0, dung nhu ky vong. Khong co luot di khong hop le.
 - **Chua co:** clone_v4, clone_v3, clone_scr. E van dang chay; se ghi khi co file.
 
+
+## Ket qua kiem dinh clone v5 — day du 4 phep (vai E, codex/sim-e @ ff95d66, 2026-11-25)
+
+Nguon: `results/fixed/real/play_v5_<mode>.json` tren `codex/sim-e`. Nhan: v5 rut gon (500 van train), seed0. Seed 241000–241999 (1.000 van moi phep, chua dung truoc do). Engine (Set 17). A−B am = A tot hon. CI95 tinh lai bang bootstrap 2.000 lan tu `per_lobby_diff`; khop voi CI trong file (sai lech toi da 0,01).
+
+| Phep | A−B | CI95 | n | Luot khong hop le | Ky vong | Dat? |
+|---|---|---|---|---|---|---|
+| v4null (v4 vs v4) | −0,058 | [−0,164; +0,048] | 1.000 | 0 | CI chua 0 | Dat |
+| clone_v4 (clone vs teacher v4) | −0,050 | [−0,162; +0,061] | 1.000 | 0 | CI chua 0 | Dat |
+| clone_v3 (clone vs teacher v3) | −0,797 | [−0,901; −0,699] | 1.000 | 0 | hieu am | Dat |
+| clone_scr (clone vs scripted) | −2,396 | [−2,483; −2,308] | 1.000 | 0 | hieu am | Dat |
+
+**Ket luan:** clone v5 (ban rut gon, seed0) bat chuoc duoc teacher v4 (CI chua 0 o phep clone_v4, hieu gan 0). Clone tot hon teacher v3 va scripted goc, CI khong chua 0.
+
+**Han che:** day la 1 checkpoint (seed0) tren 1 lobby 8 nguoi moi phep, chi do tren Set 17 engine. Chua co Set 18. Clone_v4 chua chung minh bang nhau voi v4, chi chua co bang chung chenh lech (CI rong ±0,11).
+
