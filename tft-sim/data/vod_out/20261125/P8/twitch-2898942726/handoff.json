@@ -31,6 +31,6 @@
     }
   },
   "needs_review": 2,
-  "commit": null,
+  "commit": "4f145c2",
   "remaining": "continue ranked from ~700s; refine boards/lobby OCR; more PvP stages"
 }
