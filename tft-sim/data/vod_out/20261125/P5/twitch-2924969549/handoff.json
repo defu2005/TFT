@@ -1,0 +1,40 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2924969549",
+  "slot": "P5",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      900,
+      3000
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      3000,
+      99999
+    ]
+  ],
+  "game_ids": [
+    "twitch-2924969549-g900"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 1,
+    "others": 1
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 1
+    }
+  },
+  "notes": "agent bc-ec6d4c98-241a-5ee6-99b4-6010518ce3ba; real-opp-names-only. Challenger ranked Set18 (Coven/Sprykin/Riftbeast/Elderwood). Locked fight 3-3 vs EchoSlammaJamma (nameplate×2 HC + stage 3-3). BriBri* spelling conflict skipped. Stage reset ~3600.",
+  "streamer": "emilyywang",
+  "verdict": "ranked_set18",
+  "real_opponents": [
+    "EchoSlammaJamma"
+  ],
+  "remaining": "Real-name fights only; densify more PvP when readable."
+}
