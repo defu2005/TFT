@@ -320,22 +320,40 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 364.0,
-     "gold": 2,
-     "level": null,
-     "shop_ids": [
-      "Leona",
-      "Leona",
-      "Akali_AD",
-      "Veigar",
-      "Camille"
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 2,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "Leona",
+       "Leona",
+       "Akali_AD",
+       "Veigar",
+       "Camille"
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -458,22 +476,40 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 400.0,
-     "gold": 2,
-     "level": null,
-     "shop_ids": [
-      "DA_Murkwolf18",
-      "Rakan",
-      "Rakan",
-      "Ornn",
-      "Alistar"
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 2,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "DA_Murkwolf18",
+       "Rakan",
+       "Rakan",
+       "Ornn",
+       "Alistar"
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -637,7 +673,14 @@
    "combat": {
     "value": {
      "frame_s": 505,
-     "phase": "PvE combat (monsters), home view"
+     "phase": "PvE combat (monsters), home view",
+     "hp_losers_this_round": {
+      "P1": 3,
+      "P2": 5,
+      "P5": 4,
+      "P7": 5
+     },
+     "streamer_hp_loss": 3
     },
     "tag": "read"
    },
@@ -1725,22 +1768,40 @@
    },
    "planning": {
     "value": {
-     "reader_t_s": 881.0,
-     "gold": 39,
-     "level": null,
-     "shop_ids": [
-      "Sejuani",
-      "Elise",
-      "Warwick",
-      "MasterYi_AD",
-      null
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 39,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "Sejuani",
+       "Elise",
+       "Warwick",
+       "MasterYi_AD",
+       null
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -1920,22 +1981,40 @@
    },
    "planning": {
     "value": {
-     "reader_t_s": 954.0,
-     "gold": 40,
-     "level": null,
-     "shop_ids": [
-      "Sejuani",
-      "Elise",
-      "Warwick",
-      "MasterYi_AD",
-      null
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 40,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "Sejuani",
+       "Elise",
+       "Warwick",
+       "MasterYi_AD",
+       null
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -2119,22 +2198,40 @@
    },
    "planning": {
     "value": {
-     "reader_t_s": 1048.25,
-     "gold": 55,
-     "level": null,
-     "shop_ids": [
-      "Sivir",
-      null,
-      "DA_Murkwolf18",
-      "Rakan",
-      null
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 55,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "Sivir",
+       null,
+       "DA_Murkwolf18",
+       "Rakan",
+       null
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -2687,7 +2784,14 @@
     "value": {
      "window_s": "approx 1262-1290",
      "opponent_alias": "P2",
-     "basis": "alias matched by sidebar HP to labels; outcome not read"
+     "basis": "alias matched by sidebar HP to labels; outcome not read",
+     "hp_losers_this_round": {
+      "P2": 11,
+      "P3": 9,
+      "P6": 10,
+      "P8": 13
+     },
+     "streamer_hp_loss": 0
     },
     "tag": "derived"
    },
@@ -2987,22 +3091,40 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 1355.5,
-     "gold": 37,
-     "level": null,
-     "shop_ids": [
-      "Zyra",
-      "DA_Murkwolf18",
-      "DA_KogMaw18_AD",
-      "DA_Karma18",
-      "Rengar"
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 37,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "Zyra",
+       "DA_Murkwolf18",
+       "DA_KogMaw18_AD",
+       "DA_Karma18",
+       "Rengar"
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -3179,22 +3301,40 @@
    },
    "planning": {
     "value": {
-     "reader_t_s": 1431.25,
-     "gold": 2,
-     "level": null,
-     "shop_ids": [
-      null,
-      "KhaZix",
-      null,
-      null,
-      "Ahri"
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 2,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       null,
+       "KhaZix",
+       null,
+       null,
+       "Ahri"
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -3318,22 +3458,40 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 1529.75,
-     "gold": 40,
-     "level": null,
-     "shop_ids": [
-      "Hecarim",
-      "Leona",
-      "Yunara",
-      "Varus",
-      null
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 40,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "Hecarim",
+       "Leona",
+       "Yunara",
+       "Varus",
+       null
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -3457,22 +3615,40 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 1601.75,
-     "gold": 52,
-     "level": null,
-     "shop_ids": [
-      null,
-      "Leona",
-      "Yunara",
-      "Varus",
-      "Veigar"
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 52,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       null,
+       "Leona",
+       "Yunara",
+       "Varus",
+       "Veigar"
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -3591,22 +3767,40 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 1646.25,
-     "gold": 62,
-     "level": null,
-     "shop_ids": [
-      "DA_Fiddlesticks18",
-      "Cassiopeia",
-      "Rengar",
-      "DA_Vi18",
-      "Hecarim"
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 62,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "DA_Fiddlesticks18",
+       "Cassiopeia",
+       "Rengar",
+       "DA_Vi18",
+       "Hecarim"
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -3738,22 +3932,40 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 1716.25,
-     "gold": 74,
-     "level": null,
-     "shop_ids": [
-      "Cassiopeia",
-      "Aphelios",
-      "DA_Brambleback18",
-      "Leona",
-      null
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 74,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "Cassiopeia",
+       "Aphelios",
+       "DA_Brambleback18",
+       "Leona",
+       null
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -3886,22 +4098,40 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 1790.25,
-     "gold": 79,
-     "level": null,
-     "shop_ids": [
-      "Cassiopeia",
-      "Aphelios",
-      "DA_Brambleback18",
-      "Leona",
-      "DA_CrimsonRaptor18"
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 79,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "Cassiopeia",
+       "Aphelios",
+       "DA_Brambleback18",
+       "Leona",
+       "DA_CrimsonRaptor18"
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -4041,22 +4271,40 @@
    },
    "planning": {
     "value": {
-     "reader_t_s": 1829.75,
-     "gold": 85,
-     "level": null,
-     "shop_ids": [
-      "DA_Gromp18_AP",
-      "DA_Cinderling18",
-      "Hecarim",
-      "Kayle",
-      null
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 85,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "DA_Gromp18_AP",
+       "DA_Cinderling18",
+       "Hecarim",
+       "Kayle",
+       null
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -4246,22 +4494,40 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 1908.25,
-     "gold": 26,
-     "level": null,
-     "shop_ids": [
-      null,
-      "Kobuko",
-      "Ahri",
-      "Diana",
-      "Azir"
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 26,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       null,
+       "Kobuko",
+       "Ahri",
+       "Diana",
+       "Azir"
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -4431,22 +4697,40 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 1993.25,
-     "gold": 7,
-     "level": null,
-     "shop_ids": [
-      "DA_Gromp18_AP",
-      "DA_Krug18",
-      "Ezreal",
-      "Malphite",
-      "Warwick"
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 7,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "DA_Gromp18_AP",
+       "DA_Krug18",
+       "Ezreal",
+       "Malphite",
+       "Warwick"
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -4589,22 +4873,40 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 2060.5,
-     "gold": 3,
-     "level": null,
-     "shop_ids": [
-      "Soraka",
-      "DA_Gromp18_AP",
-      "DA_Lux18_Base",
-      "Yunara",
-      null
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 3,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "Soraka",
+       "DA_Gromp18_AP",
+       "DA_Lux18_Base",
+       "Yunara",
+       null
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -4733,22 +5035,40 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 2093.25,
-     "gold": 9,
-     "level": null,
-     "shop_ids": [
-      "Rengar",
-      "Zyra",
-      "Camille",
-      "DA_Murkwolf18",
-      "Ashe"
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 9,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "Rengar",
+       "Zyra",
+       "Camille",
+       "DA_Murkwolf18",
+       "Ashe"
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -4922,22 +5242,40 @@
    },
    "planning": {
     "value": {
-     "reader_t_s": 2165.25,
-     "gold": 8,
-     "level": null,
-     "shop_ids": [
-      "Cassiopeia",
-      "Sett",
-      "Sett",
-      "Tristana",
-      "Sett"
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 8,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "Cassiopeia",
+       "Sett",
+       "Sett",
+       "Tristana",
+       "Sett"
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -5083,22 +5421,40 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 2230.75,
-     "gold": 6,
-     "level": null,
-     "shop_ids": [
-      "Kayle",
-      "Xayah",
-      null,
-      "MasterYi_AD",
-      "LeBlanc"
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 6,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "Kayle",
+       "Xayah",
+       null,
+       "MasterYi_AD",
+       "LeBlanc"
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -5235,22 +5591,40 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 2269.0,
-     "gold": 23,
-     "level": null,
-     "shop_ids": [
-      "DA_Nidalee18_AP",
-      null,
-      null,
-      "Azir",
-      null
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 23,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "DA_Nidalee18_AP",
+       null,
+       null,
+       "Azir",
+       null
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -5398,22 +5772,40 @@
    },
    "planning": {
     "value": {
-     "reader_t_s": 2335.0,
-     "gold": 13,
-     "level": null,
-     "shop_ids": [
-      "Hecarim",
-      "DA_Scuttlecrab18",
-      "Kayle",
-      null,
-      null
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 13,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "Hecarim",
+       "DA_Scuttlecrab18",
+       "Kayle",
+       null,
+       null
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -5561,22 +5953,40 @@
    },
    "planning": {
     "value": {
-     "reader_t_s": 2399.0,
-     "gold": 6,
-     "level": null,
-     "shop_ids": [
-      "DA_Murkwolf18",
-      "Ahri",
-      "KhaZix",
-      "Kobuko",
-      null
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 6,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "DA_Murkwolf18",
+       "Ahri",
+       "KhaZix",
+       "Kobuko",
+       null
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -5699,22 +6109,40 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 2460.75,
-     "gold": 3,
-     "level": null,
-     "shop_ids": [
-      "DA_Murkwolf18",
-      "Ahri",
-      "KhaZix",
-      "Kobuko",
-      "Tristana"
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 3,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "DA_Murkwolf18",
+       "Ahri",
+       "KhaZix",
+       "Kobuko",
+       "Tristana"
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -5850,22 +6278,40 @@
    },
    "planning": {
     "value": {
-     "reader_t_s": 2481.75,
-     "gold": 7,
-     "level": null,
-     "shop_ids": [
-      "Tristana",
-      "DA_Sentinel18",
-      "Tristana",
-      "Teemo",
-      null
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 7,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "Tristana",
+       "DA_Sentinel18",
+       "Tristana",
+       "Teemo",
+       null
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
@@ -6014,29 +6460,48 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": {
-     "reader_t_s": 2547.5,
-     "gold": 15,
-     "level": null,
-     "shop_ids": [
-      "Ahri",
-      "Morgana",
-      "Caitlyn",
-      "Sett",
-      null
-     ],
-     "panel": "not derived",
-     "board": "not derived",
-     "bench": "not derived"
+     "panel": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "board": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "bench": {
+      "value": null,
+      "tag": "unresolved"
+     },
+     "gold": {
+      "value": 15,
+      "tag": "derived"
+     },
+     "level": {
+      "value": null,
+      "tag": "derived"
+     },
+     "shop_ids": {
+      "value": [
+       "Ahri",
+       "Morgana",
+       "Caitlyn",
+       "Sett",
+       null
+      ],
+      "tag": "derived"
+     }
     },
     "tag": "derived",
-    "basis": "reader row nearest t_planning_s"
+    "basis": "reader row nearest t_planning_s",
+    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
    },
    "combat": {
     "value": {
      "frame_t_s": 2615,
      "opponent_alias": "P2",
      "basis": "sidebar HP 16 equals P2 at 6-6 label",
-     "streamer_hp_at_label": 9
+     "streamer_hp_at_label": 9,
+     "note": "streamer 9 vs P2 16 at 2600 s, sidebar confirmed"
     },
     "tag": "read"
    },
