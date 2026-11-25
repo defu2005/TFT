@@ -6450,11 +6450,11 @@
       "streamer": "wasianiverson",
       "slot": "P4",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=ok fine ill try dur=23060"
+      "notes": "auto-expand-wave2 title=ok fine ill try dur=23060 | BLOCKED PBE/set19 (wave2 probe)"
     },
     {
       "vod_id": "twitch-2928503162",
