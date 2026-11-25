@@ -1,0 +1,112 @@
+{
+ "note": "Chain of roster candidates by round, checked for unit churn. Churn is large at several steps and does not match sold or bought units, so the chain is not yet trusted.",
+ "steps": [
+  {
+   "from": "2-5",
+   "to": "3-1",
+   "in": [],
+   "out": []
+  },
+  {
+   "from": "3-1",
+   "to": "3-3",
+   "in": [
+    "Ezreal"
+   ],
+   "out": [
+    "LeBlanc"
+   ],
+   "status": "plausible if one swap occurred"
+  },
+  {
+   "from": "3-3",
+   "to": "3-5",
+   "in": [
+    "Rek'Sai"
+   ],
+   "out": [],
+   "status": "plausible"
+  },
+  {
+   "from": "3-5",
+   "to": "3-6",
+   "in": [
+    "Hecarim",
+    "Krug",
+    "LeBlanc"
+   ],
+   "out": [
+    "Kobuko",
+    "Rek'Sai"
+   ],
+   "status": "churn of 3 in, 2 out: suspect"
+  },
+  {
+   "from": "3-6",
+   "to": "4-1",
+   "in": [
+    "Zyra"
+   ],
+   "out": [],
+   "status": "suspect"
+  },
+  {
+   "from": "4-1",
+   "to": "4-3",
+   "in": [
+    "Draven",
+    "Gnar",
+    "Maokai",
+    "Sett"
+   ],
+   "out": [
+    "LeBlanc",
+    "Mama Beak",
+    "Xayah",
+    "Zyra"
+   ],
+   "status": "8-unit replacement in one round: rejected"
+  },
+  {
+   "from": "4-3",
+   "to": "4-5",
+   "in": [
+    "Amumu"
+   ],
+   "out": [
+    "Hecarim"
+   ],
+   "status": "plausible"
+  },
+  {
+   "from": "4-5",
+   "to": "5-1",
+   "in": [
+    "Hecarim",
+    "Ivern",
+    "Kobuko"
+   ],
+   "out": [
+    "Amumu",
+    "Krug"
+   ],
+   "status": "suspect"
+  },
+  {
+   "from": "5-1",
+   "to": "5-3",
+   "in": [
+    "Amumu",
+    "Kennen",
+    "Taric"
+   ],
+   "out": [
+    "Hecarim",
+    "Kobuko",
+    "Sett"
+   ],
+   "status": "suspect"
+  }
+ ],
+ "verdict": "Candidates from 3-6 onward are not chain-consistent. Next step is the shop and gold check, which decides which swaps happened."
+}
