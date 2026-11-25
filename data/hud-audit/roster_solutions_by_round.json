@@ -351,5 +351,83 @@
    "status": "panel partly hidden by tooltip"
   }
  },
- "_note2": "Retry used extra unlisted traits; these loosened results are candidates only and are not proof."
+ "_note2": "Retry used extra unlisted traits; these loosened results are candidates only and are not proof.",
+ "corrected_panels": {
+  "4-1": {
+   "N": 8,
+   "extra": 1,
+   "solutions": 3,
+   "first": [
+    "Alistar",
+    "Ezreal",
+    "Hecarim",
+    "Krug",
+    "LeBlanc",
+    "Mama Beak",
+    "Xayah",
+    "Zyra"
+   ]
+  },
+  "4-3": {
+   "N": 8,
+   "extra": 1,
+   "solutions": 1,
+   "first": [
+    "Alistar",
+    "Draven",
+    "Ezreal",
+    "Gnar",
+    "Hecarim",
+    "Krug",
+    "Maokai",
+    "Sett"
+   ]
+  },
+  "4-4": {
+   "N": 8,
+   "extra": 1,
+   "solutions": 1,
+   "first": [
+    "Alistar",
+    "Draven",
+    "Ezreal",
+    "Gnar",
+    "Hecarim",
+    "Krug",
+    "Maokai",
+    "Sett"
+   ]
+  },
+  "4-5": {
+   "N": 8,
+   "extra": 1,
+   "solutions": 1,
+   "first": [
+    "Alistar",
+    "Amumu",
+    "Draven",
+    "Ezreal",
+    "Gnar",
+    "Krug",
+    "Maokai",
+    "Sett"
+   ]
+  },
+  "4-6": {
+   "N": 8,
+   "extra": 1,
+   "solutions": 1,
+   "first": [
+    "Alistar",
+    "Draven",
+    "Ezreal",
+    "Gnar",
+    "Hecarim",
+    "Krug",
+    "Maokai",
+    "Sett"
+   ]
+  },
+  "_note": "Earlier 4-x zeros came from panels missing Blossom and Riftbeast rows; corrected from the full-height crop."
+ }
 }
