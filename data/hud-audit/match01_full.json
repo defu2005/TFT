@@ -1397,9 +1397,14 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "open",
-    "note": "carousel sidebar mid-fade; trait counts to be re-read at a later frame before solving"
+    "value": [
+     "Alistar",
+     "Caitlyn",
+     "Rakan",
+     "Sejuani"
+    ],
+    "tag": "derived",
+    "basis": "664 s carousel sidebar, rows faded: Juggernaut 2, Brawler 1, Fae 1, Hunter 1, Vanguard 1, Coven 1, Elderwood 1, Solar 1, no hidden marker (k=0). solve_panels: N=4 unique; N=1 to 3 and 5 to 10 give none. Contains the 2-1 pair. Faded rows are the weakest point."
    },
    "bench_units": {
     "value": null,
@@ -4908,9 +4913,18 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "open",
-    "note": "carousel sidebar mid-fade; trait counts to be re-read at a later frame before solving"
+    "value": [
+     "Alistar",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Hecarim",
+     "Krug",
+     "Maokai",
+     "Sett"
+    ],
+    "tag": "derived",
+    "basis": "1604 s carousel sidebar, rows faded, with a 1+ hidden marker: Bounty Seeker 1, Old Growth 1, Brawler 4, Elderwood 4, Executioner 1, Juggernaut 1, Vanguard 1, Blossom 1, Riftbeast 1 (k=1). solve_panels: N=8 unique; no other N. Matches the 4-5 candidate. Faded rows are the weakest point."
    },
    "bench_units": {
     "value": null,
