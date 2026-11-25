@@ -563,8 +563,31 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "frame_s": 532,
+     "timer": 22,
+     "counter": "4/4",
+     "level": 4,
+     "xp": "2/10",
+     "gold": 0,
+     "panel": {
+      "Juggernaut": 2,
+      "Brawler": 1,
+      "Fae": 1,
+      "Hunter": 1,
+      "Vanguard": 1,
+      "Coven": 1,
+      "Elderwood": 1,
+      "Solar": 1
+     },
+     "shop": [
+      "Akali",
+      "Kobuko"
+     ],
+     "board": "4 bodies (counter 4/4), not named",
+     "bench": "units visible, not named"
+    },
+    "tag": "read"
    },
    "combat": {
     "value": null,
