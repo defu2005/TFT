@@ -14,6 +14,10 @@
       6500
     ],
     [
+      6680,
+      8360
+    ],
+    [
       8780,
       10600
     ]
@@ -29,6 +33,10 @@
     ],
     [
       6500,
+      6680
+    ],
+    [
+      8360,
       8780
     ],
     [
@@ -39,20 +47,21 @@
   "game_ids": [
     "twitch-2925380903-g2230",
     "twitch-2925380903-g4200",
+    "twitch-2925380903-g6680",
     "twitch-2925380903-g8780"
   ],
   "counts": {
-    "games": 3,
-    "fights": 55,
+    "games": 4,
+    "fights": 72,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 55
+      "winner_null": 72
     }
   },
   "needs_review": 0,
-  "commit": "525dfe4",
-  "remaining": "g8780 Ranked pushed. Next: g4 ~6680 (MATCH ACCEPTED @6630) rồi [10600,11107]/ rest."
+  "commit": "a3efeb6",
+  "remaining": "g6680+g8780 Ranked done. Rest: early VOD / gaps / tail [10600,11107]. Có thể CLAIM VOD P3 mới."
 }
