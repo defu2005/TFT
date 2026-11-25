@@ -811,13 +811,11 @@
     "value": null,
     "tag": "unresolved",
     "candidates": [
-     "P3",
      "P4",
-     "P6",
      "P8"
     ],
-    "attempt": "508 s full frame: combat on the purple arena (timer 13), with a top-strip tactician plate at level 4. Level 4 does not separate the pool. HP-flag pool kept: P3, P4, P6, P8",
-    "reason": "no name legible and level does not give a unique pool member"
+    "attempt": "508 s rail badges: P3 and P6 show level 3, below the plate's 4, so out. P8 shows 4 and matches. P4 matches only if its row shows 4; the P2/P4 row mapping is not established. Two candidates remain.",
+    "reason": "P4 and P8 both fit the level; the P2/P4 row mapping is not established"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -846,10 +844,10 @@
    "combat": {
     "value": {
      "frame_t_s": 505,
-     "read": "PvP at 505 s (HUD); a top-strip tactician plate at level 4 is visible at 508 s; HP flags show P1 and P2 lost HP"
+     "read": "PvP at 508 s (HUD); a tactician plate at level 4 is visible at 508 s; HP flags show P1 and P2 lost HP"
     },
     "tag": "read",
-    "note": "restored; a tactician plate at level 4 is visible at 508 s, which conflicts with the earlier PvE read"
+    "note": "restored; the earlier PvE read conflicts with the 508 s tactician plate; recorded conflict"
    },
    "actions": {
     "value": {
@@ -1003,7 +1001,12 @@
      "gold": {
       "value": 4,
       "tag": "read",
-      "basis": "Frame A frame shows 4 gold (blind digit OCR agrees); previous master value 0 corrected"
+      "basis": "read at 526.1 s (the planning entry has no own frame time; Frame A time equals t_planning_s); frame shows 4; OCR agrees; previous master read 0 at the same time, superseded by the frame",
+      "prev_read": {
+       "value": 0,
+       "t_s": 526.1,
+       "superseded_by_frame": true
+      }
      },
      "panel": {
       "Juggernaut": 2,
@@ -1642,7 +1645,12 @@
      "gold": {
       "value": 7,
       "tag": "read",
-      "basis": "Frame A frame shows 7 gold (blind digit OCR agrees); previous master value 6 corrected"
+      "basis": "read at 700.7 s (the planning entry has no own frame time; Frame A time equals t_planning_s); frame shows 7; OCR agrees; previous master read 6 at the same time, superseded by the frame",
+      "prev_read": {
+       "value": 6,
+       "t_s": 700.7,
+       "superseded_by_frame": true
+      }
      },
      "streak": 2,
      "panel": {
@@ -1875,16 +1883,9 @@
     "basis": "streak icon from planning frames on disk (p2/p3 crops)"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     "P3",
-     "P5",
-     "P6",
-     "P8"
-    ],
-    "attempt": "795.3 s full frame: opponent units on the far side; the top-right plate reads level 6 under the rank overlay. Levels do not separate the pool. HP-flag pool kept: P3, P5, P6, P8",
-    "reason": "no name legible and level does not give a unique pool member"
+    "value": "P6",
+    "tag": "derived",
+    "basis": "plate 6 at 795.3 s; 1093.2 s rail badges (levels never drop): P3, P5 and P8 are at most 5 then, so they cannot be 6 at 795.3 s; P6 is 7. Unique in the pool."
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -1897,7 +1898,12 @@
      "gold": {
       "value": 17,
       "tag": "read",
-      "basis": "Frame A frame shows 17 gold (blind digit OCR agrees); previous master value 15 corrected"
+      "basis": "read at 759.3 s (the planning entry has no own frame time; Frame A time equals t_planning_s); frame shows 17; OCR agrees; previous master read 15 at the same time, superseded by the frame",
+      "prev_read": {
+       "value": 15,
+       "t_s": 759.3,
+       "superseded_by_frame": true
+      }
      },
      "streak": 3,
      "panel": {
@@ -1978,8 +1984,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified; flagged scouting runs at 778-778 s; no sprites tied to a panel",
-    "reason": "opponent not identified, so no panel can be attached"
+    "attempt": "opponent is P6 (derived); flagged scouting runs at 778-778 s; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -2133,7 +2139,12 @@
      "gold": {
       "value": 28,
       "tag": "read",
-      "basis": "Frame A frame shows 28 gold (blind digit OCR agrees); previous master value 29 corrected"
+      "basis": "read at 835.1 s (the planning entry has no own frame time; Frame A time equals t_planning_s); frame shows 28; OCR agrees; previous master read 29 at the same time, superseded by the frame",
+      "prev_read": {
+       "value": 29,
+       "t_s": 835.1,
+       "superseded_by_frame": true
+      }
      },
      "streak": 4,
      "panel": {
@@ -2660,7 +2671,8 @@
      },
      "gold": {
       "value": 40,
-      "tag": "derived"
+      "tag": "derived",
+      "basis": "no gold box visible at 956.3 s (augment screen); value from an earlier derived read, not verified against a frame"
      },
      "level": {
       "value": null,
@@ -5124,16 +5136,9 @@
     "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     "P3",
-     "P4",
-     "P5",
-     "P6"
-    ],
-    "attempt": "1686 s full frame: top-strip plate at level 7; pool P3, P4, P5, P6. P3 is at most level 6 at this time; P5, P6 and P4 could each be 7, so no unique member. HP-flag pool kept.",
-    "reason": "level 7 does not give a unique pool member"
+    "value": "P5",
+    "tag": "derived",
+    "basis": "1685.8 s rail badges: P5 level 7 matches plate 7; P3 level 6 and P6 level 8 do not; the P2 and P4 rows both show 8. Unique in the pool."
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -5244,8 +5249,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified; flagged scouting runs at 1716-1716 s; no sprites tied to a panel",
-    "reason": "opponent not identified, so no panel can be attached"
+    "attempt": "opponent is P5 (derived); flagged scouting runs at 1716-1716 s; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -6240,15 +6245,9 @@
     "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     "P3",
-     "P6",
-     "P7"
-    ],
-    "attempt": "1953 s full frame: top-strip plate at level 6. Pool P3, P6, P7: P3 (rail level 6, eliminated at 5-2) matches, P7 (rail level 8 final, eliminated at 5-5) could also be 6 at this time, so no unique member. HP-flag pool kept.",
-    "reason": "level 6 matches more than one pool member"
+    "value": "P3",
+    "tag": "derived",
+    "basis": "1952.9 s rail badges: P3 level 6 matches plate 6; P6 level 9 and P7 level 8 do not. Unique in the pool."
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -6392,8 +6391,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified; flagged scouting runs at 1972-1984 s; no sprites tied to a panel",
-    "reason": "opponent not identified, so no panel can be attached"
+    "attempt": "opponent is P3 (derived); flagged scouting runs at 1972-1984 s; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -7007,7 +7006,7 @@
    "opponent": {
     "value": "P4",
     "tag": "derived",
-    "basis": "2133 s top-strip plate reads level 9; pool P4 or P7; P7 (rail row at 2412 s, level 8, eliminated at 5-5) cannot be level 9 at 5-5, so P4 remains; check frames 2132.5 s and 2412 s"
+    "basis": "2132.5 s rail: P4 is the only pool member whose row can read 9; P7 reads 8 in the same frame, so it is out."
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -7020,7 +7019,12 @@
      "gold": {
       "value": 9,
       "tag": "read",
-      "basis": "2094 s frame (blind pick time) shows 9; previous read 7 kept as prev_read"
+      "basis": "2094 s frame shows 9 (planning entry frame 2094 s); previous read 7 kept as prev_read at 2087.5 s, superseded by the frame",
+      "prev_read": {
+       "value": 7,
+       "t_s": 2087.5,
+       "superseded_by_frame": true
+      }
      },
      "streak": 2,
      "counter": "9/9",
@@ -9417,7 +9421,7 @@
   "source": "round_results_derived.json eliminations; 1 and 2 from 6-6 frames"
  },
  "blind_reread": {
-  "summary": "Blind re-read of the 10 sampled rounds: gold 9/10 against the master as it stood (5-5 was a master error, now 9), streak 9/10 (one empty OCR read at 6-2; the frame shows 1). A second run over the other 28 Frame A frames: 13 of 21 gold values matched the master before correction; the 4 mismatches with a visible gold box were master errors (2-2, 2-5, 2-6, 2-7) and were corrected from the frame; 4 frames show no gold box (2-4, 3-2, 6-1, 6-6). Panel, shop, counter, level and XP were not re-read blind. See data/hud-audit/blind_reread_rates.json."
+  "summary": "Blind re-read of the 10 sampled rounds: gold 9/10 against the master as it stood (5-5 master read 7 at 2087.5 s, frame at 2094 s shows 9), streak 9/10 (one empty OCR read at 6-2; the frame shows 1). Over the other 28 Frame A frames: 13 of 21 gold values matched the master at the master time. Four mismatches with a visible gold box (2-2, 2-5, 2-6, 2-7) are kept as prev_read with their times, and the frame value is recorded as the read at the same time. Four frames show no gold box (2-4, 3-2, 6-1, 6-6); 3-2 gold 40 is derived and unverified."
  },
  "final_comps": {
   "P1_6-6": {
