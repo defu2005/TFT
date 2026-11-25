@@ -7,12 +7,12 @@
   "covered_ranges_s": [
     [
       250,
-      1000
+      1520
     ]
   ],
   "remaining_ranges_s": [
     [
-      1000,
+      1520,
       28980
     ]
   ],
@@ -21,16 +21,16 @@
   ],
   "counts": {
     "games": 1,
-    "fights": 2,
+    "fights": 8,
     "others": 0
   },
   "validator": {
-    "ok": 0,
+    "ok": 1,
     "skipped": {
-      "winner_null": 2
+      "winner_null": 7
     }
   },
-  "needs_review": 2,
-  "commit": "17fe8df",
-  "remaining": "P8-primary claimed. RANKED GM confirmed. Continue from ~1000s. Helpers: other open VODs."
+  "needs_review": 7,
+  "commit": null,
+  "remaining": "USER priority: full fights. Densified g250 to ~4-4 carousel @1460. Continue PvP 4-5+ with board+winner when certain. P8-primary owns VOD."
 }
