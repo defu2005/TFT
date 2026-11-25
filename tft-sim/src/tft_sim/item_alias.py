@@ -4,6 +4,8 @@ Gia dinh (ghi ro, chua kiem chung tren Set 18 that): hieu ung cua item TFT_Item_
 cua craftable DA_<Ten> cung ten. Ap dung: (1) copy effects vao content DA_* khi DA rong; (2) dang ky hook
 cua twin cho DA_* trong cac bang ITEM_* cua engine (thay doi trang thai toan cuc cua tien trinh).
 Khong thay doi build_real_set18_clean. Moi alias duoc liet ke de bao cao.
+MOT NOI DUNG MOI TIEN TRINH: build_set18_aliased() ghi vao bang hook ITEM_* cua engine (toan cuc).
+Chay sau no trong cung tien trinh se thay doi hook cua ten DA_*; khong tron voi duong clean.
 """
 from __future__ import annotations
 

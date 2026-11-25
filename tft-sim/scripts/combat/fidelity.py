@@ -8,7 +8,11 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
-from fight import load_jsonl, predict_win  # noqa: E402
+from fight import load_jsonl, predict_win, set_content  # noqa: E402
+from tft_sim.item_alias import build_set18_aliased  # noqa: E402
+from tft_sim.real_content import build_real  # noqa: E402
+set_content(17, build_real('TFTSet17'))
+set_content(18, build_set18_aliased()[0])  # Set 18 dung noi dung da alias (xem combat-public-data.md 8b)
 
 
 def score(path, ability=None, items=True, n=40):

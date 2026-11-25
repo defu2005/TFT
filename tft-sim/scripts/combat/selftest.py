@@ -92,7 +92,7 @@ except SystemExit:
 # 7) Alias item Set 18: DA_* rong va twin TFT_Item_* cho cung chi so don vi (generic 0 va 1)
 from tft_sim.item_alias import build_set18_aliased
 c18a, amap = build_set18_aliased()
-F.set_content(18, c18a)
+
 ch18 = next(a for a, x in c18a.champions.items() if x.stats)
 alias_ok = bool(amap)
 def _st(u):
@@ -104,6 +104,19 @@ for da, tw in amap.items():
         b = _st(build_unit(c18a.champions[ch18], 1, 0, c18a, item_apis=(tw,), generic_items=gi))
         alias_ok &= a == b
 print("alias set18", len(amap), "DA==twin", alias_ok)
+# 7b) Duong thuc: cung mot ban ghi, DA_Bloodthirster va TFT_Item_Bloodthirster cho cung p_a
+# Ban ghi doi xung (hai ben giong het): so tran thang/hoa theo 20 seed phai giong nhau giua DA va TFT_Item
+rec_da = fixture(names18, 18)
+rec_da["b"] = json.loads(json.dumps(rec_da["a"]))
+rec_tw = json.loads(json.dumps(rec_da))
+for side in ("a", "b"):
+    rec_da[side]["units"][0]["items"] = ["DA_Bloodthirster"]
+    rec_tw[side]["units"][0]["items"] = ["TFT_Item_Bloodthirster"]
+oda = F.predict_win(rec_da, 20, "generic", True, 0)
+otw = F.predict_win(rec_tw, 20, "generic", True, 0)
+same_counts = (oda["a"], oda["b"], oda["draw"]) == (otw["a"], otw["b"], otw["draw"])
+print("alias path counts DA", (oda["a"], oda["b"], oda["draw"]), "TW", (otw["a"], otw["b"], otw["draw"]))
+alias_ok &= same_counts
 ok &= alias_ok
 
 print("SELFTEST", "PASS" if ok else "FAIL")

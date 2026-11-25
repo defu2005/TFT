@@ -247,4 +247,5 @@ Người dùng giả định app capture được mọi dữ liệu realtime c�
 ## 10.12 Ghi chú item Set 18 (2026-11-25)
 
 - `heldout.py`, `heldout_swap.py`, `play_clone_v2.py` và `collect_real.py` dùng `build_real_set18_clean`, nên các trận Set 18 trong các lần chạy đó dùng item `DA_*` không có hiệu ứng riêng. Chỉ có bonus chung của engine (xem `combat-public-data.md` mục 8). Không chạy lại; ghi lại để đánh giá sau.
-- Alias item Set 18 có sẵn trong `tft_sim/item_alias.py` (37 alias), chưa áp dụng cho các script trên.
+- Alias item Set 18 có sẵn trong `tft_sim/item_alias.py` (37 alias). Quyết định (2026-11-25, theo advisor): KHÔNG chuyển các script trên sang nội dung đã alias và KHÔNG chạy lại các đánh giá cũ. `build_real_set18_clean` vẫn là mặc định cho huấn luyện và đánh giá đã có, để số liệu trong file này còn so sánh được. Đường ghi bản ghi trận thật (`fight_cli.py`, `fidelity.py`) dùng nội dung đã alias.
+- Điều kiện xét lại: khi có bản ghi trận Set 18 thật, hoặc khi lên kế hoạch huấn luyện Set 18 mới. Lần đó chạy trên nội dung đã alias với seed mới, báo cáo riêng, không ghi đè số cũ.
