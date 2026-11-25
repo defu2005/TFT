@@ -23,7 +23,7 @@ Muc tieu: mo hinh khong gan cung vao mot patch, nhung van giu duoc dac trung cua
 ## 5. Kiem tra chuyen giao (transfer test)
 
 - Da chay phien ban BUY_SHOP tren noi dung tong hop (README, muc Transfer A -> B; 5 seed). Ket qua va caveat: `docs/model-plan.md` muc 10.2.
-- Tieu chi goc ben duoi (vs scripted tren B): CHUA CHAY.
+- Tieu chi goc ben duoi (vs scripted tren B): CHUA CHAY. Placement vs scripted da do tren noi dung A (khong phai B), xem model-plan 10.2.
 - Tao noi dung tong hop thu hai co cung kich thuoc nhung cost va trait bi xao tron.
 - Train tren A, danh gia tren B khong train lai: flat, flat+slot, chi-universal.
 - Tieu chi: chi-universal trong 0.5 cua scripted tren B. Ky vong flat giam; neu khong giam, phai tim vi sao.

@@ -84,42 +84,43 @@ Giả định của người dùng: mọi dữ liệu mà mô hình cần sẽ �
 
 **Khả thi, với điều kiện: một kiến trúc chung + catalog theo từng set + hiệu chỉnh ngắn cho set đó.** Không phải mô hình chơi tốt một set mới ngay ngày đầu. Người dùng đang nhận thứ thứ nhất. Thứ thứ hai cần dữ liệu của set mới, chưa có.
 
+Mọi bằng chứng dưới đây là sim hoặc nội dung tổng hợp (8 tướng, 2 trait) hoặc resolver heuristic. **Không có bằng chứng nào trên TFT thật.**
+
 ### 10.2 Bằng chứng
 
-**Chuyển giao trên nội dung tổng hợp** (`transfer_seeds.json`, README mục "Transfer A -> B", 5 seed). Nội dung B hoán vị cost và trait giữa 8 tướng, giữ nguyên multiset. Tiêu chí (viết trước khi chạy): T ≥ L + 0,8·(U−L) trên BUY_SHOP, với L = flat A→B, T = universal A→B, U = biến thể tốt nhất B→B.
+**Chuyển giao trên nội dung tổng hợp** (README, mục "Transfer A -> B", 5 seed; `transfer_seeds.json`). Nội dung B hoán vị cost và trait giữa 8 tướng, giữ nguyên multiset. Penalty = B→B trừ A→B, theo BUY_SHOP, trung bình 5 seed:
 
-| Epoch | L (flat A→B) | U (B→B tốt nhất) | Ngưỡng | T (universal A→B) | Kết quả |
-|---|---|---|---|---|---|
-| 10 | 80,4 | 94,1 (flat+slot) | 91,4 | 93,7 | đạt |
-| 20 | 79,8 | 95,7 | 92,5 | 95,5 | đạt |
-| 40 | 79,1 | 98,1 (universal) | 94,3 | 98,2 | đạt |
+| Biến thể | Epoch 10 | Epoch 20 | Epoch 40 |
+|---|---|---|---|
+| flat | 2,0 | 5,3 | 9,7 |
+| flat+slot | 1,1 | 1,4 | 1,7 |
+| universal | 0,1 | 0,2 | −0,1 |
 
-- Penalty BUY_SHOP (A→B trừ B→B, đã nhân về cùng thước): flat 2,0 → 5,3 → 9,7 khi epoch tăng; flat+slot 1,1–1,7; universal −0,1 đến 0,2. Flat học bám nội dung A. Khối slot là phần chuyển được.
-- Caveat: slot được xây từ chính đầu vào của teacher (README ghi điều này). Hoán vị giữ nguyên multiset, nên không bắt được mô hình học đếm thuộc tính. Chỉ 8 tướng, 2 trait.
-- **Tiêu chí gốc của PATCH_MODEL §5** (chỉ-universal trong 0,5 của scripted trên B) **chưa chạy.** Chỉ đo BUY_SHOP như trên.
+- Flat tăng penalty theo epoch vì B→B tăng (82,4 → 88,9) còn A→B gần như giữ (80,4 → 79,1). README đọc đây là học danh tính tướng. Đây là dấu hiệu tốt cho việc đọc thuộc tính, không phải chứng minh tổng quát hóa.
+- Universal penalty gần 0 là kết quả kỳ vọng do cấu trúc: khối slot xây từ chính đầu vào của teacher (owned, trait chung). Đo này cho thấy cài đặt không làm hỏng suy luận trên 8 tướng. Không phải bằng chứng cho mọi set.
+- Hoán vị giữ multiset, nên không bắt được mô hình đếm thuộc tính sai. Chỉ 8 tướng, 2 trait.
+- Tiêu chí §5 gốc (chỉ-universal trong 0,5 của scripted trên B): **chưa chạy.** Đo placement vs scripted đã có, nhưng trên nội dung A, không phải B: universal +0,082 [0,005; 0,157] (2000 lobby), null scripted-vs-scripted +0,034 [−0,040; 0,110]. Clone cao hơn null khoảng 0,05, nên "clone kém scripted" chưa được chứng minh (README, mục Độ phân giải placement).
 
-**Phản chứng cho kinh tế:**
-- REROLL: universal A→A 89,9% → A→B 86,3%, CI [−6,5; −0,7] (một seed). Qua 5 seed, penalty REROLL ở epoch 40 là [−1,8; 2,8], tức không ổn định. Nguyên nhân chưa rõ; loại này chỉ ~1% hàng.
-- Số "Set 17 → Set 18 DA-only 99,3%" (README dòng 193) **bão hòa**: chính README ghi phép so này không phân biệt được. Không dùng làm bằng chứng chuyển giao.
+**Sang Set 18 DA-only (không phải chuyển giao sang set mới):** clone huấn luyện trên Set 17 so với teacher v3: −0,08 [−0,16; +0,002]. Dòng này chạy trên **HeuristicResolver** (README dòng 3: giai đoạn 1 và 2 trên HeuristicResolver). Chỉ số đồng ý 99,3% của cùng phép này bão hòa, README ghi rõ nó "không phân biệt được nhiều" (dòng 193), nên không dùng làm bằng chứng.
 
-**Chuyển giao sang Set 18 DA-only:** clone huấn luyện trên Set 17 so với teacher v3: −0,08 [−0,16; +0,002]. Dòng này nằm trong giai đoạn 2, chạy trên **HeuristicResolver** (README dòng 3: giai đoạn 1 và 2 trên HeuristicResolver). Không phải engine. Dòng −0,086 ở README dòng 45 là một phép đo khác (clone huấn luyện trên heuristic, chạy trên engine, Set 17, seed 120000–120999).
+**Engine chỉ có Set 17.** README dòng 28: "Set 18 khong danh gia duoc tren engine." Mọi đánh giá combat cho set mới cần resolver theo set hoặc nhãn kết quả combat thật.
 
-**Engine chỉ có Set 17** (`EngineResolver`). Set 18 không đánh giá được qua engine (README mục Engine). Mọi đánh giá combat cho set mới cần resolver mới hoặc nhãn thật.
+**Catalog theo set đã có cơ chế (chưa xác minh nội dung):** `src/data/profile.js` `DEFAULT_PROFILE` lấy từ `rules.js` (số Set 17). `src/data/profileFile.js` dựng profile từ file set + overlay theo patch; bảng thiếu rơi về mặc định và được ghi là caveat. `src/data/profiles/set18.candidate.json` tồn tại, liệt kê mục chưa mô hình (Wisp, Lux, Item Forge). Đây là candidate.
 
-**Action vocabulary:** tên loại action chung (`tftgoat.py` `ACTION_TYPES`), nhưng nội dung gắn set. PICK_AUGMENT lấy từ registry `augments_set17`. PICK_GOD và khối gods là Set 17. Trên nội dung tổng hợp: PICK_AUGMENT A→B 60,9%, REROLL_AUGMENT 0% (n=86). PICK_GOD 100% là tầm thường, không phải bằng chứng.
+**Roster:** `slot_features` (`tftgoat.py` dòng 100–123) đọc `cost/5`, số trait trùng với đội hiện tại, và số bản sở hữu theo ID (chỉ làm khóa tra cứu, không one-hot). Thiết kế đạt yêu cầu "roster là thuộc tính". Chưa kiểm `bench_board_features` cùng cách (mới đọc chữ ký hàm).
 
-**Roster:** `slot_features` (`tftgoat.py` dòng 100–123) đọc `cost/5`, số trait trùng với đội hiện tại, và số bản sở hữu. ID tướng chỉ là khóa tra cứu, không one-hot. Thiết kế đạt yêu cầu "roster là thuộc tính từ catalog". Chưa kiểm `bench_board_features` theo cùng cách (chỉ đọc chữ ký hàm).
+**Augment và god:** registry augment (`augments_set17`) và khối gods là Set 17. Đây là lập luận thiết kế, chưa có số đo chuyển giao cho hai loại này.
 
-**Catalog theo set (đã có cơ chế):** `src/data/profile.js` `DEFAULT_PROFILE` lấy từ `rules.js` (số Set 17). `src/data/profileFile.js` dựng profile từ file set + overlay theo patch; bảng thiếu thì rơi về mặc định và được ghi là caveat. `src/data/profiles/set18.candidate.json` đã có, liệt kê mục chưa mô hình (Wisp, Lux, Item Forge). Đây là **candidate, chưa xác minh**. `decide(state, out, trace, rules, profile)` nhận profile tùy chọn.
+**Phản chứng cho làm mới (REROLL):** trên seed 0, universal A→A 89,9% → A→B 86,3%, CI theo lobby [−6,5; −0,7]. Trên 5 seed ở epoch 40, penalty REROLL nằm trong khoảng min–max [−1,8; 2,8], tức hiệu ứng không lặp lại. Nguyên nhân chưa rõ, loại này chỉ ~1% hàng.
 
 ### 10.3 Phân tầng (cập nhật theo 10.2)
 
 | Lớp | Bằng chứng | Chuyển giữa set? | Cần cho set mới |
 |---|---|---|---|
-| Cửa hàng (BUY_SHOP) và XP | Synthetic: đạt tiêu chí, cần khối slot | Có, có điều kiện | Odds, bảng XP, pool, giá (catalog). Odds Set 18 lệch `rules.js` ở cấp 7–8 |
-| Làm mới (REROLL) | Synthetic: CI âm, không ổn định qua seed | **Chưa chứng minh** | Nguyên nhân chưa rõ |
+| Cửa hàng (BUY_SHOP) và XP | Synthetic: penalty ~0 với khối slot, 2–10 với flat | Có, có điều kiện khối slot | Odds, bảng XP, pool, giá (catalog). Odds Set 18 lệch `rules.js` ở cấp 7–8 |
+| Làm mới (REROLL) | Seed-0 drop không lặp lại ở 5 seed | Chưa rõ | Theo dõi; không đủ để kết luận |
 | Đơn vị (roster) | Thiết kế đọc thuộc tính; hoán vị đạt | Có, nếu đọc thuộc tính | Catalog tướng: id, cost, trait |
-| Augment, god | Registry và khối gods là Set 17; PICK_AUGMENT 61%, REROLL_AUGMENT 0% | Không | Module cơ chế riêng theo set |
+| Augment, god | Lập luận thiết kế (registry và gods là Set 17); chưa đo | Chưa có bằng chứng | Module cơ chế riêng theo set |
 | Bàn, combat, trang bị | Engine chỉ Set 17; HeuristicResolver không phải combat thật | Không zero-shot | Resolver theo set hoặc nhãn kết quả combat |
 | Cơ chế set (Wisp, Unlocks) | `set18.candidate.json` liệt kê chưa mô hình | Không | Module riêng (`PATCH_MODEL.md` §3) |
 
@@ -136,14 +137,15 @@ Giả định của người dùng: mọi dữ liệu mà mô hình cần sẽ �
 - Mỗi set cần HUD profile riêng.
 - Không báo cỡ mẫu chưa đo. Lập đường cong học theo số VOD khi đã có thứ hạng cuối.
 
-### 10.6 Thí nghiệm sim (một lần, chưa chạy)
+### 10.6 Thí nghiệm sim: mask nhóm
 
-Huấn luyện lại clone với mask nhóm: (a) chỉ HUD hiện có; (b) + HP và stage; (c) + bàn và bàn chờ. So thứ hạng trên khối seed chưa dùng. Đề xuất **260000–260999**: chưa có trong sổ `cloud-agents.md`, phải ghi vào sổ trước khi chạy. Nhãn: bằng chứng bot, không phải kết quả trên dữ liệu thật.
+Huấn luyện lại clone với mask nhóm: (a) chỉ HUD hiện có; (b) + HP và stage; (c) + bàn và bàn chờ. So thứ hạng trên khối seed **260000–260999** (dự trữ trong sổ `cloud-agents.md` trước khi chạy). Nhãn: bằng chứng bot, không phải kết quả trên dữ liệu thật.
+
+Trạng thái: xem `tft-sim/docs/handoff/` và README; chạy khi harness hỗ trợ mask.
 
 ### 10.7 Việc tiếp theo (sim)
 
-1. Chạy tiêu chí §5 gốc (chỉ-universal trong 0,5 của scripted trên B) để có số so với scripted.
-2. Chốt nguyên nhân REROLL (hoặc ghi là chưa rõ và theo dõi).
-3. Kiểm `bench_board_features` theo cùng tiêu chí "không one-hot tên".
-4. Ghi khối 260000–260999 vào sổ rồi chạy thí nghiệm mask (10.6).
-5. Chờ `hud` phản hồi (HP, bàn, bàn chờ, thứ hạng).
+1. Chạy tiêu chí §5 gốc trên B (chỉ-universal trong 0,5 của scripted).
+2. Kiểm `bench_board_features` theo tiêu chí "không one-hot tên".
+3. Chạy thí nghiệm mask (10.6).
+4. Chờ `hud` phản hồi (HP, bàn, bàn chờ, thứ hạng).
