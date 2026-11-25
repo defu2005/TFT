@@ -42,5 +42,27 @@
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "VOD done"
+  "remaining": "VOD done",
+  "densify_claims": {
+    "twitch-2891354525-g500": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "status": "in_progress",
+      "note": "densify to ~12"
+    },
+    "twitch-2891354525-g4000": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "status": "in_progress",
+      "note": "densify to ~12"
+    },
+    "twitch-2891354525-g8000": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "status": "in_progress",
+      "note": "densify to ~12"
+    },
+    "twitch-2891354525-g12000": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "status": "in_progress",
+      "note": "densify to ~12"
+    }
+  }
 }
