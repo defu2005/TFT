@@ -8,6 +8,10 @@
     [
       980,
       2480
+    ],
+    [
+      2590,
+      4850
     ]
   ],
   "remaining_ranges_s": [
@@ -17,24 +21,30 @@
     ],
     [
       2480,
+      2590
+    ],
+    [
+      4850,
       25942
     ]
   ],
   "game_ids": [
-    "twitch-2913099253-g980"
+    "twitch-2913099253-g980",
+    "twitch-2913099253-g2590"
   ],
   "counts": {
-    "games": 1,
-    "fights": 8,
-    "others": 8
+    "games": 2,
+    "fights": 14,
+    "others": 14
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 8
+      "winner_null": 14
     }
   },
   "needs_review": 0,
-  "commit": "fcea4f3",
-  "remaining": "ván g980 đã push (fcea4f3). 8 fights winner_null. Tiếp ranked sau 2480s."
+  "commit": "bd9ee50",
+  "remaining": "g980+g2590 ranked. Tiếp sau 4850s + VOD P1 khác. Tourney đã blocked riêng.",
+  "notes": "Ranked Set18 ACAD Frodan. g2590 placement~2 winner_null OK."
 }
