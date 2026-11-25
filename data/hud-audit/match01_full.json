@@ -3612,20 +3612,20 @@
    "bench_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "info-card sweep: 1123 frames every 2 s, 362-2606 s, crop x1000-1280 y150-420 at 3x, tesseract psm 6. Champion-name hits in window [1316, 1364): Alistar. Card shows traits, hp, item count only; stars not on card; item names not read",
-    "reason": "bench not read from the sweep; no per-round bench read"
+    "attempt": "frame at 1316 s viewed; bench units not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
    },
    "stars": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "info-card sweep: 1123 frames every 2 s, 362-2606 s, crop x1000-1280 y150-420 at 3x, tesseract psm 6. Champion-name hits in window [1316, 1364): Alistar. Card shows traits, hp, item count only; stars not on card; item names not read",
-    "reason": "stars not shown on info card; no star-level read done"
+    "attempt": "frame at 1316 s viewed; stars not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
    },
    "items": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "info-card sweep: 1123 frames every 2 s, 362-2606 s, crop x1000-1280 y150-420 at 3x, tesseract psm 6. Champion-name hits in window [1316, 1364): Alistar. Card shows traits, hp, item count only; stars not on card; item names not read",
-    "reason": "only filled-slot count is read by the sweep; item names not read"
+    "attempt": "frame at 1316 s viewed; items not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
    },
    "shop_purchases": {
     "value": null,
@@ -3743,8 +3743,37 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
-    "reason": "hex positions need a per-unit location read that has not been done"
+    "attempt": "frame at 1316 s viewed; hexes not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
+   },
+   "frame_A_read": {
+    "frame_s": 1316,
+    "timer": 13,
+    "level": 7,
+    "xp": "6/56",
+    "gold": 59,
+    "streak": 9,
+    "shop": [
+     "Diana",
+     "Vi",
+     "Azir",
+     "Rengar",
+     "empty"
+    ],
+    "panel": {
+     "Elderwood": 5,
+     "Rapidfire": 2,
+     "Brawler": 2,
+     "Riftbeast": 2,
+     "Executioner": 1,
+     "Fae": 1,
+     "Spellweaver": 1,
+     "Summoner": 1,
+     "Vanguard": 1
+    },
+    "conflict": "master 3-7 gold is 63 and slot 5 is Ezreal; this frame shows gold 59 and slot 5 empty",
+    "tag": "read",
+    "source": "sweep frame viewed in this session"
    }
   },
   {
@@ -4401,20 +4430,20 @@
    "bench_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "info-card sweep: 1123 frames every 2 s, 362-2606 s, crop x1000-1280 y150-420 at 3x, tesseract psm 6. Champion-name hits in window [1540, 1604.0): none. Card shows traits, hp, item count only; stars not on card; item names not read",
-    "reason": "bench not read from the sweep; no per-round bench read"
+    "attempt": "frame at 1540 s viewed; bench units not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
    },
    "stars": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "info-card sweep: 1123 frames every 2 s, 362-2606 s, crop x1000-1280 y150-420 at 3x, tesseract psm 6. Champion-name hits in window [1540, 1604.0): none. Card shows traits, hp, item count only; stars not on card; item names not read",
-    "reason": "stars not shown on info card; no star-level read done"
+    "attempt": "frame at 1540 s viewed; stars not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
    },
    "items": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "info-card sweep: 1123 frames every 2 s, 362-2606 s, crop x1000-1280 y150-420 at 3x, tesseract psm 6. Champion-name hits in window [1540, 1604.0): none. Card shows traits, hp, item count only; stars not on card; item names not read",
-    "reason": "only filled-slot count is read by the sweep; item names not read"
+    "attempt": "frame at 1540 s viewed; items not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
    },
    "shop_purchases": {
     "value": null,
@@ -4544,8 +4573,39 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
-    "reason": "hex positions need a per-unit location read that has not been done"
+    "attempt": "frame at 1540 s viewed; hexes not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
+   },
+   "frame_A_read": {
+    "frame_s": 1540,
+    "timer": 17,
+    "counter": "8/8",
+    "level": 8,
+    "xp": "4/68",
+    "gold": 40,
+    "streak": 1,
+    "shop": [
+     "Hecarim",
+     "Leona",
+     "Yunara",
+     "Varus",
+     "Payday"
+    ],
+    "panel": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1,
+     "marker": "1+"
+    },
+    "conflict": null,
+    "tag": "read",
+    "source": "sweep frame viewed in this session"
    }
   },
   {
@@ -4767,20 +4827,20 @@
    "bench_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "info-card sweep: 1123 frames every 2 s, 362-2606 s, crop x1000-1280 y150-420 at 3x, tesseract psm 6. Champion-name hits in window [1652, 1722): none. Card shows traits, hp, item count only; stars not on card; item names not read",
-    "reason": "bench not read from the sweep; no per-round bench read"
+    "attempt": "frame at 1652 s viewed; bench units not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
    },
    "stars": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "info-card sweep: 1123 frames every 2 s, 362-2606 s, crop x1000-1280 y150-420 at 3x, tesseract psm 6. Champion-name hits in window [1652, 1722): none. Card shows traits, hp, item count only; stars not on card; item names not read",
-    "reason": "stars not shown on info card; no star-level read done"
+    "attempt": "frame at 1652 s viewed; stars not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
    },
    "items": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "info-card sweep: 1123 frames every 2 s, 362-2606 s, crop x1000-1280 y150-420 at 3x, tesseract psm 6. Champion-name hits in window [1652, 1722): none. Card shows traits, hp, item count only; stars not on card; item names not read",
-    "reason": "only filled-slot count is read by the sweep; item names not read"
+    "attempt": "frame at 1652 s viewed; items not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
    },
    "shop_purchases": {
     "value": null,
@@ -4918,8 +4978,39 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
-    "reason": "hex positions need a per-unit location read that has not been done"
+    "attempt": "frame at 1652 s viewed; hexes not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
+   },
+   "frame_A_read": {
+    "frame_s": 1652,
+    "timer": 16,
+    "counter": "8/8",
+    "level": 8,
+    "xp": "6/68",
+    "gold": 62,
+    "streak": 1,
+    "shop": [
+     "Fiddlesticks",
+     "Cassiopeia",
+     "Rengar",
+     "Vi",
+     "Hecarim"
+    ],
+    "panel": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1,
+     "marker": "1+"
+    },
+    "conflict": "earlier re-read (Juggernaut 2, Inferno 1) disagrees; this frame agrees with the planning panel",
+    "tag": "read",
+    "source": "sweep frame viewed in this session"
    }
   },
   {
@@ -6155,20 +6246,20 @@
    "bench_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "info-card sweep: 1123 frames every 2 s, 362-2606 s, crop x1000-1280 y150-420 at 3x, tesseract psm 6. Champion-name hits in window [2000, 2062.8): none. Card shows traits, hp, item count only; stars not on card; item names not read",
-    "reason": "bench not read from the sweep; no per-round bench read"
+    "attempt": "frame at 2000 s viewed; bench units not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
    },
    "stars": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "info-card sweep: 1123 frames every 2 s, 362-2606 s, crop x1000-1280 y150-420 at 3x, tesseract psm 6. Champion-name hits in window [2000, 2062.8): none. Card shows traits, hp, item count only; stars not on card; item names not read",
-    "reason": "stars not shown on info card; no star-level read done"
+    "attempt": "frame at 2000 s viewed; stars not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
    },
    "items": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "info-card sweep: 1123 frames every 2 s, 362-2606 s, crop x1000-1280 y150-420 at 3x, tesseract psm 6. Champion-name hits in window [2000, 2062.8): none. Card shows traits, hp, item count only; stars not on card; item names not read",
-    "reason": "only filled-slot count is read by the sweep; item names not read"
+    "attempt": "frame at 2000 s viewed; items not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
    },
    "shop_purchases": {
     "value": null,
@@ -6336,8 +6427,39 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
-    "reason": "hex positions need a per-unit location read that has not been done"
+    "attempt": "frame at 2000 s viewed; hexes not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
+   },
+   "frame_A_read": {
+    "frame_s": 2000,
+    "timer": 20,
+    "counter": "9/9",
+    "level": 9,
+    "xp": "4/68",
+    "gold": 5,
+    "streak": 1,
+    "shop": [
+     "Morgana",
+     "Yunara",
+     "Brambleback",
+     "Sivir",
+     "Barter"
+    ],
+    "panel": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "conflict": null,
+    "tag": "read",
+    "source": "sweep frame viewed in this session"
    }
   },
   {
@@ -7411,20 +7533,20 @@
    "bench_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "info-card sweep: 1123 frames every 2 s, 362-2606 s, crop x1000-1280 y150-420 at 3x, tesseract psm 6. Champion-name hits in window [2296, 2342): none. Card shows traits, hp, item count only; stars not on card; item names not read",
-    "reason": "bench not read from the sweep; no per-round bench read"
+    "attempt": "frame at 2296 s viewed; bench units not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
    },
    "stars": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "info-card sweep: 1123 frames every 2 s, 362-2606 s, crop x1000-1280 y150-420 at 3x, tesseract psm 6. Champion-name hits in window [2296, 2342): none. Card shows traits, hp, item count only; stars not on card; item names not read",
-    "reason": "stars not shown on info card; no star-level read done"
+    "attempt": "frame at 2296 s viewed; stars not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
    },
    "items": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "info-card sweep: 1123 frames every 2 s, 362-2606 s, crop x1000-1280 y150-420 at 3x, tesseract psm 6. Champion-name hits in window [2296, 2342): none. Card shows traits, hp, item count only; stars not on card; item names not read",
-    "reason": "only filled-slot count is read by the sweep; item names not read"
+    "attempt": "frame at 2296 s viewed; items not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
    },
    "shop_purchases": {
     "value": null,
@@ -7521,8 +7643,39 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
-    "reason": "hex positions need a per-unit location read that has not been done"
+    "attempt": "frame at 2296 s viewed; hexes not resolvable at 720p in this frame",
+    "reason": "not legible at 720p in this frame"
+   },
+   "frame_A_read": {
+    "frame_s": 2296,
+    "timer": 5,
+    "counter": "9/9",
+    "level": 9,
+    "xp": "12/68",
+    "gold": 16,
+    "streak": null,
+    "shop": [
+     "Nidalee",
+     "empty",
+     "Kog Maw",
+     "Azir",
+     "Rengar"
+    ],
+    "panel": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "conflict": null,
+    "tag": "read",
+    "source": "sweep frame viewed in this session"
    }
   },
   {
