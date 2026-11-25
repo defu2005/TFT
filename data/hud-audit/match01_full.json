@@ -58,7 +58,9 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Frame A bench strip viewed at the stored frame time: frame is the arena/carousel view; the bench strip is not on screen. Count not recorded for this frame.",
+    "reason": "frame is the arena/carousel view; the bench strip is not on screen"
    },
    "stars": {
     "value": null,
@@ -186,8 +188,9 @@
     "note": "hexes unresolved"
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 0,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -352,8 +355,9 @@
     "note": "hexes unresolved"
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 3,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -546,8 +550,9 @@
     "note": "hexes unresolved"
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 5,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -768,7 +773,9 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Frame A bench strip viewed at the stored frame time: an augment/choose panel covers the pads. Count not recorded for this frame.",
+    "reason": "an augment/choose panel covers the pads"
    },
    "stars": {
     "value": null,
@@ -942,8 +949,9 @@
     "basis": "solver on planning panel (N=4, hidden k=0): unique solution"
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 1,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -1164,8 +1172,9 @@
     "basis": "solver on planning panel (N=4, hidden k=0): unique solution"
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 5,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -1382,7 +1391,9 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Frame A bench strip viewed at the stored frame time: carousel view; the bench strip is not on screen. Count not recorded for this frame.",
+    "reason": "carousel view; the bench strip is not on screen"
    },
    "stars": {
     "value": null,
@@ -1567,7 +1578,9 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Frame A bench strip viewed at the stored frame time: a tooltip covers pads 3 to 7; only pads 1, 2 and 8 are visible. Count not recorded for this frame.",
+    "reason": "a tooltip covers pads 3 to 7; only pads 1, 2 and 8 are visible"
    },
    "stars": {
     "value": null,
@@ -1805,8 +1818,9 @@
     "reason": "panel does not fix one board"
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 7,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -2036,8 +2050,9 @@
     "note": "hexes unresolved"
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 6,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -2268,8 +2283,9 @@
     ]
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 3,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe). low confidence: sprites small at 720p"
    },
    "stars": {
     "value": null,
@@ -2488,7 +2504,9 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Frame A bench strip viewed at the stored frame time: an overlay covers the pads. Count not recorded for this frame.",
+    "reason": "an overlay covers the pads"
    },
    "stars": {
     "value": null,
@@ -2773,7 +2791,9 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Frame A bench strip viewed at the stored frame time: a tooltip covers most pads. Count not recorded for this frame.",
+    "reason": "a tooltip covers most pads"
    },
    "stars": {
     "value": null,
@@ -3027,7 +3047,9 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Frame A bench strip viewed at the stored frame time: arena view; the bench strip is not on screen. Count not recorded for this frame.",
+    "reason": "arena view; the bench strip is not on screen"
    },
    "stars": {
     "value": null,
@@ -3209,10 +3231,9 @@
     "note": "hexes unresolved"
    },
    "bench_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1186 s viewed; bench strip inspected, filled pads not counted to a number at 720p",
-    "reason": "pad occupancy ambiguous at 720p for this frame"
+    "value": 9,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -3553,10 +3574,9 @@
     "note": "one Hecarim buy has no purchase event in the 3-6 action log; kept as a check item"
    },
    "bench_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1250 s viewed; bench strip inspected, filled pads not counted to a number at 720p",
-    "reason": "pad occupancy ambiguous at 720p for this frame"
+    "value": 7,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -3810,7 +3830,9 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Frame A bench strip viewed at the stored frame time: a tooltip covers most pads. Count not recorded for this frame.",
+    "reason": "a tooltip covers most pads"
    },
    "stars": {
     "value": null,
@@ -4069,10 +4091,9 @@
     "reason": "panel does not fix one board"
    },
    "bench_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1364 s viewed; bench strip inspected, filled pads not counted to a number at 720p",
-    "reason": "pad occupancy ambiguous at 720p for this frame"
+    "value": 9,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -4364,10 +4385,9 @@
     "basis": "solver on planning panel (N=8, hidden k=1): unique solution"
    },
    "bench_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1468 s viewed; bench strip inspected, filled pads not counted to a number at 720p",
-    "reason": "pad occupancy ambiguous at 720p for this frame"
+    "value": 7,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -4615,8 +4635,9 @@
     "basis": "solver on planning panel (N=8, hidden k=1): unique solution"
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 2,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -4857,7 +4878,9 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Frame A bench strip viewed at the stored frame time: carousel view; the bench strip is not on screen. Count not recorded for this frame.",
+    "reason": "carousel view; the bench strip is not on screen"
    },
    "stars": {
     "value": null,
@@ -5020,8 +5043,9 @@
     "note": "hexes unresolved"
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 4,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -5276,10 +5300,9 @@
     "basis": "solver on planning panel (N=8, hidden k=1): unique solution"
    },
    "bench_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1722 s viewed; bench strip inspected, filled pads not counted to a number at 720p",
-    "reason": "pad occupancy ambiguous at 720p for this frame"
+    "value": 4,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -5533,8 +5556,9 @@
     "note": "hexes unresolved"
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 4,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -5751,13 +5775,9 @@
     "note": "hexes unresolved"
    },
    "bench_units": {
-    "value": {
-     "filled_pads": 2,
-     "of": 9,
-     "note": "pads 1 and 9 hold units"
-    },
+    "value": 2,
     "tag": "read",
-    "source": "bench crop at 1836 s"
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe). low confidence: faded sprites"
    },
    "stars": {
     "value": {
@@ -6130,10 +6150,9 @@
     "basis": "panel solve at N=8 with Riftbeast 1 visible, Inferno 1 (crop shows 1/2), hidden k=1: unique; Greenfather pins Ivern, Old Growth pins Maokai, Bounty Seeker pins Draven"
    },
    "bench_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 1914 s viewed; bench strip inspected, filled pads not counted to a number at 720p",
-    "reason": "pad occupancy ambiguous at 720p for this frame"
+    "value": 6,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe). low confidence"
    },
    "stars": {
     "value": null,
@@ -6434,8 +6453,9 @@
     "basis": "solver on planning panel (N=9, hidden k=2): unique solution"
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 4,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe). low confidence: one partial sprite at pad 9"
    },
    "stars": {
     "value": null,
@@ -6705,7 +6725,9 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Frame A bench strip viewed at the stored frame time: carousel view; the bench strip is not on screen. Count not recorded for this frame.",
+    "reason": "carousel view; the bench strip is not on screen"
    },
    "stars": {
     "value": null,
@@ -6876,8 +6898,8 @@
    "bench_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "frame at 2094 s viewed; bench strip inspected, filled pads not counted to a number at 720p",
-    "reason": "pad occupancy ambiguous at 720p for this frame"
+    "attempt": "Frame A bench strip viewed at the stored frame time: a tooltip covers pads 3 to 7. Count not recorded for this frame.",
+    "reason": "a tooltip covers pads 3 to 7"
    },
    "stars": {
     "value": null,
@@ -7187,10 +7209,9 @@
     "basis": "planning-panel solve (N=9, k=2) unique; the 2172 s frame agrees with the planning panel, so the earlier re-read is the one that is wrong"
    },
    "bench_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2172 s viewed; bench strip inspected, filled pads not counted to a number at 720p",
-    "reason": "pad occupancy ambiguous at 720p for this frame"
+    "value": 5,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -7485,8 +7506,9 @@
     "basis": "solver on planning panel (N=9, hidden k=2): unique solution"
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 3,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": {
@@ -7750,7 +7772,9 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Frame A bench strip viewed at the stored frame time: arena view; the bench strip is not on screen. Count not recorded for this frame.",
+    "reason": "arena view; the bench strip is not on screen"
    },
    "stars": {
     "value": null,
@@ -7975,10 +7999,9 @@
     "basis": "solver on planning panel (N=9, hidden k=2): unique solution"
    },
    "bench_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at 2342 s viewed; bench strip inspected, filled pads not counted to a number at 720p",
-    "reason": "pad occupancy ambiguous at 720p for this frame"
+    "value": 2,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -8260,8 +8283,9 @@
     "basis": "solver on planning panel (N=9, hidden k=2): unique solution"
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 3,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
@@ -8509,7 +8533,9 @@
    },
    "bench_units": {
     "value": null,
-    "tag": "open"
+    "tag": "unresolved",
+    "attempt": "Frame A bench strip viewed at the stored frame time: carousel view; the bench strip is not on screen. Count not recorded for this frame.",
+    "reason": "carousel view; the bench strip is not on screen"
    },
    "stars": {
     "value": null,
@@ -8674,8 +8700,9 @@
     "basis": "solver on planning panel (N=9, hidden k=2): unique solution"
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 3,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe). pad 6 translucent, not counted"
    },
    "stars": {
     "value": null,
@@ -8981,8 +9008,9 @@
     "basis": "solver on planning panel (N=9, hidden k=2): unique solution"
    },
    "bench_units": {
-    "value": null,
-    "tag": "open"
+    "value": 1,
+    "tag": "read",
+    "basis": "Frame A bench strip (pads 1 to 9, sweep crop 240,480,980,560 at 720p) counted by eye as sprite count; unit names not resolved (sprites carry no name text, see board_bench_probe)"
    },
    "stars": {
     "value": null,
