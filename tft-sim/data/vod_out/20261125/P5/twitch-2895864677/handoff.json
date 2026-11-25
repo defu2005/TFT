@@ -1,0 +1,36 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2895864677",
+  "slot": "P5",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      120,
+      700
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      700,
+      23928
+    ]
+  ],
+  "game_ids": [
+    "twitch-2895864677-g120"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 4,
+    "others": 4
+  },
+  "validator": {
+    "ok": 1,
+    "skipped": {
+      "winner_null": 3
+    }
+  },
+  "needs_review": 3,
+  "commit": null,
+  "remaining": "game1 twitch-2895864677-g120 partial: fights 2-1/2-2/2-5/4-2 early push; tiếp tục PvP còn lại tới ~2340s rồi game2+. Chỉ ranked Set 18. HLS seek, không full DL."
+}
