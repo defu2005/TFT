@@ -1362,9 +1362,17 @@
     "tag": "unresolved"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "panel equals the 5-unit 3-2 solution (Xayah, Ezreal, Kobuko, Alistar, Mama Beak); 6th model has no roster trait that fits the panel; exact solver with and without duplicates returns 0 solutions for 6 units; needs a check of the 6th model (summon or trait-less unit?)"
+    "value": [
+     "Xayah",
+     "Ezreal",
+     "Kobuko",
+     "Kobuko",
+     "Alistar",
+     "Mama Beak"
+    ],
+    "tag": "derived",
+    "basis": "panel counts unique champions, so a duplicate does not change it; counter 6/6 = 5 unique + one duplicate; two identical orange models seen at 1058 s (zoom)",
+    "frame_s": 1058
    },
    "bench_units": {
     "value": null,
@@ -4121,5 +4129,6 @@
   "886 s": "hudDetected True, gold 39",
   "887-891 s": "hudDetected False (scouting window)",
   "891.25 s on": "True again"
- }
+ },
+ "counting_rule": "trait counts are per unique champion (verified: 3-3 panel equals 3-2 five-unit panel with a duplicate Kobuko). Counter = units out of level cap."
 }
