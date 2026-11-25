@@ -12,6 +12,10 @@
     [
       4200,
       6500
+    ],
+    [
+      8780,
+      10600
     ]
   ],
   "remaining_ranges_s": [
@@ -25,25 +29,30 @@
     ],
     [
       6500,
+      8780
+    ],
+    [
+      10600,
       11107
     ]
   ],
   "game_ids": [
     "twitch-2925380903-g2230",
-    "twitch-2925380903-g4200"
+    "twitch-2925380903-g4200",
+    "twitch-2925380903-g8780"
   ],
   "counts": {
-    "games": 2,
-    "fights": 37,
+    "games": 3,
+    "fights": 55,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 37
+      "winner_null": 55
     }
   },
   "needs_review": 0,
-  "commit": "f976142",
-  "remaining": "g2230+g4200 Ranked done. Tiếp từ ~6500 (g4+) và kiểm ván1 nếu có Ranked HUD."
+  "commit": "525dfe4",
+  "remaining": "g8780 Ranked pushed. Next: g4 ~6680 (MATCH ACCEPTED @6630) rồi [10600,11107]/ rest."
 }

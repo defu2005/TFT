@@ -8,20 +8,25 @@
     [
       60,
       2000
+    ],
+    [
+      2400,
+      5000
     ]
   ],
   "remaining_ranges_s": [
     [
-      2000,
-      99999
+      5000,
+      13820
     ]
   ],
   "game_ids": [
-    "twitch-2898655231-g60"
+    "twitch-2898655231-g60",
+    "twitch-2898655231-g2400"
   ],
   "counts": {
-    "games": 1,
-    "fights": 12,
+    "games": 2,
+    "fights": 24,
     "others": 0
   },
   "validator": {
@@ -30,7 +35,7 @@
       "winner_null": 12
     }
   },
-  "needs_review": 12,
+  "needs_review": 24,
   "commit": null,
-  "remaining": "More ranked denser HLS pending."
+  "remaining": "More denser HLS pending."
 }
