@@ -33,7 +33,11 @@ Mục đích: xác định có thể mô phỏng combat TFT từ dữ liệu cô
 - Công thức sát thương và tốc độ đánh TFT chính thức.
 - Giấy phép dùng CDragon (đã nêu trước đó, chưa xác minh).
 
-## 5. Đo sơ bộ trên cặp bàn Set 17 (engine, không phải trận thật)
+## 5. Đo sơ bộ v1 (ĐÃ THAY THẾ bởi mục 6; không dùng để kết luận)
+
+Lý do thay thế: v1 không có augment (bug đọc sai trường), chỉ có cặp cùng vòng, và chế độ public tắt cả ability lẫn trang bị nên không tách được hai yếu tố.
+
+Số liệu v1 (giữ để đối chiếu): 
 
 Nguồn: 67.122 cặp từ 100 lobby v4 (seed 288000–288099); lấy ngẫu nhiên 500 cặp để phân tích. Mỗi cặp: 20 lần chạy engine đầy đủ và 20 lần ở chế độ public. Kết quả: `results/fixed/combat/study17_288000.json`. Nhãn: **sim**, engine tự sinh, không phải trận thật.
 
@@ -42,3 +46,30 @@ Nguồn: 67.122 cặp từ 100 lobby v4 (seed 288000–288099); lấy ngẫu nhi
 - **C. Public so voi full**: hai chế độ đồng ý về bên thắng ở 72,3% trong 419 cặp quyết định. Chênh lệch xác suất trung bình 0,31.
 
 Đọc kết quả: trong engine, ability và trang bị quyết định phần lớn kết quả, không phải chỉ số. Chế độ public chỉ đúng ở khoảng 3/4 cặp quyết định. Điều này trả lời một phần câu hỏi "chỉ số công khai có đủ không": không đủ để đoán chính xác, nhưng không hoàn toàn vô dụng. Chưa đo độ trung thực với trận thật.
+
+## 6. Đo v2 trên cặp bàn Set 17 (engine, không phải trận thật)
+
+Nguồn: `scripts/combat/study17.py` v2. 67.122 cặp cùng vòng và 4.000 cặp xuyên vòng từ 100 lobby v4 (seed 288000–288099). Lobby chia theo `id % 10`: 30% giữ lại làm test. Test: 600 cặp (300 cùng vòng, 300 xuyên vòng). Mỗi cặp 20 lần chạy engine cho mỗi cấu hình. Kết quả: `results/fixed/combat/study17_v2_288000.json`. Nhãn: **sim**.
+
+**Kiểm tra:**
+- Lệch `items` so với `len(item_apis)`: 0 trên 129.912 đơn vị.
+- Đối xứng: |p(a,b) + p(b,a) − 1| trung bình = 0,0095.
+- Quyết định (một bên ≥90%): 88,7% cặp test; cùng vòng 85,3%, xuyên vòng 92,0%.
+
+**Cấu hình (đồng ý dấu với engine đầy đủ, trên cặp quyết định):**
+- Ability generic (mọi tướng dùng nuke mặc định): **91,2%**.
+- Không ability (có trang bị): **91,5%**.
+- Ability viết tay, không trang bị: **88,4%**.
+
+Đọc: bỏ ability làm mất khoảng 8 điểm; bỏ trang bị làm mất khoảng 12 điểm. Ability generic và không ability gần như nhau, nên nuke mặc định gần như không khác so với không ability ở mức thắng/thua.
+
+**Hồi quy logistic (đặc trưng: tổng cost·sao, số trang bị, cấp, số trait; nhãn mềm = p engine đầy đủ; huấn luyện trên lobby train):**
+- Độ chính xác trên cặp quyết định test: **80,5%**. Baseline luôn đoán A: 49,3%.
+- Theo tercile độ chênh sức mạnh: 66,9% (thấp nhất), 76,4%, 98,3% (cao nhất).
+
+**Đính chính**: kết luận v1 "sức mạnh đơn giản gần như không giải thích được" là sai. Nó xuất phát từ bug thiếu augment và thiếu cặp xuyên vòng. Với dữ liệu v2, sức mạnh đơn giản giải thích được phần lớn kết quả, đặc biệt khi chênh lệch lớn.
+
+**Giới hạn**:
+- Chỉ là mô phỏng engine Set 17, bot v4. Chưa đo với trận thật.
+- Test chỉ có khoảng 30 lobby, nên khoảng tin cậy chưa tính.
+- Nhãn là xác suất ước lượng từ 20 lần chạy, có nhiễu.
