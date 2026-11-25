@@ -3,25 +3,74 @@
   "vod_id": "twitch-2911167981",
   "slot": "P3",
   "role": "primary",
-  "status": "pending",
-  "covered_ranges_s": [],
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      80.0,
+      2200.0
+    ],
+    [
+      2400.0,
+      4500.0
+    ],
+    [
+      4800.0,
+      7000.0
+    ],
+    [
+      7500.0,
+      10000.0
+    ],
+    [
+      11000.0,
+      14000.0
+    ]
+  ],
   "remaining_ranges_s": [
     [
-      0,
+      0.0,
+      80.0
+    ],
+    [
+      2200.0,
+      2400.0
+    ],
+    [
+      4500.0,
+      4800.0
+    ],
+    [
+      7000.0,
+      7500.0
+    ],
+    [
+      10000.0,
+      11000.0
+    ],
+    [
+      14000.0,
       15419
     ]
   ],
-  "game_ids": [],
+  "game_ids": [
+    "twitch-2911167981-g80",
+    "twitch-2911167981-g2400",
+    "twitch-2911167981-g4800",
+    "twitch-2911167981-g7500",
+    "twitch-2911167981-g11000"
+  ],
   "counts": {
-    "games": 0,
-    "fights": 0,
+    "games": 5,
+    "fights": 27,
     "others": 0
   },
   "validator": {
     "ok": 0,
-    "skipped": {}
+    "skipped": {
+      "winner_null": 27
+    }
   },
-  "needs_review": 0,
+  "needs_review": 27,
   "commit": null,
-  "remaining": "CLAIM setsuko queued after robin Ranked games."
+  "remaining": "P3 stubs/volume. densify boards+winner. rem from 14000s"
 }

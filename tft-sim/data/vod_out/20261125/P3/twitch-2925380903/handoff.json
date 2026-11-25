@@ -6,58 +6,67 @@
   "status": "working",
   "covered_ranges_s": [
     [
-      2230,
-      3800
+      450.0,
+      2100.0
     ],
     [
-      4200,
-      6500
+      2230.0,
+      3800.0
     ],
     [
-      6680,
-      8360
+      4200.0,
+      6500.0
     ],
     [
-      8780,
-      11107
+      6680.0,
+      8360.0
+    ],
+    [
+      8780.0,
+      10600.0
     ]
   ],
   "remaining_ranges_s": [
     [
-      0,
-      2230
+      0.0,
+      450.0
     ],
     [
-      3800,
-      4200
+      2100.0,
+      2230.0
     ],
     [
-      6500,
-      6680
+      3800.0,
+      4200.0
     ],
     [
-      8360,
-      8780
+      6500.0,
+      6680.0
+    ],
+    [
+      8360.0,
+      8780.0
     ]
   ],
   "game_ids": [
     "twitch-2925380903-g2230",
     "twitch-2925380903-g4200",
+    "twitch-2925380903-g8780",
     "twitch-2925380903-g6680",
-    "twitch-2925380903-g8780"
+    "twitch-2925380903-g450"
   ],
   "counts": {
-    "games": 4,
-    "fights": 74,
+    "games": 5,
+    "fights": 79,
     "others": 0
   },
   "validator": {
     "ok": 10,
     "skipped": {
-      "winner_null": 64
+      "winner_null": 69
     }
   },
-  "needs_review": 0,
+  "needs_review": 69,
   "commit": "c193939",
-  "remaining": "Densify g8780+g6680 done. Next densify g4200/g2230 + robin g350 (2 phía còn mỏng)."
+  "remaining": "P3 stubs/volume. densify boards+winner. rem from 10600s"
 }
