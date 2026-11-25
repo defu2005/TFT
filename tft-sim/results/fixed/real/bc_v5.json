@@ -1,0 +1,56 @@
+{
+  "train_rows": 1479411,
+  "test_rows": 1183655,
+  "epochs": 40,
+  "in_dim": 185,
+  "seeds": {
+    "0": {
+      "overall": 0.9889,
+      "per_type": {
+        "BENCH_BOARD": 0.9628,
+        "BUY_SHOP": 0.9993,
+        "BUY_XP": 0.9131,
+        "EQUIP": 0.9999,
+        "FIELD": 0.9962,
+        "PASS": 0.9991,
+        "PICK_AUGMENT": 0.9995,
+        "PICK_GOD": 1.0,
+        "REROLL": 0.6544,
+        "REROLL_AUGMENT": 0.9902,
+        "SELL_BENCH": 0.998
+      }
+    },
+    "1": {
+      "overall": 0.9978,
+      "per_type": {
+        "BENCH_BOARD": 0.9718,
+        "BUY_SHOP": 0.9995,
+        "BUY_XP": 0.9996,
+        "EQUIP": 0.9999,
+        "FIELD": 0.9974,
+        "PASS": 0.998,
+        "PICK_AUGMENT": 0.9988,
+        "PICK_GOD": 1.0,
+        "REROLL": 0.9327,
+        "REROLL_AUGMENT": 0.9804,
+        "SELL_BENCH": 0.9976
+      }
+    },
+    "2": {
+      "overall": 0.9971,
+      "per_type": {
+        "BENCH_BOARD": 0.9736,
+        "BUY_SHOP": 0.9993,
+        "BUY_XP": 0.9979,
+        "EQUIP": 0.9999,
+        "FIELD": 0.9965,
+        "PASS": 0.9968,
+        "PICK_AUGMENT": 0.9994,
+        "PICK_GOD": 1.0,
+        "REROLL": 0.9939,
+        "REROLL_AUGMENT": 0.9608,
+        "SELL_BENCH": 0.9966
+      }
+    }
+  }
+}
