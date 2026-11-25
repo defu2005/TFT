@@ -52,5 +52,42 @@
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "gần hết VOD; refine + chuyển 2893101179"
+  "remaining": "gần hết VOD; refine + chuyển 2893101179",
+  "densify_claims": {
+    "twitch-2918092391-g400": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "status": "in_progress",
+      "note": "densify to ~12"
+    },
+    "twitch-2918092391-g4500": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "status": "in_progress",
+      "note": "densify to ~12"
+    },
+    "twitch-2918092391-g10000": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "status": "in_progress",
+      "note": "densify to ~12"
+    },
+    "twitch-2918092391-g16000": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "status": "in_progress",
+      "note": "densify to ~12"
+    },
+    "twitch-2918092391-g2560": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "status": "in_progress",
+      "note": "densify to ~12"
+    },
+    "twitch-2918092391-g10660": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "status": "in_progress",
+      "note": "densify to ~12"
+    },
+    "twitch-2918092391-g13000": {
+      "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
+      "status": "in_progress",
+      "note": "densify to ~12"
+    }
+  }
 }

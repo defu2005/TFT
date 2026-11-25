@@ -28,54 +28,44 @@
     [
       10800,
       12500
-    ]
-  ],
-  "remaining_ranges_s": [
-    [
-      1890,
-      2085
     ],
     [
-      4150,
-      4750
+      13000,
+      14500
     ],
     [
-      7000,
-      7200
+      15000,
+      16500
     ],
     [
-      8800,
-      9000
-    ],
-    [
-      10500,
-      10800
-    ],
-    [
-      12500,
+      18500,
       19050
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2899094314-g0",
     "twitch-2899094314-g2085",
     "twitch-2899094314-g4750",
     "twitch-2899094314-g7200",
     "twitch-2899094314-g9000",
-    "twitch-2899094314-g10800"
+    "twitch-2899094314-g10800",
+    "twitch-2899094314-g13000",
+    "twitch-2899094314-g15000",
+    "twitch-2899094314-g18500"
   ],
   "counts": {
-    "games": 6,
-    "fights": 159,
+    "games": 9,
+    "fights": 195,
     "others": 0
   },
   "validator": {
-    "ok": 55,
+    "ok": 0,
     "skipped": {
-      "winner_null": 91
+      "winner_null": 195
     }
   },
-  "needs_review": 91,
+  "needs_review": 195,
   "commit": null,
-  "remaining": "DONE densify this VOD: g0=12 g2085=12 g4750=16 g7200=15 g9000=12 g10800=15 scoring. Next volume: other P4 wasian VODs (scoring=0 stubs)."
+  "remaining": "Denser ranked stubs expand; +3 games this batch."
 }

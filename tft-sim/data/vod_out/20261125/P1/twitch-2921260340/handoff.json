@@ -1,0 +1,42 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2921260340",
+  "slot": "P1",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      1560,
+      2500
+    ],
+    [
+      3240,
+      4600
+    ],
+    [
+      5400,
+      6200
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2921260340-g1560",
+    "twitch-2921260340-g3240",
+    "twitch-2921260340-g5400"
+  ],
+  "counts": {
+    "games": 3,
+    "fights": 30,
+    "others": 30
+  },
+  "validator": {
+    "ok": 28,
+    "skipped": {
+      "winner_null": 2
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "Scrim/tourney/watch-party segments skipped.",
+  "notes": "Title worlds scrims: extracted ranked ladder only (3 games); superbrawl/VIT scrim skipped."
+}
