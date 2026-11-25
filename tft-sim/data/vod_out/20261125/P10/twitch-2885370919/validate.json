@@ -1,7 +1,7 @@
 {
- "ok": 30,
+ "ok": 82,
  "skipped": {
-  "winner_null": 35
+  "winner_null": 43
  },
  "rows": [
   {
@@ -177,6 +177,46 @@
   {
    "line": 65,
    "source": "twitch-2885370919-g13800:5-5",
+   "reason": "winner_null"
+  },
+  {
+   "line": 66,
+   "source": "twitch-2885370919-g7600:2-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 73,
+   "source": "twitch-2885370919-g7600:3-5",
+   "reason": "winner_null"
+  },
+  {
+   "line": 76,
+   "source": "twitch-2885370919-g15600:2-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 86,
+   "source": "twitch-2885370919-g17600:2-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 90,
+   "source": "twitch-2885370919-g17600:3-7",
+   "reason": "winner_null"
+  },
+  {
+   "line": 96,
+   "source": "twitch-2885370919-g20000:2-5",
+   "reason": "winner_null"
+  },
+  {
+   "line": 106,
+   "source": "twitch-2885370919-g22400:2-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 116,
+   "source": "twitch-2885370919-g24000:2-1",
    "reason": "winner_null"
   }
  ]
