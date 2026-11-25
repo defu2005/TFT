@@ -3099,6 +3099,7 @@
      "level": 8,
      "xp": "0/68",
      "gold": 1,
+     "streak": 9,
      "panel": {
       "Thornmaiden": 1,
       "Elderwood": 5,
@@ -3110,7 +3111,7 @@
       "Fae": 1,
       "Spellweaver": 1
      },
-     "panel_note": "a hidden 1+ row sits below the panel; not read",
+     "panel_note": "hidden 1+ row not read",
      "shop": [
       "LeBlanc",
       "Kha'Zix",
@@ -3294,31 +3295,29 @@
     "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
-    "frame_s": 1462,
+    "frame_s": 1468,
     "tag": "read",
     "value": {
-     "timer": 11,
+     "timer": 13,
      "counter": "8/8",
      "level": 8,
      "xp": "2/68",
      "gold": 27,
-     "shop": [
-      "Leona",
-      "Malphite",
-      "Gromp",
-      "Cinderling",
-      "Tristana"
-     ],
-     "panel_partial": {
+     "streak": 10,
+     "panel": {
       "Bounty Seeker": 1,
       "Old Growth": 1,
       "Brawler": 4,
       "Elderwood": 4,
-      "Executioner": 1
+      "Executioner": 1,
+      "Juggernaut": 1,
+      "Vanguard": 1,
+      "Blossom": 1,
+      "Riftbeast": 1
      },
-     "panel_note": "tooltip covers the lower rows; panel not complete"
-    },
-    "note": "partial: panel incomplete"
+     "panel_note": "hidden 1+ row not read; shop not visible (sell tooltip)",
+     "shop": null
+    }
    },
    "combat": {
     "value": {
@@ -3441,9 +3440,34 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "sand map carousel-like frame at 1548 s; no planning board"
+    "frame_s": 1540,
+    "tag": "read",
+    "value": {
+     "timer": 17,
+     "counter": "8/8",
+     "level": 8,
+     "xp": "4/68",
+     "gold": 40,
+     "streak": 1,
+     "panel": {
+      "Bounty Seeker": 1,
+      "Old Growth": 1,
+      "Brawler": 4,
+      "Elderwood": 4,
+      "Executioner": 1,
+      "Juggernaut": 1,
+      "Vanguard": 1,
+      "Blossom": 1,
+      "Riftbeast": 1
+     },
+     "shop": [
+      "Hecarim",
+      "Leona",
+      "Yunara",
+      "Varus",
+      "Payday"
+     ]
+    }
    },
    "combat": {
     "value": {
@@ -3686,7 +3710,7 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "frame_s": 1654,
+    "frame_s": 1652,
     "tag": "read",
     "value": {
      "timer": 16,
@@ -3694,6 +3718,7 @@
      "level": 8,
      "xp": "6/68",
      "gold": 62,
+     "streak": 1,
      "panel": {
       "Bounty Seeker": 1,
       "Old Growth": 1,
@@ -3711,8 +3736,7 @@
       "Rengar",
       "Vi",
       "Hecarim"
-     ],
-     "hidden_rows": "1+ below panel not read"
+     ]
     }
    },
    "combat": {
@@ -3844,41 +3868,34 @@
    },
    "combat_frame_t_s": null,
    "planning": {
+    "frame_s": 1722,
+    "tag": "read",
     "value": {
+     "timer": 21,
+     "counter": "8/8",
+     "level": 8,
+     "xp": "8/68",
+     "gold": 71,
+     "streak": 2,
      "panel": {
-      "value": null,
-      "tag": "unresolved"
+      "Bounty Seeker": 1,
+      "Old Growth": 1,
+      "Brawler": 4,
+      "Elderwood": 4,
+      "Executioner": 1,
+      "Juggernaut": 1,
+      "Vanguard": 1,
+      "Blossom": 1,
+      "Riftbeast": 1
      },
-     "board": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "bench": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "gold": {
-      "value": 74,
-      "tag": "derived"
-     },
-     "level": {
-      "value": null,
-      "tag": "derived"
-     },
-     "shop_ids": {
-      "value": [
-       "Cassiopeia",
-       "Aphelios",
-       "DA_Brambleback18",
-       "Leona",
-       null
-      ],
-      "tag": "derived"
-     }
-    },
-    "tag": "derived",
-    "basis": "reader row nearest t_planning_s",
-    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
+     "shop": [
+      "Cassiopeia",
+      "Aphelios",
+      "Brambleback",
+      "Leona",
+      "Mama Beak"
+     ]
+    }
    },
    "combat": {
     "value": {
@@ -4010,41 +4027,9 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": {
-     "panel": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "board": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "bench": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "gold": {
-      "value": 79,
-      "tag": "derived"
-     },
-     "level": {
-      "value": null,
-      "tag": "derived"
-     },
-     "shop_ids": {
-      "value": [
-       "Cassiopeia",
-       "Aphelios",
-       "DA_Brambleback18",
-       "Leona",
-       "DA_CrimsonRaptor18"
-      ],
-      "tag": "derived"
-     }
-    },
-    "tag": "derived",
-    "basis": "reader row nearest t_planning_s",
-    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
+    "value": null,
+    "tag": "unresolved",
+    "note": "1798 s frame is a PvE bounty Choose One screen, not planning"
    },
    "combat": {
     "value": {
