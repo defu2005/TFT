@@ -1,0 +1,49 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2885300763",
+  "slot": "P5",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      120,
+      2200
+    ],
+    [
+      4500,
+      7000
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      0,
+      120
+    ],
+    [
+      2200,
+      4500
+    ],
+    [
+      7000,
+      99999
+    ]
+  ],
+  "game_ids": [
+    "twitch-2885300763-g120",
+    "twitch-2885300763-g4500"
+  ],
+  "counts": {
+    "games": 2,
+    "fights": 4,
+    "others": 4
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 4
+    }
+  },
+  "needs_review": 4,
+  "commit": null,
+  "remaining": "Volume stub; densify-full remaining ranked PvP. Skip set19/TPC."
+}

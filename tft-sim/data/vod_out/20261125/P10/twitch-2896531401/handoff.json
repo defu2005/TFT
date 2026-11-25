@@ -11,10 +11,14 @@
     ],
     [
       2300,
-      3600
+      4200
     ],
     [
       4500,
+      5400
+    ],
+    [
+      5400,
       6900
     ],
     [
@@ -47,14 +51,8 @@
   ],
   "counts": {
     "games": 8,
-    "fights": 78,
+    "fights": 96,
     "others": 0
   },
-  "validator": {
-    "ok": 37,
-    "skipped": {
-      "winner_null": 41
-    }
-  },
-  "rem_notes": "Densified rem +5g/57f. Skip spectate ~7100. remaining empty."
+  "rem_notes": "Union coord+P6; prefer denser on overlap; remap fights. remaining empty."
 }
