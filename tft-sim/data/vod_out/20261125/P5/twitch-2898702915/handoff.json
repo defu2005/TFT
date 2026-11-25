@@ -3,39 +3,40 @@
   "vod_id": "twitch-2898702915",
   "slot": "P5",
   "role": "primary",
-  "status": "done",
+  "status": "working",
   "covered_ranges_s": [
     [
       0,
-      20500
+      800
+    ],
+    [
+      3000,
+      3900
     ]
   ],
-  "remaining_ranges_s": [],
+  "remaining_ranges_s": [
+    [
+      3900,
+      99999
+    ]
+  ],
   "game_ids": [
     "twitch-2898702915-g0",
-    "twitch-2898702915-g800",
-    "twitch-2898702915-g3000",
-    "twitch-2898702915-g3900",
-    "twitch-2898702915-g6200",
-    "twitch-2898702915-g8500",
-    "twitch-2898702915-g11000",
-    "twitch-2898702915-g14000",
-    "twitch-2898702915-g17000"
+    "twitch-2898702915-g3000"
   ],
   "counts": {
-    "games": 9,
-    "fights": 126,
-    "others": 126
-  },
-  "notes": "Densify thin/rem → 9g/126f; agent bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
-  "claim": {
-    "agent": "bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
-    "claimed_at": "2026-11-25T19:30:04Z"
+    "games": 2,
+    "fights": 8,
+    "others": 8
   },
   "validator": {
-    "ok": 108,
+    "ok": 0,
     "skipped": {
-      "winner_null": 18
+      "winner_null": 8
     }
-  }
+  },
+  "needs_review": 8,
+  "commit": null,
+  "remaining": "Real-name fights only; densify more PvP when readable.",
+  "notes": "P5 densify thin stubs 2→8; agent bc-d397b7d6-a030-5835-ad46-806dd6f5000f"
 }

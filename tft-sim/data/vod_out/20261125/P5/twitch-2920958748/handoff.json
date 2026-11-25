@@ -3,38 +3,35 @@
   "vod_id": "twitch-2920958748",
   "slot": "P5",
   "role": "primary",
-  "status": "done",
+  "status": "working",
   "covered_ranges_s": [
     [
       600,
-      14900
+      2000
     ]
   ],
-  "remaining_ranges_s": [],
+  "remaining_ranges_s": [
+    [
+      2000,
+      99999
+    ]
+  ],
   "game_ids": [
-    "twitch-2920958748-g600",
-    "twitch-2920958748-g2000",
-    "twitch-2920958748-g3000",
-    "twitch-2920958748-g3900",
-    "twitch-2920958748-g6200",
-    "twitch-2920958748-g8500",
-    "twitch-2920958748-g11000",
-    "twitch-2920958748-g13500"
+    "twitch-2920958748-g600"
   ],
   "counts": {
-    "games": 8,
-    "fights": 112,
-    "others": 112
-  },
-  "notes": "Densify thin/rem → 8g/112f; agent bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
-  "claim": {
-    "agent": "bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
-    "claimed_at": "2026-11-25T19:30:04Z"
+    "games": 1,
+    "fights": 3,
+    "others": 3
   },
   "validator": {
-    "ok": 96,
+    "ok": 0,
     "skipped": {
-      "winner_null": 16
+      "winner_null": 3
     }
-  }
+  },
+  "needs_review": 3,
+  "commit": null,
+  "remaining": "Real-name fights only; densify more PvP when readable.",
+  "notes": "P5 densify thin stubs 2→3; agent bc-d397b7d6-a030-5835-ad46-806dd6f5000f; g3000 nameplates unreadable in dense frames"
 }
