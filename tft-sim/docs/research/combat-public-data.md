@@ -156,6 +156,17 @@ Hệ quả: với Set 18, engine chỉ mô hình hóa được một phần nh�
 
 `tft-sim/src/tft_sim/item_alias.py`: với craftable `DA_*` rỗng có item cùng tên `TFT_Item_*` có hiệu ứng, copy hiệu ứng và đăng ký hook của twin cho `DA_*`. Có 37 alias. Đã kiểm: đơn vị với DA và với twin cho chỉ số giống hệt, cả khi có và không có bonus chung. Giả định: hiệu ứng của twin là hiệu ứng Set 18 thật. Chưa chạy đo độ lệch trận; `coverage()` chưa báo số alias.
 
+### 8c. Đo tác động của alias lên cặp sim Set 18 (2026-11-25)
+
+Mẫu: 1000 cặp cùng vòng lấy ngẫu nhiên từ 6839 cặp của 10 lobby (seed 288100–288109), ability `generic`, 20 seed mỗi cặp. Cặp sim do env sinh ra; các bàn này có `DA_*` trong trang bị (9072 bản ghi unit có item `DA_*`), nên alias có tác dụng.
+
+- Alias bật so với tắt: 84,6% cặp quyết định (846/1000) có kết quả đảo chiều. Tỷ lệ đảo chiều trên cặp quyết định: 10,1% [6,7; 13,9] (bootstrap theo lobby, 10 lobby).
+- Chênh lệch trung bình |p_on − p_off| trên mọi cặp: 0,117.
+
+Đọc kết quả: alias thay đổi kết quả sim đáng kể trên Set 18. Đây là khác biệt giữa hai cách mô phỏng cùng một engine, không phải độ đúng so với thật. Mẫu chỉ 10 lobby và chưa có nhãn thật, nên chưa biết hướng nào đúng.
+
+Script: `scripts/combat/alias18.py` (thu thập và chấm điểm), `scripts/combat/alias18_report.py` (báo cáo). Kết quả: `results/fixed/combat/alias18_report.json`.
+
 Ghi chú về mục 7: `hand_noitems` bỏ cả hiệu ứng riêng và bonus chung của item, nên so sánh "có item / không item" là so sánh gộp hai lớp.
 
 ## 9. Template từ mô tả + biến (Set 17), đo trên 2000 cặp cùng vòng từ cả 100 lobby

@@ -1,0 +1,12 @@
+{
+ "label": "sim (engine Set 18, alias on/off; khong phai tran that)",
+ "n_pairs": 1000,
+ "n_lobbies": 10,
+ "decisive_n": 846,
+ "flip_rate_decisive": 0.1005,
+ "flip_ci95": [
+  0.0669,
+  0.1392
+ ],
+ "mean_abs_dp_all": 0.1166
+}
