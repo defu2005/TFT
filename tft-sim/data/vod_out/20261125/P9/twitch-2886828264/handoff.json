@@ -12,30 +12,35 @@
     [
       2100,
       3600
+    ],
+    [
+      3800,
+      5300
     ]
   ],
   "remaining_ranges_s": [
     [
-      3600,
+      5400,
       16144
     ]
   ],
   "game_ids": [
     "twitch-2886828264-g120",
-    "twitch-2886828264-g2100"
+    "twitch-2886828264-g2100",
+    "twitch-2886828264-g3800"
   ],
   "counts": {
-    "games": 2,
-    "fights": 15,
+    "games": 3,
+    "fights": 23,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 15
+      "winner_null": 23
     }
   },
   "needs_review": 9,
   "commit": "7fbe286",
-  "remaining": "continue ranked games after 3600s; refine fight boards"
+  "remaining": "continue ranked from ~5400s (game4+); refine boards"
 }

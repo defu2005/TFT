@@ -8,11 +8,27 @@
     [
       120,
       700
+    ],
+    [
+      1500,
+      1600
+    ],
+    [
+      2200,
+      2300
     ]
   ],
   "remaining_ranges_s": [
     [
       700,
+      1500
+    ],
+    [
+      1600,
+      2200
+    ],
+    [
+      2300,
       23928
     ]
   ],
@@ -31,6 +47,6 @@
     }
   },
   "needs_review": 3,
-  "commit": "55f40ce",
-  "remaining": "game1 twitch-2895864677-g120 partial: fights 2-1/2-2/2-5/4-2 early push; tiếp tục PvP còn lại tới ~2340s rồi game2+. Chỉ ranked Set 18. HLS seek, không full DL."
+  "commit": "66d0192",
+  "remaining": "g120: giữ fights confirmed (2-1,2-5,4-5,5-3) sau hi_labels; bỏ 2-2/4-2 sai stage/opp. Board units [] (sprites thấp tin cậy). Tiếp PvP còn lại + denser board label."
 }
