@@ -27,7 +27,7 @@
     ],
     [
       11880,
-      12840
+      13200
     ],
     [
       14520,
@@ -66,11 +66,11 @@
   ],
   "counts": {
     "games": 11,
-    "fights": 187,
-    "others": 187
+    "fights": 192,
+    "others": 192
   },
   "validator": {
-    "ok": 165,
+    "ok": 170,
     "skipped": {
       "winner_null": 22
     }
