@@ -152,3 +152,14 @@ Hệ quả: không dùng số liệu blitz.gg cho template Set 18 trừ khi có 
 Chặn thật sự của Set 18 vẫn là: 0/594 augment có hook, logic ability viết tay chưa có, chưa có bản ghi trận thật có kết quả, và chưa xác nhận vị trí tướng trên dữ liệu thật.
 
 Việc cần người dùng quyết: (a) xác nhận giấy phép CDragon (nguồn mô tả và biến đang dùng); (b) nếu muốn số liệu Set 18, cần nguồn có giấy phép rõ ràng, hoặc chấp nhận rủi ro điều khoản blitz.gg cho mục đích nghiên cứu nội bộ.
+
+### 10b. Cập nhật (2026-11-25): đã thu thập để kiểm tra, chưa commit số liệu
+
+Đính chính mục 10 ở trên: sau khi người dùng chấp nhận rủi ro điều khoản, đã crawl lại 74 trang blitz.gg Set 18 (patch 18.7) và lưu văn bản thô trong scratchpad, không vào repo. Kết quả kiểm tra:
+
+- Parse được 74/74 trang; chỉ số cơ bản và khối ability có mặt ở 72/74 (2 trang không có chỉ số).
+- Ghép với CDragon 18.7 theo tên: 71 khớp duy nhất. 3 tên trùng nhiều bản (Elder Dragon, Krug, Murkwolf) và 10 trang Lux (các dạng Lux) chưa ghép được: 10 trang Lux đều rơi vào bản Lux duy nhất của CDragon.
+- Đối chiếu chỉ số: HP, giáp, MR, AD, AS khớp ở phần lớn tướng. Lệch: tầm đánh Ashe, Draven, Lux (Blitz 5, CDragon 6; quy ước đo tầm có thể khác), AS Master Yi AP (0,85 so với 0,80).
+- Ghép nhãn: số bộ ba `a/b/c` của Blitz và placeholder `@...@` của CDragon không cùng số lượng ở đa số tướng (3/78 trùng). Chưa có cách ghép nhãn tin cậy theo thứ tự.
+
+Kết luận: chưa commit số liệu Blitz vào repo. Lý do: chưa ghép nhãn sát thương được, và tầm đánh/AS cần quy ước riêng. Nếu sau này cần dùng, ghép theo nhãn cần làm bằng tay từng tướng, và lưu ý điều khoản: giấy phép chỉ cho sử dụng cá nhân phi thương mại; robots.txt chặn ClaudeBot/GPTBot, nên không đưa dữ liệu này vào huấn luyện mô hình khi chưa có quyết định khác của người dùng.
