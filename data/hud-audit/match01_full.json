@@ -547,10 +547,11 @@
    },
    "board_units": {
     "value": [
+     "Veigar",
      "Veigar"
     ],
     "tag": "derived",
-    "basis": "399.9 s planning sidebar: Blackthorn 1, Spellweaver 1, Sprykin 1, no hidden marker (k=0), same panel as 1-2 and 1-3. solve_panels: N=1 unique (Veigar); no other N at k=0."
+    "basis": "399.9 s planning sidebar: Blackthorn 1, Spellweaver 1, Sprykin 1, no hidden marker (k=0), same panel as 1-2 and 1-3; N=1 unique (Veigar). Two Veigar sprites on the grid with the counter reading 2 (cap hidden)."
    },
    "bench_units": {
     "value": 5,
@@ -680,10 +681,11 @@
    },
    "hexes": {
     "value": [
-     "two sprites: lower-right of the grid (view-relative), one at the lower-right corner and one just left of it"
+     "sprite A: lower-right of the grid (view-relative)",
+     "sprite B: beside sprite A, lower-right (view-relative)"
     ],
     "tag": "read",
-    "basis": "399.9 s planning frame, 3x crop: two identical purple sprites with green bars at the lower right; the counter reads 2 with the cap hidden, so two copies of Veigar. Panel lists one unique champion. Positions view-relative, not on a calibrated grid."
+    "basis": "399.9 s planning frame, 3x crop: two identical purple sprites with green bars at the lower right; counter reads 2 with the cap hidden. Positions view-relative, not on a calibrated grid."
    },
    "frame_A_read": {
     "frame_s": 399.9,
@@ -814,7 +816,7 @@
      "P6",
      "P8"
     ],
-    "attempt": "508 s full frame: creep combat on the purple arena (timer 13), with a top-strip plate at level 4 under the round bar. Level 4 does not separate the pool. HP-flag pool kept: P3, P4, P6, P8",
+    "attempt": "508 s full frame: combat on the purple arena (timer 13), with a top-strip tactician plate at level 4. Level 4 does not separate the pool. HP-flag pool kept: P3, P4, P6, P8",
     "reason": "no name legible and level does not give a unique pool member"
    },
    "combat_frame_t_s": null,
@@ -844,10 +846,10 @@
    "combat": {
     "value": {
      "frame_t_s": 505,
-     "read": "PvE monsters at 505 s (home view, earlier read); HP flags show P1 and P2 lost HP, so the round is PvP"
+     "read": "PvP at 505 s (HUD); a top-strip tactician plate at level 4 is visible at 508 s; HP flags show P1 and P2 lost HP"
     },
     "tag": "read",
-    "note": "restored; conflict with round_type recorded"
+    "note": "restored; the earlier PvE monsters read conflicts with the 508 s tactician plate; recorded conflict"
    },
    "actions": {
     "value": {
@@ -6999,7 +7001,11 @@
      "timer": 21,
      "level": 9,
      "xp": "6/68",
-     "gold": 7,
+     "gold": {
+      "value": 9,
+      "tag": "read",
+      "basis": "2094 s frame (blind pick time) shows 9; previous read 7 kept as prev_read"
+     },
      "streak": 2,
      "counter": "9/9",
      "panel": {
@@ -7020,10 +7026,7 @@
       "Kha'Zix",
       null
      ],
-     "gold_conflict": {
-      "note": "2094 s frame (blind pick time) shows 9 gold; master planning gold reads 7. Value kept until the source frame is re-checked.",
-      "frame_s": 2094
-     }
+     "gold_prev_read": 7
     }
    },
    "combat": {
@@ -9398,7 +9401,7 @@
   "source": "round_results_derived.json eliminations; 1 and 2 from 6-6 frames"
  },
  "blind_reread": {
-  "summary": "Blind re-read of 10 sampled rounds (blind_pick seed 7): gold 4/10 (0.40) and streak 9/10 (0.90) from script OCR on fixed crops, script did not open the master; gold misses look like neighbouring digits leaking into the crop (4-1, 5-5, 6-2). Panel, shop, counter, level and XP were NOT re-read blind (already seen in this session), so no rate is claimed for them. See data/hud-audit/blind_reread_rates.json and blind_ocr.py."
+  "summary": "Blind re-read of 10 sampled rounds (digit OCR on fixed crops, script never opened the master): gold 10/10 with the coin-free crop (610-640); 4/10 with the original crop, whose misses are the coin glyph and neighbouring digits leaking in. Streak 9/10: the one miss (6-2) is an empty OCR read; the frame shows 1, matching the master. Panel, shop, counter, level and XP were not re-read blind. See data/hud-audit/blind_reread_rates.json."
  },
  "final_comps": {
   "P1_6-6": {
@@ -9825,7 +9828,7 @@
   },
   "frame_s": "t = 362 + (index - 1) * 2",
   "note": "run index i maps to t = 362 + (i-1)*2; checked on the 3-1 window (index 264 = 888 s)",
-  "owner_check": "sw264 (3-1 scouting run, 888 s) full frame: the scouted board carries no owner nameplate, and no rail row is marked as viewed; owners stay unresolved for all runs."
+  "owner_check": "Rail pointer test on 4-3 (1574.7 s) and 3-3 (1093.2 s): status icons sit on several rows in the same frame, so there is no single viewed-row mark. Test inconclusive; scouting owners stay unresolved."
  },
  "scouted_panels": [
   {

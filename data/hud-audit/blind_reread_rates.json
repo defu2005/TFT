@@ -42,5 +42,36 @@
    "5-6": "OCR 26 leak from streak box (master 6 confirmed)",
    "5-5": "master 7 conflicts with frame 9 (OCR 9 correct); master flagged gold_conflict"
   }
+ },
+ "gold_coin_free_crop": {
+  "crop": [
+   610,
+   586,
+   640,
+   610
+  ],
+  "matched": 10,
+  "of": 10,
+  "rate": 1.0,
+  "note": "Run once after the coin-free fix. The 5-5 master gold was corrected to 9 from the 2094 s frame before this run, so that match is partly confirmed by the frame, not blind alone."
+ },
+ "gold_original_crop": {
+  "crop": [
+   604,
+   586,
+   636,
+   610
+  ],
+  "matched": 4,
+  "of": 10,
+  "rate": 0.4
+ },
+ "streak": {
+  "matched": 9,
+  "of": 10,
+  "rate": 0.9,
+  "miss": {
+   "6-2": "OCR returned empty; frame at 2342 s shows 1, master 1 confirmed"
+  }
  }
 }
