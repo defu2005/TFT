@@ -142,5 +142,19 @@
    ],
    "status": "3-in 2-out with counter 7 to 8: still suspect"
   }
+ },
+ "resolved_4-3": {
+  "solution": [
+   "Alistar",
+   "Draven",
+   "Ezreal",
+   "Gnar",
+   "Hecarim",
+   "Krug",
+   "Maokai",
+   "Sett"
+  ],
+  "rule": "unique solution, N=8, one unlisted trait; overlaps 4-2 on five units",
+  "status": "accepted as nearest candidate; the 2-out 3-in change still needs a shop or sell check"
  }
 }
