@@ -3,7 +3,7 @@
   "vod_id": "twitch-2896531401",
   "slot": "P10",
   "role": "primary",
-  "status": "pending",
+  "status": "done",
   "covered_ranges_s": [
     [
       300,
@@ -11,103 +11,70 @@
     ],
     [
       2300,
-      3600
+      4200
     ],
     [
       4500,
       5400
+    ],
+    [
+      5450,
+      6800
+    ],
+    [
+      6900,
+      9200
+    ],
+    [
+      9400,
+      11500
+    ],
+    [
+      11600,
+      15500
     ]
   ],
-  "remaining_ranges_s": [
+  "remaining_ranges_s": [],
+  "skipped_ranges_s": [
     [
       1800,
       2300
     ],
     [
-      3600,
+      4200,
       4500
     ],
     [
-      5400,
-      null
+      6800,
+      6900
+    ],
+    [
+      9200,
+      9400
+    ],
+    [
+      11500,
+      11600
+    ],
+    [
+      15500,
+      16050
     ]
   ],
+  "skip_notes": "queue/black gaps; YT tyler1 ~16000",
   "game_ids": [
     "twitch-2896531401-g300",
     "twitch-2896531401-g2300",
-    "twitch-2896531401-g4700"
+    "twitch-2896531401-g4700",
+    "twitch-2896531401-g5600",
+    "twitch-2896531401-g7000",
+    "twitch-2896531401-g10000",
+    "twitch-2896531401-g12000"
   ],
   "counts": {
-    "games": 3,
-    "fights": 21,
+    "games": 7,
+    "fights": 49,
     "others": 0
   },
-  "validator": {
-    "ok": 9,
-    "skipped": {
-      "winner_null": 12
-    },
-    "rows": [
-      {
-        "line": 1,
-        "source": "twitch-2896531401-g300:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 3,
-        "source": "twitch-2896531401-g300:2-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 4,
-        "source": "twitch-2896531401-g300:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 6,
-        "source": "twitch-2896531401-g300:3-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 8,
-        "source": "twitch-2896531401-g300:4-2",
-        "reason": "winner_null"
-      },
-      {
-        "line": 9,
-        "source": "twitch-2896531401-g300:5-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 10,
-        "source": "twitch-2896531401-g2300:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 12,
-        "source": "twitch-2896531401-g2300:2-3",
-        "reason": "winner_null"
-      },
-      {
-        "line": 14,
-        "source": "twitch-2896531401-g2300:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 16,
-        "source": "twitch-2896531401-g4700:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 19,
-        "source": "twitch-2896531401-g4700:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 21,
-        "source": "twitch-2896531401-g4700:3-5",
-        "reason": "winner_null"
-      }
-    ]
-  }
+  "remaining": "none"
 }

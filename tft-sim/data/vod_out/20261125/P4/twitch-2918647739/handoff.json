@@ -3,21 +3,67 @@
   "vod_id": "twitch-2918647739",
   "slot": "P4",
   "role": "primary",
-  "status": "blocked",
-  "covered_ranges_s": [],
-  "remaining_ranges_s": [],
-  "game_ids": [],
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      60,
+      2100
+    ],
+    [
+      3200,
+      5450
+    ],
+    [
+      5500,
+      7450
+    ],
+    [
+      7900,
+      10100
+    ],
+    [
+      10800,
+      13050
+    ],
+    [
+      13100,
+      14390
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      2100,
+      3200
+    ],
+    [
+      7450,
+      7900
+    ],
+    [
+      10100,
+      10800
+    ]
+  ],
+  "game_ids": [
+    "twitch-2918647739-g120",
+    "twitch-2918647739-g3400",
+    "twitch-2918647739-g5600",
+    "twitch-2918647739-g8200",
+    "twitch-2918647739-g11200",
+    "twitch-2918647739-g13600"
+  ],
   "counts": {
-    "games": 0,
-    "fights": 0,
+    "games": 6,
+    "fights": 72,
     "others": 0
   },
   "validator": {
     "ok": 0,
-    "skipped": 0
+    "skipped": {
+      "winner_null": 72
+    }
   },
-  "needs_review": 0,
+  "needs_review": 72,
   "commit": null,
-  "remaining": "BLOCKED: tourney overlay #TFTESPORTSAMER REGIONAL FINALS at t120 (and likely whole VOD). Not RANKED ladder. Skip entire VOD.",
-  "block_reason": "tourney/esports regional finals overlay"
+  "remaining": "REOPENED ranked Set18. Stubbed 6 games; boundaries/OCR refreshed from full lobby map. Densify-full next."
 }

@@ -7,12 +7,12 @@
   "covered_ranges_s": [
     [
       350,
-      2900
+      4150
     ]
   ],
   "remaining_ranges_s": [
     [
-      2900,
+      4150,
       32500
     ]
   ],
@@ -22,16 +22,16 @@
   ],
   "counts": {
     "games": 2,
-    "fights": 5,
+    "fights": 24,
     "others": 0
   },
   "validator": {
-    "ok": 0,
+    "ok": 15,
     "skipped": {
-      "winner_null": 5
+      "winner_null": 9
     }
   },
-  "needs_review": 5,
-  "commit": "17fe8df",
-  "remaining": "P8-primary owns VOD. Densified g2 loading+early. Continue from ~2900s."
+  "needs_review": 9,
+  "commit": "2b9b12a",
+  "remaining": "densify-full g350 12f + g2500 12f (24 total). Continue game3 after lobby @4150. P8-primary owns VOD."
 }

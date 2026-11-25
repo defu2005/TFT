@@ -1,0 +1,22 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2936356991",
+  "slot": "P8",
+  "role": "primary",
+  "status": "blocked",
+  "covered_ranges_s": [],
+  "remaining_ranges_s": [],
+  "game_ids": [],
+  "counts": {
+    "games": 0,
+    "fights": 0,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {}
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "blocked: PBE Remix Rumble (pbeuser42069), set\u226018. Skip. Toast empty unchanged."
+}
