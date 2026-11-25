@@ -9,7 +9,8 @@ Hai cong tac doc lap (khong gop):
            "generic" = moi tuong dung default_ability (nuke don muc tieu)
            "none"    = khong ability
   items:   True/False = co hieu ung trang bi hay khong
-Vi tri (tuy chon): ghi de unit.pos sau khi engine dat doi hinh.
+Vi tri (tuy chon): [row, col] TUYET DOI tren luoi 8 hang x 7 cot (engine GRID_ROWS=8, GRID_COLS=7).
+  Khong xoay cho doi B. Moi ben: hoac tat ca unit co vi tri, hoac khong unit nao. Khong trung o, nam trong luoi.
 Augment: luon truyen cho engine (run_combat nhan augment).
 Set 18: chi cho ability "generic" hoac "none" (tranh am tham dung default_ability cho tuong co logic that).
 """
@@ -102,6 +103,16 @@ def check_record(record: dict) -> None:
                 raise ValueError(f"{k}: unit thieu truong")
     if record.get("result", {}).get("winner") not in (0, 1, None):
         raise ValueError("result.winner")
+    for k in ("a", "b"):
+        ps = [u.get("pos") for u in record[k]["units"]]
+        known = [p for p in ps if p is not None]
+        if known and len(known) != len(ps):
+            raise ValueError(f"{k}: vi tri phai co du hoac khong co (thieu {len(ps) - len(known)})")
+        for p in known:
+            if not (0 <= p[0] < 8 and 0 <= p[1] < 7):
+                raise ValueError(f"{k}: vi tri {p} ngoai luoi 8x7")
+        if len({tuple(p) for p in known}) != len(known):
+            raise ValueError(f"{k}: trung o")
 
 
 def load_jsonl(path) -> list[dict]:

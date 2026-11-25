@@ -71,7 +71,7 @@ cd tft-sim && python scripts/collect_v4.py 900000 900002 /tmp/smoke.npz
 | **270000–270999** | **giải đấu lobby hỗn hợp v1 (2026-11-25, đã chạy, bị thay thế: policy trùng ghế, hoán vị không độc lập)** | **đã dùng** |
 | **280000–283999** | **giải đấu v2 (model-plan 10.9): 8 policy cố định mỗi lobby, 4000 lobby, đánh giá** | **đã dùng (2026-11-25)** |
 | **284000–287999** | **giải đấu drop (model-plan 10.10): mô hình group-dropout, 4000 lobby, pool drop** | **đã dùng (2026-11-25; model-plan 10.10)** |
-| **288000–288099** | **lấy cặp bàn cho nghiên cứu combat (đo A/B, 2026-11-25; `scripts/combat/`); 100 lobby v4, không phải đánh giá chính sách** | **dành riêng, chưa dùng** |
+| **288000–288099** | **lấy cặp bàn cho nghiên cứu combat (đo A/B, 2026-11-25; `scripts/combat/`); 100 lobby v4, không phải đánh giá chính sách** | **đã dùng (2026-11-25; docs/research/combat-public-data.md)** |
 
 Không chồng dải. Không dùng 230000–230999 hay 240000+ để huấn luyện.
 
