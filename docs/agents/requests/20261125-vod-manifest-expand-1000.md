@@ -13,3 +13,9 @@ Ngày: 2026-11-25. Người viết: điều phối mở rộng manifest (không 
 
 - Không đụng `vod_out/`, không claim slot collection.
 - Không thêm URL `REPLACE` / bịa.
+
+
+## Batch 2 — parallel P7–P10
+
+- P7 traviscwat, P8 disguisedtoast, P9 kurumx, P10 spencer_tft
+- Thêm ~21 VOD; tổng primary hours ~681h
