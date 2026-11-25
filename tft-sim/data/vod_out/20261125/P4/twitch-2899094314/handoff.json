@@ -75,7 +75,7 @@
       "winner_null": 117
     }
   },
-  "needs_review": 111,
+  "needs_review": 106,
   "commit": null,
-  "remaining": "g0 densify: 7 scoring fights with winners; B still empty (no invent). Continuing late stages."
+  "remaining": "g0 densify: 12 scoring fights (winners from round-tracker); B still empty (OCR not sure — no invent). Non-PvP stages noted."
 }

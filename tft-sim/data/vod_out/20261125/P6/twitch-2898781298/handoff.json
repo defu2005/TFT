@@ -7,30 +7,31 @@
   "covered_ranges_s": [
     [
       0,
-      1750
+      3750
     ]
   ],
   "remaining_ranges_s": [
     [
-      1750,
+      3750,
       24420
     ]
   ],
   "game_ids": [
-    "twitch-2898781298-g60"
+    "twitch-2898781298-g60",
+    "twitch-2898781298-g2100"
   ],
   "counts": {
-    "games": 1,
-    "fights": 6,
-    "others": 6
+    "games": 2,
+    "fights": 20,
+    "others": 20
   },
   "validator": {
-    "ok": 4,
+    "ok": 16,
     "skipped": {
-      "winner_null": 2
+      "winner_null": 4
     }
   },
-  "needs_review": 2,
+  "needs_review": 4,
   "commit": null,
-  "remaining": "kiyoon ranked densify g60 done (6 fights both=2 win=4 ok=4); tiếp g2 ~1800s+"
+  "remaining": "g60+g2100 densify: fights=20 g2=13 both=6 win=16 ok=16; tiếp g3 ~4000s+ + kiyoon VODs khác"
 }
