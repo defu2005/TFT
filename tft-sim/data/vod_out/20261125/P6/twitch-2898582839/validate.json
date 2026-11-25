@@ -1,7 +1,7 @@
 {
  "ok": 0,
  "skipped": {
-  "winner_null": 42
+  "winner_null": 62
  },
  "rows": [
   {
@@ -212,6 +212,106 @@
   {
    "line": 42,
    "source": "twitch-2898582839-g15260:6-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 43,
+   "source": "twitch-2898582839-g17350:1-4",
+   "reason": "winner_null"
+  },
+  {
+   "line": 44,
+   "source": "twitch-2898582839-g17350:2-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 45,
+   "source": "twitch-2898582839-g17350:2-5",
+   "reason": "winner_null"
+  },
+  {
+   "line": 46,
+   "source": "twitch-2898582839-g17350:3-3",
+   "reason": "winner_null"
+  },
+  {
+   "line": 47,
+   "source": "twitch-2898582839-g17350:4-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 48,
+   "source": "twitch-2898582839-g17350:5-3",
+   "reason": "winner_null"
+  },
+  {
+   "line": 49,
+   "source": "twitch-2898582839-g17350:5-6",
+   "reason": "winner_null"
+  },
+  {
+   "line": 50,
+   "source": "twitch-2898582839-g19500:2-3",
+   "reason": "winner_null"
+  },
+  {
+   "line": 51,
+   "source": "twitch-2898582839-g19500:3-6",
+   "reason": "winner_null"
+  },
+  {
+   "line": 52,
+   "source": "twitch-2898582839-g19500:5-2",
+   "reason": "winner_null"
+  },
+  {
+   "line": 53,
+   "source": "twitch-2898582839-g19500:5-6",
+   "reason": "winner_null"
+  },
+  {
+   "line": 54,
+   "source": "twitch-2898582839-g19500:6-2",
+   "reason": "winner_null"
+  },
+  {
+   "line": 55,
+   "source": "twitch-2898582839-g21900:2-2",
+   "reason": "winner_null"
+  },
+  {
+   "line": 56,
+   "source": "twitch-2898582839-g21900:2-5",
+   "reason": "winner_null"
+  },
+  {
+   "line": 57,
+   "source": "twitch-2898582839-g21900:3-1",
+   "reason": "winner_null"
+  },
+  {
+   "line": 58,
+   "source": "twitch-2898582839-g21900:3-7",
+   "reason": "winner_null"
+  },
+  {
+   "line": 59,
+   "source": "twitch-2898582839-g21900:4-5",
+   "reason": "winner_null"
+  },
+  {
+   "line": 60,
+   "source": "twitch-2898582839-g21900:5-3",
+   "reason": "winner_null"
+  },
+  {
+   "line": 61,
+   "source": "twitch-2898582839-g21900:5-5",
+   "reason": "winner_null"
+  },
+  {
+   "line": 62,
+   "source": "twitch-2898582839-g21900:6-2",
    "reason": "winner_null"
   }
  ]

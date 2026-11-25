@@ -3,7 +3,7 @@
   "vod_id": "twitch-2913099253",
   "slot": "P1",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       980,
@@ -40,6 +40,14 @@
     [
       18400,
       20650
+    ],
+    [
+      21000,
+      23650
+    ],
+    [
+      23800,
+      25700
     ]
   ],
   "remaining_ranges_s": [
@@ -81,7 +89,11 @@
     ],
     [
       20650,
-      25942
+      21000
+    ],
+    [
+      23650,
+      23800
     ]
   ],
   "game_ids": [
@@ -93,21 +105,23 @@
     "twitch-2913099253-g11400",
     "twitch-2913099253-g13600",
     "twitch-2913099253-g16000",
-    "twitch-2913099253-g18400"
+    "twitch-2913099253-g18400",
+    "twitch-2913099253-g21000",
+    "twitch-2913099253-g23800"
   ],
   "counts": {
-    "games": 9,
-    "fights": 43,
-    "others": 43
+    "games": 11,
+    "fights": 51,
+    "others": 51
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 43
+      "winner_null": 51
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "9 ranked. Tiếp sau 20650s.",
-  "notes": "Ranked Set18. winner_null OK."
+  "remaining": "0 — 11 ranked done. Gaps = inter-game only. Tail 25700–25942 no new ranked (card/webcam @923LP).",
+  "notes": "Ranked Set18 primary. winner_null OK. VOD end surveyed."
 }

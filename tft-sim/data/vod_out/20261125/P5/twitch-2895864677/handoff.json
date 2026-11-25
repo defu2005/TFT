@@ -11,7 +11,7 @@
     ],
     [
       2410,
-      3600
+      4080
     ]
   ],
   "remaining_ranges_s": [
@@ -20,7 +20,7 @@
       2410
     ],
     [
-      3600,
+      4080,
       23928
     ]
   ],
@@ -30,16 +30,16 @@
   ],
   "counts": {
     "games": 2,
-    "fights": 20,
-    "others": 20
+    "fights": 24,
+    "others": 24
   },
   "validator": {
-    "ok": 18,
+    "ok": 21,
     "skipped": {
-      "winner_null": 2
+      "winner_null": 3
     }
   },
-  "needs_review": 2,
-  "commit": "47c1f5e",
-  "remaining": "g2410 early push (2 fights winner_null). Tiếp denser PvP game2 rồi end; sau đó VOD souless khác (manifest 23 primary)."
+  "needs_review": 3,
+  "commit": "0c1639b",
+  "remaining": "g2410: 6 PvP from labels (2-1/2-2/2-3/2-6/4-2/5-3). Tiếp end g2410 + game3~4440+. Ranked Set18. Không invent names."
 }

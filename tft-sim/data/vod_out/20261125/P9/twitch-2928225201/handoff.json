@@ -1,0 +1,114 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2928225201",
+  "slot": "P9",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      400,
+      2200
+    ],
+    [
+      2800,
+      4200
+    ],
+    [
+      4500,
+      7000
+    ],
+    [
+      7000,
+      8800
+    ],
+    [
+      9000,
+      12000
+    ],
+    [
+      14000,
+      17500
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      2200,
+      2800
+    ],
+    [
+      4200,
+      4500
+    ],
+    [
+      8800,
+      9000
+    ],
+    [
+      12000,
+      14000
+    ],
+    [
+      17500,
+      18841
+    ]
+  ],
+  "game_ids": [
+    "twitch-2928225201-g400",
+    "twitch-2928225201-g4500",
+    "twitch-2928225201-g9000",
+    "twitch-2928225201-g7000",
+    "twitch-2928225201-g14000",
+    "twitch-2928225201-g2800"
+  ],
+  "counts": {
+    "games": 6,
+    "fights": 7,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 7
+    },
+    "rows": [
+      {
+        "line": 1,
+        "source": "twitch-2928225201-g400:2-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 2,
+        "source": "twitch-2928225201-g4500:2-4",
+        "reason": "winner_null"
+      },
+      {
+        "line": 3,
+        "source": "twitch-2928225201-g9000:2-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 4,
+        "source": "twitch-2928225201-g7000:2-6",
+        "reason": "winner_null"
+      },
+      {
+        "line": 5,
+        "source": "twitch-2928225201-g14000:3-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 6,
+        "source": "twitch-2928225201-g2800:3-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 7,
+        "source": "twitch-2928225201-g14000:5-2",
+        "reason": "winner_null"
+      }
+    ]
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "6 ranked; skip Worlds sheet @12000; densify late end"
+}

@@ -2,7 +2,7 @@
   "schema": "vod-manifest-v1",
   "batch": "2026-11-25-set18-vod",
   "dispatcher": "claude (phiên điều phối mở rộng manifest 1000)",
-  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs.",
+  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash).",
   "slots": {
     "P1": {
       "role": "primary",
@@ -39,8 +39,12 @@
     "P4": {
       "role": "primary",
       "streamers": [
-        "wasianiverson"
-      ]
+        "wasianiverson",
+        "voltariux",
+        "shurkou",
+        "aphromoo"
+      ],
+      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue)."
     },
     "P5": {
       "role": "primary",
@@ -4713,6 +4717,336 @@
         "twitch-gql:2026-11-25"
       ],
       "notes": "927 start | LOCKING IN FOR !BASH ON WEDNESDAY"
+    },
+    {
+      "vod_id": "twitch-2889146353",
+      "url": "https://www.twitch.tv/videos/2889146353",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17390
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-secondary-throughput",
+        "probe:challenger-ranked-set18"
+      ]
+    },
+    {
+      "vod_id": "twitch-2893684298",
+      "url": "https://www.twitch.tv/videos/2893684298",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          15630
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-secondary-throughput",
+        "probe:set18-ranked; title mentions future bash draft only"
+      ]
+    },
+    {
+      "vod_id": "twitch-2898655231",
+      "url": "https://www.twitch.tv/videos/2898655231",
+      "streamer": "voltariux",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          13820
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-secondary-throughput",
+        "probe:tft-ranked-queue-challenger-euw"
+      ]
+    },
+    {
+      "vod_id": "twitch-2897713837",
+      "url": "https://www.twitch.tv/videos/2897713837",
+      "streamer": "voltariux",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18622
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-secondary-throughput",
+        "probe:tft-ranked-queue-challenger-euw"
+      ]
+    },
+    {
+      "vod_id": "twitch-2896770067",
+      "url": "https://www.twitch.tv/videos/2896770067",
+      "streamer": "voltariux",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17579
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-secondary-throughput",
+        "probe:tft-ranked-queue-challenger-euw"
+      ]
+    },
+    {
+      "vod_id": "twitch-2895831727",
+      "url": "https://www.twitch.tv/videos/2895831727",
+      "streamer": "voltariux",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          15160
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-secondary-throughput",
+        "probe:tft-ranked-queue-challenger-euw"
+      ]
+    },
+    {
+      "vod_id": "twitch-2894978894",
+      "url": "https://www.twitch.tv/videos/2894978894",
+      "streamer": "voltariux",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19790
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-secondary-throughput",
+        "probe:tft-ranked-queue-challenger-euw"
+      ]
+    },
+    {
+      "vod_id": "twitch-2894095067",
+      "url": "https://www.twitch.tv/videos/2894095067",
+      "streamer": "voltariux",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          13734
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-secondary-throughput",
+        "probe:tft-ranked-queue-challenger-euw"
+      ]
+    },
+    {
+      "vod_id": "twitch-2912058201",
+      "url": "https://www.twitch.tv/videos/2912058201",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          16959
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-secondary-throughput",
+        "note:title RANKED + set18 traits"
+      ]
+    },
+    {
+      "vod_id": "twitch-2913233558",
+      "url": "https://www.twitch.tv/videos/2913233558",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          11522
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-secondary-throughput",
+        "note:set18 traits likely"
+      ]
+    },
+    {
+      "vod_id": "twitch-2906682580",
+      "url": "https://www.twitch.tv/videos/2906682580",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          16607
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-secondary-throughput",
+        "note:ALLO ladder"
+      ]
+    },
+    {
+      "vod_id": "twitch-2904944503",
+      "url": "https://www.twitch.tv/videos/2904944503",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          11817
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-secondary-throughput",
+        "note:ALLO ladder"
+      ]
+    },
+    {
+      "vod_id": "twitch-2901296126",
+      "url": "https://www.twitch.tv/videos/2901296126",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          12681
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-secondary-throughput",
+        "note:emerald lion"
+      ]
+    },
+    {
+      "vod_id": "twitch-2906015480",
+      "url": "https://www.twitch.tv/videos/2906015480",
+      "streamer": "aphromoo",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          22780
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-secondary-throughput",
+        "probe:tft-ranked-match-accepted"
+      ]
+    },
+    {
+      "vod_id": "twitch-2905099872",
+      "url": "https://www.twitch.tv/videos/2905099872",
+      "streamer": "aphromoo",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          14510
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-secondary-throughput",
+        "probe:tft-ranked-match-accepted"
+      ]
     }
   ]
 }

@@ -3,19 +3,14 @@
   "vod_id": "twitch-2898582839",
   "slot": "P6",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       0,
-      16720
-    ]
-  ],
-  "remaining_ranges_s": [
-    [
-      16720,
       23973
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2898582839-g60",
     "twitch-2898582839-g2000",
@@ -24,20 +19,23 @@
     "twitch-2898582839-g8300",
     "twitch-2898582839-g10650",
     "twitch-2898582839-g12850",
-    "twitch-2898582839-g15260"
+    "twitch-2898582839-g15260",
+    "twitch-2898582839-g17350",
+    "twitch-2898582839-g19500",
+    "twitch-2898582839-g21900"
   ],
   "counts": {
-    "games": 8,
-    "fights": 42,
-    "others": 42
+    "games": 11,
+    "fights": 62,
+    "others": 62
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 42
+      "winner_null": 62
     }
   },
-  "needs_review": 42,
-  "commit": "d4ba574",
-  "remaining": "tiếp ranked từ ~16720s (GeoGuessr rồi ván 9+; VOD còn ~7k s)"
+  "needs_review": 62,
+  "commit": "7204f4a98e2dda6b9fe0b99e03777bbb00f6c745",
+  "remaining": "VOD hết. 11 ranked Set18 (g60..g21900). Postgame ~23890–23973; không còn ranked."
 }
