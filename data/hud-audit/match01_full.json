@@ -1458,33 +1458,15 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     [
-      "Alistar",
-      "Kobuko",
-      "LeBlanc",
-      "Mama Beak",
-      "Xayah"
-     ],
-     [
-      "Gnar",
-      "LeBlanc",
-      "Mama Beak",
-      "Rek'Sai",
-      "Xayah"
-     ],
-     [
-      "Gnar",
-      "LeBlanc",
-      "Mama Beak",
-      "Sett",
-      "Xayah"
-     ]
+    "value": [
+     "Alistar",
+     "Kobuko",
+     "LeBlanc",
+     "Mama Beak",
+     "Xayah"
     ],
-    "attempt": "the master 2-5 panel solves to one board at N=5, k=0, but the 2-7 frame shows the same panel, so that board is not trusted; candidate sets listed from the solver",
-    "reason": "panel-to-round mapping is in doubt"
+    "tag": "derived",
+    "basis": "solver on the 2-5 planning panel (N=5, k=0): unique; independent pilot read at 718.7 s has the same panel and counter 5/5"
    },
    "bench_units": {
     "value": null,
@@ -1617,12 +1599,6 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
-   },
-   "panel_visual_check": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "frame at t_planning(2-7)+3 (838 s, banner 2-7) shows the same trait panel as the master 2-5 read (Elderwood 3, Rapidfire 2, Brawler 2, Fae 1, Spellweaver 1, Summoner 1, Riftbeast 1, Sprykin 1)",
-    "reason": "the 2-5 panel matches a frame labelled 2-7; either the 2-5 read is from a later round or the sidebar lags the banner"
    }
   },
   {
@@ -2046,6 +2022,11 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
+   },
+   "planning_frame_check": {
+    "frame_s": 838,
+    "value": "banner 2-7, timer 10; trait panel identical to the master 2-5 read",
+    "tag": "read"
    }
   },
   {
