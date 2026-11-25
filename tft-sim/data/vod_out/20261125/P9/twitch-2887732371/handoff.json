@@ -48,11 +48,27 @@
     [
       23200,
       25000
+    ],
+    [
+      25200,
+      27200
+    ],
+    [
+      27400,
+      29600
+    ],
+    [
+      29800,
+      31800
+    ],
+    [
+      32000,
+      34200
     ]
   ],
   "remaining_ranges_s": [
     [
-      25000,
+      34200,
       47188
     ]
   ],
@@ -67,20 +83,24 @@
     "twitch-2887732371-g16800",
     "twitch-2887732371-g18800",
     "twitch-2887732371-g20400",
-    "twitch-2887732371-g23200"
+    "twitch-2887732371-g23200",
+    "twitch-2887732371-g25200",
+    "twitch-2887732371-g27600",
+    "twitch-2887732371-g30000",
+    "twitch-2887732371-g32000"
   ],
   "counts": {
-    "games": 11,
-    "fights": 59,
+    "games": 15,
+    "fights": 69,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 59
+      "winner_null": 69
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "ti\u1ebfp ranked t\u1eeb ~25000s"
+  "remaining": "tiếp ranked từ ~34200s"
 }
