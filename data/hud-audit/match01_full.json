@@ -4011,9 +4011,24 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "f_00719 (1798 s) is the PvE bounty Choose One screen; f_00728 (1816 s) shows spell effects on the arena; no clean planning frame found"
+    "frame_s": 1816,
+    "tag": "read",
+    "value": {
+     "timer": 22,
+     "level": 8,
+     "xp": "10/68",
+     "gold": 91,
+     "streak": 3,
+     "shop": [
+      "Morgana",
+      "Azir",
+      "Master Yi",
+      "Ahri",
+      null
+     ],
+     "board": "not read",
+     "phase_note": "timer 22 shows planning, but spell effects on the arena suggest combat; HUD values recorded, phase not confirmed"
+    }
    },
    "combat": {
     "value": {
