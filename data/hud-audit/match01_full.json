@@ -7659,6 +7659,13 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
+   },
+   "combat_rail_observation": {
+    "frame_s": 2410,
+    "value": "right rail shows HP beside each player; one non-streamer row has nonzero HP with a crossed-swords icon; its name does not match the alias map, so no alias is assigned",
+    "tag": "unresolved",
+    "attempt": "read the 2410 s combat frame rail once and checked the name against the private alias map",
+    "reason": "name not found in the alias map at this frame"
    }
   },
   {
