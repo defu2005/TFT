@@ -84,7 +84,7 @@
     "reason": "322 s frame: eight nameplates on one arena, shared-board round; not a planning phase"
    },
    "combat": {
-    "value": null,
+    "value": "shared arena: no streamer result or combat read",
     "tag": "n/a",
     "reason": "shared arena, no PvP combat read"
    },
@@ -97,7 +97,7 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
-    "value": null,
+    "value": "shared arena: no streamer result or combat read",
     "tag": "n/a",
     "reason": "shared arena: no streamer-vs-opponent result"
    }
@@ -3586,7 +3586,7 @@
     "reason": "shared arena with eight nameplates; combat frame at 1622 s; no planning"
    },
    "combat": {
-    "value": null,
+    "value": "shared arena: no streamer result or combat read",
     "tag": "n/a",
     "reason": "shared arena, no PvP combat read"
    },
@@ -3599,7 +3599,7 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
-    "value": null,
+    "value": "shared arena: no streamer result or combat read",
     "tag": "n/a",
     "reason": "shared arena: no streamer-vs-opponent result"
    }
@@ -4732,7 +4732,7 @@
     "reason": "2068 s frame: shared pink arena with eight nameplates, not planning"
    },
    "combat": {
-    "value": null,
+    "value": "shared arena: no streamer result or combat read",
     "tag": "n/a",
     "reason": "shared arena, no PvP combat read"
    },
@@ -4745,7 +4745,7 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
-    "value": null,
+    "value": "shared arena: no streamer result or combat read",
     "tag": "n/a",
     "reason": "shared arena: no streamer-vs-opponent result"
    }
@@ -5877,7 +5877,7 @@
     "reason": "2470 s frame: PvE-style pet arena at timer 8, not planning"
    },
    "combat": {
-    "value": null,
+    "value": "shared arena: no streamer result or combat read",
     "tag": "n/a",
     "reason": "shared arena, no PvP combat read"
    },
@@ -5901,7 +5901,7 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
-    "value": null,
+    "value": "shared arena: no streamer result or combat read",
     "tag": "n/a",
     "reason": "shared arena: no streamer-vs-opponent result"
    }
