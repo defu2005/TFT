@@ -18,5 +18,10 @@
   "of": 10,
   "script": "data/hud-audit/blind_ocr_masked.py",
   "note": "near-white mask (min RGB > 200), 4x nearest upscale, digit whitelist psm 7; several frames gave no digits, so the 71/57/9 two-digit golds are cut or unreadable in this crop. Not an improvement over the unmasked 4/10."
+ },
+ "time_check": {
+  "result": "all 10 blind-pick times equal the Frame A times",
+  "same": 10,
+  "different": 0
  }
 }
