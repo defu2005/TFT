@@ -7,9 +7,6 @@
   "covered_ranges_s": [
     [
       0,
-<<<<<<< HEAD
-      18000
-=======
       1600
     ],
     [
@@ -29,7 +26,6 @@
     [
       7000,
       99999
->>>>>>> 1ad3dd2e (P5: densify-full thin souless stubs 288530/289057/290839)
     ]
   ],
   "game_ids": [
