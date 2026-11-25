@@ -1,0 +1,38 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2898781298",
+  "slot": "P6",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      0,
+      5640
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      5640,
+      24420
+    ]
+  ],
+  "game_ids": [
+    "twitch-2898781298-g60",
+    "twitch-2898781298-g2100",
+    "twitch-2898781298-g4300"
+  ],
+  "counts": {
+    "games": 3,
+    "fights": 33,
+    "others": 33
+  },
+  "validator": {
+    "ok": 26,
+    "skipped": {
+      "winner_null": 7
+    }
+  },
+  "needs_review": 7,
+  "commit": null,
+  "remaining": "g60+g2100+g4300 densify fights=33 g3=13 both=1 win=10 ok=26; tiếp g4 ~5800s+ + kiyoon VODs khác"
+}
