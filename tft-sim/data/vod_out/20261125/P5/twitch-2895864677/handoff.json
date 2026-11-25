@@ -3,7 +3,7 @@
   "vod_id": "twitch-2895864677",
   "slot": "P5",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       120,
@@ -23,50 +23,35 @@
     ],
     [
       9600,
-      11600
+      23900
     ]
   ],
-  "remaining_ranges_s": [
-    [
-      2340,
-      2410
-    ],
-    [
-      4260,
-      4380
-    ],
-    [
-      6500,
-      6700
-    ],
-    [
-      8900,
-      9600
-    ],
-    [
-      11600,
-      23928
-    ]
-  ],
+  "remaining_ranges_s": null,
   "game_ids": [
     "twitch-2895864677-g120",
     "twitch-2895864677-g2410",
     "twitch-2895864677-g4380",
     "twitch-2895864677-g6700",
-    "twitch-2895864677-g9600"
+    "twitch-2895864677-g9600",
+    "twitch-2895864677-g11600",
+    "twitch-2895864677-g13500",
+    "twitch-2895864677-g15500",
+    "twitch-2895864677-g17500",
+    "twitch-2895864677-g19700",
+    "twitch-2895864677-g21900"
   ],
   "counts": {
-    "games": 5,
-    "fights": 81,
-    "others": 81
+    "games": 11,
+    "fights": 176,
+    "others": 180
   },
   "validator": {
-    "ok": 79,
+    "ok": 89,
     "skipped": {
-      "winner_null": 2
+      "winner_null": 87
     }
   },
-  "needs_review": 2,
+  "needs_review": 3,
   "commit": "aa41c50",
-  "remaining": "Early games pushed; densify more PvP when frames allow."
+  "remaining": "Densify g9600 done; continue after 11600 + other VODs."
 }

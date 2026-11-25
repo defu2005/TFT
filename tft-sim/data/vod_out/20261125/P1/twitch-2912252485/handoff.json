@@ -1,0 +1,72 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2912252485",
+  "slot": "P1",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      1320,
+      3100
+    ],
+    [
+      3200,
+      5160
+    ],
+    [
+      5640,
+      7560
+    ],
+    [
+      8040,
+      9720
+    ],
+    [
+      10440,
+      12140
+    ],
+    [
+      12800,
+      13900
+    ],
+    [
+      14780,
+      16200
+    ],
+    [
+      16920,
+      18840
+    ],
+    [
+      19560,
+      21240
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2912252485-g13200",
+    "twitch-2912252485-g13201",
+    "twitch-2912252485-g5640",
+    "twitch-2912252485-g8040",
+    "twitch-2912252485-g104400",
+    "twitch-2912252485-g104401",
+    "twitch-2912252485-g104402",
+    "twitch-2912252485-g16920",
+    "twitch-2912252485-g19560"
+  ],
+  "counts": {
+    "games": 9,
+    "fights": 151,
+    "others": 151
+  },
+  "validator": {
+    "ok": 124,
+    "skipped": {
+      "winner_null": 27
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "Scrim/tourney/watch-party segments skipped.",
+  "notes": "C-patch waiting/PTL skipped; ranked densified (split multi-game windows)."
+}

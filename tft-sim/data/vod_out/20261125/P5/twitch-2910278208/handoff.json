@@ -1,0 +1,42 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2910278208",
+  "slot": "P5",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      0,
+      1600
+    ],
+    [
+      1800,
+      15000
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2910278208-g0",
+    "twitch-2910278208-g1800",
+    "twitch-2910278208-g3400",
+    "twitch-2910278208-g6000",
+    "twitch-2910278208-g9000",
+    "twitch-2910278208-g12000"
+  ],
+  "counts": {
+    "games": 6,
+    "fights": 84,
+    "others": 84
+  },
+  "notes": "Densify thin stub+rem → 6g/84f; agent bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
+  "claim": {
+    "agent": "bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
+    "claimed_at": "2026-11-25T19:22:19Z"
+  },
+  "validator": {
+    "ok": 70,
+    "skipped": {
+      "winner_null": 14
+    }
+  }
+}

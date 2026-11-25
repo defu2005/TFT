@@ -3,7 +3,7 @@
   "vod_id": "twitch-2920925663",
   "slot": "P10",
   "role": "primary",
-  "status": "pending",
+  "status": "done",
   "covered_ranges_s": [
     [
       5400,
@@ -11,140 +11,36 @@
     ],
     [
       6800,
-      8500
+      14800
     ],
     [
-      10000,
-      11800
+      14850,
+      16700
     ],
     [
       17400,
       19200
-    ]
-  ],
-  "remaining_ranges_s": [
-    [
-      8500,
-      10000
     ],
     [
-      11800,
-      17400
-    ],
-    [
-      19200,
-      null
+      20500,
+      23400
     ]
   ],
-  "skipped_ranges_s": [
-    [
-      0,
-      5400
-    ]
-  ],
-  "skip_notes": "early ~0-5400 non-Set18 (Set11/13 mixed)",
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2920925663-g5400",
     "twitch-2920925663-g6800",
     "twitch-2920925663-g10000",
-    "twitch-2920925663-g17400"
+    "twitch-2920925663-g17400",
+    "twitch-2920925663-g8700",
+    "twitch-2920925663-g12000",
+    "twitch-2920925663-g15200",
+    "twitch-2920925663-g21000"
   ],
   "counts": {
-    "games": 4,
-    "fights": 32,
+    "games": 8,
+    "fights": 78,
     "others": 0
   },
-  "validator": {
-    "ok": 15,
-    "skipped": {
-      "winner_null": 17
-    },
-    "rows": [
-      {
-        "line": 1,
-        "source": "twitch-2920925663-g5400:2-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 3,
-        "source": "twitch-2920925663-g5400:3-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 5,
-        "source": "twitch-2920925663-g5400:4-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 7,
-        "source": "twitch-2920925663-g5400:5-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 9,
-        "source": "twitch-2920925663-g6800:2-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 11,
-        "source": "twitch-2920925663-g6800:3-3",
-        "reason": "winner_null"
-      },
-      {
-        "line": 13,
-        "source": "twitch-2920925663-g6800:4-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 15,
-        "source": "twitch-2920925663-g6800:5-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 17,
-        "source": "twitch-2920925663-g10000:2-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 19,
-        "source": "twitch-2920925663-g10000:3-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 21,
-        "source": "twitch-2920925663-g10000:4-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 23,
-        "source": "twitch-2920925663-g10000:5-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 24,
-        "source": "twitch-2920925663-g17400:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 26,
-        "source": "twitch-2920925663-g17400:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 28,
-        "source": "twitch-2920925663-g17400:4-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 30,
-        "source": "twitch-2920925663-g17400:5-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 32,
-        "source": "twitch-2920925663-g17400:6-1",
-        "reason": "winner_null"
-      }
-    ]
-  }
+  "rem_notes": "+4g rem (g8700,g12000,g15200,g21000). Skip anime chat ~16800–20500. remaining empty."
 }

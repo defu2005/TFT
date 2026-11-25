@@ -7,25 +7,40 @@
   "covered_ranges_s": [
     [
       60,
-      2000
+      2500
+    ],
+    [
+      7800,
+      9800
+    ],
+    [
+      10000,
+      12000
+    ],
+    [
+      2800,
+      4500
     ]
   ],
   "remaining_ranges_s": [],
   "game_ids": [
-    "twitch-2913195800-g60"
+    "twitch-2913195800-g60",
+    "twitch-2913195800-g7800",
+    "twitch-2913195800-g10000",
+    "twitch-2913195800-g2800"
   ],
   "counts": {
-    "games": 1,
-    "fights": 14,
+    "games": 4,
+    "fights": 56,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 14
+      "winner_null": 56
     }
   },
-  "needs_review": 14,
+  "needs_review": 0,
   "commit": null,
-  "remaining": "g60 RANKED (loading Challenger). Remaining after ~2400 = TFT NORMAL lobby (explicit TEAMFIGHT TACTICS NORMAL) → skip/block non-ranked."
+  "remaining": "scout7: dropped g12200/g15000/g21000 as NORMAL_TFT (Challenger chrome≠queue; party matches NORMAL lobby @14000). Keep ranked g60/g2800/g7800/g10000."
 }

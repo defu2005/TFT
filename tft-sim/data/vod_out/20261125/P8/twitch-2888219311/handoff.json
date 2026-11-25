@@ -1,0 +1,40 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2888219311",
+  "slot": "P8",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      1900,
+      3800
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      0,
+      1900
+    ],
+    [
+      3800,
+      27330
+    ]
+  ],
+  "game_ids": [
+    "twitch-2888219311-g2000"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 12,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 12
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "densify-full g2000 12f. Non-TFT BRB early. Continue ~3800+. P8-primary scarra."
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2911541372",
+  "slot": "P4",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      60,
+      2060
+    ],
+    [
+      2160,
+      4160
+    ],
+    [
+      4260,
+      6260
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2911541372-g60",
+    "twitch-2911541372-g2160",
+    "twitch-2911541372-g4260"
+  ],
+  "counts": {
+    "games": 3,
+    "fights": 42,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 42
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "densify-full 14 PvP/game trait-lock; needs_review cleared"
+}

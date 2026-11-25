@@ -1,0 +1,86 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2897329575",
+  "slot": "P3",
+  "role": "primary",
+  "status": "partial",
+  "covered_ranges_s": [
+    [
+      20,
+      2180
+    ],
+    [
+      2320,
+      4350
+    ],
+    [
+      4650,
+      6950
+    ],
+    [
+      7100,
+      8950
+    ],
+    [
+      8980,
+      10800
+    ],
+    [
+      11200,
+      13400
+    ],
+    [
+      14000,
+      15400
+    ],
+    [
+      15650,
+      17850
+    ],
+    [
+      17950,
+      19950
+    ],
+    [
+      20200,
+      22480
+    ],
+    [
+      22500,
+      25150
+    ],
+    [
+      25300,
+      26842
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2897329575-g50",
+    "twitch-2897329575-g2400",
+    "twitch-2897329575-g4800",
+    "twitch-2897329575-g7200",
+    "twitch-2897329575-g9000",
+    "twitch-2897329575-g11200",
+    "twitch-2897329575-g14000",
+    "twitch-2897329575-g15800",
+    "twitch-2897329575-g18000",
+    "twitch-2897329575-g20200",
+    "twitch-2897329575-g22500",
+    "twitch-2897329575-g25000"
+  ],
+  "counts": {
+    "games": 12,
+    "fights": 31,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 31
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "Aligned to dense 12-game map (+2 splits g18000/g22500). 2026-11-25T19:36:22Z"
+}

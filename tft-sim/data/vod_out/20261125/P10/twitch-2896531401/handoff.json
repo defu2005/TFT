@@ -3,7 +3,7 @@
   "vod_id": "twitch-2896531401",
   "slot": "P10",
   "role": "primary",
-  "status": "pending",
+  "status": "done",
   "covered_ranges_s": [
     [
       300,
@@ -11,103 +11,44 @@
     ],
     [
       2300,
-      3600
+      4200
     ],
     [
       4500,
-      5400
-    ]
-  ],
-  "remaining_ranges_s": [
-    [
-      1800,
-      2300
+      6900
     ],
     [
-      3600,
-      4500
+      7200,
+      9200
     ],
     [
-      5400,
-      null
+      9300,
+      11600
+    ],
+    [
+      11650,
+      13800
+    ],
+    [
+      13950,
+      16000
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2896531401-g300",
     "twitch-2896531401-g2300",
-    "twitch-2896531401-g4700"
+    "twitch-2896531401-g4700",
+    "twitch-2896531401-g5500",
+    "twitch-2896531401-g7400",
+    "twitch-2896531401-g9400",
+    "twitch-2896531401-g11700",
+    "twitch-2896531401-g14100"
   ],
   "counts": {
-    "games": 3,
-    "fights": 21,
+    "games": 8,
+    "fights": 88,
     "others": 0
   },
-  "validator": {
-    "ok": 9,
-    "skipped": {
-      "winner_null": 12
-    },
-    "rows": [
-      {
-        "line": 1,
-        "source": "twitch-2896531401-g300:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 3,
-        "source": "twitch-2896531401-g300:2-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 4,
-        "source": "twitch-2896531401-g300:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 6,
-        "source": "twitch-2896531401-g300:3-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 8,
-        "source": "twitch-2896531401-g300:4-2",
-        "reason": "winner_null"
-      },
-      {
-        "line": 9,
-        "source": "twitch-2896531401-g300:5-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 10,
-        "source": "twitch-2896531401-g2300:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 12,
-        "source": "twitch-2896531401-g2300:2-3",
-        "reason": "winner_null"
-      },
-      {
-        "line": 14,
-        "source": "twitch-2896531401-g2300:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 16,
-        "source": "twitch-2896531401-g4700:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 19,
-        "source": "twitch-2896531401-g4700:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 21,
-        "source": "twitch-2896531401-g4700:3-5",
-        "reason": "winner_null"
-      }
-    ]
-  }
+  "rem_notes": "Union coord+P6; prefer denser on overlap; remap fights. remaining empty."
 }

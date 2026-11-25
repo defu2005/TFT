@@ -3,7 +3,7 @@
   "vod_id": "twitch-2888929782",
   "slot": "P10",
   "role": "primary",
-  "status": "pending",
+  "status": "done",
   "covered_ranges_s": [
     [
       600,
@@ -15,10 +15,6 @@
     ],
     [
       4200,
-      5800
-    ],
-    [
-      5800,
       7200
     ],
     [
@@ -34,35 +30,19 @@
       13800
     ],
     [
-      14800,
-      19000
-    ]
-  ],
-  "remaining_ranges_s": [
-    [
-      11400,
-      12200
+      13850,
+      16800
     ],
     [
-      13800,
-      14800
+      17000,
+      21400
     ],
     [
-      19000,
-      null
+      21450,
+      23200
     ]
   ],
-  "skipped_ranges_s": [
-    [
-      11400,
-      12200
-    ],
-    [
-      13800,
-      14800
-    ]
-  ],
-  "skip_notes": "YouTube reaction gaps ~11600 and ~14000",
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2888929782-g200",
     "twitch-2888929782-g2200",
@@ -71,13 +51,16 @@
     "twitch-2888929782-g7600",
     "twitch-2888929782-g9600",
     "twitch-2888929782-g12400",
+    "twitch-2888929782-g14700",
     "twitch-2888929782-g15600",
-    "twitch-2888929782-g17200"
+    "twitch-2888929782-g17200",
+    "twitch-2888929782-g19200",
+    "twitch-2888929782-g21600"
   ],
   "counts": {
-    "games": 9,
-    "fights": 98,
+    "games": 12,
+    "fights": 132,
     "others": 0
   },
-  "remaining": "densify after 19000 if ranked Set18 remains"
+  "rem_notes": "+3g rem (g14700,g19200,g21600). Skip YT gaps 11400–12000 and 13800–14500. remaining empty."
 }

@@ -57,16 +57,17 @@
   ],
   "counts": {
     "games": 5,
-    "fights": 79,
+    "fights": 80,
     "others": 0
   },
   "validator": {
-    "ok": 10,
+    "ok": 18,
     "skipped": {
-      "winner_null": 69
-    }
+      "winner_null": 62
+    },
+    "densify_full": 10
   },
-  "needs_review": 69,
+  "needs_review": 64,
   "commit": "c193939",
-  "remaining": "P3 stubs/volume. densify boards+winner. rem from 10600s"
+  "remaining": "densify-full=10 incl g6680:3-3/3-5 side_b fill. 2026-11-25T19:41:56Z"
 }

@@ -1,8 +1,8 @@
 {
   "schema": "vod-manifest-v1",
   "batch": "2026-11-25-set18-vod",
-  "dispatcher": "claude (phi\u00ean \u0111i\u1ec1u ph\u1ed1i m\u1edf r\u1ed9ng manifest 1000)",
-  "note": "Ch\u1ec9 \u0111\u1ecdc \u0111\u1ed1i v\u1edbi agent. Ngu\u1ed3n: Twitch archive c\u00f4ng khai + hud seed. \u0110i\u1ec1u ph\u1ed1i m\u1edf r\u1ed9ng slot P4\u2013P6 (wasianiverson/souless/cambulee) cho goal \u22651000 v\u00e1n Set 18. Kh\u00f4ng t\u1ef1 th\u00eam VOD; th\u00eam/b\u1edbt ch\u1ec9 do \u0111i\u1ec1u ph\u1ed1i. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked \u2192 added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash). | P4 +loltyler1 ranked Set18 Emerald VODs for throughput. | 2026-11-25 expand depleted P2/P5/P6/P7/P8/P10: voids1n/emilyywang/kiyoon/imriveting/upsetmaxtft/tleyds/dpeitft (~ranked ladder; filter PBE/tourney/bash/custom/Normal).",
+  "dispatcher": "claude (phiên điều phối mở rộng manifest 1000)",
+  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash). | P4 +loltyler1 ranked Set18 Emerald VODs for throughput. | 2026-11-25 expand depleted P2/P5/P6/P7/P8/P10: voids1n/emilyywang/kiyoon/imriveting/upsetmaxtft/tleyds/dpeitft (~ranked ladder; filter PBE/tourney/bash/custom/Normal). | P8 wave2 mode-check: block 6 imaq PBE Premiere; 9 ranked Set18 keepers todo. | P4 scout-expand dogdog/shurkou ranked Set18 after wasian deplete. | P8 WoW title-block 11 imaq VODs. | P4 rem16 scout densify wasian/loltyler1 ranked Set18.",
   "slots": {
     "P1": {
       "role": "primary",
@@ -35,7 +35,7 @@
     },
     "none": {
       "role": "none",
-      "note": "VOD hud \u0111\u00e3 x\u1eed l\u00fd, agent b\u1ecf qua"
+      "note": "VOD hud đã xử lý, agent bỏ qua"
     },
     "P4": {
       "role": "primary",
@@ -47,7 +47,7 @@
         "loltyler1",
         "dogdog"
       ],
-      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue). | +loltyler1 ranked Set18 Emerald ladder (wasian/voltariux/shurkou/aphromoo archives depleted of clean ranked). | +dogdog Diamond ranked Set18; +more loltyler1."
+      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue). | +loltyler1 ranked Set18 Emerald ladder (wasian/voltariux/shurkou/aphromoo archives depleted of clean ranked). | +dogdog Diamond ranked Set18; +more loltyler1. | 2026-11-25 scout: wasian ranked empty → +dogdog 2905342718 +shurkou ranked VODs. | 2026-11-25 rem16: +wasian 2913195800 expand +loltyler1 2911555199 +2918647739 rem"
     },
     "P5": {
       "role": "primary",
@@ -80,7 +80,7 @@
         "upsetmaxtft",
         "tleyds"
       ],
-      "note": "disguisedtoast 3 VOD blocked (Normal/PBE/set\u226018). B\u1ed5 sung NA ladder Set18: imaqtpie/dankmemes011/scarra. | +upsetmaxtft/tleyds ranked ladder (loltyler1 already on P4)."
+      "note": "disguisedtoast 3 VOD blocked (Normal/PBE/set≠18). Bổ sung NA ladder Set18: imaqtpie/dankmemes011/scarra. | +upsetmaxtft/tleyds ranked ladder (loltyler1 already on P4)."
     },
     "P9": {
       "role": "primary",
@@ -1016,7 +1016,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "claimed",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1028,7 +1028,9 @@
       ],
       "source_refs": [
         "hud:scripts/hud-campaign/seed-sources.json"
-      ]
+      ],
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:24:00Z"
     },
     {
       "vod_id": "twitch-2912449718",
@@ -1515,7 +1517,7 @@
       "streamer": "boxbox",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "pending",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1536,7 +1538,7 @@
       "streamer": "boxbox",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "claimed",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1549,7 +1551,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:38:02Z"
     },
     {
       "vod_id": "twitch-2902616223",
@@ -1557,7 +1561,7 @@
       "streamer": "boxbox",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1570,7 +1574,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_at": "2026-11-25T19:38:02Z",
+      "block_reason": "Not Set18 (Patch 14.8B Dryad/Umbral/Behemoth)"
     },
     {
       "vod_id": "twitch-2907868396",
@@ -1599,7 +1605,7 @@
       "streamer": "robinsongz",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "pending",
       "patch_claims": [
         "18.5C/18.6"
       ],
@@ -1620,7 +1626,7 @@
       "streamer": "boxbox",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1633,7 +1639,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_at": "2026-11-25T19:38:02Z",
+      "block_reason": "Not Set18 (Ajax/Spellslinger/Hero Project Patch14)"
     },
     {
       "vod_id": "twitch-2907188910",
@@ -1641,7 +1649,7 @@
       "streamer": "robinsongz",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "pending",
       "patch_claims": [
         "18.5C/18.6"
       ],
@@ -1662,7 +1670,7 @@
       "streamer": "boxbox",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "claimed",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1675,7 +1683,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:38:02Z"
     },
     {
       "vod_id": "twitch-2884672298",
@@ -1683,7 +1693,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "claimed",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1696,7 +1706,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:24:00Z"
     },
     {
       "vod_id": "twitch-2897329575",
@@ -1704,7 +1716,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "claimed",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1717,7 +1729,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:13:00Z"
     },
     {
       "vod_id": "twitch-2893654871",
@@ -1725,7 +1739,7 @@
       "streamer": "robinsongz",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "pending",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1746,7 +1760,7 @@
       "streamer": "robinsongz",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "pending",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1767,7 +1781,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "claimed",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1780,7 +1794,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:13:00Z"
     },
     {
       "vod_id": "twitch-2887368861",
@@ -1788,7 +1804,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "todo",
+      "status": "claimed",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1801,7 +1817,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:13:00Z"
     },
     {
       "vod_id": "twitch-2899094314",
@@ -1886,7 +1904,8 @@
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
       ],
-      "notes": " | REOPEN ranked Challenger Set18 (Regional Finals overlay only); stubbed 6 games"
+      "notes": " | REOPEN ranked Challenger Set18 (Regional Finals overlay only); stubbed 6 games",
+      "note": " | rem gap g2200 filled"
     },
     {
       "vod_id": "twitch-2907970518",
@@ -1915,7 +1934,7 @@
       "streamer": "wasianiverson",
       "slot": "P4",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "18.5C/18.6"
       ],
@@ -1928,7 +1947,8 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "note": " | expand +6 ranked after NORMAL gap densify-full"
     },
     {
       "vod_id": "twitch-2911484335",
@@ -2167,7 +2187,7 @@
       "streamer": "souless",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -2188,7 +2208,7 @@
       "streamer": "souless",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "18.5C/18.6"
       ],
@@ -2209,7 +2229,7 @@
       "streamer": "souless",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -2230,7 +2250,7 @@
       "streamer": "souless",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -2251,7 +2271,7 @@
       "streamer": "souless",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -2272,7 +2292,7 @@
       "streamer": "souless",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "18.5C/18.6"
       ],
@@ -2293,7 +2313,7 @@
       "streamer": "souless",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -2314,7 +2334,7 @@
       "streamer": "souless",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "18.5C/18.6"
       ],
@@ -2335,7 +2355,7 @@
       "streamer": "souless",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "18.5C/18.6"
       ],
@@ -2356,7 +2376,7 @@
       "streamer": "souless",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -2377,7 +2397,7 @@
       "streamer": "souless",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -2398,7 +2418,7 @@
       "streamer": "souless",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -2419,7 +2439,7 @@
       "streamer": "souless",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -2440,7 +2460,7 @@
       "streamer": "emilyywang",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "18.5C/18.6"
       ],
@@ -2462,7 +2482,7 @@
       "streamer": "emilyywang",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "18.5C/18.6"
       ],
@@ -2484,7 +2504,7 @@
       "streamer": "emilyywang",
       "slot": "P5",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -2542,7 +2562,7 @@
         "twitch:gql-archive-list-20261125",
         "coord:expand-depleted-slots-800"
       ],
-      "title_hint": "\ud83d\udc99NEW PATCH\ud83d\udc99NEW CLIENT\ud83d\udc99NEW ME\ud83d\udc99+300 LP TODAY COME AND LEARN!!!\ud83d\udc99"
+      "title_hint": "💙NEW PATCH💙NEW CLIENT💙NEW ME💙+300 LP TODAY COME AND LEARN!!!💙"
     },
     {
       "vod_id": "twitch-2908544781",
@@ -3735,7 +3755,7 @@
         "twitch-gql:2026-11-25"
       ],
       "notes": "auto-added title=set 1 tft goat returns to show that unc still got it - pico park lobby tmr 11am  published=2026-11-20T22:12:12Z",
-      "block_reason": "mode\u2260ranked and/or set\u226018 (Remix Rumble / Normal / Set1-style); see handoff remaining"
+      "block_reason": "mode≠ranked and/or set≠18 (Remix Rumble / Normal / Set1-style); see handoff remaining"
     },
     {
       "vod_id": "twitch-2937597175",
@@ -3758,7 +3778,7 @@
         "twitch-gql:2026-11-25"
       ],
       "notes": "auto-added title=set1 challenger learns to keep up at his old age of 35 so he can practice for th published=2026-11-22T18:59:51Z",
-      "block_reason": "mode\u2260ranked and/or set\u226018 (Remix Rumble / Normal / Set1-style); see handoff remaining"
+      "block_reason": "mode≠ranked and/or set≠18 (Remix Rumble / Normal / Set1-style); see handoff remaining"
     },
     {
       "vod_id": "twitch-2938701039",
@@ -3781,7 +3801,7 @@
         "twitch-gql:2026-11-25"
       ],
       "notes": "auto-added title=set1 challenger learns to keep up at his old age of 35 so he can practice for th published=2026-11-23T20:51:20Z",
-      "block_reason": "mode\u2260ranked and/or set\u226018 (Remix Rumble / Normal / Set1-style); see handoff remaining"
+      "block_reason": "mode≠ranked and/or set≠18 (Remix Rumble / Normal / Set1-style); see handoff remaining"
     },
     {
       "vod_id": "twitch-2898942726",
@@ -3833,7 +3853,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "working",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -3877,7 +3897,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "working",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -3943,7 +3963,7 @@
       "streamer": "dankmemes011",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "working",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -3965,7 +3985,7 @@
       "streamer": "scarra",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "working",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -3987,7 +4007,7 @@
       "streamer": "dankmemes011",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "working",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -4009,7 +4029,7 @@
       "streamer": "upsetmaxtft",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "working",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -4031,7 +4051,7 @@
       "streamer": "tleyds",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "working",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -4111,7 +4131,7 @@
         "expand:goal-1000-parallel",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "auto-added title=933 start | RANK1 BEFORE REGIONALS GRIND \u2705 CASTING TPC W/ @Frodan THIS WEEKEND \ud83d\udd34 published=2026-10-02T01:52:03Z"
+      "notes": "auto-added title=933 start | RANK1 BEFORE REGIONALS GRIND ✅ CASTING TPC W/ @Frodan THIS WEEKEND 🔴 published=2026-10-02T01:52:03Z"
     },
     {
       "vod_id": "twitch-2916019619",
@@ -4133,7 +4153,7 @@
         "expand:goal-1000-parallel",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "auto-added title=REGIONAL FINALS DAY 4 \ud83d\udc7b | MAKE FINAL LOBBY = WORLDS !scores #TFTRegionalFinals published=2026-10-31T19:15:29Z"
+      "notes": "auto-added title=REGIONAL FINALS DAY 4 👻 | MAKE FINAL LOBBY = WORLDS !scores #TFTRegionalFinals published=2026-10-31T19:15:29Z"
     },
     {
       "vod_id": "twitch-2918092391",
@@ -4155,7 +4175,7 @@
         "expand:goal-1000-parallel",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "auto-added title=1016 start | BACK IN TIER1, MISSED WORLDS BY 1 POINT \ud83d\ude20 SET19 + VEGAS IN 1 MONTH, published=2026-11-03T01:38:56Z"
+      "notes": "auto-added title=1016 start | BACK IN TIER1, MISSED WORLDS BY 1 POINT 😠 SET19 + VEGAS IN 1 MONTH, published=2026-11-03T01:38:56Z"
     },
     {
       "vod_id": "twitch-2893101179",
@@ -4177,7 +4197,7 @@
         "expand:goal-1000-parallel",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "auto-added title=742 start | STREAM ENDS WHEN I'M NOT ASS \ud83d\uddff#DOITFORTHESTUDENTS !bash !regionals ! published=2026-10-06T01:49:29Z"
+      "notes": "auto-added title=742 start | STREAM ENDS WHEN I'M NOT ASS 🗿#DOITFORTHESTUDENTS !bash !regionals ! published=2026-10-06T01:49:29Z"
     },
     {
       "vod_id": "twitch-2891262629",
@@ -4331,7 +4351,7 @@
         "twitch:gql-archive-list-20261125",
         "coord:expand-depleted-slots-800"
       ],
-      "title_hint": "\ud83d\udd34TPC PLAYER YAHOO\ud83d\udd34Getting Rank 1 now !scores !youtube !disciples"
+      "title_hint": "🔴TPC PLAYER YAHOO🔴Getting Rank 1 now !scores !youtube !disciples"
     },
     {
       "vod_id": "twitch-2918686469",
@@ -4353,7 +4373,7 @@
         "twitch:gql-archive-list-20261125",
         "coord:expand-depleted-slots-800"
       ],
-      "title_hint": "\ud83d\udd34TPC PLAYER YAHOO\ud83d\udd34Getting Rank 1 now !scores !youtube !disciples"
+      "title_hint": "🔴TPC PLAYER YAHOO🔴Getting Rank 1 now !scores !youtube !disciples"
     },
     {
       "vod_id": "twitch-2902294335",
@@ -4375,7 +4395,7 @@
         "twitch:gql-archive-list-20261125",
         "coord:expand-depleted-slots-800"
       ],
-      "title_hint": "\ud83d\udd34LADDER DOMINATION PART 2\ud83d\udd342.0 AVP i promise !youtube !disciples"
+      "title_hint": "🔴LADDER DOMINATION PART 2🔴2.0 AVP i promise !youtube !disciples"
     },
     {
       "vod_id": "twitch-2924223130",
@@ -4397,7 +4417,7 @@
         "twitch:gql-archive-list-20261125",
         "coord:expand-depleted-slots-800"
       ],
-      "title_hint": "\ud83d\udd34TFT MAESTRO\ud83d\udd34Climbing to 1500 !scores !youtube !disciples"
+      "title_hint": "🔴TFT MAESTRO🔴Climbing to 1500 !scores !youtube !disciples"
     },
     {
       "vod_id": "twitch-2939521723",
@@ -4405,7 +4425,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "18.x"
       ],
@@ -4419,7 +4439,8 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "back off this dude going beast mode"
+      "notes": "back off this dude going beast mode",
+      "block_reason": "PBE Remix Rumble (pbeuser42069); set≠18 Hyperpop/Heartsteel/KDA — not ranked Set18 NA"
     },
     {
       "vod_id": "twitch-2938534158",
@@ -4427,7 +4448,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "18.x"
       ],
@@ -4441,7 +4462,8 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "every time he pop off..."
+      "notes": "every time he pop off...",
+      "block_reason": "PBE Remix Rumble (pbeuser42069); set≠18 Hyperpop/Heartsteel/KDA — not ranked Set18 NA"
     },
     {
       "vod_id": "twitch-2937525875",
@@ -4449,7 +4471,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "18.x"
       ],
@@ -4463,7 +4485,8 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "can i get the mic a little higher"
+      "notes": "can i get the mic a little higher",
+      "block_reason": "PBE Remix Rumble (pbeuser42069); set≠18 Hyperpop/Heartsteel/KDA — not ranked Set18 NA"
     },
     {
       "vod_id": "twitch-2936356991",
@@ -4471,7 +4494,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "18.x"
       ],
@@ -4485,7 +4508,8 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "qt you one bad motha..."
+      "notes": "qt you one bad motha...",
+      "block_reason": "PBE Remix Rumble (pbeuser42069); set≠18 Hyperpop/Heartsteel/KDA — not ranked Set18 NA"
     },
     {
       "vod_id": "twitch-2935143797",
@@ -4493,7 +4517,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "18.x"
       ],
@@ -4507,7 +4531,8 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "vertical imagine dragons"
+      "notes": "vertical imagine dragons",
+      "block_reason": "PBE Remix Rumble (pbeuser42069); set≠18 Hyperpop/Heartsteel/KDA — not ranked Set18 NA"
     },
     {
       "vod_id": "twitch-2933953393",
@@ -4515,7 +4540,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "18.x"
       ],
@@ -4529,7 +4554,8 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "future vegas winner"
+      "notes": "future vegas winner",
+      "block_reason": "PBE Remix Rumble (pbeuser42069); set≠18 Hyperpop/Heartsteel/KDA — not ranked Set18 NA"
     },
     {
       "vod_id": "twitch-2907761390",
@@ -4537,7 +4563,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "todo",
       "patch_claims": [
         "18.x"
       ],
@@ -4559,7 +4585,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "todo",
       "patch_claims": [
         "18.x"
       ],
@@ -4581,7 +4607,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "todo",
       "patch_claims": [
         "18.x"
       ],
@@ -4603,7 +4629,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "todo",
       "patch_claims": [
         "18.x"
       ],
@@ -4625,7 +4651,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "todo",
       "patch_claims": [
         "18.x"
       ],
@@ -4647,7 +4673,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "todo",
       "patch_claims": [
         "18.x"
       ],
@@ -4669,7 +4695,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "todo",
       "patch_claims": [
         "18.x"
       ],
@@ -4691,7 +4717,7 @@
       "streamer": "scarra",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "working",
       "patch_claims": [
         "18.x"
       ],
@@ -4749,7 +4775,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "punishing myself with some low quality TFT games on the very high quality client \ud83d\ude02\ud83d\ude02\ud83d\ude02 #UE5 !overlay !project"
+      "notes": "punishing myself with some low quality TFT games on the very high quality client 😂😂😂 #UE5 !overlay !project"
     },
     {
       "vod_id": "twitch-2920958748",
@@ -4757,7 +4783,7 @@
       "streamer": "souless",
       "slot": "P5",
       "role": "primary",
-      "status": "pending",
+      "status": "done",
       "patch_claims": [
         "18.x"
       ],
@@ -4771,7 +4797,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "punishing myself with some low quality TFT games on the very high quality client \ud83d\ude02\ud83d\ude02\ud83d\ude02 #UE5 !overlay !project"
+      "notes": "punishing myself with some low quality TFT games on the very high quality client 😂😂😂 #UE5 !overlay !project"
     },
     {
       "vod_id": "twitch-2916556972",
@@ -4779,7 +4805,7 @@
       "streamer": "souless",
       "slot": "P5",
       "role": "primary",
-      "status": "pending",
+      "status": "done",
       "patch_claims": [
         "18.x"
       ],
@@ -4793,7 +4819,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "\ud83d\udc7b\ud83d\udc7b\ud83d\udc7bcosplaying a consistent streamer\ud83d\udc7b\ud83d\udc7b\ud83d\udc7b  !overlay !project"
+      "notes": "👻👻👻cosplaying a consistent streamer👻👻👻  !overlay !project"
     },
     {
       "vod_id": "twitch-2914695810",
@@ -4815,7 +4841,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "the daily life of a tier 2 chud \ud83e\udd40\ud83e\udd40\ud83e\udd40\ud83e\udd40  !overlay !project"
+      "notes": "the daily life of a tier 2 chud 🥀🥀🥀🥀  !overlay !project"
     },
     {
       "vod_id": "twitch-2912954332",
@@ -4837,7 +4863,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "i miss him \ud83e\udd40\ud83e\udd40\ud83e\udd40\ud83e\udd40  !overlay !project"
+      "notes": "i miss him 🥀🥀🥀🥀  !overlay !project"
     },
     {
       "vod_id": "twitch-2912213341",
@@ -4859,7 +4885,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "will u be the back to my bramble? \ud83c\udf39\ud83d\udc8b\ud83e\udd7a\ud83e\udd7a\ud83e\udd7a\ud83d\ude0f\ud83d\ude0f\ud83d\ude0f  !overlay !project"
+      "notes": "will u be the back to my bramble? 🌹💋🥺🥺🥺😏😏😏  !overlay !project"
     },
     {
       "vod_id": "twitch-2896814275",
@@ -4881,7 +4907,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "magnet activated \ud83e\uddf2\ud83e\uddf2\ud83e\uddf2  !discord"
+      "notes": "magnet activated 🧲🧲🧲  !discord"
     },
     {
       "vod_id": "twitch-2892405815",
@@ -4903,7 +4929,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "feeling nice today feel free to ragebait for a surprise present \ud83c\udf81 !discord"
+      "notes": "feeling nice today feel free to ragebait for a surprise present 🎁 !discord"
     },
     {
       "vod_id": "twitch-2887189202",
@@ -4925,7 +4951,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "trying, very hard today \ud83c\udf46 \ud83e\udee3\ud83d\ude33\ud83d\udc49\ud83d\udc48!discord !operagx"
+      "notes": "trying, very hard today 🍆 🫣😳👉👈!discord !operagx"
     },
     {
       "vod_id": "twitch-2891042138",
@@ -4999,7 +5025,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "18.x"
       ],
@@ -5013,7 +5039,10 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "mr consistent is here"
+      "notes": "mr consistent is here",
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:24:00Z",
+      "block_reason": "Not Set18 (Sonic Spark/Ambusher/Pit Fighter traits)"
     },
     {
       "vod_id": "twitch-2939299142",
@@ -5087,7 +5116,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "claimed",
       "patch_claims": [
         "18.x"
       ],
@@ -5101,7 +5130,9 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "what the hellyante"
+      "notes": "what the hellyante",
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:24:00Z"
     },
     {
       "vod_id": "twitch-2910216143",
@@ -5109,7 +5140,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "claimed",
       "patch_claims": [
         "18.x"
       ],
@@ -5123,7 +5154,9 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "hello"
+      "notes": "hello",
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:24:00Z"
     },
     {
       "vod_id": "twitch-2909100763",
@@ -5131,7 +5164,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "claimed",
       "patch_claims": [
         "18.x"
       ],
@@ -5145,7 +5178,9 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "preparing for hatewatch"
+      "notes": "preparing for hatewatch",
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:24:00Z"
     },
     {
       "vod_id": "twitch-2907084959",
@@ -5219,7 +5254,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "18.x"
       ],
@@ -5233,7 +5268,9 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "woke up from dream that i got same points as tyler1 in bash, rage queueing"
+      "notes": "woke up from dream that i got same points as tyler1 in bash, rage queueing",
+      "claimed_at": "2026-11-25T19:38:02Z",
+      "block_reason": "Mixed/not clean Set18 (Mythic/Artist/Hwei @8000)"
     },
     {
       "vod_id": "twitch-2896271382",
@@ -5241,7 +5278,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "claimed",
       "patch_claims": [
         "18.x"
       ],
@@ -5255,7 +5292,9 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "actual 1.x"
+      "notes": "actual 1.x",
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:38:02Z"
     },
     {
       "vod_id": "twitch-2895746438",
@@ -5263,7 +5302,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "claimed",
       "patch_claims": [
         "18.x"
       ],
@@ -5277,7 +5316,9 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "play until bot 4(50 games)"
+      "notes": "play until bot 4(50 games)",
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:38:02Z"
     },
     {
       "vod_id": "twitch-2894958056",
@@ -5285,7 +5326,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "18.x"
       ],
@@ -5299,7 +5340,9 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "play until bot 4(50 games)"
+      "notes": "play until bot 4(50 games)",
+      "claimed_at": "2026-11-25T19:38:02Z",
+      "block_reason": "Not Set18 (Inkshadow/carousel Yone-Alune-Illaoi)"
     },
     {
       "vod_id": "twitch-2893963512",
@@ -5783,7 +5826,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "1600 start | FINAL DAY OF SET18 \ud83d\udd34 GOING OVER !SET19 INFO IN Q \ud83d\ude48 !twitter !discord"
+      "notes": "1600 start | FINAL DAY OF SET18 🔴 GOING OVER !SET19 INFO IN Q 🙈 !twitter !discord"
     },
     {
       "vod_id": "twitch-2906453571",
@@ -5805,7 +5848,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "1069 start | REGIONALS DAY 1 ON SATURDAY \ud83d\udd34 LOCKING IN TO MAKE IT BACK TO WORLDS, !PATCH TOMORROW"
+      "notes": "1069 start | REGIONALS DAY 1 ON SATURDAY 🔴 LOCKING IN TO MAKE IT BACK TO WORLDS, !PATCH TOMORROW"
     },
     {
       "vod_id": "twitch-2891354525",
@@ -5827,7 +5870,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "1043 start | RANK1 BEFORE REGIONALS GRIND \u2705 CAN'T WAIT FOR RIOT MMO ANNOUNCEMENT AT CONVERGENCE FEST \ud83e\udd20"
+      "notes": "1043 start | RANK1 BEFORE REGIONALS GRIND ✅ CAN'T WAIT FOR RIOT MMO ANNOUNCEMENT AT CONVERGENCE FEST 🤠"
     },
     {
       "vod_id": "twitch-2930220707",
@@ -5871,7 +5914,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "1137 start | BACK FROM BREAK \ud83d\udd34 4 DAYS TIL !PBE"
+      "notes": "1137 start | BACK FROM BREAK 🔴 4 DAYS TIL !PBE"
     },
     {
       "vod_id": "twitch-2927279982",
@@ -5915,7 +5958,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "1057 start | LATE NIGHT QUICKIE \ud83d\udd34 LEARNING EZREAL"
+      "notes": "1057 start | LATE NIGHT QUICKIE 🔴 LEARNING EZREAL"
     },
     {
       "vod_id": "twitch-2893984856",
@@ -5959,7 +6002,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "977 start | NOT BALD \u2705 RANK1 BEFORE !REGIONALS"
+      "notes": "977 start | NOT BALD ✅ RANK1 BEFORE !REGIONALS"
     },
     {
       "vod_id": "twitch-2899373090",
@@ -6547,11 +6590,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=the horde laughed at warriorman when he was lvl 1 now i will make them all pay dur=25510"
+      "notes": "auto-expand-wave2 title=the horde laughed at warriorman when he was lvl 1 now i will make them all pay dur=25510",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2927765424",
@@ -6559,11 +6603,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=give me gold im so poor help dur=25170"
+      "notes": "auto-expand-wave2 title=give me gold im so poor help dur=25170",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2926868319",
@@ -6571,11 +6616,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=woah warriorman slow down buddy you swagging too hard dur=25430"
+      "notes": "auto-expand-wave2 title=woah warriorman slow down buddy you swagging too hard dur=25430",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2925977162",
@@ -6583,11 +6629,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=*gets opened up on by a rogue* heh... hahahaha.... HHAHAHAHAHAHA /me swifty one shot macro dur=27780"
+      "notes": "auto-expand-wave2 title=*gets opened up on by a rogue* heh... hahahaha.... HHAHAHAHAHAHA /me swifty one shot macro dur=27780",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2925052961",
@@ -6595,11 +6642,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=i will eliminate the horde they will pay for what they have done to me... one day... dur=28780"
+      "notes": "auto-expand-wave2 title=i will eliminate the horde they will pay for what they have done to me... one day... dur=28780",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2924187809",
@@ -6607,11 +6655,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=warriorman is becoming powerful... gulp... dur=24930"
+      "notes": "auto-expand-wave2 title=warriorman is becoming powerful... gulp... dur=24930",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2923303219",
@@ -6619,11 +6668,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=somebody help im losing control heh... dur=25330"
+      "notes": "auto-expand-wave2 title=somebody help im losing control heh... dur=25330",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2922252625",
@@ -6631,11 +6681,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=epic rap battles of history warrior dude vs river crab dur=29760"
+      "notes": "auto-expand-wave2 title=epic rap battles of history warrior dude vs river crab dur=29760",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2921286102",
@@ -6643,11 +6694,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=warrior man struggles to kill singular crab dur=35330"
+      "notes": "auto-expand-wave2 title=warrior man struggles to kill singular crab dur=35330",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2920357851",
@@ -6655,11 +6707,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=man vs 1 mob cbt chamber dur=26630"
+      "notes": "auto-expand-wave2 title=man vs 1 mob cbt chamber dur=26630",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2919692127",
@@ -6667,7 +6720,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
@@ -6679,7 +6732,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
@@ -6847,7 +6900,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "working",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
@@ -6895,11 +6948,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=1400 item level or i implode irl dur=25860"
+      "notes": "auto-expand-wave2 title=1400 item level or i implode irl dur=25860",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2889012891",
@@ -6936,6 +6990,285 @@
       "candidate_ranges_s": [],
       "source_refs": [],
       "notes": "auto-expand-wave2 title=-___________- dur=14560"
+    },
+    {
+      "vod_id": "twitch-2905342718",
+      "url": "https://www.twitch.tv/videos/2905342718",
+      "streamer": "dogdog",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          2300,
+          7300
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand: mixed HS→TFT; RANKED Master Set18 ~2300-7300 only (NORMAL after)"
+    },
+    {
+      "vod_id": "twitch-2927528194",
+      "url": "https://www.twitch.tv/videos/2927528194",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          6778
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: TFT RANKED! ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2922077779",
+      "url": "https://www.twitch.tv/videos/2922077779",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          8000
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: TFT RANKED then unboxing ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2916594307",
+      "url": "https://www.twitch.tv/videos/2916594307",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          4500
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: RANKED then reaction ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2915762408",
+      "url": "https://www.twitch.tv/videos/2915762408",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          7939
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: RANKED ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2911541372",
+      "url": "https://www.twitch.tv/videos/2911541372",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          6703
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: RANKED ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2913941314",
+      "url": "https://www.twitch.tv/videos/2913941314",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          4000
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: TFT then riftbound ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2910292617",
+      "url": "https://www.twitch.tv/videos/2910292617",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          4000
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: TFT then riftbound ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2909627329",
+      "url": "https://www.twitch.tv/videos/2909627329",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          7500
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: TFT then riftbound ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2911269972",
+      "url": "https://www.twitch.tv/videos/2911269972",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          2195
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-scout-20261125",
+        "coord:p4-densify-then-scout"
+      ],
+      "notes": "scout: shurkou RANKED Set18 full VOD"
+    },
+    {
+      "vod_id": "twitch-2912414684",
+      "url": "https://www.twitch.tv/videos/2912414684",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          2500
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-scout-20261125",
+        "coord:p4-densify-then-scout"
+      ],
+      "notes": "scout: early TFT Set18 ranked only; after ~2500 = Riftbound/card — skip tail"
+    },
+    {
+      "vod_id": "twitch-2901709701",
+      "url": "https://www.twitch.tv/videos/2901709701",
+      "streamer": "dogdog",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          500,
+          5500
+        ],
+        [
+          9000,
+          14000
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-scout-20261125",
+        "coord:p4-densify-then-scout"
+      ],
+      "notes": "scout: Master ranked Set18 (Dishsoap/setsuko lobbies). Title mentions bash but frames=Master ladder no tourney overlay; skip client/home gaps"
+    },
+    {
+      "vod_id": "twitch-2911555199",
+      "url": "https://www.twitch.tv/videos/2911555199",
+      "streamer": "loltyler1",
+      "slot": "P4",
+      "status": "done",
+      "title": "AHHH GETS STRONG FEEL !! ranked Set18 Emerald/Plat ladder",
+      "duration_s": 19578,
+      "note": "P4 scout KEEP ranked Set18 continuum; densify-full 9g/126f",
+      "role": "primary"
     }
   ]
 }
