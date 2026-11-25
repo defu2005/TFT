@@ -1,0 +1,36 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2888926440",
+  "slot": "P6",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      0,
+      2400
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      2400,
+      21460
+    ]
+  ],
+  "game_ids": [
+    "twitch-2888926440-g250"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 16,
+    "others": 16
+  },
+  "validator": {
+    "ok": 15,
+    "skipped": {
+      "winner_null": 1
+    }
+  },
+  "needs_review": 1,
+  "commit": null,
+  "remaining": "g250 densify fights=16 both=0 win=15 ok=15; RANKED confirmed; tiếp g2+ ~2500s+"
+}
