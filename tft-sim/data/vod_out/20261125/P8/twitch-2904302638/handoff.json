@@ -31,6 +31,6 @@
     }
   },
   "needs_review": 2,
-  "commit": null,
+  "commit": "d40193a",
   "remaining": "P8-primary owns twitch-2904302638. RANKED Master confirmed. Continue from ~1000s."
 }
