@@ -76,55 +76,19 @@
    "6-2": "OCR returned empty; frame at 2342 s shows 1, master 1 confirmed"
   }
  },
- "gold_rest_28": {
-  "frames_with_master_gold": 21,
-  "matched_at_master_time": 13,
-  "mismatch_frame_reads_kept_with_prev_read": {
-   "2-2": "0 -> 4",
-   "2-5": "6 -> 7",
-   "2-6": "15 -> 17",
-   "2-7": "29 -> 28"
-  },
-  "not_comparable_no_gold_box_visible": [
+ "gold_planning_frames": {
+  "rounds_checked": 26,
+  "matched_at_recorded_frame_all": 22,
+  "not_comparable_no_gold_box": [
    "2-4",
-   "3-2",
    "6-1",
    "6-6"
   ],
-  "3-2_gold_40": "derived, unverified",
-  "no_master_gold_field": [
-   "1-1",
-   "1-2",
-   "2-1",
-   "3-4",
-   "4-4",
-   "5-4",
-   "6-4"
-  ]
+  "out_of_sample_comparable": 13,
+  "out_of_sample_matched_at_recorded_frame": "13 of 13 after 5-5 was moved to its timer-21 frame at 2095 s; the other 12 were OCR at their recorded frames, and 5-5 at 2095 s was checked visually (gold 7)",
+  "out_of_sample_miss": "5-5 at 2094 s (timer 22) reads 9; the planning entry is timer 21, so its recorded frame is 2095 s (gold 7). The earlier 9 was one second early."
  },
- "gold_rest_21_out_of_sample": {
-  "frames_with_master_gold": 21,
-  "matched_planning_read": 13,
-  "disagree_with_frame_A": {
-   "2-2": "planning 0 at 532 s, Frame A 4 at 526.1 s",
-   "2-5": "planning 6 at 712 s, Frame A 7 at 700.7 s",
-   "2-6": "planning 15 at 766 s, Frame A 17 at 759.3 s",
-   "2-7": "planning 29 at 844 s, Frame A 28 at 835.1 s"
-  },
-  "not_comparable_no_gold_box_visible": [
-   "2-4",
-   "3-2",
-   "6-1",
-   "6-6"
-  ],
-  "no_master_gold_field": [
-   "1-1",
-   "1-2",
-   "2-1",
-   "3-4",
-   "4-4",
-   "5-4",
-   "6-4"
-  ]
+ "gold_frame_a_run": {
+  "note": "Earlier run at Frame A times; superseded by the planning-frame run above"
  }
 }

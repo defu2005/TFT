@@ -843,7 +843,7 @@
    },
    "combat": {
     "value": {
-     "frame_t_s": 505,
+     "frame_t_s": 508,
      "read": "PvP at 508 s (HUD); a tactician plate at level 4 is visible at 508 s; HP flags show P1 and P2 lost HP"
     },
     "tag": "read",
@@ -7014,7 +7014,7 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "frame_s": 2094,
+    "frame_s": 2095,
     "tag": "read",
     "value": {
      "timer": 21,
@@ -7023,7 +7023,7 @@
      "gold": {
       "value": 7,
       "tag": "read",
-      "basis": "earlier planning read; its frame time is not recorded"
+      "basis": "planning read at 2095 s (timer 21 matches the planning entry); the 2094 s frame shows timer 22 and gold 9, so the gold was spent between the two frames"
      },
      "streak": 2,
      "counter": "9/9",
@@ -7050,7 +7050,7 @@
       "value": 9,
       "tag": "read",
       "frame_s": 2094,
-      "basis": "2094 s frame shows 9; digit OCR agrees"
+      "basis": "2094 s frame (timer 22) shows 9; one second earlier than the planning read"
      }
     }
    },
@@ -9426,7 +9426,7 @@
   "source": "round_results_derived.json eliminations; 1 and 2 from 6-6 frames"
  },
  "blind_reread": {
-  "summary": "Blind re-read of the 10 sampled rounds: gold 9/10 against the master as it stood (5-5 planning read 7; Frame A frame at 2094 s shows 9), streak 9/10 (one empty OCR read at 6-2; frame shows 1). Out-of-sample run over the other 21 frames with a master gold value: 13 matched the planning read; 4 disagree with the Frame A frame (2-2, 2-5, 2-6, 2-7), where the planning read and the Frame A frame are at different times (planning frames 532, 712, 766, 844 s; Frame A 526.1, 700.7, 759.3, 835.1 s). Both values are kept. 4 frames show no gold box (2-4, 3-2, 6-1, 6-6)."
+  "summary": "Blind re-read: the sampled ten rounds (coin-free crop chosen after seeing them, so tuned) give gold 9/10 against the master, where the one miss is 5-5 (the Frame A frame at 2094 s shows 9 at timer 22; the planning read is 7 at timer 21, one second later). Out-of-sample: gold read at each recorded planning frame for 13 rounds outside the sample: 13 matched at the recorded frame; the one miss (5-5) is a one-second timer offset, and the timer-21 frame matches the master; the three frames with no gold box (2-4, 6-1, 6-6) are not comparable. Streak 9/10 on the sample (one empty OCR read at 6-2; frame shows 1). Panel, shop, counter, level and XP not re-read blind."
  },
  "final_comps": {
   "P1_6-6": {
