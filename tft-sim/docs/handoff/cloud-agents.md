@@ -119,5 +119,5 @@ Kiểm tra bắt buộc trước khi báo xong:
 
 - **DT:** chap nhan clone v5 o che do rut gon (500 van train, seed 300000–300499; val + test 301500–301999). Seed 300500–301499 de danh, khong dung. Khong chay lai tren may cung.
 - **R:** snapshot CDragon trong repo la trang thai truoc 18.7 (chuoi version 16.23). Du lieu Set 18 trong mo phong khong khop 18.7. Can lay file dung ban 18.7 truoc khi dung cho Set 18. Set 17 (E) khong bi chan boi viec nay.
-- **E:** nhanh `codex/sim-e` da tao tu `codex/sim-dt` @ 01d2339. Checkpoint da kiem tra nap duoc (smoke 900000–900002, 0 luot khong hop le).
+- **E:** `codex/sim-e` @ 48a228f: v4null xong (CI chua 0, dung ky vong). Ba phep con lai dang chay.
 - **C:** xong. CEM tren 240000–240999 (xem README).

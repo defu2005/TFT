@@ -544,3 +544,13 @@ Nguon: `results/fixed/real/cem_item_v2.json` va `item_valuemax_vs_default_240000
 
 Trang thai: vai C xong ve trang bi. Chua co placement cho clone v5 (vai E chua chay).
 
+
+## Ket qua kiem dinh clone v5 (vai E, codex/sim-e @ 48a228f, 2026-11-25)
+
+Nguon: `results/fixed/real/play_v5_v4null.json` tren `codex/sim-e`. Nhan: v5 rut gon (500 van train), seed0. Seed 241000–241999 (1.000 van, chua dung truoc do). Engine (Set 17).
+
+- **v4null (kiem tra am, v4 vs v4):** A−B = **−0,058**, CI95 [−0,164; +0,048] (bootstrap 2.000 lan, tu `per_lobby_diff`, n = 1.000). CI chua 0, dung nhu ky vong. Khong co luot di khong hop le.
+- **Chua co:** clone_v4, clone_v3, clone_scr. E van dang chay; se ghi khi co file.
+
+Co-Authored-By: Claude Haiku 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_014HR84uNjNyg8fiD4KjHhVE
