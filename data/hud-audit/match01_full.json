@@ -1024,6 +1024,10 @@
       "tag": "read",
       "frame_s": 526.1,
       "basis": "Frame A frame at 526.1 s shows 4; digit OCR agrees"
+     },
+     "observed_gold_change": {
+      "tag": "derived",
+      "basis": "gold 4 at 526.1 s to 0 at 532 s; buys at 526.5 and 529.25 s fall inside the window (consistent with the drop)"
      }
     },
     "tag": "read"
@@ -1671,6 +1675,10 @@
       "tag": "read",
       "frame_s": 700.7,
       "basis": "Frame A frame at 700.7 s shows 7; digit OCR agrees"
+     },
+     "observed_gold_change": {
+      "tag": "derived",
+      "basis": "gold 7 at 700.7 s to 6 at 712 s; no purchase is recorded in that window (buys start at 728 s), so the change is unexplained"
      }
     },
     "tag": "read"
@@ -1925,6 +1933,10 @@
       "tag": "read",
       "frame_s": 759.3,
       "basis": "Frame A frame at 759.3 s shows 17; digit OCR agrees"
+     },
+     "observed_gold_change": {
+      "tag": "derived",
+      "basis": "gold 17 at 759.3 s to 15 at 766 s; refresh candidate at 761 s with gold_drop 2 accounts for it"
      }
     },
     "tag": "read"
@@ -2168,6 +2180,10 @@
       "tag": "read",
       "frame_s": 835.1,
       "basis": "Frame A frame at 835.1 s shows 28; digit OCR agrees"
+     },
+     "observed_gold_change": {
+      "tag": "derived",
+      "basis": "gold 28 at 835.1 s to 29 at 844 s; +1 with no purchase in the window (buy at 846 s), so income"
      }
     },
     "tag": "read"
@@ -7051,6 +7067,10 @@
       "tag": "read",
       "frame_s": 2094,
       "basis": "2094 s frame (timer 22) shows 9; one second earlier than the planning read"
+     },
+     "observed_gold_change": {
+      "tag": "derived",
+      "basis": "gold 9 at 2094 s to 7 at 2095 s; buys at 2094.5 and 2096 s are candidates with cost_consistent false, so the -2 is consistent with them but not confirmed"
      }
     }
    },
@@ -9426,7 +9446,7 @@
   "source": "round_results_derived.json eliminations; 1 and 2 from 6-6 frames"
  },
  "blind_reread": {
-  "summary": "Blind re-read: the sampled ten rounds (coin-free crop chosen after seeing them, so tuned) give gold 9/10 against the master, where the one miss is 5-5 (the Frame A frame at 2094 s shows 9 at timer 22; the planning read is 7 at timer 21, one second later). Out-of-sample: gold read at each recorded planning frame for 13 rounds outside the sample: 13 matched at the recorded frame; the one miss (5-5) is a one-second timer offset, and the timer-21 frame matches the master; the three frames with no gold box (2-4, 6-1, 6-6) are not comparable. Streak 9/10 on the sample (one empty OCR read at 6-2; frame shows 1). Panel, shop, counter, level and XP not re-read blind."
+  "summary": "Blind re-read. Sampled ten rounds (crop tuned on these): gold 9/10; the one miss is 5-5, a one-second offset (2094 s is timer 22 with gold 9; the planning read is timer 21 at 2095 s with gold 7). Streak 9/10 (one empty OCR read at 6-2; the frame shows 1). Out-of-sample: 13 of 13 gold values matched at the recorded planning frames; three frames show no gold box (2-4, 6-1, 6-6). Gold changes between the two timed reads for 2-2, 2-5, 2-6, 2-7 and 5-5 are recorded as observed changes with their frames; 2-5 has no recorded purchase for its drop. Panel, shop, counter, level and XP were not re-read blind."
  },
  "final_comps": {
   "P1_6-6": {

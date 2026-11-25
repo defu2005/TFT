@@ -1,17 +1,17 @@
 {
- "protocol": "Digit OCR (tesseract, psm 7, digit whitelist, 3x upscale) on fixed crops; the script never opens the master, which is compared after OCR. The coin-free crop (610,586,640,610) was chosen after seeing the sample of ten, so the 10-round figure is tuned; the 21-frame run is the out-of-sample figure.",
+ "protocol": "Digit OCR (tesseract, psm 7, digit whitelist, 3x upscale) on the fixed coin-free crop (610,586,640,610). The script never opens the master; the master is compared after OCR. The crop was chosen after seeing the sample of ten, so the sample figure is tuned. The out-of-sample figure is the planning-frame run over the other rounds.",
  "rates": {
   "gold": {
    "matched": 9,
    "of": 10,
    "rate": 0.9,
-   "note": "sampled 10; the one miss is 5-5, a frame-time offset (2094 s is timer 22; the planning read is timer 21 at 2095 s), not a master error"
+   "note": "sample of ten, tuned crop; the one miss is 5-5, a one-second offset"
   },
   "streak": {
    "matched": 9,
    "of": 10,
    "rate": 0.9,
-   "note": "6-2 OCR empty; frame shows 1, master 1"
+   "note": "sample of ten; 6-2 OCR empty, frame shows 1, master 1"
   }
  },
  "gold_masked_near_white": {
@@ -26,37 +26,6 @@
   "same": 10,
   "different": 0
  },
- "gold_widened_crop": {
-  "crop": [
-   596,
-   584,
-   650,
-   612
-  ],
-  "matched": 4,
-  "of": 10,
-  "rate": 0.4,
-  "misses": {
-   "3-5": "OCR 925: left coin read as 9 (master 25 confirmed by frame)",
-   "4-2": "OCR 922 leak (master 22 confirmed)",
-   "4-6": "OCR 971 leak (master 71 confirmed)",
-   "5-1": "OCR 957 leak (master 57 confirmed)",
-   "5-6": "OCR 26 leak from streak box (master 6 confirmed)",
-   "5-5": "master 7 conflicts with frame 9 (OCR 9 correct); master flagged gold_conflict"
-  }
- },
- "gold_coin_free_crop": {
-  "crop": [
-   610,
-   586,
-   640,
-   610
-  ],
-  "matched": 10,
-  "of": 10,
-  "rate": 1.0,
-  "note": "Run once after the coin-free fix. The 5-5 master gold was corrected to 9 from the 2094 s frame before this run, so that match is partly confirmed by the frame, not blind alone."
- },
  "gold_original_crop": {
   "crop": [
    604,
@@ -66,7 +35,8 @@
   ],
   "matched": 4,
   "of": 10,
-  "rate": 0.4
+  "rate": 0.4,
+  "note": "coin and neighbouring digits leak in"
  },
  "streak": {
   "matched": 9,
