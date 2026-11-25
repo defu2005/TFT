@@ -4707,7 +4707,7 @@
       "streamer": "scarra",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "working",
       "patch_claims": [
         "18.x"
       ],
