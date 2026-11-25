@@ -681,8 +681,8 @@
    "hexes": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "399.9 s planning frame (cropped at 2x): two green-barred purple sprites sit on the lower right of the grid, but the 1-4 panel is one unit (Veigar, N=1). The two sprites cannot both be the single panel unit.",
-    "reason": "two ally sprites on the grid conflict with the one-unit panel, so no single hex is recorded"
+    "attempt": "399.9 s planning frame, 3x crop of the arena: two purple sprites with green bars at the lower right look identical. The counter watermark is partly covered, so the full count is not legible. The 1-4 panel is one unit (Veigar, N=1).",
+    "reason": "two identical ally sprites conflict with the one-unit panel; no hex assigned"
    },
    "frame_A_read": {
     "frame_s": 399.9,
@@ -807,14 +807,8 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "candidates": [
-     "P3",
-     "P4",
-     "P6",
-     "P8"
-    ],
-    "attempt": "HP-loss flags with alive() filter: P1 lost; pool = living non-losers; ghost added when alive count is odd; pool = P3, P4, P6, P8",
-    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
+    "attempt": "checked combat frames at 483.8 (planning + 45 s): PvE creep carousel, no PvP view; no opponent nameplate. HP-flag pool kept: P3, P4, P6, P8",
+    "reason": "no legible opponent nameplate in the checked frames"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -879,8 +873,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 438.8 to 526.1 s. Scan runs flagged at 460 to 462 s. Owner not established for these runs, so no panel is attached to this round.",
-    "reason": "owner not established for the flagged scouting runs in this round"
+    "attempt": "opponent not identified at 483.8 (planning + 45 s); no sprites tied to a panel",
+    "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
     "value": null,
@@ -1212,16 +1206,9 @@
     "basis": "HP flags: other players lost HP"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     "P2",
-     "P3",
-     "P5",
-     "P6"
-    ],
-    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P2, P3, P5, P6",
-    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
+    "value": "P5",
+    "tag": "read",
+    "basis": "combat frame at 634.9 (Frame B; 2-3 combat frame at 668 s also checked) s, 2x crop of the top-of-arena nameplate; name matched to P5 through the private alias table; P5 is in the HP-flag pool"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -1306,8 +1293,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 597.9 to 663 s. Run 606 to 608 s is a foreign panel with faded rows, owner not established. Run 662 to 664 s is the 2-4 carousel showing our own panel. No panel is attached.",
-    "reason": "owner not established for the faded foreign panel"
+    "attempt": "opponent identified as P5 at 634.9 (Frame B; 2-3 combat frame at 668 s also checked) s; scouting runs flagged in this round have no owner, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -1873,14 +1860,8 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "candidates": [
-     "P3",
-     "P5",
-     "P6",
-     "P8"
-    ],
-    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P3, P5, P6, P8",
-    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
+    "attempt": "checked combat frames at 795.3 (Frame B) and 829 s: opponent units visible on the far side; nameplate covered by chat overlay. HP-flag pool kept: P3, P5, P6, P8",
+    "reason": "no legible opponent nameplate in the checked frames"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -1970,8 +1951,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 759.3 to 835.1 s. Scan runs flagged at 778 to 778 s. Owner not established for these runs, so no panel is attached to this round.",
-    "reason": "owner not established for the flagged scouting runs in this round"
+    "attempt": "opponent not identified at 795.3 (Frame B) and 829 s; no sprites tied to a panel",
+    "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
     "value": null,
@@ -2573,14 +2554,8 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "candidates": [
-     "P2",
-     "P3",
-     "P7",
-     "P8"
-    ],
-    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P2, P3, P7, P8",
-    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
+    "attempt": "checked combat frames at 1001.3 (planning + 45 s): planning view (own board on the hex grid); no opponent nameplate. HP-flag pool kept: P2, P3, P7, P8",
+    "reason": "no legible opponent nameplate in the checked frames"
    },
    "combat_frame_t_s": null,
    "trait_panel_1018_combat": {
@@ -2742,8 +2717,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 956.3 to 1048.2 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
-    "reason": "no scouting-window frame at 2 s cadence in this round"
+    "attempt": "opponent not identified at 1001.3 (planning + 45 s); no sprites tied to a panel",
+    "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
     "value": null,
@@ -2862,16 +2837,9 @@
     "basis": "3-3 PvP already read from HP labels"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     "P2",
-     "P5",
-     "P7",
-     "P8"
-    ],
-    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P2, P5, P7, P8",
-    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
+    "value": "P7",
+    "tag": "read",
+    "basis": "combat frame at 1093.2 (planning + 45 s) s, 2x crop of the top HUD name by the timer; name matched to P7 through the private alias table; P7 is in the HP-flag pool"
    },
    "combat_frame_t_s": null,
    "trait_panel_1058_planning": {
@@ -2996,8 +2964,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 1048.2 to 1128.5 s. Scan runs flagged at 1068 to 1070 s, 1126 to 1140 s. Owner not established for these runs, so no panel is attached to this round.",
-    "reason": "owner not established for the flagged scouting runs in this round"
+    "attempt": "opponent identified as P7 at 1093.2 (planning + 45 s) s; scouting runs flagged in this round have no owner, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -4172,16 +4140,9 @@
     "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     "P3",
-     "P5",
-     "P6",
-     "P8"
-    ],
-    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P3, P5, P6, P8",
-    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
+    "value": "P3",
+    "tag": "read",
+    "basis": "combat frame at 1400.3 (planning + 45 s) s, 2x crop of the top-of-arena nameplate; name matched to P3 through the private alias table; P3 is in the HP-flag pool"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -4329,8 +4290,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 1355.3 to 1433.8 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
-    "reason": "no scouting-window frame at 2 s cadence in this round"
+    "attempt": "opponent identified as P3 at 1400.3 (planning + 45 s) s; scouting runs flagged in this round have no owner, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -4472,14 +4433,8 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "candidates": [
-     "P2",
-     "P4",
-     "P5",
-     "P6"
-    ],
-    "attempt": "HP-loss flags with alive() filter: P1 lost; pool = living non-losers; ghost added when alive count is odd; pool = P2, P4, P5, P6",
-    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
+    "attempt": "checked combat frames at 1478.8 (planning + 45 s): augment pick overlay over own board; no opponent nameplate. HP-flag pool kept: P2, P4, P5, P6",
+    "reason": "no legible opponent nameplate in the checked frames"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -4585,8 +4540,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 1433.8 to 1529.7 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
-    "reason": "no scouting-window frame at 2 s cadence in this round"
+    "attempt": "opponent not identified at 1478.8 (planning + 45 s); no sprites tied to a panel",
+    "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
     "value": null,
@@ -4724,16 +4679,9 @@
     "basis": "streak changed with HP held"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     "P3",
-     "P5",
-     "P6",
-     "P8"
-    ],
-    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P3, P5, P6, P8",
-    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
+    "value": "P6",
+    "tag": "read",
+    "basis": "combat frame at 1574.7 (planning + 45 s) s, 2x crop of the arena nameplate centre-top; name matched to P6 through the private alias table; P6 is in the HP-flag pool"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -4836,8 +4784,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 1540 to 1652 s. Runs 1534 and 1544 s are foreign panels, owner not established. Run 1602 s is our own 4-4 carousel panel. No foreign panel is attached.",
-    "reason": "owner not established for the foreign panels in this round"
+    "attempt": "opponent identified as P6 at 1574.7 (planning + 45 s) s; scouting runs flagged in this round have no owner, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -5142,14 +5090,8 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "candidates": [
-     "P3",
-     "P4",
-     "P5",
-     "P6"
-    ],
-    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P3, P4, P5, P6",
-    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
+    "attempt": "checked combat frames at 1685.8 (planning + 45 s): crowd combat centre; no legible nameplate. HP-flag pool kept: P3, P4, P5, P6",
+    "reason": "no legible opponent nameplate in the checked frames"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -5260,8 +5202,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 1640.8 to 1716.5 s. Scan runs flagged at 1716 to 1716 s. Owner not established for these runs, so no panel is attached to this round.",
-    "reason": "owner not established for the flagged scouting runs in this round"
+    "attempt": "opponent not identified at 1685.8 (planning + 45 s); no sprites tied to a panel",
+    "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
     "value": null,
@@ -6258,13 +6200,8 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "candidates": [
-     "P3",
-     "P6",
-     "P7"
-    ],
-    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P3, P6, P7",
-    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
+    "attempt": "checked combat frames at 1952.9 (planning + 45 s) and 1946 s: no legible arena nameplate; stored 1946 s observation is a placeholder, not a name. HP-flag pool kept: P3, P6, P7",
+    "reason": "no legible opponent nameplate in the checked frames"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -6408,8 +6345,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 1907.9 to 1993.3 s. Scan runs flagged at 1972 to 1984 s. Owner not established for these runs, so no panel is attached to this round.",
-    "reason": "owner not established for the flagged scouting runs in this round"
+    "attempt": "opponent not identified at 1952.9 (planning + 45 s) and 1946 s; no sprites tied to a panel",
+    "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
     "value": null,
@@ -7023,12 +6960,8 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "candidates": [
-     "P4",
-     "P7"
-    ],
-    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P4, P7",
-    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
+    "attempt": "checked combat frames at 2132.5 (planning + 45 s): combat centre; no legible nameplate; rail shows several rows at 0 HP. HP-flag pool kept: P4, P7",
+    "reason": "no legible opponent nameplate in the checked frames"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -7181,8 +7114,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 2087.5 to 2165.3 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
-    "reason": "no scouting-window frame at 2 s cadence in this round"
+    "attempt": "opponent not identified at 2132.5 (planning + 45 s); no sprites tied to a panel",
+    "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
     "value": null,
@@ -7340,12 +7273,8 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "candidates": [
-     "P2",
-     "ghost"
-    ],
-    "attempt": "HP-loss flags with alive() filter: P1 lost; pool = living non-losers; ghost added when alive count is odd; pool = P2, ghost",
-    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
+    "attempt": "checked combat frames at 2210.3 (planning + 45 s): combat centre; no legible nameplate. HP-flag pool kept: P2, ghost",
+    "reason": "no legible opponent nameplate in the checked frames"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -7475,8 +7404,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 2165.3 to 2230.8 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
-    "reason": "no scouting-window frame at 2 s cadence in this round"
+    "attempt": "opponent not identified at 2210.3 (planning + 45 s); no sprites tied to a panel",
+    "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
     "value": null,
@@ -8134,12 +8063,8 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "candidates": [
-     "P2",
-     "ghost"
-    ],
-    "attempt": "HP-loss flags with alive() filter: P1 lost; pool = living non-losers; ghost added when alive count is odd; pool = P2, ghost",
-    "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
+    "attempt": "checked combat frames at 2380.2 (planning + 45 s): combat centre; no legible nameplate; top-right HUD shows a number only. HP-flag pool kept: P2, ghost",
+    "reason": "no legible opponent nameplate in the checked frames"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -8265,8 +8190,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Round window 2335.2 to 2398.9 s. No frame matched the scouting template at 2 s cadence (the template is the bottom-centre button; a shorter view would be missed). No scouted panel recorded for this round.",
-    "reason": "no scouting-window frame at 2 s cadence in this round"
+    "attempt": "opponent not identified at 2380.2 (planning + 45 s); no sprites tied to a panel",
+    "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
     "value": null,
