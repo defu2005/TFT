@@ -7,30 +7,31 @@
   "covered_ranges_s": [
     [
       0,
-      1605
+      3800
     ]
   ],
   "remaining_ranges_s": [
     [
-      1605,
+      3800,
       29353
     ]
   ],
   "game_ids": [
-    "twitch-2886223848-g150"
+    "twitch-2886223848-g150",
+    "twitch-2886223848-g1900"
   ],
   "counts": {
-    "games": 1,
-    "fights": 11,
-    "others": 12
+    "games": 2,
+    "fights": 19,
+    "others": 21
   },
   "validator": {
     "ok": 2,
     "skipped": {
-      "winner_null": 9
+      "winner_null": 17
     }
   },
-  "needs_review": 9,
-  "commit": "38eca03",
-  "remaining": "tiếp tục từ 1605 s (ván 2+ ranked); CUSTOM/tourney thì blocked/skip"
+  "needs_review": 17,
+  "commit": "0187a33",
+  "remaining": "tiếp tục từ 3800 s (ván 3+ ranked)"
 }
