@@ -63,8 +63,8 @@ TRAIT_TABLE = {
                       "{f1ed73eb}": ("hp_pct", "members")},                     # BrawlerHealthPercent; GIA DINH: Brawler nhan CONG DON
     "DA_Juggernaut18": {"{f8c73243}": ("dr", "team"),                           # TeamDurability (ten khoa da xac nhan)
                         "{6eab9c5e}": ("dr", "members")},                       # JuggernautDurability; dr lay MAX tren moi unit (khong cong don)
-    "DA_18_Defender": {"{0eb6405e}": ("resist", "nonmember"),                   # NonDefenderDefenseGain (ten khoa)
-                       "{8c16b281}": ("resist", "members")},                    # DefenderDefenseGain
+    "DA_18_Defender": {"{0eb6405e}": ("resist", "team"),                      # NonDefenderDefenseGain: ca doi (mo ta "Your team gains")
+                       "{8c16b281}": ("resist", "members")},                    # DefenderDefenseGain: Defender lay MAX (mo ta "Defenders gain more")
     "DA_18_Rapidfire": {"{1d98dcec}": ("as", "team")},                          # TeamAS
 }
 TABLE_MAPPED = sum(len(v) for v in TRAIT_TABLE.values())
@@ -108,11 +108,11 @@ def _table_extra(units, content, with_emblem: bool) -> None:
             for u, mem in zip(units, is_member):
                 if scope == "team" or (scope == "members" and mem) or (scope == "nonmember" and not mem):
                     deltas.append((u, attr, v))
-    dr_max = {}  # id(u) -> (u, max dr); dr khong cong don: lay gia tri lon nhat
+    mx = {}  # (id(u), attr) -> (u, max v); dr va resist khong cong don: lay gia tri lon nhat (mo ta "X gain more")
     for u, attr, v in deltas:
-        if attr == "dr":
-            cur_u, cur_v = dr_max.get(id(u), (u, 0.0))
-            dr_max[id(u)] = (u, max(cur_v, v))
+        if attr in ("dr", "resist"):
+            cur_u, cur_v = mx.get((id(u), attr), (u, 0.0))
+            mx[(id(u), attr)] = (u, max(cur_v, v))
         elif attr == "hp_flat":
             u.max_hp += v; u.hp += v
         elif attr == "hp_pct":
@@ -120,12 +120,13 @@ def _table_extra(units, content, with_emblem: bool) -> None:
             u.max_hp += d; u.hp += d
         elif attr == "crit":
             u.crit_chance += v
-        elif attr == "resist":
-            u.armor += v; u.mr += v
         else:  # as
             TE._apply_stat(u, attr, v)
-    for u, v in dr_max.values():
-        TE._apply_stat(u, "dr", v)
+    for (_, attr), (u, v) in mx.items():
+        if attr == "resist":
+            u.armor += v; u.mr += v
+        else:
+            TE._apply_stat(u, "dr", v)
 
 
 def _emblem_traits(units, content, bonus_units: int = 0) -> None:
