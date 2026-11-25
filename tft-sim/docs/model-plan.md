@@ -296,11 +296,28 @@ Tỷ lệ đảo chiều so với `hand` trên 1675 cặp quyết định của 
 
 Đọc kết quả: trên Set 17, ability và trang bị làm đổi kết quả nhiều nhất (16–18%); trait và augment đổi ít (4–5%). Biến của generic không tạo khác biệt có ý nghĩa (16,6% so với 15,9%, CI chồng lên nhau). Đây là độ nhạy của sim so với `hand`, không phải độ đúng so với thật.
 Kiểm tra cặp (cùng 1675 cặp quyết định, `phase1_pairs.csv.gz`, bootstrap theo lobby 2000 lần, không chạy sim mới):
-- `generic` và `generic_novars` lệch nhau ở 12,4% cặp (CI [10,7; 14,1]): biến số thật sự đổi kết quả.
+- `generic` và `generic_novars` lệch nhau ở 12,4% cặp (CI [10,7; 14,1]). Trong đó 98/1393 cặp mà cả hai đều chắc chắn (p >= 0,9 hoặc <= 0,1) vẫn đảo bên thắng (7,0%): biến số có tác động thật, nhưng nhỏ.
 - Nhưng tỷ lệ đảo chiều so với hand gần như bằng nhau (16,6% so với 15,9%; chênh lệch cặp +0,7%, CI [-1,1; +2,5]).
 - `generic` không gần hand hơn `none` một cách đo được: chênh lệch cặp -1,8%, CI [-3,9; +0,3] (bao gồm 0). Đây là giới hạn chính khi dự đoán Set 18, vì `hand` đang bị chặn ở Set 18.
 - `generic_novars` gần hand hơn `none` (-2,5%, CI [-3,6; -1,2]), nhưng khác biệt này không có ý nghĩa khi so với `generic`.
 
-Thứ tự Phase 3 theo kết quả: ability (sửa nền) trước, rồi trait, rồi augment.
-Lựa chọn Phase 3 đã ghi: dùng số generic thô cho ability KHÔNG được coi là cải thiện. Mục tiêu tiếp theo là template ability Set 18 (mục 9) lấy từ mô tả và biến số CDragon, rồi đo lại với `none` làm mốc. Bảng trait (25 trait không có ánh xạ stat) làm sau, vì Phase 1 cho thấy trait chỉ đổi 4,9%.
-Số item Set 18 (đã alias): 776 mục, phân loại none 619, stat 129, stat+hook 28 (`coverage_items_traits.json`).
+Thứ tự Phase 3 đã ghi (ban đầu): ability trước, rồi trait, rồi augment. Lựa chọn Phase 3 đã ghi: dùng số generic thô cho ability KHÔNG được coi là cải thiện. Mục tiêu tiếp theo là template ability Set 18 (mục 9) lấy từ mô tả và biến số CDragon, rồi đo lại với `none` làm mốc. Bảng trait (25 trait không có ánh xạ stat) làm sau, vì Phase 1 cho thấy trait chỉ đổi 4,9%.
+
+
+
+### 11.2 Cổng template (khóa quy tắc trước khi chạy, 2026-11-25)
+Câu hỏi: template ability (mục 9) có tốt hơn `generic_novars` (cấu hình tốt nhất Set 18 chạy được hiện nay) không?
+Mẫu: đúng 2000 cặp same-round của `phase1_levers.py` (cùng seed, cùng sample), N=20, seed0=0. Quyết định: p_hand >= 0.9 hoặc <= 0.1 (1675 cặp).
+Chỉ số: hiệu cặp của tỷ lệ đảo chiều so với hand, template trừ generic_novars; bootstrap theo lobby 2000 lần.
+- PASS: CI 95% của hiệu nằm hoàn toàn dưới 0 (template đảo chiều ít hơn). Khi đó mới được làm template Set 18 (bước 3).
+- FAIL hoặc không rõ: không làm template Set 18. Set 18 chạy ability generic, ghi rõ là generic. Nỗ lực chuyển sang item.
+
+- Kết quả cổng (2000 cặp, 1675 quyết định, N=20, `results/fixed/combat/gate_template/gate_template.json`): template 17,1%, generic_novars 15,9%, hiệu 0,0113, CI95 [-0,0066; +0,0297]. CI không nằm dưới 0. Kết quả: FAIL.
+- Quyết định: KHÔNG làm template Set 18. Set 18 chạy ability generic (bản bỏ biến số không được chọn làm mặc định; xem 11.1).
+
+### 11.3 Độ phủ item Set 18 theo slot (6839 bản ghi `pairs18_alias.jsonl`, build_set18_records)
+- Tổng slot item: 10767. Không rõ tên (unknown): 0.
+- Slot có hiệu ứng rỗng: 4375 (40,6%).
+- Trong đó 4016 (91,8%) là emblem (`DA_18_Emblem*`), 359 là Tactician's Shield/Crown.
+- Kết luận: phần lớn slot rỗng là emblem, mà emblem cộng điểm trait. Việc cần làm trước tiên cho Set 18 là ánh xạ emblem → điểm trait (bước 3a: bảng trait), không phải template ability.
+- Ghi chú: việc đếm slot rỗng không chứng minh emblem đang bị bỏ qua trong engine; cần kiểm tra cách engine đếm trait khi có emblem trước khi kết luận.

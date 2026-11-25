@@ -1,0 +1,12 @@
+{
+ "n_pairs": 2000,
+ "n_decisive": 1675,
+ "flip_template": 0.1707,
+ "flip_generic_novars": 0.1594,
+ "diff_template_minus_novars": 0.0113,
+ "ci95": [
+  -0.0066,
+  0.0297
+ ],
+ "verdict": "FAIL"
+}

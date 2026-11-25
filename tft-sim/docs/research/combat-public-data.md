@@ -233,3 +233,8 @@ File: `tft-sim/data/blitz_set18_numbers.json`. 74 trang Blitz (patch 18.7).
 
 ## 11. Hai khóa trait Set 18 sai (Phase 3 bước 8, 2026-11-25)
 Vanguard `MaxHealthShield` (là khiên theo phần trăm máu tối đa) và Spellweaver `APPerCast` (là AP cộng dồn theo lần thi triển) đã được bỏ trong đường Set 18 của `fight.py` (`_SET18_BAD_KEYS`). Selftest: máu tối đa Vanguard không còn bị cộng, trait không liên quan (Blossom) không đổi. Không áp dụng cho script huấn luyện.
+
+
+## 12. Cổng template và độ phủ item Set 18 (2026-11-25)
+- Cổng template (mục 11.2): template 17,1% so với generic_novars 15,9%, CI95 hiệu [-0,0066; +0,0297]. Không đạt. Set 18 không làm template.
+- Độ phủ slot item Set 18: 40,6% slot có hiệu ứng rỗng, 91,8% trong số đó là emblem. Emblem là việc cần làm tiếp theo (bảng trait, mục 11.3).
