@@ -133,17 +133,18 @@ Phân nhóm Set 18 (theo tên và thành phần):
 - 271 item `TFT_Item_*` (cổ điển): 148 có stat hoặc hook, 123 không tác dụng.
 - 55 công thức `DA_*` có thành phần (craftable):
   - 16 là emblem (chỉ cộng trait; engine không xử lý emblem).
-  - 39 còn lại: 37 có item cùng tên `TFT_Item_*` có hiệu ứng (27 stat+hook, 9 stat, 1 không tác dụng), 2 không có item cùng tên.
+  - 39 craftable không phải emblem: 36 có item cùng tên `TFT_Item_*` có hiệu ứng (27 stat+hook, 9 stat; gồm Infinity Edge và Jeweled Gauntlet, hai mục này có stat ngay trên apiName `DA_*`), 1 có item cùng tên nhưng không tác dụng, 2 không có item cùng tên.
   - Ví dụ: `DA_Bloodthirster` có `effects` rỗng, `TFT_Item_Bloodthirster` có AD, AP, hút máu, kháng phép...
   - Chưa biết client thật gửi apiName nào cho item Set 18 khi chụp dữ liệu. Đây là điểm cần làm rõ trong hợp đồng capture, không phải lỗi của engine.
 - 10 thành phần `DA_Component_*`: không tác dụng (đúng bản chất).
-- 435 mục `DA_*` còn lại: 9 có stat (Flow, Hugify, Marksmen's Gale, Stand Alone và các mục khác), 426 không tác dụng. Các mục này có tên và mô tả giống augment Set 18 (ví dụ Aftershock: "sau 8 giây, choáng mọi địch 1,5 giây"; Bark Armor: "tướng nhận 150 khiên trong 10 giây"), nhưng apiName không nằm trong danh sách 594 augment của setData. Chưa xác định chắc phân loại; đây là mục chưa rõ.
+- 440 mục `DA_*` còn lại: 7 có stat (Flow, Marksmen's Gale, Stand Alone và các mục khác), 7 emblem không craftable, 426 không tác dụng. Các mục này có tên và mô tả giống augment Set 18 (ví dụ Aftershock: "sau 8 giây, choáng mọi địch 1,5 giây"; Bark Armor: "tướng nhận 150 khiên trong 10 giây"), nhưng apiName không nằm trong danh sách 594 augment của setData. Chưa xác định chắc phân loại; đây là mục chưa rõ.
+- Lưu ý về `build_real_set18_clean` (nội dung dùng trong môi trường mô phỏng): hàm này bỏ toàn bộ `TFT_Item_*` và giữ 505 mục `DA_*`, 667 item. Nghĩa là khi dùng nội dung này, 36 craftable có twin hiệu ứng sẽ không có hiệu ứng trong engine.
 - Hook: 0 mục `DA_*` nằm trong bảng hook của engine. Các hook của item cổ điển được tính trong bảng dùng chung với Set 17.
 
 Đếm hiệu quả theo tên (ghép craftable `DA_*` với item cùng tên `TFT_Item_*`): 191/776 item có tác dụng trong engine (157 theo apiName + 34 craftable qua item cùng tên). Vẫn chỉ khoảng một phần tư, và phần lớn là item cổ điển.
 
 Trait (36 trait Set 18; 44 trait Set 17):
-- Set 18: 11 trait có bonus chỉ số được áp dụng khi kích hoạt (Sprykin, Hunter, Monolith, Attuned, Vanguard, Blackthorn, Fae, Lunar, Spellweaver, Thornmaiden, Blossom); 25 không có ánh xạ chỉ số (Elderwood, Avatar, Ravager, Bounty Seeker, Solar, Adaptor, Coven, Eclipse, Old Growth, Primal, Greenfather, Invoker, Rapidfire, Juggernaut, Inferno, Rival, Brawler, Executioner, Apex Predator, Riftbeast, Caustic, Defender, Flora Fatalis, Summoner, Emerald Aspect).
+- Set 18: 11 trait có bonus chỉ số được áp dụng khi kích hoạt. Kiểm tra mô tả và biến cho thấy 9 ánh xạ đúng (Sprykin, Hunter, Monolith, Attuned, Blackthorn, Fae, Lunar, Thornmaiden, Blossom). 2 ánh xạ sai âm thầm: Vanguard (`MaxHealthShield` là khiên theo phần trăm máu tối đa, đang bị áp thành +máu tối đa), Spellweaver (`APPerCast` là AP cộng dồn theo mỗi lần thi triển, đang bị áp một lần như AP cố định). 25 không có ánh xạ chỉ số (Elderwood, Avatar, Ravager, Bounty Seeker, Solar, Adaptor, Coven, Eclipse, Old Growth, Primal, Greenfather, Invoker, Rapidfire, Juggernaut, Inferno, Rival, Brawler, Executioner, Apex Predator, Riftbeast, Caustic, Defender, Flora Fatalis, Summoner, Emerald Aspect).
 - Set 17 để so sánh: 27 áp dụng được, 15 không ánh xạ, 1 có ánh xạ nhưng không đổi chỉ số, 1 không có effect.
 - Tên trait Set 18 xuất hiện trong mã engine ngoài `trait_effects.py`: 1/36. Chỉ là dấu hiệu tham chiếu, không chứng minh có logic riêng.
 

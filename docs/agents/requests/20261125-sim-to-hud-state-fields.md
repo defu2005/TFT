@@ -46,3 +46,9 @@ Thứ tự ưu tiên: (a) bàn của người được quay, (b) bàn đối th�
 
 - Level null ở 9 VOD: xem `20261125-sim-to-hud-level-null-vods.md`.
 - `timer`, `gold`, `level`, `xp`, `streak` không yêu cầu ở đây: đã có trong `fields4`.
+
+
+## Ghi chú apiName trang bị Set 18 (2026-11-25)
+
+- Với Set 18, cùng một tên trang bị có thể có hai apiName: `DA_*` (công thức ghép, `effects` rỗng trong CDragon) và `TFT_Item_*` (có hiệu ứng). Chưa biết client gửi apiName nào trong dữ liệu chụp thật.
+- Đề nghị: bản ghi trận phải ghi đúng apiName client gửi, và kèm trường tên hiển thị để đối chiếu. Chưa quyết định ánh xạ nào được dùng trong mô phỏng.
