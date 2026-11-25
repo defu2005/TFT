@@ -587,3 +587,25 @@ Nguon: `results/fixed/real/item_valuemax_vs_default_250000.json` (gop 4 shard 25
 - Sau vong nay, khong con phep cloud nao dang chay. Clone khop teacher v4 (kiem dinh E). Clone khong the vuot teacher, nen khong thu them du lieu DT.
 - Ket qua clone_v3 (−0,797) va clone_scr (−2,396) phan anh loi the cua v4, truyen qua clone; khong phai loi the moi cua clone.
 - Vai P (dinh vi) va Set 18 de tam dung.
+
+## Thí nghiệm mask nhóm HUD (2026-11-25, bằng chứng bot)
+
+Đăng ký trước: `docs/model-plan.md` 10.6. Teacher v4 (`make_aug_rule`), EngineResolver, TFTSet17. Huấn luyện: seed 150000–150399 (train, 1,18 triệu dòng), 151000–151199 (test). Chơi: seed 260000–260999, 1000 lobby, A = clone, B = teacher v4. CI95 bootstrap theo lobby.
+
+| Điều kiện | Số chiều | Khớp test | A−B (CI95) |
+|---|---|---|---|
+| full | 185 | 0,9966 | chưa chơi (kiểm tra mốc) |
+| a: HUD | 14 | 0,6355 | +2,181 [2,090; 2,271] |
+| b: a + HP, round | 16 | 0,6357 | +2,306 [2,225; 2,390] |
+| c: b + bàn, bàn chờ | 120 | 0,9927 | +0,498 [0,397; 0,591] |
+| null: v4 vs v4 | — | — | −0,023 [−0,128; 0,086] |
+
+So sánh theo cặp (per-lobby): b−a = +0,126 [0,004; 0,244]; c−b = −1,809 [−1,940; −1,683]; c−a = −1,684 [−1,820; −1,538].
+
+Đọc kết quả:
+- Bàn và bàn chờ là nhóm có tác động lớn nhất. Khi thêm nhóm này, clone gần teacher hơn 1,8 điểm.
+- HP và round không giúp: b−a nhỏ hơn ngưỡng 0,2 đã đăng ký. Điều này khớp kiểm tra: teacher v4 không đổi hành động khi đổi HP (20/20).
+- Clone c vẫn kém teacher khoảng 0,5 điểm, CI không chứa 0. Clone chưa bằng teacher.
+- Null gần 0, nên harness không lệch.
+- Đây là teacher và nội dung Set 17 mô phỏng, không phải TFT thật. Chỉ là bằng chứng về nhóm đầu vào mà teacher thực sự dùng.
+
