@@ -1,2421 +1,2907 @@
 {
- "schema": "vod-manifest-v1",
- "batch": "2026-11-25-set18-vod",
- "dispatcher": "claude (phiên điều phối mở rộng manifest 1000)",
- "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối.",
- "slots": {
-  "P1": {
-   "role": "primary",
-   "streamers": [
-    "Frodan"
-   ]
-  },
-  "P2": {
-   "role": "primary",
-   "streamers": [
-    "Dishsoap",
-    "k3soju"
-   ]
-  },
-  "P3": {
-   "role": "primary",
-   "streamers": [
-    "robinsongz",
-    "boxbox",
-    "setsuko"
-   ]
-  },
-  "V1": {
-   "role": "second_label",
-   "streamers": [
-    "Frodan (1 VOD)",
-    "Dishsoap (1 VOD)"
-   ]
-  },
-  "none": {
-   "role": "none",
-   "note": "VOD hud đã xử lý, agent bỏ qua"
-  },
-  "P4": {
-   "role": "primary",
-   "streamers": [
-    "wasianiverson"
-   ]
-  },
-  "P5": {
-   "role": "primary",
-   "streamers": [
-    "souless"
-   ]
-  },
-  "P6": {
-   "role": "primary",
-   "streamers": [
-    "cambulee"
-   ]
-  }
- },
- "vods": [
-  {
-   "vod_id": "twitch-2924500482",
-   "url": "https://www.twitch.tv/videos/2924500482",
-   "streamer": "boxbox",
-   "slot": "none",
-   "role": "hud_processed",
-   "status": "done_by_hud",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     210,
-     2940
-    ],
-    [
-     3180,
-     5350
-    ],
-    [
-     5380,
-     7920
-    ],
-    [
-     8240,
-     10740
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json",
-    "hud:docs/hud-validation/set18-campaign.json",
-    "hud:data/hud-logs/set18/done-keys.txt"
-   ]
-  },
-  {
-   "vod_id": "twitch-2925294495",
-   "url": "https://www.twitch.tv/videos/2925294495",
-   "streamer": "robinsongz",
-   "slot": "none",
-   "role": "hud_processed",
-   "status": "done_by_hud",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     4190,
-     5944
-    ],
-    [
-     6040,
-     8410
-    ],
-    [
-     8410,
-     9895
-    ],
-    [
-     9895,
-     11750
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json",
-    "hud:docs/hud-validation/set18-campaign.json",
-    "hud:data/hud-logs/set18/done-keys.txt"
-   ]
-  },
-  {
-   "vod_id": "twitch-2926218384",
-   "url": "https://www.twitch.tv/videos/2926218384",
-   "streamer": "boxbox",
-   "slot": "none",
-   "role": "hud_processed",
-   "status": "done_by_hud",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     3852,
-     5840
-    ],
-    [
-     6030,
-     7980
-    ],
-    [
-     8080,
-     10535
-    ],
-    [
-     10725,
-     12670
-    ],
-    [
-     1390,
-     3850
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json",
-    "hud:docs/hud-validation/set18-campaign.json",
-    "hud:data/hud-logs/set18/done-keys.txt"
-   ]
-  },
-  {
-   "vod_id": "twitch-2927052824",
-   "url": "https://www.twitch.tv/videos/2927052824",
-   "streamer": "robinsongz",
-   "slot": "none",
-   "role": "hud_processed",
-   "status": "done_by_hud",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     4150,
-     6010
-    ],
-    [
-     6300,
-     8290
-    ],
-    [
-     10590,
-     13040
-    ],
-    [
-     13230,
-     15920
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json",
-    "hud:docs/hud-validation/set18-campaign.json",
-    "hud:data/hud-logs/set18/done-keys.txt"
-   ]
-  },
-  {
-   "vod_id": "twitch-2928060890",
-   "url": "https://www.twitch.tv/videos/2928060890",
-   "streamer": "boxbox",
-   "slot": "none",
-   "role": "hud_processed",
-   "status": "done_by_hud",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     525,
-     2730
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json",
-    "hud:docs/hud-validation/set18-campaign.json",
-    "hud:data/hud-logs/set18/done-keys.txt"
-   ]
-  },
-  {
-   "vod_id": "twitch-2915091249",
-   "url": "https://www.twitch.tv/videos/2915091249",
-   "streamer": "setsuko",
-   "slot": "none",
-   "role": "hud_processed",
-   "status": "done_by_hud",
-   "patch_claims": [
-    "18.5C"
-   ],
-   "candidate_ranges_s": [
-    [
-     485,
-     2955
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json",
-    "hud:docs/hud-validation/set18-campaign.json",
-    "hud:data/hud-logs/set18/done-keys.txt"
-   ]
-  },
-  {
-   "vod_id": "twitch-2916058832",
-   "url": "https://www.twitch.tv/videos/2916058832",
-   "streamer": "setsuko",
-   "slot": "none",
-   "role": "hud_processed",
-   "status": "done_by_hud",
-   "patch_claims": [
-    "18.5C"
-   ],
-   "candidate_ranges_s": [
-    [
-     2635,
-     4860
-    ],
-    [
-     8210,
-     10440
-    ],
-    [
-     13285,
-     15540
-    ],
-    [
-     10560,
-     12680
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json",
-    "hud:docs/hud-validation/set18-campaign.json",
-    "hud:data/hud-logs/set18/done-keys.txt"
-   ]
-  },
-  {
-   "vod_id": "twitch-2922368556",
-   "url": "https://www.twitch.tv/videos/2922368556",
-   "streamer": "Frodan",
-   "slot": "none",
-   "role": "hud_processed",
-   "status": "done_by_hud",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     17580
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json",
-    "hud:docs/hud-validation/set18-campaign.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2919423875",
-   "url": "https://www.twitch.tv/videos/2919423875",
-   "streamer": "Frodan",
-   "slot": "none",
-   "role": "hud_processed",
-   "status": "done_by_hud",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     19690
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json",
-    "hud:docs/hud-validation/set18-campaign.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2925380903",
-   "url": "https://www.twitch.tv/videos/2925380903",
-   "streamer": "boxbox",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     11107
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2924334199",
-   "url": "https://www.twitch.tv/videos/2924334199",
-   "streamer": "robinsongz",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     17773
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2927534195",
-   "url": "https://www.twitch.tv/videos/2927534195",
-   "streamer": "Dishsoap",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     18310
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2928507453",
-   "url": "https://www.twitch.tv/videos/2928507453",
-   "streamer": "Dishsoap",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     19416
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2929523431",
-   "url": "https://www.twitch.tv/videos/2929523431",
-   "streamer": "Dishsoap",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     22117
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2926729138",
-   "url": "https://www.twitch.tv/videos/2926729138",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     17720
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2925794541",
-   "url": "https://www.twitch.tv/videos/2925794541",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     13350
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2924915856",
-   "url": "https://www.twitch.tv/videos/2924915856",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     19970
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2924101300",
-   "url": "https://www.twitch.tv/videos/2924101300",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     15820
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2923262621",
-   "url": "https://www.twitch.tv/videos/2923262621",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     19460
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2921260340",
-   "url": "https://www.twitch.tv/videos/2921260340",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     21230
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2920305475",
-   "url": "https://www.twitch.tv/videos/2920305475",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     25630
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2918556483",
-   "url": "https://www.twitch.tv/videos/2918556483",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     25070
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2916057333",
-   "url": "https://www.twitch.tv/videos/2916057333",
-   "streamer": "Dishsoap",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     7232
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2910735765",
-   "url": "https://www.twitch.tv/videos/2910735765",
-   "streamer": "k3soju",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     5709
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2911167981",
-   "url": "https://www.twitch.tv/videos/2911167981",
-   "streamer": "setsuko",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     15419
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2912449718",
-   "url": "https://www.twitch.tv/videos/2912449718",
-   "streamer": "robinsongz",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     21475
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2906219397",
-   "url": "https://www.twitch.tv/videos/2906219397",
-   "streamer": "Dishsoap",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     18571
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2913998942",
-   "url": "https://www.twitch.tv/videos/2913998942",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     19510
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2901713662",
-   "url": "https://www.twitch.tv/videos/2901713662",
-   "streamer": "Dishsoap",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     14564
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ]
-  },
-  {
-   "vod_id": "twitch-2913099253",
-   "url": "https://www.twitch.tv/videos/2913099253",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     25942
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2907727372",
-   "url": "https://www.twitch.tv/videos/2907727372",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     23280
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2895200738",
-   "url": "https://www.twitch.tv/videos/2895200738",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     28120
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2900629324",
-   "url": "https://www.twitch.tv/videos/2900629324",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     31643
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2901525720",
-   "url": "https://www.twitch.tv/videos/2901525720",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     29490
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2911379200",
-   "url": "https://www.twitch.tv/videos/2911379200",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     18470
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2912252485",
-   "url": "https://www.twitch.tv/videos/2912252485",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     21800
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2905185936",
-   "url": "https://www.twitch.tv/videos/2905185936",
-   "streamer": "Frodan",
-   "slot": "P1",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     27360
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2909775925",
-   "url": "https://www.twitch.tv/videos/2909775925",
-   "streamer": "k3soju",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     17794
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2890063939",
-   "url": "https://www.twitch.tv/videos/2890063939",
-   "streamer": "k3soju",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     17610
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2915088506",
-   "url": "https://www.twitch.tv/videos/2915088506",
-   "streamer": "k3soju",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     16844
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2915091907",
-   "url": "https://www.twitch.tv/videos/2915091907",
-   "streamer": "Dishsoap",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     16233
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2900850807",
-   "url": "https://www.twitch.tv/videos/2900850807",
-   "streamer": "Dishsoap",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     15060
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2891052706",
-   "url": "https://www.twitch.tv/videos/2891052706",
-   "streamer": "k3soju",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     13080
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2916055808",
-   "url": "https://www.twitch.tv/videos/2916055808",
-   "streamer": "k3soju",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     18610
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2890063192",
-   "url": "https://www.twitch.tv/videos/2890063192",
-   "streamer": "Dishsoap",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     17886
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2891050468",
-   "url": "https://www.twitch.tv/videos/2891050468",
-   "streamer": "Dishsoap",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     13795
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2892011367",
-   "url": "https://www.twitch.tv/videos/2892011367",
-   "streamer": "Dishsoap",
-   "slot": "P2",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     14678
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2909037399",
-   "url": "https://www.twitch.tv/videos/2909037399",
-   "streamer": "boxbox",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     23390
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2889169501",
-   "url": "https://www.twitch.tv/videos/2889169501",
-   "streamer": "boxbox",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     32063
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2886724193",
-   "url": "https://www.twitch.tv/videos/2886724193",
-   "streamer": "boxbox",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     20982
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2902616223",
-   "url": "https://www.twitch.tv/videos/2902616223",
-   "streamer": "boxbox",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     19210
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2907868396",
-   "url": "https://www.twitch.tv/videos/2907868396",
-   "streamer": "robinsongz",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     17300
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2907258114",
-   "url": "https://www.twitch.tv/videos/2907258114",
-   "streamer": "robinsongz",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     13163
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2903317541",
-   "url": "https://www.twitch.tv/videos/2903317541",
-   "streamer": "boxbox",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     12003
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2907188910",
-   "url": "https://www.twitch.tv/videos/2907188910",
-   "streamer": "robinsongz",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     4970
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2890222204",
-   "url": "https://www.twitch.tv/videos/2890222204",
-   "streamer": "boxbox",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     31767
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2884672298",
-   "url": "https://www.twitch.tv/videos/2884672298",
-   "streamer": "setsuko",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     28192
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2897329575",
-   "url": "https://www.twitch.tv/videos/2897329575",
-   "streamer": "setsuko",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     26842
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2893654871",
-   "url": "https://www.twitch.tv/videos/2893654871",
-   "streamer": "robinsongz",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     26091
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2892745816",
-   "url": "https://www.twitch.tv/videos/2892745816",
-   "streamer": "robinsongz",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     23973
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2888229809",
-   "url": "https://www.twitch.tv/videos/2888229809",
-   "streamer": "setsuko",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     23211
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2887368861",
-   "url": "https://www.twitch.tv/videos/2887368861",
-   "streamer": "setsuko",
-   "slot": "P3",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     22323
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2899094314",
-   "url": "https://www.twitch.tv/videos/2899094314",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     19050
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2896215312",
-   "url": "https://www.twitch.tv/videos/2896215312",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     17500
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2914203830",
-   "url": "https://www.twitch.tv/videos/2914203830",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     15660
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2918647739",
-   "url": "https://www.twitch.tv/videos/2918647739",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     14390
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2907970518",
-   "url": "https://www.twitch.tv/videos/2907970518",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     26090
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2913195800",
-   "url": "https://www.twitch.tv/videos/2913195800",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     23860
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2911484335",
-   "url": "https://www.twitch.tv/videos/2911484335",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     22400
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2904494754",
-   "url": "https://www.twitch.tv/videos/2904494754",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     22080
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2888310409",
-   "url": "https://www.twitch.tv/videos/2888310409",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     21140
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2902591546",
-   "url": "https://www.twitch.tv/videos/2902591546",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     20840
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2897253279",
-   "url": "https://www.twitch.tv/videos/2897253279",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     20640
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2887388624",
-   "url": "https://www.twitch.tv/videos/2887388624",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     20500
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2927534024",
-   "url": "https://www.twitch.tv/videos/2927534024",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     19250
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2922053759",
-   "url": "https://www.twitch.tv/videos/2922053759",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     18680
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2928506559",
-   "url": "https://www.twitch.tv/videos/2928506559",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     11440
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2886591014",
-   "url": "https://www.twitch.tv/videos/2886591014",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     24720
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2895377067",
-   "url": "https://www.twitch.tv/videos/2895377067",
-   "streamer": "wasianiverson",
-   "slot": "P4",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     23290
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2895864677",
-   "url": "https://www.twitch.tv/videos/2895864677",
-   "streamer": "souless",
-   "slot": "P5",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     23928
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2909338557",
-   "url": "https://www.twitch.tv/videos/2909338557",
-   "streamer": "souless",
-   "slot": "P5",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     22891
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2895004979",
-   "url": "https://www.twitch.tv/videos/2895004979",
-   "streamer": "souless",
-   "slot": "P5",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     19478
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2890571457",
-   "url": "https://www.twitch.tv/videos/2890571457",
-   "streamer": "souless",
-   "slot": "P5",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     25603
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2884310634",
-   "url": "https://www.twitch.tv/videos/2884310634",
-   "streamer": "souless",
-   "slot": "P5",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     24335
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2908390432",
-   "url": "https://www.twitch.tv/videos/2908390432",
-   "streamer": "souless",
-   "slot": "P5",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     22747
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2885300763",
-   "url": "https://www.twitch.tv/videos/2885300763",
-   "streamer": "souless",
-   "slot": "P5",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     22376
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2910278208",
-   "url": "https://www.twitch.tv/videos/2910278208",
-   "streamer": "souless",
-   "slot": "P5",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     21777
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2907504785",
-   "url": "https://www.twitch.tv/videos/2907504785",
-   "streamer": "souless",
-   "slot": "P5",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     21677
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2891546587",
-   "url": "https://www.twitch.tv/videos/2891546587",
-   "streamer": "souless",
-   "slot": "P5",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     21268
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2887909878",
-   "url": "https://www.twitch.tv/videos/2887909878",
-   "streamer": "souless",
-   "slot": "P5",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     21008
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2904062511",
-   "url": "https://www.twitch.tv/videos/2904062511",
-   "streamer": "souless",
-   "slot": "P5",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     20690
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2898702915",
-   "url": "https://www.twitch.tv/videos/2898702915",
-   "streamer": "souless",
-   "slot": "P5",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     20522
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2886223848",
-   "url": "https://www.twitch.tv/videos/2886223848",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     29353
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2899461322",
-   "url": "https://www.twitch.tv/videos/2899461322",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     35003
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2900344780",
-   "url": "https://www.twitch.tv/videos/2900344780",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     30636
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2898582839",
-   "url": "https://www.twitch.tv/videos/2898582839",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     23973
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2911272327",
-   "url": "https://www.twitch.tv/videos/2911272327",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     20024
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2887157612",
-   "url": "https://www.twitch.tv/videos/2887157612",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     15180
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2901233052",
-   "url": "https://www.twitch.tv/videos/2901233052",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "Set 18, exact patch pending visual confirmation"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     5670
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2922039251",
-   "url": "https://www.twitch.tv/videos/2922039251",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     26446
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2920157971",
-   "url": "https://www.twitch.tv/videos/2920157971",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     21919
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2923059813",
-   "url": "https://www.twitch.tv/videos/2923059813",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     21061
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2921059663",
-   "url": "https://www.twitch.tv/videos/2921059663",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     19422
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2910717276",
-   "url": "https://www.twitch.tv/videos/2910717276",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     19207
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2915061760",
-   "url": "https://www.twitch.tv/videos/2915061760",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     18679
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2909757802",
-   "url": "https://www.twitch.tv/videos/2909757802",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.5C/18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     18665
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2927525973",
-   "url": "https://www.twitch.tv/videos/2927525973",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     18041
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2923970520",
-   "url": "https://www.twitch.tv/videos/2923970520",
-   "streamer": "cambulee",
-   "slot": "P6",
-   "role": "primary",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     17615
-    ]
-   ],
-   "source_refs": [
-    "twitch:gql-archive-list-20261125",
-    "coord:manifest-expand-1000"
-   ]
-  },
-  {
-   "vod_id": "twitch-2926729138",
-   "url": "https://www.twitch.tv/videos/2926729138",
-   "streamer": "Frodan",
-   "slot": "V1",
-   "role": "second_label",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     17720
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ],
-   "pairs_with_primary_slot": "P1"
-  },
-  {
-   "vod_id": "twitch-2927534195",
-   "url": "https://www.twitch.tv/videos/2927534195",
-   "streamer": "Dishsoap",
-   "slot": "V1",
-   "role": "second_label",
-   "status": "todo",
-   "patch_claims": [
-    "18.6"
-   ],
-   "candidate_ranges_s": [
-    [
-     0,
-     18310
-    ]
-   ],
-   "source_refs": [
-    "hud:scripts/hud-campaign/seed-sources.json"
-   ],
-   "pairs_with_primary_slot": "P2"
-  }
- ]
+  "schema": "vod-manifest-v1",
+  "batch": "2026-11-25-set18-vod",
+  "dispatcher": "claude (phiên điều phối mở rộng manifest 1000)",
+  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal",
+  "slots": {
+    "P1": {
+      "role": "primary",
+      "streamers": [
+        "Frodan"
+      ]
+    },
+    "P2": {
+      "role": "primary",
+      "streamers": [
+        "Dishsoap",
+        "k3soju"
+      ]
+    },
+    "P3": {
+      "role": "primary",
+      "streamers": [
+        "robinsongz",
+        "boxbox",
+        "setsuko"
+      ]
+    },
+    "V1": {
+      "role": "second_label",
+      "streamers": [
+        "Frodan (1 VOD)",
+        "Dishsoap (1 VOD)"
+      ]
+    },
+    "none": {
+      "role": "none",
+      "note": "VOD hud đã xử lý, agent bỏ qua"
+    },
+    "P4": {
+      "role": "primary",
+      "streamers": [
+        "wasianiverson"
+      ]
+    },
+    "P5": {
+      "role": "primary",
+      "streamers": [
+        "souless"
+      ]
+    },
+    "P6": {
+      "role": "primary",
+      "streamers": [
+        "cambulee"
+      ]
+    },
+    "P7": {
+      "role": "primary",
+      "streamers": [
+        "traviscwat"
+      ]
+    },
+    "P8": {
+      "role": "primary",
+      "streamers": [
+        "disguisedtoast"
+      ]
+    },
+    "P9": {
+      "role": "primary",
+      "streamers": [
+        "kurumx"
+      ]
+    },
+    "P10": {
+      "role": "primary",
+      "streamers": [
+        "spencer_tft"
+      ]
+    }
+  },
+  "vods": [
+    {
+      "vod_id": "twitch-2924500482",
+      "url": "https://www.twitch.tv/videos/2924500482",
+      "streamer": "boxbox",
+      "slot": "none",
+      "role": "hud_processed",
+      "status": "done_by_hud",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          210,
+          2940
+        ],
+        [
+          3180,
+          5350
+        ],
+        [
+          5380,
+          7920
+        ],
+        [
+          8240,
+          10740
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json",
+        "hud:docs/hud-validation/set18-campaign.json",
+        "hud:data/hud-logs/set18/done-keys.txt"
+      ]
+    },
+    {
+      "vod_id": "twitch-2925294495",
+      "url": "https://www.twitch.tv/videos/2925294495",
+      "streamer": "robinsongz",
+      "slot": "none",
+      "role": "hud_processed",
+      "status": "done_by_hud",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          4190,
+          5944
+        ],
+        [
+          6040,
+          8410
+        ],
+        [
+          8410,
+          9895
+        ],
+        [
+          9895,
+          11750
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json",
+        "hud:docs/hud-validation/set18-campaign.json",
+        "hud:data/hud-logs/set18/done-keys.txt"
+      ]
+    },
+    {
+      "vod_id": "twitch-2926218384",
+      "url": "https://www.twitch.tv/videos/2926218384",
+      "streamer": "boxbox",
+      "slot": "none",
+      "role": "hud_processed",
+      "status": "done_by_hud",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          3852,
+          5840
+        ],
+        [
+          6030,
+          7980
+        ],
+        [
+          8080,
+          10535
+        ],
+        [
+          10725,
+          12670
+        ],
+        [
+          1390,
+          3850
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json",
+        "hud:docs/hud-validation/set18-campaign.json",
+        "hud:data/hud-logs/set18/done-keys.txt"
+      ]
+    },
+    {
+      "vod_id": "twitch-2927052824",
+      "url": "https://www.twitch.tv/videos/2927052824",
+      "streamer": "robinsongz",
+      "slot": "none",
+      "role": "hud_processed",
+      "status": "done_by_hud",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          4150,
+          6010
+        ],
+        [
+          6300,
+          8290
+        ],
+        [
+          10590,
+          13040
+        ],
+        [
+          13230,
+          15920
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json",
+        "hud:docs/hud-validation/set18-campaign.json",
+        "hud:data/hud-logs/set18/done-keys.txt"
+      ]
+    },
+    {
+      "vod_id": "twitch-2928060890",
+      "url": "https://www.twitch.tv/videos/2928060890",
+      "streamer": "boxbox",
+      "slot": "none",
+      "role": "hud_processed",
+      "status": "done_by_hud",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          525,
+          2730
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json",
+        "hud:docs/hud-validation/set18-campaign.json",
+        "hud:data/hud-logs/set18/done-keys.txt"
+      ]
+    },
+    {
+      "vod_id": "twitch-2915091249",
+      "url": "https://www.twitch.tv/videos/2915091249",
+      "streamer": "setsuko",
+      "slot": "none",
+      "role": "hud_processed",
+      "status": "done_by_hud",
+      "patch_claims": [
+        "18.5C"
+      ],
+      "candidate_ranges_s": [
+        [
+          485,
+          2955
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json",
+        "hud:docs/hud-validation/set18-campaign.json",
+        "hud:data/hud-logs/set18/done-keys.txt"
+      ]
+    },
+    {
+      "vod_id": "twitch-2916058832",
+      "url": "https://www.twitch.tv/videos/2916058832",
+      "streamer": "setsuko",
+      "slot": "none",
+      "role": "hud_processed",
+      "status": "done_by_hud",
+      "patch_claims": [
+        "18.5C"
+      ],
+      "candidate_ranges_s": [
+        [
+          2635,
+          4860
+        ],
+        [
+          8210,
+          10440
+        ],
+        [
+          13285,
+          15540
+        ],
+        [
+          10560,
+          12680
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json",
+        "hud:docs/hud-validation/set18-campaign.json",
+        "hud:data/hud-logs/set18/done-keys.txt"
+      ]
+    },
+    {
+      "vod_id": "twitch-2922368556",
+      "url": "https://www.twitch.tv/videos/2922368556",
+      "streamer": "Frodan",
+      "slot": "none",
+      "role": "hud_processed",
+      "status": "done_by_hud",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17580
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json",
+        "hud:docs/hud-validation/set18-campaign.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2919423875",
+      "url": "https://www.twitch.tv/videos/2919423875",
+      "streamer": "Frodan",
+      "slot": "none",
+      "role": "hud_processed",
+      "status": "done_by_hud",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19690
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json",
+        "hud:docs/hud-validation/set18-campaign.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2925380903",
+      "url": "https://www.twitch.tv/videos/2925380903",
+      "streamer": "boxbox",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          11107
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2924334199",
+      "url": "https://www.twitch.tv/videos/2924334199",
+      "streamer": "robinsongz",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17773
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2927534195",
+      "url": "https://www.twitch.tv/videos/2927534195",
+      "streamer": "Dishsoap",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18310
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2928507453",
+      "url": "https://www.twitch.tv/videos/2928507453",
+      "streamer": "Dishsoap",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19416
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2929523431",
+      "url": "https://www.twitch.tv/videos/2929523431",
+      "streamer": "Dishsoap",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          22117
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2926729138",
+      "url": "https://www.twitch.tv/videos/2926729138",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17720
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2925794541",
+      "url": "https://www.twitch.tv/videos/2925794541",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          13350
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2924915856",
+      "url": "https://www.twitch.tv/videos/2924915856",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19970
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2924101300",
+      "url": "https://www.twitch.tv/videos/2924101300",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          15820
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2923262621",
+      "url": "https://www.twitch.tv/videos/2923262621",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19460
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2921260340",
+      "url": "https://www.twitch.tv/videos/2921260340",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          21230
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2920305475",
+      "url": "https://www.twitch.tv/videos/2920305475",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          25630
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2918556483",
+      "url": "https://www.twitch.tv/videos/2918556483",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          25070
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2916057333",
+      "url": "https://www.twitch.tv/videos/2916057333",
+      "streamer": "Dishsoap",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          7232
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2910735765",
+      "url": "https://www.twitch.tv/videos/2910735765",
+      "streamer": "k3soju",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          5709
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2911167981",
+      "url": "https://www.twitch.tv/videos/2911167981",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          15419
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2912449718",
+      "url": "https://www.twitch.tv/videos/2912449718",
+      "streamer": "robinsongz",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          21475
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2906219397",
+      "url": "https://www.twitch.tv/videos/2906219397",
+      "streamer": "Dishsoap",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18571
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2913998942",
+      "url": "https://www.twitch.tv/videos/2913998942",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19510
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2901713662",
+      "url": "https://www.twitch.tv/videos/2901713662",
+      "streamer": "Dishsoap",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          14564
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ]
+    },
+    {
+      "vod_id": "twitch-2913099253",
+      "url": "https://www.twitch.tv/videos/2913099253",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          25942
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2907727372",
+      "url": "https://www.twitch.tv/videos/2907727372",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          23280
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2895200738",
+      "url": "https://www.twitch.tv/videos/2895200738",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          28120
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2900629324",
+      "url": "https://www.twitch.tv/videos/2900629324",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          31643
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2901525720",
+      "url": "https://www.twitch.tv/videos/2901525720",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          29490
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2911379200",
+      "url": "https://www.twitch.tv/videos/2911379200",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18470
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2912252485",
+      "url": "https://www.twitch.tv/videos/2912252485",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          21800
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2905185936",
+      "url": "https://www.twitch.tv/videos/2905185936",
+      "streamer": "Frodan",
+      "slot": "P1",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          27360
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2909775925",
+      "url": "https://www.twitch.tv/videos/2909775925",
+      "streamer": "k3soju",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17794
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2890063939",
+      "url": "https://www.twitch.tv/videos/2890063939",
+      "streamer": "k3soju",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17610
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2915088506",
+      "url": "https://www.twitch.tv/videos/2915088506",
+      "streamer": "k3soju",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          16844
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2915091907",
+      "url": "https://www.twitch.tv/videos/2915091907",
+      "streamer": "Dishsoap",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          16233
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2900850807",
+      "url": "https://www.twitch.tv/videos/2900850807",
+      "streamer": "Dishsoap",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          15060
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2891052706",
+      "url": "https://www.twitch.tv/videos/2891052706",
+      "streamer": "k3soju",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          13080
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2916055808",
+      "url": "https://www.twitch.tv/videos/2916055808",
+      "streamer": "k3soju",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18610
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2890063192",
+      "url": "https://www.twitch.tv/videos/2890063192",
+      "streamer": "Dishsoap",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17886
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2891050468",
+      "url": "https://www.twitch.tv/videos/2891050468",
+      "streamer": "Dishsoap",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          13795
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2892011367",
+      "url": "https://www.twitch.tv/videos/2892011367",
+      "streamer": "Dishsoap",
+      "slot": "P2",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          14678
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2909037399",
+      "url": "https://www.twitch.tv/videos/2909037399",
+      "streamer": "boxbox",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          23390
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2889169501",
+      "url": "https://www.twitch.tv/videos/2889169501",
+      "streamer": "boxbox",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          32063
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2886724193",
+      "url": "https://www.twitch.tv/videos/2886724193",
+      "streamer": "boxbox",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          20982
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2902616223",
+      "url": "https://www.twitch.tv/videos/2902616223",
+      "streamer": "boxbox",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19210
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2907868396",
+      "url": "https://www.twitch.tv/videos/2907868396",
+      "streamer": "robinsongz",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17300
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2907258114",
+      "url": "https://www.twitch.tv/videos/2907258114",
+      "streamer": "robinsongz",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          13163
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2903317541",
+      "url": "https://www.twitch.tv/videos/2903317541",
+      "streamer": "boxbox",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          12003
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2907188910",
+      "url": "https://www.twitch.tv/videos/2907188910",
+      "streamer": "robinsongz",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          4970
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2890222204",
+      "url": "https://www.twitch.tv/videos/2890222204",
+      "streamer": "boxbox",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          31767
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2884672298",
+      "url": "https://www.twitch.tv/videos/2884672298",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          28192
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2897329575",
+      "url": "https://www.twitch.tv/videos/2897329575",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          26842
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2893654871",
+      "url": "https://www.twitch.tv/videos/2893654871",
+      "streamer": "robinsongz",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          26091
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2892745816",
+      "url": "https://www.twitch.tv/videos/2892745816",
+      "streamer": "robinsongz",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          23973
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2888229809",
+      "url": "https://www.twitch.tv/videos/2888229809",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          23211
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2887368861",
+      "url": "https://www.twitch.tv/videos/2887368861",
+      "streamer": "setsuko",
+      "slot": "P3",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          22323
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2899094314",
+      "url": "https://www.twitch.tv/videos/2899094314",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19050
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2896215312",
+      "url": "https://www.twitch.tv/videos/2896215312",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17500
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2914203830",
+      "url": "https://www.twitch.tv/videos/2914203830",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          15660
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2918647739",
+      "url": "https://www.twitch.tv/videos/2918647739",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          14390
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2907970518",
+      "url": "https://www.twitch.tv/videos/2907970518",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          26090
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2913195800",
+      "url": "https://www.twitch.tv/videos/2913195800",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          23860
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2911484335",
+      "url": "https://www.twitch.tv/videos/2911484335",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          22400
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2904494754",
+      "url": "https://www.twitch.tv/videos/2904494754",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          22080
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2888310409",
+      "url": "https://www.twitch.tv/videos/2888310409",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          21140
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2902591546",
+      "url": "https://www.twitch.tv/videos/2902591546",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          20840
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2897253279",
+      "url": "https://www.twitch.tv/videos/2897253279",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          20640
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2887388624",
+      "url": "https://www.twitch.tv/videos/2887388624",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          20500
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2927534024",
+      "url": "https://www.twitch.tv/videos/2927534024",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19250
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2922053759",
+      "url": "https://www.twitch.tv/videos/2922053759",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18680
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2928506559",
+      "url": "https://www.twitch.tv/videos/2928506559",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          11440
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2886591014",
+      "url": "https://www.twitch.tv/videos/2886591014",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          24720
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2895377067",
+      "url": "https://www.twitch.tv/videos/2895377067",
+      "streamer": "wasianiverson",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          23290
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2895864677",
+      "url": "https://www.twitch.tv/videos/2895864677",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          23928
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2909338557",
+      "url": "https://www.twitch.tv/videos/2909338557",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          22891
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2895004979",
+      "url": "https://www.twitch.tv/videos/2895004979",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19478
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2890571457",
+      "url": "https://www.twitch.tv/videos/2890571457",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          25603
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2884310634",
+      "url": "https://www.twitch.tv/videos/2884310634",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          24335
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2908390432",
+      "url": "https://www.twitch.tv/videos/2908390432",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          22747
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2885300763",
+      "url": "https://www.twitch.tv/videos/2885300763",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          22376
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2910278208",
+      "url": "https://www.twitch.tv/videos/2910278208",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          21777
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2907504785",
+      "url": "https://www.twitch.tv/videos/2907504785",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          21677
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2891546587",
+      "url": "https://www.twitch.tv/videos/2891546587",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          21268
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2887909878",
+      "url": "https://www.twitch.tv/videos/2887909878",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          21008
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2904062511",
+      "url": "https://www.twitch.tv/videos/2904062511",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          20690
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2898702915",
+      "url": "https://www.twitch.tv/videos/2898702915",
+      "streamer": "souless",
+      "slot": "P5",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          20522
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2886223848",
+      "url": "https://www.twitch.tv/videos/2886223848",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          29353
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2899461322",
+      "url": "https://www.twitch.tv/videos/2899461322",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          35003
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2900344780",
+      "url": "https://www.twitch.tv/videos/2900344780",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          30636
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2898582839",
+      "url": "https://www.twitch.tv/videos/2898582839",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          23973
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2911272327",
+      "url": "https://www.twitch.tv/videos/2911272327",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          20024
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2887157612",
+      "url": "https://www.twitch.tv/videos/2887157612",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          15180
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2901233052",
+      "url": "https://www.twitch.tv/videos/2901233052",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          5670
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2922039251",
+      "url": "https://www.twitch.tv/videos/2922039251",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          26446
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2920157971",
+      "url": "https://www.twitch.tv/videos/2920157971",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          21919
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2923059813",
+      "url": "https://www.twitch.tv/videos/2923059813",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          21061
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2921059663",
+      "url": "https://www.twitch.tv/videos/2921059663",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19422
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2910717276",
+      "url": "https://www.twitch.tv/videos/2910717276",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          19207
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2915061760",
+      "url": "https://www.twitch.tv/videos/2915061760",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18679
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2909757802",
+      "url": "https://www.twitch.tv/videos/2909757802",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.5C/18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18665
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2927525973",
+      "url": "https://www.twitch.tv/videos/2927525973",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18041
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2923970520",
+      "url": "https://www.twitch.tv/videos/2923970520",
+      "streamer": "cambulee",
+      "slot": "P6",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17615
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:manifest-expand-1000"
+      ]
+    },
+    {
+      "vod_id": "twitch-2926729138",
+      "url": "https://www.twitch.tv/videos/2926729138",
+      "streamer": "Frodan",
+      "slot": "V1",
+      "role": "second_label",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17720
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ],
+      "pairs_with_primary_slot": "P1"
+    },
+    {
+      "vod_id": "twitch-2927534195",
+      "url": "https://www.twitch.tv/videos/2927534195",
+      "streamer": "Dishsoap",
+      "slot": "V1",
+      "role": "second_label",
+      "status": "todo",
+      "patch_claims": [
+        "18.6"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          18310
+        ]
+      ],
+      "source_refs": [
+        "hud:scripts/hud-campaign/seed-sources.json"
+      ],
+      "pairs_with_primary_slot": "P2"
+    },
+    {
+      "vod_id": "twitch-2909427786",
+      "url": "https://www.twitch.tv/videos/2909427786",
+      "streamer": "traviscwat",
+      "slot": "P7",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          16144
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=#TFTRegionalFinals Week 1 day 2. published=2026-10-24T12:56:52Z"
+    },
+    {
+      "vod_id": "twitch-2910432058",
+      "url": "https://www.twitch.tv/videos/2910432058",
+      "streamer": "traviscwat",
+      "slot": "P7",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          13528
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=#TFTRegionalFinals Week 1 day 3. Hopefully no crazy lowrolls today published=2026-10-25T13:53:55Z"
+    },
+    {
+      "vod_id": "twitch-2890740272",
+      "url": "https://www.twitch.tv/videos/2890740272",
+      "streamer": "traviscwat",
+      "slot": "P7",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          8067
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=#TPC Blossom cup day 2. published=2026-10-03T13:52:45Z"
+    },
+    {
+      "vod_id": "twitch-2889878229",
+      "url": "https://www.twitch.tv/videos/2889878229",
+      "streamer": "traviscwat",
+      "slot": "P7",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          7470
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=#TPC Blossom cup day 1. published=2026-10-02T16:12:39Z"
+    },
+    {
+      "vod_id": "twitch-2889780809",
+      "url": "https://www.twitch.tv/videos/2889780809",
+      "streamer": "traviscwat",
+      "slot": "P7",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          4669
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=#TPC Blossom cup day 1. published=2026-10-02T13:49:56Z"
+    },
+    {
+      "vod_id": "twitch-2889833222",
+      "url": "https://www.twitch.tv/videos/2889833222",
+      "streamer": "traviscwat",
+      "slot": "P7",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          3582
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=#TPC Blossom cup day 1. published=2026-10-02T15:09:53Z"
+    },
+    {
+      "vod_id": "twitch-2935422428",
+      "url": "https://www.twitch.tv/videos/2935422428",
+      "streamer": "disguisedtoast",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          22684
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=set 1 tft goat returns to show that unc still got it - pico park lobby tmr 11am  published=2026-11-20T22:12:12Z"
+    },
+    {
+      "vod_id": "twitch-2937597175",
+      "url": "https://www.twitch.tv/videos/2937597175",
+      "streamer": "disguisedtoast",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          20312
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=set1 challenger learns to keep up at his old age of 35 so he can practice for th published=2026-11-22T18:59:51Z"
+    },
+    {
+      "vod_id": "twitch-2938701039",
+      "url": "https://www.twitch.tv/videos/2938701039",
+      "streamer": "disguisedtoast",
+      "slot": "P8",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          13514
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=set1 challenger learns to keep up at his old age of 35 so he can practice for th published=2026-11-23T20:51:20Z"
+    },
+    {
+      "vod_id": "twitch-2887732371",
+      "url": "https://www.twitch.tv/videos/2887732371",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          47068
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=819 start | NO SLACKING OFF - NO END UNTIL 4 DIGITS OR I MUST BE PUNISHED !comps published=2026-09-30T01:48:56Z"
+    },
+    {
+      "vod_id": "twitch-2886828264",
+      "url": "https://www.twitch.tv/videos/2886828264",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          27081
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=960 start | QUALIFIED FOR REGIONALS - RANK1 GRIND BEFORE TT2 !wager !comps published=2026-09-29T00:47:08Z"
+    },
+    {
+      "vod_id": "twitch-2889457278",
+      "url": "https://www.twitch.tv/videos/2889457278",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          24578
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=933 start | RANK1 BEFORE REGIONALS GRIND ✅ CASTING TPC W/ @Frodan THIS WEEKEND 🔴 published=2026-10-02T01:52:03Z"
+    },
+    {
+      "vod_id": "twitch-2916019619",
+      "url": "https://www.twitch.tv/videos/2916019619",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          23845
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=REGIONAL FINALS DAY 4 👻 | MAKE FINAL LOBBY = WORLDS !scores #TFTRegionalFinals published=2026-10-31T19:15:29Z"
+    },
+    {
+      "vod_id": "twitch-2918092391",
+      "url": "https://www.twitch.tv/videos/2918092391",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          23065
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=1016 start | BACK IN TIER1, MISSED WORLDS BY 1 POINT 😠 SET19 + VEGAS IN 1 MONTH, published=2026-11-03T01:38:56Z"
+    },
+    {
+      "vod_id": "twitch-2893101179",
+      "url": "https://www.twitch.tv/videos/2893101179",
+      "streamer": "kurumx",
+      "slot": "P9",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          22120
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=742 start | STREAM ENDS WHEN I'M NOT ASS 🗿#DOITFORTHESTUDENTS !bash !regionals ! published=2026-10-06T01:49:29Z"
+    },
+    {
+      "vod_id": "twitch-2891262629",
+      "url": "https://www.twitch.tv/videos/2891262629",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          32900
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=someone replaced the cream in my oreos : ( !coaching published=2026-10-04T00:22:40Z"
+    },
+    {
+      "vod_id": "twitch-2885370919",
+      "url": "https://www.twitch.tv/videos/2885370919",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          28590
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=LOG IN, NEW SKIN, ICED OUT BIG GRIN : D !coaching !gay !hotdog published=2026-09-27T10:34:54Z"
+    },
+    {
+      "vod_id": "twitch-2901184563",
+      "url": "https://www.twitch.tv/videos/2901184563",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          28330
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=WHOS A GOOD BOY? MEMEMMEMEMME !coaching published=2026-10-15T04:52:38Z"
+    },
+    {
+      "vod_id": "twitch-2936177080",
+      "url": "https://www.twitch.tv/videos/2936177080",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          26180
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=TFT -> $1,000 High-Stakes DUPER Lobby w/ the TFT Boys! Free $3 Tokens w/ Code sp published=2026-11-21T14:59:10Z"
+    },
+    {
+      "vod_id": "twitch-2888929782",
+      "url": "https://www.twitch.tv/videos/2888929782",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          25510
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=I LOVE DIXON MAYAZ !coaching !gay published=2026-10-01T14:23:20Z"
+    },
+    {
+      "vod_id": "twitch-2890330028",
+      "url": "https://www.twitch.tv/videos/2890330028",
+      "streamer": "spencer_tft",
+      "slot": "P10",
+      "role": "primary",
+      "status": "pending",
+      "patch_claims": [
+        "18.x"
+      ],
+      "candidate_ranges_s": [
+        [
+          300,
+          25440
+        ]
+      ],
+      "source_refs": [
+        "expand:goal-1000-parallel",
+        "twitch-gql:2026-11-25"
+      ],
+      "notes": "auto-added title=1095 start I LOVE DIXON MAYAZ !coaching !gay published=2026-10-03T01:22:25Z"
+    }
+  ]
 }
