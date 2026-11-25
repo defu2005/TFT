@@ -22,6 +22,6 @@
     "skipped": {}
   },
   "needs_review": 0,
-  "commit": null,
+  "commit": "58fe6e0b7c3727920101bb67f81ed38a96f64a5d",
   "remaining": "blocked: FINAL LOBBY custom/tourney — EDIT LOBBY + Lobby A LosAngeles ~900; Scores overlay xuyên suốt (7,7,4,8,3,1,3); friends Custom; không ranked client/LP tracker. Evidence: frames/blocked_*.jpg"
 }
