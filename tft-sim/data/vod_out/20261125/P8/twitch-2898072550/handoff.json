@@ -34,16 +34,17 @@
   ],
   "counts": {
     "games": 2,
-    "fights": 26,
+    "fights": 16,
     "others": 0
   },
   "validator": {
-    "ok": 18,
+    "ok": 16,
     "skipped": {
-      "winner_null": 8
-    }
+      "winner_null": 0
+    },
+    "rows": []
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "g270+g2040 densify-full pushed; continue game3+ / late VOD; voids1n CLAIM still empty"
+  "remaining": "g270 OUT densify complete (16 PvP, 16 winners, place 8 @1760). Continue game2 from ~2040 full density."
 }
