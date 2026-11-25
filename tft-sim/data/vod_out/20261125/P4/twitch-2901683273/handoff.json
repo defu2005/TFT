@@ -1,0 +1,79 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2901683273",
+  "slot": "P4",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      60,
+      2260
+    ],
+    [
+      2400,
+      4600
+    ],
+    [
+      4800,
+      7000
+    ],
+    [
+      7200,
+      9400
+    ],
+    [
+      9600,
+      11800
+    ],
+    [
+      12000,
+      14200
+    ],
+    [
+      14400,
+      16600
+    ],
+    [
+      16800,
+      19000
+    ],
+    [
+      19200,
+      21400
+    ],
+    [
+      21600,
+      23800
+    ],
+    [
+      24000,
+      26200
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2901683273-g60",
+    "twitch-2901683273-g2400",
+    "twitch-2901683273-g4800",
+    "twitch-2901683273-g7200",
+    "twitch-2901683273-g9600",
+    "twitch-2901683273-g12000",
+    "twitch-2901683273-g14400",
+    "twitch-2901683273-g16800",
+    "twitch-2901683273-g19200",
+    "twitch-2901683273-g21600",
+    "twitch-2901683273-g24000"
+  ],
+  "counts": {
+    "games": 11,
+    "fights": 132,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": 0
+  },
+  "needs_review": 132,
+  "commit": null,
+  "remaining": "Densified ranked Set18 done."
+}

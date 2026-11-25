@@ -43,9 +43,10 @@
         "voltariux",
         "shurkou",
         "aphromoo",
-        "loltyler1"
+        "loltyler1",
+        "dogdog"
       ],
-      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue). | +loltyler1 ranked Set18 Emerald ladder (wasian/voltariux/shurkou/aphromoo archives depleted of clean ranked)."
+      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue). | +loltyler1 ranked Set18 Emerald ladder (wasian/voltariux/shurkou/aphromoo archives depleted of clean ranked). | +dogdog Diamond ranked Set18; +more loltyler1."
     },
     "P5": {
       "role": "primary",
@@ -5135,6 +5136,50 @@
         "twitch:gql-archive-list-20261125",
         "coord:p4-expand-tyler-throughput",
         "probe:ranked-emerald-set18"
+      ]
+    },
+    {
+      "vod_id": "twitch-2898291795",
+      "url": "https://www.twitch.tv/videos/2898291795",
+      "streamer": "dogdog",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          27180
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-throughput",
+        "probe:diamond-ranked-set18"
+      ]
+    },
+    {
+      "vod_id": "twitch-2901683273",
+      "url": "https://www.twitch.tv/videos/2901683273",
+      "streamer": "loltyler1",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          27841
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p4-expand-throughput",
+        "probe:diamond-loading-ranked"
       ]
     }
   ]
