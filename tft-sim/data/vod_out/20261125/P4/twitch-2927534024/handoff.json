@@ -1,0 +1,23 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2927534024",
+  "slot": "P4",
+  "role": "primary",
+  "status": "blocked",
+  "covered_ranges_s": [],
+  "remaining_ranges_s": [],
+  "game_ids": [],
+  "counts": {
+    "games": 0,
+    "fights": 0,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": 0
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "BLOCKED: Frodan fantasy/tourney broadcast (DAY1 GAME / FANTASY overlay); not ranked ladder POV.",
+  "block_reason": "BLOCKED: Frodan fantasy/tourney broadcast (DAY1 GAME / FANTASY overlay); not ranked ladder POV."
+}

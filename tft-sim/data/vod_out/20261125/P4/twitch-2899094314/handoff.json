@@ -3,7 +3,7 @@
   "vod_id": "twitch-2899094314",
   "slot": "P4",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       0,
@@ -77,5 +77,5 @@
   },
   "needs_review": 114,
   "commit": null,
-  "remaining": "SKIP [12500,19050] boxbox bash VOD review (tourney). Gaps=queue. Next other P4 VODs; then mark this VOD done/blocked for tail."
+  "remaining": "Ranked games done; [12500+] boxbox bash / vod-review SKIPPED."
 }
