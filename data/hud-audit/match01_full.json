@@ -1384,9 +1384,8 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "664 s carousel view: sidebar rows are mid-fade, so the trait counts are not legible enough to solve; solver not applied.",
-    "reason": "our own panel is not on screen legibly at this frame"
+    "tag": "open",
+    "note": "carousel sidebar mid-fade; trait counts to be re-read at a later frame before solving"
    },
    "bench_units": {
     "value": null,
@@ -4873,9 +4872,8 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "1604 s carousel view: sidebar rows are mid-fade with a 1+ marker; the counts are not legible enough to solve; solver not applied.",
-    "reason": "our own panel is not on screen legibly at this frame"
+    "tag": "open",
+    "note": "carousel sidebar mid-fade; trait counts to be re-read at a later frame before solving"
    },
    "bench_units": {
     "value": null,

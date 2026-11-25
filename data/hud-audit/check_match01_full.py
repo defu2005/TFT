@@ -29,7 +29,7 @@ BAD = ['not yet run', 'not read', 'not performed', 'no solver run', 'not done', 
 def closed(v):
     if not isinstance(v, dict): return False
     if resolved(v): return True
-    a = str(v.get('attempt') or '').lower()
+    a = ' '.join(str(v.get(x) or '') for x in ('attempt','reason','note')).lower()
     if any(b in a for b in BAD): return False
     return v.get('tag') == 'unresolved' and bool(a) and bool(v.get('reason') or v.get('note'))
 open_counts = {f: 0 for f in FULL + REQUIRED}
@@ -38,6 +38,10 @@ for r in d['rounds']:
         if not closed(r.get(f)): open_counts[f] += 1
 print("OPEN per field (not closed):")
 for f, c in open_counts.items(): print(f"  {f}: {c}")
+print("OPEN PAIRS:")
+for r in d['rounds']:
+    for f in FULL + REQUIRED:
+        if not closed(r.get(f)): print(f"  {r['round']} {f}")
 total_open = sum(open_counts.values())
 print("TOTAL OPEN:", total_open)
 
