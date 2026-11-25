@@ -1,29 +1,29 @@
 {
- "protocol": "Digit OCR (tesseract, psm 7, digit whitelist, 3x upscale) on the fixed coin-free crop (610,586,640,610). The script never opens the master; the master is compared after OCR. The crop was chosen after seeing the sample of ten, so the sample figure is tuned. The out-of-sample figure is the planning-frame run over the other rounds.",
+ "protocol": "Digit OCR (tesseract, psm 7, digit whitelist, 3x upscale; level and XP at 6x) on fixed crops. The script does not open the master; the master is compared after OCR. Gold and streak crops were chosen after seeing the sample of ten (tuned). Level and XP crops were calibrated on the out-of-sample frame 2-3 at 604 s before the sample run.",
  "rates": {
   "gold": {
-   "matched": 9,
+   "matched": 10,
    "of": 10,
-   "rate": 0.9,
-   "note": "sample of ten, tuned crop; the one miss is 5-5, a one-second offset"
+   "rate": 1.0,
+   "note": "planning-frame run (blind_ocr_planning.py); tuned crop; earlier blind-pick-time run gave 9/10 with a one-second offset at 5-5"
   },
   "streak": {
-   "matched": 9,
+   "matched": 6,
    "of": 10,
-   "rate": 0.9,
-   "note": "sample of ten; 6-2 OCR empty, frame shows 1, master 1"
+   "rate": 0.6,
+   "note": "planning-frame run; 4 misses (4-1, 4-2, 5-2, 6-2) all confirmed against the frame as OCR errors; earlier blind-pick-time run gave 9/10"
   },
   "level": {
    "matched": 10,
    "of": 10,
    "rate": 1.0,
-   "note": "crop (188,588,206,606) calibrated on the out-of-sample frame at 2-3, 604 s (level 4) before the sample run"
+   "note": "planning-frame run; calibrated on out-of-sample 2-3 at 604 s"
   },
   "xp": {
    "matched": 10,
    "of": 10,
    "rate": 1.0,
-   "note": "crop (244,588,274,606), whitelist digits and slash; same calibration frame"
+   "note": "planning-frame run; same calibration"
   }
  },
  "gold_masked_near_white": {
@@ -74,5 +74,5 @@
   "note": "Earlier run at Frame A times; superseded by the planning-frame run above"
  },
  "level_xp_protocol": "Calibration on one out-of-sample frame (2-3 at 604 s) before the sample run; the ten sample rounds read at their planning frames.",
- "script": "data/hud-audit/blind_ocr_planning.py (planning-frame OCR for gold, streak, level and XP; the sample rounds are fixed in the script)"
+ "script": "data/hud-audit/blind_ocr_planning.py (planning-frame run for all four fields); data/hud-audit/blind_ocr.py (earlier blind-pick-time run for gold and streak)"
 }

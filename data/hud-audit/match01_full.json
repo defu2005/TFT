@@ -9445,7 +9445,7 @@
   "source": "round_results_derived.json eliminations; 1 and 2 from 6-6 frames"
  },
  "blind_reread": {
-  "summary": "Blind re-read. Sample of ten at planning frames: gold 9/10 (miss 5-5, one-second offset), streak 9/10 (one empty OCR read at 6-2), level 10/10, XP 10/10. The gold and streak crops were chosen after seeing the sample, so those figures are tuned. The level and XP crop was calibrated on an out-of-sample frame (2-3 at 604 s) before the run. Out-of-sample gold at recorded planning frames: 13/13 comparable; three frames show no gold box (2-4, 6-1, 6-6). Gold and streak were read at the blind-pick times; level and XP at planning frames. Only the gold crop was re-chosen after the sample. Panel, shop and counter not re-read blind."
+  "summary": "Blind re-read of ten sampled rounds, read by script at each round's recorded planning frame (data/hud-audit/blind_ocr_planning.py): gold 10/10, level 10/10, XP 10/10, streak 6/10. The four streak misses (4-1, 4-2, 5-2, 6-2) were checked against the frame: the frame shows the master value in all four, so the OCR side is wrong. An earlier run at the blind-pick times gave streak 9/10 and gold 9/10 (miss 5-5, one second earlier). Out-of-sample gold at recorded planning frames: 13 of 13 comparable; three frames show no gold box (2-4, 6-1, 6-6). The gold crop was chosen after seeing the sample, so the sample figure is tuned; the level and XP crop was calibrated on an out-of-sample frame (2-3 at 604 s). Panel, shop and counter not re-read blind."
  },
  "final_comps": {
   "P1_6-6": {
