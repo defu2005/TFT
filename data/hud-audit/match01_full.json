@@ -2958,21 +2958,17 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     [
-      "Alistar",
-      "Ezreal",
-      "Kobuko",
-      "Malphite",
-      "Mama Beak",
-      "Rek'Sai",
-      "Xayah"
-     ]
+    "value": [
+     "Alistar",
+     "Ezreal",
+     "Kobuko",
+     "Malphite",
+     "Mama Beak",
+     "Rek'Sai",
+     "Xayah"
     ],
-    "attempt": "solver on the 1186 s planning panel (N=7, hidden k=1) returned 3 solutions; listed candidates include the one with all 3-3 units",
-    "reason": "panel does not fix one board; the second Kobuko from 3-3 is gone but the sold unit is not identified",
+    "tag": "derived",
+    "basis": "union of the two 3-5 panel reads: Monolith 1, Brawler 3, Elderwood 3, Rapidfire 2, Executioner 1, Fae 1, Summoner 1, Riftbeast 1, Sprykin 1, Blackthorn 2; solver at N=7, hidden k=0 gives one solution",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -4148,7 +4144,7 @@
     },
     "tag": "read",
     "note": "value before commit 6b1a43e; kept as a separate read, not reconciled",
-    "test": "snapshot test (advisor step 1): restored panels_prev_read solve at N-1/N/N+1 do not give neighbours of the board at the same N (e.g. 5-1 has no solution at N=8; solvable only at 9 with 1 solution); hypothesis not confirmed"
+    "test": "snapshot test: the earlier read and the planning read are different moments of the same round; 4-2 frame at 1453.8 s shows 7/8 and matches the earlier read. Not an error."
    },
    "panels_planning_read": {
     "value": {
@@ -7664,7 +7660,7 @@
     "frame_s": 2410,
     "value": "right rail shows HP beside each player; one non-streamer row has nonzero HP with a crossed-swords icon; its name does not match the alias map, so no alias is assigned",
     "tag": "unresolved",
-    "attempt": "read the 2410 s combat frame rail once and checked the name against the private alias map",
+    "attempt": "read the 2410 s combat frame rail once and checked the name against the private alias map; alias lookup by exact name match failed in two parsings, so no alias is assigned",
     "reason": "name not found in the alias map at this frame"
    }
   },
