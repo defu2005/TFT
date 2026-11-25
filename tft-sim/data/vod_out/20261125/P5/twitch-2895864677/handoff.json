@@ -48,16 +48,17 @@
   ],
   "counts": {
     "games": 4,
-    "fights": 67,
-    "others": 67
+    "fights": 77,
+    "others": 77
   },
   "validator": {
-    "ok": 60,
+    "ok": 75,
     "skipped": {
-      "winner_null": 7
+      "tuong_la:None": 1,
+      "winner_null": 1
     }
   },
-  "needs_review": 7,
-  "commit": "b83c1d1",
-  "remaining": "Densify priority: g2410 boards+more stages still sparse mid-game."
+  "needs_review": 1,
+  "commit": null,
+  "remaining": "g2410 mid densified. Soft gaps + later ~9600+."
 }
