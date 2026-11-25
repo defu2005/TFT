@@ -14,8 +14,16 @@
       7000
     ],
     [
+      7000,
+      8800
+    ],
+    [
       9000,
       12000
+    ],
+    [
+      14000,
+      17500
     ]
   ],
   "remaining_ranges_s": [
@@ -24,28 +32,34 @@
       4500
     ],
     [
-      7000,
+      8800,
       9000
     ],
     [
       12000,
+      14000
+    ],
+    [
+      17500,
       18841
     ]
   ],
   "game_ids": [
     "twitch-2928225201-g400",
     "twitch-2928225201-g4500",
-    "twitch-2928225201-g9000"
+    "twitch-2928225201-g9000",
+    "twitch-2928225201-g7000",
+    "twitch-2928225201-g14000"
   ],
   "counts": {
-    "games": 3,
-    "fights": 3,
+    "games": 5,
+    "fights": 5,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 3
+      "winner_null": 5
     },
     "rows": [
       {
@@ -62,10 +76,20 @@
         "line": 3,
         "source": "twitch-2928225201-g9000:2-5",
         "reason": "winner_null"
+      },
+      {
+        "line": 4,
+        "source": "twitch-2928225201-g7000:2-6",
+        "reason": "winner_null"
+      },
+      {
+        "line": 5,
+        "source": "twitch-2928225201-g14000:3-1",
+        "reason": "winner_null"
       }
     ]
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "survey 3 games; densify mid/late"
+  "remaining": "5 ranked survey games; densify gaps + late"
 }
