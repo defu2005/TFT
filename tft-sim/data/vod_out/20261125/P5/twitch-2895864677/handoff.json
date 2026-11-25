@@ -20,6 +20,10 @@
     [
       6700,
       8900
+    ],
+    [
+      9600,
+      11600
     ]
   ],
   "remaining_ranges_s": [
@@ -37,6 +41,10 @@
     ],
     [
       8900,
+      9600
+    ],
+    [
+      11600,
       23928
     ]
   ],
@@ -44,20 +52,21 @@
     "twitch-2895864677-g120",
     "twitch-2895864677-g2410",
     "twitch-2895864677-g4380",
-    "twitch-2895864677-g6700"
+    "twitch-2895864677-g6700",
+    "twitch-2895864677-g9600"
   ],
   "counts": {
-    "games": 4,
-    "fights": 77,
-    "others": 77
+    "games": 5,
+    "fights": 81,
+    "others": 81
   },
   "validator": {
-    "ok": 76,
+    "ok": 79,
     "skipped": {
-      "winner_null": 1
+      "winner_null": 2
     }
   },
-  "needs_review": 1,
-  "commit": "c87856d",
-  "remaining": "g2410 mid densified. Soft gaps + later ~9600+."
+  "needs_review": 2,
+  "commit": null,
+  "remaining": "Early games pushed; densify more PvP when frames allow."
 }
