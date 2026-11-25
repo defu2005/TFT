@@ -759,7 +759,7 @@
      "P6",
      "P8"
     ],
-    "attempt": "HP-loss flags enumerated: P1 lost HP, so the opponent did not lose HP in this round; pool = P3, P4, P6, P8",
+    "attempt": "HP-loss flags with alive() filter: P1 lost; pool = living non-losers; ghost added when alive count is odd; pool = P3, P4, P6, P8",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -930,7 +930,7 @@
      "P7",
      "P8"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P4, P5, P6, P7, P8",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; 2-2 lists 5 losers, anomaly under review, pool not trusted; pool = P4, P5, P6, P7, P8",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -1131,7 +1131,7 @@
      "P5",
      "P6"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P2, P3, P5, P6",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P2, P3, P5, P6",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -1494,7 +1494,7 @@
      "P5",
      "P7"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P2, P3, P5, P7",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P2, P3, P5, P7",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -1717,7 +1717,7 @@
      "P6",
      "P8"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P3, P5, P6, P8",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P3, P5, P6, P8",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -2123,7 +2123,7 @@
      "P6",
      "P7"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P2, P3, P6, P7",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P2, P3, P6, P7",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -2325,7 +2325,7 @@
      "P7",
      "P8"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P2, P3, P7, P8",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P2, P3, P7, P8",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -2604,7 +2604,7 @@
      "P7",
      "P8"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P2, P5, P7, P8",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P2, P5, P7, P8",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -3011,7 +3011,7 @@
      "P7",
      "P8"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P2, P5, P7, P8",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P2, P5, P7, P8",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -3796,7 +3796,7 @@
      "P6",
      "P8"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P3, P5, P6, P8",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P3, P5, P6, P8",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -4060,7 +4060,7 @@
      "P5",
      "P6"
     ],
-    "attempt": "HP-loss flags enumerated: P1 lost HP, so the opponent did not lose HP in this round; pool = P2, P4, P5, P6",
+    "attempt": "HP-loss flags with alive() filter: P1 lost; pool = living non-losers; ghost added when alive count is odd; pool = P2, P4, P5, P6",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -4286,7 +4286,7 @@
      "P6",
      "P8"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P3, P5, P6, P8",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P3, P5, P6, P8",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -4652,7 +4652,7 @@
      "P5",
      "P6"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P3, P4, P5, P6",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P3, P4, P5, P6",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -4883,7 +4883,7 @@
      "P6",
      "P8"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P4, P5, P6, P8",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P4, P5, P6, P8",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -5307,9 +5307,9 @@
      "P3",
      "P4",
      "P7",
-     "P8"
+     "ghost"
     ],
-    "attempt": "HP-loss flags enumerated: P1 lost HP, so the opponent did not lose HP in this round; pool = P2, P3, P4, P7, P8",
+    "attempt": "HP-loss flags with alive() filter: P1 lost; pool = living non-losers; ghost added when alive count is odd; pool = P2, P3, P4, P7, ghost",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -5643,7 +5643,7 @@
      "P6",
      "P7"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P3, P6, P7",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P3, P6, P7",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -5916,7 +5916,7 @@
      "P4",
      "P7"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P4, P7",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P4, P7",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -6321,7 +6321,7 @@
      "P4",
      "P7"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P4, P7",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P4, P7",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -6606,13 +6606,9 @@
     "tag": "unresolved",
     "candidates": [
      "P2",
-     "P3",
-     "P5",
-     "P6",
-     "P7",
-     "P8"
+     "ghost"
     ],
-    "attempt": "HP-loss flags enumerated: P1 lost HP, so the opponent did not lose HP in this round; pool = P2, P3, P5, P6, P7, P8",
+    "attempt": "HP-loss flags with alive() filter: P1 lost; pool = living non-losers; ghost added when alive count is odd; pool = P2, ghost",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -7103,7 +7099,7 @@
      "P2",
      "P4"
     ],
-    "attempt": "HP-loss flags enumerated: P1 did not lose HP, so the opponent is one of the losers; pool = P2, P4",
+    "attempt": "HP-loss flags with alive() filter: P1 won; pool = losers still alive; pool = P2, P4",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
@@ -7302,13 +7298,9 @@
     "tag": "unresolved",
     "candidates": [
      "P2",
-     "P3",
-     "P5",
-     "P6",
-     "P7",
-     "P8"
+     "ghost"
     ],
-    "attempt": "HP-loss flags enumerated: P1 lost HP, so the opponent did not lose HP in this round; pool = P2, P3, P5, P6, P7, P8",
+    "attempt": "HP-loss flags with alive() filter: P1 lost; pool = living non-losers; ghost added when alive count is odd; pool = P2, ghost",
     "reason": "the flags narrow the pool but do not pick one opponent; pairing needs a per-round opponent read"
    },
    "combat_frame_t_s": null,
