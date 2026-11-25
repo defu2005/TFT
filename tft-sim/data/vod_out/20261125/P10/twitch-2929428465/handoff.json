@@ -3,7 +3,7 @@
   "vod_id": "twitch-2929428465",
   "slot": "P10",
   "role": "primary",
-  "status": "pending",
+  "status": "done",
   "covered_ranges_s": [
     [
       200,
@@ -11,35 +11,18 @@
     ],
     [
       2200,
-      4000
+      4200
     ],
     [
       4200,
-      5800
+      5900
     ],
     [
       6000,
       7800
     ]
   ],
-  "remaining_ranges_s": [
-    [
-      2100,
-      2200
-    ],
-    [
-      4000,
-      4200
-    ],
-    [
-      5800,
-      6000
-    ],
-    [
-      7800,
-      null
-    ]
-  ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2929428465-g200",
     "twitch-2929428465-g2200",
@@ -48,115 +31,8 @@
   ],
   "counts": {
     "games": 4,
-    "fights": 36,
+    "fights": 46,
     "others": 0
   },
-  "validator": {
-    "ok": 16,
-    "skipped": {
-      "winner_null": 20
-    },
-    "rows": [
-      {
-        "line": 1,
-        "source": "twitch-2929428465-g200:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 3,
-        "source": "twitch-2929428465-g200:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 5,
-        "source": "twitch-2929428465-g200:4-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 7,
-        "source": "twitch-2929428465-g200:5-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 9,
-        "source": "twitch-2929428465-g200:5-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 10,
-        "source": "twitch-2929428465-g2200:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 12,
-        "source": "twitch-2929428465-g2200:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 14,
-        "source": "twitch-2929428465-g2200:4-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 16,
-        "source": "twitch-2929428465-g2200:5-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 18,
-        "source": "twitch-2929428465-g2200:6-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 19,
-        "source": "twitch-2929428465-g4200:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 21,
-        "source": "twitch-2929428465-g4200:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 23,
-        "source": "twitch-2929428465-g4200:4-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 25,
-        "source": "twitch-2929428465-g4200:5-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 27,
-        "source": "twitch-2929428465-g4200:6-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 28,
-        "source": "twitch-2929428465-g6000:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 30,
-        "source": "twitch-2929428465-g6000:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 32,
-        "source": "twitch-2929428465-g6000:4-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 34,
-        "source": "twitch-2929428465-g6000:5-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 36,
-        "source": "twitch-2929428465-g6000:6-1",
-        "reason": "winner_null"
-      }
-    ]
-  }
+  "rem_notes": "After ~7800 LoL queue then MapleStory \u2014 no more Set18 TFT. Tiny inter-game gaps not new games. Late-extend densify +10f."
 }
