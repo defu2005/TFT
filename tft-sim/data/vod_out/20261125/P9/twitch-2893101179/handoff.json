@@ -1,0 +1,46 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2893101179",
+  "slot": "P9",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      400,
+      2200
+    ],
+    [
+      2500,
+      6800
+    ],
+    [
+      7000,
+      12500
+    ],
+    [
+      14000,
+      22120
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2893101179-g400",
+    "twitch-2893101179-g2500",
+    "twitch-2893101179-g7000",
+    "twitch-2893101179-g14000"
+  ],
+  "counts": {
+    "games": 4,
+    "fights": 7,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 7
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "VOD cuối P9 manifest xong; cần expand thêm VOD kurumx ranked"
+}
