@@ -8533,9 +8533,9 @@
       "Defender": 2,
       "Fae": 2
      },
-     "panel_size": 18,
      "units": null,
-     "solver": "panel read; unit list not solved (no duplicate-tested board)"
+     "solver": "panel read; unit list not solved (no duplicate-tested board)",
+     "trait_count_sum": 18
     },
     "tag": "derived",
     "basis": "foreign panel at 2406 s; P2 is the only player alive from 6-3, so P2 is the owner by the alive rule"
@@ -9036,9 +9036,9 @@
       "Lunar": 2,
       "Defender": 2
      },
-     "panel_size": 17,
      "units": null,
-     "solver": "panel read; pinned solver reached the 50-solution cap at N 10, so no unique board"
+     "solver": "panel read; pinned solver reached the 50-solution cap at N 10, so no unique board",
+     "trait_count_sum": 17
     },
     "tag": "derived",
     "basis": "foreign panel at 2504 s; P2 is the only player alive from 6-3, so P2 is the owner by the alive rule"
@@ -9351,9 +9351,9 @@
       "Lunar": 2,
       "Defender": 2
      },
-     "panel_size": 17,
      "units": null,
-     "solver": "panel read; pinned solver reached the 50-solution cap at N 10, so no unique board"
+     "solver": "panel read; pinned solver reached the 50-solution cap at N 10, so no unique board",
+     "trait_count_sum": 17
     },
     "tag": "derived",
     "basis": "foreign panel at 2572 s; P2 is the only player alive from 6-3, so P2 is the owner by the alive rule"
@@ -9903,7 +9903,7 @@
   },
   "frame_s": "t = 362 + (index - 1) * 2",
   "note": "run index i maps to t = 362 + (i-1)*2; checked on the 3-1 window (index 264 = 888 s)",
-  "owner_check": "Owner cue at 2504 s and 2572 s (P2 is the only other player alive): the rail shows the streamer and the P2 row, and no mark or tactician figure on the board identifies the owner beyond the alive rule. Panels at 6-3, 6-5 and 6-6 are attached to P2 by the alive rule. Other flagged runs stay unattached: no cue was validated for them."
+  "owner_check": "Rail crops at 2504 s and 2572 s show the streamer and the P2 row. The full 2504 s frame shows no non-streamer tactician plate that reads as an owner name, so no owner was read from the board. Panels at 6-3, 6-5 and 6-6 are attached to P2 by the alive rule (P2 is the only other player alive). Other flagged runs stay unattached."
  },
  "scouted_panels": [
   {
@@ -10162,7 +10162,7 @@
    "owner_arrow_row": "P2 candidate",
    "owner_status": "not established",
    "attached_to_round": null,
-   "note": "5-2 opponent not otherwise read",
+   "note": "5-2 opponent is P3 (see rounds 5-2 opponent)",
    "owner": "not established"
   },
   {
