@@ -23,5 +23,24 @@
   "result": "all 10 blind-pick times equal the Frame A times",
   "same": 10,
   "different": 0
+ },
+ "gold_widened_crop": {
+  "crop": [
+   596,
+   584,
+   650,
+   612
+  ],
+  "matched": 4,
+  "of": 10,
+  "rate": 0.4,
+  "misses": {
+   "3-5": "OCR 925: left coin read as 9 (master 25 confirmed by frame)",
+   "4-2": "OCR 922 leak (master 22 confirmed)",
+   "4-6": "OCR 971 leak (master 71 confirmed)",
+   "5-1": "OCR 957 leak (master 57 confirmed)",
+   "5-6": "OCR 26 leak from streak box (master 6 confirmed)",
+   "5-5": "master 7 conflicts with frame 9 (OCR 9 correct); master flagged gold_conflict"
+  }
  }
 }

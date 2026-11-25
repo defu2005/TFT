@@ -679,10 +679,11 @@
     "tag": "n/a"
    },
    "hexes": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "399.9 s planning frame, 3x crop of the arena: two purple sprites with green bars at the lower right look identical. The counter watermark is partly covered, so the full count is not legible. The 1-4 panel is one unit (Veigar, N=1).",
-    "reason": "two identical ally sprites conflict with the one-unit panel; no hex assigned"
+    "value": [
+     "two sprites: lower-right of the grid (view-relative), one at the lower-right corner and one just left of it"
+    ],
+    "tag": "read",
+    "basis": "399.9 s planning frame, 3x crop: two identical purple sprites with green bars at the lower right; the counter reads 2 with the cap hidden, so two copies of Veigar. Panel lists one unique champion. Positions view-relative, not on a calibrated grid."
    },
    "frame_A_read": {
     "frame_s": 399.9,
@@ -813,8 +814,8 @@
      "P6",
      "P8"
     ],
-    "attempt": "508 s full frame: combat with creep units (timer 13) and own board; a top-left level-4 bar with no legible name. HP-flag pool kept: P3, P4, P6, P8",
-    "reason": "no legible opponent name in the checked frame"
+    "attempt": "508 s full frame: creep combat on the purple arena (timer 13), with a top-strip plate at level 4 under the round bar. Level 4 does not separate the pool. HP-flag pool kept: P3, P4, P6, P8",
+    "reason": "no name legible and level does not give a unique pool member"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -1872,8 +1873,8 @@
      "P6",
      "P8"
     ],
-    "attempt": "checked 795.3 s full frame: opponent units on the far side; the top nameplate is covered by the chat overlay. HP-flag pool kept: P3, P5, P6, P8",
-    "reason": "no legible opponent nameplate in the checked frame"
+    "attempt": "795.3 s full frame: opponent units on the far side; the top-right plate reads level 6 under the rank overlay. Levels do not separate the pool. HP-flag pool kept: P3, P5, P6, P8",
+    "reason": "no name legible and level does not give a unique pool member"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -5113,8 +5114,8 @@
      "P5",
      "P6"
     ],
-    "attempt": "checked 1685.8 s full frame: crowd combat in the centre; no legible nameplate. HP-flag pool kept: P3, P4, P5, P6",
-    "reason": "no legible opponent nameplate in the checked frame"
+    "attempt": "1686 s full frame: top-strip plate at level 7; pool P3, P4, P5, P6. P3 is at most level 6 at this time; P5, P6 and P4 could each be 7, so no unique member. HP-flag pool kept.",
+    "reason": "level 7 does not give a unique pool member"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -6228,8 +6229,8 @@
      "P6",
      "P7"
     ],
-    "attempt": "checked 1952.9 s full frame: no legible arena nameplate; stored 1946 s observation is a placeholder, not a name. HP-flag pool kept: P3, P6, P7",
-    "reason": "no legible opponent nameplate in the checked frame"
+    "attempt": "1953 s full frame: top-strip plate at level 6. Pool P3, P6, P7: P3 (rail level 6, eliminated at 5-2) matches, P7 (rail level 8 final, eliminated at 5-5) could also be 6 at this time, so no unique member. HP-flag pool kept.",
+    "reason": "level 6 matches more than one pool member"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -6986,14 +6987,9 @@
     "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     "P4",
-     "P7"
-    ],
-    "attempt": "checked 2132.5 s full frame: combat centre; no legible nameplate; several rail rows at 0 HP. HP-flag pool kept: P4, P7",
-    "reason": "no legible opponent nameplate in the checked frame"
+    "value": "P4",
+    "tag": "derived",
+    "basis": "2133 s top-strip plate reads level 9; pool P4 or P7; P7 (rail row at 2412 s, level 8, eliminated at 5-5) cannot be level 9 at 5-5, so P4 remains; check frames 2132.5 s and 2412 s"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -7023,7 +7019,11 @@
       "Rammus",
       "Kha'Zix",
       null
-     ]
+     ],
+     "gold_conflict": {
+      "note": "2094 s frame (blind pick time) shows 9 gold; master planning gold reads 7. Value kept until the source frame is re-checked.",
+      "frame_s": 2094
+     }
     }
    },
    "combat": {
@@ -7146,8 +7146,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified; no flagged scouting run in this round; no sprites tied to a panel",
-    "reason": "opponent not identified, so no panel can be attached"
+    "attempt": "opponent is P4 (derived); no flagged scouting run in this round; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
