@@ -3,16 +3,16 @@
   "vod_id": "twitch-2904302638",
   "slot": "P8",
   "role": "primary",
-  "status": "pending",
+  "status": "working",
   "covered_ranges_s": [
     [
       250,
-      1000
+      1300
     ]
   ],
   "remaining_ranges_s": [
     [
-      1000,
+      1300,
       29240
     ]
   ],
@@ -21,16 +21,16 @@
   ],
   "counts": {
     "games": 1,
-    "fights": 2,
+    "fights": 3,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 2
+      "winner_null": 3
     }
   },
-  "needs_review": 2,
-  "commit": "5b00f6b",
-  "remaining": "helper released; P8-primary owns collection"
+  "needs_review": 3,
+  "commit": "17fe8df",
+  "remaining": "P8-primary owns VOD (ignore helper CLAIM for writes). Densified to 3-6. Continue ~1300s."
 }

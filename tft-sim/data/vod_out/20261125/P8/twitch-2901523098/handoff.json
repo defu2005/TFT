@@ -1,0 +1,36 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2901523098",
+  "slot": "P8",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      250,
+      1520
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      1520,
+      28980
+    ]
+  ],
+  "game_ids": [
+    "twitch-2901523098-g250"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 8,
+    "others": 0
+  },
+  "validator": {
+    "ok": 1,
+    "skipped": {
+      "winner_null": 7
+    }
+  },
+  "needs_review": 7,
+  "commit": "192153d",
+  "remaining": "USER priority: full fights. Densified g250 to ~4-4 carousel @1460. Continue PvP 4-5+ with board+winner when certain. P8-primary owns VOD."
+}

@@ -106,17 +106,17 @@
   ],
   "counts": {
     "games": 10,
-    "fights": 37,
-    "others": 37
+    "fights": 59,
+    "others": 59
   },
   "validator": {
-    "ok": 0,
+    "ok": 14,
     "skipped": {
-      "winner_null": 37
+      "winner_null": 45
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "0 — 10 ranked on this VOD. Tail 23150–23280 outro/thanks; no more ranked.",
-  "notes": "Ranked Set18 primary. winner_null OK. VOD duration 23280."
+  "remaining": "0 — 10 ranked on this VOD. Tail 23150–23280 outro/thanks; no more ranked. Densify-in-progress g16000 done; more games next.",
+  "notes": "Ranked Set18. Densify g16000: full PvP stages + result.winner when sure. winner_null OK elsewhere."
 }
