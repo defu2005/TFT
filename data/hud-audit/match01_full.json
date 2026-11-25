@@ -1,0 +1,3690 @@
+{
+ "match": "match-01 livestream VOD 01-boxbox-2924500482-00210.mp4, window 311.8-2620 s",
+ "schema": "each field: value + tag in {read, derived, unresolved}",
+ "rounds": [
+  {
+   "round": "1-1",
+   "t_planning_s": 313.8,
+   "hp": {
+    "P1": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 100,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": false,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Blackthorn": 1,
+     "Spellweaver": 1,
+     "Sprykin": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "1-2",
+   "t_planning_s": 328.5,
+   "hp": {
+    "P1": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 100,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": false,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Blackthorn": 1,
+     "Spellweaver": 1,
+     "Sprykin": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "1-3",
+   "t_planning_s": 364.1,
+   "hp": {
+    "P1": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 100,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": false,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Blackthorn": 1,
+     "Spellweaver": 1,
+     "Sprykin": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "1-4",
+   "t_planning_s": 399.9,
+   "hp": {
+    "P1": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 100,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": false,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Brawler": 1,
+     "Hunter": 1,
+     "Coven": 1,
+     "Elderwood": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "2-1",
+   "t_planning_s": 438.8,
+   "hp": {
+    "P1": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 100,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Brawler": 1,
+     "Hunter": 1,
+     "Coven": 1,
+     "Elderwood": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "augment": {
+    "value": "Warpath",
+    "tag": "derived"
+   },
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "2-2",
+   "t_planning_s": 526.1,
+   "hp": {
+    "P1": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 95,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 95,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 100,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Coven": 3,
+     "Hunter": 1,
+     "Ravager": 1,
+     "Vanguard": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "2-3",
+   "t_planning_s": 597.9,
+   "hp": {
+    "P1": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 95,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 100,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 87,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 90,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 93,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model+sharp_recheck_602s",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Juggernaut": 2,
+     "Brawler": 1,
+     "Fae": 1,
+     "Hunter": 1,
+     "Vanguard": 1,
+     "Coven": 1,
+     "Elderwood": 1,
+     "Solar": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "2-4",
+   "t_planning_s": 664.0,
+   "hp": {
+    "P1": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 90,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 95,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 81,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 91,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 90,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 93,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": false,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Juggernaut": 2,
+     "Brawler": 1,
+     "Fae": 1,
+     "Hunter": 1,
+     "Vanguard": 1,
+     "Coven": 1,
+     "Elderwood": 1,
+     "Solar": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "2-5",
+   "t_planning_s": 700.7,
+   "hp": {
+    "P1": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 90,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 95,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 81,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 91,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 90,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 93,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Elderwood": 3,
+     "Rapidfire": 2,
+     "Brawler": 2,
+     "Fae": 1,
+     "Spellweaver": 1,
+     "Summoner": 1,
+     "Riftbeast": 1,
+     "Sprykin": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 5,
+     "extra": 0,
+     "solutions": 1,
+     "first": [
+      "Alistar",
+      "Kobuko",
+      "LeBlanc",
+      "Mama Beak",
+      "Xayah"
+     ]
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "2-6",
+   "t_planning_s": 759.3,
+   "hp": {
+    "P1": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 84,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 90,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 74,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 91,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 83,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 93,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Elderwood": 3,
+     "Rapidfire": 2,
+     "Brawler": 2,
+     "Fae": 1,
+     "Spellweaver": 1,
+     "Summoner": 1,
+     "Riftbeast": 1,
+     "Sprykin": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "2-7",
+   "t_planning_s": 835.1,
+   "hp": {
+    "P1": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 84,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 86,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 67,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 85,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 83,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 88,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": false,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Elderwood": 3,
+     "Rapidfire": 2,
+     "Brawler": 2,
+     "Fae": 1,
+     "Spellweaver": 1,
+     "Summoner": 1,
+     "Riftbeast": 1,
+     "Sprykin": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "3-1",
+   "t_planning_s": 881.1,
+   "hp": {
+    "P1": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 84,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 86,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 67,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 85,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 83,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 88,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Elderwood": 3,
+     "Rapidfire": 2,
+     "Brawler": 2,
+     "Fae": 1,
+     "Spellweaver": 1,
+     "Summoner": 1,
+     "Riftbeast": 1,
+     "Sprykin": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 5,
+     "extra": 0,
+     "solutions": 1,
+     "first": [
+      "Alistar",
+      "Kobuko",
+      "LeBlanc",
+      "Mama Beak",
+      "Xayah"
+     ]
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "3-2",
+   "t_planning_s": 956.3,
+   "hp": {
+    "P1": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 74,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 76,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 67,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 76,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 81,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 88,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "roster_candidates": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "augment": {
+    "value": "Heroic Grab Bag+",
+    "tag": "derived"
+   },
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "3-3",
+   "t_planning_s": 1048.2,
+   "hp": {
+    "P1": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 64,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 65,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 67,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 76,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 70,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 79,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Elderwood": 3,
+     "Rapidfire": 2,
+     "Brawler": 2,
+     "Executioner": 1,
+     "Fae": 1,
+     "Summoner": 1,
+     "Riftbeast": 1,
+     "Sprykin": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 6,
+     "extra": 0,
+     "solutions": 0,
+     "first": null
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "3-4",
+   "t_planning_s": 1128.5,
+   "hp": {
+    "P1": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 53,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 65,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 60,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 76,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 62,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 66,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": false,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Elderwood": 3,
+     "Rapidfire": 2,
+     "Brawler": 2,
+     "Executioner": 1,
+     "Fae": 1,
+     "Summoner": 1,
+     "Riftbeast": 1,
+     "Sprykin": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "3-5",
+   "t_planning_s": 1165.4,
+   "hp": {
+    "P1": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 53,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 65,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 60,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 76,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 62,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 66,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Brawler": 3,
+     "Elderwood": 3,
+     "Rapidfire": 2,
+     "Blackthorn": 1,
+     "Executioner": 1,
+     "Fae": 1,
+     "Summoner": 1,
+     "Riftbeast": 1,
+     "Sprykin": 1,
+     "note": "re-read full height; Brawler 3"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 7,
+     "extra": 0,
+     "solutions": 0,
+     "first": null
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "3-6",
+   "t_planning_s": 1236.1,
+   "hp": {
+    "P1": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 41,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 65,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 52,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 76,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 51,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 56,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Elderwood": 5,
+     "Rapidfire": 2,
+     "Brawler": 2,
+     "Riftbeast": 2,
+     "Executioner": 1,
+     "Fae": 1,
+     "Spellweaver": 1,
+     "Summoner": 1,
+     "Vanguard": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 7,
+     "extra": 0,
+     "solutions": 1,
+     "first": [
+      "Alistar",
+      "Ezreal",
+      "Hecarim",
+      "Krug",
+      "LeBlanc",
+      "Mama Beak",
+      "Xayah"
+     ]
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "3-7",
+   "t_planning_s": 1317.1,
+   "hp": {
+    "P1": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 56,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 52,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 66,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 51,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 43,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": false,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Elderwood": 5,
+     "Rapidfire": 2,
+     "Brawler": 2,
+     "Riftbeast": 2,
+     "Executioner": 1,
+     "Fae": 1,
+     "Spellweaver": 1,
+     "Summoner": 1,
+     "Vanguard": 1
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "4-1",
+   "t_planning_s": 1355.3,
+   "hp": {
+    "P1": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 56,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 52,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 66,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 51,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 43,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Thornmaiden": 1,
+     "Elderwood": 5,
+     "Rapidfire": 2,
+     "Summoner": 2,
+     "Brawler": 2,
+     "Riftbeast": 2,
+     "Executioner": 1,
+     "Fae": 1,
+     "Spellweaver": 1,
+     "marker": "1+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 8,
+     "extra": 1,
+     "solutions": 0,
+     "first": null
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "4-2",
+   "t_planning_s": 1433.8,
+   "hp": {
+    "P1": {
+     "value": 97,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 43,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 44,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 53,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 51,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 31,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Elderwood": 5,
+     "Brawler": 2,
+     "Executioner": 1,
+     "Fae": 1,
+     "Rapidfire": 1,
+     "Spellweaver": 1,
+     "Vanguard": 1,
+     "Riftbeast": 1,
+     "note": "full-height re-read; no marker visible"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "augment": {
+    "value": "Cybernetic Implants",
+    "tag": "derived"
+   },
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "4-3",
+   "t_planning_s": 1529.7,
+   "hp": {
+    "P1": {
+     "value": 88,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 35,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 44,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 53,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 39,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 22,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1,
+     "marker": "1+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 8,
+     "extra": 1,
+     "solutions": 0,
+     "first": null
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "4-4",
+   "t_planning_s": 1604.0,
+   "hp": {
+    "P1": {
+     "value": 88,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 25,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 33,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 41,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 39,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 7,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": false,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1,
+     "marker": "1+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 8,
+     "extra": 1,
+     "solutions": 0,
+     "first": null
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "4-5",
+   "t_planning_s": 1640.8,
+   "hp": {
+    "P1": {
+     "value": 88,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 25,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 96,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 33,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 41,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 39,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 7,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 3,
+     "Juggernaut": 2,
+     "Executioner": 1,
+     "Inferno": 1,
+     "Blossom": 1,
+     "Riftbeast": 1,
+     "marker": "1+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 8,
+     "extra": 0,
+     "solutions": 0,
+     "first": null
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "4-6",
+   "t_planning_s": 1716.5,
+   "hp": {
+    "P1": {
+     "value": 88,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 13,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 84,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 21,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 29,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 39,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 7,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1,
+     "marker": "1+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 8,
+     "extra": 0,
+     "solutions": 0,
+     "first": null
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "4-7",
+   "t_planning_s": 1792.5,
+   "hp": {
+    "P1": {
+     "value": 88,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 13,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 72,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 12,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 17,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 39,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 0,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": false,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1,
+     "marker": "1+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 8,
+     "extra": 1,
+     "solutions": 1,
+     "first": [
+      "Alistar",
+      "Draven",
+      "Ezreal",
+      "Gnar",
+      "Hecarim",
+      "Krug",
+      "Maokai",
+      "Sett"
+     ]
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "5-1",
+   "t_planning_s": 1829.7,
+   "hp": {
+    "P1": {
+     "value": 88,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 13,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 72,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 12,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 17,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 39,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 0,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "marker": "2+",
+     "note": "re-read full height; no Emerald Aspect"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 9,
+     "extra": 2,
+     "solutions": 0,
+     "first": null
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "5-2",
+   "t_planning_s": 1907.9,
+   "hp": {
+    "P1": {
+     "value": 74,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 13,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 72,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 4,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 39,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 0,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Brawler": 3,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 1,
+     "Juggernaut": 1,
+     "marker": "3+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 9,
+     "extra": 3,
+     "solutions": 4,
+     "first": [
+      "Alistar",
+      "Draven",
+      "Ezreal",
+      "Gnar",
+      "Ivern",
+      "Kennen",
+      "Kobuko",
+      "Maokai",
+      "Taric"
+     ]
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "5-3",
+   "t_planning_s": 1993.3,
+   "hp": {
+    "P1": {
+     "value": 74,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 72,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 28,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 0,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 9,
+     "extra": 2,
+     "solutions": 1,
+     "first": [
+      "Alistar",
+      "Amumu",
+      "Draven",
+      "Ezreal",
+      "Gnar",
+      "Ivern",
+      "Kennen",
+      "Maokai",
+      "Taric"
+     ]
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "5-4",
+   "t_planning_s": 2062.8,
+   "hp": {
+    "P1": {
+     "value": 74,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 57,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 14,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 0,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": false,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "5-5",
+   "t_planning_s": 2087.5,
+   "hp": {
+    "P1": {
+     "value": 74,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 57,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 14,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 0,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 9,
+     "extra": 2,
+     "solutions": 1,
+     "first": [
+      "Alistar",
+      "Amumu",
+      "Draven",
+      "Ezreal",
+      "Gnar",
+      "Ivern",
+      "Kennen",
+      "Maokai",
+      "Taric"
+     ]
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "5-6",
+   "t_planning_s": 2165.3,
+   "hp": {
+    "P1": {
+     "value": 74,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 40,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 0,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "Executioner": 1,
+     "Inferno": 1,
+     "marker": "2+",
+     "note": "re-read full height; not a copy of 5-5"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 9,
+     "extra": 2,
+     "solutions": 1,
+     "first": [
+      "Alistar",
+      "Amumu",
+      "Draven",
+      "Ezreal",
+      "Gnar",
+      "Ivern",
+      "Kennen",
+      "Maokai",
+      "Taric"
+     ]
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "5-7",
+   "t_planning_s": 2230.8,
+   "hp": {
+    "P1": {
+     "value": 59,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 23,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 0,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": false,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 9,
+     "extra": 2,
+     "solutions": 1,
+     "first": [
+      "Alistar",
+      "Amumu",
+      "Draven",
+      "Ezreal",
+      "Gnar",
+      "Ivern",
+      "Kennen",
+      "Maokai",
+      "Taric"
+     ]
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "6-1",
+   "t_planning_s": 2269.1,
+   "hp": {
+    "P1": {
+     "value": 59,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 30,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 23,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 0,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 9,
+     "extra": 2,
+     "solutions": 1,
+     "first": [
+      "Alistar",
+      "Amumu",
+      "Draven",
+      "Ezreal",
+      "Gnar",
+      "Ivern",
+      "Kennen",
+      "Maokai",
+      "Taric"
+     ]
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "6-2",
+   "t_planning_s": 2335.2,
+   "hp": {
+    "P1": {
+     "value": 59,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 16,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 10,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 0,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 9,
+     "extra": 2,
+     "solutions": 1,
+     "first": [
+      "Alistar",
+      "Amumu",
+      "Draven",
+      "Ezreal",
+      "Gnar",
+      "Ivern",
+      "Kennen",
+      "Maokai",
+      "Taric"
+     ]
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "6-3",
+   "t_planning_s": 2398.9,
+   "hp": {
+    "P1": {
+     "value": 43,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 16,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 0,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 9,
+     "extra": 2,
+     "solutions": 1,
+     "first": [
+      "Alistar",
+      "Amumu",
+      "Draven",
+      "Ezreal",
+      "Gnar",
+      "Ivern",
+      "Kennen",
+      "Maokai",
+      "Taric"
+     ]
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "6-4",
+   "t_planning_s": 2463.3,
+   "hp": {
+    "P1": {
+     "value": 27,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 16,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 0,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": false,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 9,
+     "extra": 2,
+     "solutions": 1,
+     "first": [
+      "Alistar",
+      "Amumu",
+      "Draven",
+      "Ezreal",
+      "Gnar",
+      "Ivern",
+      "Kennen",
+      "Maokai",
+      "Taric"
+     ]
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "6-5",
+   "t_planning_s": 2481.8,
+   "hp": {
+    "P1": {
+     "value": 27,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 16,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 0,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": true,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+",
+     "note": "re-read from +10 s and +26 s frames; earlier tooltip occlusion resolved"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 9,
+     "extra": 2,
+     "solutions": 0,
+     "first": null
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  },
+  {
+   "round": "6-6",
+   "t_planning_s": 2547.4,
+   "hp": {
+    "P1": {
+     "value": 9,
+     "tag": "read"
+    },
+    "P2": {
+     "value": 16,
+     "tag": "read"
+    },
+    "P3": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P4": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P5": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P6": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P7": {
+     "value": 0,
+     "tag": "read"
+    },
+    "P8": {
+     "value": 0,
+     "tag": "read"
+    }
+   },
+   "hp_source": "model",
+   "hp_changed_in_round": {
+    "value": null,
+    "tag": "derived"
+   },
+   "panels": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "tag": "read"
+   },
+   "roster_candidates": {
+    "value": {
+     "N": 9,
+     "extra": 2,
+     "solutions": 1,
+     "first": [
+      "Alistar",
+      "Amumu",
+      "Draven",
+      "Ezreal",
+      "Gnar",
+      "Ivern",
+      "Kennen",
+      "Maokai",
+      "Taric"
+     ]
+    },
+    "tag": "derived"
+   },
+   "augment": null,
+   "board_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "bench_units": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "stars": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "items": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "shop_purchases": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "round_type": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "opponent": {
+    "value": null,
+    "tag": "unresolved"
+   },
+   "combat_frame_t_s": null
+  }
+ ]
+}
