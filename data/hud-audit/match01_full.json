@@ -2480,7 +2480,7 @@
    "round_type": {
     "value": "PvP",
     "tag": "derived",
-    "note": "HP labels: 3-5 combat damage appears in the 3-6 label (1236 s), so 3-5 was a PvP round"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -2617,11 +2617,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "win"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    }
   },
   {
@@ -2713,7 +2712,7 @@
    "round_type": {
     "value": "PvP",
     "tag": "derived",
-    "basis": "opponent nameplate visible post-combat (1296 s)"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": "P2",
@@ -2813,11 +2812,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "win (flame 8 to 9; HP unchanged)"
+     "outcome": "win"
     },
     "tag": "derived",
-    "basis": "HP labels 3-6 vs 3-7 unchanged P1; streak step"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    }
   },
   {
@@ -2894,9 +2892,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "no_damage_pattern",
+    "value": "PvE",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -2986,11 +2984,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "no PvP (streak unchanged)"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    }
   },
   {
@@ -3073,9 +3070,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -3189,11 +3186,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "win"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    }
   },
   {
@@ -3272,9 +3268,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -3282,9 +3278,11 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": "lost",
+    "value": {
+     "outcome": "loss"
+    },
     "tag": "derived",
-    "basis": "HP labels, streamer damage > 0"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    },
    "planning": {
     "frame_s": 1468,
@@ -3422,9 +3420,10 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
-    "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "same two-round gap",
+    "reason": "streak transition not isolated"
    },
    "opponent": {
     "value": null,
@@ -3484,12 +3483,10 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
-    "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
-    },
-    "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "streak transition spans the shared round N+1 with no planning read",
+    "reason": "two-round gap"
    }
   },
   {
@@ -3684,9 +3681,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -3755,11 +3752,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "win"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    }
   },
   {
@@ -3842,9 +3838,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -3905,11 +3901,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "win"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    }
   },
   {
@@ -4001,9 +3996,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "no_damage_pattern",
+    "value": "PvE",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -4064,11 +4059,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "no PvP (streak unchanged)"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    }
   },
   {
@@ -4152,9 +4146,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -4162,9 +4156,11 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": "lost",
+    "value": {
+     "outcome": "loss"
+    },
     "tag": "derived",
-    "basis": "HP labels, streamer damage > 0"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    },
    "planning": {
     "frame_s": 1836,
@@ -4373,9 +4369,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -4467,11 +4463,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "win"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    }
   },
   {
@@ -4564,9 +4559,10 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
-    "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "same two-round gap",
+    "reason": "streak transition not isolated"
    },
    "opponent": {
     "value": null,
@@ -4650,12 +4646,10 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
-    "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
-    },
-    "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "streak transition spans the shared round N+1 with no planning read",
+    "reason": "two-round gap"
    }
   },
   {
@@ -4855,9 +4849,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -4952,11 +4946,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "win"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    }
   },
   {
@@ -5050,9 +5043,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -5060,9 +5053,11 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": "lost",
+    "value": {
+     "outcome": "loss"
+    },
     "tag": "derived",
-    "basis": "HP labels, streamer damage > 0"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    },
    "planning": {
     "frame_s": 2172,
@@ -5227,9 +5222,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "no_damage_pattern",
+    "value": "PvE",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -5293,11 +5288,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "no PvP (streak unchanged)"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    }
   },
   {
@@ -5390,9 +5384,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -5453,11 +5447,10 @@
    },
    "result": {
     "value": {
-     "streamer_hp_loss": 0,
-     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+     "outcome": "win"
     },
     "tag": "derived",
-    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    }
   },
   {
@@ -5550,9 +5543,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -5560,9 +5553,11 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": "lost",
+    "value": {
+     "outcome": "loss"
+    },
     "tag": "derived",
-    "basis": "HP labels, streamer damage > 0"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    },
    "planning": {
     "frame_s": 2342,
@@ -5724,9 +5719,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -5734,9 +5729,11 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": "lost",
+    "value": {
+     "outcome": "loss"
+    },
     "tag": "derived",
-    "basis": "HP labels, streamer damage > 0"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    },
    "planning": {
     "frame_s": 2404,
@@ -5878,8 +5875,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "shared arena (PvE-style or shared board), same pattern as 3-4",
-    "tag": "derived"
+    "value": "PvE",
+    "tag": "derived",
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -5916,9 +5914,11 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
-    "value": "shared arena: no streamer result or combat read",
-    "tag": "n/a",
-    "reason": "shared arena: no streamer-vs-opponent result"
+    "value": {
+     "outcome": "no PvP (streak unchanged after 6-3 loss)"
+    },
+    "tag": "derived",
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    }
   },
   {
@@ -6002,9 +6002,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "damage_pattern",
+    "value": "PvP",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
     "value": null,
@@ -6012,9 +6012,11 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": "lost",
+    "value": {
+     "outcome": "loss"
+    },
     "tag": "derived",
-    "basis": "HP labels, streamer damage > 0"
+    "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    },
    "planning": {
     "frame_s": 2488,
