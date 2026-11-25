@@ -36,11 +36,15 @@
     [
       15600,
       17750
+    ],
+    [
+      18000,
+      19950
     ]
   ],
   "remaining_ranges_s": [
     [
-      17750,
+      19950,
       21600
     ]
   ],
@@ -52,20 +56,21 @@
     "twitch-2898781298-g8300",
     "twitch-2898781298-g10650",
     "twitch-2898781298-g13100",
-    "twitch-2898781298-g15600"
+    "twitch-2898781298-g15600",
+    "twitch-2898781298-g18000"
   ],
   "counts": {
-    "games": 8,
-    "fights": 110,
-    "others": 110
+    "games": 9,
+    "fights": 124,
+    "others": 124
   },
   "validator": {
-    "ok": 98,
+    "ok": 111,
     "skipped": {
-      "winner_null": 12
+      "winner_null": 13
     }
   },
-  "needs_review": 12,
+  "needs_review": 13,
   "commit": null,
-  "remaining": "g60..g15600 densify fights=110 g8=17 win=16; tiếp g9@18000+"
+  "remaining": "g60..g18000 densify fights=124 g9=14 win=13; VOD còn ~1600s sau 20000"
 }
