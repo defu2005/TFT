@@ -2,7 +2,7 @@
   "schema": "vod-manifest-v1",
   "batch": "2026-11-25-set18-vod",
   "dispatcher": "claude (phiên điều phối mở rộng manifest 1000)",
-  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal",
+  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs.",
   "slots": {
     "P1": {
       "role": "primary",
@@ -63,8 +63,12 @@
     "P8": {
       "role": "primary",
       "streamers": [
-        "disguisedtoast"
-      ]
+        "disguisedtoast",
+        "imaqtpie",
+        "dankmemes011",
+        "scarra"
+      ],
+      "note": "disguisedtoast 3 VOD blocked (Normal/PBE/set≠18). Bổ sung NA ladder Set18: imaqtpie/dankmemes011/scarra."
     },
     "P9": {
       "role": "primary",
@@ -2579,7 +2583,7 @@
       "streamer": "disguisedtoast",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "18.x"
       ],
@@ -2593,7 +2597,8 @@
         "expand:goal-1000-parallel",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "auto-added title=set 1 tft goat returns to show that unc still got it - pico park lobby tmr 11am  published=2026-11-20T22:12:12Z"
+      "notes": "auto-added title=set 1 tft goat returns to show that unc still got it - pico park lobby tmr 11am  published=2026-11-20T22:12:12Z",
+      "block_reason": "mode≠ranked and/or set≠18 (Remix Rumble / Normal / Set1-style); see handoff remaining"
     },
     {
       "vod_id": "twitch-2937597175",
@@ -2601,7 +2606,7 @@
       "streamer": "disguisedtoast",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "18.x"
       ],
@@ -2615,7 +2620,8 @@
         "expand:goal-1000-parallel",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "auto-added title=set1 challenger learns to keep up at his old age of 35 so he can practice for th published=2026-11-22T18:59:51Z"
+      "notes": "auto-added title=set1 challenger learns to keep up at his old age of 35 so he can practice for th published=2026-11-22T18:59:51Z",
+      "block_reason": "mode≠ranked and/or set≠18 (Remix Rumble / Normal / Set1-style); see handoff remaining"
     },
     {
       "vod_id": "twitch-2938701039",
@@ -2623,7 +2629,7 @@
       "streamer": "disguisedtoast",
       "slot": "P8",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "18.x"
       ],
@@ -2637,7 +2643,228 @@
         "expand:goal-1000-parallel",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "auto-added title=set1 challenger learns to keep up at his old age of 35 so he can practice for th published=2026-11-23T20:51:20Z"
+      "notes": "auto-added title=set1 challenger learns to keep up at his old age of 35 so he can practice for th published=2026-11-23T20:51:20Z",
+      "block_reason": "mode≠ranked and/or set≠18 (Remix Rumble / Normal / Set1-style); see handoff remaining"
+    },
+    {
+      "vod_id": "twitch-2898942726",
+      "url": "https://www.twitch.tv/videos/2898942726",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          29590
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p8-replace-blocked-toast"
+      ],
+      "title_hint": "wandering endlessly through grandmaster i wonder to myself will i ever find the release i yearn for, the love i felt fad"
+    },
+    {
+      "vod_id": "twitch-2899798909",
+      "url": "https://www.twitch.tv/videos/2899798909",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          32500
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p8-replace-blocked-toast"
+      ],
+      "title_hint": "bad stupid idiot does everything wrong -_-"
+    },
+    {
+      "vod_id": "twitch-2904302638",
+      "url": "https://www.twitch.tv/videos/2904302638",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          29240
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p8-replace-blocked-toast"
+      ],
+      "title_hint": "someone stop me im addicted to going fast 9th"
+    },
+    {
+      "vod_id": "twitch-2898072550",
+      "url": "https://www.twitch.tv/videos/2898072550",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          29230
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p8-replace-blocked-toast"
+      ],
+      "title_hint": "nuclear meltdown warning 8 avp incoming self destruction imminent WARNING WARNING WARNING"
+    },
+    {
+      "vod_id": "twitch-2901523098",
+      "url": "https://www.twitch.tv/videos/2901523098",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          28980
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p8-replace-blocked-toast"
+      ],
+      "title_hint": "hehe game time"
+    },
+    {
+      "vod_id": "twitch-2905165417",
+      "url": "https://www.twitch.tv/videos/2905165417",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          28840
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p8-replace-blocked-toast"
+      ],
+      "title_hint": "hehe"
+    },
+    {
+      "vod_id": "twitch-2900671286",
+      "url": "https://www.twitch.tv/videos/2900671286",
+      "streamer": "imaqtpie",
+      "slot": "P8",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          28270
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p8-replace-blocked-toast"
+      ],
+      "title_hint": "time for me to do what i do best, disappoint"
+    },
+    {
+      "vod_id": "twitch-2893844926",
+      "url": "https://www.twitch.tv/videos/2893844926",
+      "streamer": "dankmemes011",
+      "slot": "P8",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          10950
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p8-replace-blocked-toast"
+      ],
+      "title_hint": "rank 1 grind + !bash scouting with @upsetmaxtft !coaching"
+    },
+    {
+      "vod_id": "twitch-2889247270",
+      "url": "https://www.twitch.tv/videos/2889247270",
+      "streamer": "scarra",
+      "slot": "P8",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          25430
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p8-replace-blocked-toast"
+      ],
+      "title_hint": "yap fest while getting masters tft"
+    },
+    {
+      "vod_id": "twitch-2896651108",
+      "url": "https://www.twitch.tv/videos/2896651108",
+      "streamer": "dankmemes011",
+      "slot": "P8",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18, exact patch pending visual confirmation"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          17530
+        ]
+      ],
+      "source_refs": [
+        "twitch:gql-archive-list-20261125",
+        "coord:p8-replace-blocked-toast"
+      ],
+      "title_hint": "to help others i must first help myself !coaching !bash"
     },
     {
       "vod_id": "twitch-2887732371",
