@@ -1,0 +1,67 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2906835510",
+  "slot": "P1",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      2550,
+      4500
+    ],
+    [
+      4800,
+      6450
+    ],
+    [
+      6900,
+      8550
+    ],
+    [
+      8970,
+      11000
+    ],
+    [
+      14000,
+      15100
+    ],
+    [
+      15620,
+      17240
+    ],
+    [
+      17700,
+      19760
+    ],
+    [
+      21740,
+      23900
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2906835510-g2550",
+    "twitch-2906835510-g4800",
+    "twitch-2906835510-g6900",
+    "twitch-2906835510-g8970",
+    "twitch-2906835510-g14000",
+    "twitch-2906835510-g15620",
+    "twitch-2906835510-g17700",
+    "twitch-2906835510-g21900"
+  ],
+  "counts": {
+    "games": 8,
+    "fights": 143,
+    "others": 143
+  },
+  "validator": {
+    "ok": 129,
+    "skipped": {
+      "winner_null": 14
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "Scrim/tourney/watch-party segments skipped.",
+  "notes": "Learning 18.5 Regionals Patch: ranked Set18 densify; bash/fantasy/desktop skipped."
+}

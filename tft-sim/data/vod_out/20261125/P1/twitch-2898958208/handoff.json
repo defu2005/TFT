@@ -1,0 +1,67 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2898958208",
+  "slot": "P1",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      1080,
+      3000
+    ],
+    [
+      3360,
+      5320
+    ],
+    [
+      5700,
+      7920
+    ],
+    [
+      8280,
+      9840
+    ],
+    [
+      10080,
+      12000
+    ],
+    [
+      12300,
+      13600
+    ],
+    [
+      14100,
+      15600
+    ],
+    [
+      15900,
+      16800
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2898958208-g1080",
+    "twitch-2898958208-g3360",
+    "twitch-2898958208-g5700",
+    "twitch-2898958208-g8280",
+    "twitch-2898958208-g10080",
+    "twitch-2898958208-g12300",
+    "twitch-2898958208-g14100",
+    "twitch-2898958208-g15900"
+  ],
+  "counts": {
+    "games": 8,
+    "fights": 143,
+    "others": 143
+  },
+  "validator": {
+    "ok": 123,
+    "skipped": {
+      "winner_null": 20
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "Scrim/tourney/watch-party segments skipped.",
+  "notes": "ASCEND ranked Set18 densify; bash/coaching/desktop skipped."
+}
