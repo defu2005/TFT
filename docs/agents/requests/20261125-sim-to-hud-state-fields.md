@@ -15,6 +15,33 @@ unblocks: harness đo tỷ lệ đồng ý của `decide.js` (Phase 4); thí ngh
 deadline:
 status: mở
 
+## Bản ghi trận fight-v1 (bổ sung 2026-11-25, yêu cầu mở rộng)
+
+Mỗi round có ít nhất một cặp (bàn, bàn đối thủ, kết quả). Định dạng dùng chung với `tft-sim/scripts/combat/fight.py`, schema `fight-v1`:
+
+```
+{"schema": "fight-v1", "set": 18, "label": "real", "source": "<vod>:<round>",
+ "a": {"level": int, "augments": [apiName...], "units": [{"api": apiName, "star": 1|2|3, "items": [apiName...], "pos": [row, col] | null}]},
+ "b": {...cùng cấu trúc...},
+ "result": {"winner": 0 | 1 | null}}
+```
+
+- `api`: apiName CDragon (ví dụ `TFT_Krug`, không dùng tên hiển thị). Nếu chỉ đọc được tên hiển thị, ghi tên và đánh dấu; không đoán.
+- `pos`: hoặc có đủ cho mọi unit của bên đó (hàng 0–3 cho bên a, 4–7 cho bên b, cột 0–6, không trùng ô), hoặc `null` cho mọi unit. Không ghi nửa vời.
+- `result.winner`: 0 nếu bên a thắng round, 1 nếu bên b, `null` nếu không đọc được. Không suy từ HP nếu không chắc.
+- Trường chưa đọc được: `null`, không ghi 0.
+
+Ví dụ một round (các giá trị là minh họa, không phải dữ liệu thật):
+
+```
+{"schema": "fight-v1", "set": 18, "label": "real", "source": "vod-XX:3-2",
+ "a": {"level": 6, "augments": [], "units": [{"api": "TFT_Krug", "star": 2, "items": [], "pos": null}]},
+ "b": {"level": null, "augments": null, "units": [{"api": null, "star": 1, "items": null, "pos": null}]},
+ "result": {"winner": null}}
+```
+
+Thứ tự ưu tiên: (a) bàn của người được quay, (b) bàn đối thủ khi có trong khung combat, (c) kết quả round. Mục (b) là điều kiện để dự đoán combat; không có (b) thì (a) vẫn có ích cho mô hình kinh tế.
+
 ## Ghi chú
 
 - Level null ở 9 VOD: xem `20261125-sim-to-hud-level-null-vods.md`.
