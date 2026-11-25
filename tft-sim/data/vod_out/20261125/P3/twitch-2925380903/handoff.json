@@ -8,6 +8,10 @@
     [
       2230,
       3800
+    ],
+    [
+      4200,
+      6500
     ]
   ],
   "remaining_ranges_s": [
@@ -17,24 +21,29 @@
     ],
     [
       3800,
+      4200
+    ],
+    [
+      6500,
       11107
     ]
   ],
   "game_ids": [
-    "twitch-2925380903-g2230"
+    "twitch-2925380903-g2230",
+    "twitch-2925380903-g4200"
   ],
   "counts": {
-    "games": 1,
-    "fights": 17,
+    "games": 2,
+    "fights": 37,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 17
+      "winner_null": 37
     }
   },
   "needs_review": 0,
-  "commit": "5dee071",
-  "remaining": "ván g2230 Ranked (MATCH FOUND @2190). Tiếp ~0-2230 (ván1 chưa có chữ Ranked client) và từ 3800+; bổ sung board đối thủ/winner."
+  "commit": "f976142",
+  "remaining": "g2230+g4200 Ranked done. Tiếp từ ~6500 (g4+) và kiểm ván1 nếu có Ranked HUD."
 }

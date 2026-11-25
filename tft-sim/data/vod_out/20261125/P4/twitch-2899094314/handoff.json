@@ -8,29 +8,38 @@
     [
       0,
       1890
+    ],
+    [
+      2085,
+      4150
     ]
   ],
   "remaining_ranges_s": [
     [
       1890,
+      2085
+    ],
+    [
+      4150,
       19050
     ]
   ],
   "game_ids": [
-    "twitch-2899094314-g0"
+    "twitch-2899094314-g0",
+    "twitch-2899094314-g2085"
   ],
   "counts": {
-    "games": 1,
-    "fights": 24,
+    "games": 2,
+    "fights": 46,
     "others": 0
   },
   "validator": {
     "ok": 1,
     "skipped": {
-      "winner_null": 23
+      "winner_null": 45
     }
   },
-  "needs_review": 20,
-  "commit": "ce1b39b",
-  "remaining": "continue ranked game2+ from ~2085s (stage1 after queue@1920). Denser board OCR for g0 fights."
+  "needs_review": 42,
+  "commit": "e01eb83",
+  "remaining": "gap 1890-2085 (queue/desktop); continue game3+ from ~4700s (LP 1481 lobby)"
 }
