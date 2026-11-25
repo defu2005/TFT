@@ -5114,6 +5114,40 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
+   },
+   "frame_A_read": {
+    "frame_s": 1722,
+    "timer": 22,
+    "counter": "8/8",
+    "level": 8,
+    "xp": "8/68",
+    "gold": 71,
+    "streak": 2,
+    "shop": [
+     "Cassiopeia",
+     "Aphelios",
+     "Brambleback",
+     "Leona",
+     "Mama Beak"
+    ],
+    "panel": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": "4 (uncertain at 720p: 2 or 4)",
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1,
+     "marker": "1+"
+    },
+    "rail_hp_rows": "nonzero HP on all seven non-streamer rows (streamer 88)",
+    "bench": "not read",
+    "board_units_rowcol": "not read by row and column",
+    "stars_items": "not resolvable at 720p",
+    "tag": "read",
+    "source": "frame at 1722 s, viewed in this session"
    }
   },
   {
