@@ -1,0 +1,270 @@
+{
+ "2-5": {
+  "N": 5,
+  "extra": 0,
+  "solutions": 1,
+  "first": [
+   "Alistar",
+   "Kobuko",
+   "LeBlanc",
+   "Mama Beak",
+   "Xayah"
+  ]
+ },
+ "3-1": {
+  "N": 5,
+  "extra": 0,
+  "solutions": 1,
+  "first": [
+   "Alistar",
+   "Kobuko",
+   "LeBlanc",
+   "Mama Beak",
+   "Xayah"
+  ]
+ },
+ "3-3": {
+  "N": 6,
+  "extra": 0,
+  "solutions": 0,
+  "first": null
+ },
+ "3-5": {
+  "N": 7,
+  "extra": 0,
+  "solutions": 0,
+  "first": null
+ },
+ "3-6": {
+  "N": 7,
+  "extra": 0,
+  "solutions": 1,
+  "first": [
+   "Alistar",
+   "Ezreal",
+   "Hecarim",
+   "Krug",
+   "LeBlanc",
+   "Mama Beak",
+   "Xayah"
+  ]
+ },
+ "4-1": {
+  "N": 8,
+  "extra": 1,
+  "solutions": 0,
+  "first": null
+ },
+ "4-3": {
+  "N": 8,
+  "extra": 1,
+  "solutions": 0,
+  "first": null
+ },
+ "4-4": {
+  "N": 8,
+  "extra": 1,
+  "solutions": 0,
+  "first": null
+ },
+ "4-5": {
+  "N": 8,
+  "extra": 0,
+  "solutions": 0,
+  "first": null
+ },
+ "4-6": {
+  "N": 8,
+  "extra": 0,
+  "solutions": 0,
+  "first": null
+ },
+ "4-7": {
+  "N": 8,
+  "extra": 1,
+  "solutions": 1,
+  "first": [
+   "Alistar",
+   "Draven",
+   "Ezreal",
+   "Gnar",
+   "Hecarim",
+   "Krug",
+   "Maokai",
+   "Sett"
+  ]
+ },
+ "5-1": {
+  "N": 9,
+  "extra": 2,
+  "solutions": 0,
+  "first": null
+ },
+ "5-2": {
+  "N": 9,
+  "extra": 3,
+  "solutions": 4,
+  "first": [
+   "Alistar",
+   "Draven",
+   "Ezreal",
+   "Gnar",
+   "Ivern",
+   "Kennen",
+   "Kobuko",
+   "Maokai",
+   "Taric"
+  ]
+ },
+ "5-3": {
+  "N": 9,
+  "extra": 2,
+  "solutions": 1,
+  "first": [
+   "Alistar",
+   "Amumu",
+   "Draven",
+   "Ezreal",
+   "Gnar",
+   "Ivern",
+   "Kennen",
+   "Maokai",
+   "Taric"
+  ]
+ },
+ "5-5": {
+  "N": 9,
+  "extra": 2,
+  "solutions": 1,
+  "first": [
+   "Alistar",
+   "Amumu",
+   "Draven",
+   "Ezreal",
+   "Gnar",
+   "Ivern",
+   "Kennen",
+   "Maokai",
+   "Taric"
+  ]
+ },
+ "5-6": {
+  "N": 9,
+  "extra": 2,
+  "solutions": 1,
+  "first": [
+   "Alistar",
+   "Amumu",
+   "Draven",
+   "Ezreal",
+   "Gnar",
+   "Ivern",
+   "Kennen",
+   "Maokai",
+   "Taric"
+  ]
+ },
+ "5-7": {
+  "N": 9,
+  "extra": 2,
+  "solutions": 1,
+  "first": [
+   "Alistar",
+   "Amumu",
+   "Draven",
+   "Ezreal",
+   "Gnar",
+   "Ivern",
+   "Kennen",
+   "Maokai",
+   "Taric"
+  ]
+ },
+ "6-1": {
+  "N": 9,
+  "extra": 2,
+  "solutions": 1,
+  "first": [
+   "Alistar",
+   "Amumu",
+   "Draven",
+   "Ezreal",
+   "Gnar",
+   "Ivern",
+   "Kennen",
+   "Maokai",
+   "Taric"
+  ]
+ },
+ "6-2": {
+  "N": 9,
+  "extra": 2,
+  "solutions": 1,
+  "first": [
+   "Alistar",
+   "Amumu",
+   "Draven",
+   "Ezreal",
+   "Gnar",
+   "Ivern",
+   "Kennen",
+   "Maokai",
+   "Taric"
+  ]
+ },
+ "6-3": {
+  "N": 9,
+  "extra": 2,
+  "solutions": 1,
+  "first": [
+   "Alistar",
+   "Amumu",
+   "Draven",
+   "Ezreal",
+   "Gnar",
+   "Ivern",
+   "Kennen",
+   "Maokai",
+   "Taric"
+  ]
+ },
+ "6-4": {
+  "N": 9,
+  "extra": 2,
+  "solutions": 1,
+  "first": [
+   "Alistar",
+   "Amumu",
+   "Draven",
+   "Ezreal",
+   "Gnar",
+   "Ivern",
+   "Kennen",
+   "Maokai",
+   "Taric"
+  ]
+ },
+ "6-5": {
+  "N": 9,
+  "extra": 2,
+  "solutions": 0,
+  "first": null
+ },
+ "6-6": {
+  "N": 9,
+  "extra": 2,
+  "solutions": 1,
+  "first": [
+   "Alistar",
+   "Amumu",
+   "Draven",
+   "Ezreal",
+   "Gnar",
+   "Ivern",
+   "Kennen",
+   "Maokai",
+   "Taric"
+  ]
+ },
+ "_note": "Trait-consistent roster candidates only. Board counter read from planning frames where legible. Panels read by eye. Zero solutions mean the panel and counter do not fit the catalog under these rules. Several rounds repeat the same panel, so identical solutions are expected there. Not confirmed on sprites."
+}
