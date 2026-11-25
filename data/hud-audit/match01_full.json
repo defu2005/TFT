@@ -875,7 +875,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P4; flagged scouting runs at 460-462 s; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -1090,7 +1090,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P7; flagged scouting runs at 542-546 s; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -1309,7 +1309,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P5; flagged scouting runs at 606-608 s, 662-664 s; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -1733,7 +1733,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P2; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -1994,7 +1994,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P6; flagged scouting runs at 778-778 s; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -2487,7 +2487,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P3; flagged scouting runs at 888-890 s; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -2774,7 +2774,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P8; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -3021,7 +3021,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P7; flagged scouting runs at 1068-1070 s, 1126-1140 s; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -3528,7 +3528,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P5; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -3797,7 +3797,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P2; flagged scouting runs at 1260-1260 s; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -4347,7 +4347,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P3; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -4596,7 +4596,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P4; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -4840,7 +4840,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P6; flagged scouting runs at 1532-1536 s, 1542-1546 s, 1602-1602 s; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -5257,7 +5257,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P5; flagged scouting runs at 1716-1716 s; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -5504,7 +5504,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P8; flagged scouting runs at 1724-1724 s, 1730-1730 s; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -6091,7 +6091,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P2; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -6397,24 +6397,10 @@
     "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    },
    "opponent_board": {
-    "value": {
-     "panel": {
-      "Spellweaver": 3,
-      "Elderwood": 3,
-      "Blackthorn": 2,
-      "Brawler": 2,
-      "Defender": 2,
-      "Flora Fatalis": 1,
-      "Sprykin": 1
-     },
-     "trait_count_sum": 14,
-     "units": null,
-     "solver": "panel read; unit list not solved (no duplicate-tested board)"
-    },
-    "tag": "derived",
-    "basis": "Scouting frame at sweep 809 (1978 s): stage strip reads 5-2 (timer 4); the owner edge marker sits on the level-6, HP -5 rail row, which is P3 by the 5-2 opponent basis.",
-    "attempt": "Panel read from the 5-2 scouting frame and attached to P3 (owner marker on the P3 row).",
-    "reason": "unit list not solved"
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "Panel at 1978 s (sweep 809, stage 5-2 timer 4) read but not attached. The edge-marker row to name-code match failed the known-answer test (row 5 gave P3 at score 0.44), so the owner is not established.",
+    "reason": "owner marker not validated by a known-answer test"
    },
    "hexes": {
     "value": null,
@@ -6714,7 +6700,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P7; flagged scouting runs at 2060-2076 s; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -7196,7 +7182,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P4; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -7490,7 +7476,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not fixed; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -7995,7 +7981,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent is P4; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -8280,7 +8266,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not fixed; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "attempt": "No panel attached to this round. Scouted panels in its stage are not owner-attributed: owner marker method failed its known-answer test.",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -9528,7 +9514,7 @@
    "300": 34.9
   },
   "threshold": "MAD < 8 flagged as scouting-like",
-  "status": "flagged candidate runs; panels read per sheet; owners not yet confirmed",
+  "status": "flagged scouting runs read per sheet; panels attached only at 6-3, 6-5, 6-6 by the alive rule; owner marker not validated",
   "runs_by_round_candidate": {
    "2-1": [
     {
@@ -9917,7 +9903,7 @@
   },
   "frame_s": "t = 362 + (index - 1) * 2",
   "note": "run index i maps to t = 362 + (i-1)*2; checked on the 3-1 window (index 264 = 888 s)",
-  "owner_check": "Stage reads from the top strip: sweep 1023 (2406 s) 6-3 timer 20 with two rail rows alive; sweep 1072 (2504 s) 6-5 timer 5; sweep 1106 (2572 s) 6-6 timer 3; sweep 809 (1978 s) 5-2 timer 4. Trait panels at 6-3, 6-5, 6-6 match the stored panels exactly. The owner edge marker is absent in the streamer's home view at 2504 s (op13/p2_2504.png, timer 6). The marker is on the P2 row at 2406, 2504 and 2572 s and on the level-6 row (P3) at 1978 s, the 5-2 opponent, so the marker tracks the scouted owner in four frames. The 6-3, 6-5 and 6-6 panels are attached to P2 and the 5-2 panel to P3 on that basis. The other 14 scouted entries were not re-read for the marker row; their owner_arrow_row values stay as recorded and unattached."
+  "owner_check": "Stage reads from the top strip: sweep 1023 (2406 s) 6-3 timer 20 with two rail rows alive; sweep 1072 (2504 s) 6-5 timer 5; sweep 1106 (2572 s) 6-6 timer 3; sweep 809 (1978 s) 5-2 timer 4. Trait panels at 6-3, 6-5 and 6-6 match the stored panels exactly. The streamer's home view at 2504 s (op13/p2_2504.png, timer 6) is not a scouting frame. The owner edge marker was read by pixel and name-matched against the private map; the known-answer test failed (row 5 at 1978 s scored 0.44; row 2 at 1023 s scored 0.55), so the marker is not a validated owner cue. The 6-3, 6-5 and 6-6 panels are attached to P2 by the alive rule alone (only one other player alive after 6-2). The 5-2 panel is not attached."
  },
  "scouted_panels": [
   {
@@ -10173,11 +10159,11 @@
     "Flora Fatalis": 1,
     "Sprykin": 1
    },
-   "owner_arrow_row": "P3 (edge marker on the level-6 row)",
-   "owner_status": "P3 (edge marker)",
-   "attached_to_round": "5-2",
-   "note": "5-2 opponent is P3; the edge marker sits on the level-6 row, so the panel is attached to 5-2.",
-   "owner": "P3"
+   "owner_arrow_row": "edge marker on level-6 row; name-code match not validated",
+   "owner_status": "not established",
+   "attached_to_round": null,
+   "note": "5-2 stage; owner marker reading not validated by known-answer test, so not attached.",
+   "owner": "not established"
   },
   {
    "t_s": 2406,
