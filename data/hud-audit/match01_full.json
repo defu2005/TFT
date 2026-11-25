@@ -1027,7 +1027,7 @@
      },
      "observed_gold_change": {
       "tag": "derived",
-      "basis": "gold 4 at 526.1 s to 0 at 532 s; buys at 526.5 and 529.25 s fall inside the window (consistent with the drop)"
+      "basis": "gold 4 at 526.1 s to 0 at 532 s; the three buys in the window (2 + 1 + 1, costs from src/data/set18.json) sum to 4, equal to the drop"
      }
     },
     "tag": "read"
@@ -1678,7 +1678,7 @@
      },
      "observed_gold_change": {
       "tag": "derived",
-      "basis": "gold 7 at 700.7 s to 6 at 712 s; no purchase is recorded in that window (buys start at 728 s), so the change is unexplained"
+      "basis": "gold 7 at 700.7 s to 6 at 712 s; no recorded purchase in that window (buys start at 728 s); cause not established"
      }
     },
     "tag": "read"
@@ -2183,7 +2183,7 @@
      },
      "observed_gold_change": {
       "tag": "derived",
-      "basis": "gold 28 at 835.1 s to 29 at 844 s; +1 with no purchase in the window (buy at 846 s), so income"
+      "basis": "gold 28 at 835.1 s to 29 at 844 s; +1 with no recorded action in the window (buy at 846 s is after the read); cause not established"
      }
     },
     "tag": "read"
@@ -7070,7 +7070,7 @@
      },
      "observed_gold_change": {
       "tag": "derived",
-      "basis": "gold 9 at 2094 s to 7 at 2095 s; buys at 2094.5 and 2096 s are candidates with cost_consistent false, so the -2 is consistent with them but not confirmed"
+      "basis": "gold 9 at 2094 s to 7 at 2095 s; the one buy in the window (2094.5 s) costs 5 in src/data/set18.json, not 2, so the drop is not explained by a recorded purchase; the 2096 s buy falls after the read"
      }
     }
    },
@@ -9446,7 +9446,7 @@
   "source": "round_results_derived.json eliminations; 1 and 2 from 6-6 frames"
  },
  "blind_reread": {
-  "summary": "Blind re-read. Sampled ten rounds (crop tuned on these): gold 9/10; the one miss is 5-5, a one-second offset (2094 s is timer 22 with gold 9; the planning read is timer 21 at 2095 s with gold 7). Streak 9/10 (one empty OCR read at 6-2; the frame shows 1). Out-of-sample: 13 of 13 gold values matched at the recorded planning frames; three frames show no gold box (2-4, 6-1, 6-6). Gold changes between the two timed reads for 2-2, 2-5, 2-6, 2-7 and 5-5 are recorded as observed changes with their frames; 2-5 has no recorded purchase for its drop. Panel, shop, counter, level and XP were not re-read blind."
+  "summary": "Blind re-read. Sample of ten at planning frames: gold 9/10 (miss 5-5, one-second offset), streak 9/10 (one empty OCR read at 6-2), level 10/10, XP 10/10. The gold and streak crops were chosen after seeing the sample, so those figures are tuned. The level and XP crop was calibrated on an out-of-sample frame (2-3 at 604 s) before the run. Out-of-sample gold at recorded planning frames: 13/13 comparable; three frames show no gold box (2-4, 6-1, 6-6). Panel, shop and counter not re-read blind."
  },
  "final_comps": {
   "P1_6-6": {
@@ -9873,7 +9873,7 @@
   },
   "frame_s": "t = 362 + (index - 1) * 2",
   "note": "run index i maps to t = 362 + (i-1)*2; checked on the 3-1 window (index 264 = 888 s)",
-  "owner_check": "Pointer test: a viewed-row pointer appears in the 888 s scouting frame and at 2412 s, but not at 2504 or 2572 s where the panel is on screen. One hit is not enough to attach panels; scouting owners stay unresolved."
+  "owner_check": "888 s rail crop (scouting run 264): a yellow pointer sits beside the second row, and a hover card covers the third row, which marks the mouse position, not the viewed owner. The scouted board has no owner nameplate. Owners stay unresolved; no panel is attached on this evidence."
  },
  "scouted_panels": [
   {

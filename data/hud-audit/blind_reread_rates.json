@@ -12,6 +12,18 @@
    "of": 10,
    "rate": 0.9,
    "note": "sample of ten; 6-2 OCR empty, frame shows 1, master 1"
+  },
+  "level": {
+   "matched": 10,
+   "of": 10,
+   "rate": 1.0,
+   "note": "crop (188,588,206,606) calibrated on the out-of-sample frame at 2-3, 604 s (level 4) before the sample run"
+  },
+  "xp": {
+   "matched": 10,
+   "of": 10,
+   "rate": 1.0,
+   "note": "crop (244,588,274,606), whitelist digits and slash; same calibration frame"
   }
  },
  "gold_masked_near_white": {
@@ -60,5 +72,6 @@
  },
  "gold_frame_a_run": {
   "note": "Earlier run at Frame A times; superseded by the planning-frame run above"
- }
+ },
+ "level_xp_protocol": "Calibration on one out-of-sample frame (2-3 at 604 s) before the sample run; the ten sample rounds read at their planning frames."
 }
