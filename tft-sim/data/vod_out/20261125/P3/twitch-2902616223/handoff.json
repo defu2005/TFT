@@ -1,0 +1,27 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2902616223",
+  "slot": "P3",
+  "role": "primary",
+  "status": "skipped",
+  "covered_ranges_s": [],
+  "remaining_ranges_s": [
+    [
+      0,
+      19210
+    ]
+  ],
+  "game_ids": [],
+  "counts": {
+    "games": 0,
+    "fights": 0,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {}
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "BLOCKED: Not Set18 (Patch 14.8B Dryad/Umbral/Behemoth)"
+}

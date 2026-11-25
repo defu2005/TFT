@@ -8,29 +8,34 @@
     [
       250,
       1980
+    ],
+    [
+      2300,
+      4000
     ]
   ],
   "remaining_ranges_s": [
     [
-      1980,
+      4000,
       29240
     ]
   ],
   "game_ids": [
-    "twitch-2904302638-g250"
+    "twitch-2904302638-g250",
+    "twitch-2904302638-g2500"
   ],
   "counts": {
-    "games": 1,
-    "fights": 14,
+    "games": 2,
+    "fights": 26,
     "others": 0
   },
   "validator": {
     "ok": 7,
     "skipped": {
-      "winner_null": 7
+      "winner_null": 19
     }
   },
-  "needs_review": 7,
-  "commit": "91a9ee2",
-  "remaining": "densify-full g250 1-2..5-5 (14 fights). Continue late 5-6+/game2 from ~1980. P8-primary owns VOD."
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "densify-full 2g/26f. Continue ~4000+."
 }

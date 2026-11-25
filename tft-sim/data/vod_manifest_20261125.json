@@ -2,7 +2,7 @@
   "schema": "vod-manifest-v1",
   "batch": "2026-11-25-set18-vod",
   "dispatcher": "claude (phiên điều phối mở rộng manifest 1000)",
-  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash). | P4 +loltyler1 ranked Set18 Emerald VODs for throughput. | 2026-11-25 expand depleted P2/P5/P6/P7/P8/P10: voids1n/emilyywang/kiyoon/imriveting/upsetmaxtft/tleyds/dpeitft (~ranked ladder; filter PBE/tourney/bash/custom/Normal). | P8 wave2 mode-check: block 6 imaq PBE Premiere; 9 ranked Set18 keepers todo. | P4 scout-expand dogdog/shurkou ranked Set18 after wasian deplete. | P8 WoW title-block 11 imaq VODs.",
+  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash). | P4 +loltyler1 ranked Set18 Emerald VODs for throughput. | 2026-11-25 expand depleted P2/P5/P6/P7/P8/P10: voids1n/emilyywang/kiyoon/imriveting/upsetmaxtft/tleyds/dpeitft (~ranked ladder; filter PBE/tourney/bash/custom/Normal). | P8 wave2 mode-check: block 6 imaq PBE Premiere; 9 ranked Set18 keepers todo. | P4 scout-expand dogdog/shurkou ranked Set18 after wasian deplete. | P8 WoW title-block 11 imaq VODs. | P4 rem16 scout densify wasian/loltyler1 ranked Set18.",
   "slots": {
     "P1": {
       "role": "primary",
@@ -47,7 +47,7 @@
         "loltyler1",
         "dogdog"
       ],
-      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue). | +loltyler1 ranked Set18 Emerald ladder (wasian/voltariux/shurkou/aphromoo archives depleted of clean ranked). | +dogdog Diamond ranked Set18; +more loltyler1. | 2026-11-25 scout: wasian ranked empty → +dogdog 2905342718 +shurkou ranked VODs."
+      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue). | +loltyler1 ranked Set18 Emerald ladder (wasian/voltariux/shurkou/aphromoo archives depleted of clean ranked). | +dogdog Diamond ranked Set18; +more loltyler1. | 2026-11-25 scout: wasian ranked empty → +dogdog 2905342718 +shurkou ranked VODs. | 2026-11-25 rem16: +wasian 2913195800 expand +loltyler1 2911555199 +2918647739 rem"
     },
     "P5": {
       "role": "primary",
@@ -1538,7 +1538,7 @@
       "streamer": "boxbox",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "claimed",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1551,7 +1551,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:38:02Z"
     },
     {
       "vod_id": "twitch-2902616223",
@@ -1559,7 +1561,7 @@
       "streamer": "boxbox",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1572,7 +1574,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_at": "2026-11-25T19:38:02Z",
+      "block_reason": "Not Set18 (Patch 14.8B Dryad/Umbral/Behemoth)"
     },
     {
       "vod_id": "twitch-2907868396",
@@ -1622,7 +1626,7 @@
       "streamer": "boxbox",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1635,7 +1639,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_at": "2026-11-25T19:38:02Z",
+      "block_reason": "Not Set18 (Ajax/Spellslinger/Hero Project Patch14)"
     },
     {
       "vod_id": "twitch-2907188910",
@@ -1664,7 +1670,7 @@
       "streamer": "boxbox",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "claimed",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -1677,7 +1683,9 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:38:02Z"
     },
     {
       "vod_id": "twitch-2884672298",
@@ -1896,7 +1904,8 @@
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
       ],
-      "notes": " | REOPEN ranked Challenger Set18 (Regional Finals overlay only); stubbed 6 games"
+      "notes": " | REOPEN ranked Challenger Set18 (Regional Finals overlay only); stubbed 6 games",
+      "note": " | rem gap g2200 filled"
     },
     {
       "vod_id": "twitch-2907970518",
@@ -1925,7 +1934,7 @@
       "streamer": "wasianiverson",
       "slot": "P4",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "18.5C/18.6"
       ],
@@ -1938,7 +1947,8 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "note": " | expand +6 ranked after NORMAL gap densify-full"
     },
     {
       "vod_id": "twitch-2911484335",
@@ -3843,7 +3853,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "working",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
@@ -5244,7 +5254,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "18.x"
       ],
@@ -5258,7 +5268,9 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "woke up from dream that i got same points as tyler1 in bash, rage queueing"
+      "notes": "woke up from dream that i got same points as tyler1 in bash, rage queueing",
+      "claimed_at": "2026-11-25T19:38:02Z",
+      "block_reason": "Mixed/not clean Set18 (Mythic/Artist/Hwei @8000)"
     },
     {
       "vod_id": "twitch-2896271382",
@@ -5266,7 +5278,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "claimed",
       "patch_claims": [
         "18.x"
       ],
@@ -5280,7 +5292,9 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "actual 1.x"
+      "notes": "actual 1.x",
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:38:02Z"
     },
     {
       "vod_id": "twitch-2895746438",
@@ -5288,7 +5302,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "claimed",
       "patch_claims": [
         "18.x"
       ],
@@ -5302,7 +5316,9 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "play until bot 4(50 games)"
+      "notes": "play until bot 4(50 games)",
+      "claimed_by": "bc-b92cf5d1-5d2f-523b-981c-a54bedadb14c",
+      "claimed_at": "2026-11-25T19:38:02Z"
     },
     {
       "vod_id": "twitch-2894958056",
@@ -5310,7 +5326,7 @@
       "streamer": "setsuko",
       "slot": "P3",
       "role": "primary",
-      "status": "pending",
+      "status": "blocked",
       "patch_claims": [
         "18.x"
       ],
@@ -5324,7 +5340,9 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "play until bot 4(50 games)"
+      "notes": "play until bot 4(50 games)",
+      "claimed_at": "2026-11-25T19:38:02Z",
+      "block_reason": "Not Set18 (Inkshadow/carousel Yone-Alune-Illaoi)"
     },
     {
       "vod_id": "twitch-2893963512",
@@ -6702,7 +6720,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
@@ -6714,7 +6732,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
@@ -6882,7 +6900,7 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "working",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
@@ -7240,6 +7258,16 @@
         "coord:p4-densify-then-scout"
       ],
       "notes": "scout: Master ranked Set18 (Dishsoap/setsuko lobbies). Title mentions bash but frames=Master ladder no tourney overlay; skip client/home gaps"
+    },
+    {
+      "vod_id": "twitch-2911555199",
+      "url": "https://www.twitch.tv/videos/2911555199",
+      "streamer": "loltyler1",
+      "slot": "P4",
+      "status": "done",
+      "title": "AHHH GETS STRONG FEEL !! ranked Set18 Emerald/Plat ladder",
+      "duration_s": 19578,
+      "note": "P4 scout KEEP ranked Set18 continuum; densify-full 9g/126f"
     }
   ]
 }
