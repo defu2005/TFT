@@ -3515,7 +3515,7 @@
      "Sett"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits)",
+    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits); gold ledger (reader rows): 4-1 planning gold 1 at 1364 s, 2 at 1413 s, then +8 (1445.8), +8 (1447.5), +4 (1449.0), +5 (1468.0) to 27 at planning: consistent with selling the four units that leave the 4-1 board, but the individual sells are not identified",
     "note": "hexes unresolved"
    },
    "bench_units": {
