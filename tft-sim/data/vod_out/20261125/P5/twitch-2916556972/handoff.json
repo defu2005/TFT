@@ -3,43 +3,66 @@
   "vod_id": "twitch-2916556972",
   "slot": "P5",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       0,
       1400
     ],
     [
-      3000,
-      3900
-    ]
-  ],
-  "remaining_ranges_s": [
-    [
       1400,
       3000
     ],
     [
+      3000,
+      3900
+    ],
+    [
       3900,
-      99999
+      6200
+    ],
+    [
+      6200,
+      8500
+    ],
+    [
+      8500,
+      11000
+    ],
+    [
+      11000,
+      13500
+    ],
+    [
+      13500,
+      15800
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2916556972-g0",
-    "twitch-2916556972-g3000"
+    "twitch-2916556972-g1400",
+    "twitch-2916556972-g3000",
+    "twitch-2916556972-g3900",
+    "twitch-2916556972-g6200",
+    "twitch-2916556972-g8500",
+    "twitch-2916556972-g11000",
+    "twitch-2916556972-g13500"
   ],
   "counts": {
-    "games": 2,
-    "fights": 3,
-    "others": 3
+    "games": 8,
+    "fights": 112,
+    "others": 112
+  },
+  "notes": "Densify thin/rem → 8g/112f; agent bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
+  "claim": {
+    "agent": "bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
+    "claimed_at": "2026-11-25T19:30:04Z"
   },
   "validator": {
-    "ok": 0,
+    "ok": 96,
     "skipped": {
-      "winner_null": 3
+      "winner_null": 16
     }
-  },
-  "needs_review": 3,
-  "commit": null,
-  "remaining": "Volume stub; densify-full remaining."
+  }
 }

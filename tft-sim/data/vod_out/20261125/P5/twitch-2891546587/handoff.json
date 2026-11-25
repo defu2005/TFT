@@ -3,7 +3,7 @@
   "vod_id": "twitch-2891546587",
   "slot": "P5",
   "role": "primary",
-  "status": "ok",
+  "status": "done",
   "covered_ranges_s": [
     [
       200,
@@ -23,41 +23,62 @@
     ],
     [
       8500,
-      12000
+      11000
     ],
     [
-      12500,
+      11100,
+      12600
+    ],
+    [
+      12600,
+      14800
+    ],
+    [
+      14800,
+      16200
+    ],
+    [
+      16200,
       17500
-    ]
-  ],
-  "remaining_ranges_s": [
-    [
-      0,
-      200
     ],
     [
-      17500,
-      null
+      17600,
+      19500
+    ],
+    [
+      19500,
+      21200
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2891546587-g300",
     "twitch-2891546587-g2200",
     "twitch-2891546587-g4000",
     "twitch-2891546587-g6000",
     "twitch-2891546587-g8600",
-    "twitch-2891546587-g12600"
+    "twitch-2891546587-g11100",
+    "twitch-2891546587-g12600",
+    "twitch-2891546587-g14800",
+    "twitch-2891546587-g16200",
+    "twitch-2891546587-g17600",
+    "twitch-2891546587-g19500"
   ],
   "counts": {
-    "games": 6,
-    "fights": 72,
-    "others": 0
+    "games": 11,
+    "fights": 142,
+    "others": 70
+  },
+  "notes": "Rem extend after 17500 + mid-split 11100-17100; agent bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
+  "claim": {
+    "agent": "bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
+    "claimed_at": "2026-11-25T19:30:04Z",
+    "note": "rem-extend on coord base"
   },
   "validator": {
-    "ok": 0,
+    "ok": 60,
     "skipped": {
-      "winner_null": 72
+      "winner_null": 82
     }
-  },
-  "notes": "coord densify-full overwrite thin stub; rem late after 17500"
+  }
 }
