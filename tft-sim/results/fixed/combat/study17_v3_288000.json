@@ -1,0 +1,244 @@
+{
+  "label": "sim (engine Set 17, khong phai tran that)",
+  "same": {
+    "A": {
+      "n": 300,
+      "decisive_frac": 0.8533,
+      "decisive_won_by_A_share": 0.5078
+    },
+    "C": {
+      "hand_noaug": {
+        "agree_on_decisive": 0.9805,
+        "ci95": [
+          0.9637,
+          0.9957
+        ],
+        "mean_abs_gap_all": 0.061
+      },
+      "hand_seed2": {
+        "agree_on_decisive": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "mean_abs_gap_all": 0.0245
+      },
+      "generic": {
+        "agree_on_decisive": 0.8594,
+        "ci95": [
+          0.8112,
+          0.902
+        ],
+        "mean_abs_gap_all": 0.178
+      },
+      "none": {
+        "agree_on_decisive": 0.8555,
+        "ci95": [
+          0.8133,
+          0.8968
+        ],
+        "mean_abs_gap_all": 0.18
+      },
+      "hand_noitems": {
+        "agree_on_decisive": 0.8281,
+        "ci95": [
+          0.7821,
+          0.8727
+        ],
+        "mean_abs_gap_all": 0.1873
+      },
+      "public": {
+        "agree_on_decisive": 0.75,
+        "ci95": [
+          0.6951,
+          0.8025
+        ],
+        "mean_abs_gap_all": 0.2775
+      }
+    }
+  },
+  "cross": {
+    "A": {
+      "n": 300,
+      "decisive_frac": 0.92,
+      "decisive_won_by_A_share": 0.4783
+    },
+    "C": {
+      "hand_noaug": {
+        "agree_on_decisive": 0.9855,
+        "ci95": [
+          0.9708,
+          0.9965
+        ],
+        "mean_abs_gap_all": 0.0283
+      },
+      "hand_seed2": {
+        "agree_on_decisive": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "mean_abs_gap_all": 0.0105
+      },
+      "generic": {
+        "agree_on_decisive": 0.9601,
+        "ci95": [
+          0.9363,
+          0.979
+        ],
+        "mean_abs_gap_all": 0.0688
+      },
+      "none": {
+        "agree_on_decisive": 0.971,
+        "ci95": [
+          0.9505,
+          0.9891
+        ],
+        "mean_abs_gap_all": 0.0623
+      },
+      "hand_noitems": {
+        "agree_on_decisive": 0.9348,
+        "ci95": [
+          0.8972,
+          0.9634
+        ],
+        "mean_abs_gap_all": 0.0838
+      },
+      "public": {
+        "agree_on_decisive": 0.9022,
+        "ci95": [
+          0.8657,
+          0.9338
+        ],
+        "mean_abs_gap_all": 0.1132
+      }
+    }
+  },
+  "all": {
+    "A": {
+      "n": 600,
+      "decisive_frac": 0.8867,
+      "decisive_won_by_A_share": 0.4925
+    },
+    "C": {
+      "hand_noaug": {
+        "agree_on_decisive": 0.9831,
+        "ci95": [
+          0.9737,
+          0.9922
+        ],
+        "mean_abs_gap_all": 0.0447
+      },
+      "hand_seed2": {
+        "agree_on_decisive": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "mean_abs_gap_all": 0.0175
+      },
+      "generic": {
+        "agree_on_decisive": 0.9117,
+        "ci95": [
+          0.8895,
+          0.931
+        ],
+        "mean_abs_gap_all": 0.1234
+      },
+      "none": {
+        "agree_on_decisive": 0.9154,
+        "ci95": [
+          0.8908,
+          0.9402
+        ],
+        "mean_abs_gap_all": 0.1212
+      },
+      "hand_noitems": {
+        "agree_on_decisive": 0.8835,
+        "ci95": [
+          0.8561,
+          0.9118
+        ],
+        "mean_abs_gap_all": 0.1356
+      },
+      "public": {
+        "agree_on_decisive": 0.8289,
+        "ci95": [
+          0.7944,
+          0.8642
+        ],
+        "mean_abs_gap_all": 0.1953
+      }
+    }
+  },
+  "B": {
+    "features": [
+      "sum_cost_star",
+      "items",
+      "level",
+      "traits"
+    ],
+    "weights_std": [
+      2.0189,
+      0.8721,
+      1.4952,
+      0.2932
+    ],
+    "by_split": {
+      "same": {
+        "acc_decisive": 0.6797,
+        "baseline_always_A": 0.5078,
+        "by_model_score_tercile": {
+          "tercile_1": {
+            "n": 86,
+            "acc": 0.6512
+          },
+          "tercile_2": {
+            "n": 87,
+            "acc": 0.6322
+          },
+          "tercile_3": {
+            "n": 86,
+            "acc": 0.7442
+          }
+        }
+      },
+      "cross": {
+        "acc_decisive": 0.9203,
+        "baseline_always_A": 0.4783,
+        "by_model_score_tercile": {
+          "tercile_1": {
+            "n": 92,
+            "acc": 0.7826
+          },
+          "tercile_2": {
+            "n": 92,
+            "acc": 0.9783
+          },
+          "tercile_3": {
+            "n": 92,
+            "acc": 1.0
+          }
+        }
+      },
+      "all": {
+        "acc_decisive": 0.8045,
+        "baseline_always_A": 0.4925,
+        "by_model_score_tercile": {
+          "tercile_1": {
+            "n": 178,
+            "acc": 0.6348
+          },
+          "tercile_2": {
+            "n": 178,
+            "acc": 0.7809
+          },
+          "tercile_3": {
+            "n": 178,
+            "acc": 0.9888
+          }
+        }
+      }
+    }
+  }
+}

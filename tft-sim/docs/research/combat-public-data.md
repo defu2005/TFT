@@ -60,3 +60,33 @@ Số liệu sơ bộ (`results/fixed/combat/study17_v2_288000.json`, nhãn sim):
 Chưa biết: số liệu này có đúng cho cặp cùng vòng hay không; sự khác biệt 88,4 và 91,5 có ý nghĩa thống kê hay không; augment có được kiểm riêng chưa (chưa).
 
 Kết luận v1 ("sức mạnh đơn giản gần như không giải thích được") **chưa được xác nhận hay bác bỏ**. Chỉ xem là giả thuyết cần kiểm trên cặp cùng vòng.
+
+## 7. Đo v3 (tách cùng vòng và xuyên vòng, khoảng tin cậy theo lobby) — kết quả chính
+
+Nguồn: `scripts/combat/analyze17_v3.py`. Test 300 cùng vòng + 300 xuyên vòng (lobby id%10<3). Train 300 + 300 (lobby còn lại), chỉ dùng để huấn luyện logistic. Mỗi cặp 20 lần chạy engine. Bảng từng cặp: `results/fixed/combat/pairs_v3_288000.csv`. Kết quả: `results/fixed/combat/study17_v3_288000.json`. Nhãn: **sim**.
+
+**Đồng thuận với engine đầy đủ trên cặp quyết định (CI95 bootstrap theo lobby):**
+
+| Cấu hình | Cùng vòng | Xuyên vòng |
+|---|---|---|
+| hand, không augment | 98,1% [96,4; 99,6] | 98,6% [97,1; 99,7] |
+| hand, seed khác (trần) | 100% | 100% |
+| generic (nuke mặc định) | 85,9% [81,1; 90,2] | 96,0% [93,6; 97,9] |
+| none (không ability, có trang bị) | 85,6% [81,3; 89,7] | 97,1% [95,1; 98,9] |
+| hand, không trang bị | 82,8% [78,2; 87,3] | 93,5% [89,7; 96,3] |
+| public (không ability, không trang bị) | 75,0% [69,5; 80,3] | 90,2% [86,6; 93,4] |
+
+Số cặp quyết định: 85% cùng vòng, 92% xuyên vòng. Tỷ lệ A thắng trong cặp quyết định: 51% cùng vòng.
+
+**Hồi quy logistic (sức mạnh đơn giản):**
+- Cùng vòng: **68,0%** trên cặp quyết định (baseline luôn đoán A: 50,8%). Theo tercile điểm mô hình: 65%, 63%, 74%.
+- Xuyên vòng: 92,0% (baseline 47,8%).
+- Tổng hợp v2 (80,5%) bị thổi phồng bởi cặp xuyên vòng.
+
+**Đọc kết quả (cho cặp cùng vòng, dạng thực tế):**
+- Trong engine, trang bị quan trọng hơn ability: bỏ trang bị làm mất khoảng 17 điểm đồng thuận, bỏ ability làm mất khoảng 14 điểm.
+- Ability generic gần như không khác không ability (85,9% so với 85,6%). Nuke mặc định không thêm thông tin so với bỏ hẳn ability.
+- Augment đóng góp nhỏ (khoảng 2 điểm).
+- Sức mạnh đơn giản chỉ giải thích được một phần cho cặp cùng vòng (68% so với baseline 51%).
+
+**Giới hạn**: chỉ là engine tự đối chiếu với bot v4; 300 cặp mỗi loại; ngưỡng quyết định 0,9 theo 20 lần chạy; chưa đo với trận thật.
