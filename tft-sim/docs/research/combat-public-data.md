@@ -97,3 +97,21 @@ Số cặp quyết định: 85% cùng vòng, 92% xuyên vòng. Tỷ lệ A thắ
 - Sức mạnh đơn giản giải thích được một phần cho cặp cùng vòng: 66% (CI 59–73), so với baseline 51%.
 
 **Giới hạn**: chỉ là engine tự đối chiếu với bot v4; 256 cặp quyết định cùng vòng; ngưỡng quyết định 0,9 theo 20 lần chạy; chưa đo với trận thật.
+
+## 8. Phạm vi và chặn im lặng (sau v3)
+
+**Đã làm trong wrapper (`scripts/combat/fight.py`):**
+- Tên tướng lạ: `predict_win` báo lỗi, không còn bỏ qua im lặng.
+- `coverage()`: mỗi dự đoán kèm số unit, trang bị không rõ, trang bị có hook combat, augment có hook (registry Set 17).
+- Vị trí: ben a hàng 0–3, ben b hàng 4–7 (khung tuyệt đối). Sai nửa lưới bị từ chối.
+- CLI `scripts/combat/fight_cli.py`.
+
+**Phát hiện mới:**
+- **Augment Set 18 không có hook.** Set 18 có 594 augment, nhưng `AUGMENT_REGISTRY` chỉ có Set 17. Augment Set 18 được truyền nhưng không làm gì.
+- **Biến ability Set 18 gần như trống**: 10/91 tướng có `variables`, 3/91 có biến damage. Set 17: 74/88 và 62/88. `default_damage` rơi về `ad × 2` cho phần lớn tướng Set 18. Template dựa trên biến sẽ không có số cho khoảng 81 tướng Set 18.
+- **Vai trò Set 18**: 11/91 tướng có `role` (Set 17: 74/88). Định vị và nhắm mục tiêu dùng vai trò, nên Set 18 sẽ rơi về mặc định.
+- **Tên trong roster nifty** (`data/hud-audit/roster_solutions_by_round.json`, 115 tên, 17 vòng): 113 khớp duy nhất với tướng Set 18. 2 khớp nhiều nghĩa (Krug: `TFT_Krug` và `DA_Krug18`, cần chọn). Đây là kiểm định định dạng một bên, không phải trận đấu.
+
+**Hệ quả:** trước khi viết template cho Set 18, cần nguồn số liệu ability khác (mô tả đầy đủ có số, hoặc dữ liệu tay). Template chỉ dựa trên biến CDragon sẽ không đo được Set 18. Đây là điểm dừng hợp lý cho đến khi quyết định nguồn dữ liệu.
+
+**Chưa làm:** mẫu template, đo đồng thuận template với `none` và `hand`, phạm vi trang bị và trait Set 18 có hiệu ứng.

@@ -10,7 +10,8 @@ Hai cong tac doc lap (khong gop):
            "none"    = khong ability
   items:   True/False = co hieu ung trang bi hay khong
 Vi tri (tuy chon): [row, col] TUYET DOI tren luoi 8 hang x 7 cot (engine GRID_ROWS=8, GRID_COLS=7).
-  Khong xoay cho doi B. Moi ben: hoac tat ca unit co vi tri, hoac khong unit nao. Khong trung o, nam trong luoi.
+  Khong xoay cho doi B (khung tuyet doi). Ben a o hang 0-3, ben b o hang 4-7 (engine dat doi hinh theo nua
+  luoi cua tung ben). Moi ben: hoac tat ca unit co vi tri, hoac khong unit nao. Khong trung o.
 Augment: luon truyen cho engine (run_combat nhan augment).
 Set 18: chi cho ability "generic" hoac "none" (tranh am tham dung default_ability cho tuong co logic that).
 """
@@ -108,9 +109,10 @@ def check_record(record: dict) -> None:
         known = [p for p in ps if p is not None]
         if known and len(known) != len(ps):
             raise ValueError(f"{k}: vi tri phai co du hoac khong co (thieu {len(ps) - len(known)})")
+        lo, hi = (0, 3) if k == "a" else (4, 7)
         for p in known:
-            if not (0 <= p[0] < 8 and 0 <= p[1] < 7):
-                raise ValueError(f"{k}: vi tri {p} ngoai luoi 8x7")
+            if not (lo <= p[0] <= hi and 0 <= p[1] < 7):
+                raise ValueError(f"{k}: vi tri {p} ngoai nua luoi cua ben {k} (hang {lo}-{hi}, cot 0-6)")
         if len({tuple(p) for p in known}) != len(known):
             raise ValueError(f"{k}: trung o")
 
@@ -129,11 +131,34 @@ def set_content(set_no: int, content) -> None:
     _CONTENT[set_no] = content
 
 
+def coverage(record: dict) -> dict:
+    """Bao phu cho mot ban ghi: unit/trang bi/augment co anh huong hay khong. Ten la khong duoc phep la."""
+    content = _CONTENT[record["set"]]
+    from tft_goat.engine.simulate import ITEM_COMBAT_START
+    from tft_goat.engine.augments_set17 import AUGMENT_REGISTRY
+    out = {}
+    for k in ("a", "b"):
+        units = record[k]["units"]
+        unknown = [u["api"] for u in units if u["api"] not in content.champions]
+        items_total = sum(len(u.get("items", [])) for u in units)
+        items_unknown = sum(1 for u in units for it in u.get("items", []) if it not in content.items)
+        items_hooked = sum(1 for u in units for it in u.get("items", []) if it in ITEM_COMBAT_START)
+        augs = record[k].get("augments", [])
+        out[k] = {"units": len(units), "unknown_champions": unknown,
+                  "items_total": items_total, "items_unknown": items_unknown, "items_with_combat_hook": items_hooked,
+                  "augments": len(augs), "augments_with_hook": sum(1 for a in augs if a in AUGMENT_REGISTRY)}
+    return out
+
+
 def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = True, seed0: int = 0,
                 augments: bool = True) -> dict:
     """Xac suat A thang tu n lan chay engine (RNG seed0..seed0+n-1). augments=False: bo augment."""
     if record["set"] == 18 and ability == "hand":
         raise ValueError("Set 18 chua co logic ability viet tay: dung 'generic' hoac 'none'")
+    cov = coverage(record)
+    for k in ("a", "b"):
+        if cov[k]["unknown_champions"]:
+            raise ValueError(f"{k}: tuong khong co trong noi dung set {record['set']}: {cov[k]['unknown_champions']}")
     ba, bb, pos, aa, ab = boards_of(record, items)
     if not augments:
         aa, ab = (), ()
@@ -145,4 +170,4 @@ def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = 
             w = r.winner
             wins[0 if w == 0 else 1 if w == 1 else 2] += 1
     return {"p_a": wins[0] / n, "a": wins[0], "b": wins[1], "draw": wins[2], "n": n,
-            "ability": ability, "items": items}
+            "ability": ability, "items": items, "coverage": cov}

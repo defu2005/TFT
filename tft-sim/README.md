@@ -671,3 +671,16 @@ Thông lượng: 4000 lobby trong 738 giây trên 4 tiến trình, khoảng 19.5
 | drop@a − mask_a | −0,048 | [−0,152; +0,054] | trong ±0,2: đạt |
 
 Đọc kết quả: một mô hình dropout cho ba điều kiện không kém các mô hình mask riêng. Kiểm tra trước khi chơi cũng đạt (khớp test lệch ≤ 0,005, leak test 0). Chỉ nói về Set 17 với bot teacher v4, không nói về HUD thật hay Set 18.
+
+## Nghiên cứu combat (2026-11-25, mô phỏng Set 17, bot v4)
+
+Chi tiết: `docs/research/combat-public-data.md`. Công cụ: `scripts/combat/` (schema `fight-v1`, wrapper, CLI `fight_cli.py`, selftest).
+
+Số liệu cùng vòng (256 cặp quyết định, bootstrap theo lobby):
+- Sức mạnh đơn giản (tổng cost·sao, trang bị, cấp, trait): 66% [59; 73], baseline 51%. Huấn luyện chỉ trên cặp cùng vòng.
+- Bỏ ability: đồng thuận với engine đầy đủ 86%; bỏ trang bị: 83%. Khác biệt giữa hai cấu hình không tách được (CI chứa 0).
+- Nuke mặc định đổi kết quả 14% cặp riêng lẻ, nhưng không thiên về một bên.
+
+Lưu ý: con số 80% ở bản trước bị thổi phồng bởi cặp xuyên vòng (92%). Không dùng.
+
+Chặn cần biết: augment Set 18 không có hook; 81/91 tướng Set 18 thiếu biến ability; 11/91 có vai trò. Set 18 chưa thể dự đoán chính xác bằng wrapper này.
