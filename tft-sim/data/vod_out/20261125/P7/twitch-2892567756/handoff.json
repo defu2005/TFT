@@ -12,6 +12,10 @@
     [
       3200,
       5000
+    ],
+    [
+      5400,
+      7200
     ]
   ],
   "remaining_ranges_s": [
@@ -21,22 +25,27 @@
     ],
     [
       5000,
+      5400
+    ],
+    [
+      7200,
       null
     ]
   ],
   "game_ids": [
     "twitch-2892567756-g540",
-    "twitch-2892567756-g3200"
+    "twitch-2892567756-g3200",
+    "twitch-2892567756-g5400"
   ],
   "counts": {
-    "games": 2,
-    "fights": 26,
+    "games": 3,
+    "fights": 38,
     "others": 0
   },
   "validator": {
-    "ok": 10,
+    "ok": 18,
     "skipped": {
-      "winner_null": 16
+      "winner_null": 20
     },
     "rows": [
       {
@@ -117,6 +126,26 @@
       {
         "line": 25,
         "source": "twitch-2892567756-g3200:5-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 27,
+        "source": "twitch-2892567756-g5400:2-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 28,
+        "source": "twitch-2892567756-g5400:2-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 34,
+        "source": "twitch-2892567756-g5400:3-3",
+        "reason": "winner_null"
+      },
+      {
+        "line": 35,
+        "source": "twitch-2892567756-g5400:3-5",
         "reason": "winner_null"
       }
     ]
