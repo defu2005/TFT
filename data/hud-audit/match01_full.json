@@ -80,9 +80,9 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "322 s frame: eight nameplates on one arena, shared-board round; not a planning phase"
+    "value": "shared arena or PvE frame, no streamer planning board read",
+    "tag": "n/a",
+    "reason": "322 s frame: eight nameplates on one arena, shared-board round; not a planning phase"
    },
    "combat": {
     "value": {
@@ -3590,9 +3590,9 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "shared arena with eight nameplates; combat frame at 1622 s; no planning"
+    "value": "shared arena or PvE frame, no streamer planning board read",
+    "tag": "n/a",
+    "reason": "shared arena with eight nameplates; combat frame at 1622 s; no planning"
    },
    "combat": {
     "value": {
@@ -4759,9 +4759,9 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "2068 s frame: shared pink arena with eight nameplates, not planning"
+    "value": "shared arena or PvE frame, no streamer planning board read",
+    "tag": "n/a",
+    "reason": "2068 s frame: shared pink arena with eight nameplates, not planning"
    },
    "combat": {
     "value": {
@@ -5912,9 +5912,9 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "2470 s frame: PvE-style pet arena at timer 8, not planning"
+    "value": "shared arena or PvE frame, no streamer planning board read",
+    "tag": "n/a",
+    "reason": "2470 s frame: PvE-style pet arena at timer 8, not planning"
    },
    "combat": {
     "value": {
