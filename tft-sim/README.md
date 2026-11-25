@@ -594,7 +594,7 @@ Nguon: `results/fixed/real/item_valuemax_vs_default_250000.json` (gop 4 shard 25
 
 | Điều kiện | Số chiều | Khớp test | A−B (CI95) |
 |---|---|---|---|
-| full | 185 | 0,9966 | chưa chơi (kiểm tra mốc) |
+| full | 185 | 0,9966 | A−B = −0,051 [−0,157; +0,057] (kiểm soát hậu kỳ, xem mục dưới) |
 | a: HUD | 14 | 0,6355 | +2,181 [2,090; 2,271] |
 | b: a + HP, round | 16 | 0,6357 | +2,306 [2,225; 2,390] |
 | c: b + bàn, bàn chờ | 120 | 0,9927 | +0,498 [0,397; 0,591] |
@@ -631,3 +631,5 @@ So sánh theo cặp (per-lobby): b−a = +0,126 [0,004; 0,244]; c−b = −1,809
 - Thứ tự chung: teacher ≈ full < c < v3 < scripted. Phù hợp với các kết quả trước.
 - valuemax và CEM chưa đưa vào pool (monkeypatch toàn cục).
 
+
+Chênh full − c (ghép cặp theo lobby, cùng seed, cùng teacher): **−0,548 [−0,686; −0,411]**. Khoảng này là tác động của nhóm ẩn (augment, gods, opponents) gộp lại; không tách được từng nhóm, vì chưa có điều kiện riêng.

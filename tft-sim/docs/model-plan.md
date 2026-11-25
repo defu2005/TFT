@@ -167,7 +167,7 @@ Mọi bằng chứng dưới đây là sim hoặc nội dung tổng hợp (8 tư
 
 **Không thuộc lần chạy này:** mô hình dropout nhóm đơn. Làm sau, trên khối seed dự trữ mới.
 
-**Kết quả (2026-11-25):** xem README mục "Thí nghiệm mask nhóm HUD". Tóm tắt: bàn và bàn chờ đưa clone từ +2,18 xuống +0,50 so với teacher v4. Điều kiện c vẫn ẩn augment, nên +0,50 bị lẫn với thiếu augment; chưa chơi full để có mốc. HP và round không đổi gì (b−a = +0,13, dưới ngưỡng 0,2). Null −0,02. Kiểm tra bất biến: teacher v4 không đổi theo HP; đổi sao trên bàn có đổi hành động.
+**Kết quả (2026-11-25):** xem README mục "Thí nghiệm mask nhóm HUD". Tóm tắt: bàn và bàn chờ đưa clone từ +2,18 xuống +0,50 so với teacher v4. Điều kiện c vẫn ẩn augment, nên +0,50 bị lẫn với thiếu augment. Mốc full (hậu kỳ, không đăng ký): full ≈ teacher (−0,051 [−0,157; +0,057]); full − c = −0,548 [−0,686; −0,411], tức phần +0,50 của c là do nhóm ẩn. HP và round không đổi gì (b−a = +0,13, dưới ngưỡng 0,2). Null −0,02. Kiểm tra bất biến: teacher v4 không đổi theo HP; đổi sao trên bàn có đổi hành động.
 
 ### 10.8 Giải đấu lobby hỗn hợp (đăng ký trước khi chạy)
 
@@ -186,6 +186,22 @@ Mọi bằng chứng dưới đây là sim hoặc nội dung tổng hợp (8 tư
 **Kết quả (2026-11-25):** xem README mục "Kiểm soát hậu kỳ". Full ≈ teacher (−0,05 [−0,16; +0,06]); giải đấu: v4 3,94, mask_full 4,02, v4_null 4,10, mask_c 4,31, v3 4,58, scripted 6,12. Chênh v4 với v4_null 0,16 cho thấy giải đấu chưa đủ cân bằng để xếp hạng; cần thêm lobby.
 
 **Giới hạn:** valuemax và CEM bị bỏ vì monkeypatch `ACT._equip` toàn cục; chưa xác nhận có tách được theo ghế.
+
+### 10.9 Giải đấu v2 (đăng ký trước khi chạy)
+
+**Sửa so với v1 (10.8):** v1 cho mỗi ghế chọn policy ngẫu nhiên có thể trùng, nên cân bằng kém và placement trung bình bị lệch. v1 cho v4 và v4_null lệch 0,16 dù cùng policy. v2 sửa:
+- 8 policy cố định mỗi lobby, mỗi policy đúng một ghế, thứ tự ghế hoán vị theo `np.random.default_rng([seed, 1])` (độc lập với luồng của env).
+- Pool: scripted, v3, v4, v4_null, mask_full, mask_c, mask_a, v4_valuemax. v4_valuemax là v4 với luật trang bị valuemax chỉ trên ghế đó (monkeypatch `ACT._equip` đọc bảng `RULE_OF_SEAT` theo agent_id).
+- Kiểm: `league2.py selftest`: patch với mọi ghế mặc định khớp bản gốc trên 5 seed (150000–150004). **PASS.**
+- Ghi placement theo lobby, theo ghế (policy, placement, completed, illegal).
+
+**Seed đánh giá:** 280000–283999 (4000 lobby, dự trữ trong sổ). Không huấn luyện trên đó.
+
+**Chỉ số:** placement của từng policy; khác biệt ghép cặp với v4 theo lobby (mỗi lobby có đúng một ghế mỗi policy nên ghép cặp là chính xác); CI95 bootstrap theo lobby. Số completed và illegal báo kèm.
+
+**Tiêu chí đạt:** v4 − v4_null có CI95 chứa 0. Nếu không, harness lệch và không xếp hạng.
+
+**Độ rộng mục tiêu:** nửa độ rộng CI của v4 − v4_null khoảng 0,1. Nếu chạy 4000 lobby mà chưa đạt, báo đúng độ rộng và đề xuất số lobby cần thêm; không kết luận từ kết quả chưa đạt.
 
 ### 10.7 Việc tiếp theo (sim)
 
