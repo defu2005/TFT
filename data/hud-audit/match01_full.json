@@ -3699,17 +3699,15 @@
   "status": "board and bench identities remain unresolved"
  },
  "observation_layer_probe": {
-  "frames": "bd/ at HP label time + 20 s, 10 rounds",
   "3-1 (901.1 s)": {
-   "phase": "planning (bot-style board, counter 5/5 read)",
-   "units_listed": "not enumerated; health bar count is approximate (about 7 on board, about 3 on bench)",
-   "status": "partial, names not assigned"
+   "phase": "planning, counter 5/5 read",
+   "units": "count approximate, not named"
   },
   "3-3 (1068.2 s)": {
-   "phase": "PvE combat on purple board (monsters), not planning",
-   "status": "no roster observation; +20 s offset is wrong for this round"
+   "correction": "PREVIOUS NOTE SAID PvE. WRONG. HP labels show round 3-3 damage to P2, P5, P7, P8 (four players), so 3-3 is PvP (derived).",
+   "frame": "purple board with monsters at +20 s; whether this is the opponent arena is UNVERIFIED"
   },
-  "conclusion": "+20 s from the HP label is not a reliable planning offset. Each round needs its own timer check before a board is read.",
-  "status": "observation layer incomplete; no names assigned"
+  "round_type_derived": "rounds with no HP change in the label set: 1-1..1-4, 2-4, 2-7, 3-4, 3-7, 4-4, 4-7, 5-4, 5-7, 6-4 (flag only, derived; not named PvE)",
+  "status": "partial; names not assigned; stop rule: 10 rounds with observations or an exact unreadable frame"
  }
 }
