@@ -3750,5 +3750,32 @@
   "3-1 888 s": "SCOUTING: sidebar shows another player (Caustic, Riftbeast 3, Invoker, Juggernaut, Adaptor, Brawler, Primal) and a name popup (opponent, alias P-unknown). Not the streamer panel.",
   "consequence": "any +18 s or planning read taken during scouting is not the streamer roster. Old panels that fall in scouting windows need re-reading. Confirmed at 3-1.",
   "alias_note": "the player name shown on screen is not written to the repo; alias-only per policy"
+ },
+ "stars_from_coin": {
+  "rule": "coin shown on info card = 1 star: cost; 2 star: 3 x cost - 1 (derived from Ezreal 2 star cost 4 coin 11)",
+  "Zyra (1392 s card)": {
+   "coin": 4,
+   "cost": 4,
+   "stars": 1,
+   "tag": "derived"
+  },
+  "Sett (1835 s card)": {
+   "coin": 11,
+   "cost": 4,
+   "stars": 2,
+   "tag": "derived"
+  },
+  "Ezreal (2180.3 s card)": {
+   "coin": 11,
+   "cost": 4,
+   "stars": 2,
+   "tag": "read (star glyph) + derived"
+  },
+  "caveat": "rule is fitted on one unit; test on a third before treating as general"
+ },
+ "hud_selector_check": {
+  "886 s": "hudDetected True, gold 39",
+  "887-891 s": "hudDetected False (scouting window)",
+  "891.25 s on": "True again"
  }
 }
