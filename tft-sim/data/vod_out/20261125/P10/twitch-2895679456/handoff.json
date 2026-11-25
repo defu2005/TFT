@@ -14,52 +14,37 @@
       4500
     ],
     [
+      4200,
+      5100
+    ],
+    [
       5000,
       6500
     ],
     [
-      6800,
-      8800
+      7000,
+      9000
     ],
     [
-      8900,
-      10610
+      9200,
+      10600
     ]
   ],
   "remaining_ranges_s": [],
-  "skipped_ranges_s": [
-    [
-      2500,
-      2800
-    ],
-    [
-      4500,
-      5000
-    ],
-    [
-      6500,
-      6800
-    ],
-    [
-      8800,
-      8900
-    ]
-  ],
-  "skip_notes": "queue/load + YT gaps ~4600-5000 and ~6500-6800",
+  "skipped_ranges_s": [],
+  "skip_notes": "YT/queue gaps between games; merge+dedupe ours+tip",
   "game_ids": [
     "twitch-2895679456-g300",
     "twitch-2895679456-g3400",
+    "twitch-2895679456-g4500",
     "twitch-2895679456-g5200",
-    "twitch-2895679456-g6800",
-    "twitch-2895679456-g9000"
+    "twitch-2895679456-g7300",
+    "twitch-2895679456-g9400"
   ],
   "counts": {
-    "games": 5,
-    "fights": 48,
+    "games": 6,
+    "fights": 71,
     "others": 0
-  },
-  "needs_review": {
-    "winner_null": 30
   },
   "remaining": "none"
 }
