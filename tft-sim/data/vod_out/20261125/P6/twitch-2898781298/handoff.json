@@ -3,7 +3,7 @@
   "vod_id": "twitch-2898781298",
   "slot": "P6",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       60,
@@ -40,14 +40,17 @@
     [
       18000,
       19950
-    ]
-  ],
-  "remaining_ranges_s": [
+    ],
     [
-      19950,
-      21600
+      20300,
+      21960
+    ],
+    [
+      22350,
+      24220
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2898781298-g60",
     "twitch-2898781298-g2100",
@@ -57,20 +60,22 @@
     "twitch-2898781298-g13100",
     "twitch-2898781298-g15600",
     "twitch-2898781298-g18000",
-    "twitch-2898781298-g4300"
+    "twitch-2898781298-g4300",
+    "twitch-2898781298-g20400",
+    "twitch-2898781298-g22400"
   ],
   "counts": {
-    "games": 9,
-    "fights": 125,
-    "others": 125
+    "games": 11,
+    "fights": 150,
+    "others": 150
   },
   "validator": {
-    "ok": 113,
+    "ok": 134,
     "skipped": {
-      "winner_null": 12
+      "winner_null": 16
     }
   },
-  "needs_review": 12,
+  "needs_review": 16,
   "commit": null,
-  "remaining": "g4300 re-densify from labels fights=14 win=12; VOD remaining ~20000+"
+  "remaining": "VOD hết. densify g20400(~13 PvP 5th)+g22400(~12 PvP 5th); gaps queue/Wordle skipped"
 }

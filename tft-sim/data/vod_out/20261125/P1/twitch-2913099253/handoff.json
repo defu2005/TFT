@@ -111,8 +111,8 @@
   ],
   "counts": {
     "games": 11,
-    "fights": 51,
-    "others": 51
+    "fights": 221,
+    "others": 221
   },
   "validator": {
     "ok": 0,
@@ -123,5 +123,5 @@
   "needs_review": 0,
   "commit": null,
   "remaining": "0 — 11 ranked done. Gaps = inter-game only. Tail 25700–25942 no new ranked (card/webcam @923LP).",
-  "notes": "Ranked Set18 primary. winner_null OK. VOD end surveyed."
+  "notes": "Densify full: all 11 games PvP-dense from labels; Set18 APIs only; winner_null OK."
 }

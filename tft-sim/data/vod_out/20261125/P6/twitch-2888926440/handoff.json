@@ -8,11 +8,15 @@
     [
       0,
       12680
+    ],
+    [
+      12800,
+      14920
     ]
   ],
   "remaining_ranges_s": [
     [
-      12680,
+      14920,
       21460
     ]
   ],
@@ -22,20 +26,21 @@
     "twitch-2888926440-g4400",
     "twitch-2888926440-g6400",
     "twitch-2888926440-g8800",
-    "twitch-2888926440-g11000"
+    "twitch-2888926440-g11000",
+    "twitch-2888926440-g12800"
   ],
   "counts": {
-    "games": 6,
-    "fights": 94,
-    "others": 94
+    "games": 7,
+    "fights": 109,
+    "others": 109
   },
   "validator": {
-    "ok": 86,
+    "ok": 99,
     "skipped": {
-      "winner_null": 8
+      "winner_null": 10
     }
   },
-  "needs_review": 8,
+  "needs_review": 10,
   "commit": null,
-  "remaining": "g250..g11000 densify fights=94; tiếp g7@12800+ (VOD còn ~9k s)"
+  "remaining": "g12800 densify fights=15 1st; tiếp g8@15500+ (VOD còn ~6.5k s)"
 }
