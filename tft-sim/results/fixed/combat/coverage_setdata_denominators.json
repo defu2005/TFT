@@ -1,0 +1,22 @@
+{
+ "set17": {
+  "setData_items": 687,
+  "by_group_class": {
+   "('classic_or_other', 'none')": 475,
+   "('classic_or_other', 'stat')": 182,
+   "('classic_or_other', 'stat+hook')": 30
+  }
+ },
+ "set18": {
+  "setData_items": 776,
+  "by_group_class": {
+   "('craft_or_other_DA', 'none')": 463,
+   "('classic_or_other', 'stat')": 120,
+   "('classic_or_other', 'stat+hook')": 28,
+   "('component', 'none')": 10,
+   "('classic_or_other', 'none')": 123,
+   "('craft_or_other_DA', 'stat')": 9,
+   "('emblem', 'none')": 23
+  }
+ }
+}

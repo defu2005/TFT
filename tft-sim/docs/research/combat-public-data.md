@@ -114,7 +114,32 @@ Số cặp quyết định: 85% cùng vòng, 92% xuyên vòng. Tỷ lệ A thắ
 
 **Hệ quả:** trước khi viết template cho Set 18, cần nguồn số liệu ability khác (mô tả đầy đủ có số, hoặc dữ liệu tay). Template chỉ dựa trên biến CDragon sẽ không đo được Set 18. Đây là điểm dừng hợp lý cho đến khi quyết định nguồn dữ liệu.
 
-**Chưa làm:** mẫu template, đo đồng thuận template với `none` và `hand`, phạm vi trang bị và trait Set 18 có hiệu ứng.
+**Độ phủ trang bị và trait (đo hành vi engine, 2026-11-25).** Script: `tft-sim/scripts/combat/coverage_items_traits.py`; kết quả: `tft-sim/results/fixed/combat/coverage_items_traits.json` và `coverage_setdata_denominators.json`. Đây là độ phủ tĩnh theo hành vi: không có tần suất sử dụng, không có kích thước hiệu ứng, và Set 18 chưa có trận thật để đo.
+
+Phân loại item theo hai phép thử: (a) có nằm trong bảng hook của engine (`ITEM_COMBAT_START`, `ITEM_ON_ATTACK`, `ITEM_HP_THRESHOLD`, ...) hay không; (b) có làm đổi chỉ số đơn vị sau `_build_team` khi gắn trang bị hay không.
+
+Mẫu số lấy từ `setData` của từng set (mutator TFTSet17 và TFTSet18):
+
+| Nhóm | Set 17 | Set 18 |
+|---|---|---|
+| Tổng item trong setData | 687 | 776 |
+| Có stat hoặc hook (stat hoặc stat+hook) | 212 (31%) | 157 (20%) |
+| Chỉ hook, không stat | 0 | 0 |
+| Không có tác dụng trong engine | 475 | 619 |
+
+Phân nhóm Set 18 (theo tên và thành phần):
+- 271 item cổ điển (`TFT_Item_*`): 120 stat, 28 stat+hook, 123 không tác dụng.
+- 55 công thức ghép, trong đó 23 là emblem (chỉ cộng trait, không có stat; engine không xử lý emblem), 2 có stat (Infinity Edge và Jeweled Gauntlet, có nhánh riêng trong engine).
+- 10 thành phần `DA_Component_*`: không tác dụng (đúng bản chất).
+- Các mục `DA_*` còn lại (chủ yếu tên augment Set 18 như Aftershock, All Fives, Backrow Star...): 9 có stat, 463 không tác dụng trong engine. Engine chỉ có augment cho Set 17 (`AUGMENT_REGISTRY`), nên các augment Set 18 không có hiệu ứng.
+- Hook: 0 item Set 18 nằm trong bảng hook riêng cho Set 18. Các hook 28 item cổ điển có stat+hook là hook dùng chung từ bảng Set 17 (không xác định được có phải chúng đang được Set 18 dùng).
+
+Trait (36 trait Set 18; 44 trait Set 17):
+- Set 18: 11 trait có bonus chỉ số được áp dụng khi kích hoạt (Sprykin, Hunter, Monolith, Attuned, Vanguard, Blackthorn, Fae, Lunar, Spellweaver, Thornmaiden, Blossom); 25 không có ánh xạ chỉ số (Elderwood, Avatar, Ravager, Bounty Seeker, Solar, Adaptor, Coven, Eclipse, Old Growth, Primal, Greenfather, Invoker, Rapidfire, Juggernaut, Inferno, Rival, Brawler, Executioner, Apex Predator, Riftbeast, Caustic, Defender, Flora Fatalis, Summoner, Emerald Aspect).
+- Set 17 để so sánh: 27 áp dụng được, 15 không ánh xạ, 1 có ánh xạ nhưng không đổi chỉ số, 1 không có effect.
+- Tên trait Set 18 xuất hiện trong mã engine ngoài `trait_effects.py`: 1/36. Chỉ là dấu hiệu tham chiếu, không chứng minh có logic riêng.
+
+Hệ quả: với Set 18, engine chỉ mô hình hóa được một phần nhỏ trang bị và trait có ý nghĩa trong combat. Trait "không ánh xạ" và emblem có thể làm sai số lớn, nhưng chưa đo được mức ảnh hưởng vì không có trận thật. Không dùng các con số này để kết luận về độ chính xác dự đoán Set 18.
 
 ## 9. Template từ mô tả + biến (Set 17), đo trên 2000 cặp cùng vòng từ cả 100 lobby
 
