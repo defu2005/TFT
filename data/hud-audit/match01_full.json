@@ -3812,22 +3812,17 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     [
-      "Alistar",
-      "Ezreal",
-      "Hecarim",
-      "Krug",
-      "LeBlanc",
-      "Mama Beak",
-      "Xayah"
-     ]
+    "value": [
+     "Alistar",
+     "Ezreal",
+     "Hecarim",
+     "Krug",
+     "LeBlanc",
+     "Mama Beak",
+     "Xayah"
     ],
-    "attempt": "planning counter unresolved at 1316 s; panel solve with assumed N=7, k=0 gives this set",
-    "reason": "counter not read, so N is assumed",
-    "note": "hexes unresolved"
+    "tag": "derived",
+    "basis": "1316 s planning frame, stored panel identical to the 3-6 panel (9 rows, k=0, level 7). solve_panels: N=7 unique; N=5, 6 and 8 to 10 give zero solutions. Same set as 3-6."
    },
    "bench_units": {
     "value": null,
