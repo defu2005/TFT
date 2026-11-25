@@ -6512,10 +6512,11 @@
     "attempt": "Panel attached to P3: owner marker at sweep 809 reads P3 (row 5), matching the 5-2 opponent. Second panel at sweep 806 (nine rows, sum 18) is unattached; its marker is on a level-8 row.",
     "reason": "unit list not solved",
     "bench": {
-     "value": 5,
-     "tag": "read",
-     "basis": "Near pad row of the scouting frame at sweep 809 (720p crop 240,480,980,560, 3x): sprites on pads 1, 2, 3, 4 and 9; names unresolved (sprites carry no name text).",
-     "attempt": "Count of sprites on the near pad row at sweep 809; far pad row covered by the combat banner."
+     "value": null,
+     "tag": "unresolved",
+     "basis": "Near pad row at sweep 809 holds the same five sprites as the 814 view, so it is the viewer's bench, not the opponent's. Far pad row at sweeps 808 and 810 is covered by the combat banner; at sweep 812 the far row is visible with empty pads.",
+     "attempt": "Sweep 812: far pad row visible, no sprites on pads (0). Sweeps 808, 809 and 810: far row covered by the combat banner. The opponent bench count is therefore unresolved for the round.",
+     "reason": "far pad row covered at 808-810; single visible frame at 812 not taken as the round count"
     }
    },
    "hexes": {
@@ -8689,8 +8690,8 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "Near pad row at sweep 1023 shows no sprites; the far crop shows the arena, not a pad row, so the opponent bench count is unresolved for this frame.",
-     "reason": "far pad row not visible at sweep 1023"
+     "attempt": "Sweep 1023: near row shows the viewer's bench area with no sprites on pads; far crop shows the arena with units on the slab, with no pad row in view. Opponent bench count unresolved.",
+     "reason": "no opponent pad row in view at sweep 1023"
     }
    },
    "hexes": {
@@ -9199,8 +9200,8 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "Near pad row at sweep 1072 shows no sprites; the far crop shows the arena, not a pad row, so the opponent bench count is unresolved for this frame.",
-     "reason": "far pad row not visible at sweep 1072"
+     "attempt": "Sweep 1072: near row shows the viewer's bench area with no sprites on pads; far crop shows the arena with units on the slab, with no pad row in view. Opponent bench count unresolved.",
+     "reason": "no opponent pad row in view at sweep 1072"
     }
    },
    "hexes": {
@@ -9521,8 +9522,8 @@
     "bench": {
      "value": null,
      "tag": "unresolved",
-     "attempt": "Near pad row at sweep 1106 shows no sprites; the far crop shows the arena, not a pad row, so the opponent bench count is unresolved for this frame.",
-     "reason": "far pad row not visible at sweep 1106"
+     "attempt": "Sweep 1106: near row shows the viewer's bench area with no sprites on pads; far crop shows the arena with units on the slab, with no pad row in view. Opponent bench count unresolved.",
+     "reason": "no opponent pad row in view at sweep 1106"
     }
    },
    "hexes": {
