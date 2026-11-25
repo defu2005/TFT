@@ -47,29 +47,16 @@ Nguồn: 67.122 cặp từ 100 lobby v4 (seed 288000–288099); lấy ngẫu nhi
 
 Đọc kết quả: trong engine, ability và trang bị quyết định phần lớn kết quả, không phải chỉ số. Chế độ public chỉ đúng ở khoảng 3/4 cặp quyết định. Điều này trả lời một phần câu hỏi "chỉ số công khai có đủ không": không đủ để đoán chính xác, nhưng không hoàn toàn vô dụng. Chưa đo độ trung thực với trận thật.
 
-## 6. Đo v2 trên cặp bàn Set 17 (engine, không phải trận thật)
+## 6. Đo v2 (sơ bộ, CHƯA XÁC NHẬN)
 
-Nguồn: `scripts/combat/study17.py` v2. 67.122 cặp cùng vòng và 4.000 cặp xuyên vòng từ 100 lobby v4 (seed 288000–288099). Lobby chia theo `id % 10`: 30% giữ lại làm test. Test: 600 cặp (300 cùng vòng, 300 xuyên vòng). Mỗi cặp 20 lần chạy engine cho mỗi cấu hình. Kết quả: `results/fixed/combat/study17_v2_288000.json`. Nhãn: **sim**.
+Kết quả v2 gộp cặp cùng vòng và xuyên vòng trong một tập, nên chưa dùng để kết luận. Mục 7 sẽ tách hai loại và thêm khoảng tin cậy.
 
-**Kiểm tra:**
-- Lệch `items` so với `len(item_apis)`: 0 trên 129.912 đơn vị.
-- Đối xứng: |p(a,b) + p(b,a) − 1| trung bình = 0,0095.
-- Quyết định (một bên ≥90%): 88,7% cặp test; cùng vòng 85,3%, xuyên vòng 92,0%.
+Số liệu sơ bộ (`results/fixed/combat/study17_v2_288000.json`, nhãn sim):
+- Cặp quyết định: 88,7% (cùng vòng 85,3%, xuyên vòng 92,0%).
+- Đồng ý dấu với engine đầy đủ trên cặp quyết định: ability generic 91,2%; không ability (có trang bị) 91,5%; ability viết tay không trang bị 88,4%.
+- Logistic trên đặc trưng sức mạnh: 80,5% trên cặp quyết định test (baseline luôn đoán A: 49,3%). Theo tercile chênh lệch: 66,9%, 76,4%, 98,3%.
+- Kiểm đối xứng: lệch trung bình 0,0095. Không lệch `items`: 0 trên 129.912 đơn vị.
 
-**Cấu hình (đồng ý dấu với engine đầy đủ, trên cặp quyết định):**
-- Ability generic (mọi tướng dùng nuke mặc định): **91,2%**.
-- Không ability (có trang bị): **91,5%**.
-- Ability viết tay, không trang bị: **88,4%**.
+Chưa biết: số liệu này có đúng cho cặp cùng vòng hay không; sự khác biệt 88,4 và 91,5 có ý nghĩa thống kê hay không; augment có được kiểm riêng chưa (chưa).
 
-Đọc: bỏ ability làm mất khoảng 8 điểm; bỏ trang bị làm mất khoảng 12 điểm. Ability generic và không ability gần như nhau, nên nuke mặc định gần như không khác so với không ability ở mức thắng/thua.
-
-**Hồi quy logistic (đặc trưng: tổng cost·sao, số trang bị, cấp, số trait; nhãn mềm = p engine đầy đủ; huấn luyện trên lobby train):**
-- Độ chính xác trên cặp quyết định test: **80,5%**. Baseline luôn đoán A: 49,3%.
-- Theo tercile độ chênh sức mạnh: 66,9% (thấp nhất), 76,4%, 98,3% (cao nhất).
-
-**Đính chính**: kết luận v1 "sức mạnh đơn giản gần như không giải thích được" là sai. Nó xuất phát từ bug thiếu augment và thiếu cặp xuyên vòng. Với dữ liệu v2, sức mạnh đơn giản giải thích được phần lớn kết quả, đặc biệt khi chênh lệch lớn.
-
-**Giới hạn**:
-- Chỉ là mô phỏng engine Set 17, bot v4. Chưa đo với trận thật.
-- Test chỉ có khoảng 30 lobby, nên khoảng tin cậy chưa tính.
-- Nhãn là xác suất ước lượng từ 20 lần chạy, có nhiễu.
+Kết luận v1 ("sức mạnh đơn giản gần như không giải thích được") **chưa được xác nhận hay bác bỏ**. Chỉ xem là giả thuyết cần kiểm trên cặp cùng vòng.
