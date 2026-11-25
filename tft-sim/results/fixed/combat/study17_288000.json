@@ -1,0 +1,29 @@
+{
+  "label": "sim (engine Set 17, khong phai tran that)",
+  "A": {
+    "n": 500,
+    "decisive_frac": 0.838,
+    "coinflip_frac": 0.056
+  },
+  "B": {
+    "features": [
+      "sum_cost_star",
+      "items",
+      "level",
+      "traits"
+    ],
+    "weights_std": [
+      0.551,
+      0.3826,
+      0.0941,
+      -0.0159
+    ],
+    "acc_on_decisive": 0.5871,
+    "ceiling_note": "tran quyet dinh co nhan dang tin cay; tran tung dong xu khong dung de cham"
+  },
+  "C": {
+    "agree_on_decisive": 0.7232,
+    "n_decisive": 419,
+    "mean_abs_gap": 0.3133
+  }
+}

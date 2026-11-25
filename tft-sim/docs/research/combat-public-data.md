@@ -32,3 +32,13 @@ Mục đích: xác định có thể mô phỏng combat TFT từ dữ liệu cô
 - Schema unit/item của match-v1 (cần trang chính thức).
 - Công thức sát thương và tốc độ đánh TFT chính thức.
 - Giấy phép dùng CDragon (đã nêu trước đó, chưa xác minh).
+
+## 5. Đo sơ bộ trên cặp bàn Set 17 (engine, không phải trận thật)
+
+Nguồn: 67.122 cặp từ 100 lobby v4 (seed 288000–288099); lấy ngẫu nhiên 500 cặp để phân tích. Mỗi cặp: 20 lần chạy engine đầy đủ và 20 lần ở chế độ public. Kết quả: `results/fixed/combat/study17_288000.json`. Nhãn: **sim**, engine tự sinh, không phải trận thật.
+
+- **A. Tran nhieu**: 83,8% cặp quyết định (≥90% một bên thắng), 5,6% gần tung đồng xu.
+- **B. Suc manh don gian**: hồi quy logistic trên tổng cost·sao, số trang bị, cấp, số trait cho độ chính xác 58,7% trên các cặp quyết định. Gần mức đoán. Chỉ số sức mạnh đơn giản gần như không giải thích kết quả trong engine Set 17.
+- **C. Public so voi full**: hai chế độ đồng ý về bên thắng ở 72,3% trong 419 cặp quyết định. Chênh lệch xác suất trung bình 0,31.
+
+Đọc kết quả: trong engine, ability và trang bị quyết định phần lớn kết quả, không phải chỉ số. Chế độ public chỉ đúng ở khoảng 3/4 cặp quyết định. Điều này trả lời một phần câu hỏi "chỉ số công khai có đủ không": không đủ để đoán chính xác, nhưng không hoàn toàn vô dụng. Chưa đo độ trung thực với trận thật.
