@@ -1,0 +1,27 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2924101300",
+  "slot": "P1",
+  "role": "primary",
+  "status": "blocked",
+  "covered_ranges_s": [],
+  "remaining_ranges_s": [
+    [
+      0,
+      15820
+    ]
+  ],
+  "game_ids": [],
+  "counts": {
+    "games": 0,
+    "fights": 0,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {}
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "mode≠ranked: Esports spectator MetaTFT + regional tags tourney; không Ranked ladder POV. Bỏ toàn bộ candidate_ranges."
+}
