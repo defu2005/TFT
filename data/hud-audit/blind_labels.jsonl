@@ -1,0 +1,10 @@
+{"t":443.4,"stage":"2-1","timer":43,"bar_visible":false,"level":null,"xp":null,"gold":null,"streak":null,"shop":null,"src":"eye_blind1","note":"augment Choose One covers HUD"}
+{"t":504.9,"stage":"2-1","timer":17,"bar_visible":true,"level":4,"xp":"0/10","gold":0,"streak":0,"shop":["Varus 1","Cinderling 1","Shen 2","empty","Varus 1"],"odds":[55,30,15,0,0],"src":"eye_blind1"}
+{"t":656.0,"stage":"2-3","timer":5,"bar_visible":true,"level":4,"xp":"8/10","gold":1,"streak":2,"shop":["Sejuani 2","Karma 1","empty","Gromp 2","empty"],"odds":[55,30,15,0,0],"src":"eye_blind1"}
+{"t":880.5,"stage":"3-1","timer":28,"bar_visible":true,"level":5,"xp":"6/20","gold":39,"streak":4,"shop":["Sejuani 2","Elise 2","Blackthorn 2","Master Yi 3","occluded"],"odds":[45,33,20,2,0],"src":"eye_blind1","note":"tooltip covers slot 5"}
+{"t":1204.0,"stage":"3-5","timer":24,"bar_visible":true,"level":7,"xp":"2/56","gold":27,"streak":7,"shop":["Azir 3","Cassiopeia 3","empty","Kayle 2","empty"],"odds":[16,30,43,10,1],"src":"eye_blind1"}
+{"t":1493.9,"stage":"4-2","timer":23,"bar_visible":false,"level":null,"xp":null,"gold":null,"streak":null,"shop":null,"src":"eye_blind1","note":"item/augment panel covers HUD"}
+{"t":1791.7,"stage":"4-7","timer":14,"bar_visible":false,"level":null,"xp":null,"gold":null,"streak":null,"shop":null,"src":"eye_blind1","note":"bounty Choose One covers HUD"}
+{"t":2078.8,"stage":"5-4","timer":5,"bar_visible":false,"level":null,"xp":null,"gold":null,"streak":null,"shop":null,"src":"eye_blind1","note":"bottom HUD absent"}
+{"t":2376.2,"stage":"6-2","timer":22,"bar_visible":true,"level":9,"xp":"14/68","gold":8,"streak":1,"shop":["Sett 4","Malphite 4","Master Yi 3","Ahri 4","Kog'Maw 3"],"odds":[10,17,25,33,15],"src":"eye_blind1"}
+{"t":2558.6,"stage":"6-6","timer":17,"bar_visible":true,"level":9,"xp":"20/68","gold":0,"streak":3,"shop":["Diana 3","Rengar 3","Caitlyn 2","Fiddlesticks 3","Krug 3"],"odds":[10,17,25,33,15],"src":"eye_blind1"}
