@@ -1162,7 +1162,8 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "counter not legible at 1018 combat frame; planning frame for 3-2 not yet found (HUD windows 1010-1032 are combat)"
    },
    "bench_units": {
     "value": null,
@@ -1188,7 +1189,29 @@
     "value": null,
     "tag": "unresolved"
    },
-   "combat_frame_t_s": null
+   "combat_frame_t_s": null,
+   "trait_panel_1018_combat": {
+    "value": {
+     "Elderwood": 3,
+     "Rapidfire": 2,
+     "Brawler": 2,
+     "Executioner": 1,
+     "Fae": 1,
+     "Summoner": 1,
+     "Riftbeast": 1,
+     "Sprykin": 1
+    },
+    "tag": "read",
+    "frame_s": 1018,
+    "phase": "combat, not planning"
+   },
+   "phase_windows": {
+    "value": {
+     "HUD_absent": "956-983 s (augment screen 954-956 s)",
+     "HUD_present": "1010.5-1032 s, combat at 1018 s"
+    },
+    "tag": "derived"
+   }
   },
   {
    "round": "3-3",
