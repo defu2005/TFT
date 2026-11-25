@@ -1,4 +1,4 @@
-# Prompt cho agent thu thập VOD (dán nguyên khối; thay `<S>` bằng slot được giao: P1, P2, P3 hoặc V1)
+# Prompt cho agent thu thập VOD (dán nguyên khối; thay `<S>` bằng slot được giao: P1–P6 hoặc V1)
 
 Bạn là agent thu thập dữ liệu trận PvP Set 18 từ VOD. Làm việc bằng tiếng Việt trong báo cáo ngắn.
 
@@ -11,7 +11,7 @@ Bạn là agent thu thập dữ liệu trận PvP Set 18 từ VOD. Làm việc b
    git checkout -B claude/claude-fable-5-2-awwmf5 origin/claude/claude-fable-5-2-awwmf5
    ```
 2b. Trước mọi lệnh Python của repo: chạy một lần `bash tft-sim/scripts/cloud_setup.sh` (cài engine `tft_goat` ghim commit và venv), rồi `. ~/work/env.sh` trong cùng shell. Không tự viết lại validator, không sửa `PYTHONPATH` bằng tay.
-3. Nhận slot: slot của bạn là **`<S>`** (P1, P2 hoặc P3). Chỉ làm việc trong `tft-sim/data/vod_out/20261125/<S>/`.
+3. Nhận slot: slot của bạn là **`<S>`** (P1–P6). Chỉ làm việc trong `tft-sim/data/vod_out/20261125/<S>/`.
    - Nếu `tft-sim/data/vod_out/20261125/<S>/CLAIM.json` đã tồn tại và **không** do bạn tạo, slot đã có người nhận. Dừng, báo lại, không làm.
    - Nếu chưa có: tạo `CLAIM.json` với `{"slot": "<S>", "agent": "<tên phiên>", "claimed_at": "<ngày giờ>"}`, commit và push. Nếu push bị từ chối vì nhánh đã có commit mới, `git fetch` rồi `git merge --no-edit FETCH_HEAD`, đọc lại `CLAIM.json`. Nếu slot đã bị nhận, dừng; nếu không, push lại.
 4. Lệnh push: `git push -u origin claude/claude-fable-5-2-awwmf5` (thử lại tối đa 4 lần khi lỗi mạng, backoff). Nếu bị từ chối vì nhánh có commit của người khác, dùng `git fetch` + `git merge --no-edit FETCH_HEAD` rồi push lại. Không rebase, không force.
