@@ -26,13 +26,13 @@
   ],
   "counts": {
     "games": 3,
-    "fights": 30,
-    "others": 30
+    "fights": 31,
+    "others": 31
   },
   "validator": {
     "ok": 28,
     "skipped": {
-      "winner_null": 2
+      "winner_null": 3
     }
   },
   "needs_review": 0,
