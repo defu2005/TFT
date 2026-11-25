@@ -2615,7 +2615,7 @@
      "Xayah"
     ],
     "tag": "candidate",
-    "basis": "solver on planning panel (N=7, k=1) gives 3 solutions; this is the only one containing all 3-3 units; Monolith 1 pins Malphite",
+    "basis": "solver on planning panel (N=7, k=1) gives 3 solutions; this is the only one containing all 3-3 units; Monolith 1 pins Malphite; duplicate test: N-1 = 6 distinct gives 0 solutions, so 3-5 has 7 distinct units; the second Kobuko from 3-3 is no longer on the board (sold or moved, not confirmed)",
     "note": "hexes unresolved"
    },
    "bench_units": {
