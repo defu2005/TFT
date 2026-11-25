@@ -883,9 +883,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 463.8 s (sweep 52): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -1085,9 +1083,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 563.1 s (sweep 102): opponent alias P7 read from the top nameplate; enemy unit sprites are visible but their champions are not legible at 720p, and no scouting panel for this opponent was captured in this window, so the opponent trait counts were not available for the solver.",
-    "reason": "enemy board needs a legible opponent trait panel or scouting view in the round window; neither was captured at this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -1312,9 +1308,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 634.9 s (sweep 137): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -1719,9 +1713,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 738.7 s (sweep 189): opponent alias P2 read from the top nameplate; enemy unit sprites are visible but their champions are not legible at 720p, and no scouting panel for this opponent was captured in this window, so the opponent trait counts were not available for the solver.",
-    "reason": "enemy board needs a legible opponent trait panel or scouting view in the round window; neither was captured at this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -1974,9 +1966,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 795.3 s (sweep 218): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -2451,10 +2441,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "candidates": null,
-    "attempt": "combat frame at 917 s (sweep 279): opponent nameplate read as P3 from the top centre. Scouting window at 888 s (sweep 264) shows another player's trait panel in the left sidebar (Caustic 1, Riftbeast 3, Invoker 2, Juggernaut 2, Adaptor 1, Brawler 1, Primal 1). The rail row highlighted at that moment belongs to a different player (P5), so the panel owner is not confirmed as P3. The panel was not assigned to the opponent and the solver was not applied to it.",
-    "reason": "the scouted panel owner does not match the combat-frame opponent, so it cannot be used as the opponent board"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -2745,9 +2732,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 981.3 s (sweep 311): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -2999,9 +2984,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 1085.2 s (sweep 363): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -3508,9 +3491,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 1203 s (sweep 421): opponent alias P5 read from the top nameplate; enemy unit sprites are visible but their champions are not legible at 720p, and no scouting panel for this opponent was captured in this window, so the opponent trait counts were not available for the solver.",
-    "reason": "enemy board needs a legible opponent trait panel or scouting view in the round window; neither was captured at this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -3620,22 +3601,17 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     [
-      "Alistar",
-      "Ezreal",
-      "Hecarim",
-      "Krug",
-      "LeBlanc",
-      "Mama Beak",
-      "Xayah"
-     ]
+    "value": [
+     "Alistar",
+     "Ezreal",
+     "Hecarim",
+     "Krug",
+     "LeBlanc",
+     "Mama Beak",
+     "Xayah"
     ],
-    "attempt": "planning counter unresolved at 1250 s; panel solve with assumed N=7, k=0 gives this set; one Hecarim buy has no purchase event",
-    "reason": "counter not read, so N is assumed",
-    "note": "hexes unresolved"
+    "tag": "derived",
+    "basis": "1274 s sidebar panel (9 trait rows, no hidden marker so k=0): Elderwood 5, Rapidfire 2, Brawler 2, Riftbeast 2, Executioner 1, Fae 1, Spellweaver 1, Summoner 1, Vanguard 1. solve_panels: N=7 unique; N=5 and N=6 give zero solutions and N=8 to 10 give zero. Read in combat, so the counts could be survivors; the unique N=7 matches the level-7 bar."
    },
    "bench_units": {
     "value": null,
@@ -3782,9 +3758,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 1274 s (sweep 457): opponent alias P2 read from the top nameplate; enemy unit sprites are visible but their champions are not legible at 720p, and no scouting panel for this opponent was captured in this window, so the opponent trait counts were not available for the solver.",
-    "reason": "enemy board needs a legible opponent trait panel or scouting view in the round window; neither was captured at this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -4345,9 +4319,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 1393 s (sweep 517): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -4602,9 +4574,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 1492 s (sweep 566): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -4854,9 +4824,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 1567 s (sweep 603): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -5277,9 +5245,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 1678 s (sweep 659): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -5525,9 +5491,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 1754 s (sweep 697): opponent alias P8 read from the top nameplate; enemy unit sprites are visible but their champions are not legible at 720p, and no scouting panel for this opponent was captured in this window, so the opponent trait counts were not available for the solver.",
-    "reason": "enemy board needs a legible opponent trait panel or scouting view in the round window; neither was captured at this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -6122,9 +6086,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 1867 s (sweep 753): opponent alias P2 read from the top nameplate; enemy unit sprites are visible but their champions are not legible at 720p, and no scouting panel for this opponent was captured in this window, so the opponent trait counts were not available for the solver.",
-    "reason": "enemy board needs a legible opponent trait panel or scouting view in the round window; neither was captured at this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -6437,9 +6399,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 1946 s (sweep 793): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -6739,9 +6699,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 2030 s (sweep 835): opponent alias P7 read from the top nameplate; enemy unit sprites are visible but their champions are not legible at 720p, and no scouting panel for this opponent was captured in this window, so the opponent trait counts were not available for the solver.",
-    "reason": "enemy board needs a legible opponent trait panel or scouting view in the round window; neither was captured at this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -7203,9 +7161,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 2126 s (sweep 883): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -7498,9 +7454,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 2203 s (sweep 921): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -8009,9 +7963,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 2311 s (sweep 975): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -8295,9 +8247,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 2373 s (sweep 1007): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -8454,7 +8404,7 @@
    "opponent": {
     "value": "P2",
     "tag": "derived",
-    "basis": "only other player above 0 HP in the 6-3 and 6-5 labels"
+    "basis": "alive-set rule: P4 was eliminated at 6-2, so P2 is the only player alive opposite the streamer at 6-3; the P2 sidebar row (HP 16) is visible in the 6-3 combat frame"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -8553,9 +8503,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 2436 s (sweep 1038): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -8878,7 +8826,7 @@
    "opponent": {
     "value": "P2",
     "tag": "derived",
-    "basis": "only other player above 0 HP in the 6-3 and 6-5 labels"
+    "basis": "alive-set rule: P4 was eliminated at 6-2, so P2 is the only player alive opposite the streamer at 6-5; the P2 sidebar row (HP 16) is visible in the 6-5 combat frame"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -9035,9 +8983,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 2519 s (sweep 1079): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
@@ -9191,7 +9137,7 @@
    "opponent": {
     "value": "P2",
     "tag": "read",
-    "basis": "sidebar HP 16 at 2600 s and 2615 s frame (see combat)"
+    "basis": "sidebar HP 16 at the 2600 s and 2615 s combat frames (alias P2 read from the sidebar row)"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -9228,7 +9174,7 @@
     "value": {
      "frame_t_s": 2615,
      "opponent_alias": "P2",
-     "basis": "sidebar HP 16 equals P2 at 6-6 label",
+     "basis": "sidebar HP 16 equals P2 at 6-6 label; alias P2 read from the sidebar row at 2600 s",
      "streamer_hp_at_label": 9,
      "note": "streamer 9 vs P2 16 at 2600 s, sidebar confirmed"
     },
@@ -9337,9 +9283,7 @@
    },
    "opponent_board": {
     "value": null,
-    "tag": "unresolved",
-    "attempt": "combat frame at 2625 s (sweep 1133): opponent nameplate hidden or unclear at 720p, so the opponent alias was not settled from this frame; enemy sprites are not legible enough for the solver.",
-    "reason": "opponent identity and trait panel both unresolved for this frame"
+    "tag": "open"
    },
    "hexes": {
     "value": null,
