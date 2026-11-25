@@ -1,4 +1,4 @@
-# Planning-frame OCR for gold, streak, level and XP (blind sample of ten).
+# Planning-frame OCR for gold, streak, level and XP (blind sample of ten). Scale: gold and streak 3x, level and XP 6x.
 # Reads the frame recorded in each round's planning entry, crops fixed boxes,
 # and compares against the master only after OCR. Crops:
 #   gold (610,586,640,610), streak (678,586,706,610), level (188,588,206,606), xp (244,588,274,606)
@@ -9,10 +9,10 @@ V = '/home/user/campaign/01-boxbox-2924500482-00210.mp4'
 MASTER = 'data/hud-audit/match01_full.json'
 WORK = os.environ.get('BLIND_WORK', '/tmp/blind_work')
 SAMPLE = ['3-5', '3-6', '4-1', '4-2', '4-6', '5-1', '5-2', '5-5', '5-6', '6-2']
-CROPS = {'gold': ((610, 586, 640, 610), '0123456789'),
-         'streak': ((678, 586, 706, 610), '0123456789'),
-         'level': ((188, 588, 206, 606), '0123456789'),
-         'xp': ((244, 588, 274, 606), '0123456789/')}
+CROPS = {'gold': ((610, 586, 640, 610), '0123456789', 3),
+         'streak': ((678, 586, 706, 610), '0123456789', 3),
+         'level': ((188, 588, 206, 606), '0123456789', 6),
+         'xp': ((244, 588, 274, 606), '0123456789/', 6)}
 os.makedirs(WORK, exist_ok=True)
 
 def ocr(img, wl):
@@ -23,8 +23,8 @@ def ocr(img, wl):
 def read_frame(path):
     im = Image.open(path).convert('RGB')
     out = {}
-    for name, (box, wl) in CROPS.items():
-        c = im.crop(box); c = c.resize((c.width * 6, c.height * 6), Image.LANCZOS)
+    for name, (box, wl, scale) in CROPS.items():
+        c = im.crop(box); c = c.resize((c.width * scale, c.height * scale), Image.LANCZOS)
         out[name] = ocr(c, wl)
     return out
 

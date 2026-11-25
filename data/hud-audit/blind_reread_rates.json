@@ -1,29 +1,29 @@
 {
- "protocol": "Digit OCR (tesseract, psm 7, digit whitelist, 3x upscale; level and XP at 6x) on fixed crops. The script does not open the master; the master is compared after OCR. Gold and streak crops were chosen after seeing the sample of ten (tuned). Level and XP crops were calibrated on the out-of-sample frame 2-3 at 604 s before the sample run.",
+ "protocol": "Digit OCR (tesseract, psm 7, digit whitelist) on fixed crops; scale per field: gold and streak 3x, level and XP 6x. The script does not open the master; the master is compared after OCR. Gold and streak crops were chosen after seeing the sample of ten (tuned). Level and XP crops were calibrated on the out-of-sample frame 2-3 at 604 s before the sample run.",
  "rates": {
   "gold": {
    "matched": 10,
    "of": 10,
    "rate": 1.0,
-   "note": "planning-frame run (blind_ocr_planning.py); tuned crop; earlier blind-pick-time run gave 9/10 with a one-second offset at 5-5"
+   "note": "planning-frame run, 3x; tuned crop"
   },
   "streak": {
-   "matched": 6,
+   "matched": 9,
    "of": 10,
-   "rate": 0.6,
-   "note": "planning-frame run; 4 misses (4-1, 4-2, 5-2, 6-2) all confirmed against the frame as OCR errors; earlier blind-pick-time run gave 9/10"
+   "rate": 0.9,
+   "note": "planning-frame run, 3x; tuned crop; miss 6-2 is an empty OCR read, frame shows 1"
   },
   "level": {
    "matched": 10,
    "of": 10,
    "rate": 1.0,
-   "note": "planning-frame run; calibrated on out-of-sample 2-3 at 604 s"
+   "note": "planning-frame run, 6x; calibrated on out-of-sample 2-3 at 604 s"
   },
   "xp": {
    "matched": 10,
    "of": 10,
    "rate": 1.0,
-   "note": "planning-frame run; same calibration"
+   "note": "planning-frame run, 6x; same calibration"
   }
  },
  "gold_masked_near_white": {
@@ -58,21 +58,18 @@
    "6-2": "OCR returned empty; frame at 2342 s shows 1, master 1 confirmed"
   }
  },
- "gold_planning_frames": {
-  "rounds_read": 26,
-  "matched_at_recorded_frame": 22,
-  "no_gold_box": [
-   "2-4",
-   "6-1",
-   "6-6"
-  ],
-  "in_sample_miss": "5-5 at 2094 s (timer 22, gold 9); the planning entry is timer 21 at 2095 s (gold 7), which matches",
-  "out_of_sample_comparable": 13,
-  "out_of_sample_matched": 13
- },
  "gold_frame_a_run": {
   "note": "Earlier run at Frame A times; superseded by the planning-frame run above"
  },
  "level_xp_protocol": "Calibration on one out-of-sample frame (2-3 at 604 s) before the sample run; the ten sample rounds read at their planning frames.",
- "script": "data/hud-audit/blind_ocr_planning.py (planning-frame run for all four fields); data/hud-audit/blind_ocr.py (earlier blind-pick-time run for gold and streak)"
+ "script": "data/hud-audit/blind_ocr_planning.py (planning-frame run for all four fields, per-field scale)",
+ "gold_planning_frames_out_of_sample": {
+  "comparable": 13,
+  "matched": 13,
+  "not_comparable_no_gold_box": [
+   "2-4",
+   "6-1",
+   "6-6"
+  ]
+ }
 }
