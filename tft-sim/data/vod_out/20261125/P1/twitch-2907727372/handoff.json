@@ -36,6 +36,10 @@
     [
       16000,
       18500
+    ],
+    [
+      18600,
+      20800
     ]
   ],
   "remaining_ranges_s": [
@@ -73,6 +77,10 @@
     ],
     [
       18500,
+      18600
+    ],
+    [
+      20800,
       23280
     ]
   ],
@@ -84,21 +92,22 @@
     "twitch-2907727372-g9500",
     "twitch-2907727372-g12200",
     "twitch-2907727372-g14000",
-    "twitch-2907727372-g16000"
+    "twitch-2907727372-g16000",
+    "twitch-2907727372-g18600"
   ],
   "counts": {
-    "games": 8,
-    "fights": 29,
-    "others": 29
+    "games": 9,
+    "fights": 33,
+    "others": 33
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 29
+      "winner_null": 33
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "8 ranked. Tiếp sau 18500s (next MATCH@18600 → g18600 @590LP).",
+  "remaining": "9 ranked. Tiếp sau 20800s (next g20950/g21000 @642LP).",
   "notes": "Ranked Set18. winner_null OK."
 }
