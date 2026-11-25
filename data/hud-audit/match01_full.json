@@ -6848,24 +6848,19 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "candidates": [
-     [
-      "Alistar",
-      "Amumu",
-      "Draven",
-      "Ezreal",
-      "Gnar",
-      "Ivern",
-      "Kennen",
-      "Maokai",
-      "Taric"
-     ]
+    "value": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
     ],
-    "attempt": "solver on the planning-frame panel returned one solution, but an earlier panel read for this round disagrees; timing of the two reads not yet checked",
-    "reason": "two panel reads disagree; the board that fought is not chosen yet",
-    "note": "hexes unresolved"
+    "tag": "derived",
+    "basis": "planning-panel solve (N=9, k=2) unique; the 2172 s frame agrees with the planning panel, so the earlier re-read is the one that is wrong"
    },
    "bench_units": {
     "value": null,
