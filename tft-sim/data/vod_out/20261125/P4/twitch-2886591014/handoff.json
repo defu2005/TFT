@@ -16,26 +16,56 @@
     [
       7200,
       10000
+    ],
+    [
+      12000,
+      13500
+    ],
+    [
+      14000,
+      15500
+    ],
+    [
+      16000,
+      17500
+    ],
+    [
+      18000,
+      21000
+    ],
+    [
+      22000,
+      23500
+    ],
+    [
+      24000,
+      24700
     ]
   ],
   "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2886591014-g60",
     "twitch-2886591014-g3600",
-    "twitch-2886591014-g7200"
+    "twitch-2886591014-g7200",
+    "twitch-2886591014-g12000",
+    "twitch-2886591014-g14000",
+    "twitch-2886591014-g16000",
+    "twitch-2886591014-g18000",
+    "twitch-2886591014-g22000",
+    "twitch-2886591014-g24000"
   ],
   "counts": {
-    "games": 3,
-    "fights": 38,
+    "games": 9,
+    "fights": 110,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 38
+      "winner_null": 110
     }
   },
-  "needs_review": 38,
+  "needs_review": 110,
   "commit": null,
-  "remaining": "Ranked HLS pass done for primary spans."
+  "remaining": "Denser ranked stubs expand; +6 games this batch."
 }

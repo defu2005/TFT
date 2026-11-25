@@ -24,6 +24,10 @@
     [
       10800,
       13000
+    ],
+    [
+      13500,
+      15660
     ]
   ],
   "remaining_ranges_s": [],
@@ -32,20 +36,21 @@
     "twitch-2914203830-g2400",
     "twitch-2914203830-g5400",
     "twitch-2914203830-g8200",
-    "twitch-2914203830-g10800"
+    "twitch-2914203830-g10800",
+    "twitch-2914203830-g13500"
   ],
   "counts": {
-    "games": 5,
-    "fights": 70,
+    "games": 6,
+    "fights": 82,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 70
+      "winner_null": 82
     }
   },
-  "needs_review": 70,
+  "needs_review": 82,
   "commit": null,
-  "remaining": "Ranked segments covered via HLS; VOD late frames still Challenger ranked through g10800."
+  "remaining": "Denser ranked stubs expand; +1 games this batch."
 }
