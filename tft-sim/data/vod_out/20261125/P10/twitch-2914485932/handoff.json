@@ -3,8 +3,12 @@
   "vod_id": "twitch-2914485932",
   "slot": "P10",
   "role": "primary",
-  "status": "pending",
+  "status": "done",
   "covered_ranges_s": [
+    [
+      200,
+      1800
+    ],
     [
       2000,
       3900
@@ -16,112 +20,29 @@
     [
       6000,
       7800
+    ],
+    [
+      7850,
+      8600
+    ],
+    [
+      8650,
+      10000
     ]
   ],
-  "remaining_ranges_s": [
-    [
-      0,
-      2000
-    ],
-    [
-      3900,
-      4000
-    ],
-    [
-      5800,
-      6000
-    ],
-    [
-      7800,
-      null
-    ]
-  ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2914485932-g2000",
     "twitch-2914485932-g4000",
-    "twitch-2914485932-g6000"
+    "twitch-2914485932-g6000",
+    "twitch-2914485932-g300",
+    "twitch-2914485932-g7900",
+    "twitch-2914485932-g8800"
   ],
   "counts": {
-    "games": 3,
-    "fights": 26,
+    "games": 6,
+    "fights": 60,
     "others": 0
   },
-  "validator": {
-    "ok": 12,
-    "skipped": {
-      "winner_null": 14
-    },
-    "rows": [
-      {
-        "line": 1,
-        "source": "twitch-2914485932-g2000:2-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 3,
-        "source": "twitch-2914485932-g2000:3-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 5,
-        "source": "twitch-2914485932-g2000:4-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 7,
-        "source": "twitch-2914485932-g2000:5-2",
-        "reason": "winner_null"
-      },
-      {
-        "line": 9,
-        "source": "twitch-2914485932-g4000:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 11,
-        "source": "twitch-2914485932-g4000:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 13,
-        "source": "twitch-2914485932-g4000:4-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 15,
-        "source": "twitch-2914485932-g4000:5-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 17,
-        "source": "twitch-2914485932-g4000:6-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 18,
-        "source": "twitch-2914485932-g6000:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 20,
-        "source": "twitch-2914485932-g6000:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 22,
-        "source": "twitch-2914485932-g6000:4-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 24,
-        "source": "twitch-2914485932-g6000:5-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 26,
-        "source": "twitch-2914485932-g6000:6-1",
-        "reason": "winner_null"
-      }
-    ]
-  }
+  "rem_notes": "+3g rem (g300 early, g7900/g8800 after 7800). Tiny gaps skipped. remaining empty."
 }
