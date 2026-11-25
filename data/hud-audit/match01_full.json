@@ -1137,8 +1137,15 @@
     "tag": "read"
    },
    "roster_candidates": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     "Alistar",
+     "Kobuko",
+     "LeBlanc",
+     "Mama Beak",
+     "Xayah"
+    ],
+    "tag": "derived",
+    "basis": "exact solver solution for the 844 s panel, same as 3-1"
    },
    "augment": {
     "value": null,
@@ -1175,8 +1182,34 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "frame_s": 844,
+     "timer": 4,
+     "counter": "partly hidden (/5); level 5 so 5 units",
+     "level": 5,
+     "xp": "4/20",
+     "gold": 29,
+     "streak": 4,
+     "panel": {
+      "Elderwood": 3,
+      "Rapidfire": 2,
+      "Brawler": 2,
+      "Fae": 1,
+      "Spellweaver": 1,
+      "Summoner": 1,
+      "Riftbeast": 1,
+      "Sprykin": 1
+     },
+     "shop": [
+      "Pebbles",
+      "Azir",
+      "Vi",
+      "Ezreal",
+      "Sejuani"
+     ],
+     "note": "Ezreal is in the shop, not on the board (no Executioner in the panel)"
+    },
+    "tag": "read"
    },
    "combat": {
     "value": null,
