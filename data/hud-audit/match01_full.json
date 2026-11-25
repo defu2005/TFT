@@ -46,8 +46,8 @@
     "tag": "unresolved"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -85,11 +85,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -136,8 +146,8 @@
     "tag": "unresolved"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -175,11 +185,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -226,8 +246,8 @@
     "tag": "unresolved"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -265,11 +285,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -317,8 +347,8 @@
     "tag": "unresolved"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -356,11 +386,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -408,20 +448,9 @@
     "tag": "unresolved"
    },
    "augment": {
-    "value": {
-     "choice_442_458": [
-      "U.R.F",
-      "Replication",
-      "Capital Gains II"
-     ],
-     "choice_459": [
-      "U.R.F",
-      "Replication",
-      "Warpath"
-     ],
-     "pick": "Warpath"
-    },
-    "tag": "derived"
+    "value": "Warpath",
+    "tag": "read",
+    "basis": "augments_check.json: offered at pick screen, owned at 2170 s"
    },
    "board_units": {
     "value": null,
@@ -453,8 +482,12 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": "lost",
-    "tag": "derived"
+    "value": {
+     "streamer_hp_loss": 3,
+     "outcome": "lost"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    },
    "planning": {
     "value": {
@@ -473,15 +506,14 @@
     "tag": "read"
    },
    "combat": {
-    "value": {
-     "frame_s": 505,
-     "phase": "PvE combat (monsters), home view"
-    },
-    "tag": "read"
+    "value": null,
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
    }
   },
   {
@@ -529,8 +561,8 @@
     "tag": "unresolved"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -591,11 +623,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -647,8 +689,8 @@
     "tag": "unresolved"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -712,11 +754,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -768,8 +820,8 @@
     "tag": "unresolved"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -822,11 +874,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -885,8 +947,8 @@
     "basis": "exact solver solution for the 712 s panel, same as 3-1"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -949,11 +1011,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -1021,8 +1093,8 @@
     "basis": "two exact solver solutions for the 766 s panel; they differ by Ahri vs Karma and are unresolved"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -1085,11 +1157,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -1148,8 +1230,8 @@
     "basis": "exact solver solution for the 844 s panel, same as 3-1"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -1213,11 +1295,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -1280,8 +1372,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": [
@@ -1345,11 +1437,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -1393,7 +1495,8 @@
    },
    "augment": {
     "value": "Heroic Grab Bag+",
-    "tag": "derived"
+    "tag": "read",
+    "basis": "augments_check.json: offered at pick screen, owned at 2170 s"
    },
    "board_units": {
     "value": [
@@ -1494,11 +1597,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -1555,8 +1668,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": [
@@ -1634,11 +1747,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -1690,8 +1813,8 @@
     "tag": "unresolved"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -1744,11 +1867,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -1807,8 +1940,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -1893,11 +2026,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -1963,8 +2106,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -2052,11 +2195,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -2109,8 +2262,8 @@
     "tag": "unresolved"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -2197,11 +2350,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -2260,8 +2423,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -2299,11 +2462,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -2358,7 +2531,8 @@
    },
    "augment": {
     "value": "Cybernetic Implants",
-    "tag": "derived"
+    "tag": "read",
+    "basis": "augments_check.json: offered at pick screen, owned at 2170 s"
    },
    "board_units": {
     "value": null,
@@ -2391,8 +2565,12 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": "lost",
-    "tag": "derived"
+    "value": {
+     "streamer_hp_loss": 9,
+     "outcome": "lost"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    },
    "planning": {
     "value": null,
@@ -2400,11 +2578,13 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
    }
   },
   {
@@ -2463,8 +2643,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -2502,11 +2682,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -2565,8 +2755,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -2604,11 +2794,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -2667,8 +2867,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -2706,11 +2906,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -2769,8 +2979,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -2808,11 +3018,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -2880,8 +3100,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -2919,11 +3139,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -2983,8 +3213,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -3017,8 +3247,12 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": "lost",
-    "tag": "derived"
+    "value": {
+     "streamer_hp_loss": 14,
+     "outcome": "lost"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    },
    "planning": {
     "value": null,
@@ -3026,11 +3260,13 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
    }
   },
   {
@@ -3099,8 +3335,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -3138,11 +3374,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -3211,8 +3457,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -3250,11 +3496,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -3308,8 +3564,8 @@
     "tag": "unresolved"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -3347,11 +3603,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -3420,8 +3686,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -3459,11 +3725,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -3533,8 +3809,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -3567,8 +3843,12 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": "lost",
-    "tag": "derived"
+    "value": {
+     "streamer_hp_loss": 15,
+     "outcome": "lost"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    },
    "planning": {
     "value": null,
@@ -3576,11 +3856,13 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
    }
   },
   {
@@ -3649,8 +3931,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -3688,11 +3970,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -3761,8 +4053,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -3800,11 +4092,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -3873,8 +4175,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -3907,8 +4209,12 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": "lost",
-    "tag": "derived"
+    "value": {
+     "streamer_hp_loss": 16,
+     "outcome": "lost"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    },
    "planning": {
     "value": null,
@@ -3916,11 +4222,13 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
    }
   },
   {
@@ -3989,8 +4297,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -4023,8 +4331,12 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": "lost",
-    "tag": "derived"
+    "value": {
+     "streamer_hp_loss": 16,
+     "outcome": "lost"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    },
    "planning": {
     "value": null,
@@ -4032,11 +4344,13 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
    }
   },
   {
@@ -4105,8 +4419,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -4144,11 +4458,21 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "no damage taken (win or no-damage round, not confirmed)"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    }
   },
   {
@@ -4208,8 +4532,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -4242,8 +4566,12 @@
    },
    "combat_frame_t_s": null,
    "result": {
-    "value": "lost",
-    "tag": "derived"
+    "value": {
+     "streamer_hp_loss": 18,
+     "outcome": "lost"
+    },
+    "tag": "derived",
+    "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
    },
    "planning": {
     "value": null,
@@ -4251,11 +4579,13 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
    }
   },
   {
@@ -4324,8 +4654,8 @@
     "tag": "derived"
    },
    "augment": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "no augment pick screen read this round",
+    "tag": "n/a"
    },
    "board_units": {
     "value": null,
@@ -4363,11 +4693,18 @@
    },
    "combat": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "combat frames not yet read for this round"
    },
    "actions": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "shop and level log not yet derived for this round"
+   },
+   "result": {
+    "value": null,
+    "tag": "unresolved",
+    "note": "no next HP row for this round"
    }
   }
  ],
