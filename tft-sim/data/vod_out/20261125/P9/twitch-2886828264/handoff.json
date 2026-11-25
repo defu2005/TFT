@@ -24,11 +24,15 @@
     [
       8200,
       9900
+    ],
+    [
+      10100,
+      12200
     ]
   ],
   "remaining_ranges_s": [
     [
-      10000,
+      12400,
       16144
     ]
   ],
@@ -37,20 +41,21 @@
     "twitch-2886828264-g2100",
     "twitch-2886828264-g3800",
     "twitch-2886828264-g5500",
-    "twitch-2886828264-g8200"
+    "twitch-2886828264-g8200",
+    "twitch-2886828264-g10100"
   ],
   "counts": {
-    "games": 5,
-    "fights": 41,
+    "games": 6,
+    "fights": 50,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 41
+      "winner_null": 50
     }
   },
   "needs_review": 9,
   "commit": "7fbe286",
-  "remaining": "continue ranked from ~10000s (game6+)"
+  "remaining": "continue ranked from ~12400s (game7+)"
 }
