@@ -181,11 +181,11 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
-    "reason": "no panel read for this round",
-    "note": "hexes unresolved"
+    "value": [
+     "Veigar"
+    ],
+    "tag": "derived",
+    "basis": "340 s planning sidebar: Blackthorn 1, Spellweaver 1, Sprykin 1 (1/2, 1/2, 1/3), no hidden marker. solve_panels: N=1 unique (Veigar); N>1 has no solution at k=0 from these three traits."
    },
    "bench_units": {
     "value": 0,
@@ -348,11 +348,11 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
-    "reason": "no panel read for this round",
-    "note": "hexes unresolved"
+    "value": [
+     "Veigar"
+    ],
+    "tag": "derived",
+    "basis": "364.1 s planning sidebar identical to 1-2 (Blackthorn 1, Spellweaver 1, Sprykin 1). solve_panels: N=1 unique (Veigar)."
    },
    "bench_units": {
     "value": 3,
@@ -1385,9 +1385,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
-    "reason": "no panel read for this round",
-    "note": "hexes unresolved"
+    "attempt": "664 s carousel view: sidebar rows are mid-fade, so the trait counts are not legible enough to solve; solver not applied.",
+    "reason": "our own panel is not on screen legibly at this frame"
    },
    "bench_units": {
     "value": null,
@@ -2043,11 +2042,15 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
-    "reason": "no panel read for this round",
-    "note": "hexes unresolved"
+    "value": [
+     "Alistar",
+     "Kobuko",
+     "LeBlanc",
+     "Mama Beak",
+     "Xayah"
+    ],
+    "tag": "derived",
+    "basis": "835 s planning sidebar: Elderwood 3, Rapidfire 2, Brawler 2, Fae 1, Spellweaver 1, Summoner 1, Riftbeast 1, Sprykin 1; no hidden marker (k=0). solve_panels: N=5 gives one solution; N=1 to 4 and N=6 to 10 give none, so N=5 is unique by the duplicate test."
    },
    "bench_units": {
     "value": 6,
@@ -3041,9 +3044,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
-    "reason": "no panel read for this round",
-    "note": "hexes unresolved"
+    "attempt": "1128.5 s frame: the left sidebar is another player's scouted panel, not ours (Caustic 1, Invoker 3, Riftbeast 3, Adaptor 2, Juggernaut 2, Primal 1, Sprykin 1). Our own trait panel is not on screen at this frame. The scouted panel is stored under scouted_panels; its owner is not confirmed.",
+    "reason": "our own panel is not on screen legibly at this frame"
    },
    "bench_units": {
     "value": null,
@@ -4872,9 +4874,8 @@
    "board_units": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
-    "reason": "no panel read for this round",
-    "note": "hexes unresolved"
+    "attempt": "1604 s carousel view: sidebar rows are mid-fade with a 1+ marker; the counts are not legible enough to solve; solver not applied.",
+    "reason": "our own panel is not on screen legibly at this frame"
    },
    "bench_units": {
     "value": null,
@@ -6717,11 +6718,19 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
-    "reason": "no panel read for this round",
-    "note": "hexes unresolved"
+    "value": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "tag": "derived",
+    "basis": "2062.8 s carousel-view sidebar: Bounty Seeker 1, Emerald Aspect 1, Greenfather 1, Old Growth 1, Elderwood 3, Executioner 2, Inferno 2, Brawler 2, Juggernaut 2, hidden marker 2+. solve_panels k=2: N=9 unique; N=10 has 5 solutions and N<9 none. Same trait panel as 6-4, noted as a check item."
    },
    "bench_units": {
     "value": null,
@@ -8525,11 +8534,19 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
-    "reason": "no panel read for this round",
-    "note": "hexes unresolved"
+    "value": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "tag": "derived",
+    "basis": "2463.3 s carousel-view sidebar identical to 5-4 (same 9 rows and 2+ marker). solve_panels k=2: N=9 unique. Identical panel at 5-4 and 6-4 is kept as a check item, not used as evidence of an unchanged board."
    },
    "bench_units": {
     "value": null,
@@ -9522,5 +9539,24 @@
    ]
   },
   "frame_s": "t = 362 + (index - 1) * 2"
- }
+ },
+ "scouted_panels": [
+  {
+   "t_s": 1128.5,
+   "sweep_frame": null,
+   "source": "ffmpeg frame, Frame A of 3-4",
+   "panel": {
+    "Caustic": 1,
+    "Invoker": 3,
+    "Riftbeast": 3,
+    "Adaptor": 2,
+    "Juggernaut": 2,
+    "Primal": 1,
+    "Sprykin": 1
+   },
+   "owner": null,
+   "owner_status": "not confirmed",
+   "note": "not attached to any round"
+  }
+ ]
 }
