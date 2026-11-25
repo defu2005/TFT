@@ -224,7 +224,7 @@
   },
   "counts": {
     "named_confirmed": 1,
-    "named_medium_confidence": 1,
+    "named_medium_confidence": 0,
     "unknown": "all other board and bench units",
     "contradicted": 0
   },
@@ -232,20 +232,21 @@
   "confirmed_units": [
     {
       "name": "Ezreal",
+      "stars": 2,
       "cost": 4,
       "traits": [
         "Elderwood",
         "Executioner"
       ],
-      "frame": "2170-2180 s info card (round 5-6 area)",
+      "frame": "2180.3 s info card (round 5-6), right side x 1000-1280",
       "evidence": [
-        "unit card shows traits Elderwood and Executioner",
-        "name fragment \"real\" visible",
-        "only catalog champion with exactly these traits"
+        "full name shown on card",
+        "two-star marker on card",
+        "traits Elderwood and Executioner on card",
+        "three item icons visible; item names not read"
       ],
-      "star": "not read",
-      "items": "not read",
-      "confidence": "medium: name only partially visible"
+      "items": "3 icons, names not read",
+      "confidence": "high for name and star; items unnamed"
     }
   ]
 }
