@@ -1,0 +1,32 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2907970518",
+  "slot": "P4",
+  "role": "primary",
+  "status": "partial",
+  "covered_ranges_s": [
+    [
+      60,
+      2200
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      2200,
+      99999
+    ]
+  ],
+  "game_ids": [],
+  "counts": {
+    "games": 0,
+    "fights": 0,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {}
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "More ranked games after first; denser HLS pass pending."
+}

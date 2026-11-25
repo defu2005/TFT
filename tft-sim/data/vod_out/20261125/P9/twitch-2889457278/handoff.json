@@ -1,0 +1,56 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2889457278",
+  "slot": "P9",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      400,
+      3200
+    ],
+    [
+      4200,
+      8800
+    ],
+    [
+      9000,
+      14000
+    ],
+    [
+      15000,
+      18000
+    ],
+    [
+      18000,
+      20200
+    ],
+    [
+      20500,
+      24578
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2889457278-g600",
+    "twitch-2889457278-g4200",
+    "twitch-2889457278-g9000",
+    "twitch-2889457278-g15000",
+    "twitch-2889457278-g18500",
+    "twitch-2889457278-g20500"
+  ],
+  "counts": {
+    "games": 6,
+    "fights": 12,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 12
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "VOD3 done; chuyển VOD kurumx tiếp theo"
+}
