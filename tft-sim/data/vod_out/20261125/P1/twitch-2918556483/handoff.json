@@ -1,0 +1,41 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2918556483",
+  "slot": "P1",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      3200,
+      4600
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      0,
+      3200
+    ],
+    [
+      4600,
+      25070
+    ]
+  ],
+  "game_ids": [
+    "twitch-2918556483-g3200"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 3,
+    "others": 3
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 3
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "1 ranked. Mixed VOD (regionals board + patch notes + ranked). Tiếp ranked sau 4600s @995LP.",
+  "notes": "Title: high octane ranked. Skip non-ranked segments. winner_null OK."
+}
