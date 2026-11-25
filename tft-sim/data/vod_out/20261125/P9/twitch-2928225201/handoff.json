@@ -26,6 +26,10 @@
       12000
     ],
     [
+      12200,
+      13800
+    ],
+    [
       14000,
       17500
     ]
@@ -45,6 +49,10 @@
     ],
     [
       12000,
+      12200
+    ],
+    [
+      13800,
       14000
     ],
     [
@@ -58,17 +66,18 @@
     "twitch-2928225201-g9000",
     "twitch-2928225201-g7000",
     "twitch-2928225201-g14000",
-    "twitch-2928225201-g2800"
+    "twitch-2928225201-g2800",
+    "twitch-2928225201-g12200"
   ],
   "counts": {
-    "games": 6,
-    "fights": 7,
+    "games": 7,
+    "fights": 9,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 7
+      "winner_null": 9
     },
     "rows": [
       {
@@ -103,6 +112,16 @@
       },
       {
         "line": 7,
+        "source": "twitch-2928225201-g14000:5-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 8,
+        "source": "twitch-2928225201-g12200:2-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 9,
         "source": "twitch-2928225201-g14000:5-2",
         "reason": "winner_null"
       }

@@ -1,0 +1,28 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2923262621",
+  "slot": "P1",
+  "role": "primary",
+  "status": "blocked",
+  "covered_ranges_s": [],
+  "remaining_ranges_s": [
+    [
+      0,
+      19460
+    ]
+  ],
+  "game_ids": [],
+  "counts": {
+    "games": 0,
+    "fights": 0,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {}
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "mode≠ranked: Worlds scrims / Enchanted Wilds #TFTESPORTSEMEA spectator + Coven Cup watch party / tierlist. Không Ranked ladder POV. Bỏ toàn bộ candidate.",
+  "notes": "Title: worlds scrims | coven cup watch party. Frames: tourney cast POV (wasian/Dishsoap), not Frodan ranked. Evidence frames/blocked_*.jpg"
+}
