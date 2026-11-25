@@ -23,3 +23,17 @@ print("placements:", 'missing' if not pl else pl)
 print("final_comps:", 'missing' if not d.get('final_comps') else 'present')
 br = d.get('blind_reread')
 print("blind_reread:", 'missing' if not br else br.get('summary', 'present'))
+
+# closed = resolved, or unresolved with attempt and reason recorded
+def closed(v):
+    if not isinstance(v, dict): return False
+    if resolved(v): return True
+    return v.get('tag') == 'unresolved' and bool(v.get('attempt')) and bool(v.get('reason') or v.get('note'))
+open_counts = {f: 0 for f in FULL + REQUIRED}
+for r in d['rounds']:
+    for f in FULL + REQUIRED:
+        if not closed(r.get(f)): open_counts[f] += 1
+print("OPEN per field (not closed):")
+for f, c in open_counts.items(): print(f"  {f}: {c}")
+total_open = sum(open_counts.values())
+print("TOTAL OPEN:", total_open)
