@@ -156,5 +156,45 @@
   ],
   "rule": "unique solution, N=8, one unlisted trait; overlaps 4-2 on five units",
   "status": "accepted as nearest candidate; the 2-out 3-in change still needs a shop or sell check"
- }
+ },
+ "chain_4-3_to_5-1": [
+  {
+   "from": "4-3",
+   "to": "4-4",
+   "in": [],
+   "out": []
+  },
+  {
+   "from": "4-4",
+   "to": "4-5",
+   "in": [
+    "Amumu"
+   ],
+   "out": [
+    "Hecarim"
+   ]
+  },
+  {
+   "from": "4-5",
+   "to": "4-6",
+   "in": [
+    "Hecarim"
+   ],
+   "out": [
+    "Amumu"
+   ]
+  },
+  {
+   "from": "4-6",
+   "to": "5-1",
+   "in": [
+    "Ivern",
+    "Kobuko"
+   ],
+   "out": [
+    "Krug"
+   ]
+  }
+ ],
+ "note_chain": "4-4 and 4-6 repeat panels of 4-3 and 4-5. Back-and-forth Amumu/Hecarim between 4-5 and 4-6 is suspect and needs the shop check."
 }
