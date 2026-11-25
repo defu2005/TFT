@@ -181,13 +181,13 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "no_damage_pattern",
+    "value": "PvE",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "HP flags: no losers, no streak widget"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "n/a: PvE round",
+    "tag": "n/a"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -249,6 +249,10 @@
     },
     "tag": "derived",
     "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+   },
+   "opponent_board": {
+    "value": "n/a: PvE round",
+    "tag": "n/a"
    }
   },
   {
@@ -319,13 +323,13 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "no_damage_pattern",
+    "value": "PvE",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "HP flags: no losers, no streak widget"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "n/a: PvE round",
+    "tag": "n/a"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -411,6 +415,10 @@
     },
     "tag": "derived",
     "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+   },
+   "opponent_board": {
+    "value": "n/a: PvE round",
+    "tag": "n/a"
    }
   },
   {
@@ -482,13 +490,13 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "no_damage_pattern",
+    "value": "PvE",
     "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "basis": "HP flags: no losers, no streak widget"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "n/a: PvE round",
+    "tag": "n/a"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -581,6 +589,10 @@
     },
     "tag": "derived",
     "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+   },
+   "opponent_board": {
+    "value": "n/a: PvE round",
+    "tag": "n/a"
    }
   },
   {
@@ -667,7 +679,7 @@
    "round_type": {
     "value": "PvP",
     "tag": "derived",
-    "basis": "streak icon from planning frames on disk (p2/p3 crops)"
+    "basis": "HP flags: P1 and P2 lost HP"
    },
    "opponent": {
     "value": null,
@@ -699,17 +711,10 @@
    },
    "combat": {
     "value": {
-     "frame_s": 505,
-     "phase": "PvE combat (monsters), home view",
-     "hp_losers_this_round": {
-      "P1": 3,
-      "P2": 5,
-      "P5": 4,
-      "P7": 5
-     },
-     "streamer_hp_loss": 3
+     "note": "combat frame 505 s read as PvE monsters earlier; HP flags show PvP, read conflict kept"
     },
-    "tag": "read"
+    "tag": "derived",
+    "basis": "conflict flagged"
    },
    "actions": {
     "value": {
@@ -978,10 +983,9 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "same gap",
-    "reason": "split between 2-3 and 2-4"
+    "value": "PvP",
+    "tag": "derived",
+    "basis": "HP flags: other players lost HP"
    },
    "opponent": {
     "value": null,
@@ -1061,10 +1065,11 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "2-4 planning not read",
-    "reason": "one of 2-3 and 2-4 won; the other had no PvP"
+    "value": {
+     "outcome": "win"
+    },
+    "tag": "derived",
+    "basis": "2-3 losers P2,P3,P5,P6 from HP flags; streak 1 to 2 with 2-4 PvE"
    }
   },
   {
@@ -1140,14 +1145,13 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "same gap",
-    "reason": "split between 2-3 and 2-4"
+    "value": "PvE",
+    "tag": "derived",
+    "basis": "HP flags: no losers"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "n/a: no PvP this round (HP flags)",
+    "tag": "n/a"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -1203,10 +1207,15 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "2-4 planning not read",
-    "reason": "one of 2-3 and 2-4 won; the other had no PvP"
+    "value": {
+     "outcome": "no PvP"
+    },
+    "tag": "derived",
+    "basis": "HP flags: no losers"
+   },
+   "opponent_board": {
+    "value": "n/a: no PvP this round (HP flags)",
+    "tag": "n/a"
    }
   },
   {
@@ -1647,8 +1656,8 @@
     "basis": "streak unchanged"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "n/a: no PvP this round (HP flags)",
+    "tag": "n/a"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -1731,6 +1740,10 @@
     },
     "tag": "derived",
     "basis": "2-7 planning 4 equals 3-1 planning 4"
+   },
+   "opponent_board": {
+    "value": "n/a: no PvP this round (HP flags)",
+    "tag": "n/a"
    }
   },
   {
@@ -2381,10 +2394,11 @@
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "3-4 planning not read",
-    "reason": "count 6 to 7 spans 3-3 and carousel 3-4"
+    "value": {
+     "outcome": "win"
+    },
+    "tag": "derived",
+    "basis": "streak 6 to 7 with 3-4 PvE (no HP losers)"
    }
   },
   {
@@ -2460,12 +2474,13 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "carousel (map view, no home board at 1160 s)",
-    "tag": "read"
+    "value": "PvE",
+    "tag": "derived",
+    "basis": "HP flags: no losers"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "n/a: no PvP this round (HP flags)",
+    "tag": "n/a"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -2519,6 +2534,10 @@
     },
     "tag": "derived",
     "basis": "hp_rounds_labels.jsonl P1(N)-P1(N+1)"
+   },
+   "opponent_board": {
+    "value": "n/a: no PvP this round (HP flags)",
+    "tag": "n/a"
    }
   },
   {
@@ -6171,8 +6190,9 @@
     "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "P2",
+    "tag": "derived",
+    "basis": "only other player above 0 HP in the 6-3 and 6-5 labels"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -6475,8 +6495,9 @@
     "basis": "streak unchanged = no PvP; otherwise PvP"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved"
+    "value": "P2",
+    "tag": "derived",
+    "basis": "only other player above 0 HP in the 6-3 and 6-5 labels"
    },
    "combat_frame_t_s": null,
    "result": {
