@@ -132,7 +132,7 @@ def _table_extra(units, content, with_emblem: bool, bonus_units: int = 0) -> Non
             TE._apply_stat(u, "dr", v)
 
 
-def _emblem_traits(units, content, bonus_units: int = 0) -> None:
+def _emblem_traits(units, content, bonus_units: int = 0, skip=frozenset()) -> None:
     """Giong TE.apply_team_traits, cong them: moi tuong giu emblem cua trait T (khong co T tu nhien)
     tinh them 1 diem T, va nhan buff cua T nhu mot thanh vien."""
     if not units:
@@ -160,7 +160,37 @@ def _emblem_traits(units, content, bonus_units: int = 0) -> None:
                    if name in (content.champions[u.champion_api].traits if u.champion_api in content.champions else ())
                    or name in hs]
         for key, val in eff.variables.items():
-            if not isinstance(val, (int, float)) or val == 0:
+            if (name, key) in skip or not isinstance(val, (int, float)) or val == 0:
+                continue
+            targets = units if "teamwide" in key.lower() else members
+            for attr in TE.attrs_for(key):
+                for u in targets:
+                    TE._apply_stat(u, attr, float(val))
+
+
+# Chi bo khoa khi bat co traits_table (PRIMARY khong doi). Attuned: 2 nua "either/or" (moon <=half: Durability;
+# moon >half: DamageAmp) deu bi engine ap cung luc -> bo ca hai, de Attuned khong dong gop gi.
+SKIP18_TABLE = frozenset({("Attuned", "Durability"), ("Attuned", "DamageAmp")})
+
+
+def _engine_apply_skip(units, content, bonus_units: int = 0, skip=frozenset()) -> None:
+    """Ban sao dung cua TE.apply_team_traits co bo qua (ten trait, khoa) trong skip.
+    Voi skip rong phai cho ket qua giong het engine (selftest kiem tra)."""
+    from tft_goat.env.traits import active_traits
+    if not units:
+        return
+    active = active_traits([u.champion_api for u in units], content, bonus_units=bonus_units)
+    by_name = {t.name: t for t in content.traits.values()}
+    for trait_name, tier in active.items():
+        trait = by_name.get(trait_name)
+        if trait is None or not trait.effects:
+            continue
+        effs = sorted(trait.effects, key=lambda e: e.min_units)
+        eff = effs[min(tier - 1, len(effs) - 1)]
+        members = [u for u in units
+                   if (c := content.champions.get(u.champion_api)) and trait_name in c.traits]
+        for key, val in eff.variables.items():
+            if (trait_name, key) in skip or not isinstance(val, (int, float)) or val == 0:
                 continue
             targets = units if "teamwide" in key.lower() else members
             for attr in TE.attrs_for(key):
@@ -319,8 +349,11 @@ def coverage(record: dict) -> dict:
 
 
 def _set18_traits(units, content, bonus_units: int = 0, *, emblems: bool = False, table: bool = False) -> None:
+    skip = SKIP18_TABLE if table else frozenset()
     if emblems:
-        _emblem_traits(units, content, bonus_units)
+        _emblem_traits(units, content, bonus_units, skip)
+    elif skip:
+        _engine_apply_skip(units, content, bonus_units, skip)
     else:
         _orig_apply_team_traits(units, content, bonus_units=bonus_units)
     if table:

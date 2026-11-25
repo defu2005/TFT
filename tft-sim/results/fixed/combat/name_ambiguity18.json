@@ -1,8 +1,9 @@
 {
  "source": "data/set18_names.json",
+ "note": "item twin alias da duoc bo; con lai la ten trung that",
  "ambiguous_names_per_kind": {
   "champions": 4,
-  "items": 285,
+  "items": 248,
   "augments": 189,
   "traits": 0
  },
@@ -244,10 +245,6 @@
     "DA_AbandonShip18",
     "DA_AbandonShip18_Upgrade"
    ],
-   "adaptive helm": [
-    "DA_AdaptiveHelm",
-    "TFT_Item_AdaptiveHelm"
-   ],
    "radiant adaptive helm": [
     "DA_AdaptiveHelm_Radiant",
     "TFT5_Item_AdaptiveHelmRadiant"
@@ -259,10 +256,6 @@
    "apprentice": [
     "DA_Apprentice18",
     "DA_Apprentice18_Upgrade"
-   ],
-   "archangel's staff": [
-    "DA_ArchangelsStaff",
-    "TFT_Item_ArchangelsStaff"
    ],
    "radiant archangel's staff": [
     "DA_ArchangelsStaffRadiant",
@@ -426,17 +419,9 @@
     "DA_BloodAndIron18",
     "DA_BloodAndIron18_Upgrade"
    ],
-   "bloodthirster": [
-    "DA_Bloodthirster",
-    "TFT_Item_Bloodthirster"
-   ],
    "radiant bloodthirster": [
     "DA_BloodthirsterRadiant",
     "TFT5_Item_BloodthirsterRadiant"
-   ],
-   "blue buff": [
-    "DA_BlueBuff",
-    "TFT_Item_BlueBuff"
    ],
    "radiant blue buff": [
     "DA_BlueBuffRadiant",
@@ -453,10 +438,6 @@
    "borrowed gear": [
     "DA_BorrowedGear18",
     "DA_BorrowedGear18_Upgrade"
-   ],
-   "bramble vest": [
-    "DA_BrambleVest",
-    "TFT_Item_BrambleVest"
    ],
    "radiant bramble vest": [
     "DA_BrambleVestRadiant",
@@ -536,10 +517,6 @@
     "DA_Consumable_LesserChampionDuplicator",
     "TFT_Consumable_ChampionDuplicator_III"
    ],
-   "crownguard": [
-    "DA_Crownguard",
-    "TFT_Item_Crownguard"
-   ],
    "radiant crownguard": [
     "DA_CrownguardRadiant",
     "TFT5_Item_CrownguardRadiant"
@@ -551,10 +528,6 @@
    "cutpurse": [
     "DA_Cutpurse18",
     "DA_Cutpurse18_Upgrade"
-   ],
-   "deathblade": [
-    "DA_Deathblade",
-    "TFT_Item_Deathblade"
    ],
    "radiant deathblade": [
     "DA_DeathbladeRadiant",
@@ -585,17 +558,9 @@
     "DA_Downpour18_Prismatic",
     "DA_Downpour18_Upgrade"
    ],
-   "dragon's claw": [
-    "DA_DragonsClaw",
-    "TFT_Item_DragonsClaw"
-   ],
    "radiant dragon's claw": [
     "DA_DragonsClawRadiant",
     "TFT5_Item_DragonsClawRadiant"
-   ],
-   "edge of night": [
-    "DA_EdgeOfNight",
-    "TFT_Item_GuardianAngel"
    ],
    "radiant edge of night": [
     "DA_EdgeOfNightRadiant",
@@ -604,10 +569,6 @@
    "essence theft": [
     "DA_EssenceTheft18",
     "DA_EssenceTheft18_Upgrade"
-   ],
-   "evenshroud": [
-    "DA_Evenshroud",
-    "TFT_Item_SpectralGauntlet"
    ],
    "radiant evenshroud": [
     "DA_EvenshroudRadiant",
@@ -637,17 +598,9 @@
     "DA_FoundFriend18",
     "DA_FoundFriend18_Upgrade"
    ],
-   "gargoyle stoneplate": [
-    "DA_GargoyleStoneplate",
-    "TFT_Item_GargoyleStoneplate"
-   ],
    "radiant gargoyle stoneplate": [
     "DA_GargoyleStoneplate_Radiant",
     "TFT5_Item_GargoyleStoneplateRadiant"
-   ],
-   "giant slayer": [
-    "DA_GiantSlayer",
-    "TFT_Item_MadredsBloodrazor"
    ],
    "radiant giant slayer": [
     "DA_GiantSlayer_Radiant",
@@ -674,10 +627,6 @@
     "DA_GrowUp18",
     "DA_GrowUp18_Upgrade"
    ],
-   "guinsoo's rageblade": [
-    "DA_GuinsoosRageblade",
-    "TFT_Item_GuinsoosRageblade"
-   ],
    "radiant guinsoo's rageblade": [
     "DA_GuinsoosRagebladeRadiant",
     "TFT5_Item_GuinsoosRagebladeRadiant"
@@ -685,10 +634,6 @@
    "hand of baron": [
     "DA_HandOfBaron18",
     "DA_HandOfBaron18_Upgrade"
-   ],
-   "hand of justice": [
-    "DA_HandOfJustice",
-    "TFT_Item_UnstableConcoction"
    ],
    "radiant hand of justice": [
     "DA_HandOfJusticeRadiant",
@@ -706,10 +651,6 @@
    "hero's entrance": [
     "DA_HerosEntrance18",
     "DA_HerosEntranceUpgrade18"
-   ],
-   "hextech gunblade": [
-    "DA_HextechGunblade",
-    "TFT_Item_HextechGunblade"
    ],
    "radiant hextech gunblade": [
     "DA_HextechGunbladeRadiant",
@@ -737,17 +678,9 @@
     "DA_ImprovedReach18",
     "DA_ImprovedReach18_Upgrade"
    ],
-   "infinity edge": [
-    "DA_InfinityEdge",
-    "TFT_Item_InfinityEdge"
-   ],
    "radiant infinity edge": [
     "DA_InfinityEdgeRadiant",
     "TFT5_Item_InfinityEdgeRadiant"
-   ],
-   "ionic spark": [
-    "DA_IonicSpark",
-    "TFT_Item_IonicSpark"
    ],
    "radiant ionic spark": [
     "DA_IonicSparkRadiant",
@@ -764,10 +697,6 @@
    "talisman of ascension": [
     "DA_Item_Artifact_TalismanOfAscension",
     "TFT_Item_Artifact_TalismanOfAscension"
-   ],
-   "jeweled gauntlet": [
-    "DA_JeweledGauntlet",
-    "TFT_Item_JeweledGauntlet"
    ],
    "radiant jeweled gauntlet": [
     "DA_JeweledGauntletRadiant",
@@ -797,17 +726,9 @@
     "DA_KnickKnackSack18",
     "DA_KnickKnackSack18_Upgrade"
    ],
-   "kraken's fury": [
-    "DA_KrakensFury",
-    "TFT_Item_RunaansHurricane"
-   ],
    "radiant kraken's fury": [
     "DA_KrakensFury_Radiant",
     "TFT5_Item_RunaansHurricaneRadiant"
-   ],
-   "last whisper": [
-    "DA_LastWhisper",
-    "TFT_Item_LastWhisper"
    ],
    "radiant last whisper": [
     "DA_LastWhisperRadiant",
@@ -860,17 +781,9 @@
     "DA_MoonlightRitual18",
     "DA_MoonlightRitualUpgrade18"
    ],
-   "morellonomicon": [
-    "DA_Morellonomicon",
-    "TFT_Item_Morellonomicon"
-   ],
    "radiant morellonomicon": [
     "DA_MorellonomiconRadiant",
     "TFT5_Item_MorellonomiconRadiant"
-   ],
-   "nashor's tooth": [
-    "DA_NashorsTooth",
-    "TFT_Item_Leviathan"
    ],
    "radiant nashor's tooth": [
     "DA_NashorsToothRadiant",
@@ -933,10 +846,6 @@
     "DA_PottedStonebark18",
     "DA_PottedStonebark18_Upgrade"
    ],
-   "protector's vow": [
-    "DA_ProtectorsVow",
-    "TFT_Item_FrozenHeart"
-   ],
    "radiant protector's vow": [
     "DA_ProtectorsVowRadiant",
     "TFT5_Item_FrozenHeartRadiant"
@@ -945,17 +854,9 @@
     "DA_Quicken18",
     "DA_QuickenUpgrade18"
    ],
-   "quicksilver": [
-    "DA_Quicksilver",
-    "TFT_Item_Quicksilver"
-   ],
    "radiant quicksilver": [
     "DA_QuicksilverRadiant",
     "TFT5_Item_QuicksilverRadiant"
-   ],
-   "rabadon's deathcap": [
-    "DA_RabadonsDeathcap",
-    "TFT_Item_RabadonsDeathcap"
    ],
    "radiant rabadon's deathcap": [
     "DA_RabadonsDeathcap_Radiant",
@@ -964,10 +865,6 @@
    "rain": [
     "DA_Rain18",
     "DA_Rain18_Upgrade"
-   ],
-   "red buff": [
-    "DA_RedBuff",
-    "TFT_Item_RapidFireCannon"
    ],
    "radiant red buff": [
     "DA_RedBuffRadiant",
@@ -1043,17 +940,9 @@
     "DA_SolitudesCloak18",
     "DA_SolitudesCloakUpgrade18"
    ],
-   "spear of shojin": [
-    "DA_SpearOfShojin",
-    "TFT_Item_SpearOfShojin"
-   ],
    "radiant spear of shojin": [
     "DA_SpearOfShojinRadiant",
     "TFT5_Item_SpearOfShojinRadiant"
-   ],
-   "spirit visage": [
-    "DA_SpiritVisage",
-    "TFT_Item_Redemption"
    ],
    "radiant spirit visage": [
     "DA_SpiritVisage_Radiant",
@@ -1068,10 +957,6 @@
     "DA_StartingTown18",
     "DA_StartingTown18_Upgrade"
    ],
-   "steadfast heart": [
-    "DA_SteadfastHeart",
-    "TFT_Item_NightHarvester"
-   ],
    "radiant steadfast heart": [
     "DA_SteadfastHeartRadiant",
     "TFT5_Item_NightHarvesterRadiant"
@@ -1080,41 +965,21 @@
     "DA_Stealthy18",
     "DA_Stealthy18_Upgrade"
    ],
-   "sterak's gage": [
-    "DA_SteraksGage",
-    "TFT_Item_SteraksGage"
-   ],
    "radiant sterak's gage": [
     "DA_SteraksGageRadiant",
     "TFT5_Item_SteraksGageRadiant"
-   ],
-   "striker's flail": [
-    "DA_StrikersFlail",
-    "TFT_Item_PowerGauntlet"
    ],
    "radiant striker's flail": [
     "DA_StrikersFlailRadiant",
     "TFT5_Item_TrapClawRadiant"
    ],
-   "sunfire cape": [
-    "DA_SunfireCape",
-    "TFT_Item_RedBuff"
-   ],
    "radiant sunfire cape": [
     "DA_SunfireCape_Radiant",
     "TFT5_Item_SunfireCapeRadiant"
    ],
-   "tactician's cape": [
-    "DA_TacticiansCape",
-    "TFT_Item_TacticiansRing"
-   ],
    "terraforming": [
     "DA_Terraforming18",
     "DA_Terraforming18_Upgrade"
-   ],
-   "thief's gloves": [
-    "DA_ThiefsGloves",
-    "TFT_Item_ThiefsGloves"
    ],
    "radiant thief's gloves": [
     "DA_ThiefsGlovesRadiant",
@@ -1135,10 +1000,6 @@
    "three me": [
     "DA_ThreeMe18",
     "DA_ThreeMe18_Upgrade"
-   ],
-   "titan's resolve": [
-    "DA_TitansResolve",
-    "TFT_Item_TitansResolve"
    ],
    "radiant titan's resolve": [
     "DA_TitansResolve_Radiant",
@@ -1161,17 +1022,9 @@
     "DA_TurtlesVisit18",
     "DA_TurtlesVisit18_Upgrade"
    ],
-   "void staff": [
-    "DA_VoidStaff",
-    "TFT_Item_StatikkShiv"
-   ],
    "radiant void staff": [
     "DA_VoidStaffRadiant",
     "TFT5_Item_StatikkShivRadiant"
-   ],
-   "warmog's armor": [
-    "DA_WarmogsArmor",
-    "TFT_Item_WarmogsArmor"
    ],
    "radiant warmog's armor": [
     "DA_WarmogsArmorRadiant",

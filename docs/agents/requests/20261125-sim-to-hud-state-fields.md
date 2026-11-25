@@ -27,7 +27,7 @@ Mỗi round có ít nhất một cặp (bàn, bàn đối thủ, kết quả). �
 ```
 
 - `patch`: chuỗi patch của trận (ví dụ `"16.23"` hoặc `"18.x"` nếu biết). Không biết thì ghi `null`; bản ghi vẫn được nhận. `fidelity.py` báo số trận theo patch (`per_patch`) để thấy trận đến từ patch nào.
-- `api`: apiName CDragon (ví dụ `TFT_Krug`, không dùng tên hiển thị). Nếu chỉ đọc được tên hiển thị, ghi tên và đánh dấu; không đoán.
+- `api`: apiName CDragon (ví dụ `DA_Krug18`, Krug của Set 18; `TFT_Krug` là một bản cost 1 không trait, không phải tướng Set 18 chơi được theo dữ liệu hiện có, nhưng vẫn xuất hiện trên bàn mô phỏng, nên chưa được coi là không chơi được; xem names18 báo trùng). Không dùng tên hiển thị. Nếu chỉ đọc được tên hiển thị, ghi tên và đánh dấu; không đoán.
 - `pos`: hoặc có đủ cho mọi unit của bên đó (hàng 0–3 cho bên a, 4–7 cho bên b, cột 0–6, không trùng ô), hoặc `null` cho mọi unit. Không ghi nửa vời.
 - `result.winner`: 0 nếu bên a thắng round, 1 nếu bên b, `null` nếu không đọc được. Không suy từ HP nếu không chắc.
 - Trường chưa đọc được: `null`, không ghi 0.
@@ -36,7 +36,7 @@ Ví dụ một round (các giá trị là minh họa, không phải dữ liệu 
 
 ```
 {"schema": "fight-v1", "set": 18, "label": "real", "source": "vod-XX:3-2",
- "a": {"level": 6, "augments": [], "units": [{"api": "TFT_Krug", "star": 2, "items": [], "pos": null}]},
+ "a": {"level": 6, "augments": [], "units": [{"api": "DA_Krug18", "star": 2, "items": [], "pos": null}]},
  "b": {"level": null, "augments": null, "units": [{"api": null, "star": 1, "items": null, "pos": null}]},
  "result": {"winner": null}}
 ```

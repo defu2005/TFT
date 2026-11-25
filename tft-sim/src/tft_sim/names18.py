@@ -3,6 +3,9 @@
 Nguon: data/set18_names.json (sinh tu snapshot CDragon). Quy tac:
 - Ten trung nhieu apiName -> AmbiguousName (KHONG doan). Nguoi goi phai chon api khac
   (vi du: lay tu nguon co api, hoac bo qua ban ghi do).
+- Item: alias twin TFT_Item_* bi bo khoi ung vien khi co ban goc DA_* cung ten. Con lai la
+  ten trung that (chu yeu la ban _Upgrade, la item rieng cua CDragon).
+- Augment: khong uu tien tien to; ten trung van nem AmbiguousName.
 - Ten khong co trong danh muc -> UnknownName.
 """
 from __future__ import annotations
@@ -30,13 +33,19 @@ def _norm(s: str) -> str:
 
 
 def load(path: Path = NAMES) -> dict[str, dict[str, list[str]]]:
-    """{kind: {ten_chuan: [api, ...]}} (ten chuan = viet thuong, gon khoang trang)."""
+    """{kind: {ten_chuan: [api, ...]}} (ten chuan = viet thuong, gon khoang trang).
+    Item: bo ung vien la ban alias twin (TFT_Item_*) khi ban goc DA_* cung ten da co mat."""
     data = json.loads(path.read_text(encoding="utf-8"))
+    twin_alias = {r["twin_tft_item"] for r in data["items"] if r.get("twin_tft_item")}
     out: dict[str, dict[str, list[str]]] = {}
     for kind in KINDS:
         idx: dict[str, list[str]] = {}
         for row in data[kind]:
             idx.setdefault(_norm(row["name"]), []).append(row["api"])
+        if kind == "items":
+            for n, apis in idx.items():
+                idx[n] = [a for a in apis if a not in twin_alias or not any(
+                    o != a and o not in twin_alias for o in apis)]
         out[kind] = idx
     return out
 

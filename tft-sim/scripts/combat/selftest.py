@@ -331,7 +331,9 @@ print("trait table block", "PASS" if ok12 else "FAIL")
 # Names18: moi apiName phai nam trong candidates(ten cua no); ten trung phai nem AmbiguousName, khong doan
 from tft_sim import names18 as _N18  # noqa: E402
 _nm = json.loads((_N18.ROOT / "data" / "set18_names.json").read_text(encoding="utf-8"))
-_rt_bad = [(k, r["api"]) for k in _N18.KINDS for r in _nm[k] if r["api"] not in _N18.candidates(k, r["name"])]
+_twin_alias = {r["twin_tft_item"] for r in _nm["items"] if r.get("twin_tft_item")}
+_rt_bad = [(k, r["api"]) for k in _N18.KINDS for r in _nm[k]
+           if r["api"] not in _N18.candidates(k, r["name"]) and not (k == "items" and r["api"] in _twin_alias)]
 _amb_ok = True
 try:
     _N18.resolve("champions", "Krug")
@@ -340,4 +342,26 @@ except _N18.AmbiguousName:
     pass
 ok &= (not _rt_bad) and _amb_ok
 print("names18 roundtrip bad", len(_rt_bad), "ambiguous ok", _amb_ok)
+# Attuned (either/or): bang tat -> dr va amp co; bang bat (traits_table) -> bo ca hai khoa
+at = _pick("Attuned", 1); atn = _pick("Attuned", 1, other=True)
+if at and atn:
+    on, off = _onoff([BU(a, 1, on_board=True) for a in at + atn], ("incoming_reduction", "damage_amp"))
+    print("attuned table on/off (member dr, amp; nonmember)", on, off)
+    ok12_at = on[0] == (0.0, 0.0) and off[0][0] > 0 and off[0][1] > 0  # bat: bo ca hai; tat: ca hai co
+    ok &= ok12_at
+# Identity: skip rong = engine (cung mot board, moi thuoc tinh bang nhau)
+_mix = [a for a, c in c18.champions.items() if c.traits and c.stats][:6]
+_ua = S9._build_team([BU(a, 1, on_board=True) for a in _mix], 0, c18, 0)
+_ub = S9._build_team([BU(a, 1, on_board=True) for a in _mix], 0, c18, 0)
+_ub = [u for u in _ub]
+_snap18 = lambda u: (u.max_hp, u.armor, u.mr, u.ap, u.ad, u.attack_speed, u.incoming_reduction, u.damage_amp)
+# _ua da co engine ap dung trong _build_team; dung _ub: ap lai bang ban sao khong skip tren ban chua ap
+_fresh = S9._build_team([BU(a, 1, on_board=True) for a in _mix], 0, c18, 0)
+S9.apply_team_traits = lambda *a, **k: None
+_raw = S9._build_team([BU(a, 1, on_board=True) for a in _mix], 0, c18, 0)
+S9.apply_team_traits = F._orig_apply_team_traits
+F._engine_apply_skip(_raw, c18, 0, frozenset())
+_same = all(all(abs(x - y) < 1e-9 for x, y in zip(_snap18(a), _snap18(b))) for a, b in zip(_raw, _ua))
+print("engine copy == engine (skip rong):", _same)
+ok &= _same
 print("SELFTEST", "PASS" if ok else "FAIL")

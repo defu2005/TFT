@@ -153,6 +153,13 @@ def _commit(path) -> str:
         return "unknown"
 
 
+def _engine_dir() -> Path:
+    """Thu muc goc cua engine tu vi tri module that su duoc import (khong hard-code)."""
+    import tft_goat
+    # .../tft_goat/src/tft_goat/__init__.py -> thu muc goc la parents[2]
+    return Path(tft_goat.__file__).resolve().parents[2]
+
+
 def score(path, n=20, seed0=0, allow_dryrun=False):
     good, skipped, unk = read_real(path, allow_dryrun)
     if not good:
@@ -190,7 +197,7 @@ def score(path, n=20, seed0=0, allow_dryrun=False):
     return dict(base, fights=len(rows), games=G, inconclusive=inconclusive,
                 per_patch=dict(Counter(str(r.get("patch")) for r in good)),  # ghi nhan, KHONG loai ban ghi
                 n_seeds=n, seed0=seed0, repo_commit=_commit(Path(__file__).resolve().parents[2]),
-                engine_commit=_commit(Path("/root/work/tft_goat")),
+                engine_commit=_commit(_engine_dir()),
                 share_side_a_won=round(float(y.mean()), 4),
                 primary={"config": PRIMARY, "accuracy_credit": round(float(c1.mean()), 4),
                          "brier": round(float(np.mean((p1 - y) ** 2)), 4)},
