@@ -3,19 +3,14 @@
   "vod_id": "twitch-2898582839",
   "slot": "P6",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       0,
-      23890
-    ]
-  ],
-  "remaining_ranges_s": [
-    [
-      23890,
       23973
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2898582839-g60",
     "twitch-2898582839-g2000",
@@ -42,5 +37,5 @@
   },
   "needs_review": 62,
   "commit": "7204f4a98e2dda6b9fe0b99e03777bbb00f6c745",
-  "remaining": "VOD gần hết (~83s postgame). Kiểm tra còn ranked sau 23920; nếu hết → done."
+  "remaining": "VOD hết. 11 ranked Set18 (g60..g21900). Postgame ~23890–23973; không còn ranked."
 }
