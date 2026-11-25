@@ -29,6 +29,6 @@
     "skipped": {}
   },
   "needs_review": 0,
-  "commit": null,
+  "commit": "bc16dcdf",
   "remaining": "densify-full g400 12f (2-1..4-6 loss streak). Continue games from ~2200+. P8-primary."
 }
