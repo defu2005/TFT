@@ -16,28 +16,63 @@
    "Edge of Night",
    "Protector's (cut off)"
   ],
-  "note": "item-component options; none of the owned augments appear on this screen. Item actually taken not yet read."
+  "note": "completed-item options; none of the owned augments are on this screen. Item actually taken not yet read."
  },
- "status": "three picks confirmed from the on-screen card titles at a pick-screen frame (2-1, 3-2, 4-2)",
+ "status": "three picks inferred from offered options plus owned box (2-1, 3-2, 4-2); each pick is the card that appears in the owned box at 2170 s. No frame shows the click.",
  "pick_screens": {
   "2-1": {
    "screen": "Choose One, frames 443 s and 459 s",
-   "options_read": ["U.R.F", "Replication", "Capital Gains II (443 s)", "Warpath (459 s)"],
+   "options_read_443": [
+    "U.R.F",
+    "Replication",
+    "Capital Gains II"
+   ],
+   "options_read_459": [
+    "U.R.F",
+    "Replication",
+    "Warpath"
+   ],
+   "reroll_observed": "third slot changed Capital Gains II -> Warpath between 443 and 459 s",
    "pick": "Warpath",
-   "evidence": "Warpath is the third card at 459 s and is in the owned box at 2170 s; the pick is confirmed by ownership, not by a frame showing the choice being made"
+   "evidence": "offered (459 s) + owned (2170 s)"
   },
   "3-2": {
-   "screen": "Choose One, frame 980 s",
-   "options_read": ["Salvage Bin+", "Big Grab Bag", "Heroic Grab Bag+"],
+   "screen": "Choose One, frames 960 s and 980 s",
+   "options_read_960": [
+    "Salvage Bin+",
+    "Big Grab Bag",
+    "Magic Roll"
+   ],
+   "options_read_980": [
+    "Salvage Bin+",
+    "Big Grab Bag",
+    "Heroic Grab Bag+"
+   ],
+   "reroll_observed": "third slot changed Magic Roll -> Heroic Grab Bag+ between 960 and 980 s",
    "pick": "Heroic Grab Bag+",
-   "evidence": "Heroic Grab Bag+ is the third card at 980 s and is in the owned box at 2170 s"
+   "evidence": "offered (980 s) + owned (2170 s)"
   },
   "4-2": {
    "screen": "Choose One, frame 1442 s",
-   "options_read": ["Cybernetic Implants", "Pandora's Items II++", "Jeweled Lotus I"],
+   "options_read": [
+    "Cybernetic Implants",
+    "Pandora's Items II++",
+    "Jeweled Lotus I"
+   ],
    "pick": "Cybernetic Implants",
-   "evidence": "Cybernetic Implants is on screen at 1442 s and is in the owned box at 2170 s"
+   "evidence": "offered (1442 s) + owned (2170 s)"
   }
  },
- "caveat": "The pick is inferred from the offered options plus the owned box. No frame shows the click itself. Sweeps between 443 and 520 s for the 2-1 pick are in the scratch folder and not committed."
+ "actions_log_augment_rerolls": [
+  {
+   "t": "443-459",
+   "round": "2-1",
+   "event": "reroll of third slot (Capital Gains II -> Warpath)"
+  },
+  {
+   "t": "960-980",
+   "round": "3-2",
+   "event": "reroll of third slot (Magic Roll -> Heroic Grab Bag+)"
+  }
+ ]
 }
