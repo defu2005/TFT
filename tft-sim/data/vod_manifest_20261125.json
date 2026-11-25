@@ -2,7 +2,7 @@
   "schema": "vod-manifest-v1",
   "batch": "2026-11-25-set18-vod",
   "dispatcher": "claude (phiên điều phối mở rộng manifest 1000)",
-  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash). | P4 +loltyler1 ranked Set18 Emerald VODs for throughput. | 2026-11-25 expand depleted P2/P5/P6/P7/P8/P10: voids1n/emilyywang/kiyoon/imriveting/upsetmaxtft/tleyds/dpeitft (~ranked ladder; filter PBE/tourney/bash/custom/Normal). | P8 wave2 mode-check: block 6 imaq PBE Premiere; 9 ranked Set18 keepers todo. | P4 scout-expand dogdog/shurkou ranked Set18 after wasian deplete.",
+  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash). | P4 +loltyler1 ranked Set18 Emerald VODs for throughput. | 2026-11-25 expand depleted P2/P5/P6/P7/P8/P10: voids1n/emilyywang/kiyoon/imriveting/upsetmaxtft/tleyds/dpeitft (~ranked ladder; filter PBE/tourney/bash/custom/Normal). | P8 wave2 mode-check: block 6 imaq PBE Premiere; 9 ranked Set18 keepers todo. | P4 scout-expand dogdog/shurkou ranked Set18 after wasian deplete. | P8 WoW title-block 11 imaq VODs.",
   "slots": {
     "P1": {
       "role": "primary",
@@ -47,7 +47,7 @@
         "loltyler1",
         "dogdog"
       ],
-      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue). | +loltyler1 ranked Set18 Emerald ladder (wasian/voltariux/shurkou/aphromoo archives depleted of clean ranked). | +dogdog Diamond ranked Set18; +more loltyler1. | 2026-11-25 scout: wasian ranked empty \u2192 +dogdog 2905342718 +shurkou ranked VODs."
+      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue). | +loltyler1 ranked Set18 Emerald ladder (wasian/voltariux/shurkou/aphromoo archives depleted of clean ranked). | +dogdog Diamond ranked Set18; +more loltyler1. | 2026-11-25 scout: wasian ranked empty → +dogdog 2905342718 +shurkou ranked VODs."
     },
     "P5": {
       "role": "primary",
@@ -6553,11 +6553,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=the horde laughed at warriorman when he was lvl 1 now i will make them all pay dur=25510"
+      "notes": "auto-expand-wave2 title=the horde laughed at warriorman when he was lvl 1 now i will make them all pay dur=25510",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2927765424",
@@ -6565,11 +6566,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=give me gold im so poor help dur=25170"
+      "notes": "auto-expand-wave2 title=give me gold im so poor help dur=25170",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2926868319",
@@ -6577,11 +6579,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=woah warriorman slow down buddy you swagging too hard dur=25430"
+      "notes": "auto-expand-wave2 title=woah warriorman slow down buddy you swagging too hard dur=25430",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2925977162",
@@ -6589,11 +6592,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=*gets opened up on by a rogue* heh... hahahaha.... HHAHAHAHAHAHA /me swifty one shot macro dur=27780"
+      "notes": "auto-expand-wave2 title=*gets opened up on by a rogue* heh... hahahaha.... HHAHAHAHAHAHA /me swifty one shot macro dur=27780",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2925052961",
@@ -6601,11 +6605,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=i will eliminate the horde they will pay for what they have done to me... one day... dur=28780"
+      "notes": "auto-expand-wave2 title=i will eliminate the horde they will pay for what they have done to me... one day... dur=28780",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2924187809",
@@ -6613,11 +6618,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=warriorman is becoming powerful... gulp... dur=24930"
+      "notes": "auto-expand-wave2 title=warriorman is becoming powerful... gulp... dur=24930",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2923303219",
@@ -6625,11 +6631,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=somebody help im losing control heh... dur=25330"
+      "notes": "auto-expand-wave2 title=somebody help im losing control heh... dur=25330",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2922252625",
@@ -6637,11 +6644,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=epic rap battles of history warrior dude vs river crab dur=29760"
+      "notes": "auto-expand-wave2 title=epic rap battles of history warrior dude vs river crab dur=29760",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2921286102",
@@ -6649,11 +6657,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=warrior man struggles to kill singular crab dur=35330"
+      "notes": "auto-expand-wave2 title=warrior man struggles to kill singular crab dur=35330",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2920357851",
@@ -6661,11 +6670,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=man vs 1 mob cbt chamber dur=26630"
+      "notes": "auto-expand-wave2 title=man vs 1 mob cbt chamber dur=26630",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2919692127",
@@ -6901,11 +6911,12 @@
       "streamer": "imaqtpie",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=1400 item level or i implode irl dur=25860"
+      "notes": "auto-expand-wave2 title=1400 item level or i implode irl dur=25860",
+      "block_reason": "WoW/non-TFT (title: warrior/horde/crab/item level)"
     },
     {
       "vod_id": "twitch-2889012891",
@@ -6963,7 +6974,7 @@
         "twitch:yt-dlp-archive-scout-20261125",
         "coord:p4-ranked-empty-expand"
       ],
-      "notes": "scout-expand: mixed HS\u2192TFT; RANKED Master Set18 ~2300-7300 only (NORMAL after)"
+      "notes": "scout-expand: mixed HS→TFT; RANKED Master Set18 ~2300-7300 only (NORMAL after)"
     },
     {
       "vod_id": "twitch-2927528194",
@@ -7140,6 +7151,76 @@
         "coord:p4-ranked-empty-expand"
       ],
       "notes": "scout-expand P4: TFT then riftbound ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2911269972",
+      "url": "https://www.twitch.tv/videos/2911269972",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          2195
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-scout-20261125",
+        "coord:p4-densify-then-scout"
+      ],
+      "notes": "scout: shurkou RANKED Set18 full VOD"
+    },
+    {
+      "vod_id": "twitch-2912414684",
+      "url": "https://www.twitch.tv/videos/2912414684",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          2500
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-scout-20261125",
+        "coord:p4-densify-then-scout"
+      ],
+      "notes": "scout: early TFT Set18 ranked only; after ~2500 = Riftbound/card — skip tail"
+    },
+    {
+      "vod_id": "twitch-2901709701",
+      "url": "https://www.twitch.tv/videos/2901709701",
+      "streamer": "dogdog",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          500,
+          5500
+        ],
+        [
+          9000,
+          14000
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-scout-20261125",
+        "coord:p4-densify-then-scout"
+      ],
+      "notes": "scout: Master ranked Set18 (Dishsoap/setsuko lobbies). Title mentions bash but frames=Master ladder no tourney overlay; skip client/home gaps"
     }
   ]
 }
