@@ -12,6 +12,10 @@
     [
       3100,
       4550
+    ],
+    [
+      4900,
+      6480
     ]
   ],
   "remaining_ranges_s": [
@@ -25,26 +29,31 @@
     ],
     [
       4550,
+      4900
+    ],
+    [
+      6480,
       23280
     ]
   ],
   "game_ids": [
     "twitch-2907727372-g1150",
-    "twitch-2907727372-g3100"
+    "twitch-2907727372-g3100",
+    "twitch-2907727372-g4900"
   ],
   "counts": {
-    "games": 2,
-    "fights": 7,
-    "others": 7
+    "games": 3,
+    "fights": 10,
+    "others": 10
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 7
+      "winner_null": 10
     }
   },
   "needs_review": 0,
-  "commit": "9013a4c",
-  "remaining": "g1150+g3100. Tiếp sau 4550s.",
+  "commit": null,
+  "remaining": "g1150+g3100+g4900. Tiếp sau 6480s.",
   "notes": "Ranked Set18. winner_null OK."
 }
