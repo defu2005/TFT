@@ -6397,24 +6397,10 @@
     "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    },
    "opponent_board": {
-    "value": {
-     "panel": {
-      "Spellweaver": 3,
-      "Elderwood": 3,
-      "Blackthorn": 2,
-      "Brawler": 2,
-      "Defender": 2,
-      "Flora Fatalis": 1,
-      "Sprykin": 1
-     },
-     "trait_count_sum": 14,
-     "units": null,
-     "solver": "panel read; unit list not solved (no duplicate-tested board)"
-    },
-    "tag": "derived",
-    "basis": "Scouting frame at sweep 809 (1978 s), stage 5-2 timer 4. Owner edge marker on the level-6 row, which name-matches P3 (score 0.62) and is the 5-2 opponent.",
-    "attempt": "Panel attached to P3: owner marker on the P3 row, known-answer test passed (rows at sweeps 809, 1023, 1072, 1106 matched P3, P2, P2, P2).",
-    "reason": "unit list not solved"
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "Scouted panel at 1978 s (sweep 809, stage 5-2) is not attached: its left panel equals the streamer's own home panel at 1977 s, so it is not the opponent's board. The owner marker (P3 by name match) does not override that.",
+    "reason": "scouted-frame panel equals the streamer's own panel"
    },
    "hexes": {
     "value": null,
@@ -9920,7 +9906,7 @@
   },
   "frame_s": "t = 362 + (index - 1) * 2",
   "note": "run index i maps to t = 362 + (i-1)*2; checked on the 3-1 window (index 264 = 888 s)",
-  "owner_check": "Stage reads from the top strip: sweep 1023 (2406 s) 6-3 timer 20 with two rail rows alive; sweep 1072 (2504 s) 6-5 timer 5; sweep 1106 (2572 s) 6-6 timer 3; sweep 809 (1978 s) 5-2 timer 4. The owner edge marker was read by pixel and name-matched against the private map; the known-answer test passed (809 row 5 gave P3, 1023 row 2 P2, 1072 row 2 P2, 1106 row 1 P2). Panels attached: 6-3, 6-5, 6-6 to P2 and 5-2 to P3, each where the marked owner equals the stage opponent. Other reads (2-1 P5, 2-6 P8) differ from their opponents and are recorded only. The rest did not resolve to a code."
+  "owner_check": "Stage reads from the top strip: sweep 1023 (2406 s) 6-3 timer 20 with two rail rows alive; sweep 1072 (2504 s) 6-5 timer 5; sweep 1106 (2572 s) 6-6 timer 3; sweep 809 (1978 s) 5-2 timer 4. The owner edge marker was read by pixel and name-matched against the private map; the known-answer test passed (809 row 5 gave P3, 1023 row 2 P2, 1072 row 2 P2, 1106 row 1 P2). Panels attached: 6-3, 6-5, 6-6 to P2, each where the marked owner equals the stage opponent. The 5-2 panel is not attached: it equals the streamer's own home panel. Other reads (2-1 P5, 2-6 P8) differ from their opponents and are recorded only. The rest did not resolve to a code."
  },
  "scouted_panels": [
   {
@@ -10180,10 +10166,10 @@
     "Sprykin": 1
    },
    "owner_arrow_row": "row 5",
-   "owner_status": "P3 by marker (score 0.62; known-answer test passed)",
-   "attached_to_round": "5-2",
-   "note": "owner P3 equals 5-2 opponent; panel attached",
-   "owner": "P3"
+   "owner_status": "not attached",
+   "attached_to_round": null,
+   "note": "left panel equals the streamer's own panel at 1977 s; not attached.",
+   "owner": "P3 marker, but panel equals streamer home panel; not attached"
   },
   {
    "t_s": 2406,
