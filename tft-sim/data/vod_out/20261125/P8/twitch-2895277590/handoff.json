@@ -31,6 +31,6 @@
     }
   },
   "needs_review": 10,
-  "commit": null,
+  "commit": "27396aff",
   "remaining": "densify-full g300 12f. Continue ~2200+. P8-primary."
 }
