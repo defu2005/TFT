@@ -41,16 +41,16 @@
   ],
   "counts": {
     "games": 6,
-    "fights": 27,
+    "fights": 38,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 27
+      "winner_null": 38
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "merge densify resolved; continue remaining games"
+  "remaining": "densify merge resolved"
 }
