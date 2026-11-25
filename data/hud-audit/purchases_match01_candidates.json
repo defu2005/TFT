@@ -1,0 +1,307 @@
+{
+ "method": "reader shopSlots; a slot emptied between two distinct shop states within 10 s, and gold fell by exactly the unit cost (set18.json)",
+ "validation": "shopSlots matches the five visual shop reads 5/5 (718.7, 735.7, 1183.4, 2105.5, 2122.5)",
+ "counts": {
+  "slot_empty_events": 167,
+  "cost_consistent": 37
+ },
+ "caveat": "Cost-consistent is not proof: gold can also fall from levelling or XP, which can coincide. Confirm against roster arrivals.",
+ "events": [
+  {
+   "kind": "slot_emptied",
+   "from_s": 526.2,
+   "to_s": 526.5,
+   "unit": "Scuttlecrab",
+   "gold_before": 4,
+   "gold_after": 2
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 729.2,
+   "to_s": 730.0,
+   "unit": "Ornn",
+   "gold_before": 10,
+   "gold_after": 9
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 760.8,
+   "to_s": 761.0,
+   "unit": "Karma",
+   "gold_before": 17,
+   "gold_after": 16
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 761.0,
+   "to_s": 761.5,
+   "unit": "Yorick",
+   "gold_before": 16,
+   "gold_after": 15
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 785.8,
+   "to_s": 787.0,
+   "unit": "Shen",
+   "gold_before": 19,
+   "gold_after": 17
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 909.0,
+   "to_s": 909.2,
+   "unit": "Kobuko",
+   "gold_before": 40,
+   "gold_after": 39
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 996.0,
+   "to_s": 996.2,
+   "unit": "Cinderling",
+   "gold_before": 45,
+   "gold_after": 44
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1048.5,
+   "to_s": 1048.8,
+   "unit": "Mama Beak",
+   "gold_before": 55,
+   "gold_after": 52
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1168.5,
+   "to_s": 1169.2,
+   "unit": "Rek'Sai",
+   "gold_before": 33,
+   "gold_after": 32
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1169.5,
+   "to_s": 1170.0,
+   "unit": "Shen",
+   "gold_before": 32,
+   "gold_after": 30
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1175.8,
+   "to_s": 1177.2,
+   "unit": "Sejuani",
+   "gold_before": 30,
+   "gold_after": 28
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1235.0,
+   "to_s": 1235.5,
+   "unit": "Krug",
+   "gold_before": 52,
+   "gold_after": 49
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1317.8,
+   "to_s": 1318.0,
+   "unit": "Azir",
+   "gold_before": 56,
+   "gold_after": 53
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1360.2,
+   "to_s": 1361.0,
+   "unit": "Hecarim",
+   "gold_before": 12,
+   "gold_after": 9
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1361.2,
+   "to_s": 1361.8,
+   "unit": "Azir",
+   "gold_before": 9,
+   "gold_after": 6
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1371.0,
+   "to_s": 1372.5,
+   "unit": "Amumu",
+   "gold_before": 5,
+   "gold_after": 1
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1801.5,
+   "to_s": 1802.0,
+   "unit": "Ezreal",
+   "gold_before": 90,
+   "gold_after": 86
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1840.8,
+   "to_s": 1841.2,
+   "unit": "Amumu",
+   "gold_before": 53,
+   "gold_after": 49
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1843.8,
+   "to_s": 1844.2,
+   "unit": "Alune",
+   "gold_before": 43,
+   "gold_after": 38
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1844.8,
+   "to_s": 1845.2,
+   "unit": "Maokai",
+   "gold_before": 36,
+   "gold_after": 31
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1845.2,
+   "to_s": 1845.5,
+   "unit": "Kennen",
+   "gold_before": 31,
+   "gold_after": 26
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1848.0,
+   "to_s": 1848.2,
+   "unit": "Kennen",
+   "gold_before": 22,
+   "gold_after": 17
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1851.5,
+   "to_s": 1852.0,
+   "unit": "Draven",
+   "gold_before": 7,
+   "gold_after": 2
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1911.2,
+   "to_s": 1911.5,
+   "unit": "Aphelios",
+   "gold_before": 17,
+   "gold_after": 13
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1917.0,
+   "to_s": 1917.5,
+   "unit": "Taric",
+   "gold_before": 11,
+   "gold_after": 6
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1917.0,
+   "to_s": 1917.5,
+   "unit": "Ivern",
+   "gold_before": 11,
+   "gold_after": 6
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1922.0,
+   "to_s": 1922.2,
+   "unit": "Caitlyn",
+   "gold_before": 3,
+   "gold_after": 1
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 1993.2,
+   "to_s": 1993.5,
+   "unit": "Warwick",
+   "gold_before": 7,
+   "gold_after": 5
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 2003.0,
+   "to_s": 2003.2,
+   "unit": "Taric",
+   "gold_before": 25,
+   "gold_after": 20
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 2007.0,
+   "to_s": 2007.2,
+   "unit": "Taric",
+   "gold_before": 7,
+   "gold_after": 2
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 2107.8,
+   "to_s": 2108.2,
+   "unit": "Ezreal",
+   "gold_before": 5,
+   "gold_after": 1
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 2229.2,
+   "to_s": 2230.2,
+   "unit": "Kennen",
+   "gold_before": 11,
+   "gold_after": 6
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 2333.8,
+   "to_s": 2334.0,
+   "unit": "Gnar",
+   "gold_before": 23,
+   "gold_after": 18
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 2334.2,
+   "to_s": 2334.5,
+   "unit": "Draven",
+   "gold_before": 18,
+   "gold_after": 13
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 2398.0,
+   "to_s": 2398.2,
+   "unit": "Draven",
+   "gold_before": 13,
+   "gold_after": 8
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 2563.0,
+   "to_s": 2563.5,
+   "unit": "Lux",
+   "gold_before": 12,
+   "gold_after": 7
+  },
+  {
+   "kind": "slot_emptied",
+   "from_s": 2563.0,
+   "to_s": 2563.5,
+   "unit": "Ashe",
+   "gold_before": 12,
+   "gold_after": 7
+  }
+ ]
+}
