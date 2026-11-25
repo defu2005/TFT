@@ -3,7 +3,7 @@
   "vod_id": "twitch-2887732371",
   "slot": "P9",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       150,
@@ -80,14 +80,17 @@
     [
       40800,
       43000
-    ]
-  ],
-  "remaining_ranges_s": [
+    ],
     [
       43000,
+      44600
+    ],
+    [
+      45000,
       47188
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2887732371-g150",
     "twitch-2887732371-g3200",
@@ -107,20 +110,22 @@
     "twitch-2887732371-g34800",
     "twitch-2887732371-g37200",
     "twitch-2887732371-g38800",
-    "twitch-2887732371-g40800"
+    "twitch-2887732371-g40800",
+    "twitch-2887732371-g43200",
+    "twitch-2887732371-g45200"
   ],
   "counts": {
-    "games": 19,
-    "fights": 75,
+    "games": 21,
+    "fights": 77,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 75
+      "winner_null": 77
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "tiếp ranked từ ~43000s"
+  "remaining": "VOD2 done; chuyển VOD kurumx tiếp theo trong manifest"
 }
