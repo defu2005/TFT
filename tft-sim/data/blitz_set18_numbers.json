@@ -1,15 +1,14 @@
 {
- "source": "https://blitz.gg/tft/champions/<slug> (Set 18, patch 18.7)",
+ "source": "https://blitz.gg/tft/champions/<slug> (Set 18, patch 18.7) and CDragon 18.7 descs for placeholder names",
  "retrieved": "2026-11-25",
- "note": "numbers and rule-based context labels only; ability prose not stored; labels not verified per champion; CDragon Set 18 variables absent for most champions",
  "items": [
   {
    "slug": "ahri",
    "cdragon_apiName": "DA_18_Ahri",
    "ability_name": "Spirit Bomb",
    "mana": [
-    "20",
-    "100"
+    20,
+    100
    ],
    "stats": {
     "Health": 850.0,
@@ -21,22 +20,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "455",
-      "685",
-      "3500"
-     ],
-     "label": "magic"
+     "placeholder": "AbilityCenterHexRange",
+     "label": "other",
+     "values": "4"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "455/685/3500"
+    },
+    {
+     "placeholder": "HexRadius",
+     "label": "other",
+     "values": "3"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "akali-ap",
    "cdragon_apiName": "DA_18_Akali_AD",
    "ability_name": "Kunai Strike",
    "mana": [
-    "0",
-    "25"
+    0,
+    25
    ],
    "stats": {
     "Health": 650.0,
@@ -48,22 +55,20 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "140",
-      "210",
-      "365"
-     ],
-     "label": "magic"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "140/210/365"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "alistar",
    "cdragon_apiName": "DA_18_Alistar",
    "ability_name": "Triumphant Roar",
    "mana": [
-    "30",
-    "90"
+    30,
+    90
    ],
    "stats": {
     "Health": 950.0,
@@ -75,38 +80,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "306",
-      "376",
-      "476"
-     ],
-     "label": "heal"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "306/376/476"
     },
     {
-     "values_1_2_3_star": [
-      "80",
-      "105",
-      "130"
-     ],
-     "label": "heal"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "80/105/130"
     },
     {
-     "values_1_2_3_star": [
-      "180",
-      "270",
-      "420"
-     ],
-     "label": "magic"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "180/270/420"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "alune",
    "cdragon_apiName": "DA_18_Alune",
    "ability_name": "Moonfall",
    "mana": [
-    "0",
-    "35"
+    0,
+    35
    ],
    "stats": {
     "Health": 900.0,
@@ -118,30 +115,35 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "58",
-      "88",
-      "500"
-     ],
-     "label": "magic"
+     "placeholder": "NumMoonshards",
+     "label": "other",
+     "values": "9"
     },
     {
-     "values_1_2_3_star": [
-      "2350",
-      "3600",
-      "7500"
-     ],
-     "label": "magic"
+     "placeholder": "NumEnemies",
+     "label": "other",
+     "values": "3"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "58/88/500"
+    },
+    {
+     "placeholder": "MagicDamageCalc2",
+     "label": "magic",
+     "values": "2350/3600/7500"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "amumu",
    "cdragon_apiName": "DA_Amumu18",
    "ability_name": "Tantrum",
    "mana": [
-    "30",
-    "125"
+    30,
+    125
    ],
    "stats": {
     "Health": 1300.0,
@@ -153,46 +155,35 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "33",
-      "33.13",
-      "56"
-     ],
-     "label": "magic"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "33/33.13/56"
     },
     {
-     "values_1_2_3_star": [
-      "12",
-      "18",
-      "150"
-     ],
-     "label": "magic"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "12/18/150"
     },
     {
-     "values_1_2_3_star": [
-      "100",
-      "150",
-      "2000"
-     ],
-     "label": "magic"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "100/150/2000"
     },
     {
-     "values_1_2_3_star": [
-      "1.5",
-      "1.5",
-      "9.0"
-     ],
-     "label": "duration"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "1.5/1.5/9.0"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "aphelios",
    "cdragon_apiName": "DA_18_Aphelios",
    "ability_name": "Moonlight's Onslaught",
    "mana": [
-    "20",
-    "70"
+    20,
+    70
    ],
    "stats": {
     "Health": 850.0,
@@ -204,30 +195,35 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "70",
-      "105",
-      "850"
-     ],
-     "label": "physical"
+     "placeholder": "GenericCalc1",
+     "label": "other",
+     "values": "5"
     },
     {
-     "values_1_2_3_star": [
-      "540",
-      "810",
-      "5225"
-     ],
-     "label": "physical"
+     "placeholder": "Duration",
+     "label": "duration",
+     "values": "2"
+    },
+    {
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "70/105/850"
+    },
+    {
+     "placeholder": "PhysicalDamageCalc2",
+     "label": "physical",
+     "values": "540/810/5225"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "ashe",
    "cdragon_apiName": "DA_18_Ashe",
    "ability_name": "Spirit Rift",
    "mana": [
-    "0",
-    "80"
+    0,
+    80
    ],
    "stats": {
     "Health": 900.0,
@@ -239,30 +235,35 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "465",
-      "700",
-      "1000"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "465/700/1000"
     },
     {
-     "values_1_2_3_star": [
-      "13",
-      "19",
-      "220"
-     ],
-     "label": "physical"
+     "placeholder": "RiftDuration",
+     "label": "duration",
+     "values": "3"
+    },
+    {
+     "placeholder": "PhysicalDamageCalc2",
+     "label": "physical",
+     "values": "13/19/220"
+    },
+    {
+     "placeholder": "ChillPercent",
+     "label": "percent",
+     "values": "20"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "azir",
    "cdragon_apiName": "DA_18_Azir",
    "ability_name": "Arise!",
    "mana": [
-    "0",
-    "35"
+    0,
+    35
    ],
    "stats": {
     "Health": 650.0,
@@ -274,22 +275,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "43",
-      "65",
-      "105"
-     ],
-     "label": "magic"
+     "placeholder": "SoldiersToSpawn",
+     "label": "other",
+     "values": "2"
+    },
+    {
+     "placeholder": "NumAttacks",
+     "label": "other",
+     "values": "6"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "43/65/105"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "brambleback",
    "cdragon_apiName": "DA_Brambleback18",
    "ability_name": "Crimson Fury",
    "mana": [
-    "0",
-    "40"
+    0,
+    40
    ],
    "stats": {
     "Health": 1100.0,
@@ -301,22 +310,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "135",
-      "205",
-      "1000"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "135/205/1000"
+    },
+    {
+     "placeholder": "Duration",
+     "label": "duration",
+     "values": "8"
+    },
+    {
+     "placeholder": "BurnAmount",
+     "label": "other",
+     "values": "1"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "caitlyn",
    "cdragon_apiName": "DA_18_Caitlyn",
    "ability_name": "Headshot",
    "mana": [
-    "0",
-    "3"
+    0,
+    3
    ],
    "stats": {
     "Health": 550.0,
@@ -328,22 +345,20 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "220",
-      "330",
-      "535"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "220/330/535"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "camille",
    "cdragon_apiName": "DA_18_Camille",
    "ability_name": "Defensive Sweep",
    "mana": [
-    "0",
-    "25"
+    0,
+    25
    ],
    "stats": {
     "Health": 700.0,
@@ -355,22 +370,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "160",
-      "240",
-      "425"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "160/240/425"
+    },
+    {
+     "placeholder": "AbilityShield",
+     "label": "shield",
+     "values": "60"
+    },
+    {
+     "placeholder": "ShieldDuration",
+     "label": "shield",
+     "values": "2"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "cassiopeia",
    "cdragon_apiName": "DA_18_Cassiopeia",
    "ability_name": "Noxious Blast",
    "mana": [
-    "0",
-    "30"
+    0,
+    30
    ],
    "stats": {
     "Health": 650.0,
@@ -382,22 +405,25 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "420",
-      "630",
-      "1020"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "420/630/1020"
+    },
+    {
+     "placeholder": "Duration",
+     "label": "duration",
+     "values": "15"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "cinderling",
    "cdragon_apiName": "DA_Cinderling18",
    "ability_name": "Razor Leaves",
    "mana": [
-    "0",
-    "50"
+    0,
+    50
    ],
    "stats": {
     "Health": 500.0,
@@ -409,22 +435,20 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "360",
-      "540",
-      "815"
-     ],
-     "label": "physical"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "360/540/815"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "diana",
    "cdragon_apiName": "DA_18_Diana",
    "ability_name": "Pale Barrier",
    "mana": [
-    "0",
-    "40"
+    0,
+    40
    ],
    "stats": {
     "Health": 850.0,
@@ -436,30 +460,35 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "150",
-      "275",
-      "500"
-     ],
-     "label": "shield"
+     "placeholder": "ShieldCalc1",
+     "label": "shield",
+     "values": "150/275/500"
     },
     {
-     "values_1_2_3_star": [
-      "75",
-      "115",
-      "180"
-     ],
-     "label": "magic"
+     "placeholder": "ShieldDuration",
+     "label": "shield",
+     "values": "2"
+    },
+    {
+     "placeholder": "NumOrbs",
+     "label": "other",
+     "values": "6"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "75/115/180"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "draven",
    "cdragon_apiName": "DA_Draven18",
    "ability_name": "Whirling Death",
    "mana": [
-    "0",
-    "110"
+    0,
+    110
    ],
    "stats": {
     "Health": 900.0,
@@ -471,38 +500,40 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "150",
-      "225",
-      "3000"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "150/225/3000"
     },
     {
-     "values_1_2_3_star": [
-      "100",
-      "150",
-      "400"
-     ],
-     "label": "physical"
+     "placeholder": "BleedDuration",
+     "label": "duration",
+     "values": "12"
     },
     {
-     "values_1_2_3_star": [
-      "30",
-      "45",
-      "100"
-     ],
-     "label": "physical"
+     "placeholder": "SpinningAxeBleedStacks",
+     "label": "other",
+     "values": "2"
+    },
+    {
+     "placeholder": "PhysicalDamageCalc3",
+     "label": "physical",
+     "values": "100/150/400"
+    },
+    {
+     "placeholder": "GenericCalc2",
+     "label": "other",
+     "values": "30/45/100"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "elder-dragon",
    "cdragon_apiName": null,
    "ability_name": "Heat Without Equal",
    "mana": [
-    "20",
-    "60"
+    20,
+    60
    ],
    "stats": {
     "Health": 1800.0,
@@ -514,22 +545,20 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "305",
-      "465",
-      "7200"
-     ],
-     "label": "physical"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "305/465/7200"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "elise",
    "cdragon_apiName": "DA_18_Elise",
    "ability_name": "Spider Queen",
    "mana": [
-    "20",
-    "70"
+    20,
+    70
    ],
    "stats": {
     "Health": 900.0,
@@ -541,30 +570,25 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "40",
-      "60",
-      "90"
-     ],
-     "label": "magic"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "40/60/90"
     },
     {
-     "values_1_2_3_star": [
-      "55",
-      "90",
-      "170"
-     ],
-     "label": "magic"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "55/90/170"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "ezreal",
    "cdragon_apiName": "DA_18_Ezreal",
    "ability_name": "Forest's Flurry",
    "mana": [
-    "0",
-    "30"
+    0,
+    30
    ],
    "stats": {
     "Health": 850.0,
@@ -576,30 +600,25 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "270",
-      "405",
-      "1200"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "270/405/1200"
     },
     {
-     "values_1_2_3_star": [
-      "385",
-      "580",
-      "2500"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc2",
+     "label": "physical",
+     "values": "385/580/2500"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "fiddlesticks",
    "cdragon_apiName": "DA_Fiddlesticks18",
    "ability_name": "Harvest",
    "mana": [
-    "30",
-    "90"
+    30,
+    90
    ],
    "stats": {
     "Health": null,
@@ -611,30 +630,40 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "410",
-      "485",
-      "850"
-     ],
-     "label": "heal"
+     "placeholder": "NumTargets",
+     "label": "other",
+     "values": "3"
     },
     {
-     "values_1_2_3_star": [
-      "70",
-      "105",
-      "170"
-     ],
-     "label": "magic"
+     "placeholder": "MRReduction",
+     "label": "other",
+     "values": "10"
+    },
+    {
+     "placeholder": "CastDuration",
+     "label": "duration",
+     "values": "2"
+    },
+    {
+     "placeholder": "HealthCalc1",
+     "label": "heal",
+     "values": "410/485/850"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "70/105/170"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "gnar",
    "cdragon_apiName": "DA_18_GnarSmall",
    "ability_name": "Rage Gene",
    "mana": [
-    "0",
-    "70"
+    0,
+    70
    ],
    "stats": {
     "Health": 900.0,
@@ -646,54 +675,40 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "100",
-      "150",
-      "2000"
-     ],
-     "label": "physical"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "100/150/2000"
     },
     {
-     "values_1_2_3_star": [
-      "15",
-      "20",
-      "250"
-     ],
-     "label": "duration"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "15/20/250"
     },
     {
-     "values_1_2_3_star": [
-      "400",
-      "600",
-      "15000"
-     ],
-     "label": "heal"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "400/600/15000"
     },
     {
-     "values_1_2_3_star": [
-      "380",
-      "570",
-      "9000"
-     ],
-     "label": "physical"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "380/570/9000"
     },
     {
-     "values_1_2_3_star": [
-      "135",
-      "205",
-      "4500"
-     ],
-     "label": "physical"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "135/205/4500"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "gromp",
    "cdragon_apiName": "DA_Gromp18_AP",
    "ability_name": "Belchy Bubble",
    "mana": [
-    "0",
-    "45"
+    0,
+    45
    ],
    "stats": {
     "Health": 550.0,
@@ -705,30 +720,35 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "225",
-      "340",
-      "535"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "225/340/535"
     },
     {
-     "values_1_2_3_star": [
-      "180",
-      "270",
-      "435"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc2",
+     "label": "magic",
+     "values": "180/270/435"
+    },
+    {
+     "placeholder": "PoisonDurationAP",
+     "label": "duration",
+     "values": "3"
+    },
+    {
+     "placeholder": "TraitTimer",
+     "label": "other",
+     "values": "5"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "hecarim",
    "cdragon_apiName": "DA_18_Hecarim",
    "ability_name": "Spirit of Dread",
    "mana": [
-    "50",
-    "110"
+    50,
+    110
    ],
    "stats": {
     "Health": 1100.0,
@@ -740,30 +760,40 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "375",
-      "475",
-      "685"
-     ],
-     "label": "heal"
+     "placeholder": "Resists",
+     "label": "other",
+     "values": "50"
     },
     {
-     "values_1_2_3_star": [
-      "80",
-      "120",
-      "195"
-     ],
-     "label": "magic"
+     "placeholder": "HealthCalc1",
+     "label": "heal",
+     "values": "375/475/685"
+    },
+    {
+     "placeholder": "NumEnemies",
+     "label": "other",
+     "values": "3"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "80/120/195"
+    },
+    {
+     "placeholder": "StunDuration",
+     "label": "duration",
+     "values": "1.5"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "ivern",
    "cdragon_apiName": "DA_18_Ivern",
    "ability_name": "Triggerseed",
    "mana": [
-    "50",
-    "80"
+    50,
+    80
    ],
    "stats": {
     "Health": null,
@@ -775,30 +805,40 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "185",
-      "350",
-      "3000"
-     ],
-     "label": "shield"
+     "placeholder": "NumAlliesToShield",
+     "label": "shield",
+     "values": "2"
     },
     {
-     "values_1_2_3_star": [
-      "155",
-      "235",
-      "2000"
-     ],
-     "label": "magic"
+     "placeholder": "ShieldCalc1",
+     "label": "shield",
+     "values": "185/350/3000"
+    },
+    {
+     "placeholder": "ShieldDuration",
+     "label": "shield",
+     "values": "6"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "155/235/2000"
+    },
+    {
+     "placeholder": "CastThreshold",
+     "label": "other",
+     "values": "6"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "karma",
    "cdragon_apiName": "DA_Karma18",
    "ability_name": "Karmic Bond",
    "mana": [
-    "0",
-    "40"
+    0,
+    40
    ],
    "stats": {
     "Health": 500.0,
@@ -810,30 +850,45 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "280",
-      "420",
-      "630"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "280/420/630"
     },
     {
-     "values_1_2_3_star": [
-      "125",
-      "185",
-      "300"
-     ],
-     "label": "magic"
+     "placeholder": "TetherDuration",
+     "label": "duration",
+     "values": "1.5"
+    },
+    {
+     "placeholder": "MagicDamageCalc2",
+     "label": "magic",
+     "values": "125/185/300"
+    },
+    {
+     "placeholder": "AoEHexRange",
+     "label": "other",
+     "values": "1"
+    },
+    {
+     "placeholder": "SlowPercent",
+     "label": "percent",
+     "values": "30"
+    },
+    {
+     "placeholder": "SlowDuration",
+     "label": "duration",
+     "values": "2"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "kayle",
    "cdragon_apiName": "DA_18_Kayle",
    "ability_name": "Solar Judgement",
    "mana": [
-    "0",
-    "0"
+    0,
+    0
    ],
    "stats": {
     "Health": 550.0,
@@ -845,22 +900,40 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "68",
-      "102",
-      "115"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "68/102/115"
+    },
+    {
+     "placeholder": "ShredLevel",
+     "label": "other",
+     "values": "20"
+    },
+    {
+     "placeholder": "ShredDuration",
+     "label": "duration",
+     "values": "2"
+    },
+    {
+     "placeholder": "MagicDamageCalc2",
+     "label": "magic",
+     "values": "35"
+    },
+    {
+     "placeholder": "NumAttacksForBigWave4Star",
+     "label": "other",
+     "values": "3"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "kennen",
    "cdragon_apiName": "DA_18_Kennen",
    "ability_name": "Firestorm",
    "mana": [
-    "0",
-    "40"
+    0,
+    40
    ],
    "stats": {
     "Health": 1200.0,
@@ -872,38 +945,45 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "230",
-      "300",
-      "3000"
-     ],
-     "label": "shield"
+     "placeholder": "ShieldCalc1",
+     "label": "shield",
+     "values": "230/300/3000"
     },
     {
-     "values_1_2_3_star": [
-      "80",
-      "120",
-      "1500"
-     ],
-     "label": "magic"
+     "placeholder": "ShieldDuration",
+     "label": "shield",
+     "values": "2.5"
     },
     {
-     "values_1_2_3_star": [
-      "475",
-      "715",
-      "5000"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "80/120/1500"
+    },
+    {
+     "placeholder": "FirestormHexRadius",
+     "label": "other",
+     "values": "2"
+    },
+    {
+     "placeholder": "MagicDamageCalc2",
+     "label": "magic",
+     "values": "475/715/5000"
+    },
+    {
+     "placeholder": "FirestormDuration",
+     "label": "duration",
+     "values": "2"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "khazix",
    "cdragon_apiName": "DA_18_KhaZix",
    "ability_name": "Taste Their Fear",
    "mana": [
-    "0",
-    "25"
+    0,
+    25
    ],
    "stats": {
     "Health": 950.0,
@@ -915,30 +995,25 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "240",
-      "325",
-      "480"
-     ],
-     "label": "magic"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "240/325/480"
     },
     {
-     "values_1_2_3_star": [
-      "260",
-      "360",
-      "540"
-     ],
-     "label": "magic"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "260/360/540"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "kobuko",
    "cdragon_apiName": "DA_18_Kobuko",
    "ability_name": "Dance of Life",
    "mana": [
-    "30",
-    "90"
+    30,
+    90
    ],
    "stats": {
     "Health": 700.0,
@@ -950,30 +1025,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "349",
-      "399",
-      "599"
-     ],
-     "label": "heal"
+     "placeholder": "HealthCalc1",
+     "label": "heal",
+     "values": "349/399/599"
     },
     {
-     "values_1_2_3_star": [
-      "185",
-      "225",
-      "285"
-     ],
-     "label": "magic"
+     "placeholder": "Duration",
+     "label": "duration",
+     "values": "2"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "185/225/285"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "kogmaw-ap",
    "cdragon_apiName": "DA_KogMaw18_AD",
    "ability_name": "Raining Artillery",
    "mana": [
-    "15",
-    "55"
+    15,
+    55
    ],
    "stats": {
     "Health": 650.0,
@@ -985,30 +1060,25 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "160",
-      "240",
-      "415"
-     ],
-     "label": "magic"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "160/240/415"
     },
     {
-     "values_1_2_3_star": [
-      "48",
-      "72",
-      "115"
-     ],
-     "label": "magic"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "48/72/115"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "krug",
    "cdragon_apiName": null,
    "ability_name": "Rock and Roll",
    "mana": [
-    "80",
-    "135"
+    80,
+    135
    ],
    "stats": {
     "Health": 1100.0,
@@ -1020,38 +1090,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "182",
-      "207",
-      "282"
-     ],
-     "label": "heal"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "182/207/282"
     },
     {
-     "values_1_2_3_star": [
-      "175",
-      "225",
-      "325"
-     ],
-     "label": "heal"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "175/225/325"
     },
     {
-     "values_1_2_3_star": [
-      "223",
-      "288",
-      "423"
-     ],
-     "label": "heal"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "223/288/423"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "leblanc",
    "cdragon_apiName": "DA_18_LeBlanc",
    "ability_name": "Mirror Image",
    "mana": [
-    "0",
-    "40"
+    0,
+    40
    ],
    "stats": {
     "Health": 550.0,
@@ -1063,30 +1125,25 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "260",
-      "390",
-      "615"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "260/390/615"
     },
     {
-     "values_1_2_3_star": [
-      "100",
-      "150",
-      "230"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc2",
+     "label": "magic",
+     "values": "100/150/230"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "leona",
    "cdragon_apiName": "DA_18_Leona",
    "ability_name": "Shield Bash",
    "mana": [
-    "30",
-    "90"
+    30,
+    90
    ],
    "stats": {
     "Health": 750.0,
@@ -1098,30 +1155,35 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "60",
-      "80",
-      "100"
-     ],
-     "label": "unlabelled"
+     "placeholder": "GenericCalc1",
+     "label": "other",
+     "values": "60/80/100"
     },
     {
-     "values_1_2_3_star": [
-      "72",
-      "120",
-      "174.4"
-     ],
-     "label": "magic"
+     "placeholder": "DecayDuration",
+     "label": "duration",
+     "values": "12"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "72/120/174.4"
+    },
+    {
+     "placeholder": "StunDuration",
+     "label": "duration",
+     "values": "1.5"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "lillia",
    "cdragon_apiName": "DA_18_Lillia",
    "ability_name": "Lilting Lullaby",
    "mana": [
-    "40",
-    "140"
+    40,
+    140
    ],
    "stats": {
     "Health": 1300.0,
@@ -1133,30 +1195,40 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "350",
-      "525",
-      "800"
-     ],
-     "label": "heal"
+     "placeholder": "HealthCalc1",
+     "label": "heal",
+     "values": "350/525/800"
     },
     {
-     "values_1_2_3_star": [
-      "90",
-      "135",
-      "2000"
-     ],
-     "label": "magic"
+     "placeholder": "NumEnemiesToFireAt",
+     "label": "other",
+     "values": "4"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "90/135/2000"
+    },
+    {
+     "placeholder": "SleepDuration",
+     "label": "duration",
+     "values": "1.5"
+    },
+    {
+     "placeholder": "DamageNeededToAwaken",
+     "label": "other",
+     "values": "1000"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "lux-blackthorn",
    "cdragon_apiName": "DA_Lux18_Blackthorn",
    "ability_name": "Final Spark",
    "mana": [
-    "20",
-    "70"
+    20,
+    70
    ],
    "stats": {
     "Health": 900.0,
@@ -1168,30 +1240,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "3",
-      "3",
-      "100"
-     ],
-     "label": "unlabelled"
+     "placeholder": "ManaCalc1",
+     "label": "other",
+     "values": "3/3/100"
     },
     {
-     "values_1_2_3_star": [
-      "375",
-      "565",
-      "6500"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "375/565/6500"
+    },
+    {
+     "placeholder": "BlackthornStunDuration",
+     "label": "duration",
+     "values": "1"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "lux-blossom",
    "cdragon_apiName": "DA_Lux18_Blossom",
    "ability_name": "Final Spark",
    "mana": [
-    "20",
-    "70"
+    20,
+    70
    ],
    "stats": {
     "Health": 900.0,
@@ -1203,30 +1275,25 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "3",
-      "3",
-      "100"
-     ],
-     "label": "unlabelled"
+     "placeholder": "ManaCalc1",
+     "label": "other",
+     "values": "3/3/100"
     },
     {
-     "values_1_2_3_star": [
-      "375",
-      "565",
-      "6500"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "375/565/6500"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "lux-coven",
    "cdragon_apiName": "DA_18_Lux_Coven",
    "ability_name": "Final Spark",
    "mana": [
-    "20",
-    "70"
+    20,
+    70
    ],
    "stats": {
     "Health": 900.0,
@@ -1238,30 +1305,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "3",
-      "3",
-      "100"
-     ],
-     "label": "unlabelled"
+     "placeholder": "ManaCalc1",
+     "label": "other",
+     "values": "3/3/100"
     },
     {
-     "values_1_2_3_star": [
-      "375",
-      "565",
-      "6500"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "375/565/6500"
+    },
+    {
+     "placeholder": "CovenResistReduction",
+     "label": "other",
+     "values": "8"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "lux-elderwood",
    "cdragon_apiName": "DA_18_Lux_Elderwood",
    "ability_name": "Final Spark",
    "mana": [
-    "20",
-    "70"
+    20,
+    70
    ],
    "stats": {
     "Health": 900.0,
@@ -1273,30 +1340,25 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "3",
-      "3",
-      "100"
-     ],
-     "label": "unlabelled"
+     "placeholder": "ManaCalc1",
+     "label": "other",
+     "values": "3/3/100"
     },
     {
-     "values_1_2_3_star": [
-      "375",
-      "565",
-      "6500"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "375/565/6500"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "lux-fae",
    "cdragon_apiName": "DA_18_Lux_Fae",
    "ability_name": "Final Spark",
    "mana": [
-    "20",
-    "70"
+    20,
+    70
    ],
    "stats": {
     "Health": 900.0,
@@ -1308,30 +1370,25 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "3",
-      "3",
-      "100"
-     ],
-     "label": "unlabelled"
+     "placeholder": "ManaCalc1",
+     "label": "other",
+     "values": "3/3/100"
     },
     {
-     "values_1_2_3_star": [
-      "375",
-      "565",
-      "6500"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "375/565/6500"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "lux-inferno",
    "cdragon_apiName": "DA_18_Lux_Inferno",
    "ability_name": "Final Spark",
    "mana": [
-    "20",
-    "70"
+    20,
+    70
    ],
    "stats": {
     "Health": 900.0,
@@ -1343,30 +1400,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "3",
-      "3",
-      "100"
-     ],
-     "label": "unlabelled"
+     "placeholder": "ManaCalc1",
+     "label": "other",
+     "values": "3/3/100"
     },
     {
-     "values_1_2_3_star": [
-      "375",
-      "565",
-      "6500"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "375/565/6500"
+    },
+    {
+     "placeholder": "InfernoManaRestore",
+     "label": "other",
+     "values": "10"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "lux-lunar",
    "cdragon_apiName": "DA_18_Lux_Moonbeam",
    "ability_name": "Final Spark",
    "mana": [
-    "20",
-    "70"
+    20,
+    70
    ],
    "stats": {
     "Health": 900.0,
@@ -1378,30 +1435,35 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "3",
-      "3",
-      "100"
-     ],
-     "label": "unlabelled"
+     "placeholder": "ManaCalc1",
+     "label": "other",
+     "values": "3/3/100"
     },
     {
-     "values_1_2_3_star": [
-      "375",
-      "565",
-      "6500"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "375/565/6500"
+    },
+    {
+     "placeholder": "LunarVulnerablePercent",
+     "label": "percent",
+     "values": "8"
+    },
+    {
+     "placeholder": "LunarVulnerableDuration",
+     "label": "duration",
+     "values": "4"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "lux-primal",
    "cdragon_apiName": "DA_18_Lux_Primal",
    "ability_name": "Final Spark",
    "mana": [
-    "20",
-    "70"
+    20,
+    70
    ],
    "stats": {
     "Health": 900.0,
@@ -1413,30 +1475,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "3",
-      "3",
-      "100"
-     ],
-     "label": "unlabelled"
+     "placeholder": "ManaCalc1",
+     "label": "other",
+     "values": "3/3/100"
     },
     {
-     "values_1_2_3_star": [
-      "375",
-      "565",
-      "6500"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "375/565/6500"
+    },
+    {
+     "placeholder": "PrimalASDuration",
+     "label": "duration",
+     "values": "6"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "lux-solar",
    "cdragon_apiName": "DA_18_Lux_Sunbeam",
    "ability_name": "Final Spark",
    "mana": [
-    "20",
-    "70"
+    20,
+    70
    ],
    "stats": {
     "Health": 900.0,
@@ -1448,30 +1510,25 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "3",
-      "3",
-      "100"
-     ],
-     "label": "unlabelled"
+     "placeholder": "ManaCalc1",
+     "label": "other",
+     "values": "3/3/100"
     },
     {
-     "values_1_2_3_star": [
-      "375",
-      "565",
-      "6500"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "375/565/6500"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "lux",
    "cdragon_apiName": "DA_Lux18_Base",
    "ability_name": "Final Spark",
    "mana": [
-    "20",
-    "70"
+    20,
+    70
    ],
    "stats": {
     "Health": 900.0,
@@ -1483,30 +1540,25 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "3",
-      "3",
-      "100"
-     ],
-     "label": "unlabelled"
+     "placeholder": "ManaCalc1",
+     "label": "other",
+     "values": "3/3/100"
     },
     {
-     "values_1_2_3_star": [
-      "375",
-      "565",
-      "6500"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "375/565/6500"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "malphite",
    "cdragon_apiName": "DA_18_Malphite",
    "ability_name": "Petrified Bark",
    "mana": [
-    "30",
-    "80"
+    30,
+    80
    ],
    "stats": {
     "Health": 1300.0,
@@ -1518,30 +1570,35 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "750",
-      "925",
-      "2000"
-     ],
-     "label": "shield"
+     "placeholder": "ShieldCalc1",
+     "label": "shield",
+     "values": "750/925/2000"
     },
     {
-     "values_1_2_3_star": [
-      "142",
-      "213",
-      "3398.6"
-     ],
-     "label": "magic"
+     "placeholder": "ShieldDuration",
+     "label": "shield",
+     "values": "4"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "142/213/3398.6"
+    },
+    {
+     "placeholder": "AoEHexRange",
+     "label": "other",
+     "values": "2"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "mama-beak",
    "cdragon_apiName": "DA_CrimsonRaptor18",
    "ability_name": "Flock Family",
    "mana": [
-    "20",
-    "60"
+    20,
+    60
    ],
    "stats": {
     "Health": 650.0,
@@ -1553,22 +1610,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "20",
-      "30",
-      "50"
-     ],
-     "label": "physical"
+     "placeholder": "GenericCalc1",
+     "label": "other",
+     "values": "5.0"
+    },
+    {
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "20/30/50"
+    },
+    {
+     "placeholder": "ArmorReduc",
+     "label": "other",
+     "values": "2"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "maokai",
    "cdragon_apiName": "DA_18_Maokai",
    "ability_name": "Sow the Seeds",
    "mana": [
-    "30",
-    "100"
+    30,
+    100
    ],
    "stats": {
     "Health": 1150.0,
@@ -1580,38 +1645,40 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "80.5",
-      "80.5",
-      "862.5"
-     ],
-     "label": "magic"
+     "placeholder": "DamageMitigatedPerSapling",
+     "label": "other",
+     "values": "650"
     },
     {
-     "values_1_2_3_star": [
-      "69",
-      "69",
-      "1150"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "80.5/80.5/862.5"
     },
     {
-     "values_1_2_3_star": [
-      "330",
-      "400",
-      "2000"
-     ],
-     "label": "magic"
+     "placeholder": "SaplingsOnDeath",
+     "label": "other",
+     "values": "3"
+    },
+    {
+     "placeholder": "MagicDamageCalc2",
+     "label": "magic",
+     "values": "69/69/1150"
+    },
+    {
+     "placeholder": "HealthCalc1",
+     "label": "heal",
+     "values": "330/400/2000"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "master-yi-ap",
    "cdragon_apiName": "DA_18_MasterYi_AD",
    "ability_name": "Wuju Style",
    "mana": [
-    "0",
-    "3"
+    0,
+    3
    ],
    "stats": {
     "Health": 850.0,
@@ -1623,22 +1690,20 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "135",
-      "200",
-      "320"
-     ],
-     "label": "magic"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "135/200/320"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "morgana",
    "cdragon_apiName": "DA_18_Morgana",
    "ability_name": "Withering Curse",
    "mana": [
-    "0",
-    "65"
+    0,
+    65
    ],
    "stats": {
     "Health": 1100.0,
@@ -1650,38 +1715,45 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "70",
-      "105",
-      "500"
-     ],
-     "label": "magic"
+     "placeholder": "NumEnemiesCursed",
+     "label": "other",
+     "values": "3"
     },
     {
-     "values_1_2_3_star": [
-      "33",
-      "50",
-      "500"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "70/105/500"
     },
     {
-     "values_1_2_3_star": [
-      "25",
-      "38",
-      "240"
-     ],
-     "label": "magic"
+     "placeholder": "SpellDuration",
+     "label": "duration",
+     "values": "4"
+    },
+    {
+     "placeholder": "HexRangeAOE",
+     "label": "other",
+     "values": "2"
+    },
+    {
+     "placeholder": "MagicDamageCalc2",
+     "label": "magic",
+     "values": "33/50/500"
+    },
+    {
+     "placeholder": "MagicDamageCalc3",
+     "label": "magic",
+     "values": "25/38/240"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "murkwolf",
    "cdragon_apiName": null,
    "ability_name": "Rending Claws",
    "mana": [
-    "0",
-    "40"
+    0,
+    40
    ],
    "stats": {
     "Health": 700.0,
@@ -1693,30 +1765,25 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "500",
-      "1050",
-      "2250"
-     ],
-     "label": "physical"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "500/1050/2250"
     },
     {
-     "values_1_2_3_star": [
-      "65",
-      "100",
-      "180"
-     ],
-     "label": "physical"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "65/100/180"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "nidalee",
    "cdragon_apiName": "DA_Nidalee18_AP",
    "ability_name": "Javelin Toss",
    "mana": [
-    "0",
-    "45"
+    0,
+    45
    ],
    "stats": {
     "Health": 850.0,
@@ -1728,30 +1795,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "195",
-      "295",
-      "2000"
-     ],
-     "label": "magic"
+     "placeholder": "NumEmpoweredAttacks",
+     "label": "other",
+     "values": "3"
     },
     {
-     "values_1_2_3_star": [
-      "350",
-      "525",
-      "3000"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "195/295/2000"
+    },
+    {
+     "placeholder": "MagicDamageCalc2",
+     "label": "magic",
+     "values": "350/525/3000"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "ornn",
    "cdragon_apiName": "DA_18_Ornn",
    "ability_name": "Bellows Breath",
    "mana": [
-    "40",
-    "100"
+    40,
+    100
    ],
    "stats": {
     "Health": 700.0,
@@ -1763,30 +1830,25 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "400",
-      "460",
-      "550"
-     ],
-     "label": "shield"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "400/460/550"
     },
     {
-     "values_1_2_3_star": [
-      "200",
-      "300",
-      "450"
-     ],
-     "label": "magic"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "200/300/450"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "pebbles",
    "cdragon_apiName": "DA_18_Sentry",
    "ability_name": "Azure Laser",
    "mana": [
-    "30",
-    "70"
+    30,
+    70
    ],
    "stats": {
     "Health": 500.0,
@@ -1798,22 +1860,35 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "170",
-      "255",
-      "385"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "170/255/385"
+    },
+    {
+     "placeholder": "MRReduction",
+     "label": "other",
+     "values": "3"
+    },
+    {
+     "placeholder": "TraitManaRegenTooltip",
+     "label": "other",
+     "values": "2"
+    },
+    {
+     "placeholder": "TraitChannelSecondsTooltip",
+     "label": "other",
+     "values": "4"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "rakan",
    "cdragon_apiName": "DA_18_Rakan",
    "ability_name": "Entrancing Dance",
    "mana": [
-    "35",
-    "105"
+    35,
+    105
    ],
    "stats": {
     "Health": 700.0,
@@ -1825,22 +1900,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "290",
-      "340",
-      "435"
-     ],
-     "label": "shield"
+     "placeholder": "ShieldCalc1",
+     "label": "shield",
+     "values": "290/340/435"
+    },
+    {
+     "placeholder": "ShieldDuration",
+     "label": "shield",
+     "values": "4"
+    },
+    {
+     "placeholder": "AttackSpeedDuration",
+     "label": "duration",
+     "values": "4"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "rammus",
    "cdragon_apiName": "DA_18_Rammus",
    "ability_name": "Defensive Ball Curl",
    "mana": [
-    "30",
-    "80"
+    30,
+    80
    ],
    "stats": {
     "Health": 1100.0,
@@ -1852,30 +1935,40 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "400",
-      "550",
-      "700"
-     ],
-     "label": "shield"
+     "placeholder": "Duration",
+     "label": "duration",
+     "values": "4"
     },
     {
-     "values_1_2_3_star": [
-      "50",
-      "75",
-      "120"
-     ],
-     "label": "physical"
+     "placeholder": "ShieldCalc1",
+     "label": "shield",
+     "values": "400/550/700"
+    },
+    {
+     "placeholder": "ArmorMR",
+     "label": "other",
+     "values": "60"
+    },
+    {
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "50/75/120"
+    },
+    {
+     "placeholder": "DamageHexRange",
+     "label": "other",
+     "values": "2"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "reksai",
    "cdragon_apiName": "DA_18_RekSai",
    "ability_name": "Uproot",
    "mana": [
-    "40",
-    "100"
+    40,
+    100
    ],
    "stats": {
     "Health": 700.0,
@@ -1887,30 +1980,35 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "17",
-      "23",
-      "31"
-     ],
-     "label": "heal"
+     "placeholder": "HealthCalc2",
+     "label": "heal",
+     "values": "17/23/31"
     },
     {
-     "values_1_2_3_star": [
-      "70",
-      "105",
-      "160"
-     ],
-     "label": "magic"
+     "placeholder": "SpellMultiplierDuration",
+     "label": "duration",
+     "values": "3"
+    },
+    {
+     "placeholder": "KnockupDuration",
+     "label": "duration",
+     "values": "1"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "70/105/160"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "rengar",
    "cdragon_apiName": "DA_18_Rengar",
    "ability_name": "Savagery",
    "mana": [
-    "10",
-    "50"
+    10,
+    50
    ],
    "stats": {
     "Health": 900.0,
@@ -1922,38 +2020,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "255",
-      "385",
-      "650"
-     ],
-     "label": "physical"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "255/385/650"
     },
     {
-     "values_1_2_3_star": [
-      "60",
-      "90",
-      "150"
-     ],
-     "label": "physical"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "60/90/150"
     },
     {
-     "values_1_2_3_star": [
-      "120",
-      "180",
-      "300"
-     ],
-     "label": "heal"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "120/180/300"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "scuttlecrab",
    "cdragon_apiName": "DA_Scuttlecrab18",
    "ability_name": "Can You Dig It?",
    "mana": [
-    "40",
-    "100"
+    40,
+    100
    ],
    "stats": {
     "Health": 950.0,
@@ -1965,30 +2055,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "60",
-      "90",
-      "135"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "60/90/135"
     },
     {
-     "values_1_2_3_star": [
-      "325",
-      "400",
-      "675"
-     ],
-     "label": "heal"
+     "placeholder": "BurrowDuration",
+     "label": "duration",
+     "values": "3"
+    },
+    {
+     "placeholder": "HealthCalc1",
+     "label": "heal",
+     "values": "325/400/675"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "sejuani",
    "cdragon_apiName": "DA_18_Sejuani",
    "ability_name": "Sun's Wrath",
    "mana": [
-    "40",
-    "100"
+    40,
+    100
    ],
    "stats": {
     "Health": 900.0,
@@ -2000,38 +2090,35 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "315",
-      "340",
-      "365"
-     ],
-     "label": "shield"
+     "placeholder": "ShieldCalc1",
+     "label": "shield",
+     "values": "315/340/365"
     },
     {
-     "values_1_2_3_star": [
-      "90",
-      "135",
-      "205"
-     ],
-     "label": "magic"
+     "placeholder": "ShieldDuration",
+     "label": "shield",
+     "values": "4"
     },
     {
-     "values_1_2_3_star": [
-      "120",
-      "180",
-      "270"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "90/135/205"
+    },
+    {
+     "placeholder": "MagicDamageCalc2",
+     "label": "magic",
+     "values": "120/180/270"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "sentinel",
    "cdragon_apiName": "DA_Sentinel18",
    "ability_name": "Azure Shockwave",
    "mana": [
-    "60",
-    "150"
+    60,
+    150
    ],
    "stats": {
     "Health": 1300.0,
@@ -2043,30 +2130,40 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "531",
-      "631",
-      "2156"
-     ],
-     "label": "shield"
+     "placeholder": "ShieldCalc1",
+     "label": "shield",
+     "values": "531/631/2156"
     },
     {
-     "values_1_2_3_star": [
-      "100",
-      "150",
-      "3500"
-     ],
-     "label": "magic"
+     "placeholder": "ShieldDuration",
+     "label": "shield",
+     "values": "4"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "100/150/3500"
+    },
+    {
+     "placeholder": "ManaReaveFlat",
+     "label": "other",
+     "values": "10"
+    },
+    {
+     "placeholder": "TraitAlliesManaRegen",
+     "label": "other",
+     "values": "2"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "sett",
    "cdragon_apiName": "DA_18_Sett",
    "ability_name": "Haymaker",
    "mana": [
-    "60",
-    "135"
+    60,
+    135
    ],
    "stats": {
     "Health": 1200.0,
@@ -2078,30 +2175,25 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "394",
-      "444",
-      "2144"
-     ],
-     "label": "heal"
+     "placeholder": "HealthCalc1",
+     "label": "heal",
+     "values": "394/444/2144"
     },
     {
-     "values_1_2_3_star": [
-      "222",
-      "297",
-      "5072"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "222/297/5072"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "shen",
    "cdragon_apiName": "DA_18_Shen",
    "ability_name": "Ki Barrier",
    "mana": [
-    "30",
-    "90"
+    30,
+    90
    ],
    "stats": {
     "Health": 900.0,
@@ -2113,38 +2205,40 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "375",
-      "450",
-      "575"
-     ],
-     "label": "shield"
+     "placeholder": "ShieldCalc1",
+     "label": "shield",
+     "values": "375/450/575"
     },
     {
-     "values_1_2_3_star": [
-      "225",
-      "300",
-      "400"
-     ],
-     "label": "shield"
+     "placeholder": "ShieldCalc2",
+     "label": "shield",
+     "values": "225/300/400"
     },
     {
-     "values_1_2_3_star": [
-      "35",
-      "55",
-      "80"
-     ],
-     "label": "magic"
+     "placeholder": "MagicShieldDuration",
+     "label": "magic",
+     "values": "4"
+    },
+    {
+     "placeholder": "NumAttacksBuff",
+     "label": "other",
+     "values": "3"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "35/55/80"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "sivir",
    "cdragon_apiName": "DA_18_Sivir",
    "ability_name": "Boomerang Blade",
    "mana": [
-    "0",
-    "40"
+    0,
+    40
    ],
    "stats": {
     "Health": 850.0,
@@ -2156,30 +2250,35 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "235",
-      "350",
-      "1150"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "235/350/1150"
     },
     {
-     "values_1_2_3_star": [
-      "42.3",
-      "63",
-      "460"
-     ],
-     "label": "physical"
+     "placeholder": "NumBounces",
+     "label": "other",
+     "values": "8"
+    },
+    {
+     "placeholder": "PhysicalDamageCalc2",
+     "label": "physical",
+     "values": "42.3/63/460"
+    },
+    {
+     "placeholder": "BonusKillBounces",
+     "label": "other",
+     "values": "3"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "soraka",
    "cdragon_apiName": "DA_18_Soraka",
    "ability_name": "Starcall",
    "mana": [
-    "0",
-    "30"
+    0,
+    30
    ],
    "stats": {
     "Health": 850.0,
@@ -2191,30 +2290,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "235",
-      "355",
-      "1000"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "235/355/1000"
     },
     {
-     "values_1_2_3_star": [
-      "110",
-      "165",
-      "1000"
-     ],
-     "label": "magic"
+     "placeholder": "NumAdditionalStars",
+     "label": "other",
+     "values": "3"
+    },
+    {
+     "placeholder": "MagicDamageCalc2",
+     "label": "magic",
+     "values": "110/165/1000"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "taric",
    "cdragon_apiName": "DA_Taric18",
    "ability_name": "Emerald Radiance",
    "mana": [
-    "0",
-    "65"
+    0,
+    65
    ],
    "stats": {
     "Health": 1300.0,
@@ -2226,38 +2325,45 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "270",
-      "345",
-      "11300"
-     ],
-     "label": "shield"
+     "placeholder": "ShieldCalc1",
+     "label": "shield",
+     "values": "270/345/11300"
     },
     {
-     "values_1_2_3_star": [
-      "275",
-      "450",
-      "3000"
-     ],
-     "label": "heal"
+     "placeholder": "PassiveHexRadius",
+     "label": "other",
+     "values": "3"
     },
     {
-     "values_1_2_3_star": [
-      "130",
-      "200",
-      "1000"
-     ],
-     "label": "magic"
+     "placeholder": "PassiveShieldDuration",
+     "label": "shield",
+     "values": "3"
+    },
+    {
+     "placeholder": "HealthCalc1",
+     "label": "heal",
+     "values": "275/450/3000"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "130/200/1000"
+    },
+    {
+     "placeholder": "NumAttacks",
+     "label": "other",
+     "values": "2"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "teemo",
    "cdragon_apiName": "DA_18_Teemo",
    "ability_name": "Fungus Among Us",
    "mana": [
-    "0",
-    "50"
+    0,
+    50
    ],
    "stats": {
     "Health": 550.0,
@@ -2269,30 +2375,25 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "55",
-      "82",
-      "155"
-     ],
-     "label": "magic"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "55/82/155"
     },
     {
-     "values_1_2_3_star": [
-      "135",
-      "200",
-      "310"
-     ],
-     "label": "magic"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "135/200/310"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "tristana",
    "cdragon_apiName": "DA_18_Tristana",
    "ability_name": "Explosive Charge",
    "mana": [
-    "0",
-    "50"
+    0,
+    50
    ],
    "stats": {
     "Health": 650.0,
@@ -2304,30 +2405,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "175",
-      "265",
-      "420"
-     ],
-     "label": "physical"
+     "placeholder": "Duration",
+     "label": "duration",
+     "values": "4"
     },
     {
-     "values_1_2_3_star": [
-      "12",
-      "18",
-      "28"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "175/265/420"
+    },
+    {
+     "placeholder": "PhysicalDamageCalc2",
+     "label": "physical",
+     "values": "12/18/28"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "varus",
    "cdragon_apiName": "DA_18_Varus",
    "ability_name": "Piercing Arrow",
    "mana": [
-    "20",
-    "110"
+    20,
+    110
    ],
    "stats": {
     "Health": 500.0,
@@ -2339,22 +2440,20 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "445",
-      "670",
-      "1070"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "445/670/1070"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "veigar",
    "cdragon_apiName": "DA_18_Veigar",
    "ability_name": "Primordial Burst",
    "mana": [
-    "0",
-    "30"
+    0,
+    30
    ],
    "stats": {
     "Health": 500.0,
@@ -2366,30 +2465,35 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "190",
-      "285",
-      "430"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "190/285/430"
     },
     {
-     "values_1_2_3_star": [
-      "285",
-      "430",
-      "640"
-     ],
-     "label": "magic"
+     "placeholder": "MagicDamageCalc2",
+     "label": "magic",
+     "values": "285/430/640"
+    },
+    {
+     "placeholder": "APOnKill",
+     "label": "other",
+     "values": "2"
+    },
+    {
+     "placeholder": "Stack",
+     "label": "other",
+     "values": "0"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "vi",
    "cdragon_apiName": "DA_Vi18",
    "ability_name": "Furious Fists",
    "mana": [
-    "0",
-    "60"
+    0,
+    60
    ],
    "stats": {
     "Health": 1100.0,
@@ -2401,22 +2505,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "200",
-      "265",
-      "360"
-     ],
-     "label": "heal"
+     "placeholder": "HealthCalc1",
+     "label": "heal",
+     "values": "22"
+    },
+    {
+     "placeholder": "HealthCalc3",
+     "label": "heal",
+     "values": "200/265/360"
+    },
+    {
+     "placeholder": "SpellDuration",
+     "label": "duration",
+     "values": "3"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "warwick",
    "cdragon_apiName": "DA_18_Warwick",
    "ability_name": "Jaws of The Beast",
    "mana": [
-    "0",
-    "40"
+    0,
+    40
    ],
    "stats": {
     "Health": 750.0,
@@ -2428,22 +2540,20 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "230",
-      "345",
-      "560"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "230/345/560"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "xayah",
    "cdragon_apiName": "DA_18_Xayah",
    "ability_name": "Deadly Plumage",
    "mana": [
-    "0",
-    "50"
+    0,
+    50
    ],
    "stats": {
     "Health": 450.0,
@@ -2455,22 +2565,20 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "73",
-      "108",
-      "165"
-     ],
-     "label": "physical"
+     "placeholder": null,
+     "label": "unaligned",
+     "values": "73/108/165"
     }
-   ]
+   ],
+   "aligned": false
   },
   {
    "slug": "yorick",
    "cdragon_apiName": "DA_18_Yorick",
    "ability_name": "Last Rites",
    "mana": [
-    "50",
-    "110"
+    50,
+    110
    ],
    "stats": {
     "Health": 650.0,
@@ -2482,38 +2590,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "330",
-      "530",
-      "880"
-     ],
-     "label": "heal"
+     "placeholder": "HealthCalc2",
+     "label": "heal",
+     "values": "330/530/880"
     },
     {
-     "values_1_2_3_star": [
-      "280",
-      "325",
-      "435"
-     ],
-     "label": "heal"
+     "placeholder": "HealthCalc1",
+     "label": "heal",
+     "values": "280/325/435"
     },
     {
-     "values_1_2_3_star": [
-      "150",
-      "225",
-      "340"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "150/225/340"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "yunara",
    "cdragon_apiName": "DA_18_Yunara",
    "ability_name": "Cultivation of Spirit",
    "mana": [
-    "0",
-    "35"
+    0,
+    35
    ],
    "stats": {
     "Health": 550.0,
@@ -2525,30 +2625,30 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "170",
-      "255",
-      "395"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc1",
+     "label": "physical",
+     "values": "170/255/395"
     },
     {
-     "values_1_2_3_star": [
-      "59.5",
-      "89.25",
-      "138.25"
-     ],
-     "label": "physical"
+     "placeholder": "PhysicalDamageCalc2",
+     "label": "physical",
+     "values": "59.5/89.25/138.25"
+    },
+    {
+     "placeholder": "NumSecondaryTargets",
+     "label": "other",
+     "values": "2"
     }
-   ]
+   ],
+   "aligned": true
   },
   {
    "slug": "zyra",
    "cdragon_apiName": "DA_18_Zyra",
    "ability_name": "Rampant Growth",
    "mana": [
-    "0",
-    "45"
+    0,
+    45
    ],
    "stats": {
     "Health": 850.0,
@@ -2560,14 +2660,23 @@
    },
    "numbers": [
     {
-     "values_1_2_3_star": [
-      "35",
-      "53",
-      "225"
-     ],
-     "label": "magic"
+     "placeholder": "NumPlantsToSpawn",
+     "label": "other",
+     "values": "2"
+    },
+    {
+     "placeholder": "ThornSpitterNumAttacks",
+     "label": "other",
+     "values": "10"
+    },
+    {
+     "placeholder": "MagicDamageCalc1",
+     "label": "magic",
+     "values": "35/53/225"
     }
-   ]
+   ],
+   "aligned": true
   }
- ]
+ ],
+ "note": "Aligned rows: Blitz rendered values matched to CDragon placeholders by text pattern; label from placeholder name (rule). Unaligned rows: raw Blitz triples, no label. Variant apiNames (ap/AD) and Lux forms flagged; not verified."
 }

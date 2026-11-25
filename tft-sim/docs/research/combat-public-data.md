@@ -164,13 +164,15 @@ Việc cần người dùng quyết: (a) xác nhận giấy phép CDragon (ngu�
 
 Kết luận: chưa commit số liệu Blitz vào repo. Lý do: chưa ghép nhãn sát thương được, và tầm đánh/AS cần quy ước riêng. Nếu sau này cần dùng, ghép theo nhãn cần làm bằng tay từng tướng, và lưu ý điều khoản: giấy phép chỉ cho sử dụng cá nhân phi thương mại; robots.txt chặn ClaudeBot/GPTBot, nên không đưa dữ liệu này vào huấn luyện mô hình khi chưa có quyết định khác của người dùng.
 
-### 10c. Đã commit số liệu Blitz Set 18 (2026-11-25)
+### 10c. Số liệu Blitz Set 18 đã commit (2026-11-25, cập nhật)
 
-File: `tft-sim/data/blitz_set18_numbers.json`. Chứa: slug, apiName CDragon (null nếu không ghép duy nhất), tên ability, mana, chỉ số cơ bản, và các bộ ba số `1/2/3 sao` kèm nhãn ngữ cảnh theo quy tắc (magic, physical, true, shield, heal, duration, unlabelled). Không lưu văn bản mô tả.
+File: `tft-sim/data/blitz_set18_numbers.json`. 74 trang Blitz (patch 18.7).
 
-Hạn chế:
-- Biến CDragon Set 18 gần như trống (70/71 tướng ghép được không có biến), nên không kiểm chứng được nhãn bằng CDragon. Nhãn chỉ dựa trên chữ trong mô tả Blitz, chưa kiểm tra tay từng tướng.
-- 11/… bộ ba không có nhãn rõ (unlabelled).
-- Lux có 10 dạng ghép chung một apiName = null.
-- Tầm đánh Ashe, Draven, Lux và AS Master Yi AP lệch so với CDragon; không sửa.
-- Nguồn có điều khoản chỉ dùng cá nhân phi thương mại. Người dùng đã chấp nhận rủi ro và cho phép dùng dữ liệu, kể cả cho mô hình.
+- Ghép với CDragon 18.7 theo tên: 71 tướng duy nhất; 3 tướng trùng tên (elder-dragon, krug, murkwolf) không ghép (apiName = null).
+- Mười trang Lux ghép riêng từng dạng (DA_Lux18_Blackthorn, DA_18_Lux_Coven, ... DA_Lux18_Base). Không có null nào ngoài 3 tướng trên. Các dạng Lux có cùng số sát thương và mana trên trang, nên số giống nhau là đúng với dữ liệu nguồn.
+- Căn chỉnh văn bản: 58/74 tướng khớp mô tả CDragon với placeholder `@...@`. 16 tướng còn lại (gồm Akali-AD, Alistar, Amumu, Cinderling, Elise, Gnar, Khazix, Kog'Maw-AP, Master Yi-AP, Ornn, Rengar, Teemo, Xayah, và các tướng không khớp mô tả khác) giữ nguyên bộ ba thô, nhãn `unaligned`.
+- Nhãn: lấy từ tên placeholder (Magic/Physical/Shield/Heal/Duration), không đọc từ chữ quanh số. Chưa kiểm tra tay từng dòng; mục `Health`/`Heal` có thể lẫn sát thương theo máu, cần xem riêng (Fiddlesticks, Hecarim, Kobuko, Lillia).
+- Chưa kiểm tra: liệu các số có phải giá trị đã nhân sẵn theo AD/AP (tooltip) hay hệ số thô. Nếu là giá trị đã nhân thì `templates.py` sẽ nhân lần hai; cần kiểm tra trước khi dùng.
+- Biến CDragon Set 18 gần như trống (70/71 tướng không có biến), nên không đối chiếu được số bằng biến.
+- Tầm đánh Ashe, Draven, Lux và AS Master Yi AP lệch so với CDragon. Số giữ nguyên theo Blitz.
+- Điều khoản Blitz: chỉ dùng cá nhân phi thương mại. Người dùng đã chấp nhận rủi ro và cho phép dùng dữ liệu, kể cả cho mô hình.
