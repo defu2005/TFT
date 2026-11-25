@@ -29,11 +29,11 @@ from tft_goat.env.state import BoardUnit
 from tft_goat.engine.simulate import run_combat
 
 SCHEMA = "fight-v1"
-ABILITY_MODES = ("hand", "generic", "none")
+ABILITY_MODES = ("hand", "generic", "none", "template")
 _NOOP = lambda caster, allies, enemies, ctx: None  # noqa: E731
 _orig_build = S._build_team
 _orig_get = S.get_ability
-_STATE = {"ability": "hand", "pos": None}
+_STATE = {"ability": "hand", "pos": None, "content": None}
 
 
 def _patched_build(board, team, content, trait_bonus=0):
@@ -54,6 +54,9 @@ def _patched_get(api):
         return _NOOP
     if m == "generic":
         return default_ability
+    if m == "template":
+        from templates import get_ability_template
+        return get_ability_template(_STATE["content"], api)
     return _orig_get(api)
 
 
@@ -62,12 +65,13 @@ S.get_ability = _patched_get
 
 
 @contextlib.contextmanager
-def fight_context(ability: str = "hand", positions=None):
+def fight_context(ability: str = "hand", positions=None, content=None):
     if ability not in ABILITY_MODES:
         raise ValueError(ability)
     old = dict(_STATE)
     _STATE["ability"] = ability
     _STATE["pos"] = positions
+    _STATE["content"] = content
     try:
         yield
     finally:
@@ -164,7 +168,7 @@ def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = 
         aa, ab = (), ()
     content = _CONTENT[record["set"]]
     wins = [0, 0, 0]
-    with fight_context(ability, pos):
+    with fight_context(ability, pos, content):
         for i in range(n):
             r = run_combat(ba, bb, content, np.random.default_rng(seed0 + i), aa, ab)
             w = r.winner
