@@ -1,7 +1,7 @@
 {
- "ok": 26,
+ "ok": 38,
  "skipped": {
-  "winner_null": 7
+  "winner_null": 8
  },
  "rows": [
   {
@@ -37,6 +37,11 @@
   {
    "line": 32,
    "source": "twitch-2898781298-g4300:4-6",
+   "reason": "winner_null"
+  },
+  {
+   "line": 34,
+   "source": "twitch-2898781298-g6400:2-1",
    "reason": "winner_null"
   }
  ]

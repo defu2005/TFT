@@ -48,16 +48,16 @@
   ],
   "counts": {
     "games": 4,
-    "fights": 72,
+    "fights": 73,
     "others": 0
   },
   "validator": {
-    "ok": 0,
+    "ok": 3,
     "skipped": {
-      "winner_null": 72
+      "winner_null": 70
     }
   },
   "needs_review": 0,
-  "commit": "a3efeb6",
-  "remaining": "4 Ranked games done on this VOD. Gaps early/BRB+queue transitions. CLAIM robin+setsuko queued."
+  "commit": "d54c71f",
+  "remaining": "Densify g8780 pushed (2-side+winners). Next densify g6680/g4200/g2230/robin g350."
 }
