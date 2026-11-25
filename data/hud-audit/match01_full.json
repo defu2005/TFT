@@ -6342,5 +6342,13 @@
   "7": "P5 (5-1)",
   "8": "P8 (4-6)",
   "source": "round_results_derived.json eliminations; 1 and 2 from 6-6 frames"
+ },
+ "blind_reread": {
+  "summary": "Cross-source check, not a blind frame re-read. 10 seeded rounds (seed 7): 3-5, 3-6, 4-1, 4-2, 4-6, 5-1, 5-2, 5-5, 5-6, 6-2. Reader rows within 0.5 s of frame_s are compared; the same frames were read earlier, so this is not blind.",
+  "gold_match": "9 of 10 (5-5: frame 7, reader 9, unresolved)",
+  "shop_name_match": "28 of 37 master names found in reader slots (misses: Mama Beak vs reader id CrimsonRaptor, Aphelios 5-1, 5-5 all four, 5-6 Murkwolf and Salvager, 6-2 Sett)",
+  "level": "not measured: reader rows carry level None in these windows",
+  "panel_xp_streak": "not measured by machine",
+  "seed": 7
  }
 }
