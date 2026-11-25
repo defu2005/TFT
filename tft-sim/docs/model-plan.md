@@ -242,3 +242,9 @@ Mọi bằng chứng dưới đây là sim hoặc nội dung tổng hợp (8 tư
 ### 10.11 Giả định capture (2026-11-25)
 
 Người dùng giả định app capture được mọi dữ liệu realtime cần thiết (bàn hai bên, kết quả combat). Mọi phân tích trong `docs/research/combat-public-data.md` và `scripts/combat/` dựa trên giả định này và trên dữ liệu mô phỏng (`label: sim`). Trạng thái thực tế: chưa có bản ghi trận thật nào có bàn hai bên và kết quả trong nhánh hiện có. Mọi kết quả về độ trung thực đều chờ bản ghi `fight-v1` thật.
+
+
+## 10.12 Ghi chú item Set 18 (2026-11-25)
+
+- `heldout.py`, `heldout_swap.py`, `play_clone_v2.py` và `collect_real.py` dùng `build_real_set18_clean`, nên các trận Set 18 trong các lần chạy đó dùng item `DA_*` không có hiệu ứng riêng. Chỉ có bonus chung của engine (xem `combat-public-data.md` mục 8). Không chạy lại; ghi lại để đánh giá sau.
+- Alias item Set 18 có sẵn trong `tft_sim/item_alias.py` (37 alias), chưa áp dụng cho các script trên.

@@ -123,9 +123,11 @@ Mẫu số lấy từ `setData` của từng set (mutator TFTSet17 và TFTSet18)
 | Nhóm | Set 17 | Set 18 |
 |---|---|---|
 | Tổng item trong setData | 687 | 776 |
-| Có stat hoặc hook (stat hoặc stat+hook) | 212 (31%) | 157 (20%) |
+| Có hiệu ứng riêng (stat hoặc hook, theo apiName) | 212 (31%) | 157 (20%) |
 | Chỉ hook, không stat | 0 | 0 |
-| Không có tác dụng trong engine | 475 | 619 |
+| Không có hiệu ứng riêng (vẫn nhận bonus chung nếu được đếm) | 475 | 619 |
+
+**Bonus chung của engine (quan trọng):** `build_unit` áp hiệu ứng riêng của từng item có trong `item_apis`, và áp thêm `_GENERIC_ITEM` (+150 máu, +15% AD, +15 AP, +15 giáp, +15 kháng phép) cho mỗi lần đếm `items`. Môi trường (`env/actions.py`) tăng `items` cùng lúc với việc thêm `item_apis`, nên engine luôn cộng cả hai. `fight.py` tái hiện đúng hành vi này; đây là thuộc tính của engine, không phải lỗi của wrapper. Hệ quả: mọi item được đếm, kể cả emblem và `DA_*` rỗng, đều nhận bonus chung. Đây là sai lệch đã biết khi dùng các item không có hiệu ứng riêng, và là rủi ro độ trung thực khi so với trận thật.
 
 **Cảnh báo về con số 20%:** con số này tính theo apiName đúng như engine nhận. Nó không phản ánh việc item Set 18 có tác dụng hay không, vì phần lớn công thức ghép có apiName `DA_*` mà CDragon để trống `effects`, trong khi item cùng tên `TFT_Item_*` có đầy đủ hiệu ứng.
 
@@ -138,7 +140,7 @@ Phân nhóm Set 18 (theo tên và thành phần):
   - Chưa biết client thật gửi apiName nào cho item Set 18 khi chụp dữ liệu. Đây là điểm cần làm rõ trong hợp đồng capture, không phải lỗi của engine.
 - 10 thành phần `DA_Component_*`: không tác dụng (đúng bản chất).
 - 440 mục `DA_*` còn lại: 7 có stat (Flow, Marksmen's Gale, Stand Alone và các mục khác), 7 emblem không craftable, 426 không tác dụng. Các mục này có tên và mô tả giống augment Set 18 (ví dụ Aftershock: "sau 8 giây, choáng mọi địch 1,5 giây"; Bark Armor: "tướng nhận 150 khiên trong 10 giây"), nhưng apiName không nằm trong danh sách 594 augment của setData. Chưa xác định chắc phân loại; đây là mục chưa rõ.
-- Lưu ý về `build_real_set18_clean` (nội dung dùng trong môi trường mô phỏng): hàm này bỏ toàn bộ `TFT_Item_*` và giữ 505 mục `DA_*`, 667 item. Nghĩa là khi dùng nội dung này, 36 craftable có twin hiệu ứng sẽ không có hiệu ứng trong engine.
+- Lưu ý về `build_real_set18_clean` (nội dung dùng trong môi trường mô phỏng): hàm này bỏ toàn bộ `TFT_Item_*` và giữ 505 mục `DA_*`, 667 item. Khi dùng nội dung này, 36 craftable có twin hiệu ứng chỉ nhận bonus chung của engine, không nhận hiệu ứng riêng.
 - Hook: 0 mục `DA_*` nằm trong bảng hook của engine. Các hook của item cổ điển được tính trong bảng dùng chung với Set 17.
 
 Đếm hiệu quả theo tên (ghép craftable `DA_*` với item cùng tên `TFT_Item_*`): 191/776 item có tác dụng trong engine (157 theo apiName + 34 craftable qua item cùng tên). Vẫn chỉ khoảng một phần tư, và phần lớn là item cổ điển.
@@ -149,6 +151,12 @@ Trait (36 trait Set 18; 44 trait Set 17):
 - Tên trait Set 18 xuất hiện trong mã engine ngoài `trait_effects.py`: 1/36. Chỉ là dấu hiệu tham chiếu, không chứng minh có logic riêng.
 
 Hệ quả: với Set 18, engine chỉ mô hình hóa được một phần nhỏ trang bị và trait có ý nghĩa trong combat. Trait "không ánh xạ" và emblem có thể làm sai số lớn, nhưng chưa đo được mức ảnh hưởng vì không có trận thật. Không dùng các con số này để kết luận về độ chính xác dự đoán Set 18.
+
+### 8b. Alias item Set 18 (2026-11-25)
+
+`tft-sim/src/tft_sim/item_alias.py`: với craftable `DA_*` rỗng có item cùng tên `TFT_Item_*` có hiệu ứng, copy hiệu ứng và đăng ký hook của twin cho `DA_*`. Có 37 alias. Đã kiểm: đơn vị với DA và với twin cho chỉ số giống hệt, cả khi có và không có bonus chung. Giả định: hiệu ứng của twin là hiệu ứng Set 18 thật. Chưa chạy đo độ lệch trận; `coverage()` chưa báo số alias.
+
+Ghi chú về mục 7: `hand_noitems` bỏ cả hiệu ứng riêng và bonus chung của item, nên so sánh "có item / không item" là so sánh gộp hai lớp.
 
 ## 9. Template từ mô tả + biến (Set 17), đo trên 2000 cặp cùng vòng từ cả 100 lobby
 
