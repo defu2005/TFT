@@ -6397,10 +6397,24 @@
     "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
    },
    "opponent_board": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "opponent is P3; flagged scouting runs at 1972-1984 s; owner not established, so no panel is attached",
-    "reason": "owner of the flagged scouting runs not established"
+    "value": {
+     "panel": {
+      "Spellweaver": 3,
+      "Elderwood": 3,
+      "Blackthorn": 2,
+      "Brawler": 2,
+      "Defender": 2,
+      "Flora Fatalis": 1,
+      "Sprykin": 1
+     },
+     "trait_count_sum": 14,
+     "units": null,
+     "solver": "panel read; unit list not solved (no duplicate-tested board)"
+    },
+    "tag": "derived",
+    "basis": "Scouting frame at sweep 809 (1978 s): stage strip reads 5-2 (timer 4); the owner edge marker sits on the level-6, HP -5 rail row, which is P3 by the 5-2 opponent basis.",
+    "attempt": "Panel read from the 5-2 scouting frame and attached to P3 (owner marker on the P3 row).",
+    "reason": "unit list not solved"
    },
    "hexes": {
     "value": null,
@@ -9903,7 +9917,7 @@
   },
   "frame_s": "t = 362 + (index - 1) * 2",
   "note": "run index i maps to t = 362 + (i-1)*2; checked on the 3-1 window (index 264 = 888 s)",
-  "owner_check": "Stage reads from the top strip: sweep 1023 (2406 s) shows 6-3, timer 20, with two rail rows alive; sweep 1072 (2504 s) shows 6-5, timer 5; sweep 1106 (2572 s) shows 6-6, timer 3. Their trait panels match the stored panels for 6-3, 6-5 and 6-6 exactly. A pointer marks one rail row in the scouting frames at 2406, 2504 and 2572 s, and is absent in the streamer's home view at 2504 s (op13/p2_2504.png, timer 6). The same row carries the pointer at 1978 s (sweep 809), where the 5-2 opponent is P3, so the pointer does not identify the owner. The 6-3, 6-5 and 6-6 attachments rest on the alive rule alone (only one other player is alive after 6-2); no owner cue was validated, and the 1978 s panel stays unattached."
+  "owner_check": "Stage reads from the top strip: sweep 1023 (2406 s) 6-3 timer 20 with two rail rows alive; sweep 1072 (2504 s) 6-5 timer 5; sweep 1106 (2572 s) 6-6 timer 3; sweep 809 (1978 s) 5-2 timer 4. Trait panels at 6-3, 6-5, 6-6 match the stored panels exactly. The owner edge marker is absent in the streamer's home view at 2504 s (op13/p2_2504.png, timer 6). The marker is on the P2 row at 2406, 2504 and 2572 s and on the level-6 row (P3) at 1978 s, the 5-2 opponent, so the marker tracks the scouted owner in four frames. The 6-3, 6-5 and 6-6 panels are attached to P2 and the 5-2 panel to P3 on that basis. The other 14 scouted entries were not re-read for the marker row; their owner_arrow_row values stay as recorded and unattached."
  },
  "scouted_panels": [
   {
@@ -10159,11 +10173,11 @@
     "Flora Fatalis": 1,
     "Sprykin": 1
    },
-   "owner_arrow_row": "P2 candidate",
-   "owner_status": "not established",
-   "attached_to_round": null,
-   "note": "5-2 opponent is P3. The owner pointer sits on the same row as in the 6-x frames, but that row is not the 5-2 opponent, so the pointer is not an owner cue.",
-   "owner": "not established"
+   "owner_arrow_row": "P3 (edge marker on the level-6 row)",
+   "owner_status": "P3 (edge marker)",
+   "attached_to_round": "5-2",
+   "note": "5-2 opponent is P3; the edge marker sits on the level-6 row, so the panel is attached to 5-2.",
+   "owner": "P3"
   },
   {
    "t_s": 2406,
