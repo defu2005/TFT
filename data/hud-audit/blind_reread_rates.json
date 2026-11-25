@@ -11,5 +11,12 @@
    "of": 10,
    "rate": 0.9
   }
+ },
+ "gold_masked_near_white": {
+  "rate": 0.3,
+  "matches": 3,
+  "of": 10,
+  "script": "data/hud-audit/blind_ocr_masked.py",
+  "note": "near-white mask (min RGB > 200), 4x nearest upscale, digit whitelist psm 7; several frames gave no digits, so the 71/57/9 two-digit golds are cut or unreadable in this crop. Not an improvement over the unmasked 4/10."
  }
 }
