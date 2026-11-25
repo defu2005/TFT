@@ -33,11 +33,22 @@ ABILITY_MODES = ("hand", "generic", "none", "template")
 _NOOP = lambda caster, allies, enemies, ctx: None  # noqa: E731
 _orig_build = S._build_team
 _orig_get = S.get_ability
-_STATE = {"ability": "hand", "pos": None, "content": None}
+_STATE = {"ability": "hand", "pos": None, "content": None, "traits": True, "novars": False}
 
 
 def _patched_build(board, team, content, trait_bonus=0):
-    units = _orig_build(board, team, content, trait_bonus=trait_bonus)
+    if not _STATE.get("traits", True):
+        saved = S.apply_team_traits
+        S.apply_team_traits = lambda *a, **k: None
+        try:
+            units = _orig_build(board, team, content, trait_bonus=trait_bonus)
+        finally:
+            S.apply_team_traits = saved
+    else:
+        units = _orig_build(board, team, content, trait_bonus=trait_bonus)
+    if _STATE.get("novars", False):
+        for u in units:
+            u.variables = {}  # Set 18 thuc te: generic rơi ve ad*2 neu khong co bien
     pos = _STATE["pos"]
     if pos is not None and pos[team] is not None:
         if len(units) != len(pos[team]):
@@ -65,13 +76,17 @@ S.get_ability = _patched_get
 
 
 @contextlib.contextmanager
-def fight_context(ability: str = "hand", positions=None, content=None):
+def fight_context(ability: str = "hand", positions=None, content=None, traits: bool = True, novars: bool = False):
     if ability not in ABILITY_MODES:
         raise ValueError(ability)
+    if novars and ability != "generic":
+        raise ValueError("novars chi dung voi ability generic")
     old = dict(_STATE)
     _STATE["ability"] = ability
     _STATE["pos"] = positions
     _STATE["content"] = content
+    _STATE["traits"] = traits
+    _STATE["novars"] = novars
     try:
         yield
     finally:
@@ -158,7 +173,7 @@ def coverage(record: dict) -> dict:
 
 
 def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = True, seed0: int = 0,
-                augments: bool = True) -> dict:
+                augments: bool = True, traits: bool = True, novars: bool = False) -> dict:
     """Xac suat A thang tu n lan chay engine (RNG seed0..seed0+n-1). augments=False: bo augment."""
     if record["set"] == 18 and ability == "hand":
         raise ValueError("Set 18 chua co logic ability viet tay: dung 'generic' hoac 'none'")
@@ -171,7 +186,7 @@ def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = 
         aa, ab = (), ()
     content = _CONTENT[record["set"]]
     wins = [0, 0, 0]
-    with fight_context(ability, pos, content):
+    with fight_context(ability, pos, content, traits, novars):
         for i in range(n):
             r = run_combat(ba, bb, content, np.random.default_rng(seed0 + i), aa, ab)
             w = r.winner

@@ -260,6 +260,7 @@ Phase 0 (chặn): sửa đường ghi bản ghi thật
 - Selftest: item `TFT_Item_*` không phải twin cho `items_unknown == 0`. ĐÃ LÀM.
 
 Phase 1: xếp hạng đòn bẩy trên Set 17 (sim, rẻ)
+- Quy tắc xếp hạng (khóa): xếp theo tỷ lệ đảo chiều so với `hand` trên cặp quyết định của `hand` (p ≥ 0,9 hoặc ≤ 0,1), CI bootstrap theo lobby 2000 lần. Script: `tft-sim/scripts/combat/phase1_levers.py`. Ghi chú thời điểm: quy tắc được ghi vào script trước khi chạy; dòng này được thêm sau khi lần chạy bắt đầu, và kết quả là tiền đề cho thứ tự Phase 3.
 - Dùng bảng v3 đã có (`hand_noaug`, `hand_noitems`, `none`), thêm `hand_notraits` và generic với biến bị gỡ, trên các cặp đã lưu. Nếu file không còn, thu lại seed 288000–288099.
 - Báo tỷ lệ đảo chiều so với `hand` kèm CI theo lobby. Quy tắc xếp hạng khóa trước khi chạy.
 - Set 17 chỉ là sim, không phải kiểm chứng thật.
