@@ -7,41 +7,41 @@
   "covered_ranges_s": [
     [
       60,
-      2200
+      2100
     ],
     [
-      3400,
-      5400
+      3200,
+      5450
     ],
     [
-      5600,
-      7400
+      5500,
+      7450
     ],
     [
-      8200,
-      10000
+      7900,
+      10100
     ],
     [
-      11200,
-      13000
+      10800,
+      13050
     ],
     [
-      13600,
+      13100,
       14390
     ]
   ],
   "remaining_ranges_s": [
     [
-      2200,
-      3400
+      2100,
+      3200
     ],
     [
-      7400,
-      8200
+      7450,
+      7900
     ],
     [
-      10000,
-      11200
+      10100,
+      10800
     ]
   ],
   "game_ids": [
@@ -65,5 +65,5 @@
   },
   "needs_review": 72,
   "commit": null,
-  "remaining": "REOPENED: ranked Challenger Set18 (overlay was decoration). Stubbed 6 games; gaps are desktop/non-TFT. Densify-full next."
+  "remaining": "REOPENED ranked Set18. Stubbed 6 games; boundaries/OCR refreshed from full lobby map. Densify-full next."
 }
