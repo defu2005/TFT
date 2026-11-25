@@ -503,3 +503,22 @@ Bản đầu của mục này kết luận "CDragon thiếu chỉ số item". K�
 - Bối cảnh: student behavior-cloning cũ (`bc_v2.log`, `clone_v5_seed0.pt`) học bắt chước hành động của policy trong sim, độ chính xác theo hành động ~0.997. Nó không dự đoán thắng thua và không đo fidelity.
 - Ngưỡng dữ liệu: đo chênh lệch ±0.05 cần khoảng 545 trận thật (mục 11.14), nên huấn luyện trên kết quả thật còn xa.
 - Đã từ chối chưng cất model bên thứ ba (sản phẩm thương mại hoặc model đóng) theo câu trả lời trước.
+
+### 11.19 Hook DA_* toàn cục làm đổi PRIMARY: đã sửa (2026-11-25, theo advisor)
+- Phát hiện: `fidelity.py` gọi `build_set18_records()` lúc import, và hàm này (cùng `build_set18_aliased`) ghi hook `DA_*` vào bảng `ITEM_*` của engine (toàn cục). Mục 11.16 viết "fidelity không gọi": SAI. Ngoài ra `build_set18_records` còn copy `effects` của twin vào content DA_*, nên PRIMARY không phải là "không alias" như định nghĩa.
+- Đo (`scripts/combat/order_check_items.py`, 150 trận mẫu sim-sinh, 4 lượt, trước khi sửa; `results/fixed/combat/order_check_items_before_fix.json`):
+  - PRIMARY chạy trước và sau SECONDARY trong cùng tiến trình: GIỐNG NHAU (không phụ thuộc thứ tự).
+  - PRIMARY có hook DA_* so với không hook: KHÁC ở 8/150 trận. Hook toàn cục làm đổi PRIMARY.
+- Sửa:
+  - `build_set18_records()` trả về CDragon nguyên gốc: không copy effects, không đăng ký hook.
+  - `build_set18_aliased()` chỉ còn để chẩn đoán (`alias18.py`, selftest): copy effects, không đăng ký hook.
+  - Ánh xạ item chỉ qua id: SECONDARY (`item_alias=True`) đổi `DA_*` → `TFT_Item_*` trong `fight.boards_of`. Hook và chỉ số của `TFT_*` chạy theo bảng gốc.
+  - Selftest: ca 7b so sánh đường DA/TFT bằng `item_alias=True` (không còn dựa vào hook); thêm assert không có khóa `DA_*` trong bảng hook sau khi dựng nội dung.
+- Kết quả sau sửa: thứ tự vẫn giống nhau; hook DA_* = 0; PRIMARY khác bản cũ ở 30/150 trận. Đây là THAY ĐỔI MỐC của PRIMARY, không phải kết quả mô hình. Mọi số PRIMARY trước 11.19 không còn so sánh được với sau đó.
+- Phạm vi: chưa đo độ lớn tác động lên fidelity trên bản ghi thật. Không báo cáo độ chính xác từ mẫu sim.
+- Vẫn mở (không làm trong bước này): id đúng của 10 `DA_Component_*`; làm rõ chú thích `_GENERIC_ITEM` với tác giả engine; ba giả định trait (mục 11.17).
+
+### 11.20 Ingest VOD (2026-11-25)
+- `scripts/combat/ingest_vod.py`: lobby_id = sha1 của 8 tên đã chuẩn hóa (12 ký tự đầu); khử trùng theo (lobby_id, stage, cặp); viết lại `source` thành `lobby_id:stage`; nguồn còn lại vào `fight_extra.jsonl`. Từ chối nếu `merge_check_vod.py` có ERR.
+- Kiểm thử `selftest_ingest_vod.py`: hai VOD cùng lobby + một lobby khác → 3 fight, 1 fight_extra, 2 cụm (raw: 3 cụm). Dầu ra qua `validate_vod.py` thoát 0. Ca gộp có lỗi bị từ chối.
+- Chọn VOD có `vod_id` nhỏ nhất khi trùng; không dùng chất lượng khung hình vì chưa có số đo.

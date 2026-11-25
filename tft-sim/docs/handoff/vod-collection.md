@@ -61,7 +61,7 @@ tft-sim/data/vod_out/20261125/<S>/<vod_id>/
 ```
 
 - `status`: `pending` | `working` | `done` | `blocked` | `stale`. Chỉ agent của slot đó được đặt `done` hoặc `working`. `stale` do điều phối đặt khi reassign.
-- `covered_ranges_s` là các khoảng **đã xử lý xong** (đã commit). `remaining_ranges_s` là phần còn lại của `candidate_ranges_s` trong manifest. Hai danh sách không được chồng nhau trong cùng handoff (`overlap_within_slot`).
+- `covered_ranges_s` là các khoảng **đã xử lý xong** (đã commit). `remaining_ranges_s` là phần còn lại của `candidate_ranges_s` trong manifest. Trong cùng handoff, các khoảng covered không chồng nhau (`overlap_within_slot`), các khoảng remaining không chồng nhau, và covered không chồng remaining (`covered_remaining_overlap`).
 - Tiến độ chỉ đọc từ `handoff.json`, **không** đọc trường `status` trong manifest.
 - `needs_review`: số fight để sang `*_needs_review` (xem spec 11.1).
 
@@ -100,7 +100,7 @@ tft-sim/data/vod_out/20261125/<S>/<vod_id>/
   - `shared_lobby_needs_ingest`: cùng lobby ở hai VOD, bắt buộc khử trùng khi ingest.
   - `duplicate_fight_key_needs_ingest`: cùng (lobby, stage, cặp) ở hai VOD, giữ một bản.
   - `lobby_partial_overlap`: hai lobby chung 4–7 tên, kiểm tay.
-- **Khử trùng ingest chưa được cài đặt.** Đặc tả ở spec 10.2: khóa lobby = sha1 của 8 tên đã chuẩn hóa (NFC, casefold, bỏ khoảng trắng), giữ một fight cho mỗi (lobby, stage, cặp), viết lại `source` thành `<lobby_id>:<stage>`, và gộp cluster theo `lobby_id` khi tính khoảng tin cậy (spec 10.1). Chỉ khi có script ingest thì mới được chấm điểm.
+- **Khử trùng ingest:** `python3 scripts/combat/ingest_vod.py data/vod_manifest_20261125.json data/vod_out/20261125 data/vod_ingest/20261125` (chạy merge check trước, từ chối nếu có ERR). Ghi `fights.jsonl` (source = `<lobby_id>:<stage>`, một bản cho mỗi (lobby, stage, cặp)), `fight_extra.jsonl` (nguồn còn lại) và `ingest_report.json`. Kiểm thử: `selftest_ingest_vod.py`. Chấm điểm chỉ dùng `fights.jsonl` sau khi ingest.
 
 ## 9. Không làm
 

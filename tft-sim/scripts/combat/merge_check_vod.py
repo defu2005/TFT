@@ -17,7 +17,8 @@ Ma loi (ERR chan ghep; WARN chi bao):
   stray_output                thu muc khong khop dong manifest (WARN)
   handoff_mismatch            handoff.json co vod_id/slot khac duong dan thu muc
   bad_range                   covered_ranges_s khong phai [a, b] voi a < b
-  overlap_within_slot         cac khoang trong mot handoff chong nhau
+  overlap_within_slot         cac khoang covered trong mot handoff chong nhau
+  covered_remaining_overlap   covered va remaining cung handoff chong nhau
   overlap_across_slots        khoang cua hai thu muc cung vod_id chong nhau (thu muc cu chua duoc go)
   bad_game_id                 game_id hoac phan game cua source khong dung dang <vod_id>-g<so>
   bad_lobby                   lobby_names khong co 8 ten duy nhat sau chuan hoa
@@ -32,8 +33,7 @@ Chuan hoa ten lobby: NFC, casefold, bo khoang trang dau cuoi. Ten khac nhau o ho
 hay khoang trang van duoc coi la cung nguoi.
 
 Ghi chu: game_id = <vod_id>-g<so>, nen hai streamer cung lobby co game_id khac nhau. Viec
-khu trung va viet lai source thanh <lobby_id>:<stage> la buoc ingest (dac ta trong spec 10.2,
-CHUA cai dat trong script nay).
+khu trung va viet lai source thanh <lobby_id>:<stage> la buoc ingest (scripts/combat/ingest_vod.py).
 """
 import argparse
 import hashlib
@@ -147,6 +147,11 @@ def main() -> int:
                 for j in range(i + 1, len(ranges)):
                     if _overlap(ranges[i], ranges[j]):
                         err("overlap_within_slot", slot=slot, vod_id=vid, a=ranges[i], b=ranges[j])
+            rem = [tuple(x) for x in h.get("remaining_ranges_s", []) if isinstance(x, list) and len(x) == 2]
+            for rg in rem:
+                for cg in ranges:
+                    if _overlap(rg, cg):
+                        err("covered_remaining_overlap", slot=slot, vod_id=vid, covered=cg, remaining=rg)
             group = "second" if role == "second_label" else "primary"
             for rg in ranges:
                 overlap_pool[(vid, group)].append((slot, rg))

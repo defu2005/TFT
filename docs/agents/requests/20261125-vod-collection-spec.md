@@ -385,7 +385,7 @@ Quy tắc: mỗi lần chụp chỉ ghi **một** tướng với **một** tổ 
 
 ### 10.2 Khử trùng
 
-Việc này thuộc bước **ingest**, chạy sau khi gộp (`merge_check_vod.py`). **Chưa cài đặt**: đây là đặc tả, và chưa được chấm điểm cho đến khi có script ingest.
+Việc này thuộc bước **ingest**, chạy sau khi gộp (`merge_check_vod.py`): `tft-sim/scripts/combat/ingest_vod.py` (kiểm thử `selftest_ingest_vod.py`).
 
 - `lobby_id` = `sha1` của 8 tên lobby đã chuẩn hóa (NFC, casefold, bỏ khoảng trắng đầu cuối, sắp xếp), lấy 12 ký tự đầu. Hai VOD cùng lobby có cùng `lobby_id` dù `game_id` khác nhau.
 - Với mỗi (`lobby_id`, `stage_round`, cặp người chơi): giữ **một** bản ghi `fight`, ưu tiên khung hình rõ hơn. Các nguồn còn lại ghi vào `fight_extra.sources`.

@@ -1,4 +1,4 @@
-# Prompt cho agent thu thập VOD (dán nguyên khối; thay `<S>` bằng slot được giao: P1, P2, P3)
+# Prompt cho agent thu thập VOD (dán nguyên khối; thay `<S>` bằng slot được giao: P1, P2, P3 hoặc V1)
 
 Bạn là agent thu thập dữ liệu trận PvP Set 18 từ VOD. Làm việc bằng tiếng Việt trong báo cáo ngắn.
 
@@ -10,7 +10,7 @@ Bạn là agent thu thập dữ liệu trận PvP Set 18 từ VOD. Làm việc b
    git fetch origin claude/claude-fable-5-2-awwmf5
    git checkout -B claude/claude-fable-5-2-awwmf5 origin/claude/claude-fable-5-2-awwmf5
    ```
-2b. Validator cần gói engine `tft_goat`. Nếu lỗi `No module named 'tft_goat'`, chạy `bash tft-sim/scripts/cloud_setup.sh` (hoặc đặt `PYTHONPATH` tới `src` của tft_goat), rồi chạy lại. Không tự viết lại validator.
+2b. Trước mọi lệnh Python của repo: chạy một lần `bash tft-sim/scripts/cloud_setup.sh` (cài engine `tft_goat` ghim commit và venv), rồi `. ~/work/env.sh` trong cùng shell. Không tự viết lại validator, không sửa `PYTHONPATH` bằng tay.
 3. Nhận slot: slot của bạn là **`<S>`** (P1, P2 hoặc P3). Chỉ làm việc trong `tft-sim/data/vod_out/20261125/<S>/`.
    - Nếu `tft-sim/data/vod_out/20261125/<S>/CLAIM.json` đã tồn tại và **không** do bạn tạo, slot đã có người nhận. Dừng, báo lại, không làm.
    - Nếu chưa có: tạo `CLAIM.json` với `{"slot": "<S>", "agent": "<tên phiên>", "claimed_at": "<ngày giờ>"}`, commit và push. Nếu push bị từ chối vì nhánh đã có commit mới, `git fetch` rồi `git merge --no-edit FETCH_HEAD`, đọc lại `CLAIM.json`. Nếu slot đã bị nhận, dừng; nếu không, push lại.
@@ -26,7 +26,7 @@ Phạm vi: chỉ sửa `tft-sim/data/vod_out/20261125/<S>/`, và `CLAIM.json`. K
 
 ## 2. Nhận việc
 
-1. Lấy trong manifest các dòng có `slot == "<S>"` và `role` là `primary` hoặc `second_label`. Bỏ qua `hud_processed`.
+1. Lấy trong manifest các dòng có `slot == "<S>"` và `role` là `primary` hoặc `second_label`. Bỏ qua `hud_processed`. Slot V1 chỉ có dòng `second_label`: ghi vào `V1/<vod_id>/` và không gộp vào primary.
 2. Với mỗi VOD, nếu `tft-sim/data/vod_out/20261125/<S>/<vod_id>/handoff.json` đã có, đọc `remaining_ranges_s` và **tiếp tục từ đó**. Không xóa, không làm lại `covered_ranges_s`. Nếu chưa có, tạo handoff `pending` theo `vod-handoff-v1`.
 3. Nếu `url` là `REPLACE`, đặt `status: blocked`, ghi lý do vào `remaining`, chuyển VOD khác. Không tự tìm URL.
 
@@ -59,6 +59,6 @@ Phạm vi: chỉ sửa `tft-sim/data/vod_out/20261125/<S>/`, và `CLAIM.json`. K
 ## 6. Không làm
 
 - Không xóa dữ liệu đã commit để làm lại; muốn làm lại thì báo điều phối.
-- Không ghi vào `V1` bằng đường primary; second_label ghi vào `V1/<vod_id>/` và không được gộp.
+- Không ghi dòng primary vào V1; second_label không được gộp.
 - Không ghi vào `none` (VOD đã có HUD).
 - Không báo cáo độ chính xác của mô phỏng. Chỉ dùng dữ liệu thật.

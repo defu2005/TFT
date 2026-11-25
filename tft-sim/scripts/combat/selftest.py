@@ -113,7 +113,7 @@ rec_tw = json.loads(json.dumps(rec_da))
 for side in ("a", "b"):
     rec_da[side]["units"][0]["items"] = ["DA_Bloodthirster"]
     rec_tw[side]["units"][0]["items"] = ["TFT_Item_Bloodthirster"]
-oda = F.predict_win(rec_da, 20, "generic", True, 0)
+oda = F.predict_win(rec_da, 20, "generic", True, 0, item_alias=True)  # DA_* -> TFT_Item_* qua id, khong qua hook
 otw = F.predict_win(rec_tw, 20, "generic", True, 0)
 same_counts = (oda["a"], oda["b"], oda["draw"]) == (otw["a"], otw["b"], otw["draw"])
 print("alias path counts DA", (oda["a"], oda["b"], oda["draw"]), "TW", (otw["a"], otw["b"], otw["draw"]))
@@ -131,6 +131,12 @@ rec_nt["a"]["units"][0]["items"] = [nontwin]
 cov_nt = F.coverage(rec_nt)
 print("records content: non-twin", nontwin, "items_unknown", cov_nt["a"]["items_unknown"])
 ok &= cov_nt["a"]["items_unknown"] == 0
+# 8b) Khong dang ky hook DA_* toan cuc (gay doi PRIMARY, xem order_check_items.py)
+from tft_goat.engine import simulate as S_h
+from tft_sim.item_alias import _HOOK_TABLES as _HT
+_da_hooks = [k for tb in _HT for k in getattr(S_h, tb) if str(k).startswith("DA_")]
+print("hook DA_* sau khi dung noi dung:", len(_da_hooks), "(phai 0)")
+ok &= not _da_hooks
 F.set_content(18, c18)
 
 from tft_goat.engine import simulate as S9  # noqa

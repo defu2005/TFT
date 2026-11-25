@@ -1,11 +1,8 @@
 """Alias item Set 18: craftable DA_* co effects rong trong CDragon; item cung ten TFT_Item_* co hieu ung that.
 
 Gia dinh (ghi ro, chua kiem chung tren Set 18 that): hieu ung cua item TFT_Item_<Ten> cung la hieu ung
-cua craftable DA_<Ten> cung ten. Ap dung: (1) copy effects vao content DA_* khi DA rong; (2) dang ky hook
-cua twin cho DA_* trong cac bang ITEM_* cua engine (thay doi trang thai toan cuc cua tien trinh).
-Khong thay doi build_real_set18_clean. Moi alias duoc liet ke de bao cao.
-MOT NOI DUNG MOI TIEN TRINH: build_set18_aliased() ghi vao bang hook ITEM_* cua engine (toan cuc).
-Chay sau no trong cung tien trinh se thay doi hook cua ten DA_*; khong tron voi duong clean.
+cua craftable DA_<Ten> cung ten. Ap dung qua id (fight.boards_of khi item_alias=True), khong qua content hay hook.
+Khong dang ky hook toan cuc (xem order_check_items.py: hook DA_* lam PRIMARY doi 8/150 tran).
 """
 from __future__ import annotations
 
@@ -30,7 +27,8 @@ def alias_map(full) -> dict[str, str]:
 
 
 def build_set18_aliased():
-    """Noi dung Set 18 da alias. Tra ve (content, alias_dict)."""
+    """Noi dung Set 18 co copy effects tu twin vao DA_* rong. CHI DUNG DE CHAN DOAN (alias18.py, selftest).
+    KHONG dang ky hook: hook DA_* toan cuc lam PRIMARY doi ket qua (scripts/combat/order_check_items.py)."""
     full = build_real("TFTSet18")
     amap = alias_map(full)
     clean = build_real_set18_clean()
@@ -38,14 +36,17 @@ def build_set18_aliased():
     for da, tw in amap.items():
         if da in items:
             items[da] = items[da].model_copy(update={"effects": full.items[tw].effects})
-        items[tw] = full.items[tw]  # twin phai co trong content de engine tra duoc effects
-    out = clean.model_copy(update={"items": items, "patch": clean.patch + "-aliased"})
-    for table in _HOOK_TABLES:
-        d = getattr(S, table)
-        for da, tw in amap.items():
-            if tw in d and da not in d:
-                d[da] = d[tw]
+        items[tw] = full.items[tw]
+    out = clean.model_copy(update={"items": items, "patch": clean.patch + "-aliased-diag"})
     return out, amap
+
+
+def build_set18_records():
+    """Noi dung cho PRIMARY va cho ghi ban ghi that: CDragon nguyen goc, KHONG copy effects, KHONG dang ky hook.
+    Ban do DA_* -> TFT_Item_* chi ap dung theo co item_alias (SECONDARY) trong fight.boards_of.
+    Tra ve (content, alias_dict) de giu chu ky cu."""
+    full = build_real("TFTSet18")
+    return full, alias_map(full)
 
 
 if __name__ == "__main__":
@@ -54,19 +55,3 @@ if __name__ == "__main__":
     for k, v in sorted(m.items()):
         print(k, "->", v)
 
-
-def build_set18_records():
-    """Noi dung cho DUONG GHI BAN GHI THAT (fight_cli, fidelity): giu nguyen toan bo item tu CDragon
-    (TFT_Item_* co hieu ung khong bi bo) va bo sung hieu ung cho DA_* rong tu twin cung ten. Dang ky hook cua twin."""
-    full = build_real("TFTSet18")
-    amap = alias_map(full)
-    items = dict(full.items)
-    for da, tw in amap.items():
-        items[da] = items[da].model_copy(update={"effects": full.items[tw].effects})
-    out = full.model_copy(update={"items": items, "patch": full.patch + "-records-aliased"})
-    for table in _HOOK_TABLES:
-        d = getattr(S, table)
-        for da, tw in amap.items():
-            if tw in d and da not in d:
-                d[da] = d[tw]
-    return out, amap

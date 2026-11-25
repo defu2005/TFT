@@ -72,6 +72,8 @@ def build(root: Path, plant: str | None) -> Path:
     h1 = _handoff("twitch-1", "P1", [[0, 100], [100, 200]])
     if plant == "handoff_mismatch":
         h1["vod_id"] = "twitch-2"
+    if plant == "remaining_overlap":
+        h1["remaining_ranges_s"] = [[150, 300]]  # chong covered [100,200]
     if plant == "bad_range":
         h1["covered_ranges_s"] = [[200, 100]]
     _w(d1 / "handoff.json", json.dumps(h1))
@@ -128,6 +130,7 @@ CASES = [
     ("handoff_lech_vod", "handoff_mismatch", "handoff_mismatch", 1),
     ("khoang_sai", "bad_range", "bad_range", 1),
     ("bad_id", "bad_id", "bad_id", 1),
+    ("remaining_chong_covered", "remaining_overlap", "covered_remaining_overlap", 1),
 ]
 
 

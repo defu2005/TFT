@@ -11,7 +11,7 @@ from tft_sim.real_content import build_real  # noqa: E402
 from tft_sim.item_alias import build_set18_records  # noqa: E402
 
 F.set_content(17, build_real("TFTSet17"))
-F.set_content(18, build_set18_records()[0])  # alias DA_* -> hieu ung TFT_Item cung ten
+F.set_content(18, build_set18_records()[0])  # CDragon nguyen goc; alias chi qua item_alias (muc 11.19)
 
 
 def main(argv):
