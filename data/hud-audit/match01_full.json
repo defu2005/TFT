@@ -82,30 +82,24 @@
    "planning": {
     "value": null,
     "tag": "unresolved",
-    "note": "no reader row within 8 s"
+    "note": "322 s frame is the pre-round carousel (augment tooltip); no planning frame read"
    },
    "combat": {
     "value": {
      "frame_t_s": null,
      "hp_losers_this_round": {},
-     "phase_hint": "possible PvE or no damage"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -194,32 +188,49 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "no reader row within 8 s"
+    "frame_s": 336,
+    "tag": "read",
+    "value": {
+     "timer": 30,
+     "panel": {
+      "value": {
+       "Blackthorn": 1,
+       "Spellweaver": 1,
+       "Sprykin": 1
+      },
+      "tag": "read"
+     },
+     "board": {
+      "value": "Little Legend only, no units fielded",
+      "tag": "read"
+     },
+     "shop": {
+      "value": null,
+      "tag": "unresolved",
+      "note": "shop not visible at this frame"
+     },
+     "gold": {
+      "value": null,
+      "tag": "unresolved"
+     }
+    }
    },
    "combat": {
     "value": {
      "frame_t_s": null,
      "hp_losers_this_round": {},
-     "phase_hint": "possible PvE or no damage"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -330,34 +341,33 @@
     "value": {
      "frame_t_s": null,
      "hp_losers_this_round": {},
-     "phase_hint": "possible PvE or no damage"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 366.0,
-       "unit": "DA_18_Veigar",
-       "cost": 2,
-       "slots": [
-        3,
-        4
-       ]
+       "slot": 3,
+       "unit": "Veigar",
+       "cost_consistent_event": true,
+       "tag": "derived"
+      },
+      {
+       "t_s": 366.0,
+       "slot": 4,
+       "unit": "Camille",
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -469,42 +479,40 @@
     "value": {
      "frame_t_s": null,
      "hp_losers_this_round": {},
-     "phase_hint": "possible PvE or no damage"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 400.75,
-       "unit": "DA_18_Alistar",
-       "cost": 2,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Alistar",
+       "cost_consistent_event": true,
+       "tag": "derived"
       },
       {
        "t_s": 431.75,
-       "unit": "DA_18_Rakan",
-       "cost": 2,
-       "slots": [
-        1,
-        2
-       ]
+       "slot": 1,
+       "unit": "Rakan",
+       "cost_consistent_event": true,
+       "tag": "derived"
+      },
+      {
+       "t_s": 431.75,
+       "slot": 2,
+       "unit": "Rakan",
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -628,40 +636,26 @@
    },
    "combat": {
     "value": {
-     "frame_t_s": null,
-     "hp_losers_this_round": {
-      "P1": 3,
-      "P2": 5,
-      "P5": 4,
-      "P7": 5
-     },
-     "phase_hint": "PvP"
+     "frame_s": 505,
+     "phase": "PvE combat (monsters), home view"
     },
-    "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "tag": "read"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 468.75,
-       "unit": "DA_18_Alistar",
-       "cost": 2,
-       "slots": [
-        3
-       ]
+       "slot": 3,
+       "unit": "Alistar",
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    }
   },
   {
@@ -779,42 +773,40 @@
       "P7": 5,
       "P8": 7
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 526.5,
+       "slot": 4,
        "unit": "DA_Scuttlecrab18",
-       "cost": 2,
-       "slots": [
-        4
-       ]
+       "cost_consistent_event": true,
+       "tag": "derived"
       },
       {
        "t_s": 529.25,
-       "unit": "DA_18_Xayah",
-       "cost": 2,
-       "slots": [
-        1,
-        3
-       ]
+       "slot": 1,
+       "unit": "Xayah",
+       "cost_consistent_event": true,
+       "tag": "derived"
+      },
+      {
+       "t_s": 529.25,
+       "slot": 3,
+       "unit": "Varus",
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -946,33 +938,26 @@
       "P5": 6,
       "P6": 6
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 631.25,
-       "unit": "DA_18_LeBlanc",
-       "cost": 2,
-       "slots": [
-        2
-       ]
+       "slot": 2,
+       "unit": "LeBlanc",
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -1088,33 +1073,26 @@
     "value": {
      "frame_t_s": null,
      "hp_losers_this_round": {},
-     "phase_hint": "possible PvE or no damage"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 700.5,
+       "slot": 4,
        "unit": "DA_CrimsonRaptor18",
-       "cost": 3,
-       "slots": [
-        4
-       ]
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -1252,41 +1230,33 @@
       "P5": 7,
       "P7": 7
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 728.0,
-       "unit": "DA_18_Varus",
-       "cost": 1,
-       "slots": [
-        1
-       ]
+       "slot": 1,
+       "unit": "Varus",
+       "cost_consistent_event": true,
+       "tag": "derived"
       },
       {
        "t_s": 730.0,
-       "unit": "DA_18_Ornn",
-       "cost": 1,
-       "slots": [
-        0
-       ]
+       "slot": 0,
+       "unit": "Ornn",
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -1433,43 +1403,37 @@
       "P6": 6,
       "P8": 5
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 787.0,
-       "unit": "DA_18_Shen",
-       "cost": 2,
-       "slots": [
-        0
-       ]
+       "slot": 0,
+       "unit": "Shen",
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [
+     "refresh_candidates": [
       {
        "t_s": 761.0,
-       "events": 2,
-       "slots": [
+       "slots_changed": [
         1,
         2
        ],
-       "gold_drop": 2.0
+       "n_slots": 2,
+       "gold_drop": 2.0,
+       "tag": "candidate"
       }
-     ],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -1603,41 +1567,33 @@
     "value": {
      "frame_t_s": null,
      "hp_losers_this_round": {},
-     "phase_hint": "possible PvE or no damage"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 846.0,
-       "unit": "DA_18_Ezreal",
-       "cost": 4,
-       "slots": [
-        3
-       ]
+       "slot": 3,
+       "unit": "Ezreal",
+       "cost_consistent_event": true,
+       "tag": "derived"
       },
       {
        "t_s": 878.75,
-       "unit": "DA_18_Sejuani",
-       "cost": 2,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Sejuani",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -1795,33 +1751,26 @@
       "P6": 9,
       "P7": 2
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 909.25,
-       "unit": "DA_18_Kobuko",
-       "cost": 1,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Kobuko",
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -1997,49 +1946,40 @@
       "P7": 11,
       "P8": 9
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 994.5,
-       "unit": "DA_18_LeBlanc",
-       "cost": 2,
-       "slots": [
-        3
-       ]
+       "slot": 3,
+       "unit": "LeBlanc",
+       "cost_consistent_event": true,
+       "tag": "derived"
       },
       {
        "t_s": 996.25,
+       "slot": 4,
        "unit": "DA_Cinderling18",
-       "cost": 1,
-       "slots": [
-        4
-       ]
+       "cost_consistent_event": true,
+       "tag": "derived"
       },
       {
        "t_s": 1009.75,
-       "unit": "DA_18_Sejuani",
-       "cost": 2,
-       "slots": [
-        2
-       ]
+       "slot": 2,
+       "unit": "Sejuani",
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -2205,41 +2145,33 @@
       "P7": 8,
       "P8": 13
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 1048.75,
+       "slot": 1,
        "unit": "DA_CrimsonRaptor18",
-       "cost": 3,
-       "slots": [
-        1
-       ]
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 1076.0,
-       "unit": "DA_18_Rakan",
-       "cost": 1,
-       "slots": [
-        3
-       ]
+       "slot": 3,
+       "unit": "Rakan",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -2355,24 +2287,18 @@
     "value": {
      "frame_t_s": null,
      "hp_losers_this_round": {},
-     "phase_hint": "possible PvE or no damage"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -2532,77 +2458,73 @@
       "P7": 11,
       "P8": 10
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 1177.25,
-       "unit": "DA_18_Sejuani",
-       "cost": 2,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Sejuani",
+       "cost_consistent_event": true,
+       "tag": "derived"
       },
       {
        "t_s": 1184.25,
-       "unit": "DA_18_Malphite",
-       "cost": 4,
-       "slots": [
-        2
-       ]
+       "slot": 2,
+       "unit": "Malphite",
+       "cost_consistent_event": true,
+       "tag": "derived"
       },
       {
        "t_s": 1197.75,
-       "unit": "DA_18_LeBlanc",
-       "cost": 2,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "LeBlanc",
+       "cost_consistent_event": true,
+       "tag": "derived"
       },
       {
        "t_s": 1234.0,
-       "unit": "DA_18_Azir",
-       "cost": 6,
-       "slots": [
-        0,
-        1
-       ]
+       "slot": 0,
+       "unit": "Azir",
+       "cost_consistent_event": false,
+       "tag": "candidate"
+      },
+      {
+       "t_s": 1234.0,
+       "slot": 1,
+       "unit": "Cassiopeia",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 1235.5,
+       "slot": 2,
        "unit": "DA_Krug18",
-       "cost": 3,
-       "slots": [
-        2
-       ]
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [
+     "refresh_candidates": [
       {
        "t_s": 1168.5,
-       "events": 3,
-       "slots": [
+       "slots_changed": [
         1,
         2,
         3
        ],
-       "gold_drop": 3
+       "n_slots": 3,
+       "gold_drop": 3,
+       "tag": "candidate"
       }
-     ],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -2763,53 +2685,42 @@
    },
    "combat": {
     "value": {
-     "frame_t_s": null,
-     "hp_losers_this_round": {
-      "P2": 11,
-      "P3": 9,
-      "P6": 10,
-      "P8": 13
-     },
-     "phase_hint": "PvP"
+     "window_s": "approx 1262-1290",
+     "opponent_alias": "P2",
+     "basis": "alias matched by sidebar HP to labels; outcome not read"
     },
-    "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "tag": "derived"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 1240.25,
-       "unit": "DA_18_Azir",
-       "cost": 3,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Azir",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 1315.75,
-       "unit": "DA_18_Ezreal",
-       "cost": 4,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Ezreal",
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "no 3-7 HP label to take the 3-6 damage from"
+    "value": {
+     "streamer_hp_loss": 0,
+     "outcome": "win (flame 8 to 9; HP unchanged)"
+    },
+    "tag": "derived",
+    "basis": "HP labels 3-6 vs 3-7 unchanged P1; streak step"
    }
   },
   {
@@ -2952,34 +2863,29 @@
     "value": {
      "frame_t_s": null,
      "hp_losers_this_round": {},
-     "phase_hint": "possible PvE or no damage"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [],
-     "refresh_groups": [
+     "refresh_candidates": [
       {
        "t_s": 1317.5,
-       "events": 2,
-       "slots": [
+       "slots_changed": [
         1,
         2
        ],
-       "gold_drop": 6
+       "n_slots": 2,
+       "gold_drop": 6,
+       "tag": "candidate"
       }
-     ],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -3107,71 +3013,70 @@
       "P6": 13,
       "P8": 12
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 1363.75,
-       "unit": "DA_18_Teemo",
-       "cost": 2,
-       "slots": [
-        3
-       ]
+       "slot": 3,
+       "unit": "Teemo",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 1366.25,
-       "unit": "DA_18_LeBlanc",
-       "cost": 5,
-       "slots": [
-        0,
-        3
-       ]
+       "slot": 0,
+       "unit": "LeBlanc",
+       "cost_consistent_event": false,
+       "tag": "candidate"
+      },
+      {
+       "t_s": 1366.25,
+       "slot": 3,
+       "unit": "Hecarim",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 1372.5,
+       "slot": 2,
        "unit": "DA_Amumu18",
-       "cost": 4,
-       "slots": [
-        2
-       ]
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [
+     "refresh_candidates": [
       {
        "t_s": 1357.25,
-       "events": 3,
-       "slots": [
+       "slots_changed": [
         0,
         1,
         4
        ],
-       "gold_drop": 4.0
+       "n_slots": 3,
+       "gold_drop": 4.0,
+       "tag": "candidate"
       },
       {
        "t_s": 1361.0,
-       "events": 3,
-       "slots": [
+       "slots_changed": [
         0,
         2,
         4
        ],
-       "gold_drop": 9.0
+       "n_slots": 3,
+       "gold_drop": 9.0,
+       "tag": "candidate"
       }
-     ],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -3300,33 +3205,26 @@
       "P7": 12,
       "P8": 9
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 9
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 1527.75,
-       "unit": "DA_18_Tristana",
-       "cost": 3,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Tristana",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    }
   },
   {
@@ -3446,24 +3344,18 @@
       "P6": 12,
       "P8": 15
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -3586,24 +3478,18 @@
     "value": {
      "frame_t_s": null,
      "hp_losers_this_round": {},
-     "phase_hint": "possible PvE or no damage"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -3731,33 +3617,26 @@
       "P5": 12,
       "P6": 12
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 1714.5,
-       "unit": "DA_18_Hecarim",
-       "cost": 3,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Hecarim",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -3885,24 +3764,18 @@
       "P6": 12,
       "P8": 7
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -4034,41 +3907,33 @@
     "value": {
      "frame_t_s": null,
      "hp_losers_this_round": {},
-     "phase_hint": "possible PvE or no damage"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 1802.0,
-       "unit": "DA_18_Ezreal",
-       "cost": 4,
-       "slots": [
-        2
-       ]
+       "slot": 2,
+       "unit": "Ezreal",
+       "cost_consistent_event": true,
+       "tag": "derived"
       },
       {
        "t_s": 1828.0,
-       "unit": "DA_18_Ahri",
-       "cost": 4,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Ahri",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -4201,93 +4066,83 @@
       "P5": 12,
       "P6": 13
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 14
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 1842.75,
-       "unit": "DA_18_Ezreal",
-       "cost": 4,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Ezreal",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 1848.25,
-       "unit": "DA_18_Kennen",
-       "cost": 5,
-       "slots": [
-        2
-       ]
+       "slot": 2,
+       "unit": "Kennen",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 1849.75,
+       "slot": 0,
        "unit": "DA_Lux18_Base",
-       "cost": 5,
-       "slots": [
-        0
-       ]
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 1852.0,
+       "slot": 4,
        "unit": "DA_Draven18",
-       "cost": 5,
-       "slots": [
-        4
-       ]
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 1854.0,
-       "unit": "DA_18_Maokai",
-       "cost": 5,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Maokai",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 1906.75,
+       "slot": 0,
        "unit": "DA_Brambleback18",
-       "cost": 4,
-       "slots": [
-        0
-       ]
+       "cost_consistent_event": false,
+       "tag": "candidate"
       }
      ],
-     "refresh_groups": [
+     "refresh_candidates": [
       {
        "t_s": 1840.75,
-       "events": 2,
-       "slots": [
+       "slots_changed": [
         0,
         2
        ],
-       "gold_drop": 11.0
+       "n_slots": 2,
+       "gold_drop": 11.0,
+       "tag": "candidate"
       },
       {
        "t_s": 1844.25,
-       "events": 3,
-       "slots": [
+       "slots_changed": [
         0,
         1,
         3
        ],
-       "gold_drop": 14.5
+       "n_slots": 3,
+       "gold_drop": 14.5,
+       "tag": "candidate"
       }
-     ],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    }
   },
   {
@@ -4416,61 +4271,55 @@
       "P6": 4,
       "P7": 11
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 1909.25,
-       "unit": "DA_18_Azir",
-       "cost": 3,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Azir",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 1917.5,
+       "slot": 0,
        "unit": "DA_Taric18",
-       "cost": 5,
-       "slots": [
-        0
-       ]
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [
+     "refresh_candidates": [
       {
        "t_s": 1911.25,
-       "events": 3,
-       "slots": [
+       "slots_changed": [
         1,
         3,
         4
        ],
-       "gold_drop": 10.0
+       "n_slots": 3,
+       "gold_drop": 10.0,
+       "tag": "candidate"
       },
       {
        "t_s": 1921.25,
-       "events": 2,
-       "slots": [
+       "slots_changed": [
         0,
         3
        ],
-       "gold_drop": 6.0
+       "n_slots": 2,
+       "gold_drop": 6.0,
+       "tag": "candidate"
       }
-     ],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -4606,51 +4455,44 @@
       "P4": 15,
       "P7": 14
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 1993.5,
-       "unit": "DA_18_Warwick",
-       "cost": 2,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Warwick",
+       "cost_consistent_event": true,
+       "tag": "derived"
       },
       {
        "t_s": 2007.25,
+       "slot": 4,
        "unit": "DA_Taric18",
-       "cost": 5,
-       "slots": [
-        4
-       ]
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [
+     "refresh_candidates": [
       {
        "t_s": 2003.25,
-       "events": 3,
-       "slots": [
+       "slots_changed": [
         0,
         4
        ],
-       "gold_drop": 12
+       "n_slots": 2,
+       "gold_drop": 12,
+       "tag": "candidate"
       }
-     ],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -4768,24 +4610,18 @@
     "value": {
      "frame_t_s": null,
      "hp_losers_this_round": {},
-     "phase_hint": "possible PvE or no damage"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -4921,65 +4757,54 @@
       "P4": 17,
       "P7": 14
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 2094.5,
-       "unit": "DA_18_Ashe",
-       "cost": 5,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Ashe",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 2096.0,
-       "unit": "DA_18_KhaZix",
-       "cost": 3,
-       "slots": [
-        3
-       ]
+       "slot": 3,
+       "unit": "KhaZix",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 2097.25,
-       "unit": "DA_18_Ezreal",
-       "cost": 4,
-       "slots": [
-        0
-       ]
+       "slot": 0,
+       "unit": "Ezreal",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 2104.5,
-       "unit": "DA_18_Ezreal",
-       "cost": 4,
-       "slots": [
-        0
-       ]
+       "slot": 0,
+       "unit": "Ezreal",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 2108.25,
-       "unit": "DA_18_Ezreal",
-       "cost": 4,
-       "slots": [
-        0
-       ]
+       "slot": 0,
+       "unit": "Ezreal",
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -5121,49 +4946,40 @@
       "P1": 15,
       "P4": 17
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 15
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 2165.75,
-       "unit": "DA_18_Sett",
-       "cost": 4,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Sett",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 2228.5,
+       "slot": 1,
        "unit": "DA_Murkwolf18",
-       "cost": 2,
-       "slots": [
-        1
-       ]
+       "cost_consistent_event": false,
+       "tag": "candidate"
       },
       {
        "t_s": 2230.25,
-       "unit": "DA_18_Kennen",
-       "cost": 5,
-       "slots": [
-        2
-       ]
+       "slot": 2,
+       "unit": "Kennen",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    }
   },
   {
@@ -5288,33 +5104,26 @@
     "value": {
      "frame_t_s": null,
      "hp_losers_this_round": {},
-     "phase_hint": "possible PvE or no damage"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 2268.75,
+       "slot": 1,
        "unit": "DA_Amumu18",
-       "cost": 4,
-       "slots": [
-        1
-       ]
+       "cost_consistent_event": true,
+       "tag": "derived"
       }
      ],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -5450,34 +5259,29 @@
       "P2": 14,
       "P4": 13
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [],
-     "refresh_groups": [
+     "refresh_candidates": [
       {
        "t_s": 2333.25,
-       "events": 3,
-       "slots": [
+       "slots_changed": [
         3,
         4
        ],
-       "gold_drop": -1
+       "n_slots": 2,
+       "gold_drop": -1,
+       "tag": "candidate"
       }
-     ],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -5618,43 +5422,37 @@
       "P1": 16,
       "P4": 10
      },
-     "phase_hint": "PvP"
+     "streamer_hp_loss": 16
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 2336.0,
-       "unit": "DA_18_Hecarim",
-       "cost": 3,
-       "slots": [
-        0
-       ]
+       "slot": 0,
+       "unit": "Hecarim",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       }
      ],
-     "refresh_groups": [
+     "refresh_candidates": [
       {
        "t_s": 2398.25,
-       "events": 2,
-       "slots": [
+       "slots_changed": [
         3,
         4
        ],
-       "gold_drop": 7
+       "n_slots": 2,
+       "gold_drop": 7,
+       "tag": "candidate"
       }
-     ],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    }
   },
   {
@@ -5786,24 +5584,18 @@
      "hp_losers_this_round": {
       "P1": 16
      },
-     "phase_hint": "single loser"
+     "streamer_hp_loss": 16
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [],
-     "refresh_groups": [],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
-     ]
+     "refresh_candidates": []
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    }
   },
   {
@@ -5928,34 +5720,29 @@
     "value": {
      "frame_t_s": null,
      "hp_losers_this_round": {},
-     "phase_hint": "possible PvE or no damage"
+     "streamer_hp_loss": 0
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [],
-     "refresh_groups": [
+     "refresh_candidates": [
       {
        "t_s": 2480.5,
-       "events": 2,
-       "slots": [
+       "slots_changed": [
         0,
         4
        ],
-       "gold_drop": 2.0
+       "n_slots": 2,
+       "gold_drop": 2.0,
+       "tag": "candidate"
       }
-     ],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": {
@@ -6086,51 +5873,44 @@
      "hp_losers_this_round": {
       "P1": 18
      },
-     "phase_hint": "single loser"
+     "streamer_hp_loss": 18
     },
     "tag": "derived",
-    "note": "opponent alias unresolved; needs one frame per round at frame_t_s"
+    "note": "opponent alias not yet read from frame"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 2489.75,
-       "unit": "DA_18_Akali_AD",
-       "cost": 1,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Akali_AD",
+       "cost_consistent_event": true,
+       "tag": "derived"
       },
       {
        "t_s": 2546.75,
-       "unit": "DA_18_Soraka",
-       "cost": 4,
-       "slots": [
-        4
-       ]
+       "slot": 4,
+       "unit": "Soraka",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       }
      ],
-     "refresh_groups": [
+     "refresh_candidates": [
       {
        "t_s": 2482.5,
-       "events": 2,
-       "slots": [
+       "slots_changed": [
         1,
         4
        ],
-       "gold_drop": 4
+       "n_slots": 2,
+       "gold_drop": 4,
+       "tag": "candidate"
       }
-     ],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    }
   },
   {
@@ -6252,58 +6032,57 @@
     "basis": "reader row nearest t_planning_s"
    },
    "combat": {
-    "value": null,
-    "tag": "unresolved",
-    "note": "no next HP row"
+    "value": {
+     "frame_t_s": 2615,
+     "opponent_alias": "P2",
+     "basis": "sidebar HP 16 equals P2 at 6-6 label",
+     "streamer_hp_at_label": 9
+    },
+    "tag": "read"
    },
    "actions": {
     "value": {
      "buys": [
       {
        "t_s": 2556.75,
-       "unit": "DA_18_GnarSmall",
-       "cost": 5,
-       "slots": [
-        0
-       ]
+       "slot": 0,
+       "unit": "GnarSmall",
+       "cost_consistent_event": false,
+       "tag": "candidate"
       }
      ],
-     "refresh_groups": [
+     "refresh_candidates": [
       {
        "t_s": 2548.0,
-       "events": 3,
-       "slots": [
+       "slots_changed": [
         0,
         1,
         4
        ],
-       "gold_drop": 2.0
+       "n_slots": 3,
+       "gold_drop": 2.0,
+       "tag": "candidate"
       },
       {
        "t_s": 2563.5,
-       "events": 2,
-       "slots": [
+       "slots_changed": [
         1,
         2,
         3
        ],
-       "gold_drop": 12.0
+       "n_slots": 3,
+       "gold_drop": 12.0,
+       "tag": "candidate"
       }
-     ],
-     "not_derived": [
-      "xp_buys (gold drop with no shop change not joined)",
-      "sells",
-      "level_ups",
-      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases_match01_v3.json events grouped within 1 s; buys = single-slot changes; refresh_groups = multi-slot changes, reroll candidates not yet confirmed"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
    },
    "result": {
     "value": null,
     "tag": "unresolved",
-    "note": "no next HP row for this round"
+    "note": "final combat still running at 2615 s; placement not read within window"
    }
   }
  ],
