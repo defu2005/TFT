@@ -88,12 +88,12 @@
     "others": 0
   },
   "validator": {
-    "ok": 0,
+    "ok": 2,
     "skipped": {
-      "winner_null": 48
+      "winner_null": 46
     }
   },
-  "needs_review": 48,
+  "needs_review": 46,
   "commit": "580f40c",
-  "remaining": "P3 stubs/volume. densify boards+winner. rem from 17500s"
+  "remaining": "P3 densify: full=0 both=0 win=2 rich_a>=14. Continue side_b."
 }

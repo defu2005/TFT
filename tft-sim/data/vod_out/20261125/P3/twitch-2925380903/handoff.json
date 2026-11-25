@@ -61,12 +61,12 @@
     "others": 0
   },
   "validator": {
-    "ok": 10,
+    "ok": 12,
     "skipped": {
-      "winner_null": 69
+      "winner_null": 67
     }
   },
-  "needs_review": 69,
+  "needs_review": 67,
   "commit": "c193939",
-  "remaining": "P3 stubs/volume. densify boards+winner. rem from 10600s"
+  "remaining": "P3 densify: full=2 both=3 win=12 rich_a>=57. Continue side_b."
 }
