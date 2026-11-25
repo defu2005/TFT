@@ -57,12 +57,12 @@
   },
   "placement_1": "P2 (only player left alive besides streamer)",
   "unverified": [
-    "placements 5/6 tie order",
-    "round outcomes for rounds with no streamer damage",
-    "round 6-6 result",
-    "win/loss per round (only streamer damage known)",
-    "2-3 HP drop pattern (5 players dropped) not explained"
+    "win/loss per round beyond streamer damage and streak sign",
+    "2-2->2-3 five-loser anomaly",
+    "placement tie order 5/6 (sidebar used)"
   ],
-  "streak_crosscheck": "INCONCLUSIVE: fields4 streak reads 1-2 with no streamer damage (2-2, 2-3) and drops the sign; not used.",
-  "label_corrections": "2-3 re-read from sharp frame at 602 s: P5 87 (was 91), P4 96, P8 93. Streamer results unchanged."
+  "streak_crosscheck": "PASS (per advisor reading): counter is the unsigned length of the current streak; during round N it shows round N-1's result. PvP rounds 2-2..3-6 climb 1..9; reset to 1 after 5-1 and 5-6; 1,2,3 across 6-2, 6-3, 6-5. Streak at 4-2 reads 10 (crop), with a fire icon.",
+  "label_corrections": "2-3 re-read from sharp frame at 602 s: P5 87 (was 91), P4 96, P8 93. Streamer results unchanged.",
+  "reread_15s": "Re-read 15 rows (x-2, x-3, x-6) at round start+15 s: 14 match labels; 5-6 matches at 2190 and 2205 s. 2-3 settled at 612.9 s.",
+  "pvp_anomaly": "2-2 to 2-3: five players lose HP (P4,P5,P6,P7,P8), against the advisor's four-loser rule. Values confirmed at 602 s and 612.9 s; recorded as an anomaly."
 }
