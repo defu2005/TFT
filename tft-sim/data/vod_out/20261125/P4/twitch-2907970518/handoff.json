@@ -3,34 +3,39 @@
   "vod_id": "twitch-2907970518",
   "slot": "P4",
   "role": "primary",
-  "status": "partial",
+  "status": "done",
   "covered_ranges_s": [
     [
       60,
       2200
-    ]
-  ],
-  "remaining_ranges_s": [
+    ],
     [
-      2200,
-      99999
+      2400,
+      4500
+    ],
+    [
+      5400,
+      7000
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
-    "twitch-2907970518-g60"
+    "twitch-2907970518-g60",
+    "twitch-2907970518-g2400",
+    "twitch-2907970518-g5400"
   ],
   "counts": {
-    "games": 1,
-    "fights": 14,
+    "games": 3,
+    "fights": 42,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 14
+      "winner_null": 42
     }
   },
-  "needs_review": 14,
+  "needs_review": 42,
   "commit": null,
-  "remaining": "More ranked after g60; denser HLS pending."
+  "remaining": "Ranked games done; ~7800+ non-TFT break (krillion) skipped."
 }
