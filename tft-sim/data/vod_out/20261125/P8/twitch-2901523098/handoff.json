@@ -7,12 +7,12 @@
   "covered_ranges_s": [
     [
       250,
-      1520
+      2140
     ]
   ],
   "remaining_ranges_s": [
     [
-      1520,
+      2140,
       28980
     ]
   ],
@@ -21,16 +21,16 @@
   ],
   "counts": {
     "games": 1,
-    "fights": 8,
+    "fights": 18,
     "others": 0
   },
   "validator": {
-    "ok": 1,
+    "ok": 5,
     "skipped": {
-      "winner_null": 7
+      "winner_null": 13
     }
   },
-  "needs_review": 7,
-  "commit": "192153d",
-  "remaining": "USER priority: full fights. Densified g250 to ~4-4 carousel @1460. Continue PvP 4-5+ with board+winner when certain. P8-primary owns VOD."
+  "needs_review": 13,
+  "commit": "0e677e1",
+  "remaining": "g250 full densify done ~2-2..6-1 (18 fights). Next game after ~2140 or densify other thin P8 VODs. P8-primary owns VOD."
 }
