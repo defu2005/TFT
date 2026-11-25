@@ -7,7 +7,7 @@
   "covered_ranges_s": [
     [
       270,
-      1600
+      1760
     ]
   ],
   "remaining_ranges_s": [
@@ -16,7 +16,7 @@
       270
     ],
     [
-      1600,
+      1760,
       29230
     ]
   ],
@@ -25,16 +25,16 @@
   ],
   "counts": {
     "games": 1,
-    "fights": 3,
+    "fights": 11,
     "others": 0
   },
   "validator": {
-    "ok": 0,
+    "ok": 6,
     "skipped": {
-      "winner_null": 3
+      "winner_null": 5
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "continue ranked after ~1600s; refine boards/lobby OCR; more PvP stages"
+  "remaining": "g270 densified (placement 8 @~1760). Continue FULL density game2 from ~2040; no thin survey."
 }
