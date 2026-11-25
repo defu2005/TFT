@@ -4759,41 +4759,9 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": {
-     "panel": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "board": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "bench": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "gold": {
-      "value": 3,
-      "tag": "derived"
-     },
-     "level": {
-      "value": null,
-      "tag": "derived"
-     },
-     "shop_ids": {
-      "value": [
-       "Soraka",
-       "DA_Gromp18_AP",
-       "DA_Lux18_Base",
-       "Yunara",
-       null
-      ],
-      "tag": "derived"
-     }
-    },
-    "tag": "derived",
-    "basis": "reader row nearest t_planning_s",
-    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
+    "value": null,
+    "tag": "unresolved",
+    "note": "2068 s frame: shared pink arena with eight nameplates, not planning"
    },
    "combat": {
     "value": {
@@ -4921,41 +4889,34 @@
    },
    "combat_frame_t_s": null,
    "planning": {
+    "frame_s": 2094,
+    "tag": "read",
     "value": {
+     "timer": 21,
+     "level": 9,
+     "xp": "6/68",
+     "gold": 7,
+     "streak": 2,
+     "counter": "9/9",
      "panel": {
-      "value": null,
-      "tag": "unresolved"
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 2,
+      "Brawler": 2,
+      "Juggernaut": 2
      },
-     "board": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "bench": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "gold": {
-      "value": 9,
-      "tag": "derived"
-     },
-     "level": {
-      "value": null,
-      "tag": "derived"
-     },
-     "shop_ids": {
-      "value": [
-       "Rengar",
-       "Zyra",
-       "Camille",
-       "DA_Murkwolf18",
-       "Ashe"
-      ],
-      "tag": "derived"
-     }
-    },
-    "tag": "derived",
-    "basis": "reader row nearest t_planning_s",
-    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
+     "shop": [
+      "Gromp",
+      "Sejuani",
+      "Rammus",
+      "Kha'Zix",
+      null
+     ]
+    }
    },
    "combat": {
     "value": {
@@ -5128,41 +5089,34 @@
     "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
+    "frame_s": 2172,
+    "tag": "read",
     "value": {
+     "timer": 20,
+     "level": 9,
+     "xp": "8/68",
+     "gold": 6,
+     "streak": 3,
+     "counter": "9/9",
      "panel": {
-      "value": null,
-      "tag": "unresolved"
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 2,
+      "Brawler": 2,
+      "Juggernaut": 2
      },
-     "board": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "bench": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "gold": {
-      "value": 8,
-      "tag": "derived"
-     },
-     "level": {
-      "value": null,
-      "tag": "derived"
-     },
-     "shop_ids": {
-      "value": [
-       "Cassiopeia",
-       "Sett",
-       "Sett",
-       "Tristana",
-       "Sett"
-      ],
-      "tag": "derived"
-     }
-    },
-    "tag": "derived",
-    "basis": "reader row nearest t_planning_s",
-    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
+     "shop": [
+      "Teemo",
+      "Murkwolf",
+      "Lillia",
+      "Ashe",
+      "Salvager"
+     ]
+    }
    },
    "combat": {
     "value": {
@@ -5307,41 +5261,34 @@
    },
    "combat_frame_t_s": null,
    "planning": {
+    "frame_s": 2236,
+    "tag": "read",
     "value": {
+     "timer": 7,
+     "level": 9,
+     "xp": "10/68",
+     "gold": 6,
+     "streak": 1,
+     "counter": "9/9",
      "panel": {
-      "value": null,
-      "tag": "unresolved"
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 2,
+      "Brawler": 2,
+      "Juggernaut": 2
      },
-     "board": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "bench": {
-      "value": null,
-      "tag": "unresolved"
-     },
-     "gold": {
-      "value": 6,
-      "tag": "derived"
-     },
-     "level": {
-      "value": null,
-      "tag": "derived"
-     },
-     "shop_ids": {
-      "value": [
-       "Kayle",
-       "Xayah",
-       null,
-       "MasterYi_AD",
-       "LeBlanc"
-      ],
-      "tag": "derived"
-     }
-    },
-    "tag": "derived",
-    "basis": "reader row nearest t_planning_s",
-    "note": "gold and level and shop from reader; validated on 4 of 5 frame checks (1240 s reader 35 vs frame 37, mid-purchase)"
+     "shop": [
+      "Kayle",
+      "Xayah",
+      null,
+      "Master Yi",
+      "LeBlanc"
+     ]
+    }
    },
    "combat": {
     "value": {
