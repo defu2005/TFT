@@ -3709,5 +3709,14 @@
   },
   "round_type_derived": "rounds with no HP change in the label set: 1-1..1-4, 2-4, 2-7, 3-4, 3-7, 4-4, 4-7, 5-4, 5-7, 6-4 (flag only, derived; not named PvE)",
   "status": "partial; names not assigned; stop rule: 10 rounds with observations or an exact unreadable frame"
+ },
+ "phase_windows": {
+  "3-1": {
+   "planning_s": "882-898 (counter 5/5 visible on blue board; 901 s frame read)",
+   "combat_s": "about 906-952 (units fight; opponent arena scenes at 888-890 s are not the home board)",
+   "augment_choice_s": "954-956 (Choose One: Salvage Bin+, Big Grab Bag, Magic Roll)",
+   "method": "contact sheet of 38 sweep frames, 2 s apart, read by eye",
+   "tag": "read"
+  }
  }
 }
