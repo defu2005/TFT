@@ -7,28 +7,12 @@
   "covered_ranges_s": [
     [
       120,
-      700
-    ],
-    [
-      1500,
-      1600
-    ],
-    [
-      2200,
-      2300
+      2340
     ]
   ],
   "remaining_ranges_s": [
     [
-      700,
-      1500
-    ],
-    [
-      1600,
-      2200
-    ],
-    [
-      2300,
+      2340,
       23928
     ]
   ],
@@ -37,16 +21,14 @@
   ],
   "counts": {
     "games": 1,
-    "fights": 6,
-    "others": 6
+    "fights": 18,
+    "others": 18
   },
   "validator": {
-    "ok": 2,
-    "skipped": {
-      "winner_null": 4
-    }
+    "ok": 18,
+    "skipped": {}
   },
-  "needs_review": 4,
-  "commit": "e1e57ba",
-  "remaining": "g120: added 2-2/2-3 from combat_early_labels; confirmed 2-1,2-5,4-5,5-3. units []. Tiếp stage3–5 PvP + 2-6 opp name."
+  "needs_review": 0,
+  "commit": "2f8bc35",
+  "remaining": "g120 done (18 PvP fights, skipped 5-3/5-6 opp unread + carousel/PvE/augment). Tiếp game2+ từ ~2460. Ranked Set 18."
 }
