@@ -1,0 +1,34 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2886828264",
+  "slot": "P9",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      120,
+      1990
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      1990,
+      16144
+    ]
+  ],
+  "game_ids": [
+    "twitch-2886828264-g120"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 0,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {}
+  },
+  "needs_review": 9,
+  "commit": null,
+  "remaining": "game1 identified ranked; 9 PvP rounds in fights_needs_review (board OCR incomplete). Continue labeling fights then more games after 2000s."
+}
