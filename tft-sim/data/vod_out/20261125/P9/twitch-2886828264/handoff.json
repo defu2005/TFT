@@ -29,6 +29,6 @@
     "skipped": {}
   },
   "needs_review": 9,
-  "commit": null,
+  "commit": "7fbe286",
   "remaining": "game1 identified ranked; 9 PvP rounds in fights_needs_review (board OCR incomplete). Continue labeling fights then more games after 2000s."
 }
