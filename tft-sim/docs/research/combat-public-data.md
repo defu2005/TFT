@@ -138,3 +138,17 @@ Hiệu theo cặp:
 **Đọc kết quả**: template theo mô tả không cải thiện đồng thuận so với nuke mặc định ở Set 17, và không khác biệt rõ với không ability. Đồng thời phủ Set 18 chỉ 1%, nên con đường template không đủ cho Set 18 khi dữ liệu biến trống. Không có căn cứ để tiếp tục mở rộng template cho Set 18 trên nguồn hiện có.
 
 Giới hạn: tham chiếu là engine viết tay, không phải trận thật; mỗi tướng chỉ có một template đơn giản (sát thương đơn mục tiêu, choáng); chưa thử template hồi máu, khiên, nhiều mục tiêu.
+
+## 10. Nguồn số liệu ability Set 18 (blitz.gg): không thu thập
+
+Đã kiểm tra blitz.gg (2026-11-25). Trang tướng có chỉ số và số ability theo sao (ví dụ Alune: 58/88/500 sát thương phép), nên về mặt nội dung đây là nguồn có số. Nhưng không dùng để thu thập:
+
+- Điều khoản sử dụng (`/legal/terms-of-service`): giấy phép chỉ cho "personal, non-commercial entertainment use"; cấm sao chép, sửa đổi, dùng cho mục đích thương mại, dịch ngược.
+- `robots.txt`: chặn `ClaudeBot` và `GPTBot` (`Disallow: /`) với ghi chú "training crawlers".
+- Đã thu thập tự động 30/74 trang trước khi dừng (danh sách đầu vào chỉ lấy được 74 slug, không phải 91). Dừng và xóa dữ liệu thô, không ghi file nào vào repo.
+
+Hệ quả: không dùng số liệu blitz.gg cho template Set 18 trừ khi có quyết định cấp phép của người dùng. Ngay cả khi có, kết quả mục 9 cho thấy template số liệu chưa cải thiện đồng thuận so với nuke mặc định ở Set 17, nên số liệu không tự mở khóa một predictor Set 18 trung thực.
+
+Chặn thật sự của Set 18 vẫn là: 0/594 augment có hook, logic ability viết tay chưa có, chưa có bản ghi trận thật có kết quả, và chưa xác nhận vị trí tướng trên dữ liệu thật.
+
+Việc cần người dùng quyết: (a) xác nhận giấy phép CDragon (nguồn mô tả và biến đang dùng); (b) nếu muốn số liệu Set 18, cần nguồn có giấy phép rõ ràng, hoặc chấp nhận rủi ro điều khoản blitz.gg cho mục đích nghiên cứu nội bộ.
