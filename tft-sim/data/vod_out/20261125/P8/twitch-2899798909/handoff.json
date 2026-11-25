@@ -8,7 +8,7 @@
   "remaining_ranges_s": [
     [
       0,
-      null
+      32500
     ]
   ],
   "game_ids": [],
@@ -17,8 +17,11 @@
     "fights": 0,
     "others": 0
   },
-  "validator": {},
+  "validator": {
+    "ok": 0,
+    "skipped": {}
+  },
   "needs_review": 0,
   "commit": null,
-  "remaining": "helper claim; probing RANKED Set 18"
+  "remaining": "P8-primary starting longest VOD (32500s). Confirm RANKED Set18 then push first game. P2: prefer other unclaimed P8 VODs."
 }

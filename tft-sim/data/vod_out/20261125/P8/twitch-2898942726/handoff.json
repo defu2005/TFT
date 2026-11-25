@@ -7,12 +7,12 @@
   "covered_ranges_s": [
     [
       400,
-      700
+      1900
     ]
   ],
   "remaining_ranges_s": [
     [
-      700,
+      1900,
       29590
     ]
   ],
@@ -21,16 +21,16 @@
   ],
   "counts": {
     "games": 1,
-    "fights": 2,
+    "fights": 7,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 2
+      "winner_null": 7
     }
   },
-  "needs_review": 2,
-  "commit": "4f145c2",
-  "remaining": "continue ranked from ~700s; refine boards/lobby OCR; more PvP stages"
+  "needs_review": 7,
+  "commit": "76e02ee",
+  "remaining": "P8-primary (bc-23b889d7) OWNS entire twitch-2898942726 — P2 helper: do NOT write this vod_id; take other P8 VODs (e.g. twitch-2899798909+). Continue this VOD from ~1900s (game1 late / game2+)."
 }
