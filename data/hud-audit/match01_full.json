@@ -1031,6 +1031,11 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
+   },
+   "panel_visual_check": {
+    "value": "8 rows, no marker, ninth slot empty on the frame read at t_planning_s + 3",
+    "tag": "read",
+    "note": "supports k=0 for this round"
    }
   },
   {
@@ -1225,6 +1230,11 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
+   },
+   "panel_visual_check": {
+    "value": "8 rows, no marker, ninth slot empty on the frame read at t_planning_s + 3",
+    "tag": "read",
+    "note": "supports k=0 for this round"
    }
   },
   {
@@ -1589,6 +1599,12 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
+   },
+   "panel_visual_check": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "panel crop at t_planning_s + 3 does not match the master panel for this round, so the frame is probably wrong",
+    "reason": "frame time for this round not yet confirmed"
    }
   },
   {
@@ -1816,6 +1832,12 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
+   },
+   "panel_visual_check": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "panel crop at t_planning_s + 3 does not match the master panel for this round, so the frame is probably wrong",
+    "reason": "frame time for this round not yet confirmed"
    }
   },
   {
