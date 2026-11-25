@@ -57,16 +57,16 @@
   ],
   "counts": {
     "games": 5,
-    "fights": 79,
+    "fights": 80,
     "others": 0
   },
   "validator": {
-    "ok": 12,
+    "ok": 16,
     "skipped": {
-      "winner_null": 67
+      "winner_null": 64
     }
   },
-  "needs_review": 67,
+  "needs_review": 64,
   "commit": "c193939",
-  "remaining": "P3 densify: full=2 both=3 win=12 rich_a>=57. Continue side_b."
+  "remaining": "P3 densify: full=2 both=3 win=16. Applied g4200 densify."
 }
