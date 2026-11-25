@@ -3259,7 +3259,7 @@
      "marker": "1+"
     },
     "rail_hp_rows": "nonzero HP on all seven non-streamer rows (streamer top row 97)",
-    "bench": "no bench units legible in this frame",
+    "bench": "bottom strip at 1186 s: nine pads with unit sprites and health bars; cannot tell from the crop whether this is the bench or the front board row, so the filled count is recorded as uncertain (9 or fewer)",
     "board_units_rowcol": "not read by row and column",
     "stars_items": "not resolvable at 720p",
     "tag": "read",
