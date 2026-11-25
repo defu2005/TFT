@@ -75,7 +75,7 @@
       "winner_null": 117
     }
   },
-  "needs_review": 114,
+  "needs_review": 112,
   "commit": null,
-  "remaining": "g0 densify: 4 scoring fights (winner+A trait-lock Cass/Camille/Karma); B boards still unread (no invent). winner schema fixed. Frames densified t180-1860."
+  "remaining": "g0 densify pass2: 6 fights with winner; mid-stage 3-3/3-5 losses from round-tracker; B still empty (no invent)"
 }
