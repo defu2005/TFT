@@ -14,8 +14,8 @@
       3820
     ],
     [
-      4250,
-      5640
+      4150,
+      5620
     ],
     [
       6400,
@@ -36,36 +36,41 @@
     [
       15600,
       17750
+    ],
+    [
+      18000,
+      19950
     ]
   ],
   "remaining_ranges_s": [
     [
-      17750,
+      19950,
       21600
     ]
   ],
   "game_ids": [
     "twitch-2898781298-g60",
     "twitch-2898781298-g2100",
-    "twitch-2898781298-g4300",
     "twitch-2898781298-g6400",
     "twitch-2898781298-g8300",
     "twitch-2898781298-g10650",
     "twitch-2898781298-g13100",
-    "twitch-2898781298-g15600"
+    "twitch-2898781298-g15600",
+    "twitch-2898781298-g18000",
+    "twitch-2898781298-g4300"
   ],
   "counts": {
-    "games": 8,
-    "fights": 110,
-    "others": 110
+    "games": 9,
+    "fights": 125,
+    "others": 125
   },
   "validator": {
-    "ok": 98,
+    "ok": 113,
     "skipped": {
       "winner_null": 12
     }
   },
   "needs_review": 12,
   "commit": null,
-  "remaining": "g60..g15600 densify fights=110 g8=17 win=16; tiếp g9@18000+"
+  "remaining": "g4300 re-densify from labels fights=14 win=12; VOD remaining ~20000+"
 }

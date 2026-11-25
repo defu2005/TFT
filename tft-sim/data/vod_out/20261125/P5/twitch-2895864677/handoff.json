@@ -48,16 +48,16 @@
   ],
   "counts": {
     "games": 4,
-    "fights": 58,
-    "others": 58
+    "fights": 64,
+    "others": 64
   },
   "validator": {
-    "ok": 51,
+    "ok": 61,
     "skipped": {
-      "winner_null": 7
+      "winner_null": 3
     }
   },
-  "needs_review": 7,
-  "commit": "a3cc90a",
-  "remaining": "g6700 densified full PvP. Next densify g4380/g2410/g30 boards. Priority: complete fights."
+  "needs_review": 3,
+  "commit": "46e586d",
+  "remaining": "Priority densify complete fights. Boards when readable."
 }
