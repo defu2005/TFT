@@ -1,7 +1,7 @@
 {
  "check": "reader gold and shop vs visual, using only match-01 file 2924500482-210000",
  "file_rows": 9802,
- "rows_with_shop_in_file": null,
+ "rows_with_shop_in_file": 1609,
  "correction": "Earlier counts of 35,032 rows and 6,218 shop rows came from four files and are wrong for match 01. Earlier shop mismatch at 718.7 came from the wrong files.",
  "rows": [
   {

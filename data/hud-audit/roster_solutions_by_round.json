@@ -488,5 +488,36 @@
    "status": "candidate after panel fix"
   },
   "_note": "Catalog names in set18.json but absent from set18-hud.json: nine Lux variants. Not used by any accepted solution yet."
+ },
+ "rule_fix": {
+  "rule": "N+ means N distinct unlisted traits (not per champion instance)",
+  "5-6_9_unique": {
+   "solutions": 5,
+   "example": [
+    "Alistar",
+    "Amumu",
+    "Draven",
+    "Ezreal",
+    "Hecarim",
+    "Ivern",
+    "Kobuko",
+    "Maokai",
+    "Taric"
+   ]
+  },
+  "5-6_8_unique": {
+   "solutions": 1,
+   "units": [
+    "Alistar",
+    "Amumu",
+    "Draven",
+    "Ezreal",
+    "Gnar",
+    "Ivern",
+    "Maokai",
+    "Taric"
+   ]
+  },
+  "status": "5-6 is underdetermined under the corrected rule; the 8-unique answer is not confirmed"
  }
 }
