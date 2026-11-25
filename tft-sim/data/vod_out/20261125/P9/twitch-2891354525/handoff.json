@@ -29,11 +29,12 @@
     "twitch-2891354525-g8000",
     "twitch-2891354525-g12000",
     "twitch-2891354525-g2400",
-    "twitch-2891354525-g6305"
+    "twitch-2891354525-g6305",
+    "twitch-2891354525-g12330"
   ],
   "counts": {
-    "games": 6,
-    "fights": 80,
+    "games": 7,
+    "fights": 102,
     "others": 0
   },
   "validator": {
