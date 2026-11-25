@@ -429,5 +429,64 @@
    ]
   },
   "_note": "Earlier 4-x zeros came from panels missing Blossom and Riftbeast rows; corrected from the full-height crop."
+ },
+ "queue_pass": {
+  "3-3": {
+   "rule": "counter 6/6 with one duplicate: 5 unique champions",
+   "solutions": 1,
+   "units": [
+    "Alistar",
+    "Ezreal",
+    "Kobuko",
+    "Mama Beak",
+    "Xayah"
+   ],
+   "status": "exact panel fit; strongest candidate so far"
+  },
+  "3-5": {
+   "rule": "counter 7/7 with one duplicate: 6 unique",
+   "solutions": 1,
+   "units": [
+    "Alistar",
+    "Ezreal",
+    "Kobuko",
+    "Mama Beak",
+    "Rek'Sai",
+    "Xayah"
+   ],
+   "status": "consistent with 3-3 set plus Rek'Sai"
+  },
+  "5-1": {
+   "rule": "N+=2 extra unlisted traits",
+   "solutions": 3,
+   "first": [
+    "Alistar",
+    "Draven",
+    "Ezreal",
+    "Gnar",
+    "Hecarim",
+    "Ivern",
+    "Kobuko",
+    "Maokai",
+    "Sett"
+   ],
+   "status": "candidate after panel fix"
+  },
+  "5-6": {
+   "rule": "8 unique, 2 extra unlisted traits",
+   "solutions": 1,
+   "units": [
+    "Alistar",
+    "Amumu",
+    "Draven",
+    "Ezreal",
+    "Gnar",
+    "Ivern",
+    "Maokai",
+    "Taric"
+   ],
+   "status": "candidate after panel fix"
+  },
+  "_note": "Catalog names in set18.json but absent from set18-hud.json: nine Lux variants. Not used by any accepted solution yet."
  }
 }
