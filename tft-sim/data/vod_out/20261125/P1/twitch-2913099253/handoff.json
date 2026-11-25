@@ -20,6 +20,10 @@
     [
       7600,
       8900
+    ],
+    [
+      9350,
+      10900
     ]
   ],
   "remaining_ranges_s": [
@@ -41,6 +45,10 @@
     ],
     [
       8900,
+      9350
+    ],
+    [
+      10900,
       25942
     ]
   ],
@@ -48,21 +56,22 @@
     "twitch-2913099253-g980",
     "twitch-2913099253-g2590",
     "twitch-2913099253-g5150",
-    "twitch-2913099253-g7600"
+    "twitch-2913099253-g7600",
+    "twitch-2913099253-g9350"
   ],
   "counts": {
-    "games": 4,
-    "fights": 23,
-    "others": 23
+    "games": 5,
+    "fights": 26,
+    "others": 26
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 23
+      "winner_null": 26
     }
   },
   "needs_review": 0,
-  "commit": "4cbf856",
-  "remaining": "4 ranked on VOD. Tiếp sau 8900s + VOD P1 khác (2907727372 ranked đã thấy).",
+  "commit": "6d23bf3",
+  "remaining": "5 ranked trên VOD. Tiếp sau 10900s + VOD P1 khác.",
   "notes": "Ranked Set18. winner_null OK."
 }

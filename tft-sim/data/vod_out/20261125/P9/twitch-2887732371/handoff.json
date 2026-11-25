@@ -64,11 +64,27 @@
     [
       32000,
       34200
+    ],
+    [
+      34400,
+      37000
+    ],
+    [
+      37200,
+      38600
+    ],
+    [
+      38800,
+      40600
+    ],
+    [
+      40800,
+      43000
     ]
   ],
   "remaining_ranges_s": [
     [
-      34200,
+      43000,
       47188
     ]
   ],
@@ -87,20 +103,24 @@
     "twitch-2887732371-g25200",
     "twitch-2887732371-g27600",
     "twitch-2887732371-g30000",
-    "twitch-2887732371-g32000"
+    "twitch-2887732371-g32000",
+    "twitch-2887732371-g34800",
+    "twitch-2887732371-g37200",
+    "twitch-2887732371-g38800",
+    "twitch-2887732371-g40800"
   ],
   "counts": {
-    "games": 15,
-    "fights": 69,
+    "games": 19,
+    "fights": 75,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 69
+      "winner_null": 75
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "tiếp ranked từ ~34200s"
+  "remaining": "tiếp ranked từ ~43000s"
 }

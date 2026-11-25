@@ -1,0 +1,41 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2907727372",
+  "slot": "P1",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      1150,
+      2950
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      0,
+      1150
+    ],
+    [
+      2950,
+      23280
+    ]
+  ],
+  "game_ids": [
+    "twitch-2907727372-g1150"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 4,
+    "others": 4
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 4
+    }
+  },
+  "needs_review": 0,
+  "commit": "0a7a6d2",
+  "remaining": "g1150 ranked. Tiếp sau 2950s (game2 ~3100+). Intro 0-1150 just chatting/starting-soon.",
+  "notes": "Ranked Set18 Challenger. winner_null OK. Không phải tourney dù có fantasy TFT promo đầu VOD."
+}
