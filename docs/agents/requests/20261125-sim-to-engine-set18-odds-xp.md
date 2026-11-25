@@ -10,3 +10,14 @@ why:
 unblocks: Phase 4 mục 1 của roadmap (U1, U2: xác minh bảng odds và XP cho set đang chạy). Không chặn Phase 3.
 deadline: 
 status: mở
+
+## Bằng chứng thực nghiệm từ log schema 2 (sim, 2026-11-25)
+
+Đếm các cửa hàng đầy đủ 5 ô, ổn định qua 2 mẫu liên tiếp, theo cấp, trên 15 file có cấp. Tỷ lệ theo bậc tướng (cost), kèm CI95 bootstrap theo cửa hàng (2.000 lần). Đây là ước lượng có thiên lệch: ô đã mua, cạn pool, và OCR chưa được loại bỏ.
+
+| Cấp | Số cửa hàng | Bậc 1 | Bậc 2 | Bậc 3 | Bậc 4 | Bậc 5 | Bảng `rules.js` | Bảng Riot/R |
+|---|---|---|---|---|---|---|---|---|
+| 7 | 70 | 16,9 [13,1; 20,6] | 24,9 [20,3; 29,4] | 48,3 [43,4; 52,9] | 9,1 [6,3; 12,6] | 0,9 [0,0; 2,0] | 19/30/40/10/1 | 16/30/43/10/1 |
+| 8 | 208 | 15,3 [13,1; 17,5] | 21,8 [19,1; 24,4] | 31,9 [29,2; 34,8] | 28,7 [26,2; 31,4] | 2,2 [1,3; 3,2] | 17/24/32/24/3 | 15/20/32/30/3 |
+
+Đọc: ở cấp 8, bảng Riot/R khớp dữ liệu; `rules.js` lệch ở bậc 4 (24 nằm ngoài CI 26,2–31,4). Ở cấp 7, không bảng nào khớp hoàn toàn: bậc 2 nằm dưới cả hai (30 ngoài CI), bậc 3 cao hơn cả hai. Chưa kết luận, vì cấp 7 có 70 cửa hàng và có thể do thiên lệch đã nêu.

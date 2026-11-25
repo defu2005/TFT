@@ -1,3 +1,4 @@
+from tft_sim.real_content import load_raw_snapshot
 """Chan doan EQUIP tren noi dung that (CDragon latest, nhan 'CDragon latest (18.7), Set 17 block').
 Dem: item co composition rong (thanh phan co so), bao nhieu xuat hien trong mot cong thuc nao, va
 bao nhieu EQUIP khong tieu thu. In so chieu block quan sat de kiem tra cot universal."""
@@ -9,8 +10,7 @@ from tft_goat.agent.scripted import scripted_action
 from tft_goat.env.actions import EQUIP
 from tft_sim.tftgoat import make_env
 
-RAW = Path("/home/user/mielpopsssssss/tft_goat/data/cdragon/cdragon_latest_fetched-2026-11-23.json")
-raw = json.loads(RAW.read_text(encoding="utf-8"))
+raw = load_raw_snapshot()
 content = build_set_content(raw, "latest-2026-11-23-set17block")
 items = content.items
 base = [k for k, v in items.items() if not tuple(v.composition)]

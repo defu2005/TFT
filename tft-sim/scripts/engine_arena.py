@@ -1,3 +1,4 @@
+import os
 """Sân chính = EngineResolver (combat tick-by-tick). Mode:
   replay  : 20 seed dau 120000-120019, chay v3 vs v3 hai lan, kiem tra placement khop
   null    : v3 vs v3, 120000-120999
@@ -32,7 +33,7 @@ if mode == "null":
 elif mode == "scr":
     A, B = v3, scripted_policy
 elif mode == "clone":
-    ck = torch.load("/tmp/claude-0/-home-user-TFT/f7ed89c6-b3e7-57bf-aa88-c9c07975e4b5/scratchpad/v2/clone_v2_seed0.pt", weights_only=False)
+    ck = torch.load(os.environ.get("CLONE_CKPT", "results/checkpoints/clone_v2_seed0.pt"), weights_only=False)
     m = MaskedMLP(ck["in_dim"]); m.load_state_dict(ck["state"]); m.eval(); mu, sd = ck["mu"], ck["sd"]
     @torch.no_grad()
     def clone(env_, agent, obs, mask, rng):

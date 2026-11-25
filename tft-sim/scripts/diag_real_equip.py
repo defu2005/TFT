@@ -1,3 +1,4 @@
+from tft_sim.real_content import load_raw_snapshot
 """Chan doan EQUIP tren noi dung that (CDragon latest 18.7, nhan Set 17), it van: 3 van."""
 import json, collections
 from pathlib import Path
@@ -5,7 +6,7 @@ from tft_goat.agent.scripted import scripted_action
 from tft_goat.data.content import build_set_content
 from tft_goat.env.actions import EQUIP
 from tft_goat.env.tft_env import TftEnv
-raw = json.loads(Path("/home/user/mielpopsssssss/tft_goat/data/cdragon/cdragon_latest_fetched-2026-11-23.json").read_text(encoding="utf-8"))
+raw = load_raw_snapshot()
 content = build_set_content(raw, "latest-2026-11-23-set17block")
 print("champions", len(content.champions), "items", len(content.items))
 env = TftEnv(set_content=content)

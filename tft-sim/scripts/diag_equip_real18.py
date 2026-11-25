@@ -1,3 +1,4 @@
+from tft_sim.real_content import load_raw_snapshot
 """Chan doan EQUIP tren noi dung that: bo bao _equip de ghi nhanh thoat som va so thanh phan."""
 import json, collections
 from pathlib import Path
@@ -8,7 +9,6 @@ from tft_goat.env.tft_env import TftEnv
 from tft_goat.env.actions import EQUIP
 from tft_goat.env.items import combine
 
-RAW = Path("/home/user/mielpopsssssss/tft_goat/data/cdragon/cdragon_latest_fetched-2026-11-23.json")
 content = __import__("tft_sim.real_content", fromlist=["x"]).build_real_fullrecipe("TFTSet18")
 reasons = collections.Counter()
 orig = acts._equip

@@ -1,3 +1,4 @@
+from tft_sim.real_content import load_raw_snapshot
 """Chan doan EQUIP tren noi dung that: bo bao _equip de ghi nhanh thoat som va so thanh phan."""
 import json, collections
 from pathlib import Path
@@ -8,8 +9,7 @@ from tft_goat.env.tft_env import TftEnv
 from tft_goat.env.actions import EQUIP
 from tft_goat.env.items import combine
 
-RAW = Path("/home/user/mielpopsssssss/tft_goat/data/cdragon/cdragon_latest_fetched-2026-11-23.json")
-content = build_set_content(json.loads(RAW.read_text(encoding="utf-8")), "latest-2026-11-23-set17block")
+content = build_set_content(load_raw_snapshot(), "latest-2026-11-23-set17block")
 reasons = collections.Counter()
 orig = acts._equip
 def wrapped(state, player):
