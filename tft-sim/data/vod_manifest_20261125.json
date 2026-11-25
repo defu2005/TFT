@@ -2,7 +2,7 @@
   "schema": "vod-manifest-v1",
   "batch": "2026-11-25-set18-vod",
   "dispatcher": "claude (phiên điều phối mở rộng manifest 1000)",
-  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash). | P4 +loltyler1 ranked Set18 Emerald VODs for throughput. | 2026-11-25 expand depleted P2/P5/P6/P7/P8/P10: voids1n/emilyywang/kiyoon/imriveting/upsetmaxtft/tleyds/dpeitft (~ranked ladder; filter PBE/tourney/bash/custom/Normal). | P8 wave2 mode-check: block 6 imaq PBE Remix; 9 ranked Set18 keepers todo.",
+  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash). | P4 +loltyler1 ranked Set18 Emerald VODs for throughput. | 2026-11-25 expand depleted P2/P5/P6/P7/P8/P10: voids1n/emilyywang/kiyoon/imriveting/upsetmaxtft/tleyds/dpeitft (~ranked ladder; filter PBE/tourney/bash/custom/Normal). | P8 wave2 mode-check: block 6 imaq PBE Premiere; 9 ranked Set18 keepers todo. | P4 scout-expand dogdog/shurkou ranked Set18 after wasian deplete.",
   "slots": {
     "P1": {
       "role": "primary",
@@ -47,7 +47,7 @@
         "loltyler1",
         "dogdog"
       ],
-      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue). | +loltyler1 ranked Set18 Emerald ladder (wasian/voltariux/shurkou/aphromoo archives depleted of clean ranked). | +dogdog Diamond ranked Set18; +more loltyler1."
+      "note": "wasianiverson archive mostly tourney/PBE/bash/scrim after first 17. Added EUW/NA ladder Set18 secondaries: voltariux (Sanglier matinal ranked), shurkou (ranked), aphromoo (ranked queue). | +loltyler1 ranked Set18 Emerald ladder (wasian/voltariux/shurkou/aphromoo archives depleted of clean ranked). | +dogdog Diamond ranked Set18; +more loltyler1. | 2026-11-25 scout: wasian ranked empty \u2192 +dogdog 2905342718 +shurkou ranked VODs."
     },
     "P5": {
       "role": "primary",
@@ -6942,6 +6942,204 @@
       "candidate_ranges_s": [],
       "source_refs": [],
       "notes": "auto-expand-wave2 title=-___________- dur=14560"
+    },
+    {
+      "vod_id": "twitch-2905342718",
+      "url": "https://www.twitch.tv/videos/2905342718",
+      "streamer": "dogdog",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          2300,
+          7300
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand: mixed HS\u2192TFT; RANKED Master Set18 ~2300-7300 only (NORMAL after)"
+    },
+    {
+      "vod_id": "twitch-2927528194",
+      "url": "https://www.twitch.tv/videos/2927528194",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          6778
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: TFT RANKED! ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2922077779",
+      "url": "https://www.twitch.tv/videos/2922077779",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          8000
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: TFT RANKED then unboxing ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2916594307",
+      "url": "https://www.twitch.tv/videos/2916594307",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          4500
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: RANKED then reaction ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2915762408",
+      "url": "https://www.twitch.tv/videos/2915762408",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          7939
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: RANKED ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2911541372",
+      "url": "https://www.twitch.tv/videos/2911541372",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          6703
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: RANKED ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2913941314",
+      "url": "https://www.twitch.tv/videos/2913941314",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          4000
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: TFT then riftbound ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2910292617",
+      "url": "https://www.twitch.tv/videos/2910292617",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          4000
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: TFT then riftbound ranked Set18 (filter PBE/tourney)"
+    },
+    {
+      "vod_id": "twitch-2909627329",
+      "url": "https://www.twitch.tv/videos/2909627329",
+      "streamer": "shurkou",
+      "slot": "P4",
+      "role": "primary",
+      "status": "todo",
+      "patch_claims": [
+        "Set 18"
+      ],
+      "candidate_ranges_s": [
+        [
+          0,
+          7500
+        ]
+      ],
+      "source_refs": [
+        "twitch:yt-dlp-archive-scout-20261125",
+        "coord:p4-ranked-empty-expand"
+      ],
+      "notes": "scout-expand P4: TFT then riftbound ranked Set18 (filter PBE/tourney)"
     }
   ]
 }
