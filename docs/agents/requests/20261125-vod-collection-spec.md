@@ -62,7 +62,7 @@ Thu một lần cho mỗi ván. Đây là nơi chứa bằng chứng về ván v
 |---|---|---|
 | `type` | `"game"` | |
 | `game_id` | chuỗi | `<vod_id>-g<giây bắt đầu ván>`, ví dụ `twitch-900000001-g3612`. Không có `:`. Hai streamer cùng lobby có hai `game_id` khác nhau; khử trùng ở ingest (mục 10.2) |
-| `vod_url` | chuỗi | đường dẫn VOD gốc |
+| `vod_url` | chuỗi | đường dẫn VOD gốc. Chỉ nhận `https://www.twitch.tv/videos/<số>`, `https://www.youtube.com/watch?v=<id>` hoặc `https://youtu.be/<id>`; URL khác là lỗi `bad_source_url` khi gộp |
 | `vod_start_s`, `vod_end_s` | số hoặc `null` | đoạn ván nằm trong VOD |
 | `date_evidence` | `{"text": chuỗi, "frame": chuỗi}` hoặc `null` | ngày nhìn thấy trong VOD (tiêu đề, dòng chat, màn hình); không có thì `null` |
 | `streamer` | chuỗi | tên kênh, copy nguyên văn |

@@ -22,6 +22,7 @@ Ma loi (ERR chan ghep; WARN chi bao):
   overlap_across_slots        khoang cua hai thu muc cung vod_id chong nhau (thu muc cu chua duoc go)
   bad_game_id                 game_id hoac phan game cua source khong dung dang <vod_id>-g<so>
   bad_lobby                   lobby_names khong co 8 ten duy nhat sau chuan hoa
+  bad_source_url               vod_url khong phai Twitch hoac YouTube (xem SRC_RE)
   duplicate_source            hai dong fight cung 'source' (cung vod: ERR; khac vod: ERR)
   missing_handoff             co du lieu nhung thieu handoff.json
   missing_game                fight tham chieu game_id khong co trong games.jsonl cung thu muc
@@ -44,6 +45,7 @@ from collections import defaultdict
 from pathlib import Path
 
 VOD_RE = re.compile(r"^(twitch-\d+|youtube-[A-Za-z0-9_-]+)$")
+SRC_RE = re.compile(r"^https://(www\.twitch\.tv/videos/\d+|www\.youtube\.com/watch\?v=[A-Za-z0-9_-]+|youtu\.be/[A-Za-z0-9_-]+)$")
 
 
 def _norm(name) -> str:
@@ -163,6 +165,8 @@ def main() -> int:
             if not isinstance(gid, str) or not gid_re.match(gid):
                 err("bad_game_id", where="games", vod_id=vid, slot=slot, game_id=gid)
                 continue
+            if g.get("vod_url") is not None and not SRC_RE.match(str(g["vod_url"])):
+                err("bad_source_url", vod_id=vid, slot=slot, game_id=gid, url=g["vod_url"])
             games[gid] = g
             names = [_norm(n) for n in (g.get("lobby_names") or [])]
             if len(names) != 8 or len(set(names)) != 8:

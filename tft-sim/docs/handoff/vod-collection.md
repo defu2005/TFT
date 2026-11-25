@@ -4,6 +4,7 @@
 
 ## 1. Đơn vị công việc và định danh
 
+- **Phạm vi nguồn: chỉ Twitch và YouTube.** `vod_url` phải là `https://www.twitch.tv/videos/<số>`, `https://www.youtube.com/watch?v=<id>` hoặc `https://youtu.be/<id>`. `merge_check_vod.py` báo `bad_source_url` cho URL khác.
 - **Đơn vị công việc là một VOD.** `vod_id` = `<nền tảng>-<id video>`, ví dụ `twitch-2924500482`. Regex: `^(twitch-\d+|youtube-[A-Za-z0-9_-]+)$`.
 - **`game_id` = `<vod_id>-g<số>`**, số là giây bắt đầu của ván trong VOD, ví dụ `twitch-2924500482-g3612`. Không có `:` (vì `fidelity._game()` tách theo `:`).
 - **`source` = `<game_id>:<stage_round>`** trong dữ liệu thô. Ingest viết lại thành `<lobby_id>:<stage_round>` trước khi chấm.

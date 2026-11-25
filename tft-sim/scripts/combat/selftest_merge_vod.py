@@ -78,6 +78,8 @@ def build(root: Path, plant: str | None) -> Path:
         h1["covered_ranges_s"] = [[200, 100]]
     _w(d1 / "handoff.json", json.dumps(h1))
     g1 = _game("twitch-1-g0", LOBBY1)
+    if plant == "bad_source_url":
+        g1["vod_url"] = "https://kick.com/videos/1"
     if plant == "bad_game_id":
         g1["game_id"] = "twitch-9-g0"  # sai vod_id
         fights1 = [_fight("twitch-1-g0", "3-2", "A", "B")]
@@ -130,6 +132,7 @@ CASES = [
     ("handoff_lech_vod", "handoff_mismatch", "handoff_mismatch", 1),
     ("khoang_sai", "bad_range", "bad_range", 1),
     ("bad_id", "bad_id", "bad_id", 1),
+    ("nguon_khac", "bad_source_url", "bad_source_url", 1),
     ("remaining_chong_covered", "remaining_overlap", "covered_remaining_overlap", 1),
 ]
 
