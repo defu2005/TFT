@@ -25,16 +25,16 @@
   ],
   "counts": {
     "games": 1,
-    "fights": 2,
-    "others": 2
+    "fights": 14,
+    "others": 14
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 2
+      "winner_null": 14
     }
   },
-  "needs_review": 2,
+  "needs_review": 14,
   "commit": null,
-  "remaining": "Volume stub; densify-full remaining ranked PvP. Skip set19/TPC."
+  "remaining": "Densified ranked Set18 PvP; winner_null pending sword-clear outcomes."
 }
