@@ -1,0 +1,128 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2897608176",
+  "slot": "P9",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      400,
+      2400
+    ],
+    [
+      2800,
+      4500
+    ],
+    [
+      4800,
+      6400
+    ],
+    [
+      6800,
+      8400
+    ],
+    [
+      8800,
+      10800
+    ],
+    [
+      11000,
+      12623
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2897608176-g400",
+    "twitch-2897608176-g2800",
+    "twitch-2897608176-g4800",
+    "twitch-2897608176-g8800",
+    "twitch-2897608176-g11000",
+    "twitch-2897608176-g6800"
+  ],
+  "counts": {
+    "games": 6,
+    "fights": 14,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 14
+    },
+    "rows": [
+      {
+        "line": 1,
+        "source": "twitch-2897608176-g400:2-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 2,
+        "source": "twitch-2897608176-g400:3-3",
+        "reason": "winner_null"
+      },
+      {
+        "line": 3,
+        "source": "twitch-2897608176-g400:4-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 4,
+        "source": "twitch-2897608176-g2800:2-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 5,
+        "source": "twitch-2897608176-g2800:3-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 6,
+        "source": "twitch-2897608176-g2800:3-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 7,
+        "source": "twitch-2897608176-g4800:2-3",
+        "reason": "winner_null"
+      },
+      {
+        "line": 8,
+        "source": "twitch-2897608176-g4800:3-6",
+        "reason": "winner_null"
+      },
+      {
+        "line": 9,
+        "source": "twitch-2897608176-g8800:2-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 10,
+        "source": "twitch-2897608176-g8800:4-6",
+        "reason": "winner_null"
+      },
+      {
+        "line": 11,
+        "source": "twitch-2897608176-g11000:3-4",
+        "reason": "winner_null"
+      },
+      {
+        "line": 12,
+        "source": "twitch-2897608176-g11000:5-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 13,
+        "source": "twitch-2897608176-g6800:3-6",
+        "reason": "winner_null"
+      },
+      {
+        "line": 14,
+        "source": "twitch-2897608176-g6800:5-1",
+        "reason": "winner_null"
+      }
+    ]
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "VOD done 6 ranked games; boards partial winner_null OK"
+}

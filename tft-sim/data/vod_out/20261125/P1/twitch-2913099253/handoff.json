@@ -40,6 +40,14 @@
     [
       18400,
       20650
+    ],
+    [
+      21000,
+      23650
+    ],
+    [
+      23800,
+      25700
     ]
   ],
   "remaining_ranges_s": [
@@ -81,6 +89,14 @@
     ],
     [
       20650,
+      21000
+    ],
+    [
+      23650,
+      23800
+    ],
+    [
+      25700,
       25942
     ]
   ],
@@ -93,21 +109,23 @@
     "twitch-2913099253-g11400",
     "twitch-2913099253-g13600",
     "twitch-2913099253-g16000",
-    "twitch-2913099253-g18400"
+    "twitch-2913099253-g18400",
+    "twitch-2913099253-g21000",
+    "twitch-2913099253-g23800"
   ],
   "counts": {
-    "games": 9,
-    "fights": 43,
-    "others": 43
+    "games": 11,
+    "fights": 51,
+    "others": 51
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 43
+      "winner_null": 51
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "9 ranked. Tiếp sau 20650s.",
+  "remaining": "11 ranked. VOD nearly end (~25942).",
   "notes": "Ranked Set18. winner_null OK."
 }
