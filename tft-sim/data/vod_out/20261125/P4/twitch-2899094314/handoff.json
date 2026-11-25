@@ -66,7 +66,7 @@
   ],
   "counts": {
     "games": 6,
-    "fights": 146,
+    "fights": 159,
     "others": 0
   },
   "validator": {
@@ -77,5 +77,5 @@
   },
   "needs_review": 91,
   "commit": null,
-  "remaining": "P4 densify: g0=12 g2085=12 g4750=16 g7200=15. Next g9000."
+  "remaining": "DONE densify this VOD: g0=12 g2085=12 g4750=16 g7200=15 g9000=12 g10800=15 scoring. Next volume: other P4 wasian VODs (scoring=0 stubs)."
 }
