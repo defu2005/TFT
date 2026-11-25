@@ -3,7 +3,7 @@
   "vod_id": "twitch-2891262629",
   "slot": "P10",
   "role": "primary",
-  "status": "pending",
+  "status": "done",
   "covered_ranges_s": [
     [
       55,
@@ -12,14 +12,33 @@
     [
       2800,
       16500
-    ]
-  ],
-  "remaining_ranges_s": [
+    ],
     [
-      16500,
+      17800,
+      18950
+    ],
+    [
+      19200,
+      21200
+    ],
+    [
+      23600,
+      26150
+    ],
+    [
+      26200,
+      28350
+    ],
+    [
+      28800,
+      30350
+    ],
+    [
+      31150,
       32900
     ]
   ],
+  "remaining_ranges_s": [],
   "skipped_ranges_s": [
     [
       2212,
@@ -28,9 +47,25 @@
     [
       16500,
       17800
+    ],
+    [
+      18950,
+      19200
+    ],
+    [
+      21200,
+      23600
+    ],
+    [
+      28350,
+      28800
+    ],
+    [
+      30350,
+      31150
     ]
   ],
-  "skip_notes": "YouTube/Minecraft ~2212-2800; dating YT ~16500-17800 and ~21200-23500",
+  "skip_notes": "YT gaps: ~2212-2800, ~16500-17800, ~18950-19200, ~21200-23600, ~28350-28800, ~30350-31150",
   "game_ids": [
     "twitch-2891262629-g55",
     "twitch-2891262629-g3200",
@@ -38,13 +73,22 @@
     "twitch-2891262629-g7200",
     "twitch-2891262629-g9600",
     "twitch-2891262629-g12000",
-    "twitch-2891262629-g14400"
+    "twitch-2891262629-g14400",
+    "twitch-2891262629-g18400",
+    "twitch-2891262629-g20000",
+    "twitch-2891262629-g24000",
+    "twitch-2891262629-g28000",
+    "twitch-2891262629-g28800",
+    "twitch-2891262629-g31200"
   ],
   "counts": {
-    "games": 7,
-    "fights": 84,
+    "games": 13,
+    "fights": 154,
     "others": 0
   },
+  "needs_review": {
+    "winner_null": 109
+  },
   "map": "/cursor/stores/bc-6054281b-dbf3-4c49-82c1-018b674000ff/internal/p10-2891262629-game-map.md",
-  "remaining": "densify G8–G12 after 17800"
+  "remaining": "none; G8\u2013G12 densify-full (+g28800 interstitial Pun/DokDok)"
 }

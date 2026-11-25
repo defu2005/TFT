@@ -1,8 +1,8 @@
 {
   "schema": "vod-manifest-v1",
   "batch": "2026-11-25-set18-vod",
-  "dispatcher": "claude (phiên điều phối mở rộng manifest 1000)",
-  "note": "Chỉ đọc đối với agent. Nguồn: Twitch archive công khai + hud seed. Điều phối mở rộng slot P4–P6 (wasianiverson/souless/cambulee) cho goal ≥1000 ván Set 18. Không tự thêm VOD; thêm/bớt chỉ do điều phối. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked → added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash). | P4 +loltyler1 ranked Set18 Emerald VODs for throughput. | 2026-11-25 expand depleted P2/P5/P6/P7/P8/P10: voids1n/emilyywang/kiyoon/imriveting/upsetmaxtft/tleyds/dpeitft (~ranked ladder; filter PBE/tourney/bash/custom/Normal).",
+  "dispatcher": "claude (phi\u00ean \u0111i\u1ec1u ph\u1ed1i m\u1edf r\u1ed9ng manifest 1000)",
+  "note": "Ch\u1ec9 \u0111\u1ecdc \u0111\u1ed1i v\u1edbi agent. Ngu\u1ed3n: Twitch archive c\u00f4ng khai + hud seed. \u0110i\u1ec1u ph\u1ed1i m\u1edf r\u1ed9ng slot P4\u2013P6 (wasianiverson/souless/cambulee) cho goal \u22651000 v\u00e1n Set 18. Kh\u00f4ng t\u1ef1 th\u00eam VOD; th\u00eam/b\u1edbt ch\u1ec9 do \u0111i\u1ec1u ph\u1ed1i. | P7+ parallel slots for 1000-game goal | 2026-11-25: P8 toast blocked \u2192 added imaqtpie/dankmemes011/scarra ranked Set18 VODs. | 2026-11-25 P4 expand: +2 wasian ranked + voltariux/shurkou/aphromoo ladder Set18 (filter PBE/tourney/regional/bash). | P4 +loltyler1 ranked Set18 Emerald VODs for throughput. | 2026-11-25 expand depleted P2/P5/P6/P7/P8/P10: voids1n/emilyywang/kiyoon/imriveting/upsetmaxtft/tleyds/dpeitft (~ranked ladder; filter PBE/tourney/bash/custom/Normal).",
   "slots": {
     "P1": {
       "role": "primary",
@@ -35,7 +35,7 @@
     },
     "none": {
       "role": "none",
-      "note": "VOD hud đã xử lý, agent bỏ qua"
+      "note": "VOD hud \u0111\u00e3 x\u1eed l\u00fd, agent b\u1ecf qua"
     },
     "P4": {
       "role": "primary",
@@ -80,7 +80,7 @@
         "upsetmaxtft",
         "tleyds"
       ],
-      "note": "disguisedtoast 3 VOD blocked (Normal/PBE/set≠18). Bổ sung NA ladder Set18: imaqtpie/dankmemes011/scarra. | +upsetmaxtft/tleyds ranked ladder (loltyler1 already on P4)."
+      "note": "disguisedtoast 3 VOD blocked (Normal/PBE/set\u226018). B\u1ed5 sung NA ladder Set18: imaqtpie/dankmemes011/scarra. | +upsetmaxtft/tleyds ranked ladder (loltyler1 already on P4)."
     },
     "P9": {
       "role": "primary",
@@ -1872,7 +1872,7 @@
       "streamer": "wasianiverson",
       "slot": "P4",
       "role": "primary",
-      "status": "todo",
+      "status": "done",
       "patch_claims": [
         "18.5C/18.6"
       ],
@@ -1885,7 +1885,8 @@
       "source_refs": [
         "twitch:gql-archive-list-20261125",
         "coord:manifest-expand-1000"
-      ]
+      ],
+      "notes": " | REOPEN ranked Challenger Set18 (Regional Finals overlay only); stubbed 6 games"
     },
     {
       "vod_id": "twitch-2907970518",
@@ -2541,7 +2542,7 @@
         "twitch:gql-archive-list-20261125",
         "coord:expand-depleted-slots-800"
       ],
-      "title_hint": "💙NEW PATCH💙NEW CLIENT💙NEW ME💙+300 LP TODAY COME AND LEARN!!!💙"
+      "title_hint": "\ud83d\udc99NEW PATCH\ud83d\udc99NEW CLIENT\ud83d\udc99NEW ME\ud83d\udc99+300 LP TODAY COME AND LEARN!!!\ud83d\udc99"
     },
     {
       "vod_id": "twitch-2908544781",
@@ -3734,7 +3735,7 @@
         "twitch-gql:2026-11-25"
       ],
       "notes": "auto-added title=set 1 tft goat returns to show that unc still got it - pico park lobby tmr 11am  published=2026-11-20T22:12:12Z",
-      "block_reason": "mode≠ranked and/or set≠18 (Remix Rumble / Normal / Set1-style); see handoff remaining"
+      "block_reason": "mode\u2260ranked and/or set\u226018 (Remix Rumble / Normal / Set1-style); see handoff remaining"
     },
     {
       "vod_id": "twitch-2937597175",
@@ -3757,7 +3758,7 @@
         "twitch-gql:2026-11-25"
       ],
       "notes": "auto-added title=set1 challenger learns to keep up at his old age of 35 so he can practice for th published=2026-11-22T18:59:51Z",
-      "block_reason": "mode≠ranked and/or set≠18 (Remix Rumble / Normal / Set1-style); see handoff remaining"
+      "block_reason": "mode\u2260ranked and/or set\u226018 (Remix Rumble / Normal / Set1-style); see handoff remaining"
     },
     {
       "vod_id": "twitch-2938701039",
@@ -3780,7 +3781,7 @@
         "twitch-gql:2026-11-25"
       ],
       "notes": "auto-added title=set1 challenger learns to keep up at his old age of 35 so he can practice for th published=2026-11-23T20:51:20Z",
-      "block_reason": "mode≠ranked and/or set≠18 (Remix Rumble / Normal / Set1-style); see handoff remaining"
+      "block_reason": "mode\u2260ranked and/or set\u226018 (Remix Rumble / Normal / Set1-style); see handoff remaining"
     },
     {
       "vod_id": "twitch-2898942726",
@@ -4110,7 +4111,7 @@
         "expand:goal-1000-parallel",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "auto-added title=933 start | RANK1 BEFORE REGIONALS GRIND ✅ CASTING TPC W/ @Frodan THIS WEEKEND 🔴 published=2026-10-02T01:52:03Z"
+      "notes": "auto-added title=933 start | RANK1 BEFORE REGIONALS GRIND \u2705 CASTING TPC W/ @Frodan THIS WEEKEND \ud83d\udd34 published=2026-10-02T01:52:03Z"
     },
     {
       "vod_id": "twitch-2916019619",
@@ -4132,7 +4133,7 @@
         "expand:goal-1000-parallel",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "auto-added title=REGIONAL FINALS DAY 4 👻 | MAKE FINAL LOBBY = WORLDS !scores #TFTRegionalFinals published=2026-10-31T19:15:29Z"
+      "notes": "auto-added title=REGIONAL FINALS DAY 4 \ud83d\udc7b | MAKE FINAL LOBBY = WORLDS !scores #TFTRegionalFinals published=2026-10-31T19:15:29Z"
     },
     {
       "vod_id": "twitch-2918092391",
@@ -4154,7 +4155,7 @@
         "expand:goal-1000-parallel",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "auto-added title=1016 start | BACK IN TIER1, MISSED WORLDS BY 1 POINT 😠 SET19 + VEGAS IN 1 MONTH, published=2026-11-03T01:38:56Z"
+      "notes": "auto-added title=1016 start | BACK IN TIER1, MISSED WORLDS BY 1 POINT \ud83d\ude20 SET19 + VEGAS IN 1 MONTH, published=2026-11-03T01:38:56Z"
     },
     {
       "vod_id": "twitch-2893101179",
@@ -4176,7 +4177,7 @@
         "expand:goal-1000-parallel",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "auto-added title=742 start | STREAM ENDS WHEN I'M NOT ASS 🗿#DOITFORTHESTUDENTS !bash !regionals ! published=2026-10-06T01:49:29Z"
+      "notes": "auto-added title=742 start | STREAM ENDS WHEN I'M NOT ASS \ud83d\uddff#DOITFORTHESTUDENTS !bash !regionals ! published=2026-10-06T01:49:29Z"
     },
     {
       "vod_id": "twitch-2891262629",
@@ -4330,7 +4331,7 @@
         "twitch:gql-archive-list-20261125",
         "coord:expand-depleted-slots-800"
       ],
-      "title_hint": "🔴TPC PLAYER YAHOO🔴Getting Rank 1 now !scores !youtube !disciples"
+      "title_hint": "\ud83d\udd34TPC PLAYER YAHOO\ud83d\udd34Getting Rank 1 now !scores !youtube !disciples"
     },
     {
       "vod_id": "twitch-2918686469",
@@ -4352,7 +4353,7 @@
         "twitch:gql-archive-list-20261125",
         "coord:expand-depleted-slots-800"
       ],
-      "title_hint": "🔴TPC PLAYER YAHOO🔴Getting Rank 1 now !scores !youtube !disciples"
+      "title_hint": "\ud83d\udd34TPC PLAYER YAHOO\ud83d\udd34Getting Rank 1 now !scores !youtube !disciples"
     },
     {
       "vod_id": "twitch-2902294335",
@@ -4374,7 +4375,7 @@
         "twitch:gql-archive-list-20261125",
         "coord:expand-depleted-slots-800"
       ],
-      "title_hint": "🔴LADDER DOMINATION PART 2🔴2.0 AVP i promise !youtube !disciples"
+      "title_hint": "\ud83d\udd34LADDER DOMINATION PART 2\ud83d\udd342.0 AVP i promise !youtube !disciples"
     },
     {
       "vod_id": "twitch-2924223130",
@@ -4396,7 +4397,7 @@
         "twitch:gql-archive-list-20261125",
         "coord:expand-depleted-slots-800"
       ],
-      "title_hint": "🔴TFT MAESTRO🔴Climbing to 1500 !scores !youtube !disciples"
+      "title_hint": "\ud83d\udd34TFT MAESTRO\ud83d\udd34Climbing to 1500 !scores !youtube !disciples"
     },
     {
       "vod_id": "twitch-2939521723",
@@ -4748,7 +4749,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "punishing myself with some low quality TFT games on the very high quality client 😂😂😂 #UE5 !overlay !project"
+      "notes": "punishing myself with some low quality TFT games on the very high quality client \ud83d\ude02\ud83d\ude02\ud83d\ude02 #UE5 !overlay !project"
     },
     {
       "vod_id": "twitch-2920958748",
@@ -4770,7 +4771,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "punishing myself with some low quality TFT games on the very high quality client 😂😂😂 #UE5 !overlay !project"
+      "notes": "punishing myself with some low quality TFT games on the very high quality client \ud83d\ude02\ud83d\ude02\ud83d\ude02 #UE5 !overlay !project"
     },
     {
       "vod_id": "twitch-2916556972",
@@ -4792,7 +4793,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "👻👻👻cosplaying a consistent streamer👻👻👻  !overlay !project"
+      "notes": "\ud83d\udc7b\ud83d\udc7b\ud83d\udc7bcosplaying a consistent streamer\ud83d\udc7b\ud83d\udc7b\ud83d\udc7b  !overlay !project"
     },
     {
       "vod_id": "twitch-2914695810",
@@ -4814,7 +4815,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "the daily life of a tier 2 chud 🥀🥀🥀🥀  !overlay !project"
+      "notes": "the daily life of a tier 2 chud \ud83e\udd40\ud83e\udd40\ud83e\udd40\ud83e\udd40  !overlay !project"
     },
     {
       "vod_id": "twitch-2912954332",
@@ -4836,7 +4837,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "i miss him 🥀🥀🥀🥀  !overlay !project"
+      "notes": "i miss him \ud83e\udd40\ud83e\udd40\ud83e\udd40\ud83e\udd40  !overlay !project"
     },
     {
       "vod_id": "twitch-2912213341",
@@ -4858,7 +4859,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "will u be the back to my bramble? 🌹💋🥺🥺🥺😏😏😏  !overlay !project"
+      "notes": "will u be the back to my bramble? \ud83c\udf39\ud83d\udc8b\ud83e\udd7a\ud83e\udd7a\ud83e\udd7a\ud83d\ude0f\ud83d\ude0f\ud83d\ude0f  !overlay !project"
     },
     {
       "vod_id": "twitch-2896814275",
@@ -4880,7 +4881,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "magnet activated 🧲🧲🧲  !discord"
+      "notes": "magnet activated \ud83e\uddf2\ud83e\uddf2\ud83e\uddf2  !discord"
     },
     {
       "vod_id": "twitch-2892405815",
@@ -4902,7 +4903,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "feeling nice today feel free to ragebait for a surprise present 🎁 !discord"
+      "notes": "feeling nice today feel free to ragebait for a surprise present \ud83c\udf81 !discord"
     },
     {
       "vod_id": "twitch-2887189202",
@@ -4924,7 +4925,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "trying, very hard today 🍆 🫣😳👉👈!discord !operagx"
+      "notes": "trying, very hard today \ud83c\udf46 \ud83e\udee3\ud83d\ude33\ud83d\udc49\ud83d\udc48!discord !operagx"
     },
     {
       "vod_id": "twitch-2891042138",
@@ -5782,7 +5783,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "1600 start | FINAL DAY OF SET18 🔴 GOING OVER !SET19 INFO IN Q 🙈 !twitter !discord"
+      "notes": "1600 start | FINAL DAY OF SET18 \ud83d\udd34 GOING OVER !SET19 INFO IN Q \ud83d\ude48 !twitter !discord"
     },
     {
       "vod_id": "twitch-2906453571",
@@ -5804,7 +5805,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "1069 start | REGIONALS DAY 1 ON SATURDAY 🔴 LOCKING IN TO MAKE IT BACK TO WORLDS, !PATCH TOMORROW"
+      "notes": "1069 start | REGIONALS DAY 1 ON SATURDAY \ud83d\udd34 LOCKING IN TO MAKE IT BACK TO WORLDS, !PATCH TOMORROW"
     },
     {
       "vod_id": "twitch-2891354525",
@@ -5826,7 +5827,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "1043 start | RANK1 BEFORE REGIONALS GRIND ✅ CAN'T WAIT FOR RIOT MMO ANNOUNCEMENT AT CONVERGENCE FEST 🤠"
+      "notes": "1043 start | RANK1 BEFORE REGIONALS GRIND \u2705 CAN'T WAIT FOR RIOT MMO ANNOUNCEMENT AT CONVERGENCE FEST \ud83e\udd20"
     },
     {
       "vod_id": "twitch-2930220707",
@@ -5870,7 +5871,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "1137 start | BACK FROM BREAK 🔴 4 DAYS TIL !PBE"
+      "notes": "1137 start | BACK FROM BREAK \ud83d\udd34 4 DAYS TIL !PBE"
     },
     {
       "vod_id": "twitch-2927279982",
@@ -5914,7 +5915,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "1057 start | LATE NIGHT QUICKIE 🔴 LEARNING EZREAL"
+      "notes": "1057 start | LATE NIGHT QUICKIE \ud83d\udd34 LEARNING EZREAL"
     },
     {
       "vod_id": "twitch-2893984856",
@@ -5958,7 +5959,7 @@
         "expand:goal-1000-continue",
         "twitch-gql:2026-11-25"
       ],
-      "notes": "977 start | NOT BALD ✅ RANK1 BEFORE !REGIONALS"
+      "notes": "977 start | NOT BALD \u2705 RANK1 BEFORE !REGIONALS"
     },
     {
       "vod_id": "twitch-2899373090",
@@ -6450,11 +6451,11 @@
       "streamer": "wasianiverson",
       "slot": "P4",
       "role": "primary",
-      "status": "todo",
+      "status": "blocked",
       "patch_claims": [],
       "candidate_ranges_s": [],
       "source_refs": [],
-      "notes": "auto-expand-wave2 title=ok fine ill try dur=23060"
+      "notes": "auto-expand-wave2 title=ok fine ill try dur=23060 | BLOCKED PBE/set19 (wave2 probe)"
     },
     {
       "vod_id": "twitch-2928503162",
