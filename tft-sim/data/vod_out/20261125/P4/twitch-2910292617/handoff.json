@@ -1,0 +1,36 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2910292617",
+  "slot": "P4",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      60,
+      2060
+    ],
+    [
+      2160,
+      4000
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2910292617-g60",
+    "twitch-2910292617-g2160"
+  ],
+  "counts": {
+    "games": 2,
+    "fights": 24,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 24
+    }
+  },
+  "needs_review": 24,
+  "commit": null,
+  "remaining": "Scout-expand stubs (2 games). Densify boards next if needed."
+}
