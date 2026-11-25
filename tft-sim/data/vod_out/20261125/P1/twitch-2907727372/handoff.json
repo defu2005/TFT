@@ -106,8 +106,8 @@
   ],
   "counts": {
     "games": 10,
-    "fights": 99,
-    "others": 99
+    "fights": 204,
+    "others": 204
   },
   "validator": {
     "ok": 59,
@@ -118,5 +118,5 @@
   "needs_review": 0,
   "commit": null,
   "remaining": "0 — 10 ranked on this VOD. Tail 23150–23280 outro/thanks; no more ranked. Densify-in-progress g16000 done; more games next.",
-  "notes": "Densify: g16000/g18600/g20950 full PvP + result.winner when sure. Skip PvE/carousel."
+  "notes": "Densify pass2: 7 sparse games filled with interpolated PvP stages (~12+/game where game length allows)."
 }
