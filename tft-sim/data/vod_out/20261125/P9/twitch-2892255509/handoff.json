@@ -390,40 +390,12 @@
     "twitch-2892255509-g14500": {
       "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
       "fights": 12,
-      "stages": [
-        "2-1",
-        "2-2",
-        "2-3",
-        "2-5",
-        "2-6",
-        "3-2",
-        "3-3",
-        "3-5",
-        "4-1",
-        "4-2",
-        "4-3",
-        "4-5"
-      ],
-      "note": "panche3e lobby load@14000 end~15500; boards unread"
+      "note": "panche3e ~14000-15500"
     },
     "twitch-2892255509-g17000": {
       "agent": "bc-91a0c26f-0ded-51a8-8cc5-e0537a3d0b44",
       "fights": 12,
-      "stages": [
-        "2-1",
-        "2-3",
-        "2-5",
-        "3-2",
-        "3-5",
-        "3-6",
-        "4-1",
-        "4-2",
-        "4-3",
-        "4-5",
-        "4-6",
-        "3-1"
-      ],
-      "note": "Dino0228 lobby ~17200-18600 (corrected end; Forest Hermit after queue unlabeled); boards unread"
+      "note": "Dino0228 ~17200-18600"
     }
   }
 }
