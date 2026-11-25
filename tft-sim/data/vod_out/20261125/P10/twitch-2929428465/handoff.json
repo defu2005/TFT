@@ -3,7 +3,7 @@
   "vod_id": "twitch-2929428465",
   "slot": "P10",
   "role": "primary",
-  "status": "pending",
+  "status": "done",
   "covered_ranges_s": [
     [
       200,
@@ -22,24 +22,7 @@
       7800
     ]
   ],
-  "remaining_ranges_s": [
-    [
-      2100,
-      2200
-    ],
-    [
-      4000,
-      4200
-    ],
-    [
-      5800,
-      6000
-    ],
-    [
-      7800,
-      null
-    ]
-  ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2929428465-g200",
     "twitch-2929428465-g2200",
@@ -158,5 +141,26 @@
         "reason": "winner_null"
       }
     ]
-  }
+  },
+  "skipped_ranges_s": [
+    [
+      2100,
+      2200
+    ],
+    [
+      4000,
+      4200
+    ],
+    [
+      5800,
+      6000
+    ],
+    [
+      7800,
+      7910
+    ]
+  ],
+  "skip_notes": "inter-game queue gaps ~100-200s (no new Set18); after ~7800 LoL queue \u2192 MapleStory",
+  "remaining": "none",
+  "notes": "Rem closed: no post-7800 TFT; mid gaps too short for new games (coord may still late-extend g2200/g4200)"
 }
