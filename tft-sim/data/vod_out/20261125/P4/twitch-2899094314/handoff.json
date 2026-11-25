@@ -12,6 +12,10 @@
     [
       2085,
       4150
+    ],
+    [
+      4750,
+      7000
     ]
   ],
   "remaining_ranges_s": [
@@ -21,25 +25,30 @@
     ],
     [
       4150,
+      4750
+    ],
+    [
+      7000,
       19050
     ]
   ],
   "game_ids": [
     "twitch-2899094314-g0",
-    "twitch-2899094314-g2085"
+    "twitch-2899094314-g2085",
+    "twitch-2899094314-g4750"
   ],
   "counts": {
-    "games": 2,
-    "fights": 46,
+    "games": 3,
+    "fights": 64,
     "others": 0
   },
   "validator": {
     "ok": 1,
     "skipped": {
-      "winner_null": 45
+      "winner_null": 63
     }
   },
-  "needs_review": 42,
+  "needs_review": 60,
   "commit": "e01eb83",
-  "remaining": "gap 1890-2085 (queue/desktop); continue game3+ from ~4700s (LP 1481 lobby)"
+  "remaining": "continue ranked game4+ from ~7200s (LP 1509)"
 }
