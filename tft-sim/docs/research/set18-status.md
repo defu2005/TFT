@@ -43,14 +43,16 @@ Cập nhật: 2026-11-25. Mọi con số là của sim/engine, không phải tr�
 - Yêu cầu dữ liệu từ người dùng: `docs/agents/requests/20261125-sim-to-hud-state-fields.md`. Bản ghi là từng fight, không phải bảng cuối game.
 
 ## Nguồn engine
-- `/root/work/tft_goat` ở commit `d5358e9402569f745bea81b61c5aed0500c57d66`, không nằm trong repo này. Container là tạm thời: cần cài lại engine từ commit này để tái lập.
+- `/root/work/tft_goat` ở commit `d5358e9402569f745bea81b61c5aed0500c57d66`, không nằm trong repo này.
+- Origin: `https://github.com/MielPopsssssss/tft_goat` (đã kiểm tra 2026-11-25: `git ls-remote` thấy `refs/heads/main` tại đúng commit này, nên tái lập được từ origin).
+- Container là tạm thời. Dựng lại bằng `bash scripts/bootstrap_engine.sh` (từ `tft-sim/`): clone đúng commit, cài httpx, pettingzoo, numpy, pandas, và in dòng `PYTHONPATH`.
 
 ## Lệnh tái lập
 Môi trường cần `PYTHONPATH` trỏ tới engine và `tft-sim/src`, và cần `httpx`:
 
 ```bash
-pip install httpx numpy pandas
-export PYTHONPATH=/root/work/tft_goat/src:/home/user/TFT/tft-sim/src
+bash scripts/bootstrap_engine.sh          # từ tft-sim/; TFT_GOAT_DIR đổi thư mục engine
+export PYTHONPATH=$HOME/work/tft_goat/src:$(pwd)/src
 cd /home/user/TFT/tft-sim/scripts/combat
 python3 selftest.py
 python3 emblem_sensitivity.py ../../data/sim/pairs18_sample.jsonl.gz ../../results/fixed/combat/emblem_sensitivity.json

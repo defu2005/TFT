@@ -389,15 +389,21 @@ Lưu ý khi đọc: flip nhỏ có thể do trait chưa có ánh xạ stat (xem 
 - Cả hai cấu hình đóng băng tại commit repo và commit engine ở lần đầu tiên bản ghi thật được chấm. Scorer in `repo_commit` và `engine_commit` trong đầu ra.
 - Đầu ra của scorer: số fight, số game, tỷ lệ bên a thắng, độ chính xác (có điểm 0,5 cho hòa), Brier, chênh lệch với quy tắc sức mạnh, CI theo game, và trạng thái (inconclusive khi dưới 30 game).
 
-### 11.11 Bảng trait Set 18 (phạm vi có giới hạn, 2026-11-25)
-- Đã ánh xạ 3 trên 25 trait không có stat (`TRAIT_TABLE` trong `fight.py`):
-  - Executioner (khóa `CritChance`, tên khóa có sẵn, xác minh): +15% crit cho thành viên, cộng dồn qua các mốc. Đã kiểm tra mốc 2 và mốc 3 trong selftest.
-  - Brawler (khóa hash, SUY RA từ thứ tự và giá trị, chưa xác minh bằng mô tả): 120 HP phẳng cho cả đội; 25/40/65% máu tối đa cho thành viên.
-  - Juggernaut (khóa hash, SUY RA): độ bền (dr) cho cả đội và cho thành viên.
-- Chưa ánh xạ 22 trait, lý do:
-  - Hiệu ứng có điều kiện hoặc theo đòn/sự kiện: Ravager (omnivamp, sát thương kép dưới 50% máu), Adaptor, Rival, Rapidfire (cộng dồn theo đòn), Inferno (đốt theo giây), Riftbeast (tăng mỗi 5 giây), Eclipse (theo thời gian, 0 thành viên).
-  - Hiệu ứng engine không có thuộc tính: Coven (kinh tế), Flora Fatalis (mana, hồi máu khi hạ gục), Invoker (hồi mana), Caustic (giảm kháng), Solar (khiên, sát thương phép bổ sung).
-  - Triệu hồi, vật thể hoặc khác: Elderwood (cây), Greenfather (hạt giống), Summoner (triệu hồi), Primal (chọn lựa, không biến số).
-  - Không có stat: Avatar, Bounty Seeker, Apex Predator, Emerald Aspect, Old Growth (tích lũy theo hạ gục), Defender (giá trị không rõ đơn vị, để lại).
-- Phủ: trong 1000 cặp mẫu, 16394 bộ (tướng, trait chưa ánh xạ) thì 3110 (19%) được bảng xử lý. Riftbeast, Elderwood, Ravager, Defender, Coven là các trait nhiều thành viên nhất và chưa được ánh xạ.
-- Cờ "suy_ra" trên khóa hash: phải xác minh bằng mô tả hoặc số liệu tooltip trước khi tin vào kết quả Brawler và Juggernaut.
+### 11.11 Bảng trait Set 18 (cập nhật 2026-11-25: khóa hash đã giải mã)
+- Quy tắc giải khóa hash: CDragon dùng khóa `{xxxxxxxx}` = FNV-1a 32-bit của tên biến viết thường. Kiểm tra trên Ravager: `EnemyHealthThreshold` -> `bef0ca90`, `BonusDamagePercentBase` -> `a9a813e7`, đều khớp. Bảng giải mã đầy đủ: `results/fixed/combat/trait_hash_resolution.json` (25 trait; Elderwood để trống 2 khóa, xem dưới).
+- `TRAIT_TABLE` trong `fight.py` ánh xạ 5 trait, 8 khóa (`TABLE_MAPPED = 8`). Mỗi khóa đã đối chiếu tên với bảng giải mã; selftest khẳng định nhóm nhận giá trị nào:
+  - Executioner: `CritChance` (tên có sẵn), +15% crit cho thành viên ở mốc 2, cộng dồn sang mốc 3 (mốc 3 không có khóa này).
+  - Brawler: `BrawlerTeamHealth` (`{da2472a7}`) = +120 HP phẳng cho cả đội; `BrawlerHealthPercent` (`{f1ed73eb}`) = 25/40/65% HP tối đa cho thành viên. GIẢ ĐỊNH: phần % tính trên HP gốc (trước các bang), cộng vào phần phẳng, không phụ thuộc thứ tự áp dụng (selftest: tướng Brawler 1100 -> 1495 = 1100+120+0.25·1100; tướng không phải Brawler 600 -> 720).
+  - Juggernaut: `TeamDurability` (`{f8c73243}`) = dr 4/6/8% cho cả đội; `JuggernautDurability` (`{6eab9c5e}`) = dr 20/30/42% cho thành viên. Thành viên nhận **giá trị lớn hơn** (max), không cộng dồn; dr áp dụng nhân theo `incoming_reduction`. Selftest: thành viên 0.20, không phải thành viên 0.04.
+  - Defender: `NonDefenderDefenseGain` (`{0eb6405e}`) = +12 armor và MR cho tướng KHÔNG phải Defender; `DefenderDefenseGain` (`{8c16b281}`) = +25/60/115 armor và MR cho Defender. GIẢ ĐỊNH: hiệu ứng áp dụng cho cả armor và MR (tên khóa không nói rõ đơn vị). Selftest: Defender +25, không phải Defender +12.
+  - Rapidfire: `TeamAS` (`{1d98dcec}`) = +10% tốc đánh cho cả đội (giá trị 0.10 ở mọi mốc). Selftest: tỉ lệ tốc đánh 1.10 cho cả ba tướng. `ASperAttack` là khóa khác (bản thân cộng dồn theo đòn), chưa ánh xạ.
+- Khóa chưa giải mã: Elderwood `{0f90e7a4}` và `{4013f48e}` (CDragon để trống tên, không có giá trị). Không suy đoán; để ngỏ.
+- Chưa ánh xạ (lý do):
+  - Điều kiện hoặc theo đòn/sự kiện: Ravager (omnivamp, sát thương kép dưới 50% máu), Adaptor, Rival, Inferno (đốt theo giây), Riftbeast (tăng theo thời gian), Eclipse (0 thành viên).
+  - Engine không có thuộc tính: Coven (kinh tế), Flora Fatalis (mana, hồi máu khi hạ gục), Invoker (`InvokerManaBonus`, hồi mana), Caustic (giảm kháng), Solar (khiên, sát thương phép bổ sung).
+  - Triệu hồi, vật thể hoặc khác: Elderwood (cây, hai khóa chưa giải), Greenfather (hạt giống), Summoner (triệu hồi), Primal (chọn lựa).
+  - Tăng theo hạ gục: Old Growth (tích lũy mỗi lần hạ gục, không phải hằng số, để sau).
+  - Không có stat: Avatar, Bounty Seeker, Apex Predator, Emerald Aspect.
+- Kiểm tra engine về Brawler (grep 2026-11-25): không có tham chiếu trait Brawler phía engine. Chỉ có một dòng chú thích trong `trait_effects.py` và `_brawler_emblem` trong `items_set17/batch_1.py` (emblem, không phải trait). Vì vậy bảng trait là nguồn duy nhất của hiệu ứng Brawler.
+- Phủ: trong 1000 cặp mẫu, 16394 bộ (tướng, trait chưa ánh xạ) thì 3110 (19%) được bảng xử lý trước khi mở rộng này; con số mới cần đo lại nếu muốn công bố.
+- Các giả định trên chưa được đối chiếu với mô tả in-game. Nếu có số liệu tooltip, so sánh trước khi tin vào kết quả Brawler, Defender và Juggernaut.

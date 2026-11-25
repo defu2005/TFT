@@ -1,0 +1,231 @@
+{
+ "DA_18_Elderwood": {
+  "b027c2f9": [
+   "StonebarkTreeBonusHealth"
+  ],
+  "4013f48e": [],
+  "0f90e7a4": []
+ },
+ "DA_18_Slayer": {
+  "bef0ca90": [
+   "EnemyHealthThreshold"
+  ],
+  "a9a813e7": [
+   "BonusDamagePercentBase"
+  ]
+ },
+ "DA_18_Solar": {
+  "7e77da03": [
+   "Threshold1ArmorMagicResist"
+  ],
+  "a51b2ace": [
+   "PercentIncreasePer3Star"
+  ],
+  "d91f7c21": [
+   "Threshold3StarUpPeriod"
+  ],
+  "0a2e2cbe": [
+   "NumThreeStarThreshold2"
+  ],
+  "617a160e": [
+   "Threshold1AttackSpeed"
+  ],
+  "0b2e2e51": [
+   "NumThreeStarThreshold3"
+  ],
+  "5cfe766f": [
+   "Threshold2TrueDamageConversion"
+  ],
+  "092e2b2b": [
+   "NumThreeStarThreshold1"
+  ]
+ },
+ "DA_18_Sprykin": {
+  "aa3fad66": [
+   "TeamwideRatio"
+  ]
+ },
+ "DA_18_Adaptor": {
+  "0412779a": [
+   "ADAPGain"
+  ]
+ },
+ "DA_18_Coven": {
+  "d62ae6ae": [
+   "EssenceForRitualTooltip"
+  ],
+  "de46577b": [
+   "EssencePerLoss"
+  ],
+  "7a9d7f0e": [
+   "EssencePerDeath"
+  ]
+ },
+ "DA_18_Eclipse": {
+  "53db05e8": [
+   "EclipseBeamPeriod"
+  ]
+ },
+ "DA_18_Hunter": {
+  "83011ee7": [
+   "HunterDuration"
+  ],
+  "641254b6": [
+   "HunterAD"
+  ]
+ },
+ "DA_18_Maokai_UniqueTrait": {
+  "56607148": [
+   "UniqueTraitHexRange"
+  ],
+  "36e69059": [
+   "UniqueTraitHealthPerStack"
+  ]
+ },
+ "DA_18_Greenfather": {
+  "b133da98": [
+   "SeedsToGrowHex"
+  ],
+  "5f537bd3": [
+   "SeedsPerCast"
+  ],
+  "5fea9917": [
+   "CombatStartSeeds"
+  ]
+ },
+ "DA_18_Invoker": {
+  "de27cb95": [
+   "InvokerManaBonus"
+  ]
+ },
+ "DA_18_Rapidfire": {
+  "1d98dcec": [
+   "TeamAS"
+  ]
+ },
+ "DA_Juggernaut18": {
+  "6eab9c5e": [
+   "JuggernautDurability"
+  ],
+  "f8c73243": [
+   "TeamDurability"
+  ]
+ },
+ "DA_18_Inferno": {
+  "c4c70a4e": [
+   "LuckySlotCount"
+  ],
+  "2c202877": [
+   "HPBurnPerSecond"
+  ]
+ },
+ "DA_18_Rival": {
+  "750d1a1b": [
+   "RengarGold_2"
+  ],
+  "a6d81c50": [
+   "RengarStackReq"
+  ],
+  "f1f3dbfc": [
+   "RengarADPerStack"
+  ],
+  "740d1888": [
+   "RengarGold_3"
+  ],
+  "1b5b0a96": [
+   "RengarGold"
+  ],
+  "a1ab72d6": [
+   "RengarThresholdAD"
+  ],
+  "3bcd79f5": [
+   "RengarADStackReq"
+  ]
+ },
+ "DA_18_Vanguard": {
+  "b58e0b6e": [
+   "DurabilityIncrease"
+  ]
+ },
+ "DA_18_Brawler": {
+  "f1ed73eb": [
+   "BrawlerHealthPercent"
+  ],
+  "da2472a7": [
+   "BrawlerTeamHealth"
+  ]
+ },
+ "DA_18_Executioner": {
+  "2c61751d": [
+   "BonusBleedPercent"
+  ]
+ },
+ "DA_Riftbeast18": {
+  "1b76cfed": [
+   "CapstoneAD"
+  ],
+  "4e1998f4": [
+   "CapstoneAspd"
+  ],
+  "a8c6eeaf": [
+   "CapstoneArmor"
+  ],
+  "0776b071": [
+   "CapstoneAP"
+  ],
+  "e8d16db1": [
+   "OverrunCombats"
+  ],
+  "3230276c": [
+   "CapstoneManaRegen"
+  ],
+  "08cfb22e": [
+   "CapstoneHealth"
+  ],
+  "0d6c2c87": [
+   "CapstoneMR"
+  ]
+ },
+ "DA_18_Lunar": {
+  "6d27fbd4": [
+   "LunarMultiplier"
+  ]
+ },
+ "DA_18_Defender": {
+  "0eb6405e": [
+   "NonDefenderDefenseGain"
+  ],
+  "8c16b281": [
+   "DefenderDefenseGain"
+  ]
+ },
+ "DA_18_Spellweaver": {
+  "b012bed0": [
+   "SpellweaverAP"
+  ]
+ },
+ "DA_18_ZyraUniqueTrait": {
+  "8e1b920c": [
+   "IncreasedDurability"
+  ],
+  "7c65d9f5": [
+   "PlantNumThreshold"
+  ]
+ },
+ "DA_18_Summoner": {
+  "1cb64e3c": [
+   "NumExtraAttacks"
+  ],
+  "6bba9a92": [
+   "AzirDamageMult"
+  ],
+  "5311f791": [
+   "HealthMult"
+  ]
+ },
+ "DA_18_Blossom": {
+  "91925b8e": [
+   "GoldPerCharmPurchased"
+  ]
+ }
+}

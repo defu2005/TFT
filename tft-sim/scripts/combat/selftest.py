@@ -276,6 +276,33 @@ if len(bw) == 2 and other:
     h_0 = [u.max_hp for u in S9._build_team(bb12, 0, c18, 0)]
     print("brawler hp table", h_0, "->", h_t)
     ok12 &= h_t[2] - h_0[2] >= 120 - 1e-6  # tuong khong phai Brawler van nhan 120 HP phang (ca doi)
+# Juggernaut / Defender / Rapidfire: dinh danh nhom (ai nhan gia tri nao), so sanh bat/tat bang
+def _onoff(board, attrs):
+    S9.apply_team_traits = lambda u, c, bonus_units=0: F._set18_traits(u, c, bonus_units, emblems=False, table=True)
+    on = S9._build_team(board, 0, c18, 0)
+    S9.apply_team_traits = F._orig_apply_team_traits
+    off = S9._build_team(board, 0, c18, 0)
+    return [tuple(getattr(u, a) for a in attrs) for u in on], [tuple(getattr(u, a) for a in attrs) for u in off]
+def _pick(trait, n, other=False):
+    return [a for a, c in c18.champions.items() if (trait in c.traits) != other and c.stats][:n]
+jg = _pick("Juggernaut", 2); jo = _pick("Juggernaut", 1, other=True)
+if len(jg) == 2 and jo:
+    on, off = _onoff([BU(a, 1, on_board=True) for a in jg + jo], ("incoming_reduction",))
+    d = [round(a[0] - b[0], 6) for a, b in zip(on, off)]
+    print("juggernaut dr delta (members, members, nonmember)", d)
+    ok12 &= abs(d[0] - 0.20) < 1e-6 and abs(d[1] - 0.20) < 1e-6 and abs(d[2] - 0.04) < 1e-6  # max, khong cong don
+df = _pick("Defender", 2); do = _pick("Defender", 1, other=True)
+if len(df) == 2 and do:
+    on, off = _onoff([BU(a, 1, on_board=True) for a in df + do], ("armor", "mr"))
+    d = [(round(a[0] - b[0], 6), round(a[1] - b[1], 6)) for a, b in zip(on, off)]
+    print("defender armor/mr delta (def, def, nondef)", d)
+    ok12 &= all(abs(x - 25) < 1e-6 and abs(y - 25) < 1e-6 for x, y in d[:2]) and abs(d[2][0] - 12) < 1e-6 and abs(d[2][1] - 12) < 1e-6
+rf = _pick("Rapidfire", 2); rfo = _pick("Rapidfire", 1, other=True)
+if len(rf) == 2 and rfo:
+    on, off = _onoff([BU(a, 1, on_board=True) for a in rf + rfo], ("attack_speed",))
+    r = [round(a[0] / b[0], 6) for a, b in zip(on, off)]
+    print("rapidfire AS ratio (rf, rf, other)", r)
+    ok12 &= all(abs(x - 1.10) < 1e-6 for x in r)  # TeamAS 10% cho ca doi
 # Predict_win: bang tat thi khong doi, bat thi doi duoc; patch duoc khoi phuc
 rec12 = fixture(names18, 18)
 x0 = F.predict_win(rec12, 3, "generic", True, 0, traits_table=False)

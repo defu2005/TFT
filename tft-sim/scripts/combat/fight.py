@@ -51,16 +51,21 @@ def emblem_trait_of(item_api: str, content):
     return base if any(t.name == base for t in content.traits.values()) else None
 
 
-# Bang trait Set 18 (muc 11.7, khoa 2026-11-25). Chi hieu ung STAT TINH, khong dieu kien, khong theo thoi gian.
-# Moi muc: {khoa_bien_CDragon: (thuoc_tinh, pham_vi)}. pham_vi: 'team' (ca doi) hoac 'members' (tuong thuoc trait).
-# Gia tri lay tu effect cua moc dat duoc (min_units). Khoa bang hash ({...}) la SUY RA tu thu tu/gia tri,
-# chua xac minh boi mo ta; ghi 'suy_ra' trong bang de khong bi coi la da xac minh.
+# Bang trait Set 18 (muc 11.11, cap nhat 2026-11-25). Chi STAT TINH, khong dieu kien, khong theo thoi gian.
+# Khoa hash da duoc GIAI MA: FNV-1a 32-bit cua ten bien viet thuong (kiem tra tren Ravager: EnemyHealthThreshold ->
+# bef0ca90). Xem results/fixed/combat/trait_hash_resolution.json. Moi entry: {khoa: (thuoc_tinh, pham_vi)}.
+#   pham_vi: 'team' = moi tuong tren ban; 'members' = thanh vien trait; 'nonmember' = khong phai thanh vien.
+#   Hai khoa cung trait cung ben (team + members) CONG DON; members + nonmember la THAY THE (mo ta "A or B").
+#   thuoc_tinh: hp_flat (cong HP phang), hp_pct (phan tram HP toi da, tinh tren HP truoc bang), dr, as, crit, resist (ca armor va MR, phang).
 TRAIT_TABLE = {
-    "DA_18_Executioner": {"CritChance": ("crit", "members", "named")},            # Executioner moc 2: +15% crit (ten khoa)
-    "DA_18_Brawler": {"{da2472a7}": ("hp", "team", "suy_ra"),                     # BrawlerTeamHealth 120 phang (ca doi)
-                      "{f1ed73eb}": ("hp", "members", "suy_ra")},                  # BrawlerHealthPercent 25/40/65% (thanh vien)
-    "DA_Juggernaut18": {"{6eab9c5e}": ("dr", "team", "suy_ra"),                   # TeamDurability (ca doi)
-                        "{f8c73243}": ("dr", "members", "suy_ra")},                # JuggernautDurability (thanh vien)
+    "DA_18_Executioner": {"CritChance": ("crit", "members")},                 # xac minh: khoa co ten
+    "DA_18_Brawler": {"{da2472a7}": ("hp_flat", "team"),                        # BrawlerTeamHealth
+                      "{f1ed73eb}": ("hp_pct", "members")},                     # BrawlerHealthPercent; GIA DINH: Brawler nhan CONG DON
+    "DA_Juggernaut18": {"{f8c73243}": ("dr", "team"),                           # TeamDurability (ten khoa da xac nhan)
+                        "{6eab9c5e}": ("dr", "members")},                       # JuggernautDurability; dr lay MAX tren moi unit (khong cong don)
+    "DA_18_Defender": {"{0eb6405e}": ("resist", "nonmember"),                   # NonDefenderDefenseGain (ten khoa)
+                       "{8c16b281}": ("resist", "members")},                    # DefenderDefenseGain
+    "DA_18_Rapidfire": {"{1d98dcec}": ("as", "team")},                          # TeamAS
 }
 TABLE_MAPPED = sum(len(v) for v in TRAIT_TABLE.values())
 
@@ -78,37 +83,49 @@ def _counts(units, content, with_emblem: bool) -> dict:
 
 
 def _table_extra(units, content, with_emblem: bool) -> None:
-    """Ap dung TRAIT_TABLE sau khi engine (va emblem) da chay."""
+    """Ap dung TRAIT_TABLE sau engine (va emblem). Moi delta tinh tren gia tri TRUOC bang nen khong phu thuoc thu tu."""
     if not units:
         return
     cnt, held = _counts(units, content, with_emblem)
-    by_name = {t.name: t for t in content.traits.values()}
+    base_hp = {id(u): u.max_hp for u in units}
+    deltas = []  # (unit, attr, value)
     for api, mapping in TRAIT_TABLE.items():
         trait = content.traits.get(api)
         if trait is None:
             continue
-        c = cnt.get(trait.name, 0)
-        tier = sum(1 for bp in trait.breakpoints if c >= bp)
+        tier = sum(1 for bp in trait.breakpoints if cnt.get(trait.name, 0) >= bp)
         if tier == 0:
             continue
         effs = sorted(trait.effects, key=lambda e: e.min_units)
         cur = min(tier - 1, len(effs) - 1)
-        members = [u for u, hs in zip(units, held)
-                   if trait.name in (content.champions[u.champion_api].traits if u.champion_api in content.champions else ())
-                   or trait.name in hs]
-        for key, (attr, scope, _status) in mapping.items():
-            # Hieu ung cong don: lay gia tri cua moc gan nhat <= moc hien tai co chua khoa nay.
+        is_member = [trait.name in (content.champions[u.champion_api].traits if u.champion_api in content.champions else ())
+                     or trait.name in hs for u, hs in zip(units, held)]
+        for key, (attr, scope) in mapping.items():
             src = next((effs[i].variables[key] for i in range(cur, -1, -1) if key in effs[i].variables), None)
-            if src is None:
+            if src is None or float(src) == 0:
                 continue
-            val = float(src)
-            if val == 0:
-                continue
-            for u in (units if scope == "team" else members):
-                if attr == "crit":
-                    u.crit_chance += val
-                else:
-                    TE._apply_stat(u, attr, val)
+            v = float(src)
+            for u, mem in zip(units, is_member):
+                if scope == "team" or (scope == "members" and mem) or (scope == "nonmember" and not mem):
+                    deltas.append((u, attr, v))
+    dr_max = {}  # id(u) -> (u, max dr); dr khong cong don: lay gia tri lon nhat
+    for u, attr, v in deltas:
+        if attr == "dr":
+            cur_u, cur_v = dr_max.get(id(u), (u, 0.0))
+            dr_max[id(u)] = (u, max(cur_v, v))
+        elif attr == "hp_flat":
+            u.max_hp += v; u.hp += v
+        elif attr == "hp_pct":
+            d = base_hp[id(u)] * v  # tinh tren HP TRUOC moi bang: khong phu thuoc thu tu
+            u.max_hp += d; u.hp += d
+        elif attr == "crit":
+            u.crit_chance += v
+        elif attr == "resist":
+            u.armor += v; u.mr += v
+        else:  # as
+            TE._apply_stat(u, attr, v)
+    for u, v in dr_max.values():
+        TE._apply_stat(u, "dr", v)
 
 
 def _emblem_traits(units, content, bonus_units: int = 0) -> None:
