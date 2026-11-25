@@ -1,0 +1,82 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2920305475",
+  "slot": "P1",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      600,
+      2760
+    ],
+    [
+      3480,
+      5220
+    ],
+    [
+      5640,
+      7510
+    ],
+    [
+      7800,
+      9520
+    ],
+    [
+      9970,
+      10800
+    ],
+    [
+      11880,
+      12840
+    ],
+    [
+      14520,
+      16200
+    ],
+    [
+      16920,
+      18600
+    ],
+    [
+      19580,
+      21330
+    ],
+    [
+      21980,
+      23430
+    ],
+    [
+      24380,
+      25530
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2920305475-g600",
+    "twitch-2920305475-g3480",
+    "twitch-2920305475-g5640",
+    "twitch-2920305475-g7800",
+    "twitch-2920305475-g10200",
+    "twitch-2920305475-g11880",
+    "twitch-2920305475-g14520",
+    "twitch-2920305475-g16920",
+    "twitch-2920305475-g19560",
+    "twitch-2920305475-g21960",
+    "twitch-2920305475-g24360"
+  ],
+  "counts": {
+    "games": 11,
+    "fights": 187,
+    "others": 187
+  },
+  "validator": {
+    "ok": 165,
+    "skipped": {
+      "winner_null": 22
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "Scrim/tourney/watch-party segments skipped.",
+  "notes": "NEW PATCH / superbrawl training VOD: ranked ladder densified; superbrawl scrim stacks skipped."
+}
