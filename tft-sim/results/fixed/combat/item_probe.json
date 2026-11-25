@@ -1,14 +1,14 @@
 {
- "champion": "TFT_Krug",
+ "champion": "DA_Krug18",
  "base": {
-  "max_hp": 1200.0,
-  "armor": 50.0,
-  "mr": 25.0,
-  "ad": 110.0,
+  "max_hp": 1100.0,
+  "armor": 40.0,
+  "mr": 40.0,
+  "ad": 55.0,
   "ap": 100.0,
-  "attack_speed": 0.800000011920929,
+  "attack_speed": 0.6000000238418579,
   "crit_chance": 0.25,
-  "max_mana": 1000000000.0
+  "max_mana": 135.0
  },
  "items": [
   {
@@ -17,12 +17,47 @@
    "in_sample_count": 57,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_UnstableConcoction",
+   "twin_raw_effects": {
+    "AD_NotStatBar": 0.15000000596046448,
+    "AP_NotStatBar": 15.0,
+    "CritChance": 20.0,
+    "HealthThreshold": 0.5,
+    "ManaRegen": 1.0,
+    "StatOmnivamp_NotStatBar": 0.11999999731779099,
+    "{f23e83fc}": 2.0
+   },
+   "twin_engine_effects": {
+    "AD_NotStatBar": 0.15000000596046448,
+    "AP_NotStatBar": 15.0,
+    "CritChance": 20.0,
+    "HealthThreshold": 0.5,
+    "ManaRegen": 1.0,
+    "StatOmnivamp_NotStatBar": 0.11999999731779099,
+    "{f23e83fc}": 2.0
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0,
+    "crit_chance": 0.2
    }
   },
   {
@@ -31,12 +66,45 @@
    "in_sample_count": 52,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_NightHarvester",
+   "twin_raw_effects": {
+    "Armor": 20.0,
+    "BaseDurability": 0.05000000074505806,
+    "CritChance": 20.0,
+    "EmpoweredDurability": 0.15000000596046448,
+    "Health": 250.0,
+    "ThresholdForEmpower": 0.5
+   },
+   "twin_engine_effects": {
+    "Armor": 20.0,
+    "BaseDurability": 0.05000000074505806,
+    "CritChance": 20.0,
+    "EmpoweredDurability": 0.15000000596046448,
+    "Health": 250.0,
+    "ThresholdForEmpower": 0.5
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 400.0,
+    "armor": 35.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0,
+    "crit_chance": 0.2
    }
   },
   {
@@ -45,11 +113,37 @@
    "in_sample_count": 52,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_TacticiansRing",
+   "twin_raw_effects": {
+    "MaxArmySizeIncrease": 1.0,
+    "PercentGoldChance": 10.0,
+    "Timer": 10.0
+   },
+   "twin_engine_effects": {
+    "MaxArmySizeIncrease": 1.0,
+    "PercentGoldChance": 10.0,
+    "Timer": 10.0
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
     "ap": 15.0
    }
   },
@@ -59,12 +153,43 @@
    "in_sample_count": 44,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_StatikkShiv",
+   "twin_raw_effects": {
+    "AP": 35.0,
+    "AS": 15.0,
+    "MRShred": 30.0,
+    "MRShredDuration": 5.0,
+    "ManaRegen": 1.0
+   },
+   "twin_engine_effects": {
+    "AP": 35.0,
+    "AS": 15.0,
+    "MRShred": 30.0,
+    "MRShredDuration": 5.0,
+    "ManaRegen": 1.0
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 50.0,
+    "attack_speed": 9.0
    }
   },
   {
@@ -73,12 +198,46 @@
    "in_sample_count": 40,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_IonicSpark",
+   "twin_raw_effects": {
+    "AP": 15.0,
+    "Damage": 250.0,
+    "Health": 250.0,
+    "HexRange": 2.0,
+    "MRShred": 30.0,
+    "MagicResist": 35.0,
+    "ManaRatio": 150.0
+   },
+   "twin_engine_effects": {
+    "AP": 15.0,
+    "Damage": 250.0,
+    "Health": 250.0,
+    "HexRange": 2.0,
+    "MRShred": 30.0,
+    "MagicResist": 35.0,
+    "ManaRatio": 150.0
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 400.0,
+    "armor": 15.0,
+    "mr": 50.0,
+    "ad": 8.25,
+    "ap": 30.0
    }
   },
   {
@@ -87,12 +246,39 @@
    "in_sample_count": 37,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_GuinsoosRageblade",
+   "twin_raw_effects": {
+    "AP": 10.0,
+    "AS": 10.0,
+    "AttackSpeedPerStack": 7.0
+   },
+   "twin_engine_effects": {
+    "AP": 10.0,
+    "AS": 10.0,
+    "AttackSpeedPerStack": 7.0
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 25.0,
+    "attack_speed": 6.0
    }
   },
   {
@@ -101,12 +287,44 @@
    "in_sample_count": 37,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_Quicksilver",
+   "twin_raw_effects": {
+    "AS": 15.0,
+    "CritChance": 20.0,
+    "MagicResist": 20.0,
+    "ProcAttackSpeed": 0.029999999329447746,
+    "SpellShieldDuration": 18.0
+   },
+   "twin_engine_effects": {
+    "AS": 15.0,
+    "CritChance": 20.0,
+    "MagicResist": 20.0,
+    "ProcAttackSpeed": 0.029999999329447746,
+    "SpellShieldDuration": 18.0
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 35.0,
+    "ad": 8.25,
+    "ap": 15.0,
+    "attack_speed": 9.0,
+    "crit_chance": 0.2
    }
   },
   {
@@ -115,12 +333,44 @@
    "in_sample_count": 36,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_LastWhisper",
+   "twin_raw_effects": {
+    "AD": 0.15000000596046448,
+    "AS": 20.0,
+    "ArmorBreakDuration": 3.0,
+    "ArmorReductionPercent": 30.0,
+    "CritChance": 20.0
+   },
+   "twin_engine_effects": {
+    "AD": 0.15000000596046448,
+    "AS": 20.0,
+    "ArmorBreakDuration": 3.0,
+    "ArmorReductionPercent": 30.0,
+    "CritChance": 20.0
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 17.7375,
+    "ap": 15.0,
+    "attack_speed": 12.0,
+    "crit_chance": 0.2
    }
   },
   {
@@ -129,12 +379,48 @@
    "in_sample_count": 34,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_Bloodthirster",
+   "twin_raw_effects": {
+    "AD": 0.15000000596046448,
+    "AP": 15.0,
+    "HealthThreshold": 40.0,
+    "LifeSteal": 20.0,
+    "MagicResist": 20.0,
+    "ShieldDuration": 5.0,
+    "ShieldHealthPercent": 25.0,
+    "StatOmnivamp": 0.20000000298023224
+   },
+   "twin_engine_effects": {
+    "AD": 0.15000000596046448,
+    "AP": 15.0,
+    "HealthThreshold": 40.0,
+    "LifeSteal": 20.0,
+    "MagicResist": 20.0,
+    "ShieldDuration": 5.0,
+    "ShieldHealthPercent": 25.0,
+    "StatOmnivamp": 0.20000000298023224
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 35.0,
+    "ad": 17.7375,
+    "ap": 30.0
    }
   },
   {
@@ -143,11 +429,41 @@
    "in_sample_count": 34,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_AdaptiveHelm",
+   "twin_raw_effects": {
+    "BacklineADAP": 10.0,
+    "FrontlineResists": 30.0,
+    "MagicResist": 20.0,
+    "ManaPercIncrease": 0.15000000596046448,
+    "ManaRegen": 3.0
+   },
+   "twin_engine_effects": {
+    "BacklineADAP": 10.0,
+    "FrontlineResists": 30.0,
+    "MagicResist": 20.0,
+    "ManaPercIncrease": 0.15000000596046448,
+    "ManaRegen": 3.0
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 35.0,
+    "ad": 8.25,
     "ap": 15.0
    }
   },
@@ -157,12 +473,40 @@
    "in_sample_count": 34,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_ArchangelsStaff",
+   "twin_raw_effects": {
+    "AP": 30.0,
+    "APPerInterval": 20.0,
+    "IntervalSeconds": 5.0,
+    "ManaRegen": 1.0
+   },
+   "twin_engine_effects": {
+    "AP": 30.0,
+    "APPerInterval": 20.0,
+    "IntervalSeconds": 5.0,
+    "ManaRegen": 1.0
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 45.0
    }
   },
   {
@@ -171,12 +515,38 @@
    "in_sample_count": 33,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_InfinityEdge",
+   "twin_raw_effects": {
+    "AD": 0.3499999940395355,
+    "CritChance": 35.0,
+    "CritDamageToGive": null
+   },
+   "twin_engine_effects": {
+    "AD": 0.3499999940395355,
+    "CritChance": 35.0
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 30.3875,
+    "ap": 15.0,
+    "crit_chance": 0.35
    }
   },
   {
@@ -185,12 +555,48 @@
    "in_sample_count": 32,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_Morellonomicon",
+   "twin_raw_effects": {
+    "AP": 20.0,
+    "BurnDuration": 10.0,
+    "BurnPercent": 1.0,
+    "GrievousWoundsPercent": 33.0,
+    "Health": 150.0,
+    "ManaRegen": 1.0,
+    "MonsterCap": 100.0,
+    "TicksPerSecond": 1.0
+   },
+   "twin_engine_effects": {
+    "AP": 20.0,
+    "BurnDuration": 10.0,
+    "BurnPercent": 1.0,
+    "GrievousWoundsPercent": 33.0,
+    "Health": 150.0,
+    "ManaRegen": 1.0,
+    "MonsterCap": 100.0,
+    "TicksPerSecond": 1.0
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 300.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 35.0
    }
   },
   {
@@ -199,12 +605,49 @@
    "in_sample_count": 31,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_GuardianAngel",
+   "twin_raw_effects": {
+    "AD": 0.10000000149011612,
+    "AP": 10.0,
+    "AS": 15.0,
+    "Armor": 20.0,
+    "DamageReduction": 100.0,
+    "HealthThreshold": 60.0,
+    "MissingHealthRestore": 0.20000000298023224,
+    "StealthDuration": 1.0
+   },
+   "twin_engine_effects": {
+    "AD": 0.10000000149011612,
+    "AP": 10.0,
+    "AS": 15.0,
+    "Armor": 20.0,
+    "DamageReduction": 100.0,
+    "HealthThreshold": 60.0,
+    "MissingHealthRestore": 0.20000000298023224,
+    "StealthDuration": 1.0
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 150.0,
+    "armor": 35.0,
+    "mr": 15.0,
+    "ad": 14.575,
+    "ap": 25.0,
+    "attack_speed": 9.0
    }
   },
   {
@@ -213,12 +656,46 @@
    "in_sample_count": 30,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_Leviathan",
+   "twin_raw_effects": {
+    "AP": 15.0,
+    "AS": 10.0,
+    "BaseManaOnHit": 2,
+    "CritChance": 20.0,
+    "Health": 150.0,
+    "ManaOnCrit": 4.0
+   },
+   "twin_engine_effects": {
+    "AP": 15.0,
+    "AS": 10.0,
+    "BaseManaOnHit": 2.0,
+    "CritChance": 20.0,
+    "Health": 150.0,
+    "ManaOnCrit": 4.0
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 300.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 30.0,
+    "attack_speed": 6.0,
+    "crit_chance": 0.2
    }
   },
   {
@@ -227,11 +704,43 @@
    "in_sample_count": 29,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_Redemption",
+   "twin_raw_effects": {
+    "HealTickRate": 1.0,
+    "Health": 300.0,
+    "ManaRegen": 2.0,
+    "MaxHeal": 250.0,
+    "MissingHealthHeal": 0.019999999552965164,
+    "{cd951938}": 0.07999999821186066
+   },
+   "twin_engine_effects": {
+    "HealTickRate": 1.0,
+    "Health": 300.0,
+    "ManaRegen": 2.0,
+    "MaxHeal": 250.0,
+    "MissingHealthHeal": 0.019999999552965164,
+    "{cd951938}": 0.07999999821186066
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 450.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
     "ap": 15.0
    }
   },
@@ -241,13 +750,25 @@
    "in_sample_count": 28,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": null,
+   "twin_raw_effects": null,
+   "twin_engine_effects": null,
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
-   }
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": null
   },
   {
    "api": "DA_TacticiansCrown",
@@ -255,13 +776,25 @@
    "in_sample_count": 28,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": null,
+   "twin_raw_effects": null,
+   "twin_engine_effects": null,
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
-   }
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": null
   },
   {
    "api": "DA_StrikersFlail",
@@ -269,12 +802,48 @@
    "in_sample_count": 27,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_PowerGauntlet",
+   "twin_raw_effects": {
+    "AS": 10.0,
+    "BuffDamageAmp": 0.05000000074505806,
+    "CritChance": 20.0,
+    "Duration": 5.0,
+    "Health": 150.0,
+    "MaxStacks": 4.0,
+    "{1543aa48}": 0.10000000149011612
+   },
+   "twin_engine_effects": {
+    "AS": 10.0,
+    "BuffDamageAmp": 0.05000000074505806,
+    "CritChance": 20.0,
+    "Duration": 5.0,
+    "Health": 150.0,
+    "MaxStacks": 4.0,
+    "{1543aa48}": 0.10000000149011612
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 300.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0,
+    "attack_speed": 6.0,
+    "crit_chance": 0.2
    }
   },
   {
@@ -283,12 +852,44 @@
    "in_sample_count": 26,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": "TFT_Item_HextechGunblade",
+   "twin_raw_effects": {
+    "AD": 0.20000000298023224,
+    "AP": 20.0,
+    "AllyHealing": 0.20000000298023224,
+    "ManaRegen": 1.0,
+    "Omnivamp": 18.0,
+    "StatOmnivamp": 0.15000000596046448
+   },
+   "twin_engine_effects": {
+    "AD": 0.20000000298023224,
+    "AP": 20.0,
+    "AllyHealing": 0.20000000298023224,
+    "ManaRegen": 1.0,
+    "Omnivamp": 18.0,
+    "StatOmnivamp": 0.15000000596046448
+   },
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 20.9,
+    "ap": 35.0
    }
   },
   {
@@ -297,13 +898,25 @@
    "in_sample_count": 0,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": null,
+   "twin_raw_effects": null,
+   "twin_engine_effects": null,
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
-   }
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": null
   },
   {
    "api": "DA_Component_ChainVest",
@@ -311,13 +924,25 @@
    "in_sample_count": 0,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": null,
+   "twin_raw_effects": null,
+   "twin_engine_effects": null,
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
-   }
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": null
   },
   {
    "api": "DA_Component_FryingPan",
@@ -325,13 +950,25 @@
    "in_sample_count": 0,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": null,
+   "twin_raw_effects": null,
+   "twin_engine_effects": null,
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
-   }
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": null
   },
   {
    "api": "DA_Component_GiantsBelt",
@@ -339,13 +976,25 @@
    "in_sample_count": 0,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": null,
+   "twin_raw_effects": null,
+   "twin_engine_effects": null,
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
-   }
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": null
   },
   {
    "api": "DA_Component_NeedlesslyLargeRod",
@@ -353,13 +1002,25 @@
    "in_sample_count": 0,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": null,
+   "twin_raw_effects": null,
+   "twin_engine_effects": null,
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
-   }
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": null
   },
   {
    "api": "DA_Component_NegatronCloak",
@@ -367,13 +1028,25 @@
    "in_sample_count": 0,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": null,
+   "twin_raw_effects": null,
+   "twin_engine_effects": null,
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
-   }
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": null
   },
   {
    "api": "DA_Component_RecurveBow",
@@ -381,13 +1054,25 @@
    "in_sample_count": 0,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": null,
+   "twin_raw_effects": null,
+   "twin_engine_effects": null,
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
-   }
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": null
   },
   {
    "api": "DA_Component_SparringGloves",
@@ -395,13 +1080,25 @@
    "in_sample_count": 0,
    "raw_effects": {},
    "engine_effects": {},
-   "unit_delta": {
+   "same_name_twin": null,
+   "twin_raw_effects": null,
+   "twin_engine_effects": null,
+   "unit_delta_as_sampled": {
     "max_hp": 150.0,
     "armor": 15.0,
     "mr": 15.0,
-    "ad": 16.5,
+    "ad": 8.25,
     "ap": 15.0
-   }
+   },
+   "control_generic_only": {
+    "max_hp": 150.0,
+    "armor": 15.0,
+    "mr": 15.0,
+    "ad": 8.25,
+    "ap": 15.0
+   },
+   "control_items0_with_api": {},
+   "unit_delta_twin": null
   }
  ]
 }

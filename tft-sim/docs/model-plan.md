@@ -453,16 +453,20 @@ Lưu ý khi đọc: flip nhỏ có thể do trait chưa có ánh xạ stat (xem 
 - PRIMARY không có gì trong số này (`traits_table=False`, không đổi `_SET18_BAD_KEYS`).
 - `fidelity.score` báo thêm `secondary_minus_rule` (SECONDARY − luật sức mạnh) kèm CI. Đây là bổ sung trước dữ liệu thật: headline vẫn là `primary_minus_rule`, nhưng SECONDARY đã gồm các sửa, nên cũng cần đọc `secondary_minus_rule`. Không dùng để chọn cấu hình sau khi có dữ liệu.
 
-### 11.16 Probe trang bị Set 18 (2026-11-25): dữ liệu CDragon thiếu chỉ số item
-- Công cụ: `scripts/combat/item_probe.py` -> `results/fixed/combat/item_probe.json`. Lấy 20 item phổ biến nhất trong mẫu (không tính emblem) cộng 8 thành phần cơ bản: 28 item. Với mỗi item, dựng Krug (DA_Krug18) có và không có item bằng `S9._build_team`, ghi chênh lệch thực tế trên max_hp, armor, mr, ad, ap, attack_speed, crit_chance, max_mana.
-- Kết quả (đo, không suy diễn):
-  - Cả 28 item cho cùng một chênh lệch: max_hp +150, armor +15, mr +15, ad +16.5, ap +15. Đây chính là `_GENERIC_ITEM` (150 HP, 15 giáp, 15 kháng phép, 15 AP, 0.15 AD nhân với hệ số AD). Không có chỉ số riêng nào của item được áp.
-  - `engine_effects` (`content.items[api].effects`) rỗng với cả 28 item.
-  - `raw_effects` (snapshot CDragon, `effects`) cũng rỗng với cả 28 item. Trường `desc` của DA_HandOfJustice là `None`.
-- Phạm vi: trong 1,002 ô item của mẫu `pairs18_sample.jsonl.gz` (39 item duy nhất), 100% có `raw_effects` rỗng trong snapshot. Mọi item trong mẫu đều có mặt trong snapshot (0 item lạ).
-- Snapshot có 4,231 bản ghi item; 2,746 có `effects` khác rỗng và 3,898 có `desc`. Nghĩa là dữ liệu item không rỗng toàn bộ: các item thường gặp của Set 18 là phần bị thiếu. Nhiều item (DA_* và thành phần) có `composition` nhưng `effects` = `{}`.
-- Kết luận:
-  - Lỗi nằm ở DỮ LIỆU (snapshot CDragon không có chỉ số item cho các item phổ biến), không phải ở engine loại bỏ chỉ số. Engine chỉ đọc những gì content có.
-  - Hệ quả trong mô phỏng hiện tại: mọi item, kể cả Bloodthirster, Infinity Edge, Guinsoo, Hand of Justice, đều cho cùng một bonus chung. Mô hình item trong cả PRIMARY lẫn SECONDARY không phân biệt được item. Đây là sai lệch lớn, lớn hơn lỗi thang AP.
-  - Chưa xác định: `desc` có chứa chỉ số item không (nhiều item có desc, nên có thể lấy chỉ số từ mô tả); và `_GENERIC_ITEM` có được cộng THÊM vào item có tên hay không (hiện không có item nào có tên để kiểm).
-- Chưa sửa gì. Bước tiếp theo đề xuất (chờ advisor): (1) kiểm tra `desc` của 39 item trong mẫu, đếm item nào có số trong mô tả; (2) chọn nguồn chỉ số item (snapshot khác, hoặc bảng tay có nguồn) trước khi sửa content; (3) không sửa PRIMARY (đóng băng); mọi thay đổi đi qua cờ.
+
+### 11.16 Probe trang bị Set 18 (sửa 2026-11-25 sau kiểm tra của advisor)
+Bản đầu của mục này kết luận "CDragon thiếu chỉ số item". Kết luận đó SAI, và bản này thay thế nó.
+- Công cụ: `scripts/combat/item_probe.py` -> `results/fixed/combat/item_probe.json`. 20 item phổ biến nhất trong mẫu sim-sinh (không tính emblem) + 8 thành phần: 28 item. Champion cố định `DA_Krug18`. Bản đầu dùng nhầm `TFT_Krug` (AD 110) nên số AD 16.5 sai; đúng là 8.25. Alias lấy từ `data/set18_names.json` (trường `twin_tft_item`), không đoán theo tên hiển thị (đoán theo tên đã cho cặp sai, ví dụ DA_SteadfastHeart -> TFT_Item_NightHarvester).
+- Đo (số liệu, không suy diễn):
+  1. Đường đi như sim (`items=1, item_apis=(DA_x,)`): mọi item cho cùng chênh lệch: max_hp +150, armor +15, MR +15, AD +8.25, AP +15. Đây là `_GENERIC_ITEM`, không có chỉ số riêng nào được áp.
+  2. Đối chứng: `items=1, item_apis=()` cho đúng chênh lệch trên; `items=0, item_apis=(DA_x,)` cho 0. Bonus chung đến từ bộ đếm `items`, không từ item.
+  3. 18/18 item probe có alias `TFT_Item_*` đều có `effects` khác rỗng. Ví dụ DA_HandOfJustice -> TFT_Item_UnstableConcoction (CritChance 20, AP 15, ...); DA_GuinsoosRageblade -> TFT_Item_GuinsoosRageblade (AP 10, AS 10, ...); DA_Bloodthirster -> TFT_Item_Bloodthirster (LifeSteal 20, MR 20, ...). Khi đưa id `TFT_*` vào `build_unit`, chênh lệch khác (Guinsoo: AP +25, AS +6).
+  4. `content.items['DA_*'].effects` rỗng với mọi item trong mẫu. Nên chỉ số riêng bị MẤT khi content build không đi theo alias. Bản snapshot CDragon cho DA_* cũng rỗng (`effects`, `desc`); dữ liệu nằm ở bản `TFT_Item_*`.
+- Phạm vi trên mẫu sim-sinh (`data/sim/pairs18_sample.jsonl.gz`): 1,002 ô item, 39 item duy nhất. Mọi ô đều là DA_* không có chỉ số trong content, 100% ô. Đây là phạm vi, không phải độ lớn sai số: độ lớn ảnh hưởng lên fidelity CHƯA ĐO. 37/39 item trong mẫu có alias trong `names18`, cả 37 alias đều có effects. Hai item không alias: DA_TacticiansShield, DA_TacticiansCrown.
+- Thành phần `DA_Component_*` (10 item probe): không có alias trong `names18`, và không có trong mẫu (n=0). Không ảnh hưởng số liệu trên mẫu. Chưa xác định id đúng cho chúng.
+- Hai lỗi riêng biệt:
+  (a) Mất chỉ số riêng: content build không đi theo alias, nên `DA_*` không có chỉ số riêng.
+  (b) Bonus chung cộng cho MỌI item: `fight.py` dòng 292-293 truyền `items=len(its)`; `simulate.py:321` truyền `generic_items=bu.items`. Mọi item có tên vẫn nhận `_GENERIC_ITEM` đầy đủ. Nếu sửa (a) mà giữ (b), chỉ số sẽ bị cộng trùng (chỉ số riêng + bonus chung).
+- Khác với lỗi AP (11.13, 11.15): lỗi AP ảnh hưởng vài khóa trait; lỗi item ảnh hưởng mọi item có chỉ số. Phạm vi lớn hơn, độ lớn chưa đo.
+- Chưa sửa gì. PRIMARY giữ nguyên; content và engine không đổi.
+- Cần quyết định trước khi sửa: (i) `_GENERIC_ITEM` áp cho item thật hay chỉ cho item trừu tượng (bộ đếm env)? (ii) id đúng cho 10 `DA_Component_*`.
