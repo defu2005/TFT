@@ -7474,7 +7474,7 @@
      "P2",
      "ghost"
     ],
-    "attempt": "checked 2210.3 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost Combat banner scanned at 1 s steps over 2230-2280 s and at 2 s steps over 2200-2340 s (video time); no banner read with a name match of 0.7 or more. Banner check passes on a known frame (1978 s), so the opponent is not read from banner here.",
+    "attempt": "checked 2210.3 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost Combat banner scanned at 1 s steps over 2230-2280 s and at 2 s steps over 2200-2340 s (video time); no banner read with a name match of 0.7 or more. Banner check passes on a known frame (1978 s), so the opponent stays unresolved from banner.",
     "reason": "no legible opponent nameplate in the checked frame"
    },
    "combat_frame_t_s": null,
@@ -8280,7 +8280,7 @@
      "P2",
      "ghost"
     ],
-    "attempt": "checked 2380.2 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost Combat banner scanned at 1 s steps over 2400-2450 s and at 2 s steps over 2380-2500 s (video time); no banner read with a name match of 0.7 or more. Banner check passes on a known frame (1978 s), so the opponent is not read from banner here.",
+    "attempt": "checked 2380.2 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost Combat banner scanned at 1 s steps over 2400-2450 s and at 2 s steps over 2380-2500 s (video time); no banner read with a name match of 0.7 or more. Banner check passes on a known frame (1978 s), so the opponent stays unresolved from banner.",
     "reason": "no legible opponent nameplate in the checked frame"
    },
    "combat_frame_t_s": null,
