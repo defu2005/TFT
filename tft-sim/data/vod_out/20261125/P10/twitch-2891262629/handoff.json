@@ -3,25 +3,30 @@
   "vod_id": "twitch-2891262629",
   "slot": "P10",
   "role": "primary",
-  "status": "blocked",
-  "covered_ranges_s": [],
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      55,
+      2212
+    ]
+  ],
   "remaining_ranges_s": [
     [
-      300,
+      2212,
       32900
     ]
   ],
-  "game_ids": [],
+  "game_ids": [
+    "twitch-2891262629-g55"
+  ],
   "counts": {
-    "games": 0,
-    "fights": 0,
-    "others": 0
+    "games": 1,
+    "fights": 0
   },
-  "validator": {
-    "ok": 0,
-    "skipped": {}
-  },
-  "needs_review": 0,
+  "validator": "not run: validate_vod.py needs tft_goat package, not present in repo",
+  "needs_review": [
+    "game g55: vod_end_s ±5 s; no fights yet"
+  ],
   "commit": null,
-  "remaining": "blocked: không đọc được tên tướng bên đối thủ và tên tướng trên bàn từ chữ trên màn hình lúc bắt đầu combat (đã kiểm: 2-1 t272 PvE, 2-3 t393 có tên ở hàng chờ nhưng bàn đối thủ chỉ là sprite không tên). Ván đầu bắt đầu trước t=60 (1-1 hiện khoảng t=60; 2-2 ở t≈300), không nằm trong candidate t=300. Không ghi fights. Không tự đoán tên."
+  "remaining": "working: ván 1 (g55) đã ghi game record. Chưa có fight: đối thủ PvP không đọc được tên trên bàn. Còn lại: ván 2 bắt đầu sau 2212 (chưa kiểm tra). validator không chạy được."
 }
