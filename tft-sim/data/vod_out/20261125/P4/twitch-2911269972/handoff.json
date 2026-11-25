@@ -1,0 +1,31 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2911269972",
+  "slot": "P4",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      60,
+      2195
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2911269972-g60"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 14,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 14
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "scout densify-full done"
+}
