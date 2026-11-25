@@ -309,6 +309,13 @@ rec12 = fixture(names18, 18)
 x0 = F.predict_win(rec12, 3, "generic", True, 0, traits_table=False)
 x1 = F.predict_win(rec12, 3, "generic", True, 0, traits_table=True)
 ok12 &= F.S.apply_team_traits is F._orig_apply_team_traits
+# Hunter: 2 Hunter (tier 1) -> +20% AD cho Hunter, khong thay doi tuong khong phai Hunter
+hn = _pick("Hunter", 2); hno = _pick("Hunter", 1, other=True)
+if len(hn) == 2 and hno:
+    on, off = _onoff([BU(a, 1, on_board=True) for a in hn + hno], ("ad",))
+    r = [round(a[0] / b[0], 6) for a, b in zip(on, off)]
+    print("hunter AD ratio (hunter, hunter, other)", r)
+    ok12 &= abs(r[0] - 1.20) < 1e-6 and abs(r[1] - 1.20) < 1e-6 and abs(r[2] - 1.0) < 1e-6
 # bonus_units (augment Large Quest, engine trait_bonus): 1 Brawler + bonus 1 phai dat moc 2 -> +120 HP cho ca doi
 bb1 = [BU(bw[0], 1, on_board=True)] + [BU(other[0], 1, on_board=True)] if bw and other else []
 if bb1:

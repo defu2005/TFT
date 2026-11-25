@@ -66,6 +66,7 @@ TRAIT_TABLE = {
     "DA_18_Defender": {"{0eb6405e}": ("resist", "team"),                      # NonDefenderDefenseGain: ca doi (mo ta "Your team gains")
                        "{8c16b281}": ("resist", "members")},                    # DefenderDefenseGain: GIA DINH Defender lay MAX (mo ta khong noi ro, xem 11.11)
     "DA_18_Rapidfire": {"{1d98dcec}": ("as", "team")},                          # TeamAS
+    "DA_18_Hunter": {"{641254b6}": ("ad", "members")},                        # HunterAD: "Hunters gain Attack Damage" (don, khong dieu kien)
 }
 TABLE_MAPPED = sum(len(v) for v in TRAIT_TABLE.values())
 

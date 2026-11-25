@@ -1,0 +1,1574 @@
+{
+ "set": 18,
+ "snapshot": "cdragon_18.7_2026-11-23.json.gz",
+ "traits": [
+  {
+   "apiName": "DA_18_Elderwood",
+   "name": "Elderwood",
+   "desc": "Gain placeable Elderwood plants.(_) A Stonebark Tree and a Lifebloom(_) A second Stonebark Tree and Stonebark Trees gain _ Health(_) and the Deepwood Protector(_) Plants star up to 2-star(_) Plants star up to 3-star and the forest comes to life",
+   "effects": [
+    {
+     "min": 3,
+     "max": 4,
+     "vars": {
+      "{0f90e7a4}": 0.25,
+      "{4013f48e}": 0.10000000149011612
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{0f90e7a4}",
+      "{4013f48e}"
+     ]
+    },
+    {
+     "min": 5,
+     "max": 6,
+     "vars": {
+      "{0f90e7a4}": 0.25,
+      "{4013f48e}": 0.10000000149011612,
+      "StonebarkTreeBonusHealth": 200.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{0f90e7a4}",
+      "{4013f48e}",
+      "{b027c2f9}"
+     ]
+    },
+    {
+     "min": 7,
+     "max": 8,
+     "vars": {
+      "{0f90e7a4}": 0.25,
+      "{4013f48e}": 0.10000000149011612
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{0f90e7a4}",
+      "{4013f48e}"
+     ]
+    },
+    {
+     "min": 9,
+     "max": 10,
+     "vars": {
+      "{0f90e7a4}": 0.25,
+      "{4013f48e}": 0.10000000149011612
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{0f90e7a4}",
+      "{4013f48e}"
+     ]
+    },
+    {
+     "min": 11,
+     "max": 25000,
+     "vars": {
+      "{0f90e7a4}": 0.25,
+      "{4013f48e}": 0.10000000149011612
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{0f90e7a4}",
+      "{4013f48e}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_LuxUniqueTrait",
+   "name": "Avatar",
+   "desc": "Having an Avatar on your bench or board transforms all other Avatars in your shop to the Trait of that Avatar.An Avatar's chosen Trait is counted twice for Trait bonuses.",
+   "effects": [
+    {
+     "min": 1,
+     "max": 25000,
+     "vars": {},
+     "engine_auto": {},
+     "hash_keys": []
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Slayer",
+   "name": "Ravager",
+   "desc": "Ravagers gain _% Omnivamp. Additionally, Ravagers deal bonus damage, doubled against units below _% Health.(_) _% Bonus Damage(_) _% Bonus Damage(_) _% Bonus Damage",
+   "effects": [
+    {
+     "min": 2,
+     "max": 3,
+     "vars": {
+      "Omnivamp": 0.10000000149011612,
+      "BonusDamagePercentBase": 0.11999999731779099,
+      "EnemyHealthThreshold": 0.5
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{a9a813e7}",
+      "{bef0ca90}"
+     ]
+    },
+    {
+     "min": 4,
+     "max": 5,
+     "vars": {
+      "Omnivamp": 0.10000000149011612,
+      "BonusDamagePercentBase": 0.25,
+      "EnemyHealthThreshold": 0.5
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{a9a813e7}",
+      "{bef0ca90}"
+     ]
+    },
+    {
+     "min": 6,
+     "max": 25000,
+     "vars": {
+      "Omnivamp": 0.10000000149011612,
+      "BonusDamagePercentBase": 0.4000000059604645,
+      "EnemyHealthThreshold": 0.5
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{a9a813e7}",
+      "{bef0ca90}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_DravenUniqueTrait18",
+   "name": "Bounty Seeker",
+   "desc": "Choose a bounty. Your strongest Draven can progress on the bounty to earn its reward. Upon completing a bounty, choose another.",
+   "effects": [
+    {
+     "min": 1,
+     "max": 25000,
+     "vars": {},
+     "engine_auto": {},
+     "hash_keys": []
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Solar",
+   "name": "Solar",
+   "desc": "(_) Your champions gain a _% max Health shield and deal _% bonus magic damage. Gain additional bonuses for each unique 3-star champion:1 : Increase shield and magic damage by _% for each 3-star. _ : _% and _ _ : Convert _% of the bonus magic damage to true damage._ : Every _ seconds of combat, a 3-star champion ascends to 4-star.",
+   "effects": [
+    {
+     "min": 3,
+     "max": 25000,
+     "vars": {
+      "BonusMagicDamage": 0.07999999821186066,
+      "ShieldRatio": 0.05000000074505806,
+      "NumThreeStarThreshold1": 3.0,
+      "NumThreeStarThreshold2": 5.0,
+      "NumThreeStarThreshold3": 8.0,
+      "Threshold2TrueDamageConversion": 0.4000000059604645,
+      "Threshold1AttackSpeed": 0.1499999761581421,
+      "Threshold1ArmorMagicResist": 12.0,
+      "PercentIncreasePer3Star": 0.009999999776482582,
+      "Threshold3StarUpPeriod": 4.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{092e2b2b}",
+      "{0a2e2cbe}",
+      "{0b2e2e51}",
+      "{5cfe766f}",
+      "{617a160e}",
+      "{7e77da03}",
+      "{a51b2ace}",
+      "{d91f7c21}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Sprykin",
+   "name": "Sprykin",
+   "desc": "Gain the Big Furry Friend. Drop a Sprykin on the BFF to pick its Rider.(_) The Rider gains_% and _% (_) _% _% , and _% of the BFF's Ability applies to your Sprykin champions.(_) _% _% , and _% of the BFF's Ability applies to your Sprykin champions.",
+   "effects": [
+    {
+     "min": 3,
+     "max": 4,
+     "vars": {
+      "AttackSpeedIncrease": 0.1499999761581421,
+      "HealthIncrease": 0.1499999761581421
+     },
+     "engine_auto": {
+      "AttackSpeedIncrease": [
+       "as"
+      ],
+      "HealthIncrease": [
+       "hp"
+      ]
+     },
+     "hash_keys": []
+    },
+    {
+     "min": 5,
+     "max": 6,
+     "vars": {
+      "AttackSpeedIncrease": 0.3500000238418579,
+      "HealthIncrease": 0.3999999761581421,
+      "TeamwideRatio": 0.5
+     },
+     "engine_auto": {
+      "AttackSpeedIncrease": [
+       "as"
+      ],
+      "HealthIncrease": [
+       "hp"
+      ]
+     },
+     "hash_keys": [
+      "{aa3fad66}"
+     ]
+    },
+    {
+     "min": 7,
+     "max": 25000,
+     "vars": {
+      "AttackSpeedIncrease": 0.5499999523162842,
+      "HealthIncrease": 0.5499999523162842,
+      "TeamwideRatio": 1.0
+     },
+     "engine_auto": {
+      "AttackSpeedIncrease": [
+       "as"
+      ],
+      "HealthIncrease": [
+       "hp"
+      ]
+     },
+     "hash_keys": [
+      "{aa3fad66}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Adaptor",
+   "name": "Adaptor",
+   "desc": "Innate: Adaptor abilities change depending on if their Attack Damage or Ability Power is higher.Adaptors gain Ability Power or Attack Damage, depending on which is higher.(_) _% OR(_) _% OR(_) _% OR",
+   "effects": [
+    {
+     "min": 2,
+     "max": 2,
+     "vars": {
+      "ADAPGain": 0.25
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{0412779a}"
+     ]
+    },
+    {
+     "min": 3,
+     "max": 3,
+     "vars": {
+      "ADAPGain": 0.3499999940395355
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{0412779a}"
+     ]
+    },
+    {
+     "min": 4,
+     "max": 25000,
+     "vars": {
+      "ADAPGain": 0.5
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{0412779a}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Coven",
+   "name": "Coven",
+   "desc": "Gather Essence by killing champions, plus more by losing player combat. Beginning at _ Essence, choose to convert Essence to rewards or continue gathering Essence. Each reward requires increasing amounts of Essence.(_) _ Essence per kill, _ Essence per loss(_) _ per kill, _ per loss(_) _ per kill, _ per loss(_) _ per kill, _ per loss",
+   "effects": [
+    {
+     "min": 3,
+     "max": 3,
+     "vars": {
+      "EssencePerDeath": 2.0,
+      "EssenceForRitualTooltip": 40.0,
+      "EssencePerLoss": 22.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{7a9d7f0e}",
+      "{d62ae6ae}",
+      "{de46577b}"
+     ]
+    },
+    {
+     "min": 4,
+     "max": 4,
+     "vars": {
+      "EssencePerDeath": 2.0,
+      "EssenceForRitualTooltip": 40.0,
+      "EssencePerLoss": 28.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{7a9d7f0e}",
+      "{d62ae6ae}",
+      "{de46577b}"
+     ]
+    },
+    {
+     "min": 5,
+     "max": 6,
+     "vars": {
+      "EssencePerDeath": 3.0,
+      "EssenceForRitualTooltip": 40.0,
+      "EssencePerLoss": 35.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{7a9d7f0e}",
+      "{d62ae6ae}",
+      "{de46577b}"
+     ]
+    },
+    {
+     "min": 7,
+     "max": 25000,
+     "vars": {
+      "EssencePerDeath": 10.0,
+      "EssenceForRitualTooltip": 40.0,
+      "EssencePerLoss": 60.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{7a9d7f0e}",
+      "{d62ae6ae}",
+      "{de46577b}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Eclipse",
+   "name": "Eclipse",
+   "desc": "After _ seconds of combat, the Eclipse kills the lowest Health enemy, repeating every _ seconds.",
+   "effects": [
+    {
+     "min": null,
+     "max": 25000,
+     "vars": {
+      "DelaySeconds": 8.0,
+      "EclipseBeamPeriod": 3.5
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{53db05e8}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Hunter",
+   "name": "Hunter",
+   "desc": "Hunters gain Attack Damage. If a Hunter hasn't swapped targets for _ seconds, they gain _% Damage Amp.(_) _% (_) _% (_) _% (_) _%",
+   "effects": [
+    {
+     "min": 2,
+     "max": 2,
+     "vars": {
+      "DamageAmp": 0.10000000149011612,
+      "HunterAD": 0.20000000298023224,
+      "HunterDuration": 3.0
+     },
+     "engine_auto": {
+      "DamageAmp": [
+       "amp"
+      ]
+     },
+     "hash_keys": [
+      "{641254b6}",
+      "{83011ee7}"
+     ]
+    },
+    {
+     "min": 3,
+     "max": 3,
+     "vars": {
+      "DamageAmp": 0.10000000149011612,
+      "HunterAD": 0.30000001192092896,
+      "HunterDuration": 3.0
+     },
+     "engine_auto": {
+      "DamageAmp": [
+       "amp"
+      ]
+     },
+     "hash_keys": [
+      "{641254b6}",
+      "{83011ee7}"
+     ]
+    },
+    {
+     "min": 4,
+     "max": 4,
+     "vars": {
+      "DamageAmp": 0.10000000149011612,
+      "HunterAD": 0.44999998807907104,
+      "HunterDuration": 3.0
+     },
+     "engine_auto": {
+      "DamageAmp": [
+       "amp"
+      ]
+     },
+     "hash_keys": [
+      "{641254b6}",
+      "{83011ee7}"
+     ]
+    },
+    {
+     "min": 5,
+     "max": 25000,
+     "vars": {
+      "DamageAmp": 0.10000000149011612,
+      "HunterAD": 0.6000000238418579,
+      "HunterDuration": 3.0
+     },
+     "engine_auto": {
+      "DamageAmp": [
+       "amp"
+      ]
+     },
+     "hash_keys": [
+      "{641254b6}",
+      "{83011ee7}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Maokai_UniqueTrait",
+   "name": "Old Growth",
+   "desc": "Whenever an enemy within _ hexes dies, your strongest Old Growth champion gains _ permanent max Health.Current: 0",
+   "effects": [
+    {
+     "min": 1,
+     "max": 25000,
+     "vars": {
+      "UniqueTraitHealthPerStack": 30.0,
+      "UniqueTraitHexRange": 3.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{36e69059}",
+      "{56607148}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Battlemage",
+   "name": "Monolith",
+   "desc": "Monoliths gain _ Armor and Magic Resist for each enemy targeting them.",
+   "effects": [
+    {
+     "min": 1,
+     "max": 25000,
+     "vars": {
+      "Resists": 10.0
+     },
+     "engine_auto": {
+      "Resists": [
+       "armor",
+       "mr"
+      ]
+     },
+     "hash_keys": []
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_Primal18",
+   "name": "Primal",
+   "desc": "Choose one of four Primal Blessings.(_)(_)",
+   "effects": [
+    {
+     "min": 2,
+     "max": 3,
+     "vars": {},
+     "engine_auto": {},
+     "hash_keys": []
+    },
+    {
+     "min": 4,
+     "max": 25000,
+     "vars": {},
+     "engine_auto": {},
+     "hash_keys": []
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Greenfather",
+   "name": "Greenfather",
+   "desc": "Gain _ seed when your strongest Ivern casts, plus _ every combat. Ivern uses _ seeds to grow a hex on your board that grants a bonus to its occupant. Seeds: 0 / _Current Biome:",
+   "effects": [
+    {
+     "min": 1,
+     "max": 25000,
+     "vars": {
+      "SeedsPerCast": 1.0,
+      "CombatStartSeeds": 3.0,
+      "SeedsToGrowHex": 5.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{5f537bd3}",
+      "{5fea9917}",
+      "{b133da98}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Invoker",
+   "name": "Invoker",
+   "desc": "Your team gains Mana Regen, increased for Invokers.(_) _ | _ (_) _ | _ (_) _ | _ (_) _ | _",
+   "effects": [
+    {
+     "min": 2,
+     "max": 2,
+     "vars": {
+      "TeamManaRegen": 1.0,
+      "InvokerManaBonus": 3.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{de27cb95}"
+     ]
+    },
+    {
+     "min": 3,
+     "max": 3,
+     "vars": {
+      "TeamManaRegen": 1.0,
+      "InvokerManaBonus": 4.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{de27cb95}"
+     ]
+    },
+    {
+     "min": 4,
+     "max": 4,
+     "vars": {
+      "TeamManaRegen": 2.0,
+      "InvokerManaBonus": 6.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{de27cb95}"
+     ]
+    },
+    {
+     "min": 5,
+     "max": 25000,
+     "vars": {
+      "TeamManaRegen": 2.0,
+      "InvokerManaBonus": 8.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{de27cb95}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Rapidfire",
+   "name": "Rapidfire",
+   "desc": "Your team gains _% Attack Speed. Rapidfire champions gain more on every attack, up to _ stacks.(_) +_% per Attack(_) +_% per Attack(_) +_% per Attack(_) +_% per Attack",
+   "effects": [
+    {
+     "min": 2,
+     "max": 2,
+     "vars": {
+      "ASperAttack": 0.029999971389770508,
+      "MaxStacks": 10.0,
+      "TeamAS": 0.10000002384185791
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{1d98dcec}"
+     ]
+    },
+    {
+     "min": 3,
+     "max": 3,
+     "vars": {
+      "ASperAttack": 0.04999995231628418,
+      "MaxStacks": 10.0,
+      "TeamAS": 0.10000002384185791
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{1d98dcec}"
+     ]
+    },
+    {
+     "min": 4,
+     "max": 4,
+     "vars": {
+      "ASperAttack": 0.0700000524520874,
+      "MaxStacks": 10.0,
+      "TeamAS": 0.10000002384185791
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{1d98dcec}"
+     ]
+    },
+    {
+     "min": 5,
+     "max": 25000,
+     "vars": {
+      "ASperAttack": 0.10000002384185791,
+      "MaxStacks": 10.0,
+      "TeamAS": 0.10000002384185791
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{1d98dcec}"
+     ]
+    }
+   ],
+   "in_table": true
+  },
+  {
+   "apiName": "DA_Juggernaut18",
+   "name": "Juggernaut",
+   "desc": "Your team gains Durability. Juggernauts gain more.(_) _% or _% (_) _% or _% (_) _% or _%",
+   "effects": [
+    {
+     "min": 2,
+     "max": 3,
+     "vars": {
+      "JuggernautDurability": 0.19999998807907104,
+      "TeamDurability": 0.04000002145767212
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{6eab9c5e}",
+      "{f8c73243}"
+     ]
+    },
+    {
+     "min": 4,
+     "max": 5,
+     "vars": {
+      "JuggernautDurability": 0.30000001192092896,
+      "TeamDurability": 0.06000000238418579
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{6eab9c5e}",
+      "{f8c73243}"
+     ]
+    },
+    {
+     "min": 6,
+     "max": 25000,
+     "vars": {
+      "JuggernautDurability": 0.42000001668930054,
+      "TeamDurability": 0.07999998331069946
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{6eab9c5e}",
+      "{f8c73243}"
+     ]
+    }
+   ],
+   "in_table": true
+  },
+  {
+   "apiName": "DA_18_Inferno",
+   "name": "Inferno",
+   "desc": "Inferno damage Burns and Wounds enemies for _ seconds. Inferno Burns stack with other Burns.(_) _% Burn, _% Wound(_) After combat, _ of your shop slots without an Inferno champion ignites, rolling a champion one tier higher(_) Ignite _ shop slots, _% Burn(_) Ignite _ shop slots, _% Burn",
+   "effects": [
+    {
+     "min": 2,
+     "max": 2,
+     "vars": {
+      "Duration": 3.0,
+      "WoundPercent": 33.0,
+      "HPBurnPerSecond": 1.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{2c202877}"
+     ]
+    },
+    {
+     "min": 3,
+     "max": 4,
+     "vars": {
+      "Duration": 3.0,
+      "LuckySlotCount": 1.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{c4c70a4e}"
+     ]
+    },
+    {
+     "min": 5,
+     "max": 6,
+     "vars": {
+      "Duration": 3.0,
+      "HPBurnPerSecond": 3.0,
+      "LuckySlotCount": 2.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{2c202877}",
+      "{c4c70a4e}"
+     ]
+    },
+    {
+     "min": 7,
+     "max": 25000,
+     "vars": {
+      "Duration": 3.0,
+      "HPBurnPerSecond": 4.0,
+      "LuckySlotCount": 4.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{2c202877}",
+      "{c4c70a4e}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_AluneUniqueTrait18",
+   "name": "Attuned",
+   "desc": "Your strongest Alune cycles to a new phase of the moon after each cast. While the moon is at or below half full, your team gains _% Durabilty. While above, your team gains _% Damage Amp.",
+   "effects": [
+    {
+     "min": 1,
+     "max": 25000,
+     "vars": {
+      "DamageAmp": 0.07000000029802322,
+      "Durability": 0.050000011920928955
+     },
+     "engine_auto": {
+      "DamageAmp": [
+       "amp"
+      ],
+      "Durability": [
+       "dr"
+      ]
+     },
+     "hash_keys": []
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Rival",
+   "name": "Rival",
+   "desc": "(_) Only active while fielding 1 Rival.Rivals collect takedowns, gaining 3 if they takedown another Rival.(_) Rivals collect takedowns, gaining 3 if they takedown another Rival.Takedowns evolve Kha'Zix, permanently granting him your choice of Executioner, Rapidfire, Ravager, or Spellweaver.Rengar grants _/_/_ gold every _ takedowns. After _ takedowns, your team gains _% Attack Damage plus _% per additional takedown.Kha'Zix Takedowns: 0 / 0Rengar Takedowns: 0Gold Earned: 0(_) Rivals can be fielded together, and their abilities grant each other bonuses.",
+   "effects": [
+    {
+     "min": 1,
+     "max": 25000,
+     "vars": {},
+     "engine_auto": {},
+     "hash_keys": []
+    },
+    {
+     "min": 1,
+     "max": 1,
+     "vars": {
+      "RengarGold": 2.0,
+      "RengarADStackReq": 30.0,
+      "RengarGold_3": 5.0,
+      "RengarGold_2": 3.0,
+      "RengarThresholdAD": 0.05000000074505806,
+      "RengarStackReq": 8.0,
+      "RengarADPerStack": 0.0020000000949949026
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{1b5b0a96}",
+      "{3bcd79f5}",
+      "{740d1888}",
+      "{750d1a1b}",
+      "{a1ab72d6}",
+      "{a6d81c50}",
+      "{f1f3dbfc}"
+     ]
+    },
+    {
+     "min": 2,
+     "max": 25000,
+     "vars": {},
+     "engine_auto": {},
+     "hash_keys": []
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Vanguard",
+   "name": "Vanguard",
+   "desc": "At Combat Start and after dropping below _% Health, Vanguards gain a max Health Shield for _ seconds.(_) _% max Health(_) _% max Health(_) _% max Health. Gain _% Durability while Shielded.",
+   "effects": [
+    {
+     "min": 2,
+     "max": 3,
+     "vars": {
+      "HealthThreshold": 0.5,
+      "MaxHealthShield": 0.18000000715255737,
+      "ShieldDuration": 10.0
+     },
+     "engine_auto": {
+      "MaxHealthShield": [
+       "hp"
+      ]
+     },
+     "hash_keys": []
+    },
+    {
+     "min": 4,
+     "max": 5,
+     "vars": {
+      "HealthThreshold": 0.5,
+      "MaxHealthShield": 0.30000001192092896,
+      "ShieldDuration": 10.0
+     },
+     "engine_auto": {
+      "MaxHealthShield": [
+       "hp"
+      ]
+     },
+     "hash_keys": []
+    },
+    {
+     "min": 6,
+     "max": 25000,
+     "vars": {
+      "HealthThreshold": 0.5,
+      "MaxHealthShield": 0.4000000059604645,
+      "ShieldDuration": 10.0,
+      "DurabilityIncrease": 0.050000011920928955
+     },
+     "engine_auto": {
+      "MaxHealthShield": [
+       "hp"
+      ]
+     },
+     "hash_keys": [
+      "{b58e0b6e}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Brawler",
+   "name": "Brawler",
+   "desc": "Your team gains _ max Health. Brawlers gain more.(_) _% (_) _% (_) _%",
+   "effects": [
+    {
+     "min": 2,
+     "max": 3,
+     "vars": {
+      "BrawlerTeamHealth": 120.0,
+      "BrawlerHealthPercent": 0.25
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{da2472a7}",
+      "{f1ed73eb}"
+     ]
+    },
+    {
+     "min": 4,
+     "max": 5,
+     "vars": {
+      "BrawlerTeamHealth": 120.0,
+      "BrawlerHealthPercent": 0.4000000059604645
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{da2472a7}",
+      "{f1ed73eb}"
+     ]
+    },
+    {
+     "min": 6,
+     "max": 25000,
+     "vars": {
+      "BrawlerTeamHealth": 120.0,
+      "BrawlerHealthPercent": 0.6499999761581421
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{da2472a7}",
+      "{f1ed73eb}"
+     ]
+    }
+   ],
+   "in_table": true
+  },
+  {
+   "apiName": "DA_18_Blackthorn",
+   "name": "Blackthorn",
+   "desc": "The ally on the Blackthorn hex is sacrificed before combat, granting your champions Health. Blackthorn champions gain additional stats based on the sacrifice's Role, Star Level, and Cost.(_) _ (_) _ ; Bonus is _% stronger(_) _ ; Bonus is _% stronger",
+   "effects": [
+    {
+     "min": 2,
+     "max": 3,
+     "vars": {
+      "Health": 175.0
+     },
+     "engine_auto": {
+      "Health": [
+       "hp"
+      ]
+     },
+     "hash_keys": []
+    },
+    {
+     "min": 4,
+     "max": 5,
+     "vars": {
+      "Health": 350.0,
+      "StatMultiplier": 0.2999999523162842
+     },
+     "engine_auto": {
+      "Health": [
+       "hp"
+      ]
+     },
+     "hash_keys": []
+    },
+    {
+     "min": 6,
+     "max": 25000,
+     "vars": {
+      "Health": 600.0,
+      "StatMultiplier": 0.5
+     },
+     "engine_auto": {
+      "Health": [
+       "hp"
+      ]
+     },
+     "hash_keys": []
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Executioner",
+   "name": "Executioner",
+   "desc": "(_) Executioners gain Precision and _% Critical Strike Chance.(_) Additionally, enemies bleed for _% bonus true damage over _ seconds.(_) Bleed damage increased to _%.",
+   "effects": [
+    {
+     "min": 2,
+     "max": 2,
+     "vars": {
+      "CritChance": 0.15000000596046448
+     },
+     "engine_auto": {},
+     "hash_keys": []
+    },
+    {
+     "min": 3,
+     "max": 3,
+     "vars": {
+      "BleedDuration": 3.0,
+      "BonusBleedPercent": 0.25
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{2c61751d}"
+     ]
+    },
+    {
+     "min": 4,
+     "max": 25000,
+     "vars": {
+      "BonusBleedPercent": 0.3499999940395355
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{2c61751d}"
+     ]
+    }
+   ],
+   "in_table": true
+  },
+  {
+   "apiName": "DA_18_ApexPredator",
+   "name": "Apex Predator",
+   "desc": "Elder Dragon takes up 2 team slots and grants +2 to the Riftbeast trait.",
+   "effects": [
+    {
+     "min": 1,
+     "max": 25000,
+     "vars": {},
+     "engine_auto": {},
+     "hash_keys": []
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_Riftbeast18",
+   "name": "Riftbeast",
+   "desc": "(_) Use the Alpha Mark to grant a Riftbeast their unique Buff(_) Every _ combats, your next shop is overrun with Riftbeasts.(_) On combat start and every 5 seconds Riftbeasts grow gaining _% _% _% +_ +_ +_ +_ (_) +_ maximum team size",
+   "effects": [
+    {
+     "min": 3,
+     "max": 4,
+     "vars": {},
+     "engine_auto": {},
+     "hash_keys": []
+    },
+    {
+     "min": 5,
+     "max": 6,
+     "vars": {
+      "OverrunCombats": 3.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{e8d16db1}"
+     ]
+    },
+    {
+     "min": 7,
+     "max": 9,
+     "vars": {
+      "CapstoneAP": 0.05000000074505806,
+      "CapstoneHealth": 50.0,
+      "CapstoneMR": 5.0,
+      "CapstoneAD": 0.05000000074505806,
+      "CapstoneManaRegen": 1.0,
+      "CapstoneAspd": 0.059999942779541016,
+      "CapstoneArmor": 5.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{0776b071}",
+      "{08cfb22e}",
+      "{0d6c2c87}",
+      "{1b76cfed}",
+      "{3230276c}",
+      "{4e1998f4}",
+      "{a8c6eeaf}"
+     ]
+    },
+    {
+     "min": 10,
+     "max": 25000,
+     "vars": {
+      "TeamSize": 2.0
+     },
+     "engine_auto": {},
+     "hash_keys": []
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Caustic",
+   "name": "Caustic",
+   "desc": "Caustic damage _% Shreds and Sunders enemies for _ seconds.Shred: Reduce Magic ResistSunder: Reduce Armor",
+   "effects": [
+    {
+     "min": 1,
+     "max": 25000,
+     "vars": {
+      "ShredDuration": 4.0,
+      "ShredPercent": 30.0
+     },
+     "engine_auto": {},
+     "hash_keys": []
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Fae",
+   "name": "Fae",
+   "desc": "Your team's damage, healing, and shielding attracts Pixies.Each Pixie grants Fae champions Attack Damage and Ability Power, and after they fall below _% Health, they heal for each Pixie.(_) _% and _% Heal.(_) _% and _% Heal. After attracting 7 Pixies, start attracting Golden Pixies instead which grant gold.",
+   "effects": [
+    {
+     "min": 2,
+     "max": 3,
+     "vars": {
+      "ADAP": 4.5,
+      "Heal": 3.0,
+      "HealThreshold": 0.5
+     },
+     "engine_auto": {
+      "ADAP": [
+       "ad",
+       "ap"
+      ]
+     },
+     "hash_keys": []
+    },
+    {
+     "min": 4,
+     "max": 25000,
+     "vars": {
+      "ADAP": 7.0,
+      "Heal": 5.0,
+      "HealThreshold": 0.5
+     },
+     "engine_auto": {
+      "ADAP": [
+       "ad",
+       "ap"
+      ]
+     },
+     "hash_keys": []
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Lunar",
+   "name": "Lunar",
+   "desc": "Lunar champions and adjacent allies gain Attack Speed and Ability Power. Lunar champions gain _% more.(_) _% , _% (_) _% , _% (_) _% , _% (_) _% , _%",
+   "effects": [
+    {
+     "min": 2,
+     "max": 2,
+     "vars": {
+      "AbilityPower": 0.07000000029802322,
+      "AttackSpeed": 0.0700000524520874,
+      "LunarMultiplier": 1.0
+     },
+     "engine_auto": {
+      "AttackSpeed": [
+       "as"
+      ]
+     },
+     "hash_keys": [
+      "{6d27fbd4}"
+     ]
+    },
+    {
+     "min": 3,
+     "max": 3,
+     "vars": {
+      "AbilityPower": 0.11999999731779099,
+      "AttackSpeed": 0.10000002384185791,
+      "LunarMultiplier": 1.0
+     },
+     "engine_auto": {
+      "AttackSpeed": [
+       "as"
+      ]
+     },
+     "hash_keys": [
+      "{6d27fbd4}"
+     ]
+    },
+    {
+     "min": 4,
+     "max": 4,
+     "vars": {
+      "AbilityPower": 0.1599999964237213,
+      "AttackSpeed": 0.13999998569488525,
+      "LunarMultiplier": 1.0
+     },
+     "engine_auto": {
+      "AttackSpeed": [
+       "as"
+      ]
+     },
+     "hash_keys": [
+      "{6d27fbd4}"
+     ]
+    },
+    {
+     "min": 5,
+     "max": 25000,
+     "vars": {
+      "AbilityPower": 0.20000000298023224,
+      "AttackSpeed": 0.1799999475479126,
+      "LunarMultiplier": 1.0
+     },
+     "engine_auto": {
+      "AttackSpeed": [
+       "as"
+      ]
+     },
+     "hash_keys": [
+      "{6d27fbd4}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Defender",
+   "name": "Defender",
+   "desc": "Your team gains _ Armor and Magic Resist. Defenders gain more.(_) _(_) _(_) _",
+   "effects": [
+    {
+     "min": 2,
+     "max": 3,
+     "vars": {
+      "NonDefenderDefenseGain": 12.0,
+      "DefenderDefenseGain": 25.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{0eb6405e}",
+      "{8c16b281}"
+     ]
+    },
+    {
+     "min": 4,
+     "max": 5,
+     "vars": {
+      "NonDefenderDefenseGain": 12.0,
+      "DefenderDefenseGain": 60.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{0eb6405e}",
+      "{8c16b281}"
+     ]
+    },
+    {
+     "min": 6,
+     "max": 25000,
+     "vars": {
+      "NonDefenderDefenseGain": 12.0,
+      "DefenderDefenseGain": 115.0
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{0eb6405e}",
+      "{8c16b281}"
+     ]
+    }
+   ],
+   "in_table": true
+  },
+  {
+   "apiName": "DA_18_Spellweaver",
+   "name": "Spellweaver",
+   "desc": "Your team gains _% Ability Power. Spellweavers gain more, plus extra Ability Power whenever a Spellweaver casts an Ability.(_) _% , +_% per cast(_) _% , +_% per cast(_) _% , +_% per cast",
+   "effects": [
+    {
+     "min": 2,
+     "max": 3,
+     "vars": {
+      "APPerCast": 0.009999999776482582,
+      "TeamwideAP": 0.10000000149011612,
+      "SpellweaverAP": 0.10000000149011612
+     },
+     "engine_auto": {
+      "APPerCast": [
+       "ap"
+      ],
+      "TeamwideAP": [
+       "ap"
+      ]
+     },
+     "hash_keys": [
+      "{b012bed0}"
+     ]
+    },
+    {
+     "min": 4,
+     "max": 5,
+     "vars": {
+      "APPerCast": 0.009999999776482582,
+      "TeamwideAP": 0.10000000149011612,
+      "SpellweaverAP": 0.30000001192092896
+     },
+     "engine_auto": {
+      "APPerCast": [
+       "ap"
+      ],
+      "TeamwideAP": [
+       "ap"
+      ]
+     },
+     "hash_keys": [
+      "{b012bed0}"
+     ]
+    },
+    {
+     "min": 6,
+     "max": 25000,
+     "vars": {
+      "APPerCast": 0.019999999552965164,
+      "TeamwideAP": 0.10000000149011612,
+      "SpellweaverAP": 0.550000011920929
+     },
+     "engine_auto": {
+      "APPerCast": [
+       "ap"
+      ],
+      "TeamwideAP": [
+       "ap"
+      ]
+     },
+     "hash_keys": [
+      "{b012bed0}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_ZyraUniqueTrait",
+   "name": "Thornmaiden",
+   "desc": "Your team gains _% Durability, increased to _% if _ or more Zyra plants are alive.",
+   "effects": [
+    {
+     "min": 1,
+     "max": 25000,
+     "vars": {
+      "BaseDurability": 0.050000011920928955,
+      "PlantNumThreshold": 6.0,
+      "IncreasedDurability": 0.10000002384185791
+     },
+     "engine_auto": {
+      "BaseDurability": [
+       "dr"
+      ]
+     },
+     "hash_keys": [
+      "{7c65d9f5}",
+      "{8e1b920c}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_FloraFatalis18",
+   "name": "Flora Fatalis",
+   "desc": "Flora Fatalis champions harvest enemies on takedown, gaining:(_) _ Mana(_) and grant a _% max Health heal to the lowest Health ally.",
+   "effects": [
+    {
+     "min": 1,
+     "max": 1,
+     "vars": {
+      "Mana": 10.0
+     },
+     "engine_auto": {},
+     "hash_keys": []
+    },
+    {
+     "min": 2,
+     "max": 25000,
+     "vars": {
+      "PercentHeal": 0.07000000029802322
+     },
+     "engine_auto": {},
+     "hash_keys": []
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Summoner",
+   "name": "Summoner",
+   "desc": "Summoners empower their summons in different ways.Yorick: +_% HealthAzir: +_% DamageMama Beak: +_% DamageZyra: +_ Plant Attacks(_) Empower Summons(_) Improve each effect by 50%",
+   "effects": [
+    {
+     "min": 2,
+     "max": 2,
+     "vars": {
+      "DamageMult": 0.4500000476837158,
+      "NumExtraAttacks": 4.0,
+      "HealthMult": 0.2999999523162842,
+      "AzirDamageMult": 0.20000004768371582
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{1cb64e3c}",
+      "{5311f791}",
+      "{6bba9a92}"
+     ]
+    },
+    {
+     "min": 3,
+     "max": 25000,
+     "vars": {
+      "DamageMult": 0.4500000476837158,
+      "NumExtraAttacks": 4.0,
+      "HealthMult": 0.2999999523162842,
+      "AzirDamageMult": 0.20000004768371582
+     },
+     "engine_auto": {},
+     "hash_keys": [
+      "{1cb64e3c}",
+      "{5311f791}",
+      "{6bba9a92}"
+     ]
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_18_Blossom",
+   "name": "Blossom",
+   "desc": "After combat, your Wisps are empowered. Blossom champions gain Attack Damage, Ability Power, and _% max Health.(_) Wisps are upgraded, _% (_) Wisps are in every shop, _% (_) Gain _ gold after buying a Wisp, _% (_) You can buy 2 Wisps per round, _% (_) Wisps overflow with power, _%",
+   "effects": [
+    {
+     "min": 3,
+     "max": 4,
+     "vars": {
+      "ADAP": 0.11999999731779099,
+      "BonusHealth": 0.10000002384185791
+     },
+     "engine_auto": {
+      "ADAP": [
+       "ad",
+       "ap"
+      ],
+      "BonusHealth": [
+       "hp"
+      ]
+     },
+     "hash_keys": []
+    },
+    {
+     "min": 5,
+     "max": 6,
+     "vars": {
+      "ADAP": 0.30000001192092896,
+      "BonusHealth": 0.10000002384185791
+     },
+     "engine_auto": {
+      "ADAP": [
+       "ad",
+       "ap"
+      ],
+      "BonusHealth": [
+       "hp"
+      ]
+     },
+     "hash_keys": []
+    },
+    {
+     "min": 7,
+     "max": 8,
+     "vars": {
+      "ADAP": 0.550000011920929,
+      "BonusHealth": 0.10000002384185791,
+      "GoldPerCharmPurchased": 4.0
+     },
+     "engine_auto": {
+      "ADAP": [
+       "ad",
+       "ap"
+      ],
+      "BonusHealth": [
+       "hp"
+      ]
+     },
+     "hash_keys": [
+      "{91925b8e}"
+     ]
+    },
+    {
+     "min": 9,
+     "max": 10,
+     "vars": {
+      "ADAP": 0.6499999761581421,
+      "BonusHealth": 0.10000002384185791
+     },
+     "engine_auto": {
+      "ADAP": [
+       "ad",
+       "ap"
+      ],
+      "BonusHealth": [
+       "hp"
+      ]
+     },
+     "hash_keys": []
+    },
+    {
+     "min": 11,
+     "max": 25000,
+     "vars": {
+      "ADAP": 1.0,
+      "BonusHealth": 0.10000002384185791
+     },
+     "engine_auto": {
+      "ADAP": [
+       "ad",
+       "ap"
+      ],
+      "BonusHealth": [
+       "hp"
+      ]
+     },
+     "hash_keys": []
+    }
+   ],
+   "in_table": false
+  },
+  {
+   "apiName": "DA_Emerald18",
+   "name": "Emerald Aspect",
+   "desc": "Drag an ally onto your strongest Taric to pair them, granting the ally powerful bonuses from Taric's Ability.",
+   "effects": [
+    {
+     "min": 1,
+     "max": 25000,
+     "vars": {},
+     "engine_auto": {},
+     "hash_keys": []
+    }
+   ],
+   "in_table": false
+  }
+ ]
+}
