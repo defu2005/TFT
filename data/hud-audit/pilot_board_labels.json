@@ -149,5 +149,33 @@
     "2-5": "alias P2 (top nameplate at 735.7 s), consistent with HP loss",
     "3-5": "alias P5 (top nameplate at 1200.4 s), consistent with HP loss",
     "5-5": "alias P4 (top nameplate at 2122.5 s), consistent with HP loss"
+  },
+  "trait_solver": {
+    "method": "exact trait-count match over catalog champions (set18.json), N = board counter; retry with N-1, N-2",
+    "2-5_frame_A_N5": {
+      "exact_solutions": 1,
+      "solution": [
+        "Xayah",
+        "Kobuko",
+        "Alistar",
+        "LeBlanc",
+        "Mama Beak"
+      ],
+      "status": "contradicted_by_eye: board crop shows an Ornn-like horned unit, Ornn carries Defender, and Defender is absent from the panel"
+    },
+    "3-5_frame_A_N7": {
+      "exact_solutions": 0,
+      "retry_N6_solutions": 1,
+      "status": "no exact solution; N-1 retry breaks the 7/7 counter, so rejected"
+    },
+    "5-5_frame_A_N9": {
+      "exact_solutions": 0,
+      "status": "no exact solution; panel traits Bounty Seeker, Emerald Aspect, Greenfather and Old Growth are not explained by champion traits (likely augment or emblem sources)"
+    }
+  },
+  "counts": {
+    "named_confirmed": 0,
+    "unknown": "all board and bench units",
+    "contradicted": 1
   }
 }
