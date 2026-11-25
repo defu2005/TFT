@@ -196,5 +196,219 @@
    ]
   }
  ],
- "note_chain": "4-4 and 4-6 repeat panels of 4-3 and 4-5. Back-and-forth Amumu/Hecarim between 4-5 and 4-6 is suspect and needs the shop check."
+ "note_chain": "4-4 and 4-6 repeat panels of 4-3 and 4-5. Back-and-forth Amumu/Hecarim between 4-5 and 4-6 is suspect and needs the shop check.",
+ "chain_5-2_to_6-6": {
+  "method": "nearest candidate to previous round; rounds with many solutions flagged",
+  "rounds": {
+   "5-2": {
+    "N": 9,
+    "extra": 3,
+    "solutions": 4,
+    "nearest": [
+     "Alistar",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Kobuko",
+     "Maokai",
+     "Taric"
+    ],
+    "overlap_with_prev": 7
+   },
+   "5-3": {
+    "N": 9,
+    "extra": 2,
+    "solutions": 1,
+    "nearest": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "overlap_with_prev": 8
+   },
+   "5-4": {
+    "N": 9,
+    "extra": 2,
+    "solutions": 1,
+    "nearest": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "overlap_with_prev": 9
+   },
+   "5-5": {
+    "N": 9,
+    "extra": 2,
+    "solutions": 1,
+    "nearest": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "overlap_with_prev": 9
+   },
+   "5-6": {
+    "N": 9,
+    "extra": 3,
+    "solutions": 19,
+    "nearest": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kha'Zix",
+     "Maokai",
+     "Taric"
+    ],
+    "overlap_with_prev": 8
+   },
+   "5-7": {
+    "N": 9,
+    "extra": 2,
+    "solutions": 1,
+    "nearest": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "overlap_with_prev": 8
+   },
+   "6-1": {
+    "N": 9,
+    "extra": 2,
+    "solutions": 1,
+    "nearest": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "overlap_with_prev": 9
+   },
+   "6-2": {
+    "N": 9,
+    "extra": 2,
+    "solutions": 1,
+    "nearest": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "overlap_with_prev": 9
+   },
+   "6-3": {
+    "N": 9,
+    "extra": 2,
+    "solutions": 1,
+    "nearest": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "overlap_with_prev": 9
+   },
+   "6-4": {
+    "N": 9,
+    "extra": 2,
+    "solutions": 1,
+    "nearest": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "overlap_with_prev": 9
+   },
+   "6-5": {
+    "N": 9,
+    "extra": 2,
+    "solutions": 1,
+    "nearest": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "overlap_with_prev": 9
+   },
+   "6-6": {
+    "N": 9,
+    "extra": 2,
+    "solutions": 1,
+    "nearest": [
+     "Alistar",
+     "Amumu",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Maokai",
+     "Taric"
+    ],
+    "overlap_with_prev": 9
+   }
+  },
+  "flags": {
+   "5-2": "4 solutions, nearest chosen",
+   "5-6": "19 solutions, nearest chosen; underdetermined"
+  },
+  "note": "5-3 through 6-6 are stable (overlap 8 to 9 with previous)."
+ }
 }
