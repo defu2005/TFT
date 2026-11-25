@@ -5826,11 +5826,18 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "checked the planning frame of this round: no panel and counter read is recorded, so the solver cannot run; no candidate board",
-    "reason": "no panel read for this round",
-    "note": "hexes unresolved"
+    "value": [
+     "Alistar",
+     "Draven",
+     "Ezreal",
+     "Gnar",
+     "Ivern",
+     "Kennen",
+     "Krug",
+     "Maokai"
+    ],
+    "tag": "derived",
+    "basis": "panel solve at N=8 with Riftbeast 1 visible, Inferno 1 (crop shows 1/2), hidden k=1: unique; Greenfather pins Ivern, Old Growth pins Maokai, Bounty Seeker pins Draven"
    },
    "bench_units": {
     "value": null,
