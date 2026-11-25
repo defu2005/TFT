@@ -27,11 +27,14 @@
     "twitch-2893101179-g400",
     "twitch-2893101179-g2500",
     "twitch-2893101179-g7000",
-    "twitch-2893101179-g14000"
+    "twitch-2893101179-g14000",
+    "twitch-2893101179-g4870",
+    "twitch-2893101179-g9525",
+    "twitch-2893101179-g11725"
   ],
   "counts": {
-    "games": 4,
-    "fights": 19,
+    "games": 7,
+    "fights": 76,
     "others": 0
   },
   "validator": {
@@ -42,5 +45,5 @@
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "g400 densified (~14); g2500/g7000/g14000 frames grabbed — need HUD stage catalog before densify"
+  "remaining": "g14000 pending; g2500/g7000 densified"
 }
