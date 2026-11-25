@@ -3,19 +3,14 @@
   "vod_id": "twitch-2904494754",
   "slot": "P4",
   "role": "primary",
-  "status": "partial",
+  "status": "done",
   "covered_ranges_s": [
     [
       60,
-      2000
+      1740
     ]
   ],
-  "remaining_ranges_s": [
-    [
-      2000,
-      99999
-    ]
-  ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2904494754-g60"
   ],
@@ -32,5 +27,5 @@
   },
   "needs_review": 14,
   "commit": null,
-  "remaining": "More ranked denser HLS pending."
+  "remaining": "Short VOD (~29min); single ranked game Challenger through stage5-5@4200 near VOD end."
 }
