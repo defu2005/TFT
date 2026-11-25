@@ -34,7 +34,7 @@
       "winner_null": 5
     }
   },
-  "needs_review": 0,
+  "needs_review": 5,
   "commit": null,
   "remaining": "g270 densified (placement 8 @~1760). Continue FULL density game2 from ~2040; no thin survey."
 }
