@@ -807,8 +807,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "checked combat frames at 483.8 (planning + 45 s): PvE creep carousel, no PvP view; no opponent nameplate. HP-flag pool kept: P3, P4, P6, P8",
-    "reason": "no legible opponent nameplate in the checked frames"
+    "candidates": [
+     "P3",
+     "P4",
+     "P6",
+     "P8"
+    ],
+    "attempt": "508 s full frame: combat with creep units (timer 13) and own board; a top-left level-4 bar with no legible name. HP-flag pool kept: P3, P4, P6, P8",
+    "reason": "no legible opponent name in the checked frame"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -873,7 +879,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified at 483.8 (planning + 45 s); no sprites tied to a panel",
+    "attempt": "opponent not identified; flagged scouting runs at 460-462 s; no sprites tied to a panel",
     "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
@@ -1208,7 +1214,7 @@
    "opponent": {
     "value": "P5",
     "tag": "read",
-    "basis": "combat frame at 634.9 (Frame B; 2-3 combat frame at 668 s also checked) s, 2x crop of the top-of-arena nameplate; name matched to P5 through the private alias table; P5 is in the HP-flag pool"
+    "basis": "634.9 s, full frame: top-of-arena nameplate (level 4); name matched to P5 through the private alias table; P5 is in the HP-flag pool"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -1293,7 +1299,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent identified as P5 at 634.9 (Frame B; 2-3 combat frame at 668 s also checked) s; scouting runs flagged in this round have no owner, so no panel is attached",
+    "attempt": "opponent is P5; flagged scouting runs at 606-608 s, 662-664 s; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -1860,8 +1866,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "checked combat frames at 795.3 (Frame B) and 829 s: opponent units visible on the far side; nameplate covered by chat overlay. HP-flag pool kept: P3, P5, P6, P8",
-    "reason": "no legible opponent nameplate in the checked frames"
+    "candidates": [
+     "P3",
+     "P5",
+     "P6",
+     "P8"
+    ],
+    "attempt": "checked 795.3 s full frame: opponent units on the far side; the top nameplate is covered by the chat overlay. HP-flag pool kept: P3, P5, P6, P8",
+    "reason": "no legible opponent nameplate in the checked frame"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -1951,7 +1963,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified at 795.3 (Frame B) and 829 s; no sprites tied to a panel",
+    "attempt": "opponent not identified; flagged scouting runs at 778-778 s; no sprites tied to a panel",
     "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
@@ -2552,10 +2564,9 @@
     "basis": "streak icon from planning frames on disk (p2/p3 crops)"
    },
    "opponent": {
-    "value": null,
-    "tag": "unresolved",
-    "attempt": "checked combat frames at 1001.3 (planning + 45 s): planning view (own board on the hex grid); no opponent nameplate. HP-flag pool kept: P2, P3, P7, P8",
-    "reason": "no legible opponent nameplate in the checked frames"
+    "value": "P8",
+    "tag": "read",
+    "basis": "1026 s full frame, combat (timer 13): top HUD name beside the timer; name matched to P8 through the private alias table; P8 is in the HP-flag pool"
    },
    "combat_frame_t_s": null,
    "trait_panel_1018_combat": {
@@ -2717,8 +2728,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified at 1001.3 (planning + 45 s); no sprites tied to a panel",
-    "reason": "opponent not identified, so no panel can be attached"
+    "attempt": "opponent is P8; no flagged scouting run in this round; owner not established, so no panel is attached",
+    "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
     "value": null,
@@ -2839,7 +2850,7 @@
    "opponent": {
     "value": "P7",
     "tag": "read",
-    "basis": "combat frame at 1093.2 (planning + 45 s) s, 2x crop of the top HUD name by the timer; name matched to P7 through the private alias table; P7 is in the HP-flag pool"
+    "basis": "1093.2 s, full frame: top HUD name beside the timer; name matched to P7 through the private alias table; P7 is in the HP-flag pool"
    },
    "combat_frame_t_s": null,
    "trait_panel_1058_planning": {
@@ -2964,7 +2975,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent identified as P7 at 1093.2 (planning + 45 s) s; scouting runs flagged in this round have no owner, so no panel is attached",
+    "attempt": "opponent is P7; flagged scouting runs at 1068-1070 s, 1126-1140 s; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -4142,7 +4153,7 @@
    "opponent": {
     "value": "P3",
     "tag": "read",
-    "basis": "combat frame at 1400.3 (planning + 45 s) s, 2x crop of the top-of-arena nameplate; name matched to P3 through the private alias table; P3 is in the HP-flag pool"
+    "basis": "1400.3 s, full frame: top-of-arena nameplate (level 5); name matched to P3 through the private alias table; P3 is in the HP-flag pool"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -4290,7 +4301,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent identified as P3 at 1400.3 (planning + 45 s) s; scouting runs flagged in this round have no owner, so no panel is attached",
+    "attempt": "opponent is P3; no flagged scouting run in this round; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -4433,8 +4444,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "checked combat frames at 1478.8 (planning + 45 s): augment pick overlay over own board; no opponent nameplate. HP-flag pool kept: P2, P4, P5, P6",
-    "reason": "no legible opponent nameplate in the checked frames"
+    "candidates": [
+     "P2",
+     "P4",
+     "P5",
+     "P6"
+    ],
+    "attempt": "1503 s full frame: combat (timer 13); no name visible in the top HUD or arena. HP-flag pool kept: P2, P4, P5, P6",
+    "reason": "no legible opponent name in the checked frame"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -4540,7 +4557,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified at 1478.8 (planning + 45 s); no sprites tied to a panel",
+    "attempt": "opponent not identified; no flagged scouting run in this round; no sprites tied to a panel",
     "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
@@ -4681,7 +4698,7 @@
    "opponent": {
     "value": "P6",
     "tag": "read",
-    "basis": "combat frame at 1574.7 (planning + 45 s) s, 2x crop of the arena nameplate centre-top; name matched to P6 through the private alias table; P6 is in the HP-flag pool"
+    "basis": "1574.7 s, full frame: centre-top nameplate (level 8); name matched to P6 through the private alias table; P6 is in the HP-flag pool"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -4784,7 +4801,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent identified as P6 at 1574.7 (planning + 45 s) s; scouting runs flagged in this round have no owner, so no panel is attached",
+    "attempt": "opponent is P6; flagged scouting runs at 1532-1536 s, 1542-1546 s, 1602-1602 s; owner not established, so no panel is attached",
     "reason": "owner of the flagged scouting runs not established"
    },
    "hexes": {
@@ -5090,8 +5107,14 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "checked combat frames at 1685.8 (planning + 45 s): crowd combat centre; no legible nameplate. HP-flag pool kept: P3, P4, P5, P6",
-    "reason": "no legible opponent nameplate in the checked frames"
+    "candidates": [
+     "P3",
+     "P4",
+     "P5",
+     "P6"
+    ],
+    "attempt": "checked 1685.8 s full frame: crowd combat in the centre; no legible nameplate. HP-flag pool kept: P3, P4, P5, P6",
+    "reason": "no legible opponent nameplate in the checked frame"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -5202,7 +5225,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified at 1685.8 (planning + 45 s); no sprites tied to a panel",
+    "attempt": "opponent not identified; flagged scouting runs at 1716-1716 s; no sprites tied to a panel",
     "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
@@ -6200,8 +6223,13 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "checked combat frames at 1952.9 (planning + 45 s) and 1946 s: no legible arena nameplate; stored 1946 s observation is a placeholder, not a name. HP-flag pool kept: P3, P6, P7",
-    "reason": "no legible opponent nameplate in the checked frames"
+    "candidates": [
+     "P3",
+     "P6",
+     "P7"
+    ],
+    "attempt": "checked 1952.9 s full frame: no legible arena nameplate; stored 1946 s observation is a placeholder, not a name. HP-flag pool kept: P3, P6, P7",
+    "reason": "no legible opponent nameplate in the checked frame"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -6345,7 +6373,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified at 1952.9 (planning + 45 s) and 1946 s; no sprites tied to a panel",
+    "attempt": "opponent not identified; flagged scouting runs at 1972-1984 s; no sprites tied to a panel",
     "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
@@ -6960,8 +6988,12 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "checked combat frames at 2132.5 (planning + 45 s): combat centre; no legible nameplate; rail shows several rows at 0 HP. HP-flag pool kept: P4, P7",
-    "reason": "no legible opponent nameplate in the checked frames"
+    "candidates": [
+     "P4",
+     "P7"
+    ],
+    "attempt": "checked 2132.5 s full frame: combat centre; no legible nameplate; several rail rows at 0 HP. HP-flag pool kept: P4, P7",
+    "reason": "no legible opponent nameplate in the checked frame"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -7114,7 +7146,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified at 2132.5 (planning + 45 s); no sprites tied to a panel",
+    "attempt": "opponent not identified; no flagged scouting run in this round; no sprites tied to a panel",
     "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
@@ -7273,8 +7305,12 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "checked combat frames at 2210.3 (planning + 45 s): combat centre; no legible nameplate. HP-flag pool kept: P2, ghost",
-    "reason": "no legible opponent nameplate in the checked frames"
+    "candidates": [
+     "P2",
+     "ghost"
+    ],
+    "attempt": "checked 2210.3 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost",
+    "reason": "no legible opponent nameplate in the checked frame"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -7404,7 +7440,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified at 2210.3 (planning + 45 s); no sprites tied to a panel",
+    "attempt": "opponent not identified; no flagged scouting run in this round; no sprites tied to a panel",
     "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
@@ -8063,8 +8099,12 @@
    "opponent": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "checked combat frames at 2380.2 (planning + 45 s): combat centre; no legible nameplate; top-right HUD shows a number only. HP-flag pool kept: P2, ghost",
-    "reason": "no legible opponent nameplate in the checked frames"
+    "candidates": [
+     "P2",
+     "ghost"
+    ],
+    "attempt": "checked 2380.2 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost",
+    "reason": "no legible opponent nameplate in the checked frame"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -8190,7 +8230,7 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "opponent not identified at 2380.2 (planning + 45 s); no sprites tied to a panel",
+    "attempt": "opponent not identified; no flagged scouting run in this round; no sprites tied to a panel",
     "reason": "opponent not identified, so no panel can be attached"
    },
    "hexes": {
@@ -9784,7 +9824,8 @@
    ]
   },
   "frame_s": "t = 362 + (index - 1) * 2",
-  "note": "run index i maps to t = 362 + (i-1)*2; checked on the 3-1 window (index 264 = 888 s)"
+  "note": "run index i maps to t = 362 + (i-1)*2; checked on the 3-1 window (index 264 = 888 s)",
+  "owner_check": "sw264 (3-1 scouting run, 888 s) full frame: the scouted board carries no owner nameplate, and no rail row is marked as viewed; owners stay unresolved for all runs."
  },
  "scouted_panels": [
   {
