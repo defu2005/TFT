@@ -7,7 +7,7 @@
   "covered_ranges_s": [
     [
       400,
-      2200
+      2600
     ]
   ],
   "remaining_ranges_s": [
@@ -16,7 +16,7 @@
       400
     ],
     [
-      2200,
+      2600,
       18229
     ]
   ],
@@ -25,16 +25,16 @@
   ],
   "counts": {
     "games": 1,
-    "fights": 12,
+    "fights": 16,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 12
+      "winner_null": 16
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "densify-full g600 12f. Non-TFT before ~400. Continue games ~2200+. P8-primary upsetmaxtft."
+  "remaining": "densify-full g600 16f incl late 4-3@. Continue game2 ~2600+. P8-primary upset."
 }
