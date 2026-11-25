@@ -1,0 +1,45 @@
+{
+ "check": "reader shop and gold vs visual readings at pilot times",
+ "rows": [
+  {
+   "time_s": 718.7,
+   "reader_gold": 6,
+   "visual_gold": 6,
+   "reader_shop": [
+    "LeBlanc",
+    "Kog'Maw",
+    "Sejuani",
+    "Rek'Sai",
+    "Veigar"
+   ],
+   "visual_shop": [
+    "Ornn",
+    "Varus",
+    "Yunara",
+    "Warwick"
+   ],
+   "result": "gold agrees, shop disagrees completely"
+  },
+  {
+   "time_s": 1183.4,
+   "reader_gold": 25,
+   "visual_gold": 27,
+   "reader_shop": [
+    "Azir",
+    "Cassiopeia",
+    "Malphite",
+    "Kayle",
+    "LeBlanc"
+   ],
+   "visual_shop": [
+    "Azir",
+    "Cassiopeia",
+    "Malphite",
+    "Kayle",
+    "LeBlanc"
+   ],
+   "result": "shop agrees 5/5, gold within 2"
+  }
+ ],
+ "verdict": "Reader shop is right at 3-5 and wrong at 2-5 in this check. Use shop only where it agrees with visual reads; do not use it to confirm roster changes until the disagreement is explained."
+}
