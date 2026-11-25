@@ -1714,9 +1714,8 @@
     "tag": "unresolved"
    },
    "round_type": {
-    "value": "no_damage_pattern",
-    "tag": "derived",
-    "note": "label is a pattern only; PvE/carousel/PvP named when the frame shows it"
+    "value": "carousel (map view, no home board at 1160 s)",
+    "tag": "read"
    },
    "opponent": {
     "value": null,
@@ -1724,8 +1723,24 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "frame_s": 1160,
+     "timer": 2,
+     "level": null,
+     "counter": "n/a in carousel",
+     "panel": {
+      "Elderwood": 3,
+      "Rapidfire": 2,
+      "Brawler": 2,
+      "Executioner": 1,
+      "Fae": 1,
+      "Summoner": 1,
+      "Riftbeast": 1,
+      "Sprykin": 1
+     },
+     "note": "panel read from sidebar; board not visible in carousel"
+    },
+    "tag": "read"
    },
    "combat": {
     "value": null,
