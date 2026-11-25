@@ -814,7 +814,7 @@
      "P4",
      "P8"
     ],
-    "attempt": "508 s rail badges: P3 and P6 show level 3, below the plate's 4, so out. P4 shows 4 and P8 shows 4, so both fit the plate. Two candidates remain; no further frame separates them in this pass.",
+    "attempt": "508 s montage: the arena figure under the plate is a board sprite, but the controls do not give a valid figure test: the 2132.5 s P4 control and the 1488 s figure are a static HUD splash on the right edge, not board sprites, so the figure cannot be matched to a portrait. The plate bar is purple at 508 s; purple also appears on P4 (2132.5 s) and P6 (1574.7 s), so colour alone is not validated. HP-flag pool kept: P4, P8. Two candidates remain.",
     "reason": "P4 and P8 both show level 4 at 508 s"
    },
    "combat_frame_t_s": null,
@@ -4500,7 +4500,7 @@
      "P4",
      "P6"
     ],
-    "attempt": "1488 s top-right plate: level 8 with a purple bar, at the top edge. Rail badges at 1488 s: P2 8, P4 8, P5 7, P6 8. Three pool members sit at level 8, so the plate does not pick one.",
+    "attempt": "1488 s top-right plate: level 8 with a purple bar, at the top edge. Rail badges at 1488 s: P2 8, P4 8, P5 7, P6 8. Three pool members sit at level 8. The tall figure at the right edge is the same static HUD splash in 1488 to 1518 s, not a board sprite, so the portrait test is not valid. Three candidates remain: P2, P4, P6.",
     "reason": "three pool members match level 8 at 1488 s"
    },
    "combat_frame_t_s": null,
@@ -9445,7 +9445,7 @@
   "source": "round_results_derived.json eliminations; 1 and 2 from 6-6 frames"
  },
  "blind_reread": {
-  "summary": "Blind re-read of ten sampled rounds, read by script at each round's recorded planning frame (data/hud-audit/blind_ocr_planning.py, per-field scale: gold and streak 3x, level and XP 6x): gold 10/10, streak 9/10, level 10/10, XP 10/10. The streak miss (6-2) is an empty OCR read; the frame shows the master value 1. A 6x streak crop gave 6/10 because of scale, not frame time; that run is not used. Out-of-sample gold at recorded planning frames: 13 of 13 comparable; three frames show no gold box (2-4, 6-1, 6-6). The gold and streak crops were chosen after seeing the sample, so those figures are tuned; the level and XP crops were calibrated on an out-of-sample frame (2-3 at 604 s). Panel, shop and counter were not re-read blind (no rate)."
+  "summary": "Blind re-read of ten sampled rounds, read by script at each round's recorded planning frame (data/hud-audit/blind_ocr_planning.py, per-field scale: gold and streak 3x, level and XP 6x): gold 10/10 (the earlier run gave 9/10, with 5-5 missing because its master frame label was 2094 s, one second before the planning frame at 2095 s; the label was moved to 2095 s and the figure became 10/10), streak 9/10, level 10/10, XP 10/10. The streak miss (6-2) is an empty OCR read; the frame shows the master value 1. A 6x streak crop gave 6/10 because of scale, not frame time; that run is not used. Out-of-sample gold at recorded planning frames: 13 of 13 comparable; three frames show no gold box (2-4, 6-1, 6-6). The gold and streak crops were chosen after seeing the sample, so those figures are tuned; the level and XP crops were calibrated on an out-of-sample frame (2-3 at 604 s). Panel, shop and counter were not re-read blind (no rate)."
  },
  "final_comps": {
   "P1_6-6": {
