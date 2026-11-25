@@ -65,7 +65,26 @@
     "Xayah",
     "Zyra"
    ],
-   "status": "8-unit replacement in one round: rejected"
+   "status": "UNRESOLVED (was \"rejected\"; not supported by evidence)",
+   "purchase_check": {
+    "window": "planning frames 1355.3 s (4-1) to 1529.7 s (4-3); 4-2 planning at 1433.8 s",
+    "candidates": [
+     "Tristana at 1527.75 s: gold rose, fails cost check"
+    ],
+    "units_without_candidate": [
+     "Draven",
+     "Gnar",
+     "Maokai",
+     "Sett"
+    ],
+    "coverage_gaps": [
+     "1431.2-1445.8 s (14.5 s)",
+     "1472.0-1485.8 s (13.8 s)",
+     "1489.8-1496.0 s (6.2 s)",
+     "1531.5-1538.2 s (6.8 s)"
+    ],
+    "verdict_reason": "no candidate is not evidence of absence while the HUD is missing for these windows; an 8-unit replacement is still implausible, so this stays open rather than accepted"
+   }
   },
   {
    "from": "4-3",
