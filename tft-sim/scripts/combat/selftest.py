@@ -89,4 +89,21 @@ try:
 except SystemExit:
     print("SIM REJECT ok")
 
+# 7) Alias item Set 18: DA_* rong va twin TFT_Item_* cho cung chi so don vi (generic 0 va 1)
+from tft_sim.item_alias import build_set18_aliased
+c18a, amap = build_set18_aliased()
+F.set_content(18, c18a)
+ch18 = next(a for a, x in c18a.champions.items() if x.stats)
+alias_ok = bool(amap)
+def _st(u):
+    return (round(u.ad, 3), round(u.ap, 3), u.max_hp, u.armor, u.mr, round(u.attack_speed, 4))
+for da, tw in amap.items():
+    for gi in (0, 1):
+        from tft_goat.engine.unit import build_unit
+        a = _st(build_unit(c18a.champions[ch18], 1, 0, c18a, item_apis=(da,), generic_items=gi))
+        b = _st(build_unit(c18a.champions[ch18], 1, 0, c18a, item_apis=(tw,), generic_items=gi))
+        alias_ok &= a == b
+print("alias set18", len(amap), "DA==twin", alias_ok)
+ok &= alias_ok
+
 print("SELFTEST", "PASS" if ok else "FAIL")

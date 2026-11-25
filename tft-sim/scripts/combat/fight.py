@@ -147,9 +147,12 @@ def coverage(record: dict) -> dict:
         items_total = sum(len(u.get("items", [])) for u in units)
         items_unknown = sum(1 for u in units for it in u.get("items", []) if it not in content.items)
         items_hooked = sum(1 for u in units for it in u.get("items", []) if it in ITEM_COMBAT_START)
+        items_empty = sum(1 for u in units for it in u.get("items", [])
+                          if it in content.items and not content.items[it].effects)
         augs = record[k].get("augments", [])
         out[k] = {"units": len(units), "unknown_champions": unknown,
                   "items_total": items_total, "items_unknown": items_unknown, "items_with_combat_hook": items_hooked,
+                  "items_empty_effects": items_empty,
                   "augments": len(augs), "augments_with_hook": sum(1 for a in augs if a in AUGMENT_REGISTRY)}
     return out
 
