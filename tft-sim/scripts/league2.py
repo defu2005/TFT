@@ -1,7 +1,7 @@
 """Giai dau v2 (model-plan 10.8, sau khi sua): 8 ghe, moi ghe MOT policy, thu tu ghe hoan vi theo lobby
 bang luong ngau nhien DOC LAP: np.random.default_rng([seed, 1]). Luat trang bi theo ghe: 'valuemax' cho ghe
 duoc chi dinh (RULE_OF_SEAT, monkeypatch ACT._equip); ghe khac giu luat goc.
-Args: selftest | run LO HI OUT.json"""
+Args: selftest | run LO HI OUT.json [v2|drop]  (mac dinh v2 = nhu 10.9)"""
 import json, random, sys
 from pathlib import Path
 import numpy as np
@@ -60,27 +60,36 @@ def clone_policy(ckpt):
     return pol
 
 
+# Pool v2 (model-plan 10.9, 280000-283999) va pool drop (model-plan 10.10, 284000-287999).
 SLOTS = ["scripted", "v3", "v4", "v4_null", "mask_full", "mask_c", "mask_a", "v4_valuemax"]
+SLOTS_DROP = ["v4", "v4_null", "mask_full", "mask_c", "mask_a", "drop@full", "drop@c", "drop@a"]
+POOLS = {"v2": SLOTS, "drop": SLOTS_DROP}
 
 
-def build_pool(v4):
-    return {
-        "scripted": scripted_policy,
-        "v3": make_swap_rule(key="value"),
-        "v4": v4,
-        "v4_null": v4,
-        "mask_full": clone_policy("results/checkpoints/mask_full.pt"),
-        "mask_c": clone_policy("results/checkpoints/mask_c.pt"),
-        "mask_a": clone_policy("results/checkpoints/mask_a.pt"),
-        "v4_valuemax": v4,
+def build_pool(v4, slots=SLOTS):
+    from dropout_exp import drop_policy
+    builders = {
+        "scripted": lambda: scripted_policy,
+        "v3": lambda: make_swap_rule(key="value"),
+        "v4": lambda: v4,
+        "v4_null": lambda: v4,
+        "mask_full": lambda: clone_policy("results/checkpoints/mask_full.pt"),
+        "mask_c": lambda: clone_policy("results/checkpoints/mask_c.pt"),
+        "mask_a": lambda: clone_policy("results/checkpoints/mask_a.pt"),
+        "v4_valuemax": lambda: v4,
+        "drop@full": lambda: drop_policy("results/checkpoints/drop.pt", "full"),
+        "drop@c": lambda: drop_policy("results/checkpoints/drop.pt", "c"),
+        "drop@a": lambda: drop_policy("results/checkpoints/drop.pt", "a"),
     }
+    return {name: builders[name]() for name in slots}
 
 
-def seat_assignment(seed: int):
-    """Hoan vi 8 policy len 8 ghe, doc lap voi luong cua env."""
+def seat_assignment(seed: int, slots=SLOTS):
+    """Hoan vi cac policy len 8 ghe, doc lap voi luong cua env. Moi slot chi mot ghe."""
+    assert len(slots) == 8
     perm = np.random.default_rng([seed, 1]).permutation(8)
     agents = [f"player_{i}" for i in range(8)]
-    return {agents[i]: SLOTS[perm[i]] for i in range(8)}
+    return {agents[i]: slots[perm[i]] for i in range(8)}
 
 
 def play_lobby(env, seed, pool, seat_policy):
@@ -129,10 +138,11 @@ if __name__ == "__main__":
         selftest(env, range(150000, 150005), v4)
     else:
         lo, hi, out = int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
-        pool = build_pool(v4)
+        slots = POOLS[sys.argv[5] if len(sys.argv) > 5 else "v2"]
+        pool = build_pool(v4, slots)
         rows = []
         for s in range(lo, hi):
-            sp = seat_assignment(s)
+            sp = seat_assignment(s, slots)
             res = play_lobby(env, s, pool, sp)
             for a, r in res.items():
                 rows.append({"seed": s, "agent": a, **r})

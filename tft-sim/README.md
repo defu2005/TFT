@@ -609,12 +609,15 @@ So sánh theo cặp (per-lobby): b−a = +0,126 [0,004; 0,244]; c−b = −1,809
 - Null gần 0, nên harness không lệch.
 - Nội dung là `TFTSet17` (real_content, dữ liệu CDragon), không phải 8 tướng synthetic. Vẫn là mô phỏng: không có bằng chứng so với trận thật.
 - Điều kiện c vẫn còn ẩn augment (khớp PICK_AUGMENT 0,44 so với 0,999 ở full), và full chưa được chơi. Vì vậy khoảng +0,50 của c **bị lẫn** với việc thiếu augment. Không được kết luận "clone kém teacher" từ c. Cần chơi full để có mốc.
+- Chênh full − c (ghép cặp theo lobby, cùng seed, cùng teacher, seed 260000–260999): **−0,548 [−0,686; −0,411]**. Khoảng này là tác động của nhóm ẩn (augment, gods, opponents) gộp lại; không tách được từng nhóm, vì chưa có điều kiện riêng.
 
-## Kiểm soát hậu kỳ: full và giải đấu hỗn hợp (2026-11-25, bằng chứng bot)
+## Kiểm soát hậu kỳ: full (2026-11-25, bằng chứng bot)
 
 **Full (hậu kỳ, không có trong đăng ký 10.6):** clone `mask_full` (185 chiều) vs teacher v4, seed 260000–260999, EngineResolver. A−B = −0,051 [−0,157; +0,057]. Full không khác teacher. Vậy khoảng +0,50 của điều kiện c so với teacher là do các chiều bị ẩn (augment, gods, opponents), không do bàn hay bàn chờ.
 
-**Giải đấu hỗn hợp (đăng ký 10.8):** seed 270000–270999, 1000 lobby, 8 ghế, mỗi ghế chọn policy từ pool bằng `default_rng(seed)`, có thể trùng. Trung bình placement (CI95 bootstrap theo lobby, số ghế):
+**Giải đấu hỗn hợp v1 (đăng ký 10.8, bị thay thế bởi v2):** lỗi thiết kế: policy có thể trùng ghế, hoán vị ghế không độc lập với luồng env, CI không khớp với trung bình theo lobby. Các số dưới đây giữ để đối chiếu, không dùng để kết luận. Xem "Giải đấu v2".
+
+**Giải đấu hỗn hợp v1 - số liệu:** seed 270000–270999, 1000 lobby, 8 ghế, mỗi ghế chọn policy từ pool bằng `default_rng(seed)`, có thể trùng. Trung bình placement (CI95 bootstrap theo lobby, số ghế):
 
 | Policy | Placement TB | CI95 | Ghế |
 |---|---|---|---|
@@ -632,7 +635,6 @@ So sánh theo cặp (per-lobby): b−a = +0,126 [0,004; 0,244]; c−b = −1,809
 - valuemax và CEM chưa đưa vào pool (monkeypatch toàn cục).
 
 
-Chênh full − c (ghép cặp theo lobby, cùng seed, cùng teacher): **−0,548 [−0,686; −0,411]**. Khoảng này là tác động của nhóm ẩn (augment, gods, opponents) gộp lại; không tách được từng nhóm, vì chưa có điều kiện riêng.
 
 ## Giải đấu v2 (2026-11-25, bằng chứng bot)
 

@@ -107,7 +107,7 @@ Mọi bằng chứng dưới đây là sim hoặc nội dung tổng hợp (8 tư
 
 **Catalog theo set đã có cơ chế (chưa xác minh nội dung):** `src/data/profile.js` `DEFAULT_PROFILE` lấy từ `rules.js` (số Set 17). `src/data/profileFile.js` dựng profile từ file set + overlay theo patch; bảng thiếu rơi về mặc định và được ghi là caveat. `src/data/profiles/set18.candidate.json` tồn tại, liệt kê mục chưa mô hình (Wisp, Lux, Item Forge). Đây là candidate.
 
-**Roster:** `slot_features` (`tftgoat.py` dòng 100–123) đọc `cost/5`, số trait trùng với đội hiện tại, và số bản sở hữu theo ID (chỉ làm khóa tra cứu, không one-hot). Thiết kế đạt yêu cầu "roster là thuộc tính". Chưa kiểm `bench_board_features` cùng cách (mới đọc chữ ký hàm).
+**Roster:** `slot_features` (`tftgoat.py` dòng 100–123) đọc `cost/5`, số trait trùng với đội hiện tại, và số bản sở hữu theo ID (chỉ làm khóa tra cứu, không one-hot). Thiết kế đạt yêu cầu "roster là thuộc tính". `bench_board_features` (`src/tft_sim/tftgoat.py:219`) đã kiểm (2026-11-25): mỗi slot ghi có unit, cost/5, sao/3, value/15 và hai cờ (trùng bản, chung trait với bàn). Không có one-hot theo tên. Đạt tiêu chí "không one-hot tên".
 
 **Augment và god:** registry augment (`augments_set17`) và khối gods là Set 17. Đây là lập luận thiết kế, chưa có số đo chuyển giao cho hai loại này.
 
@@ -207,7 +207,32 @@ Mọi bằng chứng dưới đây là sim hoặc nội dung tổng hợp (8 tư
 
 ### 10.7 Việc tiếp theo (sim)
 
-1. Chạy tiêu chí §5 gốc trên B (chỉ-universal trong 0,5 của scripted).
-2. Kiểm `bench_board_features` theo tiêu chí "không one-hot tên".
-3. Chạy thí nghiệm mask (10.6).
-4. Chờ `hud` phản hồi (HP, bàn, bàn chờ, thứ hạng).
+1. Chạy tiêu chí §5 gốc trên B (chỉ-universal trong 0,5 của scripted). Chưa chạy.
+2. Mục 10.6 (mask) và 10.9 (giải đấu v2) đã xong. Mục 10.10 (dropout) đăng ký trước khi chạy.
+3. Chờ `hud` phản hồi (HP, bàn, bàn chờ, thứ hạng). Dữ liệu thật là bước quyết định, không phải thêm mô phỏng.
+
+### 10.10 Mô hình group-dropout (đăng ký trước khi chạy giải đấu)
+
+**Mục tiêu:** kiểm một mô hình duy nhất cho nhiều điều kiện dữ liệu, thay vì ba mô hình mask rời. Đây là thiết kế "dữ liệu đến dần" của 10.4 chưa được thử.
+
+**Huấn luyện:** `scripts/dropout_train.py`, dữ liệu `mask_data/ds` (cùng seed 150000–151199 với 10.6), 40 epoch, seed 0, `bc_train.train` không sửa. Mỗi dòng được gán một điều kiện trong {a, c, full} bằng `default_rng([0, 7])`, cỡ mẫu xấp xỉ bằng nhau. Đầu vào 189 chiều = 185 chiều đã mask theo điều kiện + 4 bit hiện diện (HUD, HP, BB, OTHER): a = (1,0,0,0), c = (1,1,1,0), full = (1,1,1,1). Điều kiện b bỏ vì teacher v4 không đọc HP (đã kiểm, 20/20).
+
+**Kiểm tra trước khi chơi (không có ngưỡng, ghi số liệu):**
+- Khớp test theo từng điều kiện cố định, so với mô hình mask rời (0,9966 full; 0,9927 c; 0,6355 a).
+- Leak test: đổi các cột bị ẩn của điều kiện X thì logit không đổi. Tiêu chí: sai khác tuyệt đối = 0 cho cả ba điều kiện. Nếu không bằng 0, dừng và báo.
+
+**Giải đấu:** `scripts/league2.py run 284000 288000 <out> drop`, 4000 lobby, seed 284000–287999 (dự trữ trong sổ). Pool: v4, v4_null, mask_full, mask_c, mask_a, drop@full, drop@c, drop@a. Mỗi lobby mỗi slot đúng một ghế, hoán vị ghế bằng `default_rng([seed, 1])`. `selftest` phải PASS trước khi chạy (đã chạy với pool v2).
+
+**Phân tích:** chênh theo cặp trong cùng lobby; CI95 bootstrap theo lobby, 2000 lần lấy mẫu, seed cố định.
+
+**Tiêu chí (đăng ký):**
+1. v4 − v4_null: CI95 chứa 0 (kiểm công bằng của harness).
+2. Với mỗi X ∈ {full, c, a}: CI95 của drop@X − mask_X nằm hoàn toàn trong [−0,2; +0,2].
+3. Nếu một tiêu chí thất bại, báo đúng tiêu chí và đúng X đó, không lấy trung bình.
+
+**Phạm vi:** mô phỏng Set 17 với bot teacher v4 và EngineResolver. Không nói gì về dữ liệu HUD thật, Set 18, hay trận thật.
+
+**Khoảng cách đã biết (ghi trước khi chạy, không sửa kết luận):**
+- Logic ability Set 17: 69 hàm viết tay trong `tft_goat/engine/abilities_set17` (6 file). Đây là phần engine đã có.
+- Set 18: CDragon snapshot `data/cdragon/cdragon_18.7_2026-11-23.json.gz`, `sets['18']['champions']` có 91 tướng, mỗi tướng có trường `ability`. Chưa có logic ability Set 18, chưa định cỡ. Đây là khoảng cách lớn nhất để áp dụng sang Set 18.
+- Vị trí (positioning) chưa xác nhận: `BoardUnit` trong `tft_goat/env/state.py:19` và `data/riot/models.py:16` không có trường vị trí. Chỉ engine `Unit` (`tft_goat/engine/unit.py:37`, `pos=(0,0)`) có, và dữ liệu HUD chưa cung cấp vị trí. Mọi kết quả sim giả định vị trí do engine tự quyết.
