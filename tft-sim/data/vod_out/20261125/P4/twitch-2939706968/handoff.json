@@ -1,0 +1,22 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2939706968",
+  "slot": "P4",
+  "role": "primary",
+  "status": "blocked",
+  "covered_ranges_s": [],
+  "remaining_ranges_s": [],
+  "game_ids": [],
+  "counts": {
+    "games": 0,
+    "fights": 0,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {}
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "BLOCKED: PBE/set19 throughout \u2014 names wasianiversonPBE/MeNoHaxorPBE/PunPBE/PapyScotchPBE/nanzal pbe; units Gangplank/Malzahar/Irelia/Jhin not in Set18. Skip entire VOD per filter TPC/bash/PBE/set19."
+}
