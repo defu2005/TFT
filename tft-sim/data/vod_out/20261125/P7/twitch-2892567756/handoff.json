@@ -8,26 +8,44 @@
     [
       540,
       2500
+    ],
+    [
+      3200,
+      5000
+    ],
+    [
+      5400,
+      7200
     ]
   ],
   "remaining_ranges_s": [
     [
       2500,
+      3200
+    ],
+    [
+      5000,
+      5400
+    ],
+    [
+      7200,
       null
     ]
   ],
   "game_ids": [
-    "twitch-2892567756-g540"
+    "twitch-2892567756-g540",
+    "twitch-2892567756-g3200",
+    "twitch-2892567756-g5400"
   ],
   "counts": {
-    "games": 1,
-    "fights": 13,
+    "games": 3,
+    "fights": 38,
     "others": 0
   },
   "validator": {
-    "ok": 3,
+    "ok": 18,
     "skipped": {
-      "winner_null": 10
+      "winner_null": 20
     },
     "rows": [
       {
@@ -78,6 +96,56 @@
       {
         "line": 12,
         "source": "twitch-2892567756-g540:5-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 14,
+        "source": "twitch-2892567756-g3200:2-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 15,
+        "source": "twitch-2892567756-g3200:2-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 16,
+        "source": "twitch-2892567756-g3200:2-3",
+        "reason": "winner_null"
+      },
+      {
+        "line": 18,
+        "source": "twitch-2892567756-g3200:2-5",
+        "reason": "winner_null"
+      },
+      {
+        "line": 23,
+        "source": "twitch-2892567756-g3200:4-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 25,
+        "source": "twitch-2892567756-g3200:5-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 27,
+        "source": "twitch-2892567756-g5400:2-1",
+        "reason": "winner_null"
+      },
+      {
+        "line": 28,
+        "source": "twitch-2892567756-g5400:2-2",
+        "reason": "winner_null"
+      },
+      {
+        "line": 34,
+        "source": "twitch-2892567756-g5400:3-3",
+        "reason": "winner_null"
+      },
+      {
+        "line": 35,
+        "source": "twitch-2892567756-g5400:3-5",
         "reason": "winner_null"
       }
     ]

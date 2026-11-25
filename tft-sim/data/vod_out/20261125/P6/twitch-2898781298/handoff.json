@@ -1,0 +1,36 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2898781298",
+  "slot": "P6",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      0,
+      1750
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      1750,
+      24420
+    ]
+  ],
+  "game_ids": [
+    "twitch-2898781298-g60"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 6,
+    "others": 6
+  },
+  "validator": {
+    "ok": 4,
+    "skipped": {
+      "winner_null": 2
+    }
+  },
+  "needs_review": 2,
+  "commit": null,
+  "remaining": "kiyoon ranked densify g60 done (6 fights both=2 win=4 ok=4); tiếp g2 ~1800s+"
+}
