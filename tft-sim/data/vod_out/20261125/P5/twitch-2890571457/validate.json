@@ -1,0 +1,18 @@
+{
+ "ok": 0,
+ "skipped": {
+  "winner_null": 2
+ },
+ "rows": [
+  {
+   "line": 1,
+   "source": "twitch-2890571457-g200:3-5",
+   "reason": "winner_null"
+  },
+  {
+   "line": 2,
+   "source": "twitch-2890571457-g200:4-1",
+   "reason": "winner_null"
+  }
+ ]
+}
