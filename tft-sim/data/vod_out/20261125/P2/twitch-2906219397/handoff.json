@@ -36,5 +36,5 @@
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "0-520 pregame; 2720+ client rồi lobby NORMAL (skip non-ranked). Tìm thêm ranked queue trên VOD này nếu có."
+  "remaining": "0-520 pregame. 520-2720: ranked g520 done (partial fights). 2720+: client; NORMAL party games (Hafu/CLE ~3k-5.5k; Frodan/setsuko lobby NORMAL @~6100) — skip mode≠ranked. Quét thêm chỉ khi thấy queue RANKED trên HUD."
 }
