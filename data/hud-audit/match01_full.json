@@ -3230,6 +3230,40 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
+   },
+   "frame_A_read": {
+    "frame_s": 1186,
+    "timer": 7,
+    "counter": "7/7",
+    "level": 7,
+    "xp": "2/56",
+    "gold": 25,
+    "streak": 7,
+    "shop": [
+     "Azir",
+     "Cassiopeia",
+     "empty",
+     "Kayle",
+     "LeBlanc"
+    ],
+    "panel": {
+     "Monolith": 1,
+     "Brawler": 3,
+     "Elderwood": 3,
+     "Rapidfire": 2,
+     "Blackthorn": 2,
+     "Executioner": 1,
+     "Fae": 1,
+     "Summoner": 1,
+     "Riftbeast": 1,
+     "marker": "1+"
+    },
+    "rail_hp_rows": "nonzero HP on all seven non-streamer rows (streamer top row 97)",
+    "bench": "no bench units legible in this frame",
+    "board_units_rowcol": "not read by row and column",
+    "stars_items": "not resolvable at 720p",
+    "tag": "read",
+    "source": "frame at 1186 s, viewed in this session"
    }
   },
   {
