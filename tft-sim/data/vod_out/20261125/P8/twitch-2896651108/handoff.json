@@ -8,29 +8,34 @@
     [
       60,
       2000
+    ],
+    [
+      2200,
+      4000
     ]
   ],
   "remaining_ranges_s": [
     [
-      2000,
+      4000,
       17530
     ]
   ],
   "game_ids": [
-    "twitch-2896651108-g120"
+    "twitch-2896651108-g120",
+    "twitch-2896651108-g2400"
   ],
   "counts": {
-    "games": 1,
-    "fights": 12,
+    "games": 2,
+    "fights": 24,
     "others": 0
   },
   "validator": {
-    "ok": 4,
+    "ok": 5,
     "skipped": {
-      "winner_null": 8
+      "winner_null": 19
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "densify-full g120 12f. Continue games ~2000+. P8-primary dankmemes011."
+  "remaining": "densify-full 2g/24f. Continue ~4000+. P8-primary dankmemes011."
 }

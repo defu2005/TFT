@@ -4031,7 +4031,7 @@
       "streamer": "tleyds",
       "slot": "P8",
       "role": "primary",
-      "status": "todo",
+      "status": "working",
       "patch_claims": [
         "Set 18, exact patch pending visual confirmation"
       ],
