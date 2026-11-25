@@ -35,6 +35,57 @@ def _attrs_for_set18(key: str):
     if key in _SET18_BAD_KEYS:
         return []
     return _orig_attrs_for(key)
+from tft_goat.env.traits import trait_counts as _trait_counts  # noqa: E402
+
+_orig_apply_team_traits = S.apply_team_traits
+
+
+def emblem_trait_of(item_api: str, content):
+    """Ten trait (ten hien thi) ma emblem Set 18 cong them diem. None neu khong phai emblem trait.
+    Khop theo ten hien thi: 'Ravager Emblem' -> trait 'Ravager' (khoa DA_18_Slayer). Khong khop theo khoa."""
+    it = content.items.get(item_api)
+    if it is None or not item_api.startswith("DA_18_Emblem") or not it.name.endswith(" Emblem"):
+        return None
+    base = it.name[: -len(" Emblem")]
+    return base if any(t.name == base for t in content.traits.values()) else None
+
+
+def _emblem_traits(units, content, bonus_units: int = 0) -> None:
+    """Giong TE.apply_team_traits, cong them: moi tuong giu emblem cua trait T (khong co T tu nhien)
+    tinh them 1 diem T, va nhan buff cua T nhu mot thanh vien."""
+    if not units:
+        return
+    held = [{t for api in u.item_apis if (t := emblem_trait_of(api, content))} for u in units]
+    counts = dict(_trait_counts([u.champion_api for u in units], content))
+    for u, hs in zip(units, held):
+        own = content.champions[u.champion_api].traits if u.champion_api in content.champions else ()
+        for t in hs:
+            if t not in own:
+                counts[t] = counts.get(t, 0) + 1
+    by_name = {t.name: t for t in content.traits.values()}
+    for name, count in counts.items():
+        trait = by_name.get(name)
+        if trait is None or not trait.effects:
+            continue
+        bps = tuple(trait.breakpoints)
+        n = count + (bonus_units if bps != (1,) else 0)
+        tier = sum(1 for bp in bps if n >= bp)
+        if tier == 0:
+            continue
+        effs = sorted(trait.effects, key=lambda e: e.min_units)
+        eff = effs[min(tier - 1, len(effs) - 1)]
+        members = [u for u, hs in zip(units, held)
+                   if name in (content.champions[u.champion_api].traits if u.champion_api in content.champions else ())
+                   or name in hs]
+        for key, val in eff.variables.items():
+            if not isinstance(val, (int, float)) or val == 0:
+                continue
+            targets = units if "teamwide" in key.lower() else members
+            for attr in TE.attrs_for(key):
+                for u in targets:
+                    TE._apply_stat(u, attr, float(val))
+
+
 from tft_goat.engine.abilities import default_ability
 from tft_goat.env.state import BoardUnit
 from tft_goat.engine.simulate import run_combat
@@ -184,7 +235,7 @@ def coverage(record: dict) -> dict:
 
 
 def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = True, seed0: int = 0,
-                augments: bool = True, traits: bool = True, novars: bool = False) -> dict:
+                augments: bool = True, traits: bool = True, novars: bool = False, emblems: bool = False) -> dict:
     """Xac suat A thang tu n lan chay engine (RNG seed0..seed0+n-1). augments=False: bo augment."""
     if record["set"] == 18 and ability == "hand":
         raise ValueError("Set 18 chua co logic ability viet tay: dung 'generic' hoac 'none'")
@@ -198,8 +249,12 @@ def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = 
     content = _CONTENT[record["set"]]
     wins = [0, 0, 0]
     skip = record["set"] == 18
+    if emblems and record["set"] != 18:
+        raise ValueError("emblems chi cho Set 18")
     if skip:
         TE.attrs_for = _attrs_for_set18
+    if emblems:
+        S.apply_team_traits = _emblem_traits
     try:
         with fight_context(ability, pos, content, traits, novars):
             for i in range(n):
@@ -208,5 +263,6 @@ def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = 
                 wins[0 if w == 0 else 1 if w == 1 else 2] += 1
     finally:
         TE.attrs_for = _orig_attrs_for
+        S.apply_team_traits = _orig_apply_team_traits
     return {"p_a": wins[0] / n, "a": wins[0], "b": wins[1], "draw": wins[2], "n": n,
-            "ability": ability, "items": items, "coverage": cov}
+            "ability": ability, "items": items, "emblems": emblems, "coverage": cov}

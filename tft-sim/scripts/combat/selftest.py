@@ -156,4 +156,59 @@ if len(bl) >= 2:
     F.TE.attrs_for = F._orig_attrs_for
     print("blossom ad full", ad_full, "skip", ad_skip)
     ok &= ad_full == ad_skip  # trait khong lien quan khong bi anh huong
+# 10) Emblem Set 18: emblem cong diem trait; holder nhan buff; emblem tren thanh vien tu nhien khong cong them.
+# Dung Blackthorn (co buff HP, khong phai no_stat_mapping: Ravager khong co buff nen khong dung de kiem).
+F.set_content(18, c18)
+ok10 = True
+print("emblem_trait_of Ravager", F.emblem_trait_of("DA_18_EmblemSlayer", c18), "Blackthorn", F.emblem_trait_of("DA_18_EmblemBlackthorn", c18))
+ok10 &= F.emblem_trait_of("DA_18_EmblemSlayer", c18) == "Ravager"
+ok10 &= F.emblem_trait_of("DA_18_EmblemBlackthorn", c18) == "Blackthorn"
+ok10 &= F.emblem_trait_of("DA_PhantomEmblem18", c18) is None
+non_bt = [a for a, c in c18.champions.items() if "Blackthorn" not in c.traits and c.stats][:3]
+bt = [a for a, c in c18.champions.items() if "Blackthorn" in c.traits and c.stats][:1]
+EM = ("DA_18_EmblemBlackthorn",)
+
+
+def hp_of(board, emblem_on):
+    S9.apply_team_traits = F._emblem_traits if emblem_on else F._orig_apply_team_traits
+    try:
+        return [u.max_hp for u in S9._build_team(board, 0, c18, 0)]
+    finally:
+        S9.apply_team_traits = F._orig_apply_team_traits
+
+
+# a) hai holder khong co Blackthorn tu nhien -> dat moc 2 -> tier 1 -> ca hai nhan HP
+b_a = [BU(non_bt[0], 1, on_board=True, items=1, item_apis=EM), BU(non_bt[1], 1, on_board=True, items=1, item_apis=EM)]
+off_a, on_a = hp_of(b_a, False), hp_of(b_a, True)
+print("a) 2 holders off", off_a, "on", on_a)
+ok10 &= all(on > off for on, off in zip(on_a, off_a))
+# b) mot holder duy nhat: 1 diem, khong dat moc 2 -> khong doi
+b_b = [BU(non_bt[0], 1, on_board=True, items=1, item_apis=EM), BU(non_bt[1], 1, on_board=True, items=0)]
+print("b) 1 holder off", hp_of(b_b, False), "on", hp_of(b_b, True))
+ok10 &= hp_of(b_b, True) == hp_of(b_b, False)
+# c) holder tu nhien (Blackthorn) + khong Blackthorn co emblem: chi 1 diem Blackthorn (tu nhien) + 0 -> khong doi
+b_c = [BU(bt[0], 1, on_board=True, items=1, item_apis=EM), BU(non_bt[0], 1, on_board=True, items=0)]
+print("c) native holder off", hp_of(b_c, False), "on", hp_of(b_c, True))
+ok10 &= hp_of(b_c, True) == hp_of(b_c, False)
+# d) predict_win Set 18: emblem bat/tat, va patch duoc khoi phuc
+rec10 = fixture(names18, 18)
+rec10["a"]["units"][0]["items"] = ["DA_18_EmblemBlackthorn"]
+rec10["a"]["units"][1]["items"] = ["DA_18_EmblemBlackthorn"]
+x_off = F.predict_win(rec10, 3, "generic", True, 0, emblems=False)
+x_on = F.predict_win(rec10, 3, "generic", True, 0, emblems=True)
+print("d) predict_win emblems off/on", (x_off["a"], x_off["b"]), (x_on["a"], x_on["b"]))
+ok10 &= F.TE.attrs_for is F._orig_attrs_for
+ok10 &= S9.apply_team_traits is F._orig_apply_team_traits
+# e) Spellweaver: APPerCast bi bo nen AP khac voi khi day du (khong vacuous: so sanh khac 0)
+sw = [a for a, c in c18.champions.items() if "Spellweaver" in c.traits][:2]
+bsw = [BU(a, 1, on_board=True) for a in sw]
+F.TE.attrs_for = F._orig_attrs_for
+ap_full = [u.ap for u in S9._build_team(bsw, 0, c18, 0)]
+F.TE.attrs_for = F._attrs_for_set18
+ap_skip = [u.ap for u in S9._build_team(bsw, 0, c18, 0)]
+F.TE.attrs_for = F._orig_attrs_for
+print("e) spellweaver ap full", ap_full, "skip", ap_skip)
+ok10 &= any(abs(a - b) > 1e-6 for a, b in zip(ap_full, ap_skip))
+ok &= ok10
+print("emblem block", "PASS" if ok10 else "FAIL")
 print("SELFTEST", "PASS" if ok else "FAIL")

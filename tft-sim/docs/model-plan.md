@@ -319,6 +319,7 @@ Chỉ số: hiệu cặp của tỷ lệ đảo chiều so với hand, template 
 - Tổng slot item: 10767. Không rõ tên (unknown): 0.
 - Slot có hiệu ứng rỗng: 4375 (40,6%).
 - Trong đó 4016 (91,8%) là emblem (`DA_18_Emblem*`), 359 là Tactician's Shield/Crown.
+- Lưu ý: con số 40,6% là cơ cấu item của sim trên `pairs18_alias.jsonl`, không phải tần suất emblem thật ở Set 18.
 - Kết luận: phần lớn slot rỗng là emblem, mà emblem cộng điểm trait. Việc cần làm trước tiên cho Set 18 là ánh xạ emblem → điểm trait (bước 3a: bảng trait), không phải template ability.
 - Đã kiểm tra mã engine: `env/traits.py::active_traits` chỉ đếm `champion_api` của từng tướng. Emblem không cộng điểm trait trong engine, nên đây là lỗ hổng thật, không chỉ là slot rỗng. Set 17 có cùng cơ chế (emblem có hook riêng nhưng không tính vào điểm trait).
 - Việc cần làm tiếp theo: thêm điểm trait từ emblem vào đường Set 18 (ánh xạ DA_18_Emblem* → trait) và đo lại. Chưa làm trong lần này.
@@ -330,3 +331,23 @@ Chỉ số: hiệu cặp của tỷ lệ đảo chiều so với hand, template 
 - Chính sách (trang TFT Developer API Policy): không được dùng để theo dõi tướng đối thủ trên bàn (scouting), không tạo công cụ thời gian thực trong trận, không tạo MMR/ELO. Mục "Aggregate player stats (no specific players)" thuộc nhóm production key. Personal key chỉ cho dự án cá nhân nhỏ.
 - Chưa tìm được điều khoản về thời gian lưu trữ hay huấn luyện mô hình trong các trang đã đọc. Điều khoản pháp lý (Terms) chưa đọc, nên việc lưu trữ và dùng dữ liệu để huấn luyện vẫn chưa được xác minh.
 - Kết luận: Phase 2 cần người dùng trả lời một câu. Dự án là (a) nghiên cứu cá nhân trên dữ liệu tài khoản của chính họ bằng personal key, hay (b) mô hình tổng hợp trên dữ liệu nhiều người chơi, nên đăng ký production key? Nếu (b), việc cần làm là đăng ký sản phẩm, không phải chỉ xin key. Chưa xin credential.
+
+
+### 11.5 Độ nhạy emblem (khóa trước khi chạy, 2026-11-25)
+Đã làm: `fight.py` có `predict_win(..., emblems=True)`: emblem Set 18 cộng 1 điểm trait cho trait tương ứng (khớp theo tên hiển thị, ví dụ 'Ravager Emblem' -> 'Ravager'), holder nhận buff như thành viên. Selftest mục 10 PASS.
+Đo: `pairs18_sample.jsonl` (1000 cặp sim Set 18, nhân alias), cấu hình generic (ability generic vì hand bị chặn), items bật, N=20, seed0=0, emblems off so với on.
+Chỉ số tách riêng:
+(a) tỷ lệ bàn (board) có ít nhất một trait đổi tier khi bật emblem;
+(b) tỷ lệ cặp có xác suất p_a đổi hơn 0,05 khi bật emblem, và tỷ lệ đảo bên thắng (flip) với quyết định dựa trên off;
+(c) chênh lệch cặp trung bình kèm bootstrap theo lobby (cặp không tách được lobby: tính theo nguồn `same`/`cross`).
+Lưu ý khi đọc: flip nhỏ có thể do trait chưa có ánh xạ stat (xem mục 9 của bảng trait), không có nghĩa là emblem không quan trọng. Kết quả chỉ là độ nhạy của sim, không phải độ đúng.
+
+- Kết quả (`results/fixed/combat/emblem_sensitivity.json`, 1000 cặp, generic, N=20): 432 cặp có emblem; 108 cặp (10,8%) có ít nhất một trait đổi tier khi bật emblem; 3 cặp có p đổi hơn 0,05; flip 0,2% (CI95 [0,0; 0,5]); chênh lệch trung bình 0,001.
+- Đọc: emblem đã đổi tier ở 10,8% cặp nhưng gần như không đổi kết quả. Nguyên nhân chính là bảng trait: trong 588 slot emblem của mẫu này, chỉ 33,5% thuộc trait có ánh xạ stat (Fae, Spellweaver, Sprykin, Lunar, Vanguard, Blossom, Hunter, Blackthorn). 66,5% thuộc trait chưa có ánh xạ (Ravager 110, Inferno 101, Brawler 70, và các trait khác). Vì vậy độ nhạy thấp là do thiếu bảng trait, chưa phải kết luận emblem không quan trọng.
+- Quyết định: giữ `emblems=False` làm mặc định cho đến khi bảng trait xong. Bước 5 (bảng 25 trait chưa ánh xạ) là việc tiếp theo, thứ tự theo số thành viên: Riftbeast 10, Avatar 10, Elderwood 8, Juggernaut 7, Ravager 6, Inferno 6, Defender 6, Coven 6, Brawler 6, Rapidfire 5, Invoker 5, Executioner 5, Adaptor 5, Summoner 4, Solar 4, Primal 4, Rival 2, Flora Fatalis 2, rồi 1 thành viên: Old Growth, Greenfather, Emerald Aspect, Caustic, Bounty Seeker, Apex Predator; Eclipse 0.
+- Brawler (`DA_18_Brawler`) có cờ `name_referenced_in_engine`: phải đọc mã engine trước khi ánh xạ.
+
+### 11.6 Cập nhật 2026-11-25 (bổ sung)
+- Mục 11.4: không đuổi theo Riot key trong lượt này. Người dùng sẽ cung cấp dữ liệu. Không xin credential.
+- Yêu cầu bản ghi (`docs/agents/requests/20261125-sim-to-hud-state-fields.md`): bản ghi là từng cặp bàn tại thời điểm đánh (fight-v1), không phải bảng cuối game. Điểm thứ hạng (placement) không chấm được bằng sim này; cần bản ghi per-fight để chạy Phase 4.
+- Bước 5 (bảng trait) và bước đo lại sau bảng trait: chưa làm.

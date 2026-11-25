@@ -1,0 +1,15 @@
+{
+ "n_pairs": 1000,
+ "pairs_with_emblem_item": 432,
+ "pairs_with_tier_change": 108,
+ "share_tier_change": 0.108,
+ "pairs_p_change_gt_0.05": 3,
+ "flip_rate_all": 0.002,
+ "flip_all_ci95": [
+  0.0,
+  0.005
+ ],
+ "flip_rate_decisive_off": 0.0,
+ "n_decisive_off": 876,
+ "mean_abs_gap": 0.001
+}
