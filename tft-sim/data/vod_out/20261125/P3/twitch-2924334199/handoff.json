@@ -91,9 +91,10 @@
     "ok": 2,
     "skipped": {
       "winner_null": 46
-    }
+    },
+    "densify_full": 2
   },
   "needs_review": 46,
   "commit": "580f40c",
-  "remaining": "P3 densify: full=0 both=0 win=2 rich_a>=14. Continue side_b."
+  "remaining": "densify-full=2 applied from side_b agents. g2230 still empty_b (FX). 2026-11-25T19:35:10Z"
 }

@@ -61,12 +61,13 @@
     "others": 0
   },
   "validator": {
-    "ok": 16,
+    "ok": 18,
     "skipped": {
-      "winner_null": 64
-    }
+      "winner_null": 62
+    },
+    "densify_full": 8
   },
   "needs_review": 64,
   "commit": "c193939",
-  "remaining": "P3 densify: full=2 both=3 win=16. Applied g4200 densify."
+  "remaining": "densify-full=8 applied from side_b agents. g2230 still empty_b (FX). 2026-11-25T19:35:10Z"
 }

@@ -1,0 +1,7 @@
+{
+  "ok": 0,
+  "skipped": {
+    "winner_null": 31
+  },
+  "note": "winner_null OK volume; dense-map aligned 12g"
+}
