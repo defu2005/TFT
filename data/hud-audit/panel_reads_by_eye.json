@@ -1,0 +1,327 @@
+{
+  "method": "planning-phase panel at round start + 18 s, read by eye from native 2x crops; the 2-6 and 3-2 rounds were faded or partly covered and are less certain",
+  "panels": {
+    "1-1": {
+      "Blackthorn": 1,
+      "Spellweaver": 1,
+      "Sprykin": 1
+    },
+    "1-2": {
+      "Blackthorn": 1,
+      "Spellweaver": 1,
+      "Sprykin": 1
+    },
+    "1-3": {
+      "Blackthorn": 1,
+      "Spellweaver": 1,
+      "Sprykin": 1
+    },
+    "1-4": {
+      "Brawler": 1,
+      "Hunter": 1,
+      "Coven": 1,
+      "Elderwood": 1
+    },
+    "2-1": {
+      "Brawler": 1,
+      "Hunter": 1,
+      "Coven": 1,
+      "Elderwood": 1
+    },
+    "2-2": {
+      "Coven": 3,
+      "Hunter": 1,
+      "Ravager": 1,
+      "Vanguard": 1
+    },
+    "2-3": {
+      "Juggernaut": 2,
+      "Brawler": 1,
+      "Fae": 1,
+      "Hunter": 1,
+      "Vanguard": 1,
+      "Coven": 1,
+      "Elderwood": 1,
+      "Solar": 1
+    },
+    "2-4": {
+      "Juggernaut": 2,
+      "Brawler": 1,
+      "Fae": 1,
+      "Hunter": 1,
+      "Vanguard": 1,
+      "Coven": 1,
+      "Elderwood": 1,
+      "Solar": 1
+    },
+    "2-5": {
+      "Elderwood": 3,
+      "Rapidfire": 2,
+      "Brawler": 2,
+      "Fae": 1,
+      "Spellweaver": 1,
+      "Summoner": 1,
+      "Riftbeast": 1,
+      "Sprykin": 1
+    },
+    "2-6": {
+      "Elderwood": 3,
+      "Rapidfire": 2,
+      "Brawler": 2,
+      "Fae": 1,
+      "Spellweaver": 1,
+      "Summoner": 1,
+      "Riftbeast": 1,
+      "Sprykin": 1
+    },
+    "2-7": {
+      "Elderwood": 3,
+      "Rapidfire": 2,
+      "Brawler": 2,
+      "Fae": 1,
+      "Spellweaver": 1,
+      "Summoner": 1,
+      "Riftbeast": 1,
+      "Sprykin": 1
+    },
+    "3-1": {
+      "Elderwood": 3,
+      "Rapidfire": 2,
+      "Brawler": 2,
+      "Fae": 1,
+      "Spellweaver": 1,
+      "Summoner": 1,
+      "Riftbeast": 1,
+      "Sprykin": 1
+    },
+    "3-3": {
+      "Elderwood": 3,
+      "Rapidfire": 2,
+      "Brawler": 2,
+      "Executioner": 1,
+      "Fae": 1,
+      "Summoner": 1,
+      "Riftbeast": 1,
+      "Sprykin": 1
+    },
+    "3-4": {
+      "Elderwood": 3,
+      "Rapidfire": 2,
+      "Brawler": 2,
+      "Executioner": 1,
+      "Fae": 1,
+      "Summoner": 1,
+      "Riftbeast": 1,
+      "Sprykin": 1
+    },
+    "3-5": {
+      "Elderwood": 3,
+      "Rapidfire": 2,
+      "Brawler": 2,
+      "Blackthorn": 1,
+      "Executioner": 1,
+      "Fae": 1,
+      "Summoner": 1,
+      "Riftbeast": 1,
+      "Sprykin": 1
+    },
+    "3-6": {
+      "Elderwood": 5,
+      "Rapidfire": 2,
+      "Brawler": 2,
+      "Riftbeast": 2,
+      "Executioner": 1,
+      "Fae": 1,
+      "Spellweaver": 1,
+      "Summoner": 1,
+      "Vanguard": 1
+    },
+    "3-7": {
+      "Elderwood": 5,
+      "Rapidfire": 2,
+      "Brawler": 2,
+      "Riftbeast": 2,
+      "Executioner": 1,
+      "Fae": 1,
+      "Spellweaver": 1,
+      "Summoner": 1,
+      "Vanguard": 1
+    },
+    "4-7": {
+      "Bounty Seeker": 1,
+      "Old Growth": 1,
+      "Brawler": 4,
+      "Elderwood": 4,
+      "Executioner": 1,
+      "Juggernaut": 1,
+      "Vanguard": 1,
+      "Blossom": 1,
+      "Riftbeast": 1,
+      "marker": "1+"
+    },
+    "5-1": {
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Brawler": 3,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 1,
+      "Juggernaut": 1,
+      "Vanguard": 1,
+      "Blossom": 1,
+      "marker": "2+"
+    },
+    "5-2": {
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Brawler": 3,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 1,
+      "Juggernaut": 1,
+      "marker": "3+"
+    },
+    "5-3": {
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 2,
+      "Brawler": 2,
+      "Juggernaut": 2,
+      "marker": "2+"
+    },
+    "5-4": {
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 2,
+      "Brawler": 2,
+      "Juggernaut": 2,
+      "marker": "2+"
+    },
+    "5-5": {
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 2,
+      "Brawler": 2,
+      "Juggernaut": 2,
+      "marker": "2+"
+    },
+    "5-6": {
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 2,
+      "Brawler": 2,
+      "Juggernaut": 2,
+      "marker": "2+"
+    },
+    "5-7": {
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 2,
+      "Brawler": 2,
+      "Juggernaut": 2,
+      "marker": "2+"
+    },
+    "6-1": {
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 2,
+      "Brawler": 2,
+      "Juggernaut": 2,
+      "marker": "2+"
+    },
+    "6-2": {
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 2,
+      "Brawler": 2,
+      "Juggernaut": 2,
+      "marker": "2+"
+    },
+    "6-3": {
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 2,
+      "Brawler": 2,
+      "Juggernaut": 2,
+      "marker": "2+"
+    },
+    "6-4": {
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 2,
+      "Brawler": 2,
+      "Juggernaut": 2,
+      "marker": "2+"
+    },
+    "6-5": {
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 2,
+      "Brawler": 2,
+      "Juggernaut": 2,
+      "marker": "2+",
+      "note": "Old Growth row hidden by tooltip"
+    },
+    "6-6": {
+      "Bounty Seeker": 1,
+      "Emerald Aspect": 1,
+      "Greenfather": 1,
+      "Old Growth": 1,
+      "Elderwood": 3,
+      "Executioner": 2,
+      "Inferno": 2,
+      "Brawler": 2,
+      "Juggernaut": 2,
+      "marker": "2+"
+    }
+  },
+  "not_yet_read": [
+    "2-2 confidence low (faded)",
+    "3-2 faded, unread",
+    "4-1 to 4-6 unread, shown as not read in this pass",
+    "5-1 to 5-7 read coarsely"
+  ]
+}
