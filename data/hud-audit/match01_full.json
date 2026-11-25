@@ -2795,6 +2795,40 @@
     },
     "tag": "derived",
     "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
+   },
+   "panels_prev_read": {
+    "value": {
+     "Brawler": 3,
+     "Elderwood": 3,
+     "Rapidfire": 2,
+     "Blackthorn": 1,
+     "Executioner": 1,
+     "Fae": 1,
+     "Summoner": 1,
+     "Riftbeast": 1,
+     "Sprykin": 1,
+     "note": "re-read full height; Brawler 3"
+    },
+    "tag": "read",
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+   },
+   "panels_planning_read": {
+    "value": {
+     "value": {
+      "Monolith": 1,
+      "Brawler": 3,
+      "Elderwood": 3,
+      "Rapidfire": 2,
+      "Blackthorn": 2,
+      "Executioner": 1,
+      "Fae": 1,
+      "Summoner": 1,
+      "Riftbeast": 1
+     },
+     "tag": "read",
+     "note": "re-read at 3x from 1186 s: Brawler 3 (not 2)"
+    },
+    "frame_s": 1186
    }
   },
   {
@@ -3515,7 +3549,7 @@
      "Sett"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits); gold ledger (reader rows): 4-1 planning gold 1 at 1364 s, 2 at 1413 s, then +8 (1445.8), +8 (1447.5), +4 (1449.0), +5 (1468.0) to 27 at planning: consistent with selling the four units that leave the 4-1 board, but the individual sells are not identified",
+    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits); gold ledger (reader rows): 4-1 planning gold 1 at 1364 s, 2 at 1413 s, then +8 (1445.8), +8 (1447.5), +4 (1449.0), +5 (1468.0) to 27 at planning: consistent with selling the four units that leave the 4-1 board, but the individual sells are not identified; earlier re-read differs from planning read; duplicate test: N-1 and N-2 solve to 0",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -3612,6 +3646,36 @@
     },
     "tag": "derived",
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
+   },
+   "panels_prev_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Elderwood": 5,
+     "Brawler": 2,
+     "Executioner": 1,
+     "Fae": 1,
+     "Rapidfire": 1,
+     "Spellweaver": 1,
+     "Vanguard": 1,
+     "Riftbeast": 1,
+     "note": "full-height re-read; no marker visible"
+    },
+    "tag": "read",
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+   },
+   "panels_planning_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1
+    },
+    "frame_s": 1468
    }
   },
   {
@@ -3685,7 +3749,7 @@
      "Sett"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits)",
+    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits); earlier re-read differs from planning read; duplicate test: N-1 and N-2 solve to 0",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -3779,6 +3843,36 @@
      "basis": "streak reset blue 1 to orange 1 across 4-3 and shared 4-4; streamer HP 88 unchanged 4-3 to 4-4"
     },
     "tag": "derived"
+   },
+   "panels_prev_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1,
+     "marker": "1+"
+    },
+    "tag": "read",
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+   },
+   "panels_planning_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1
+    },
+    "frame_s": 1540
    }
   },
   {
@@ -3974,8 +4068,8 @@
      "Maokai",
      "Sett"
     ],
-    "tag": "derived",
-    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits)",
+    "tag": "candidate",
+    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits); panel reads disagree (planning vs earlier re-read); adjudication pending",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -4077,6 +4171,36 @@
     },
     "tag": "derived",
     "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
+   },
+   "panels_prev_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 3,
+     "Juggernaut": 2,
+     "Executioner": 1,
+     "Inferno": 1,
+     "Blossom": 1,
+     "Riftbeast": 1,
+     "marker": "1+"
+    },
+    "tag": "read",
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+   },
+   "panels_planning_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1
+    },
+    "frame_s": 1652
    }
   },
   {
@@ -4150,7 +4274,7 @@
      "Sett"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits)",
+    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -4244,6 +4368,36 @@
     },
     "tag": "derived",
     "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
+   },
+   "panels_prev_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1,
+     "marker": "1+"
+    },
+    "tag": "read",
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+   },
+   "panels_planning_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1
+    },
+    "frame_s": 1722
    }
   },
   {
@@ -4501,8 +4655,8 @@
      "Maokai",
      "Sett"
     ],
-    "tag": "derived",
-    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits)",
+    "tag": "candidate",
+    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits); panel reads disagree (planning vs earlier re-read); adjudication pending",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -4704,6 +4858,37 @@
     },
     "tag": "derived",
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
+   },
+   "panels_prev_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "marker": "2+",
+     "note": "re-read full height; no Emerald Aspect"
+    },
+    "tag": "read",
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+   },
+   "panels_planning_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Old Growth": 1,
+     "Brawler": 4,
+     "Elderwood": 4,
+     "Executioner": 1,
+     "Juggernaut": 1,
+     "Vanguard": 1,
+     "Blossom": 1,
+     "Riftbeast": 1
+    },
+    "frame_s": 1836
    }
   },
   {
@@ -5029,7 +5214,7 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits)",
+    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -5163,6 +5348,36 @@
      "basis": "streak 1 to 2 across 5-3 and shared 5-4; streamer HP 74 unchanged 5-3 to 5-4"
     },
     "tag": "derived"
+   },
+   "panels_prev_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "tag": "read",
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+   },
+   "panels_planning_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2
+    },
+    "frame_s": 2000
    }
   },
   {
@@ -5365,7 +5580,7 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits)",
+    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -5509,6 +5724,36 @@
     },
     "tag": "derived",
     "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
+   },
+   "panels_prev_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "tag": "read",
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+   },
+   "panels_planning_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2
+    },
+    "frame_s": 2094
    }
   },
   {
@@ -5592,8 +5837,8 @@
      "Maokai",
      "Taric"
     ],
-    "tag": "derived",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits)",
+    "tag": "candidate",
+    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); panel reads disagree (planning vs earlier re-read); adjudication pending",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -5713,6 +5958,37 @@
     },
     "tag": "derived",
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
+   },
+   "panels_prev_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "Executioner": 1,
+     "Inferno": 1,
+     "marker": "2+",
+     "note": "re-read full height; not a copy of 5-5"
+    },
+    "tag": "read",
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+   },
+   "panels_planning_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2
+    },
+    "frame_s": 2172
    }
   },
   {
@@ -5797,7 +6073,7 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits)",
+    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -5898,6 +6174,36 @@
    "opponent_board": {
     "value": "n/a: no PvP opponent this round",
     "tag": "n/a"
+   },
+   "panels_prev_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "tag": "read",
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+   },
+   "panels_planning_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2
+    },
+    "frame_s": 2236
    }
   },
   {
@@ -6160,7 +6466,7 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits)",
+    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -6277,6 +6583,36 @@
     },
     "tag": "derived",
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
+   },
+   "panels_prev_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "tag": "read",
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+   },
+   "panels_planning_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2
+    },
+    "frame_s": 2342
    }
   },
   {
@@ -6361,7 +6697,7 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits)",
+    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -6453,6 +6789,36 @@
     },
     "tag": "derived",
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
+   },
+   "panels_prev_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "tag": "read",
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+   },
+   "panels_planning_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2
+    },
+    "frame_s": 2404
    }
   },
   {
@@ -6677,7 +7043,7 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits)",
+    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -6826,6 +7192,37 @@
     },
     "tag": "derived",
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
+   },
+   "panels_prev_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+",
+     "note": "re-read from +10 s and +26 s frames; earlier tooltip occlusion resolved"
+    },
+    "tag": "read",
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+   },
+   "panels_planning_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2
+    },
+    "frame_s": 2488
    }
   },
   {
@@ -6910,7 +7307,7 @@
      "Taric"
     ],
     "tag": "derived",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits)",
+    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); duplicate test: N-1 and N-2 solve to 0",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -7049,6 +7446,36 @@
      "basis": "2615 s sidebar: streamer row shows red X and grey portrait, P2 row shows tick"
     },
     "tag": "read"
+   },
+   "panels_prev_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "tag": "read",
+    "note": "value before commit 6b1a43e; kept as a separate read, not reconciled"
+   },
+   "panels_planning_read": {
+    "value": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2
+    },
+    "frame_s": 2554
    }
   }
  ],
