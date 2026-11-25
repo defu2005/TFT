@@ -633,3 +633,27 @@ So sánh theo cặp (per-lobby): b−a = +0,126 [0,004; 0,244]; c−b = −1,809
 
 
 Chênh full − c (ghép cặp theo lobby, cùng seed, cùng teacher): **−0,548 [−0,686; −0,411]**. Khoảng này là tác động của nhóm ẩn (augment, gods, opponents) gộp lại; không tách được từng nhóm, vì chưa có điều kiện riêng.
+
+## Giải đấu v2 (2026-11-25, bằng chứng bot)
+
+Đăng ký: `docs/model-plan.md` 10.9. 4000 lobby, seed 280000–283999, EngineResolver, TFTSet17. 8 policy cố định mỗi lobby, hoán vị ghế độc lập. Completed 32000/32000 ghế, illegal 0. Kiểm `league2.py selftest`: PASS trên 5 seed.
+
+| Policy | Placement TB | CI95 | Chênh so với v4 (CI95) |
+|---|---|---|---|
+| v4_valuemax | 2,897 | [2,832; 2,962] | −1,049 [−1,144; −0,950] |
+| v4 | 3,946 | [3,886; 4,005] | — |
+| v4_null | 3,961 | [3,900; 4,026] | +0,015 [−0,080; +0,110] |
+| mask_full | 3,991 | [3,929; 4,051] | +0,045 [−0,045; +0,136] |
+| mask_c | 4,396 | [4,335; 4,457] | +0,450 [0,355; 0,545] |
+| v3 | 4,595 | [4,535; 4,653] | +0,648 [0,558; 0,738] |
+| mask_a | 6,013 | [5,948; 6,079] | +2,067 [1,970; 2,161] |
+| scripted | 6,201 | [6,135; 6,263] | +2,255 [2,161; 2,351] |
+
+Đọc kết quả:
+- **Tiêu chí đạt:** v4 − v4_null có CI [−0,080; +0,110], chứa 0. Nửa độ rộng khoảng 0,095, gần mục tiêu 0,1.
+- valuemax (luật trang bị theo giá trị, chỉ trên ghế đó) tốt hơn v4 khoảng 1,05 điểm, trong cùng giải đấu.
+- mask_full không khác v4. mask_c kém hơn 0,45; điều này khớp với nhóm augment bị ẩn (xem mục trên).
+- Thứ tự: v4_valuemax < v4 ≈ v4_null ≈ mask_full < mask_c < v3 < mask_a < scripted.
+
+Thông lượng: 4000 lobby trong 738 giây trên 4 tiến trình, khoảng 19.500 lobby mỗi giờ (chỉ chơi). Thu dữ liệu có đặc trưng: khoảng 0,9 giây mỗi lobby trên một tiến trình, gồm cả thời gian khởi động.
+

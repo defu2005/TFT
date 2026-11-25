@@ -203,6 +203,8 @@ Mọi bằng chứng dưới đây là sim hoặc nội dung tổng hợp (8 tư
 
 **Độ rộng mục tiêu:** nửa độ rộng CI của v4 − v4_null khoảng 0,1. Nếu chạy 4000 lobby mà chưa đạt, báo đúng độ rộng và đề xuất số lobby cần thêm; không kết luận từ kết quả chưa đạt.
 
+**Kết quả (2026-11-25):** xem README mục "Giải đấu v2". v4 − v4_null = +0,015 [−0,080; +0,110], đạt tiêu chí. valuemax −1,05 so với v4. mask_full +0,045 (không khác v4). mask_c +0,45. v3 +0,65. mask_a +2,07. scripted +2,26.
+
 ### 10.7 Việc tiếp theo (sim)
 
 1. Chạy tiêu chí §5 gốc trên B (chỉ-universal trong 0,5 của scripted).
