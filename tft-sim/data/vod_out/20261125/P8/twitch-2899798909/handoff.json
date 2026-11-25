@@ -32,6 +32,6 @@
     }
   },
   "needs_review": 5,
-  "commit": "5b00f6b",
+  "commit": "17fe8df",
   "remaining": "P8-primary owns VOD. Densified g2 loading+early. Continue from ~2900s."
 }
