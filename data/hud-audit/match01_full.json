@@ -4037,6 +4037,41 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
+   },
+   "frame_A_read": {
+    "frame_s": 1364,
+    "timer": 19,
+    "counter": "8/8",
+    "level": 8,
+    "xp": "0/68",
+    "gold": 1,
+    "streak": 9,
+    "shop": [
+     "LeBlanc",
+     "Kha'Zix",
+     "Amumu",
+     "Hecarim",
+     "Ahri"
+    ],
+    "panel": {
+     "Thornmaiden": 1,
+     "Elderwood": 5,
+     "Rapidfire": 2,
+     "Summoner": 2,
+     "Brawler": 2,
+     "Riftbeast": 2,
+     "Executioner": 1,
+     "Fae": 1,
+     "Spellweaver": 1,
+     "marker": "1+"
+    },
+    "shop_conflict": "master 4-1 shop has an empty slot 4; this frame shows Hecarim there (3 gold)",
+    "rail_hp_rows": "nonzero HP on the visible rows; two rows covered by hover cards",
+    "bench": "not read",
+    "board_units_rowcol": "not read by row and column",
+    "stars_items": "not resolvable at 720p",
+    "tag": "read",
+    "source": "frame at 1364 s, viewed in this session"
    }
   },
   {
