@@ -105,6 +105,7 @@ for da, tw in amap.items():
         alias_ok &= a == b
 print("alias set18", len(amap), "DA==twin", alias_ok)
 # 7b) Duong thuc: cung mot ban ghi, DA_Bloodthirster va TFT_Item_Bloodthirster cho cung p_a
+F.set_content(18, c18a)  # dat noi dung da alias truoc khi do, khong phu thuoc import fidelity
 # Ban ghi doi xung (hai ben giong het): so tran thang/hoa theo 20 seed phai giong nhau giua DA va TFT_Item
 rec_da = fixture(names18, 18)
 rec_da["b"] = json.loads(json.dumps(rec_da["a"]))
