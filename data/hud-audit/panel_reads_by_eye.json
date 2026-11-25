@@ -316,12 +316,75 @@
       "Brawler": 2,
       "Juggernaut": 2,
       "marker": "2+"
+    },
+    "4-1": {
+      "Thornmaiden": 1,
+      "Elderwood": 5,
+      "Rapidfire": 2,
+      "Summoner": 2,
+      "Brawler": 2,
+      "Riftbeast": 2,
+      "Executioner": 1,
+      "marker": "1+",
+      "note": "bottom rows partly cut"
+    },
+    "4-2": {
+      "Bounty Seeker": 1,
+      "Elderwood": 5,
+      "Brawler": 2,
+      "Executioner": 1,
+      "Fae": 1,
+      "Rapidfire": 1,
+      "Spellweaver": 1,
+      "note": "bottom row partly cut; marker not visible"
+    },
+    "4-3": {
+      "Bounty Seeker": 1,
+      "Old Growth": 1,
+      "Brawler": 4,
+      "Elderwood": 4,
+      "Executioner": 1,
+      "Juggernaut": 1,
+      "Vanguard": 1,
+      "marker": "1+",
+      "note": "bottom row partly cut"
+    },
+    "4-4": {
+      "Bounty Seeker": 1,
+      "Old Growth": 1,
+      "Brawler": 4,
+      "Elderwood": 4,
+      "Executioner": 1,
+      "Juggernaut": 1,
+      "Vanguard": 1,
+      "marker": "1+",
+      "note": "bottom row partly cut"
+    },
+    "4-5": {
+      "Bounty Seeker": 1,
+      "Old Growth": 1,
+      "Brawler": 4,
+      "Elderwood": 3,
+      "Juggernaut": 2,
+      "Executioner": 1,
+      "Inferno": 1,
+      "note": "bottom row partly cut"
+    },
+    "4-6": {
+      "Bounty Seeker": 1,
+      "Old Growth": 1,
+      "Brawler": 4,
+      "Elderwood": 4,
+      "Executioner": 1,
+      "Juggernaut": 1,
+      "Vanguard": 1,
+      "note": "bottom row partly cut"
     }
   },
   "not_yet_read": [
-    "2-2 confidence low (faded)",
     "3-2 faded, unread",
-    "4-1 to 4-6 unread, shown as not read in this pass",
-    "5-1 to 5-7 read coarsely"
+    "2-2 faded, low confidence",
+    "5-1 to 5-7 read coarsely, not re-checked",
+    "4-x bottom rows cut; re-check"
   ]
 }
