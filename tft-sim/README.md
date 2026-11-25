@@ -626,7 +626,7 @@ So sánh theo cặp (per-lobby): b−a = +0,126 [0,004; 0,244]; c−b = −1,809
 | scripted | 6,122 | [6,112; 6,353] | 1274 |
 
 Đọc kết quả:
-- v4 và v4_null là cùng một policy nhưng cách nhau 0,16 điểm. Đây là nhiễu của giải đấu không cân bằng. Chưa đủ để kết luận harness lệch, nhưng vượt ngưỡng 0,2 đã đăng ký? Không vượt, nhưng gần; cần chạy lại với nhiều lobby hơn trước khi dùng bảng này để xếp hạng.
+- v4 và v4_null là cùng một policy nhưng cách nhau 0,16 điểm. Đây là nhiễu của giải đấu không cân bằng. Chênh này dưới ngưỡng 0,2 đã đăng ký nhưng không bằng 0, nên giải đấu chưa đủ để xếp hạng. Cần thêm lobby và cân bằng ghế trước khi dùng bảng này.
 - Bảng này là placement trung bình trong lobby hỗn hợp, không phải đấu trực tiếp. Phụ thuộc vào 7 đối thủ còn lại.
 - Thứ tự chung: teacher ≈ full < c < v3 < scripted. Phù hợp với các kết quả trước.
 - valuemax và CEM chưa đưa vào pool (monkeypatch toàn cục).

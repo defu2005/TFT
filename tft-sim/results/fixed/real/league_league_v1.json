@@ -1,0 +1,65 @@
+{
+  "tag": "league_v1",
+  "seeds": [
+    270000,
+    270999
+  ],
+  "pool": [
+    "scripted",
+    "v3",
+    "v4",
+    "mask_full",
+    "mask_c",
+    "v4_null"
+  ],
+  "table": {
+    "scripted": {
+      "mean_placement": 6.122,
+      "ci95_by_lobby": [
+        6.112,
+        6.353
+      ],
+      "n_seats": 1274
+    },
+    "v3": {
+      "mean_placement": 4.583,
+      "ci95_by_lobby": [
+        4.466,
+        4.717
+      ],
+      "n_seats": 1392
+    },
+    "v4": {
+      "mean_placement": 3.944,
+      "ci95_by_lobby": [
+        3.774,
+        4.024
+      ],
+      "n_seats": 1365
+    },
+    "mask_full": {
+      "mean_placement": 4.018,
+      "ci95_by_lobby": [
+        3.801,
+        4.045
+      ],
+      "n_seats": 1377
+    },
+    "mask_c": {
+      "mean_placement": 4.306,
+      "ci95_by_lobby": [
+        4.201,
+        4.448
+      ],
+      "n_seats": 1316
+    },
+    "v4_null": {
+      "mean_placement": 4.104,
+      "ci95_by_lobby": [
+        3.956,
+        4.212
+      ],
+      "n_seats": 1276
+    }
+  }
+}
