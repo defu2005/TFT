@@ -91,10 +91,17 @@
    "actions": {
     "value": {
      "buys": [],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": "shared arena: no streamer result or combat read",
@@ -219,10 +226,17 @@
    "actions": {
     "value": {
      "buys": [],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -374,10 +388,17 @@
        "tag": "derived"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -537,10 +558,17 @@
        "tag": "derived"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -687,10 +715,22 @@
        "tag": "derived"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [
+      {
+       "t_s": 478.0,
+       "gold_change": -4
+      }
+     ],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    }
   },
   {
@@ -838,10 +878,17 @@
        "tag": "derived"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -989,10 +1036,22 @@
        "tag": "derived"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [
+      {
+       "t_s": 649.0,
+       "gold_change": -4
+      }
+     ],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -1124,10 +1183,17 @@
        "tag": "derived"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -1288,10 +1354,17 @@
        "tag": "derived"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -1465,10 +1538,17 @@
        "gold_drop": 2.0,
        "tag": "candidate"
       }
+     ],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -1625,10 +1705,22 @@
        "tag": "candidate"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [
+      {
+       "t_s": 846.5,
+       "gold_change": -4
+      }
+     ],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -1820,10 +1912,17 @@
        "tag": "derived"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -2047,10 +2146,22 @@
        "tag": "derived"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [
+      {
+       "t_s": 984.8,
+       "gold_change": -4
+      }
+     ],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -2257,10 +2368,17 @@
        "tag": "candidate"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -2384,10 +2502,17 @@
    "actions": {
     "value": {
      "buys": [],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -2610,10 +2735,26 @@
        "gold_drop": 3,
        "tag": "candidate"
       }
+     ],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [
+      {
+       "t_s": 1167.2,
+       "gold_change": -4
+      },
+      {
+       "t_s": 1184.2,
+       "gold_change": -4
+      }
+     ],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -2805,10 +2946,22 @@
        "tag": "derived"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [
+      {
+       "t_s": 1316.5,
+       "gold_change": -4
+      }
+     ],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -2977,10 +3130,17 @@
        "gold_drop": 6,
        "tag": "candidate"
       }
+     ],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -3179,10 +3339,40 @@
        "gold_drop": 9.0,
        "tag": "candidate"
       }
+     ],
+     "rerolls_from_reader": [
+      {
+       "t_s": 1363.8,
+       "gold_change": -2,
+       "slots_changed": 4
+      }
+     ],
+     "xp_buy_candidates_from_reader": [
+      {
+       "t_s": 1356.2,
+       "gold_change": -4
+      },
+      {
+       "t_s": 1356.8,
+       "gold_change": -4
+      },
+      {
+       "t_s": 1357.2,
+       "gold_change": -4
+      },
+      {
+       "t_s": 1372.5,
+       "gold_change": -4
+      }
+     ],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -3334,10 +3524,17 @@
        "tag": "candidate"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    }
   },
   {
@@ -3477,10 +3674,17 @@
    "actions": {
     "value": {
      "buys": [],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": null,
@@ -3590,10 +3794,17 @@
    "actions": {
     "value": {
      "buys": [],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": "shared arena: no streamer result or combat read",
@@ -3745,10 +3956,17 @@
        "tag": "candidate"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -3894,10 +4112,17 @@
    "actions": {
     "value": {
      "buys": [],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -4052,10 +4277,22 @@
        "tag": "candidate"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [
+      {
+       "t_s": 1802.0,
+       "gold_change": -4
+      }
+     ],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -4273,10 +4510,61 @@
        "gold_drop": 14.5,
        "tag": "candidate"
       }
+     ],
+     "rerolls_from_reader": [
+      {
+       "t_s": 1840.8,
+       "gold_change": -2,
+       "slots_changed": 4
+      },
+      {
+       "t_s": 1844.5,
+       "gold_change": -2,
+       "slots_changed": 5
+      },
+      {
+       "t_s": 1847.0,
+       "gold_change": -2,
+       "slots_changed": 5
+      },
+      {
+       "t_s": 1848.0,
+       "gold_change": -2,
+       "slots_changed": 5
+      },
+      {
+       "t_s": 1852.2,
+       "gold_change": -2,
+       "slots_changed": 5
+      },
+      {
+       "t_s": 1854.8,
+       "gold_change": -2,
+       "slots_changed": 5
+      }
+     ],
+     "xp_buy_candidates_from_reader": [
+      {
+       "t_s": 1831.2,
+       "gold_change": -4
+      },
+      {
+       "t_s": 1841.2,
+       "gold_change": -4
+      },
+      {
+       "t_s": 1842.8,
+       "gold_change": -4
+      }
+     ],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    }
   },
   {
@@ -4456,10 +4744,58 @@
        "gold_drop": 6.0,
        "tag": "candidate"
       }
+     ],
+     "rerolls_from_reader": [
+      {
+       "t_s": 1909.2,
+       "gold_change": -2,
+       "slots_changed": 4
+      },
+      {
+       "t_s": 1911.8,
+       "gold_change": -2,
+       "slots_changed": 5
+      },
+      {
+       "t_s": 1920.2,
+       "gold_change": -2,
+       "slots_changed": 5
+      },
+      {
+       "t_s": 1922.2,
+       "gold_change": -2,
+       "slots_changed": 4
+      },
+      {
+       "t_s": 1924.5,
+       "gold_change": -2,
+       "slots_changed": 5
+      },
+      {
+       "t_s": 1925.8,
+       "gold_change": -2,
+       "slots_changed": 5
+      },
+      {
+       "t_s": 1929.0,
+       "gold_change": -2,
+       "slots_changed": 5
+      }
+     ],
+     "xp_buy_candidates_from_reader": [
+      {
+       "t_s": 1911.5,
+       "gold_change": -4
+      }
+     ],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -4640,10 +4976,33 @@
        "gold_drop": 12,
        "tag": "candidate"
       }
+     ],
+     "rerolls_from_reader": [
+      {
+       "t_s": 2003.5,
+       "gold_change": -2,
+       "slots_changed": 5
+      },
+      {
+       "t_s": 2006.5,
+       "gold_change": -2,
+       "slots_changed": 5
+      }
+     ],
+     "xp_buy_candidates_from_reader": [
+      {
+       "t_s": 2004.8,
+       "gold_change": -4
+      }
+     ],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": null,
@@ -4748,10 +5107,17 @@
    "actions": {
     "value": {
      "buys": [],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": "shared arena: no streamer result or combat read",
@@ -4939,10 +5305,33 @@
        "tag": "derived"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [
+      {
+       "t_s": 2094.5,
+       "gold_change": -2,
+       "slots_changed": 4
+      },
+      {
+       "t_s": 2096.5,
+       "gold_change": -2,
+       "slots_changed": 5
+      }
+     ],
+     "xp_buy_candidates_from_reader": [
+      {
+       "t_s": 2108.2,
+       "gold_change": -4
+      }
+     ],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -5126,10 +5515,23 @@
        "tag": "candidate"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [
+      {
+       "t_s": 2165.8,
+       "gold_change": -2,
+       "slots_changed": 4
+      }
+     ],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    }
   },
   {
@@ -5281,10 +5683,17 @@
        "tag": "derived"
       }
      ],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -5440,10 +5849,17 @@
        "gold_drop": -1,
        "tag": "candidate"
       }
+     ],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -5623,10 +6039,23 @@
        "gold_drop": 7,
        "tag": "candidate"
       }
+     ],
+     "rerolls_from_reader": [
+      {
+       "t_s": 2398.8,
+       "gold_change": -2,
+       "slots_changed": 4
+      }
+     ],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    }
   },
   {
@@ -5779,10 +6208,17 @@
    "actions": {
     "value": {
      "buys": [],
-     "refresh_candidates": []
+     "refresh_candidates": [],
+     "rerolls_from_reader": [],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
+     ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    }
   },
   {
@@ -5908,10 +6344,23 @@
        "gold_drop": 2.0,
        "tag": "candidate"
       }
+     ],
+     "rerolls_from_reader": [
+      {
+       "t_s": 2481.0,
+       "gold_change": -2,
+       "slots_changed": 4
+      }
+     ],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
@@ -6088,10 +6537,48 @@
        "gold_drop": 4,
        "tag": "candidate"
       }
+     ],
+     "rerolls_from_reader": [
+      {
+       "t_s": 2482.5,
+       "gold_change": -2,
+       "slots_changed": 4
+      },
+      {
+       "t_s": 2483.5,
+       "gold_change": -2,
+       "slots_changed": 4
+      },
+      {
+       "t_s": 2484.5,
+       "gold_change": -2,
+       "slots_changed": 5
+      },
+      {
+       "t_s": 2489.8,
+       "gold_change": -2,
+       "slots_changed": 4
+      },
+      {
+       "t_s": 2546.8,
+       "gold_change": -2,
+       "slots_changed": 4
+      }
+     ],
+     "xp_buy_candidates_from_reader": [
+      {
+       "t_s": 2491.0,
+       "gold_change": -4
+      }
+     ],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    }
   },
   {
@@ -6268,10 +6755,33 @@
        "gold_drop": 12.0,
        "tag": "candidate"
       }
+     ],
+     "rerolls_from_reader": [
+      {
+       "t_s": 2548.0,
+       "gold_change": -2,
+       "slots_changed": 4
+      },
+      {
+       "t_s": 2557.5,
+       "gold_change": -2,
+       "slots_changed": 5
+      },
+      {
+       "t_s": 2564.0,
+       "gold_change": -2,
+       "slots_changed": 5
+      }
+     ],
+     "xp_buy_candidates_from_reader": [],
+     "not_derived": [
+      "sells",
+      "level_ups",
+      "bench_moves"
      ]
     },
     "tag": "derived",
-    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold)"
+    "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
    },
    "result": {
     "value": {
