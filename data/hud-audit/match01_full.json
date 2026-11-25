@@ -51,7 +51,10 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
+    "reason": "no unique board available from the reads recorded so far",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -117,6 +120,12 @@
    "opponent_board": {
     "value": "n/a: no PvP opponent this round",
     "tag": "n/a"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -168,7 +177,10 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
+    "reason": "no unique board available from the reads recorded so far",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -265,6 +277,12 @@
    "opponent_board": {
     "value": "n/a: PvE round",
     "tag": "n/a"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -316,7 +334,10 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
+    "reason": "no unique board available from the reads recorded so far",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -437,6 +458,12 @@
    "opponent_board": {
     "value": "n/a: PvE round",
     "tag": "n/a"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -489,7 +516,10 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
+    "reason": "no unique board available from the reads recorded so far",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -617,6 +647,12 @@
    "opponent_board": {
     "value": "n/a: PvE round",
     "tag": "n/a"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -682,7 +718,10 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
+    "reason": "no unique board available from the reads recorded so far",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -713,7 +752,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -774,6 +815,18 @@
     },
     "tag": "derived",
     "basis": "purchases events; per-unit buys; reroll candidates by slots changed (not yet confirmed against gold); rerolls and XP buy candidates added from reader state changes"
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -826,7 +879,10 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
+    "reason": "no unique board available from the reads recorded so far",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -857,7 +913,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -945,6 +1003,18 @@
     },
     "tag": "derived",
     "basis": "2-3 planning orange 1 after 2-2"
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -1001,7 +1071,10 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
+    "reason": "no unique board available from the reads recorded so far",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -1032,7 +1105,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -1113,6 +1188,18 @@
     },
     "tag": "derived",
     "basis": "2-3 losers P2,P3,P5,P6 from HP flags; streak 1 to 2 with 2-4 PvE"
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -1169,7 +1256,10 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
+    "reason": "no unique board available from the reads recorded so far",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -1265,6 +1355,12 @@
    "opponent_board": {
     "value": "n/a: no PvP this round (HP flags)",
     "tag": "n/a"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -1328,7 +1424,10 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
+    "reason": "no unique board available from the reads recorded so far",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -1359,7 +1458,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -1441,6 +1542,18 @@
     },
     "tag": "derived",
     "basis": "streak icon from planning frames on disk (p2/p3 crops)"
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -1513,7 +1626,10 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
+    "reason": "no unique board available from the reads recorded so far",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -1544,7 +1660,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -1630,6 +1748,18 @@
     },
     "tag": "derived",
     "basis": "streak icon from planning frames on disk (p2/p3 crops)"
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -1693,7 +1823,10 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
+    "reason": "no unique board available from the reads recorded so far",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -1811,6 +1944,12 @@
    "opponent_board": {
     "value": "n/a: no PvP this round (HP flags)",
     "tag": "n/a"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -1921,7 +2060,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "trait_panel_886": {
@@ -2017,6 +2158,18 @@
     },
     "tag": "derived",
     "basis": "streak icon from planning frames on disk (p2/p3 crops)"
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -2103,7 +2256,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "trait_panel_1018_combat": {
@@ -2261,6 +2416,18 @@
     },
     "tag": "derived",
     "basis": "streak icon from planning frames on disk (p2/p3 crops)"
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -2362,7 +2529,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "trait_panel_1058_planning": {
@@ -2483,6 +2652,18 @@
     },
     "tag": "derived",
     "basis": "streak 6 to 7 with 3-4 PvE (no HP losers)"
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -2539,7 +2720,10 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
+    "reason": "no unique board available from the reads recorded so far",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -2628,6 +2812,12 @@
    "opponent_board": {
     "value": "n/a: no PvP this round (HP flags)",
     "tag": "n/a"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -2694,17 +2884,10 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": [
-     "Alistar",
-     "Ezreal",
-     "Kobuko",
-     "Malphite",
-     "Mama Beak",
-     "Rek'Sai",
-     "Xayah"
-    ],
-    "tag": "candidate",
-    "basis": "solver on planning panel (N=7, k=1) gives 3 solutions; this is the only one containing all 3-3 units; Monolith 1 pins Malphite; duplicate test: N-1 = 6 distinct gives 0 solutions, so 3-5 has 7 distinct units; the second Kobuko from 3-3 is no longer on the board (sold or moved, not confirmed)",
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "candidate set recorded: Alistar, Ezreal, Kobuko, Malphite, Mama Beak, Rek'Sai, Xayah; three solutions on the 1186 s planning panel (N=7, k=1); other two omit Kobuko or Alistar; 3-3 units favour this one but a sold unit is unconfirmed",
+    "reason": "board not confirmed by a second independent read; candidates listed",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -2736,7 +2919,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -2925,6 +3110,18 @@
      "note": "re-read at 3x from 1186 s: Brawler 3 (not 2)"
     },
     "frame_s": 1186
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -2994,17 +3191,11 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": [
-     "Alistar",
-     "Ezreal",
-     "Hecarim",
-     "Krug",
-     "LeBlanc",
-     "Mama Beak",
-     "Xayah"
-    ],
-    "tag": "candidate",
-    "basis": "panel solver N=7 k=0; assumes no emblem; 3-3 to 3-6 adds Hecarim with no purchase event (1 unexplained)"
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "candidate set recorded: Alistar, Ezreal, Hecarim, Krug, LeBlanc, Mama Beak, Xayah; planning counter unresolved; solver on the 1250 s panel with assumed N=7, k=0; one unexplained Hecarim buy",
+    "reason": "board not confirmed by a second independent read; candidates listed",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -3147,6 +3338,18 @@
     },
     "tag": "derived",
     "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -3203,17 +3406,11 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": [
-     "Alistar",
-     "Ezreal",
-     "Hecarim",
-     "Krug",
-     "LeBlanc",
-     "Mama Beak",
-     "Xayah"
-    ],
-    "tag": "candidate",
-    "basis": "panel solver N=7 k=0; assumes no emblem"
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "candidate set recorded: Alistar, Ezreal, Hecarim, Krug, LeBlanc, Mama Beak, Xayah; planning counter and board unresolved at 1316 s; solver assumed N=7, k=0",
+    "reason": "board not confirmed by a second independent read; candidates listed",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -3345,6 +3542,12 @@
    "opponent_board": {
     "value": "n/a: no PvP opponent this round",
     "tag": "n/a"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -3407,18 +3610,10 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": [
-     "Alistar",
-     "Ezreal",
-     "Hecarim",
-     "Krug",
-     "LeBlanc",
-     "Mama Beak",
-     "Xayah",
-     "Zyra"
-    ],
-    "tag": "candidate",
-    "basis": "solver on own planning panel (N=8, k=1) gives 3 solutions; this is solution 2 (3-7 set + Zyra); Thornmaiden 1 pins Zyra; not unique",
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "candidate set recorded: Alistar, Ezreal, Hecarim, Krug, LeBlanc, Mama Beak, Xayah, Zyra; three solutions on the 1364 s planning panel (N=8, k=1); Ornn and Gromp/Murkwolf variants also fit; Zyra pinned by Thornmaiden 1",
+    "reason": "board not confirmed by a second independent read; candidates listed",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -3450,7 +3645,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -3594,6 +3791,18 @@
     },
     "tag": "derived",
     "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -3695,7 +3904,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -3797,6 +4008,18 @@
      "Riftbeast": 1
     },
     "frame_s": 1468
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -3902,7 +4125,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -4001,6 +4226,18 @@
      "Riftbeast": 1
     },
     "frame_s": 1540
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -4064,7 +4301,10 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
+    "reason": "no unique board available from the reads recorded so far",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -4130,6 +4370,12 @@
    "opponent_board": {
     "value": "n/a: no PvP opponent this round",
     "tag": "n/a"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -4192,18 +4438,10 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": [
-     "Alistar",
-     "Draven",
-     "Ezreal",
-     "Gnar",
-     "Hecarim",
-     "Krug",
-     "Maokai",
-     "Sett"
-    ],
-    "tag": "candidate",
-    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits); panel reads disagree (planning vs earlier re-read); adjudication pending",
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "candidate set recorded: Alistar, Draven, Ezreal, Gnar, Hecarim, Krug, Maokai, Sett; planning-panel solve is unique (N=8, k=1), but the earlier panel re-read disagrees (Elderwood 3, Juggernaut 2, Inferno 1); pixel adjudication not done",
+    "reason": "board not confirmed by a second independent read; candidates listed",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -4235,7 +4473,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -4342,6 +4582,18 @@
      "Riftbeast": 1
     },
     "frame_s": 1652
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -4447,7 +4699,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -4546,6 +4800,18 @@
      "Riftbeast": 1
     },
     "frame_s": 1722
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -4737,6 +5003,12 @@
    "opponent_board": {
     "value": "n/a: no PvP opponent this round",
     "tag": "n/a"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -4799,18 +5071,10 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": [
-     "Alistar",
-     "Draven",
-     "Ezreal",
-     "Gnar",
-     "Hecarim",
-     "Krug",
-     "Maokai",
-     "Sett"
-    ],
-    "tag": "candidate",
-    "basis": "solver on own planning panel (N=8, k=1): unique; pins Bounty Seeker to Draven and Old Growth to Maokai (1/1 traits); panel reads disagree (planning vs earlier re-read); adjudication pending",
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "candidate set recorded: Alistar, Draven, Ezreal, Gnar, Hecarim, Krug, Maokai, Sett; planning-panel solve is unique (N=8, k=1), but the earlier re-read (Greenfather 1, marker 2+) disagrees; pixel adjudication not done",
+    "reason": "board not confirmed by a second independent read; candidates listed",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -4842,7 +5106,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -5050,6 +5316,18 @@
      "Riftbeast": 1
     },
     "frame_s": 1836
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -5157,7 +5435,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -5297,6 +5577,18 @@
     },
     "tag": "derived",
     "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -5413,7 +5705,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -5552,6 +5846,18 @@
      "Juggernaut": 2
     },
     "frame_s": 2000
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -5610,7 +5916,10 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
+    "reason": "no unique board available from the reads recorded so far",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -5676,6 +5985,12 @@
    "opponent_board": {
     "value": "n/a: no PvP opponent this round",
     "tag": "n/a"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -5792,7 +6107,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -5941,6 +6258,18 @@
      "Juggernaut": 2
     },
     "frame_s": 2094
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -6013,19 +6342,10 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": [
-     "Alistar",
-     "Amumu",
-     "Draven",
-     "Ezreal",
-     "Gnar",
-     "Ivern",
-     "Kennen",
-     "Maokai",
-     "Taric"
-    ],
-    "tag": "candidate",
-    "basis": "solver on own planning panel (N=9, k=2): unique; pins Emerald Aspect to Taric, Greenfather to Ivern, Bounty Seeker to Draven (1/1 traits); panel reads disagree (planning vs earlier re-read); adjudication pending",
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "candidate set recorded: Alistar, Amumu, Draven, Ezreal, Gnar, Ivern, Kennen, Maokai, Taric; planning-panel solve is unique (N=9, k=2), but the earlier re-read (not a copy of 5-5) disagrees; pixel adjudication not done",
+    "reason": "board not confirmed by a second independent read; candidates listed",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -6057,7 +6377,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -6183,6 +6505,18 @@
      "Juggernaut": 2
     },
     "frame_s": 2172
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -6405,6 +6739,12 @@
      "Juggernaut": 2
     },
     "frame_s": 2236
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -6477,19 +6817,10 @@
     "tag": "n/a"
    },
    "board_units": {
-    "value": [
-     "Alistar",
-     "Amumu",
-     "Draven",
-     "Ezreal",
-     "Gnar",
-     "Ivern",
-     "Kennen",
-     "Maokai",
-     "Taric"
-    ],
-    "tag": "candidate",
-    "basis": "no planning panel read at this frame; propagated from 5-3 panel; not checked against its own panel",
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "candidate set recorded: Alistar, Amumu, Draven, Ezreal, Gnar, Ivern, Kennen, Maokai, Taric; no panel read at the 6-1 planning frame; propagated from 5-3 without its own read",
+    "reason": "board not confirmed by a second independent read; candidates listed",
     "note": "hexes unresolved"
    },
    "bench_units": {
@@ -6521,7 +6852,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -6589,6 +6922,18 @@
     },
     "tag": "derived",
     "basis": "icon colour and count at planning N vs planning N+1 (streak strip); blue count = loss"
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -6705,7 +7050,9 @@
    },
    "opponent": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "HP-loss set from round_hp_change_flags.json used as the candidate pool; nameplate and right-rail OCR not yet run on this round; scouting view not read",
+    "reason": "HP-loss flags show which players lost HP but not who the streamer fought; pairing needs nameplate/right-rail OCR not yet done"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -6827,6 +7174,18 @@
      "Juggernaut": 2
     },
     "frame_s": 2342
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -7040,6 +7399,18 @@
      "Juggernaut": 2
     },
     "frame_s": 2404
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -7113,7 +7484,10 @@
    },
    "board_units": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "attempt": "no solver run: panel not read at a planning frame in this round, and the roster_candidates field is not solved against a panel",
+    "reason": "no unique board available from the reads recorded so far",
+    "note": "hexes unresolved"
    },
    "bench_units": {
     "value": null,
@@ -7196,6 +7570,12 @@
    "opponent_board": {
     "value": "n/a: no PvP opponent this round",
     "tag": "n/a"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -7457,6 +7837,18 @@
      "Juggernaut": 2
     },
     "frame_s": 2488
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   },
   {
@@ -7717,6 +8109,18 @@
      "Juggernaut": 2
     },
     "frame_s": 2554
+   },
+   "opponent_board": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "no opponent panel or scouting-view read for this round; solver not run on any opponent panel",
+    "reason": "opponent board needs the opponent identity first, and the scouting view has not been read"
+   },
+   "hexes": {
+    "value": null,
+    "tag": "unresolved",
+    "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
+    "reason": "hex positions need a per-unit location read that has not been done"
    }
   }
  ],

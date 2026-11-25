@@ -1,7 +1,7 @@
 import json, sys
 d = json.load(open('data/hud-audit/match01_full.json'))
 REQUIRED = ['planning', 'combat', 'result', 'round_type', 'augment', 'actions']
-FULL = ['board_units', 'bench_units', 'stars', 'items', 'opponent', 'opponent_board']
+FULL = ['board_units', 'hexes', 'bench_units', 'stars', 'items', 'opponent', 'opponent_board']
 ok = {'read', 'derived', 'assigned', 'n/a'}
 def resolved(v):
     return isinstance(v, dict) and v.get('tag') in ok and v.get('value') is not None
@@ -44,3 +44,8 @@ if os.path.exists('data/hud-audit/blind_reread_rates.json'):
     print("BLIND RE-READ (script OCR, 10 rounds):")
     print("  protocol:", b['protocol'])
     for f,v in b['rates'].items(): print(f"  {f}: {v['matched']}/{v['of']} = {v['rate']}")
+
+print("RESOLVED (tag read/derived/assigned/n-a with value), of 38 rounds:")
+for f in FULL + REQUIRED:
+    c = sum(1 for r in d['rounds'] if resolved(r.get(f)))
+    print(f"  {f}: {c}")
