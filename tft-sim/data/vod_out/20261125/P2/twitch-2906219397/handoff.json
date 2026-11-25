@@ -7,7 +7,7 @@
   "covered_ranges_s": [
     [
       520,
-      1100
+      2720
     ]
   ],
   "remaining_ranges_s": [
@@ -16,7 +16,7 @@
       520
     ],
     [
-      1100,
+      2720,
       18571
     ]
   ],
@@ -25,16 +25,16 @@
   ],
   "counts": {
     "games": 1,
-    "fights": 3,
+    "fights": 6,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 3
+      "winner_null": 6
     }
   },
   "needs_review": 0,
-  "commit": "24d9173",
-  "remaining": "tiếp tục PvP còn lại của g520 rồi các ván sau; 0-520 pre-game/queue"
+  "commit": null,
+  "remaining": "0-520 pregame; 2720+ client rồi lobby NORMAL (skip non-ranked). Tìm thêm ranked queue trên VOD này nếu có."
 }
