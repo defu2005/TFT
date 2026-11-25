@@ -1,0 +1,56 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2896271382",
+  "slot": "P3",
+  "role": "primary",
+  "status": "partial",
+  "covered_ranges_s": [
+    [
+      50,
+      2800
+    ],
+    [
+      3000,
+      5500
+    ],
+    [
+      6000,
+      9500
+    ],
+    [
+      10000,
+      14000
+    ],
+    [
+      14500,
+      17000
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      17000,
+      17148
+    ]
+  ],
+  "game_ids": [
+    "twitch-2896271382-g50",
+    "twitch-2896271382-g3000",
+    "twitch-2896271382-g6000",
+    "twitch-2896271382-g10000",
+    "twitch-2896271382-g14500"
+  ],
+  "counts": {
+    "games": 5,
+    "fights": 10,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 10
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "Volume stubs Ranked Set18. 2026-11-25T19:41:56Z"
+}

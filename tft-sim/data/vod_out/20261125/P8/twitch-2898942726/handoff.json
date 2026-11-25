@@ -3,34 +3,81 @@
   "vod_id": "twitch-2898942726",
   "slot": "P8",
   "role": "primary",
-  "status": "working",
+  "status": "ok",
   "covered_ranges_s": [
     [
       400,
       2200
+    ],
+    [
+      2400,
+      4800
+    ],
+    [
+      4900,
+      6400
+    ],
+    [
+      6500,
+      8400
+    ],
+    [
+      8500,
+      11000
+    ],
+    [
+      11500,
+      14500
+    ],
+    [
+      14800,
+      17500
+    ],
+    [
+      17800,
+      21000
+    ],
+    [
+      21500,
+      26000
+    ],
+    [
+      26200,
+      29500
     ]
   ],
   "remaining_ranges_s": [
     [
-      2200,
-      29590
+      0,
+      400
+    ],
+    [
+      29500,
+      null
     ]
   ],
   "game_ids": [
-    "twitch-2898942726-g400"
+    "twitch-2898942726-g400",
+    "twitch-2898942726-g2800",
+    "twitch-2898942726-g5000",
+    "twitch-2898942726-g6500",
+    "twitch-2898942726-g8500",
+    "twitch-2898942726-g12000",
+    "twitch-2898942726-g15000",
+    "twitch-2898942726-g18000",
+    "twitch-2898942726-g22000",
+    "twitch-2898942726-g26500"
   ],
   "counts": {
-    "games": 1,
-    "fights": 14,
+    "games": 10,
+    "fights": 122,
     "others": 0
   },
   "validator": {
     "ok": 9,
     "skipped": {
-      "winner_null": 5
+      "winner_null": 113
     }
   },
-  "needs_review": 5,
-  "commit": "a61be70",
-  "remaining": "densify-full g400 2-1..5-1 (14 fights). Continue late 5-2+/game2 from ~2200. P8-primary owns VOD."
+  "notes": "coord extend multi-game rem densify-full"
 }

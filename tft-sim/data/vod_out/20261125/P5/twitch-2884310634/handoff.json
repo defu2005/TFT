@@ -3,48 +3,58 @@
   "vod_id": "twitch-2884310634",
   "slot": "P5",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       0,
-      1500
+      3600
     ],
     [
       3900,
-      5700
-    ],
-    [
-      5550,
       7200
-    ]
-  ],
-  "remaining_ranges_s": [
-    [
-      1500,
-      3900
     ],
     [
-      7200,
-      99999
+      7800,
+      12000
+    ],
+    [
+      14000,
+      17000
+    ],
+    [
+      18000,
+      21000
+    ],
+    [
+      22000,
+      24300
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2884310634-g0",
     "twitch-2884310634-g3900",
-    "twitch-2884310634-g5550"
+    "twitch-2884310634-g5550",
+    "twitch-2884310634-g1500",
+    "twitch-2884310634-g7800",
+    "twitch-2884310634-g14000",
+    "twitch-2884310634-g18000",
+    "twitch-2884310634-g22000"
   ],
   "counts": {
-    "games": 3,
-    "fights": 3,
-    "others": 3
+    "games": 8,
+    "fights": 112,
+    "others": 112
+  },
+  "notes": "Densify thin stub+rem → 8g/112f; agent bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
+  "claim": {
+    "agent": "bc-34904f9d-c35f-5dd9-9a0d-abcc0886c9d3",
+    "claimed_at": "2026-11-25T19:22:19Z"
   },
   "validator": {
-    "ok": 0,
+    "ok": 95,
     "skipped": {
-      "winner_null": 3
+      "winner_null": 17
     }
-  },
-  "needs_review": 3,
-  "commit": null,
-  "remaining": "Volume stub; densify-full remaining ranked PvP. Skip set19/TPC."
+  }
 }

@@ -7,10 +7,6 @@
   "covered_ranges_s": [
     [
       60,
-      2500
-    ],
-    [
-      2500,
       4400
     ],
     [
@@ -26,16 +22,16 @@
   ],
   "counts": {
     "games": 3,
-    "fights": 36,
+    "fights": 42,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 36
+      "winner_null": 38
     }
   },
-  "needs_review": 36,
+  "needs_review": 0,
   "commit": null,
-  "remaining": "Scout-expand stubs (3 games). Densify boards next if needed."
+  "remaining": "densify-full 14 PvP/game trait-lock; needs_review cleared"
 }
