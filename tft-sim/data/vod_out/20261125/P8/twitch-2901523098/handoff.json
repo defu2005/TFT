@@ -1,0 +1,36 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2901523098",
+  "slot": "P8",
+  "role": "primary",
+  "status": "working",
+  "covered_ranges_s": [
+    [
+      250,
+      1000
+    ]
+  ],
+  "remaining_ranges_s": [
+    [
+      1000,
+      28980
+    ]
+  ],
+  "game_ids": [
+    "twitch-2901523098-g250"
+  ],
+  "counts": {
+    "games": 1,
+    "fights": 2,
+    "others": 0
+  },
+  "validator": {
+    "ok": 0,
+    "skipped": {
+      "winner_null": 2
+    }
+  },
+  "needs_review": 2,
+  "commit": null,
+  "remaining": "P8-primary claimed. RANKED GM confirmed. Continue from ~1000s. Helpers: other open VODs."
+}

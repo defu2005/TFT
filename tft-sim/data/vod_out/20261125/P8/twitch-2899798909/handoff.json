@@ -7,12 +7,12 @@
   "covered_ranges_s": [
     [
       350,
-      2500
+      2900
     ]
   ],
   "remaining_ranges_s": [
     [
-      2500,
+      2900,
       32500
     ]
   ],
@@ -22,16 +22,16 @@
   ],
   "counts": {
     "games": 2,
-    "fights": 4,
+    "fights": 5,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 4
+      "winner_null": 5
     }
   },
-  "needs_review": 4,
+  "needs_review": 5,
   "commit": "5b00f6b",
-  "remaining": "P8-primary owns VOD. Densified g350 to 5-7; g2 started @2500 after ranked queue. Continue from 2500s. P2: other VODs only."
+  "remaining": "P8-primary owns VOD. Densified g2 loading+early. Continue from ~2900s."
 }
