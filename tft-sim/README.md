@@ -659,3 +659,15 @@ So sánh theo cặp (per-lobby): b−a = +0,126 [0,004; 0,244]; c−b = −1,809
 
 Thông lượng: 4000 lobby trong 738 giây trên 4 tiến trình, khoảng 19.500 lobby mỗi giờ (chỉ chơi). Thu dữ liệu có đặc trưng: khoảng 0,9 giây mỗi lobby trên một tiến trình, gồm cả thời gian khởi động.
 
+## Giải đấu drop: mô hình group-dropout (2026-11-25, bằng chứng bot)
+
+Đăng ký: `docs/model-plan.md` 10.10. Seed 284000–287999, 4000 lobby, pool drop, EngineResolver, TFTSet17. Hoàn tất 32000/32000 ghế, illegal 0. Phân tích: `scripts/dropout_analyze.py`, kết quả `results/fixed/real/dropout_league.json`.
+
+| Cặp (chênh theo lobby) | Trung bình | CI95 | Tiêu chí |
+|---|---|---|---|
+| v4 − v4_null | +0,034 | [−0,065; +0,127] | CI chứa 0: đạt |
+| drop@full − mask_full | +0,030 | [−0,074; +0,125] | trong ±0,2: đạt |
+| drop@c − mask_c | +0,002 | [−0,101; +0,097] | trong ±0,2: đạt |
+| drop@a − mask_a | −0,048 | [−0,152; +0,054] | trong ±0,2: đạt |
+
+Đọc kết quả: một mô hình dropout cho ba điều kiện không kém các mô hình mask riêng. Kiểm tra trước khi chơi cũng đạt (khớp test lệch ≤ 0,005, leak test 0). Chỉ nói về Set 17 với bot teacher v4, không nói về HUD thật hay Set 18.

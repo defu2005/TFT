@@ -230,6 +230,8 @@ Mọi bằng chứng dưới đây là sim hoặc nội dung tổng hợp (8 tư
 2. Với mỗi X ∈ {full, c, a}: CI95 của drop@X − mask_X nằm hoàn toàn trong [−0,2; +0,2].
 3. Nếu một tiêu chí thất bại, báo đúng tiêu chí và đúng X đó, không lấy trung bình.
 
+**Kết quả (2026-11-25, đã chạy):** 4000 lobby, 32000 ghế, hoàn tất 100%, illegal 0. Tiêu chí 1 đạt: v4 − v4_null = +0,034 [−0,065; +0,127]. Tiêu chí 2 đạt cho cả ba X: drop@full − mask_full = +0,030 [−0,074; +0,125]; drop@c − mask_c = +0,002 [−0,101; +0,097]; drop@a − mask_a = −0,048 [−0,152; +0,054]. Mô hình một dropout đứng ngang ba mô hình mask riêng trong khoảng ±0,2 đã đăng ký. Kết luận giới hạn ở Set 17 với bot teacher v4.
+
 **Phạm vi:** mô phỏng Set 17 với bot teacher v4 và EngineResolver. Không nói gì về dữ liệu HUD thật, Set 18, hay trận thật.
 
 **Khoảng cách đã biết (ghi trước khi chạy, không sửa kết luận):**

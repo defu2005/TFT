@@ -70,7 +70,7 @@ cd tft-sim && python scripts/collect_v4.py 900000 900002 /tmp/smoke.npz
 | **260000–260999** | **thí nghiệm mask nhóm HUD (sim, 2026-11-25; xem model-plan 10.6)** | **đã dùng (play, 2026-11-25; model-plan 10.6)** |
 | **270000–270999** | **giải đấu lobby hỗn hợp v1 (2026-11-25, đã chạy, bị thay thế: policy trùng ghế, hoán vị không độc lập)** | **đã dùng** |
 | **280000–283999** | **giải đấu v2 (model-plan 10.9): 8 policy cố định mỗi lobby, 4000 lobby, đánh giá** | **đã dùng (2026-11-25)** |
-| **284000–287999** | **giải đấu drop (model-plan 10.10): mô hình group-dropout, 4000 lobby, pool drop** | **dành riêng (2026-11-25), chưa dùng** |
+| **284000–287999** | **giải đấu drop (model-plan 10.10): mô hình group-dropout, 4000 lobby, pool drop** | **đã dùng (2026-11-25; model-plan 10.10)** |
 
 Không chồng dải. Không dùng 230000–230999 hay 240000+ để huấn luyện.
 
