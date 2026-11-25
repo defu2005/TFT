@@ -67,6 +67,6 @@
     }
   },
   "needs_review": 2,
-  "commit": null,
+  "commit": "aa41c50",
   "remaining": "Early games pushed; densify more PvP when frames allow."
 }
