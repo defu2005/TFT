@@ -7040,6 +7040,48 @@
     "tag": "unresolved",
     "attempt": "hex positions not read; board_units come from the solver, not from hex positions; no hex crop was read for this round",
     "reason": "hex positions need a per-unit location read that has not been done"
+   },
+   "frame_A_read": {
+    "frame_s": 2172,
+    "timer": 21,
+    "counter": "9/9",
+    "level": 9,
+    "xp": "8/68",
+    "gold": 6,
+    "streak": 3,
+    "shop": [
+     "Teemo",
+     "Murkwolf",
+     "Lillia",
+     "Ashe",
+     "Salvager"
+    ],
+    "panel": {
+     "Bounty Seeker": 1,
+     "Emerald Aspect": 1,
+     "Greenfather": 1,
+     "Old Growth": 1,
+     "Elderwood": 3,
+     "Executioner": 2,
+     "Inferno": 2,
+     "Brawler": 2,
+     "Juggernaut": 2,
+     "marker": "2+"
+    },
+    "conflict": "the earlier 5-6 re-read (Executioner 1, Inferno 1) disagrees with this frame and with the 5-5 planning panel; this frame agrees with the planning read",
+    "info_card": {
+     "unit": "Kennen",
+     "hp": "1570/1570",
+     "cost_badge": 5,
+     "items_visible": 3,
+     "stars_shown": "not visible on this card"
+    },
+    "rail_hp_rows": "not read in this frame",
+    "bench": "not read",
+    "board_units_rowcol": "not read by row and column",
+    "stars_items": "Kennen card shows 3 item icons; names not legible at 720p",
+    "tag": "read",
+    "source": "frame at 2172 s, viewed in this session"
    }
   },
   {
