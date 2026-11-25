@@ -81,7 +81,8 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "no reader row within 8 s"
    },
    "combat": {
     "value": {
@@ -194,7 +195,8 @@
    "combat_frame_t_s": null,
    "planning": {
     "value": null,
-    "tag": "unresolved"
+    "tag": "unresolved",
+    "note": "no reader row within 8 s"
    },
    "combat": {
     "value": {
@@ -306,8 +308,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 364.0,
+     "gold": 2,
+     "level": null,
+     "shop_ids": [
+      "Leona",
+      "Leona",
+      "Akali_AD",
+      "Veigar",
+      "Camille"
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -430,8 +447,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 400.0,
+     "gold": 2,
+     "level": null,
+     "shop_ids": [
+      "DA_Murkwolf18",
+      "Rakan",
+      "Rakan",
+      "Ornn",
+      "Alistar"
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -1736,8 +1768,23 @@
     "tag": "read"
    },
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 881.0,
+     "gold": 39,
+     "level": null,
+     "shop_ids": [
+      "Sejuani",
+      "Elise",
+      "Warwick",
+      "MasterYi_AD",
+      null
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -1923,8 +1970,23 @@
     "tag": "read"
    },
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 954.0,
+     "gold": 40,
+     "level": null,
+     "shop_ids": [
+      "Sejuani",
+      "Elise",
+      "Warwick",
+      "MasterYi_AD",
+      null
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -2116,8 +2178,23 @@
     "note": "other slots not read"
    },
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 1048.25,
+     "gold": 55,
+     "level": null,
+     "shop_ids": [
+      "Sivir",
+      null,
+      "DA_Murkwolf18",
+      "Rakan",
+      null
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -3003,8 +3080,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 1355.5,
+     "gold": 37,
+     "level": null,
+     "shop_ids": [
+      "Zyra",
+      "DA_Murkwolf18",
+      "DA_KogMaw18_AD",
+      "DA_Karma18",
+      "Rengar"
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -3181,8 +3273,23 @@
     "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 1431.25,
+     "gold": 2,
+     "level": null,
+     "shop_ids": [
+      null,
+      "KhaZix",
+      null,
+      null,
+      "Ahri"
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -3312,8 +3419,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 1529.75,
+     "gold": 40,
+     "level": null,
+     "shop_ids": [
+      "Hecarim",
+      "Leona",
+      "Yunara",
+      "Varus",
+      null
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -3442,8 +3564,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 1601.75,
+     "gold": 52,
+     "level": null,
+     "shop_ids": [
+      null,
+      "Leona",
+      "Yunara",
+      "Varus",
+      "Veigar"
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -3567,8 +3704,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 1646.25,
+     "gold": 62,
+     "level": null,
+     "shop_ids": [
+      "DA_Fiddlesticks18",
+      "Cassiopeia",
+      "Rengar",
+      "DA_Vi18",
+      "Hecarim"
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -3706,8 +3858,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 1716.25,
+     "gold": 74,
+     "level": null,
+     "shop_ids": [
+      "Cassiopeia",
+      "Aphelios",
+      "DA_Brambleback18",
+      "Leona",
+      null
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -3845,8 +4012,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 1790.25,
+     "gold": 79,
+     "level": null,
+     "shop_ids": [
+      "Cassiopeia",
+      "Aphelios",
+      "DA_Brambleback18",
+      "Leona",
+      "DA_CrimsonRaptor18"
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -3993,8 +4175,23 @@
     "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 1829.75,
+     "gold": 85,
+     "level": null,
+     "shop_ids": [
+      "DA_Gromp18_AP",
+      "DA_Cinderling18",
+      "Hecarim",
+      "Kayle",
+      null
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -4193,8 +4390,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 1908.25,
+     "gold": 26,
+     "level": null,
+     "shop_ids": [
+      null,
+      "Kobuko",
+      "Ahri",
+      "Diana",
+      "Azir"
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -4369,8 +4581,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 1993.25,
+     "gold": 7,
+     "level": null,
+     "shop_ids": [
+      "DA_Gromp18_AP",
+      "DA_Krug18",
+      "Ezreal",
+      "Malphite",
+      "Warwick"
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -4519,8 +4746,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 2060.5,
+     "gold": 3,
+     "level": null,
+     "shop_ids": [
+      "Soraka",
+      "DA_Gromp18_AP",
+      "DA_Lux18_Base",
+      "Yunara",
+      null
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -4654,8 +4896,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 2093.25,
+     "gold": 9,
+     "level": null,
+     "shop_ids": [
+      "Rengar",
+      "Zyra",
+      "Camille",
+      "DA_Murkwolf18",
+      "Ashe"
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -4839,8 +5096,23 @@
     "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 2165.25,
+     "gold": 8,
+     "level": null,
+     "shop_ids": [
+      "Cassiopeia",
+      "Sett",
+      "Sett",
+      "Tristana",
+      "Sett"
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -4994,8 +5266,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 2230.75,
+     "gold": 6,
+     "level": null,
+     "shop_ids": [
+      "Kayle",
+      "Xayah",
+      null,
+      "MasterYi_AD",
+      "LeBlanc"
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -5138,8 +5425,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 2269.0,
+     "gold": 23,
+     "level": null,
+     "shop_ids": [
+      "DA_Nidalee18_AP",
+      null,
+      null,
+      "Azir",
+      null
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -5291,8 +5593,23 @@
     "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 2335.0,
+     "gold": 13,
+     "level": null,
+     "shop_ids": [
+      "Hecarim",
+      "DA_Scuttlecrab18",
+      "Kayle",
+      null,
+      null
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -5445,8 +5762,23 @@
     "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 2399.0,
+     "gold": 6,
+     "level": null,
+     "shop_ids": [
+      "DA_Murkwolf18",
+      "Ahri",
+      "KhaZix",
+      "Kobuko",
+      null
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -5574,8 +5906,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 2460.75,
+     "gold": 3,
+     "level": null,
+     "shop_ids": [
+      "DA_Murkwolf18",
+      "Ahri",
+      "KhaZix",
+      "Kobuko",
+      "Tristana"
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -5715,8 +6062,23 @@
     "basis": "HP labels, streamer damage > 0"
    },
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 2481.75,
+     "gold": 7,
+     "level": null,
+     "shop_ids": [
+      "Tristana",
+      "DA_Sentinel18",
+      "Tristana",
+      "Teemo",
+      null
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": {
@@ -5871,8 +6233,23 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "reader_t_s": 2547.5,
+     "gold": 15,
+     "level": null,
+     "shop_ids": [
+      "Ahri",
+      "Morgana",
+      "Caitlyn",
+      "Sett",
+      null
+     ],
+     "panel": "not derived",
+     "board": "not derived",
+     "bench": "not derived"
+    },
+    "tag": "derived",
+    "basis": "reader row nearest t_planning_s"
    },
    "combat": {
     "value": null,
