@@ -552,5 +552,3 @@ Nguon: `results/fixed/real/play_v5_v4null.json` tren `codex/sim-e`. Nhan: v5 rut
 - **v4null (kiem tra am, v4 vs v4):** A−B = **−0,058**, CI95 [−0,164; +0,048] (bootstrap 2.000 lan, tu `per_lobby_diff`, n = 1.000). CI chua 0, dung nhu ky vong. Khong co luot di khong hop le.
 - **Chua co:** clone_v4, clone_v3, clone_scr. E van dang chay; se ghi khi co file.
 
-Co-Authored-By: Claude Haiku 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_014HR84uNjNyg8fiD4KjHhVE
