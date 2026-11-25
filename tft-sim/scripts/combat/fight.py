@@ -1,18 +1,17 @@
-"""Schema ban ghi tran (fight-v1) va wrapper engine (model-plan / docs/research/combat-public-data.md).
+"""Schema ban ghi tran (fight-v1) va wrapper engine (docs/research/combat-public-data.md).
 
-Mot ban ghi = mot combat: hai ben, moi ben co cap, augment, va danh sach tuong.
-  {"schema": "fight-v1", "set": 17|18, "label": "sim|fixture|real", "source": str,
-   "a": {"level": int, "augments": [api...], "units": [{"api", "star", "items": [api...], "pos": [r,c] | null}]},
-   "b": {...},
-   "result": {"winner": 0|1|null}}     # 0 = a thang, 1 = b thang, null = chua biet
+Ban ghi: {"schema": "fight-v1", "set": 17|18, "label": "sim|fixture|real", "source": str,
+  "a": {"level", "augments": [api...], "units": [{"api", "star", "items": [api...], "pos": [r,c]|null}]},
+  "b": {...}, "result": {"winner": 0|1|null}}
 
-Wrapper (KHONG sua engine, chi vá trong ngữ cảnh):
-  - mode "full":   engine nguyen ban (ability Set 17 + item).
-  - mode "public": tat ability (thay bang no-op) va bo item. Chi dung chi so va sao.
-    Dung de kiem gia thuyet "chi so cong khai du de du doan".
-  - positions: neu co, ghi de unit.pos sau khi engine dat doi hinh (engine khong nhan vi tri tu ben goi).
-  Canh bao: get_ability() roi ve default_ability (nuke don muc tieu) khi tuong khong co trong bang Set 17.
-  Voi Set 18 chi cho mode "public", de khong am tham dung nuke mac dinh cho 91 tuong.
+Hai cong tac doc lap (khong gop):
+  ability: "hand"    = ability viet tay (engine nguyen ban, chi Set 17)
+           "generic" = moi tuong dung default_ability (nuke don muc tieu)
+           "none"    = khong ability
+  items:   True/False = co hieu ung trang bi hay khong
+Vi tri (tuy chon): ghi de unit.pos sau khi engine dat doi hinh.
+Augment: luon truyen cho engine (run_combat nhan augment).
+Set 18: chi cho ability "generic" hoac "none" (tranh am tham dung default_ability cho tuong co logic that).
 """
 from __future__ import annotations
 
@@ -23,14 +22,16 @@ from pathlib import Path
 import numpy as np
 
 import tft_goat.engine.simulate as S
+from tft_goat.engine.abilities import default_ability
 from tft_goat.env.state import BoardUnit
 from tft_goat.engine.simulate import run_combat
 
 SCHEMA = "fight-v1"
+ABILITY_MODES = ("hand", "generic", "none")
 _NOOP = lambda caster, allies, enemies, ctx: None  # noqa: E731
 _orig_build = S._build_team
 _orig_get = S.get_ability
-_STATE = {"mode": "full", "pos": None}
+_STATE = {"ability": "hand", "pos": None}
 
 
 def _patched_build(board, team, content, trait_bonus=0):
@@ -46,8 +47,11 @@ def _patched_build(board, team, content, trait_bonus=0):
 
 
 def _patched_get(api):
-    if _STATE["mode"] == "public":
+    m = _STATE["ability"]
+    if m == "none":
         return _NOOP
+    if m == "generic":
+        return default_ability
     return _orig_get(api)
 
 
@@ -56,12 +60,11 @@ S.get_ability = _patched_get
 
 
 @contextlib.contextmanager
-def fight_context(mode: str = "full", positions=None):
-    """mode: 'full' | 'public'. positions: (list_a, list_b) moi phan tu [r,c] hoac None."""
-    if mode not in ("full", "public"):
-        raise ValueError(mode)
+def fight_context(ability: str = "hand", positions=None):
+    if ability not in ABILITY_MODES:
+        raise ValueError(ability)
     old = dict(_STATE)
-    _STATE["mode"] = mode
+    _STATE["ability"] = ability
     _STATE["pos"] = positions
     try:
         yield
@@ -69,21 +72,20 @@ def fight_context(mode: str = "full", positions=None):
         _STATE.update(old)
 
 
-def boards_of(record: dict, mode: str = "full"):
-    """Chuyen ban ghi thanh (board_a, board_b, positions) cho run_combat."""
-    sides = []
-    pos = []
+def boards_of(record: dict, items: bool = True):
+    """(board_a, board_b, positions, augments_a, augments_b) cho run_combat."""
+    sides, pos, augs = [], [], []
     for k in ("a", "b"):
-        units = []
-        plist = []
+        units, plist = [], []
         for u in record[k]["units"]:
-            items = [] if mode == "public" else list(u.get("items", []))
+            its = list(u.get("items", [])) if items else []
             units.append(BoardUnit(u["api"], int(u["star"]), on_board=True,
-                                   items=len(items), item_apis=tuple(items)))
+                                   items=len(its), item_apis=tuple(its)))
             plist.append(u.get("pos"))
         sides.append(units)
         pos.append(plist if any(p is not None for p in plist) else None)
-    return sides[0], sides[1], tuple(pos)
+        augs.append(tuple(record[k].get("augments", [])))
+    return sides[0], sides[1], tuple(pos), augs[0], augs[1]
 
 
 def check_record(record: dict) -> None:
@@ -109,23 +111,24 @@ def load_jsonl(path) -> list[dict]:
     return rows
 
 
-def predict_win(record: dict, n: int = 20, mode: str = "full", seed0: int = 0) -> dict:
-    """Tra xac suat A thang tu n lan chay engine voi RNG khac nhau."""
-    if record["set"] == 18 and mode == "full":
-        raise ValueError("Set 18 chua co logic ability: chi dung mode 'public' (tranh default_ability am tham)")
-    ba, bb, pos = boards_of(record, mode)
-    content = _CONTENT[record["set"]]
-    wins = [0, 0, 0]
-    with fight_context(mode, pos):
-        for i in range(n):
-            r = run_combat(ba, bb, content, np.random.default_rng(seed0 + i), (), ())
-            w = r.winner
-            wins[0 if w == 0 else 1 if w == 1 else 2] += 1
-    return {"p_a": wins[0] / n, "a": wins[0], "b": wins[1], "draw": wins[2], "n": n, "mode": mode}
-
-
 _CONTENT: dict = {}
 
 
 def set_content(set_no: int, content) -> None:
     _CONTENT[set_no] = content
+
+
+def predict_win(record: dict, n: int = 20, ability: str = "hand", items: bool = True, seed0: int = 0) -> dict:
+    """Xac suat A thang tu n lan chay engine (RNG seed0..seed0+n-1)."""
+    if record["set"] == 18 and ability == "hand":
+        raise ValueError("Set 18 chua co logic ability viet tay: dung 'generic' hoac 'none'")
+    ba, bb, pos, aa, ab = boards_of(record, items)
+    content = _CONTENT[record["set"]]
+    wins = [0, 0, 0]
+    with fight_context(ability, pos):
+        for i in range(n):
+            r = run_combat(ba, bb, content, np.random.default_rng(seed0 + i), aa, ab)
+            w = r.winner
+            wins[0 if w == 0 else 1 if w == 1 else 2] += 1
+    return {"p_a": wins[0] / n, "a": wins[0], "b": wins[1], "draw": wins[2], "n": n,
+            "ability": ability, "items": items}

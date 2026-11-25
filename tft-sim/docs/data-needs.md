@@ -20,3 +20,10 @@
 ## Đánh giá
 - Cặp (bàn, kết quả round) từ trận thật, nhiều trận
 - Khối seed mới cho mỗi lần đánh giá
+
+## Bản ghi trận (fight-v1)
+Mỗi round có cả hai bên, mỗi bên gồm:
+- Cấp, augment đã chọn.
+- Tướng: apiName, sao, trang bị (apiName), vị trí (hàng, cột) nếu đọc được.
+- Kết quả combat của round: bên thắng.
+Schema và kiểm tra: `scripts/combat/fight.py`.

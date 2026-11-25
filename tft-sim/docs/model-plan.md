@@ -238,3 +238,7 @@ Mọi bằng chứng dưới đây là sim hoặc nội dung tổng hợp (8 tư
 - Logic ability Set 17: 69 hàm viết tay trong `tft_goat/engine/abilities_set17` (6 file). Đây là phần engine đã có.
 - Set 18: CDragon snapshot `data/cdragon/cdragon_18.7_2026-11-23.json.gz`, `sets['18']['champions']` có 91 tướng, mỗi tướng có trường `ability`. Chưa có logic ability Set 18, chưa định cỡ. Đây là khoảng cách lớn nhất để áp dụng sang Set 18.
 - Vị trí (positioning) chưa xác nhận: `BoardUnit` trong `tft_goat/env/state.py:19` và `data/riot/models.py:16` không có trường vị trí. Chỉ engine `Unit` (`tft_goat/engine/unit.py:37`, `pos=(0,0)`) có, và dữ liệu HUD chưa cung cấp vị trí. Mọi kết quả sim giả định vị trí do engine tự quyết.
+
+### 10.11 Giả định capture (2026-11-25)
+
+Người dùng giả định app capture được mọi dữ liệu realtime cần thiết (bàn hai bên, kết quả combat). Mọi phân tích trong `docs/research/combat-public-data.md` và `scripts/combat/` dựa trên giả định này và trên dữ liệu mô phỏng (`label: sim`). Trạng thái thực tế: chưa có bản ghi trận thật nào có bàn hai bên và kết quả trong nhánh hiện có. Mọi kết quả về độ trung thực đều chờ bản ghi `fight-v1` thật.
