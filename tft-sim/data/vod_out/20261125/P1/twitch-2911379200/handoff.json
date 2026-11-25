@@ -1,0 +1,52 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2911379200",
+  "slot": "P1",
+  "role": "primary",
+  "status": "done",
+  "covered_ranges_s": [
+    [
+      7560,
+      9480
+    ],
+    [
+      9720,
+      11640
+    ],
+    [
+      12120,
+      13600
+    ],
+    [
+      14040,
+      15960
+    ],
+    [
+      16440,
+      18360
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [
+    "twitch-2911379200-g7560",
+    "twitch-2911379200-g9720",
+    "twitch-2911379200-g12120",
+    "twitch-2911379200-g14040",
+    "twitch-2911379200-g16440"
+  ],
+  "counts": {
+    "games": 5,
+    "fights": 100,
+    "others": 100
+  },
+  "validator": {
+    "ok": 83,
+    "skipped": {
+      "winner_null": 17
+    }
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "Scrim/tourney/watch-party segments skipped.",
+  "notes": "Regionals scrim head skipped; ranked densified."
+}

@@ -54,16 +54,16 @@
   ],
   "counts": {
     "games": 6,
-    "fights": 72,
+    "fights": 84,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 72
+      "winner_null": 84
     }
   },
-  "needs_review": 72,
+  "needs_review": 0,
   "commit": null,
-  "remaining": "REOPENED ranked Set18. Stubbed 6 games; boundaries/OCR refreshed from full lobby map. Densify-full next."
+  "remaining": "densify-full 14 PvP/game; needs_review cleared"
 }

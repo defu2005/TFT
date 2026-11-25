@@ -4,24 +4,35 @@
   "slot": "P8",
   "role": "primary",
   "status": "working",
-  "covered_ranges_s": [],
-  "remaining_ranges_s": [
+  "covered_ranges_s": [
     [
-      0,
-      99999
+      90,
+      7000
     ]
   ],
-  "game_ids": [],
+  "remaining_ranges_s": [
+    [
+      7000,
+      28270
+    ]
+  ],
+  "game_ids": [
+    "twitch-2900671286-g300",
+    "twitch-2900671286-g2400",
+    "twitch-2900671286-g5800"
+  ],
   "counts": {
-    "games": 0,
-    "fights": 0,
+    "games": 3,
+    "fights": 36,
     "others": 0
   },
   "validator": {
-    "ok": 0,
-    "skipped": {}
+    "ok": 10,
+    "skipped": {
+      "winner_null": 26
+    }
   },
-  "needs_review": 0,
-  "commit": null,
-  "remaining": "Claimed. Densify-full ranked Set18 in progress."
+  "needs_review": 26,
+  "commit": "78eba6a0",
+  "remaining": "densify-full 3g/36f (g300,g2400,g5800). Continue ~7000+. P8-primary."
 }
