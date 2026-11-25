@@ -13,7 +13,8 @@
 ## 2. Manifest: chỉ điều phối ghi, agent chỉ đọc
 
 - File: `tft-sim/data/vod_manifest_20261125.json`. Chỉ người điều phối commit file này. Agent không sửa, không đọc nó để quyết định ghi đè.
-- Mỗi streamer nằm ở **đúng một slot primary** (`P1`, `P2`, `P3`). Kiểm bằng `streamer_multi_slot`.
+- Mỗi streamer nằm ở **đúng một slot primary** (`P1`…`P6` và các slot primary khác trong manifest). Kiểm bằng `streamer_multi_slot`.
+- **Mở rộng 2026-11-25 (goal ≥1000 ván):** điều phối thêm slot `P4` (wasianiverson), `P5` (souless), `P6` (cambulee) — không trùng streamer P1–P3. Agent thu thập nhận slot qua `CLAIM.json` như cũ.
 - `role`:
   - `primary`: ghi dữ liệu thô vào slot của mình.
   - `second_label`: nhãn đối chiếu. Ghi vào slot `V1`, không bao giờ vào đường primary.
