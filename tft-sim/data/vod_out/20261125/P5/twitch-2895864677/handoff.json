@@ -16,6 +16,10 @@
     [
       4380,
       6500
+    ],
+    [
+      6700,
+      8000
     ]
   ],
   "remaining_ranges_s": [
@@ -29,26 +33,31 @@
     ],
     [
       6500,
+      6700
+    ],
+    [
+      8000,
       23928
     ]
   ],
   "game_ids": [
     "twitch-2895864677-g120",
     "twitch-2895864677-g2410",
-    "twitch-2895864677-g4380"
+    "twitch-2895864677-g4380",
+    "twitch-2895864677-g6700"
   ],
   "counts": {
-    "games": 3,
-    "fights": 35,
-    "others": 35
+    "games": 4,
+    "fights": 38,
+    "others": 38
   },
   "validator": {
-    "ok": 28,
+    "ok": 30,
     "skipped": {
-      "winner_null": 7
+      "winner_null": 8
     }
   },
-  "needs_review": 7,
-  "commit": "5991e7c",
-  "remaining": "g4380 pushed early. Tiếp denser + game4~6600+. Ranked only. Không invent names."
+  "needs_review": 8,
+  "commit": null,
+  "remaining": "g6700 early 3 fights. Densify 6600+. Ranked only."
 }
