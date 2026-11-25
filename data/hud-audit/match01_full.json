@@ -1001,8 +1001,24 @@
     "tag": "read"
    },
    "roster_candidates": {
-    "value": null,
-    "tag": "unresolved"
+    "value": [
+     [
+      "Ahri",
+      "Kobuko",
+      "Alistar",
+      "LeBlanc",
+      "Mama Beak"
+     ],
+     [
+      "Kobuko",
+      "Alistar",
+      "Karma",
+      "LeBlanc",
+      "Mama Beak"
+     ]
+    ],
+    "tag": "derived",
+    "basis": "two exact solver solutions for the 766 s panel; they differ by Ahri vs Karma and are unresolved"
    },
    "augment": {
     "value": null,
@@ -1039,8 +1055,33 @@
    },
    "combat_frame_t_s": null,
    "planning": {
-    "value": null,
-    "tag": "unresolved"
+    "value": {
+     "frame_s": 766,
+     "timer": 21,
+     "counter": "5/5",
+     "level": 5,
+     "xp": "2/20",
+     "gold": 15,
+     "streak": 3,
+     "panel": {
+      "Brawler": 2,
+      "Spellweaver": 2,
+      "Elderwood": 2,
+      "Rapidfire": 1,
+      "Summoner": 1,
+      "Blossom": 1,
+      "Riftbeast": 1,
+      "Sprykin": 1
+     },
+     "shop": [
+      "Shen",
+      "Alistar",
+      "Alistar"
+     ],
+     "board": "5 bodies, not named",
+     "bench": "about 8 occupied, not named"
+    },
+    "tag": "read"
    },
    "combat": {
     "value": null,
