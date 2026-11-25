@@ -7,7 +7,7 @@
   "covered_ranges_s": [
     [
       0,
-      1600
+      2100
     ],
     [
       2100,
@@ -15,16 +15,12 @@
     ],
     [
       4500,
-      7000
+      6500
     ]
   ],
   "remaining_ranges_s": [
     [
-      1600,
-      2100
-    ],
-    [
-      7000,
+      6500,
       99999
     ]
   ],
@@ -35,16 +31,16 @@
   ],
   "counts": {
     "games": 3,
-    "fights": 3,
-    "others": 3
+    "fights": 38,
+    "others": 38
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 3
+      "winner_null": 38
     }
   },
-  "needs_review": 3,
+  "needs_review": 38,
   "commit": null,
-  "remaining": "Volume stub; densify-full remaining ranked PvP. Skip set19/TPC."
+  "remaining": "Densify Set18 PvP g0/g2100/g4500; ignore early wrong-set look; winner_null."
 }

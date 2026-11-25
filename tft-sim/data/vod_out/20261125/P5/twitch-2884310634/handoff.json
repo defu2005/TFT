@@ -35,16 +35,16 @@
   ],
   "counts": {
     "games": 3,
-    "fights": 3,
-    "others": 3
+    "fights": 33,
+    "others": 33
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 3
+      "winner_null": 33
     }
   },
-  "needs_review": 3,
+  "needs_review": 33,
   "commit": null,
-  "remaining": "Volume stub; densify-full remaining ranked PvP. Skip set19/TPC."
+  "remaining": "Densify-full Set18 PvP for g0/g3900/g5550; winner_null; keep stubs."
 }
