@@ -169,6 +169,22 @@ Mọi bằng chứng dưới đây là sim hoặc nội dung tổng hợp (8 tư
 
 **Kết quả (2026-11-25):** xem README mục "Thí nghiệm mask nhóm HUD". Tóm tắt: bàn và bàn chờ đưa clone từ +2,18 xuống +0,50 so với teacher v4. Điều kiện c vẫn ẩn augment, nên +0,50 bị lẫn với thiếu augment; chưa chơi full để có mốc. HP và round không đổi gì (b−a = +0,13, dưới ngưỡng 0,2). Null −0,02. Kiểm tra bất biến: teacher v4 không đổi theo HP; đổi sao trên bàn có đổi hành động.
 
+### 10.8 Giải đấu lobby hỗn hợp (đăng ký trước khi chạy)
+
+**Đã kiểm:** `scripts/mixed_lobby.py` + `scripts/league_run.py selftest`: với bản đồ 4/4, `play_mixed` khớp `play()` trên 5 seed (150000–150004). `play()` không bị sửa. Seed 150000–150004 chỉ dùng để kiểm, không phải đánh giá.
+
+**Điều kiện đã đo (ghi kèm):**
+- Full (điều kiện đối chứng, sau đăng ký): chạy `mask_play` clone với `mask_full` trên 260000–260999, nhãn `mask_full`. Đây là kiểm tra hậu kỳ; nằm ngoài đăng ký 10.6.
+- Thông lượng: một lobby ~0,55 s một tiến trình (chỉ chơi). Dữ liệu có đặc trưng chậm hơn nhiều; sẽ đo riêng khi có số.
+
+**Giải đấu:** pool = scripted, v3, v4, mask_full, mask_c, v4_null (v4 lặp lại làm null tích hợp). Mỗi lobby: seed s, 8 ghế, mỗi ghế chọn một policy trong pool theo `numpy.default_rng(s)`, có thể trùng. Chỉ số: placement trung bình theo policy, CI95 bootstrap theo lobby (mỗi lobby cho một trung bình của policy đó). Khác biệt so sánh: theo cặp trong cùng lobby.
+
+**Seed đánh giá:** 270000–270999 (dự trữ trong sổ, chưa dùng). Chỉ đánh giá, không huấn luyện.
+
+**Quy tắc diễn giải:** khác biệt dưới khoảng 0,2 không phân giải được. Với v4_null, khoảng cách của nó đến v4 phải chứa 0; nếu không, lệch harness.
+
+**Giới hạn:** valuemax và CEM bị bỏ vì monkeypatch `ACT._equip` toàn cục; chưa xác nhận có tách được theo ghế.
+
 ### 10.7 Việc tiếp theo (sim)
 
 1. Chạy tiêu chí §5 gốc trên B (chỉ-universal trong 0,5 của scripted).

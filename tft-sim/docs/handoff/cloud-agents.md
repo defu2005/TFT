@@ -68,6 +68,7 @@ cd tft-sim && python scripts/collect_v4.py 900000 900002 /tmp/smoke.npz
 | **242000–249999** | **dự trữ cho vai P (định vị)** | dành riêng |
 | **250000–250999** | **kiểm định valuemax vs mặc định (chạy cục bộ, 2026-11-25)** | **đã dùng** |
 | **260000–260999** | **thí nghiệm mask nhóm HUD (sim, 2026-11-25; xem model-plan 10.6)** | **đã dùng (play, 2026-11-25; model-plan 10.6)** |
+| **270000–270999** | **giải đấu lobby hỗn hợp (league, đánh giá, 2026-11-25; model-plan 10.8)** | **dự trữ, chưa chạy** |
 
 Không chồng dải. Không dùng 230000–230999 hay 240000+ để huấn luyện.
 
