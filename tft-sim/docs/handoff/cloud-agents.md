@@ -66,6 +66,7 @@ cd tft-sim && python scripts/collect_v4.py 900000 900002 /tmp/smoke.npz
 | **240000–240999** | **kiểm định cuối CEM (vai C)** | **đã dùng (C, 2026-11-24)** |
 | **241000–241999** | **kiểm định cuối clone (vai E)** | dành riêng, chưa dùng (E) |
 | **242000–249999** | **dự trữ cho vai P (định vị)** | dành riêng |
+| **250000–250999** | **kiểm định valuemax vs mặc định (chạy cục bộ, 2026-11-25)** | **đã dùng** |
 
 Không chồng dải. Không dùng 230000–230999 hay 240000+ để huấn luyện.
 
@@ -117,7 +118,7 @@ Kiểm tra bắt buộc trước khi báo xong:
 
 ## Dang chay / bi chan (cap nhat 2026-11-25)
 
-- **DT:** chap nhan clone v5 o che do rut gon (500 van train, seed 300000–300499; val + test 301500–301999). Seed 300500–301499 de danh, khong dung. Khong chay lai tren may cung.
-- **R:** snapshot CDragon trong repo la trang thai truoc 18.7 (chuoi version 16.23). Du lieu Set 18 trong mo phong khong khop 18.7. Can lay file dung ban 18.7 truoc khi dung cho Set 18. Set 17 (E) khong bi chan boi viec nay.
-- **E:** `codex/sim-e` @ ff95d66: đủ 4 phép (xem README). Không còn việc đang chạy.
-- **C:** xong. CEM tren 240000–240999 (xem README).
+- **Vong cloud (DT, C, R, E):** xong. Giam sat tu dong da tat (`trig_01Q3BJGATHTNZP4ukGwkLgeG`).
+- **DT:** chap nhan clone v5 che do rut gon (500 van train). Khong thu them.
+- **R:** nhan \"18.7\" cua snapshot CDragon bi sai (trang thai truoc 18.7, chuoi 16.23). Da ghi canh bao trong `tft-sim/data/cdragon/README.md`. Chua tim file dung patch. Set 17 (E) khong bi anh huong.
+- **Teacher v4 khong dung valuemax:** teacher chon muc tieu trang bi theo unit cost cao nhat (mac dinh). Valuemax da duoc kiem dinh 2 lan (240000, 250000 block) va tot hon mac dinh khoang 1,0 vi tri. Chua dua vao engine (engine thuoc workstream `engine`).

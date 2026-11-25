@@ -568,3 +568,22 @@ Nguon: `results/fixed/real/play_v5_<mode>.json` tren `codex/sim-e`. Nhan: v5 rut
 
 **Han che:** day la 1 checkpoint (seed0) tren 1.000 lobby moi phep, chi do tren Set 17 engine. Chua co Set 18. Clone_v4 chua chung minh bang nhau voi v4, chi chua co bang chung chenh lech (CI rong ±0,11).
 
+
+## Kiem dinh valuemax vs mac dinh tren seed moi (2026-11-25, chay cuc bo)
+
+Nguon: `results/fixed/real/item_valuemax_vs_default_250000.json` (gop 4 shard 250000–250999, moi shard 250 van). Luat: teacher v4 (`make_aug_rule`), chi thay luat chon muc tieu trang bi: `valuemax` (unit gia tri cao nhat, gia tri = cost × 3^(sao−1)) so voi `default` (unit cost cao nhat, muc mac dinh cua engine). Seed 250000–250999 (1.000 van, chua dung truoc do; ngoai dai P 242000–249999 da dat truoc). Engine (Set 17).
+
+- **A−B = −1,016**, CI95 [−1,113; −0,913] (bootstrap 2.000 lan, n = 1.000). Am = valuemax tot hon.
+- Lan dau tren seed 240000–240999: −1,006, CI [−1,105; −0,899]. Hai khoi seed doc lap cho ket qua gan nhau.
+
+**Ket luan:** valuemax tot hon mac dinh khoang 1 vi tri tren teacher v4, lap lai duoc tren seed moi. Day la cai thien lon nhat trong sim, dat dung dai CI.
+
+**Cach doc:** ket qua nay do teacher, khong phai engine. Chua dua vao `decide.js` hay `src/`; viec do thuoc workstream `engine` va can kiem chung tren du lieu that (Phase 4 trong roadmap). Ket qua chon valuemax duoc mo ta trong sim, khong phai hoc trong so: CEM (−1,095) chua duoc so truc tiep voi valuemax va khong du bang chung de chon.
+
+**Han che:** tat ca do tren engine voi bot, khong phai nguoi choi that. Khong co kiem dinh tren Set 18.
+
+## Ket thuc vong cloud
+
+- Sau vong nay, khong con phep cloud nao dang chay. Clone khop teacher v4 (kiem dinh E). Clone khong the vuot teacher, nen khong thu them du lieu DT.
+- Ket qua clone_v3 (−0,797) va clone_scr (−2,396) phan anh loi the cua v4, truyen qua clone; khong phai loi the moi cua clone.
+- Vai P (dinh vi) va Set 18 de tam dung.
