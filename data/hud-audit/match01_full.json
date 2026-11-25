@@ -8522,8 +8522,8 @@
    "opponent_board": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "Scouted P2 panel at 2406 to 2424 s (sweep 1023, 1026, 1032), marker 5+. Solver at hidden 5: N 7 gives zero solutions; N 8 timed out at 120 s, so no board was recorded. Earlier hidden 0 to 2 runs gave zero solutions, and this panel has not been checked against set18 traits by hand.",
-    "reason": "the marker-based search returns zero at N 7 and times out at N 8, so no consistent board can be recorded"
+    "attempt": "Scouted P2 panel at 2406 to 2424 s, marker 5+. Branching solver (branch on the largest unmet visible trait; hidden traits at most 5) finds zero boards for N 5 to 9. The exhaustive search at hidden 5 timed out at N 8 earlier.",
+    "reason": "no board fits this panel under the branching search for N 5 to 9, so the panel reading needs checking before any board is recorded"
    },
    "hexes": {
     "value": null,
