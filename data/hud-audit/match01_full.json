@@ -3055,8 +3055,8 @@
    "stars": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "frame at 1128.5 s viewed; star pips not read at 720p",
-    "reason": "not legible at 720p in this frame"
+    "attempt": "Frame A bench and board view checked: arena view at the Frame A time; the board is not on screen, so no unit pips can be read in this frame.",
+    "reason": "arena view at the Frame A time; the board is not on screen"
    },
    "items": {
     "value": null,
@@ -4879,8 +4879,8 @@
    "stars": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "frame at 1604.0 s viewed; star pips not read at 720p",
-    "reason": "not legible at 720p in this frame"
+    "attempt": "Frame A bench and board view checked: carousel view at the Frame A time; the board is not on screen, so no unit pips can be read in this frame.",
+    "reason": "carousel view at the Frame A time; the board is not on screen"
    },
    "items": {
     "value": null,
@@ -5557,8 +5557,8 @@
    "stars": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "frame at 1816 s viewed; star pips not read at 720p",
-    "reason": "not legible at 720p in this frame"
+    "attempt": "Frame A bench strip (1816 s, the 4-7 bench sheet) checked: units are visible but star pips are not legible at 720p in the strip crop.",
+    "reason": "star pips are too small to read on the bench strip at 720p"
    },
    "items": {
     "value": null,
@@ -6734,8 +6734,8 @@
    "stars": {
     "value": null,
     "tag": "unresolved",
-    "attempt": "frame at 2062.8 s viewed; star pips not read at 720p",
-    "reason": "not legible at 720p in this frame"
+    "attempt": "Frame A bench and board view checked: carousel view at the Frame A time; the board is not on screen, so no unit pips can be read in this frame.",
+    "reason": "carousel view at the Frame A time; the board is not on screen"
    },
    "items": {
     "value": null,
