@@ -223,10 +223,29 @@
     }
   },
   "counts": {
-    "named_confirmed": 0,
-    "unknown": "all board and bench units",
-    "contradicted": 0,
-    "unverified_solutions": 4
+    "named_confirmed": 1,
+    "named_medium_confidence": 1,
+    "unknown": "all other board and bench units",
+    "contradicted": 0
   },
-  "correction": "Earlier statement that augments explained the 5-5 traits was wrong: those traits are in the champion catalog."
+  "correction": "Earlier statement that augments explained the 5-5 traits was wrong: those traits are in the champion catalog.",
+  "confirmed_units": [
+    {
+      "name": "Ezreal",
+      "cost": 4,
+      "traits": [
+        "Elderwood",
+        "Executioner"
+      ],
+      "frame": "2170-2180 s info card (round 5-6 area)",
+      "evidence": [
+        "unit card shows traits Elderwood and Executioner",
+        "name fragment \"real\" visible",
+        "only catalog champion with exactly these traits"
+      ],
+      "star": "not read",
+      "items": "not read",
+      "confidence": "medium: name only partially visible"
+    }
+  ]
 }
