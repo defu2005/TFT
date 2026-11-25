@@ -3,7 +3,7 @@
   "vod_id": "twitch-2902038983",
   "slot": "P10",
   "role": "primary",
-  "status": "partial",
+  "status": "done",
   "covered_ranges_s": [
     [
       500,
@@ -12,6 +12,26 @@
     [
       2300,
       4500
+    ],
+    [
+      4600,
+      6800
+    ],
+    [
+      7000,
+      9200
+    ],
+    [
+      9400,
+      11500
+    ],
+    [
+      11600,
+      17500
+    ],
+    [
+      17800,
+      19500
     ]
   ],
   "remaining_ranges_s": [
@@ -25,115 +45,46 @@
     ],
     [
       4500,
-      null
+      4600
+    ],
+    [
+      6800,
+      7000
+    ],
+    [
+      9200,
+      9400
+    ],
+    [
+      11500,
+      11600
+    ],
+    [
+      17500,
+      17800
     ]
   ],
   "game_ids": [
     "twitch-2902038983-g500",
-    "twitch-2902038983-g2300"
+    "twitch-2902038983-g2300",
+    "twitch-2902038983-g4600",
+    "twitch-2902038983-g7000",
+    "twitch-2902038983-g9400",
+    "twitch-2902038983-g11600",
+    "twitch-2902038983-g17800"
   ],
   "counts": {
-    "games": 2,
-    "fights": 27,
+    "games": 7,
+    "fights": 87,
     "others": 0
   },
   "validator": {
-    "ok": 9,
+    "ok": 12,
     "skipped": {
-      "winner_null": 18
-    },
-    "rows": [
-      {
-        "line": 1,
-        "source": "twitch-2902038983-g500:2-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 2,
-        "source": "twitch-2902038983-g500:2-2",
-        "reason": "winner_null"
-      },
-      {
-        "line": 3,
-        "source": "twitch-2902038983-g500:2-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 4,
-        "source": "twitch-2902038983-g500:3-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 5,
-        "source": "twitch-2902038983-g500:3-2",
-        "reason": "winner_null"
-      },
-      {
-        "line": 8,
-        "source": "twitch-2902038983-g500:4-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 9,
-        "source": "twitch-2902038983-g500:4-2",
-        "reason": "winner_null"
-      },
-      {
-        "line": 10,
-        "source": "twitch-2902038983-g500:4-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 11,
-        "source": "twitch-2902038983-g500:5-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 12,
-        "source": "twitch-2902038983-g500:5-3",
-        "reason": "winner_null"
-      },
-      {
-        "line": 13,
-        "source": "twitch-2902038983-g500:5-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 17,
-        "source": "twitch-2902038983-g2300:2-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 20,
-        "source": "twitch-2902038983-g2300:3-5",
-        "reason": "winner_null"
-      },
-      {
-        "line": 21,
-        "source": "twitch-2902038983-g2300:4-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 22,
-        "source": "twitch-2902038983-g2300:4-2",
-        "reason": "winner_null"
-      },
-      {
-        "line": 23,
-        "source": "twitch-2902038983-g2300:4-6",
-        "reason": "winner_null"
-      },
-      {
-        "line": 26,
-        "source": "twitch-2902038983-g2300:6-1",
-        "reason": "winner_null"
-      },
-      {
-        "line": 27,
-        "source": "twitch-2902038983-g2300:6-2",
-        "reason": "winner_null"
-      }
-    ]
+      "winner_null": 75
+    }
   },
-  "notes": "Skip Minecraft YT ~0-500 and ~2000-2300; later VOD may mix sets — check before densify"
+  "notes": "G1–G5 densify; rem G6/G7 messy YT gaps",
+  "remaining": "G1–G7 densify done (7g). YT gaps inside G6 skipped for fights; VOD end truncates G7. Tiny inter-game rem only.",
+  "needs_review": 75
 }
