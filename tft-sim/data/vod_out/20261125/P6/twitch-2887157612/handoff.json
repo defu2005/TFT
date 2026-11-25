@@ -1,0 +1,27 @@
+{
+  "schema": "vod-handoff-v1",
+  "vod_id": "twitch-2887157612",
+  "slot": "P6",
+  "role": "primary",
+  "status": "blocked",
+  "covered_ranges_s": [
+    [
+      0,
+      15180
+    ]
+  ],
+  "remaining_ranges_s": [],
+  "game_ids": [],
+  "counts": {
+    "games": 0,
+    "fights": 0,
+    "others": 0
+  },
+  "validator": {
+    "ok": true,
+    "skipped": {}
+  },
+  "needs_review": 0,
+  "commit": null,
+  "remaining": "blocked: CUSTOM Blind Pick / TFT Standard Custom — lobby «FL CAMBULEE'S GAME» Teamfight Tactics — Blind Pick ~60; postgame «TFT Standard Custom» ~4560; «Teamfight Tactics (Custom)» ~15060; Scores overlay (yesterday/current scores). Không ranked. Evidence: frames/blocked_*.jpg"
+}
