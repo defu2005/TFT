@@ -607,5 +607,6 @@ So sánh theo cặp (per-lobby): b−a = +0,126 [0,004; 0,244]; c−b = −1,809
 - HP và round không giúp: b−a nhỏ hơn ngưỡng 0,2 đã đăng ký. Điều này khớp kiểm tra: teacher v4 không đổi hành động khi đổi HP (20/20).
 - Clone c vẫn kém teacher khoảng 0,5 điểm, CI không chứa 0. Clone chưa bằng teacher.
 - Null gần 0, nên harness không lệch.
-- Đây là teacher và nội dung Set 17 mô phỏng, không phải TFT thật. Chỉ là bằng chứng về nhóm đầu vào mà teacher thực sự dùng.
+- Nội dung là `TFTSet17` (real_content, dữ liệu CDragon), không phải 8 tướng synthetic. Vẫn là mô phỏng: không có bằng chứng so với trận thật.
+- Điều kiện c vẫn còn ẩn augment (khớp PICK_AUGMENT 0,44 so với 0,999 ở full), và full chưa được chơi. Vì vậy khoảng +0,50 của c **bị lẫn** với việc thiếu augment. Không được kết luận "clone kém teacher" từ c. Cần chơi full để có mốc.
 
