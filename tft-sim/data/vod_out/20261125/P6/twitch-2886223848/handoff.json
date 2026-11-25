@@ -3,19 +3,14 @@
   "vod_id": "twitch-2886223848",
   "slot": "P6",
   "role": "primary",
-  "status": "working",
+  "status": "done",
   "covered_ranges_s": [
     [
       0,
-      14400
-    ]
-  ],
-  "remaining_ranges_s": [
-    [
-      14400,
       29353
     ]
   ],
+  "remaining_ranges_s": [],
   "game_ids": [
     "twitch-2886223848-g150",
     "twitch-2886223848-g1900",
@@ -37,15 +32,15 @@
     }
   },
   "needs_review": 43,
-  "commit": "b072ed6",
-  "remaining": "sau 14400: CUSTOM Blind Pick (skip); tìm ranked tiếp",
+  "commit": "7e221df",
+  "remaining": "VOD hết. 7 ranked Set18 (g150..g12600). [14400,29353] skip: CUSTOM Blind Pick (DORI2) + FINAL LOBBY tourney (scores overlay, spectate) — không ranked.",
   "skipped_segments": [
     {
       "range_s": [
         14400,
-        null
+        29353
       ],
-      "reason": "CUSTOM Blind Pick (DORI2 lobby) — not ranked",
+      "reason": "CUSTOM Blind Pick (DORI2) rồi FINAL LOBBY tourney (scores:1,4,5…; spectate POV khác). Evidence: frames/skip_custom_blindpick_t14400.jpg, t16700; skip_tourney_*.jpg",
       "status": "skip"
     }
   ]
