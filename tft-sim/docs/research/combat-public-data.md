@@ -163,3 +163,14 @@ Việc cần người dùng quyết: (a) xác nhận giấy phép CDragon (ngu�
 - Ghép nhãn: số bộ ba `a/b/c` của Blitz và placeholder `@...@` của CDragon không cùng số lượng ở đa số tướng (3/78 trùng). Chưa có cách ghép nhãn tin cậy theo thứ tự.
 
 Kết luận: chưa commit số liệu Blitz vào repo. Lý do: chưa ghép nhãn sát thương được, và tầm đánh/AS cần quy ước riêng. Nếu sau này cần dùng, ghép theo nhãn cần làm bằng tay từng tướng, và lưu ý điều khoản: giấy phép chỉ cho sử dụng cá nhân phi thương mại; robots.txt chặn ClaudeBot/GPTBot, nên không đưa dữ liệu này vào huấn luyện mô hình khi chưa có quyết định khác của người dùng.
+
+### 10c. Đã commit số liệu Blitz Set 18 (2026-11-25)
+
+File: `tft-sim/data/blitz_set18_numbers.json`. Chứa: slug, apiName CDragon (null nếu không ghép duy nhất), tên ability, mana, chỉ số cơ bản, và các bộ ba số `1/2/3 sao` kèm nhãn ngữ cảnh theo quy tắc (magic, physical, true, shield, heal, duration, unlabelled). Không lưu văn bản mô tả.
+
+Hạn chế:
+- Biến CDragon Set 18 gần như trống (70/71 tướng ghép được không có biến), nên không kiểm chứng được nhãn bằng CDragon. Nhãn chỉ dựa trên chữ trong mô tả Blitz, chưa kiểm tra tay từng tướng.
+- 11/… bộ ba không có nhãn rõ (unlabelled).
+- Lux có 10 dạng ghép chung một apiName = null.
+- Tầm đánh Ashe, Draven, Lux và AS Master Yi AP lệch so với CDragon; không sửa.
+- Nguồn có điều khoản chỉ dùng cá nhân phi thương mại. Người dùng đã chấp nhận rủi ro và cho phép dùng dữ liệu, kể cả cho mô hình.

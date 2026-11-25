@@ -1,0 +1,2573 @@
+{
+ "source": "https://blitz.gg/tft/champions/<slug> (Set 18, patch 18.7)",
+ "retrieved": "2026-11-25",
+ "note": "numbers and rule-based context labels only; ability prose not stored; labels not verified per champion; CDragon Set 18 variables absent for most champions",
+ "items": [
+  {
+   "slug": "ahri",
+   "cdragon_apiName": "DA_18_Ahri",
+   "ability_name": "Spirit Bomb",
+   "mana": [
+    "20",
+    "100"
+   ],
+   "stats": {
+    "Health": 850.0,
+    "Armor": 40.0,
+    "Magic Resist": 40.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.8,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "455",
+      "685",
+      "3500"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "akali-ap",
+   "cdragon_apiName": "DA_18_Akali_AD",
+   "ability_name": "Kunai Strike",
+   "mana": [
+    "0",
+    "25"
+   ],
+   "stats": {
+    "Health": 650.0,
+    "Armor": 35.0,
+    "Magic Resist": 35.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.75,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "140",
+      "210",
+      "365"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "alistar",
+   "cdragon_apiName": "DA_18_Alistar",
+   "ability_name": "Triumphant Roar",
+   "mana": [
+    "30",
+    "90"
+   ],
+   "stats": {
+    "Health": 950.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 50.0,
+    "Attack Speed": 0.6,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "306",
+      "376",
+      "476"
+     ],
+     "label": "heal"
+    },
+    {
+     "values_1_2_3_star": [
+      "80",
+      "105",
+      "130"
+     ],
+     "label": "heal"
+    },
+    {
+     "values_1_2_3_star": [
+      "180",
+      "270",
+      "420"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "alune",
+   "cdragon_apiName": "DA_18_Alune",
+   "ability_name": "Moonfall",
+   "mana": [
+    "0",
+    "35"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.85,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "58",
+      "88",
+      "500"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "2350",
+      "3600",
+      "7500"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "amumu",
+   "cdragon_apiName": "DA_Amumu18",
+   "ability_name": "Tantrum",
+   "mana": [
+    "30",
+    "125"
+   ],
+   "stats": {
+    "Health": 1300.0,
+    "Armor": 60.0,
+    "Magic Resist": 60.0,
+    "Attack Damage": 70.0,
+    "Attack Speed": 0.7,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "33",
+      "33.13",
+      "56"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "12",
+      "18",
+      "150"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "100",
+      "150",
+      "2000"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "1.5",
+      "1.5",
+      "9.0"
+     ],
+     "label": "duration"
+    }
+   ]
+  },
+  {
+   "slug": "aphelios",
+   "cdragon_apiName": "DA_18_Aphelios",
+   "ability_name": "Moonlight's Onslaught",
+   "mana": [
+    "20",
+    "70"
+   ],
+   "stats": {
+    "Health": 850.0,
+    "Armor": 40.0,
+    "Magic Resist": 40.0,
+    "Attack Damage": 60.0,
+    "Attack Speed": 0.8,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "70",
+      "105",
+      "850"
+     ],
+     "label": "physical"
+    },
+    {
+     "values_1_2_3_star": [
+      "540",
+      "810",
+      "5225"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "ashe",
+   "cdragon_apiName": "DA_18_Ashe",
+   "ability_name": "Spirit Rift",
+   "mana": [
+    "0",
+    "80"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 75.0,
+    "Attack Speed": 0.8,
+    "Range": 5.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "465",
+      "700",
+      "1000"
+     ],
+     "label": "physical"
+    },
+    {
+     "values_1_2_3_star": [
+      "13",
+      "19",
+      "220"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "azir",
+   "cdragon_apiName": "DA_18_Azir",
+   "ability_name": "Arise!",
+   "mana": [
+    "0",
+    "35"
+   ],
+   "stats": {
+    "Health": 650.0,
+    "Armor": 35.0,
+    "Magic Resist": 35.0,
+    "Attack Damage": 30.0,
+    "Attack Speed": 0.75,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "43",
+      "65",
+      "105"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "brambleback",
+   "cdragon_apiName": "DA_Brambleback18",
+   "ability_name": "Crimson Fury",
+   "mana": [
+    "0",
+    "40"
+   ],
+   "stats": {
+    "Health": 1100.0,
+    "Armor": 65.0,
+    "Magic Resist": 65.0,
+    "Attack Damage": 120.0,
+    "Attack Speed": 0.55,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "135",
+      "205",
+      "1000"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "caitlyn",
+   "cdragon_apiName": "DA_18_Caitlyn",
+   "ability_name": "Headshot",
+   "mana": [
+    "0",
+    "3"
+   ],
+   "stats": {
+    "Health": 550.0,
+    "Armor": 30.0,
+    "Magic Resist": 30.0,
+    "Attack Damage": 50.0,
+    "Attack Speed": 0.7,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "220",
+      "330",
+      "535"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "camille",
+   "cdragon_apiName": "DA_18_Camille",
+   "ability_name": "Defensive Sweep",
+   "mana": [
+    "0",
+    "25"
+   ],
+   "stats": {
+    "Health": 700.0,
+    "Armor": 40.0,
+    "Magic Resist": 40.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.75,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "160",
+      "240",
+      "425"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "cassiopeia",
+   "cdragon_apiName": "DA_18_Cassiopeia",
+   "ability_name": "Noxious Blast",
+   "mana": [
+    "0",
+    "30"
+   ],
+   "stats": {
+    "Health": 650.0,
+    "Armor": 35.0,
+    "Magic Resist": 35.0,
+    "Attack Damage": 30.0,
+    "Attack Speed": 0.75,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "420",
+      "630",
+      "1020"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "cinderling",
+   "cdragon_apiName": "DA_Cinderling18",
+   "ability_name": "Razor Leaves",
+   "mana": [
+    "0",
+    "50"
+   ],
+   "stats": {
+    "Health": 500.0,
+    "Armor": 25.0,
+    "Magic Resist": 25.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.7,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "360",
+      "540",
+      "815"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "diana",
+   "cdragon_apiName": "DA_18_Diana",
+   "ability_name": "Pale Barrier",
+   "mana": [
+    "0",
+    "40"
+   ],
+   "stats": {
+    "Health": 850.0,
+    "Armor": 50.0,
+    "Magic Resist": 50.0,
+    "Attack Damage": 30.0,
+    "Attack Speed": 0.8,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "150",
+      "275",
+      "500"
+     ],
+     "label": "shield"
+    },
+    {
+     "values_1_2_3_star": [
+      "75",
+      "115",
+      "180"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "draven",
+   "cdragon_apiName": "DA_Draven18",
+   "ability_name": "Whirling Death",
+   "mana": [
+    "0",
+    "110"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 48.0,
+    "Attack Speed": 0.85,
+    "Range": 5.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "150",
+      "225",
+      "3000"
+     ],
+     "label": "physical"
+    },
+    {
+     "values_1_2_3_star": [
+      "100",
+      "150",
+      "400"
+     ],
+     "label": "physical"
+    },
+    {
+     "values_1_2_3_star": [
+      "30",
+      "45",
+      "100"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "elder-dragon",
+   "cdragon_apiName": null,
+   "ability_name": "Heat Without Equal",
+   "mana": [
+    "20",
+    "60"
+   ],
+   "stats": {
+    "Health": 1800.0,
+    "Armor": 75.0,
+    "Magic Resist": 75.0,
+    "Attack Damage": 125.0,
+    "Attack Speed": 0.5,
+    "Range": 2.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "305",
+      "465",
+      "7200"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "elise",
+   "cdragon_apiName": "DA_18_Elise",
+   "ability_name": "Spider Queen",
+   "mana": [
+    "20",
+    "70"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 20.0,
+    "Attack Speed": 0.65,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "40",
+      "60",
+      "90"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "55",
+      "90",
+      "170"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "ezreal",
+   "cdragon_apiName": "DA_18_Ezreal",
+   "ability_name": "Forest's Flurry",
+   "mana": [
+    "0",
+    "30"
+   ],
+   "stats": {
+    "Health": 850.0,
+    "Armor": 40.0,
+    "Magic Resist": 40.0,
+    "Attack Damage": 45.0,
+    "Attack Speed": 0.75,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "270",
+      "405",
+      "1200"
+     ],
+     "label": "physical"
+    },
+    {
+     "values_1_2_3_star": [
+      "385",
+      "580",
+      "2500"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "fiddlesticks",
+   "cdragon_apiName": "DA_Fiddlesticks18",
+   "ability_name": "Harvest",
+   "mana": [
+    "30",
+    "90"
+   ],
+   "stats": {
+    "Health": null,
+    "Armor": 55.0,
+    "Magic Resist": 55.0,
+    "Attack Damage": 50.0,
+    "Attack Speed": 0.65,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "410",
+      "485",
+      "850"
+     ],
+     "label": "heal"
+    },
+    {
+     "values_1_2_3_star": [
+      "70",
+      "105",
+      "170"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "gnar",
+   "cdragon_apiName": "DA_18_GnarSmall",
+   "ability_name": "Rage Gene",
+   "mana": [
+    "0",
+    "70"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 55.0,
+    "Magic Resist": 55.0,
+    "Attack Damage": 1.0,
+    "Attack Speed": 0.9,
+    "Range": 2.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "100",
+      "150",
+      "2000"
+     ],
+     "label": "physical"
+    },
+    {
+     "values_1_2_3_star": [
+      "15",
+      "20",
+      "250"
+     ],
+     "label": "duration"
+    },
+    {
+     "values_1_2_3_star": [
+      "400",
+      "600",
+      "15000"
+     ],
+     "label": "heal"
+    },
+    {
+     "values_1_2_3_star": [
+      "380",
+      "570",
+      "9000"
+     ],
+     "label": "physical"
+    },
+    {
+     "values_1_2_3_star": [
+      "135",
+      "205",
+      "4500"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "gromp",
+   "cdragon_apiName": "DA_Gromp18_AP",
+   "ability_name": "Belchy Bubble",
+   "mana": [
+    "0",
+    "45"
+   ],
+   "stats": {
+    "Health": 550.0,
+    "Armor": 30.0,
+    "Magic Resist": 30.0,
+    "Attack Damage": 45.0,
+    "Attack Speed": 0.7,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "225",
+      "340",
+      "535"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "180",
+      "270",
+      "435"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "hecarim",
+   "cdragon_apiName": "DA_18_Hecarim",
+   "ability_name": "Spirit of Dread",
+   "mana": [
+    "50",
+    "110"
+   ],
+   "stats": {
+    "Health": 1100.0,
+    "Armor": 50.0,
+    "Magic Resist": 50.0,
+    "Attack Damage": 50.0,
+    "Attack Speed": 0.65,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "375",
+      "475",
+      "685"
+     ],
+     "label": "heal"
+    },
+    {
+     "values_1_2_3_star": [
+      "80",
+      "120",
+      "195"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "ivern",
+   "cdragon_apiName": "DA_18_Ivern",
+   "ability_name": "Triggerseed",
+   "mana": [
+    "50",
+    "80"
+   ],
+   "stats": {
+    "Health": null,
+    "Armor": 55.0,
+    "Magic Resist": 55.0,
+    "Attack Damage": 60.0,
+    "Attack Speed": 0.8,
+    "Range": 3.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "185",
+      "350",
+      "3000"
+     ],
+     "label": "shield"
+    },
+    {
+     "values_1_2_3_star": [
+      "155",
+      "235",
+      "2000"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "karma",
+   "cdragon_apiName": "DA_Karma18",
+   "ability_name": "Karmic Bond",
+   "mana": [
+    "0",
+    "40"
+   ],
+   "stats": {
+    "Health": 500.0,
+    "Armor": 25.0,
+    "Magic Resist": 25.0,
+    "Attack Damage": 25.0,
+    "Attack Speed": 0.7,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "280",
+      "420",
+      "630"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "125",
+      "185",
+      "300"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "kayle",
+   "cdragon_apiName": "DA_18_Kayle",
+   "ability_name": "Solar Judgement",
+   "mana": [
+    "0",
+    "0"
+   ],
+   "stats": {
+    "Health": 550.0,
+    "Armor": 30.0,
+    "Magic Resist": 30.0,
+    "Attack Damage": 10.0,
+    "Attack Speed": 0.75,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "68",
+      "102",
+      "115"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "kennen",
+   "cdragon_apiName": "DA_18_Kennen",
+   "ability_name": "Firestorm",
+   "mana": [
+    "0",
+    "40"
+   ],
+   "stats": {
+    "Health": 1200.0,
+    "Armor": 60.0,
+    "Magic Resist": 60.0,
+    "Attack Damage": 50.0,
+    "Attack Speed": 0.85,
+    "Range": 2.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "230",
+      "300",
+      "3000"
+     ],
+     "label": "shield"
+    },
+    {
+     "values_1_2_3_star": [
+      "80",
+      "120",
+      "1500"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "475",
+      "715",
+      "5000"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "khazix",
+   "cdragon_apiName": "DA_18_KhaZix",
+   "ability_name": "Taste Their Fear",
+   "mana": [
+    "0",
+    "25"
+   ],
+   "stats": {
+    "Health": 950.0,
+    "Armor": 55.0,
+    "Magic Resist": 55.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.85,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "240",
+      "325",
+      "480"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "260",
+      "360",
+      "540"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "kobuko",
+   "cdragon_apiName": "DA_18_Kobuko",
+   "ability_name": "Dance of Life",
+   "mana": [
+    "30",
+    "90"
+   ],
+   "stats": {
+    "Health": 700.0,
+    "Armor": 40.0,
+    "Magic Resist": 40.0,
+    "Attack Damage": 55.0,
+    "Attack Speed": 0.65,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "349",
+      "399",
+      "599"
+     ],
+     "label": "heal"
+    },
+    {
+     "values_1_2_3_star": [
+      "185",
+      "225",
+      "285"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "kogmaw-ap",
+   "cdragon_apiName": "DA_KogMaw18_AD",
+   "ability_name": "Raining Artillery",
+   "mana": [
+    "15",
+    "55"
+   ],
+   "stats": {
+    "Health": 650.0,
+    "Armor": 35.0,
+    "Magic Resist": 35.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.8,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "160",
+      "240",
+      "415"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "48",
+      "72",
+      "115"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "krug",
+   "cdragon_apiName": null,
+   "ability_name": "Rock and Roll",
+   "mana": [
+    "80",
+    "135"
+   ],
+   "stats": {
+    "Health": 1100.0,
+    "Armor": 40.0,
+    "Magic Resist": 40.0,
+    "Attack Damage": 55.0,
+    "Attack Speed": 0.6,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "182",
+      "207",
+      "282"
+     ],
+     "label": "heal"
+    },
+    {
+     "values_1_2_3_star": [
+      "175",
+      "225",
+      "325"
+     ],
+     "label": "heal"
+    },
+    {
+     "values_1_2_3_star": [
+      "223",
+      "288",
+      "423"
+     ],
+     "label": "heal"
+    }
+   ]
+  },
+  {
+   "slug": "leblanc",
+   "cdragon_apiName": "DA_18_LeBlanc",
+   "ability_name": "Mirror Image",
+   "mana": [
+    "0",
+    "40"
+   ],
+   "stats": {
+    "Health": 550.0,
+    "Armor": 30.0,
+    "Magic Resist": 30.0,
+    "Attack Damage": 30.0,
+    "Attack Speed": 0.7,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "260",
+      "390",
+      "615"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "100",
+      "150",
+      "230"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "leona",
+   "cdragon_apiName": "DA_18_Leona",
+   "ability_name": "Shield Bash",
+   "mana": [
+    "30",
+    "90"
+   ],
+   "stats": {
+    "Health": 750.0,
+    "Armor": 40.0,
+    "Magic Resist": 40.0,
+    "Attack Damage": 50.0,
+    "Attack Speed": 0.65,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "60",
+      "80",
+      "100"
+     ],
+     "label": "unlabelled"
+    },
+    {
+     "values_1_2_3_star": [
+      "72",
+      "120",
+      "174.4"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "lillia",
+   "cdragon_apiName": "DA_18_Lillia",
+   "ability_name": "Lilting Lullaby",
+   "mana": [
+    "40",
+    "140"
+   ],
+   "stats": {
+    "Health": 1300.0,
+    "Armor": 60.0,
+    "Magic Resist": 60.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.65,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "350",
+      "525",
+      "800"
+     ],
+     "label": "heal"
+    },
+    {
+     "values_1_2_3_star": [
+      "90",
+      "135",
+      "2000"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "lux-blackthorn",
+   "cdragon_apiName": "DA_Lux18_Blackthorn",
+   "ability_name": "Final Spark",
+   "mana": [
+    "20",
+    "70"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.8,
+    "Range": 5.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "3",
+      "3",
+      "100"
+     ],
+     "label": "unlabelled"
+    },
+    {
+     "values_1_2_3_star": [
+      "375",
+      "565",
+      "6500"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "lux-blossom",
+   "cdragon_apiName": "DA_Lux18_Blossom",
+   "ability_name": "Final Spark",
+   "mana": [
+    "20",
+    "70"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.8,
+    "Range": 5.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "3",
+      "3",
+      "100"
+     ],
+     "label": "unlabelled"
+    },
+    {
+     "values_1_2_3_star": [
+      "375",
+      "565",
+      "6500"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "lux-coven",
+   "cdragon_apiName": "DA_18_Lux_Coven",
+   "ability_name": "Final Spark",
+   "mana": [
+    "20",
+    "70"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.8,
+    "Range": 5.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "3",
+      "3",
+      "100"
+     ],
+     "label": "unlabelled"
+    },
+    {
+     "values_1_2_3_star": [
+      "375",
+      "565",
+      "6500"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "lux-elderwood",
+   "cdragon_apiName": "DA_18_Lux_Elderwood",
+   "ability_name": "Final Spark",
+   "mana": [
+    "20",
+    "70"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.8,
+    "Range": 5.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "3",
+      "3",
+      "100"
+     ],
+     "label": "unlabelled"
+    },
+    {
+     "values_1_2_3_star": [
+      "375",
+      "565",
+      "6500"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "lux-fae",
+   "cdragon_apiName": "DA_18_Lux_Fae",
+   "ability_name": "Final Spark",
+   "mana": [
+    "20",
+    "70"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.8,
+    "Range": 5.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "3",
+      "3",
+      "100"
+     ],
+     "label": "unlabelled"
+    },
+    {
+     "values_1_2_3_star": [
+      "375",
+      "565",
+      "6500"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "lux-inferno",
+   "cdragon_apiName": "DA_18_Lux_Inferno",
+   "ability_name": "Final Spark",
+   "mana": [
+    "20",
+    "70"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.8,
+    "Range": 5.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "3",
+      "3",
+      "100"
+     ],
+     "label": "unlabelled"
+    },
+    {
+     "values_1_2_3_star": [
+      "375",
+      "565",
+      "6500"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "lux-lunar",
+   "cdragon_apiName": "DA_18_Lux_Moonbeam",
+   "ability_name": "Final Spark",
+   "mana": [
+    "20",
+    "70"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.8,
+    "Range": 5.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "3",
+      "3",
+      "100"
+     ],
+     "label": "unlabelled"
+    },
+    {
+     "values_1_2_3_star": [
+      "375",
+      "565",
+      "6500"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "lux-primal",
+   "cdragon_apiName": "DA_18_Lux_Primal",
+   "ability_name": "Final Spark",
+   "mana": [
+    "20",
+    "70"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.8,
+    "Range": 5.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "3",
+      "3",
+      "100"
+     ],
+     "label": "unlabelled"
+    },
+    {
+     "values_1_2_3_star": [
+      "375",
+      "565",
+      "6500"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "lux-solar",
+   "cdragon_apiName": "DA_18_Lux_Sunbeam",
+   "ability_name": "Final Spark",
+   "mana": [
+    "20",
+    "70"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.8,
+    "Range": 5.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "3",
+      "3",
+      "100"
+     ],
+     "label": "unlabelled"
+    },
+    {
+     "values_1_2_3_star": [
+      "375",
+      "565",
+      "6500"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "lux",
+   "cdragon_apiName": "DA_Lux18_Base",
+   "ability_name": "Final Spark",
+   "mana": [
+    "20",
+    "70"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 40.0,
+    "Magic Resist": 40.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.8,
+    "Range": 5.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "3",
+      "3",
+      "100"
+     ],
+     "label": "unlabelled"
+    },
+    {
+     "values_1_2_3_star": [
+      "375",
+      "565",
+      "6500"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "malphite",
+   "cdragon_apiName": "DA_18_Malphite",
+   "ability_name": "Petrified Bark",
+   "mana": [
+    "30",
+    "80"
+   ],
+   "stats": {
+    "Health": 1300.0,
+    "Armor": 70.0,
+    "Magic Resist": 70.0,
+    "Attack Damage": 70.0,
+    "Attack Speed": 0.55,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "750",
+      "925",
+      "2000"
+     ],
+     "label": "shield"
+    },
+    {
+     "values_1_2_3_star": [
+      "142",
+      "213",
+      "3398.6"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "mama-beak",
+   "cdragon_apiName": "DA_CrimsonRaptor18",
+   "ability_name": "Flock Family",
+   "mana": [
+    "20",
+    "60"
+   ],
+   "stats": {
+    "Health": 650.0,
+    "Armor": 35.0,
+    "Magic Resist": 35.0,
+    "Attack Damage": 60.0,
+    "Attack Speed": 0.75,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "20",
+      "30",
+      "50"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "maokai",
+   "cdragon_apiName": "DA_18_Maokai",
+   "ability_name": "Sow the Seeds",
+   "mana": [
+    "30",
+    "100"
+   ],
+   "stats": {
+    "Health": 1150.0,
+    "Armor": 60.0,
+    "Magic Resist": 60.0,
+    "Attack Damage": 80.0,
+    "Attack Speed": 0.65,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "80.5",
+      "80.5",
+      "862.5"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "69",
+      "69",
+      "1150"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "330",
+      "400",
+      "2000"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "master-yi-ap",
+   "cdragon_apiName": "DA_18_MasterYi_AD",
+   "ability_name": "Wuju Style",
+   "mana": [
+    "0",
+    "3"
+   ],
+   "stats": {
+    "Health": 850.0,
+    "Armor": 55.0,
+    "Magic Resist": 55.0,
+    "Attack Damage": 63.0,
+    "Attack Speed": 0.85,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "135",
+      "200",
+      "320"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "morgana",
+   "cdragon_apiName": "DA_18_Morgana",
+   "ability_name": "Withering Curse",
+   "mana": [
+    "0",
+    "65"
+   ],
+   "stats": {
+    "Health": 1100.0,
+    "Armor": 60.0,
+    "Magic Resist": 60.0,
+    "Attack Damage": 45.0,
+    "Attack Speed": 0.75,
+    "Range": 2.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "70",
+      "105",
+      "500"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "33",
+      "50",
+      "500"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "25",
+      "38",
+      "240"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "murkwolf",
+   "cdragon_apiName": null,
+   "ability_name": "Rending Claws",
+   "mana": [
+    "0",
+    "40"
+   ],
+   "stats": {
+    "Health": 700.0,
+    "Armor": 40.0,
+    "Magic Resist": 40.0,
+    "Attack Damage": 50.0,
+    "Attack Speed": 0.75,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "500",
+      "1050",
+      "2250"
+     ],
+     "label": "physical"
+    },
+    {
+     "values_1_2_3_star": [
+      "65",
+      "100",
+      "180"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "nidalee",
+   "cdragon_apiName": "DA_Nidalee18_AP",
+   "ability_name": "Javelin Toss",
+   "mana": [
+    "0",
+    "45"
+   ],
+   "stats": {
+    "Health": 850.0,
+    "Armor": 30.0,
+    "Magic Resist": 30.0,
+    "Attack Damage": 35.0,
+    "Attack Speed": 0.8,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "195",
+      "295",
+      "2000"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "350",
+      "525",
+      "3000"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "ornn",
+   "cdragon_apiName": "DA_18_Ornn",
+   "ability_name": "Bellows Breath",
+   "mana": [
+    "40",
+    "100"
+   ],
+   "stats": {
+    "Health": 700.0,
+    "Armor": 40.0,
+    "Magic Resist": 40.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.6,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "400",
+      "460",
+      "550"
+     ],
+     "label": "shield"
+    },
+    {
+     "values_1_2_3_star": [
+      "200",
+      "300",
+      "450"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "pebbles",
+   "cdragon_apiName": "DA_18_Sentry",
+   "ability_name": "Azure Laser",
+   "mana": [
+    "30",
+    "70"
+   ],
+   "stats": {
+    "Health": 500.0,
+    "Armor": 25.0,
+    "Magic Resist": 25.0,
+    "Attack Damage": 35.0,
+    "Attack Speed": 0.8,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "170",
+      "255",
+      "385"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "rakan",
+   "cdragon_apiName": "DA_18_Rakan",
+   "ability_name": "Entrancing Dance",
+   "mana": [
+    "35",
+    "105"
+   ],
+   "stats": {
+    "Health": 700.0,
+    "Armor": 35.0,
+    "Magic Resist": 35.0,
+    "Attack Damage": null,
+    "Attack Speed": 0.6,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "290",
+      "340",
+      "435"
+     ],
+     "label": "shield"
+    }
+   ]
+  },
+  {
+   "slug": "rammus",
+   "cdragon_apiName": "DA_18_Rammus",
+   "ability_name": "Defensive Ball Curl",
+   "mana": [
+    "30",
+    "80"
+   ],
+   "stats": {
+    "Health": 1100.0,
+    "Armor": 50.0,
+    "Magic Resist": 50.0,
+    "Attack Damage": 50.0,
+    "Attack Speed": 0.6,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "400",
+      "550",
+      "700"
+     ],
+     "label": "shield"
+    },
+    {
+     "values_1_2_3_star": [
+      "50",
+      "75",
+      "120"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "reksai",
+   "cdragon_apiName": "DA_18_RekSai",
+   "ability_name": "Uproot",
+   "mana": [
+    "40",
+    "100"
+   ],
+   "stats": {
+    "Health": 700.0,
+    "Armor": 40.0,
+    "Magic Resist": 40.0,
+    "Attack Damage": 50.0,
+    "Attack Speed": 0.55,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "17",
+      "23",
+      "31"
+     ],
+     "label": "heal"
+    },
+    {
+     "values_1_2_3_star": [
+      "70",
+      "105",
+      "160"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "rengar",
+   "cdragon_apiName": "DA_18_Rengar",
+   "ability_name": "Savagery",
+   "mana": [
+    "10",
+    "50"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 55.0,
+    "Magic Resist": 55.0,
+    "Attack Damage": 60.0,
+    "Attack Speed": 0.75,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "255",
+      "385",
+      "650"
+     ],
+     "label": "physical"
+    },
+    {
+     "values_1_2_3_star": [
+      "60",
+      "90",
+      "150"
+     ],
+     "label": "physical"
+    },
+    {
+     "values_1_2_3_star": [
+      "120",
+      "180",
+      "300"
+     ],
+     "label": "heal"
+    }
+   ]
+  },
+  {
+   "slug": "scuttlecrab",
+   "cdragon_apiName": "DA_Scuttlecrab18",
+   "ability_name": "Can You Dig It?",
+   "mana": [
+    "40",
+    "100"
+   ],
+   "stats": {
+    "Health": 950.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 60.0,
+    "Attack Speed": 0.65,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "60",
+      "90",
+      "135"
+     ],
+     "label": "physical"
+    },
+    {
+     "values_1_2_3_star": [
+      "325",
+      "400",
+      "675"
+     ],
+     "label": "heal"
+    }
+   ]
+  },
+  {
+   "slug": "sejuani",
+   "cdragon_apiName": "DA_18_Sejuani",
+   "ability_name": "Sun's Wrath",
+   "mana": [
+    "40",
+    "100"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 50.0,
+    "Attack Speed": 0.6,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "315",
+      "340",
+      "365"
+     ],
+     "label": "shield"
+    },
+    {
+     "values_1_2_3_star": [
+      "90",
+      "135",
+      "205"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "120",
+      "180",
+      "270"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "sentinel",
+   "cdragon_apiName": "DA_Sentinel18",
+   "ability_name": "Azure Shockwave",
+   "mana": [
+    "60",
+    "150"
+   ],
+   "stats": {
+    "Health": 1300.0,
+    "Armor": 60.0,
+    "Magic Resist": 60.0,
+    "Attack Damage": 75.0,
+    "Attack Speed": 0.6,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "531",
+      "631",
+      "2156"
+     ],
+     "label": "shield"
+    },
+    {
+     "values_1_2_3_star": [
+      "100",
+      "150",
+      "3500"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "sett",
+   "cdragon_apiName": "DA_18_Sett",
+   "ability_name": "Haymaker",
+   "mana": [
+    "60",
+    "135"
+   ],
+   "stats": {
+    "Health": 1200.0,
+    "Armor": 60.0,
+    "Magic Resist": 60.0,
+    "Attack Damage": 80.0,
+    "Attack Speed": 0.65,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "394",
+      "444",
+      "2144"
+     ],
+     "label": "heal"
+    },
+    {
+     "values_1_2_3_star": [
+      "222",
+      "297",
+      "5072"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "shen",
+   "cdragon_apiName": "DA_18_Shen",
+   "ability_name": "Ki Barrier",
+   "mana": [
+    "30",
+    "90"
+   ],
+   "stats": {
+    "Health": 900.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 50.0,
+    "Attack Speed": 0.65,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "375",
+      "450",
+      "575"
+     ],
+     "label": "shield"
+    },
+    {
+     "values_1_2_3_star": [
+      "225",
+      "300",
+      "400"
+     ],
+     "label": "shield"
+    },
+    {
+     "values_1_2_3_star": [
+      "35",
+      "55",
+      "80"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "sivir",
+   "cdragon_apiName": "DA_18_Sivir",
+   "ability_name": "Boomerang Blade",
+   "mana": [
+    "0",
+    "40"
+   ],
+   "stats": {
+    "Health": 850.0,
+    "Armor": 40.0,
+    "Magic Resist": 40.0,
+    "Attack Damage": 50.0,
+    "Attack Speed": 0.8,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "235",
+      "350",
+      "1150"
+     ],
+     "label": "physical"
+    },
+    {
+     "values_1_2_3_star": [
+      "42.3",
+      "63",
+      "460"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "soraka",
+   "cdragon_apiName": "DA_18_Soraka",
+   "ability_name": "Starcall",
+   "mana": [
+    "0",
+    "30"
+   ],
+   "stats": {
+    "Health": 850.0,
+    "Armor": 40.0,
+    "Magic Resist": 40.0,
+    "Attack Damage": 30.0,
+    "Attack Speed": 0.75,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "235",
+      "355",
+      "1000"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "110",
+      "165",
+      "1000"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "taric",
+   "cdragon_apiName": "DA_Taric18",
+   "ability_name": "Emerald Radiance",
+   "mana": [
+    "0",
+    "65"
+   ],
+   "stats": {
+    "Health": 1300.0,
+    "Armor": 70.0,
+    "Magic Resist": 70.0,
+    "Attack Damage": 55.0,
+    "Attack Speed": 0.75,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "270",
+      "345",
+      "11300"
+     ],
+     "label": "shield"
+    },
+    {
+     "values_1_2_3_star": [
+      "275",
+      "450",
+      "3000"
+     ],
+     "label": "heal"
+    },
+    {
+     "values_1_2_3_star": [
+      "130",
+      "200",
+      "1000"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "teemo",
+   "cdragon_apiName": "DA_18_Teemo",
+   "ability_name": "Fungus Among Us",
+   "mana": [
+    "0",
+    "50"
+   ],
+   "stats": {
+    "Health": 550.0,
+    "Armor": 30.0,
+    "Magic Resist": 30.0,
+    "Attack Damage": 35.0,
+    "Attack Speed": 0.75,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "55",
+      "82",
+      "155"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "135",
+      "200",
+      "310"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "tristana",
+   "cdragon_apiName": "DA_18_Tristana",
+   "ability_name": "Explosive Charge",
+   "mana": [
+    "0",
+    "50"
+   ],
+   "stats": {
+    "Health": 650.0,
+    "Armor": 35.0,
+    "Magic Resist": 35.0,
+    "Attack Damage": 55.0,
+    "Attack Speed": 0.75,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "175",
+      "265",
+      "420"
+     ],
+     "label": "physical"
+    },
+    {
+     "values_1_2_3_star": [
+      "12",
+      "18",
+      "28"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "varus",
+   "cdragon_apiName": "DA_18_Varus",
+   "ability_name": "Piercing Arrow",
+   "mana": [
+    "20",
+    "110"
+   ],
+   "stats": {
+    "Health": 500.0,
+    "Armor": 25.0,
+    "Magic Resist": 25.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.75,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "445",
+      "670",
+      "1070"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "veigar",
+   "cdragon_apiName": "DA_18_Veigar",
+   "ability_name": "Primordial Burst",
+   "mana": [
+    "0",
+    "30"
+   ],
+   "stats": {
+    "Health": 500.0,
+    "Armor": 25.0,
+    "Magic Resist": 25.0,
+    "Attack Damage": 25.0,
+    "Attack Speed": 0.7,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "190",
+      "285",
+      "430"
+     ],
+     "label": "magic"
+    },
+    {
+     "values_1_2_3_star": [
+      "285",
+      "430",
+      "640"
+     ],
+     "label": "magic"
+    }
+   ]
+  },
+  {
+   "slug": "vi",
+   "cdragon_apiName": "DA_Vi18",
+   "ability_name": "Furious Fists",
+   "mana": [
+    "0",
+    "60"
+   ],
+   "stats": {
+    "Health": 1100.0,
+    "Armor": 50.0,
+    "Magic Resist": 50.0,
+    "Attack Damage": 45.0,
+    "Attack Speed": 0.75,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "200",
+      "265",
+      "360"
+     ],
+     "label": "heal"
+    }
+   ]
+  },
+  {
+   "slug": "warwick",
+   "cdragon_apiName": "DA_18_Warwick",
+   "ability_name": "Jaws of The Beast",
+   "mana": [
+    "0",
+    "40"
+   ],
+   "stats": {
+    "Health": 750.0,
+    "Armor": 45.0,
+    "Magic Resist": 45.0,
+    "Attack Damage": 45.0,
+    "Attack Speed": 0.75,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "230",
+      "345",
+      "560"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "xayah",
+   "cdragon_apiName": "DA_18_Xayah",
+   "ability_name": "Deadly Plumage",
+   "mana": [
+    "0",
+    "50"
+   ],
+   "stats": {
+    "Health": 450.0,
+    "Armor": 25.0,
+    "Magic Resist": 25.0,
+    "Attack Damage": 45.0,
+    "Attack Speed": 0.7,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "73",
+      "108",
+      "165"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "yorick",
+   "cdragon_apiName": "DA_18_Yorick",
+   "ability_name": "Last Rites",
+   "mana": [
+    "50",
+    "110"
+   ],
+   "stats": {
+    "Health": 650.0,
+    "Armor": 35.0,
+    "Magic Resist": 35.0,
+    "Attack Damage": 50.0,
+    "Attack Speed": 0.6,
+    "Range": 1.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "330",
+      "530",
+      "880"
+     ],
+     "label": "heal"
+    },
+    {
+     "values_1_2_3_star": [
+      "280",
+      "325",
+      "435"
+     ],
+     "label": "heal"
+    },
+    {
+     "values_1_2_3_star": [
+      "150",
+      "225",
+      "340"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "yunara",
+   "cdragon_apiName": "DA_18_Yunara",
+   "ability_name": "Cultivation of Spirit",
+   "mana": [
+    "0",
+    "35"
+   ],
+   "stats": {
+    "Health": 550.0,
+    "Armor": 30.0,
+    "Magic Resist": 30.0,
+    "Attack Damage": 42.0,
+    "Attack Speed": 0.75,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "170",
+      "255",
+      "395"
+     ],
+     "label": "physical"
+    },
+    {
+     "values_1_2_3_star": [
+      "59.5",
+      "89.25",
+      "138.25"
+     ],
+     "label": "physical"
+    }
+   ]
+  },
+  {
+   "slug": "zyra",
+   "cdragon_apiName": "DA_18_Zyra",
+   "ability_name": "Rampant Growth",
+   "mana": [
+    "0",
+    "45"
+   ],
+   "stats": {
+    "Health": 850.0,
+    "Armor": 40.0,
+    "Magic Resist": 40.0,
+    "Attack Damage": 40.0,
+    "Attack Speed": 0.75,
+    "Range": 4.0
+   },
+   "numbers": [
+    {
+     "values_1_2_3_star": [
+      "35",
+      "53",
+      "225"
+     ],
+     "label": "magic"
+    }
+   ]
+  }
+ ]
+}
