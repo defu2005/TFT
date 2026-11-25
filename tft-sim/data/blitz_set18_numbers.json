@@ -3008,5 +3008,5 @@
    "aligned": true
   }
  ],
- "note": "Aligned rows: Blitz rendered values matched to CDragon placeholders by text pattern; label from placeholder name (rule). Unaligned rows: raw Blitz triples, no label. Variant apiNames (ap/AD) and Lux forms flagged; not verified."
+ "note": "Aligned rows: Blitz rendered values matched to CDragon placeholders by text pattern; label from placeholder name (rule). Unaligned rows (label 'unaligned'): raw Blitz triples, no label. Hand-read: 13 champions' heal/shield sentences only. Tooltip check: Maokai 3-star values 1150 (= base HP 1150) and 80.5/80.5/862.5 (~ base AD 80) are consistent with values rendered at base stats; not proven for all rows. Lux forms and ap/AD variants joined to their own apiNames; not independently verified."
 }

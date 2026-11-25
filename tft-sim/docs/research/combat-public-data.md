@@ -127,12 +127,20 @@ Mẫu số lấy từ `setData` của từng set (mutator TFTSet17 và TFTSet18)
 | Chỉ hook, không stat | 0 | 0 |
 | Không có tác dụng trong engine | 475 | 619 |
 
+**Cảnh báo về con số 20%:** con số này tính theo apiName đúng như engine nhận. Nó không phản ánh việc item Set 18 có tác dụng hay không, vì phần lớn công thức ghép có apiName `DA_*` mà CDragon để trống `effects`, trong khi item cùng tên `TFT_Item_*` có đầy đủ hiệu ứng.
+
 Phân nhóm Set 18 (theo tên và thành phần):
-- 271 item cổ điển (`TFT_Item_*`): 120 stat, 28 stat+hook, 123 không tác dụng.
-- 55 công thức ghép, trong đó 23 là emblem (chỉ cộng trait, không có stat; engine không xử lý emblem), 2 có stat (Infinity Edge và Jeweled Gauntlet, có nhánh riêng trong engine).
+- 271 item `TFT_Item_*` (cổ điển): 148 có stat hoặc hook, 123 không tác dụng.
+- 55 công thức `DA_*` có thành phần (craftable):
+  - 16 là emblem (chỉ cộng trait; engine không xử lý emblem).
+  - 39 còn lại: 37 có item cùng tên `TFT_Item_*` có hiệu ứng (27 stat+hook, 9 stat, 1 không tác dụng), 2 không có item cùng tên.
+  - Ví dụ: `DA_Bloodthirster` có `effects` rỗng, `TFT_Item_Bloodthirster` có AD, AP, hút máu, kháng phép...
+  - Chưa biết client thật gửi apiName nào cho item Set 18 khi chụp dữ liệu. Đây là điểm cần làm rõ trong hợp đồng capture, không phải lỗi của engine.
 - 10 thành phần `DA_Component_*`: không tác dụng (đúng bản chất).
-- Các mục `DA_*` còn lại (chủ yếu tên augment Set 18 như Aftershock, All Fives, Backrow Star...): 9 có stat, 463 không tác dụng trong engine. Engine chỉ có augment cho Set 17 (`AUGMENT_REGISTRY`), nên các augment Set 18 không có hiệu ứng.
-- Hook: 0 item Set 18 nằm trong bảng hook riêng cho Set 18. Các hook 28 item cổ điển có stat+hook là hook dùng chung từ bảng Set 17 (không xác định được có phải chúng đang được Set 18 dùng).
+- 435 mục `DA_*` còn lại: 9 có stat (Flow, Hugify, Marksmen's Gale, Stand Alone và các mục khác), 426 không tác dụng. Các mục này có tên và mô tả giống augment Set 18 (ví dụ Aftershock: "sau 8 giây, choáng mọi địch 1,5 giây"; Bark Armor: "tướng nhận 150 khiên trong 10 giây"), nhưng apiName không nằm trong danh sách 594 augment của setData. Chưa xác định chắc phân loại; đây là mục chưa rõ.
+- Hook: 0 mục `DA_*` nằm trong bảng hook của engine. Các hook của item cổ điển được tính trong bảng dùng chung với Set 17.
+
+Đếm hiệu quả theo tên (ghép craftable `DA_*` với item cùng tên `TFT_Item_*`): 191/776 item có tác dụng trong engine (157 theo apiName + 34 craftable qua item cùng tên). Vẫn chỉ khoảng một phần tư, và phần lớn là item cổ điển.
 
 Trait (36 trait Set 18; 44 trait Set 17):
 - Set 18: 11 trait có bonus chỉ số được áp dụng khi kích hoạt (Sprykin, Hunter, Monolith, Attuned, Vanguard, Blackthorn, Fae, Lunar, Spellweaver, Thornmaiden, Blossom); 25 không có ánh xạ chỉ số (Elderwood, Avatar, Ravager, Bounty Seeker, Solar, Adaptor, Coven, Eclipse, Old Growth, Primal, Greenfather, Invoker, Rapidfire, Juggernaut, Inferno, Rival, Brawler, Executioner, Apex Predator, Riftbeast, Caustic, Defender, Flora Fatalis, Summoner, Emerald Aspect).
@@ -184,7 +192,7 @@ Việc cần người dùng quyết: (a) xác nhận giấy phép CDragon (ngu�
 
 - Parse được 74/74 trang; chỉ số cơ bản và khối ability có mặt ở 72/74 (2 trang không có chỉ số).
 - Ghép với CDragon 18.7 theo tên: 71 khớp duy nhất. 3 tên trùng nhiều bản (Elder Dragon, Krug, Murkwolf) và 10 trang Lux (các dạng Lux) chưa ghép được: 10 trang Lux đều rơi vào bản Lux duy nhất của CDragon.
-- Đối chiếu chỉ số: HP, giáp, MR, AD, AS khớp ở phần lớn tướng. Lệch: tầm đánh Ashe, Draven, Lux (Blitz 5, CDragon 6; quy ước đo tầm có thể khác), AS Master Yi AP (0,85 so với 0,80).
+- Đối chiếu chỉ số: HP, giáp, MR, AS khớp ở phần lớn tướng (AD không được so sánh trong script này). Lệch: tầm đánh Ashe, Draven, Lux (Blitz 5, CDragon 6; quy ước đo tầm có thể khác), AS Master Yi AP (0,85 so với 0,80).
 - Ghép nhãn: số bộ ba `a/b/c` của Blitz và placeholder `@...@` của CDragon không cùng số lượng ở đa số tướng (3/78 trùng). Chưa có cách ghép nhãn tin cậy theo thứ tự.
 
 Kết luận: chưa commit số liệu Blitz vào repo. Lý do: chưa ghép nhãn sát thương được, và tầm đánh/AS cần quy ước riêng. Nếu sau này cần dùng, ghép theo nhãn cần làm bằng tay từng tướng, và lưu ý điều khoản: giấy phép chỉ cho sử dụng cá nhân phi thương mại; robots.txt chặn ClaudeBot/GPTBot, nên không đưa dữ liệu này vào huấn luyện mô hình khi chưa có quyết định khác của người dùng.
@@ -196,7 +204,7 @@ File: `tft-sim/data/blitz_set18_numbers.json`. 74 trang Blitz (patch 18.7).
 - Ghép CDragon 18.7 theo tên: 71 tướng có apiName duy nhất. Elder Dragon, Krug và Murkwolf trùng tên nên apiName = null. Mười dạng Lux ghép riêng từng dạng.
 - Căn chỉnh văn bản với mô tả CDragon (placeholder `@...@`): 58/74 tướng khớp. Tổng cộng 270 dòng có nhãn từ căn chỉnh, và 35 bộ ba thô không căn chỉnh được (nhãn `unaligned`).
 - 16 tướng chưa căn chỉnh = 13 lệch văn bản (Akali-AD, Alistar, Amumu, Cinderling, Elise, Gnar, Khazix, Kog'Maw-AP, Master Yi-AP, Ornn, Rengar, Teemo, Xayah) + 3 không ghép được apiName.
-- Nhãn lấy từ tên placeholder, ưu tiên: duration > shield > magic > physical > heal (`HealthCalc`, `Heal*`) > percent > other. Đã đọc tay các dòng heal/shield/duration: `HealthCalc2` của Yorick là HP của tướng triệu hồi (nhãn `summon_hp`), không phải hồi máu. Các dòng khác chưa đọc tay.
+- Nhãn lấy từ tên placeholder, ưu tiên: duration > shield > magic > physical > heal (`HealthCalc`, `Heal*`) > percent > other. Đã đọc tay câu mô tả của 13 tướng (Fiddlesticks, Hecarim, Kobuko, Lillia, Maokai, Reksai, Scuttlecrab, Sett, Taric, Vi, Yorick, Shen, Camille) cho các dòng heal/shield; `HealthCalc2` của Yorick là HP của tướng triệu hồi (nhãn `summon_hp`). Các tướng còn lại, kể cả Malphite, Ivern, Kennen, Rakan, Rammus, Sejuani, Sentinel, Diana, Ornn, chưa đọc tay.
 - Giá trị là số hiển thị trong tooltip (đã tính sẵn), không phải hệ số thô. Chưa xác nhận được gốc tỷ lệ AP/AD: kiểm tra Caitlyn (base AD 50, số 220/330/535) không đủ để kết luận. Vì vậy `templates.py` không được nhân lại theo AP/AD khi dùng các số này.
 - Biến CDragon Set 18 gần như trống (70/71 tướng không có biến), nên không đối chiếu được số bằng biến.
 - Tầm đánh Ashe, Draven, Lux và AS Master Yi-AP lệch so với CDragon. Số giữ nguyên theo Blitz.
