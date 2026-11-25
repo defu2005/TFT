@@ -20,32 +20,47 @@
     [
       7000,
       9200
+    ],
+    [
+      9600,
+      11000
+    ],
+    [
+      11200,
+      13500
+    ],
+    [
+      14400,
+      16200
     ]
   ],
   "remaining_ranges_s": [
     [
-      9600,
-      999999
+      16800,
+      47188
     ]
   ],
   "game_ids": [
     "twitch-2887732371-g150",
     "twitch-2887732371-g3200",
     "twitch-2887732371-g5000",
-    "twitch-2887732371-g7000"
+    "twitch-2887732371-g7000",
+    "twitch-2887732371-g9600",
+    "twitch-2887732371-g11200",
+    "twitch-2887732371-g14400"
   ],
   "counts": {
-    "games": 4,
-    "fights": 25,
+    "games": 7,
+    "fights": 41,
     "others": 0
   },
   "validator": {
     "ok": 0,
     "skipped": {
-      "winner_null": 25
+      "winner_null": 41
     }
   },
   "needs_review": 0,
   "commit": null,
-  "remaining": "ti\u1ebfp ranked t\u1eeb ~9600s; duration TBD"
+  "remaining": "ti\u1ebfp ranked t\u1eeb ~16800s; VOD d\u00e0i ~47188s"
 }
