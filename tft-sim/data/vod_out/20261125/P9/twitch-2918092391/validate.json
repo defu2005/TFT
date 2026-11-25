@@ -1,0 +1,33 @@
+{
+ "ok": 0,
+ "skipped": {
+  "winner_null": 5
+ },
+ "rows": [
+  {
+   "line": 1,
+   "source": "twitch-2918092391-g400:3-2",
+   "reason": "winner_null"
+  },
+  {
+   "line": 2,
+   "source": "twitch-2918092391-g400:5-4",
+   "reason": "winner_null"
+  },
+  {
+   "line": 3,
+   "source": "twitch-2918092391-g4500:4-5",
+   "reason": "winner_null"
+  },
+  {
+   "line": 4,
+   "source": "twitch-2918092391-g10000:1-2",
+   "reason": "winner_null"
+  },
+  {
+   "line": 5,
+   "source": "twitch-2918092391-g16000:4-5",
+   "reason": "winner_null"
+  }
+ ]
+}
