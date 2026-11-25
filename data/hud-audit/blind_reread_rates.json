@@ -1,5 +1,5 @@
 {
- "protocol": "Digit OCR (tesseract, psm 7, digit whitelist, 3x upscale) on fixed crops; the script never opens the master, which is compared after OCR. The coin-free crop is (610,586,640,610). Compared against the master as it stood before corrections.",
+ "protocol": "Digit OCR (tesseract, psm 7, digit whitelist, 3x upscale) on fixed crops; the script never opens the master, which is compared after OCR. The coin-free crop (610,586,640,610) was chosen after seeing the sample of ten, so the 10-round figure is tuned; the 21-frame run is the out-of-sample figure.",
  "rates": {
   "gold": {
    "matched": 9,
@@ -92,6 +92,31 @@
    "6-6"
   ],
   "3-2_gold_40": "derived, unverified",
+  "no_master_gold_field": [
+   "1-1",
+   "1-2",
+   "2-1",
+   "3-4",
+   "4-4",
+   "5-4",
+   "6-4"
+  ]
+ },
+ "gold_rest_21_out_of_sample": {
+  "frames_with_master_gold": 21,
+  "matched_planning_read": 13,
+  "disagree_with_frame_A": {
+   "2-2": "planning 0 at 532 s, Frame A 4 at 526.1 s",
+   "2-5": "planning 6 at 712 s, Frame A 7 at 700.7 s",
+   "2-6": "planning 15 at 766 s, Frame A 17 at 759.3 s",
+   "2-7": "planning 29 at 844 s, Frame A 28 at 835.1 s"
+  },
+  "not_comparable_no_gold_box_visible": [
+   "2-4",
+   "3-2",
+   "6-1",
+   "6-6"
+  ],
   "no_master_gold_field": [
    "1-1",
    "1-2",

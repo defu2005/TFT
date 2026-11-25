@@ -814,8 +814,8 @@
      "P4",
      "P8"
     ],
-    "attempt": "508 s rail badges: P3 and P6 show level 3, below the plate's 4, so out. P8 shows 4 and matches. P4 matches only if its row shows 4; the P2/P4 row mapping is not established. Two candidates remain.",
-    "reason": "P4 and P8 both fit the level; the P2/P4 row mapping is not established"
+    "attempt": "508 s rail badges: P3 and P6 show level 3, below the plate's 4, so out. P4 shows 4 and P8 shows 4, so both fit the plate. Two candidates remain; no further frame separates them in this pass.",
+    "reason": "P4 and P8 both show level 4 at 508 s"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -999,14 +999,9 @@
      "level": 4,
      "xp": "2/10",
      "gold": {
-      "value": 4,
+      "value": 0,
       "tag": "read",
-      "basis": "read at 526.1 s (the planning entry has no own frame time; Frame A time equals t_planning_s); frame shows 4; OCR agrees; previous master read 0 at the same time, superseded by the frame",
-      "prev_read": {
-       "value": 0,
-       "t_s": 526.1,
-       "superseded_by_frame": true
-      }
+      "basis": "planning read, planning frame 532 s (timer 22), as recorded before"
      },
      "panel": {
       "Juggernaut": 2,
@@ -1023,7 +1018,13 @@
       "Kobuko"
      ],
      "board": "4 bodies (counter 4/4), not named",
-     "bench": "units visible, not named"
+     "bench": "units visible, not named",
+     "gold_frame_a_read": {
+      "value": 4,
+      "tag": "read",
+      "frame_s": 526.1,
+      "basis": "Frame A frame at 526.1 s shows 4; digit OCR agrees"
+     }
     },
     "tag": "read"
    },
@@ -1643,14 +1644,9 @@
      "level": 5,
      "xp": "0/20",
      "gold": {
-      "value": 7,
+      "value": 6,
       "tag": "read",
-      "basis": "read at 700.7 s (the planning entry has no own frame time; Frame A time equals t_planning_s); frame shows 7; OCR agrees; previous master read 6 at the same time, superseded by the frame",
-      "prev_read": {
-       "value": 6,
-       "t_s": 700.7,
-       "superseded_by_frame": true
-      }
+      "basis": "planning read, planning frame 712 s (timer 17), as recorded before"
      },
      "streak": 2,
      "panel": {
@@ -1669,7 +1665,13 @@
       "Yunara",
       "Warwick"
      ],
-     "board": "5 bodies, names from 3-1 solver set (not confirmed per hex)"
+     "board": "5 bodies, names from 3-1 solver set (not confirmed per hex)",
+     "gold_frame_a_read": {
+      "value": 7,
+      "tag": "read",
+      "frame_s": 700.7,
+      "basis": "Frame A frame at 700.7 s shows 7; digit OCR agrees"
+     }
     },
     "tag": "read"
    },
@@ -1885,7 +1887,7 @@
    "opponent": {
     "value": "P6",
     "tag": "derived",
-    "basis": "plate 6 at 795.3 s; 1093.2 s rail badges (levels never drop): P3, P5 and P8 are at most 5 then, so they cannot be 6 at 795.3 s; P6 is 7. Unique in the pool."
+    "basis": "plate 6 at 795.3 s, with the streamer's own plate (5) visible at left in the same frame; 1093.2 s rail badges (levels never drop): P3, P5 and P8 are at most 5 then, so they cannot be 6 at 795.3 s; P6 is 7. Unique in the pool."
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -1896,14 +1898,9 @@
      "level": 5,
      "xp": "2/20",
      "gold": {
-      "value": 17,
+      "value": 15,
       "tag": "read",
-      "basis": "read at 759.3 s (the planning entry has no own frame time; Frame A time equals t_planning_s); frame shows 17; OCR agrees; previous master read 15 at the same time, superseded by the frame",
-      "prev_read": {
-       "value": 15,
-       "t_s": 759.3,
-       "superseded_by_frame": true
-      }
+      "basis": "planning read, planning frame 766 s (timer 21), as recorded before"
      },
      "streak": 3,
      "panel": {
@@ -1922,7 +1919,13 @@
       "Alistar"
      ],
      "board": "5 bodies, not named",
-     "bench": "about 8 occupied, not named"
+     "bench": "about 8 occupied, not named",
+     "gold_frame_a_read": {
+      "value": 17,
+      "tag": "read",
+      "frame_s": 759.3,
+      "basis": "Frame A frame at 759.3 s shows 17; digit OCR agrees"
+     }
     },
     "tag": "read"
    },
@@ -2137,14 +2140,9 @@
      "level": 5,
      "xp": "4/20",
      "gold": {
-      "value": 28,
+      "value": 29,
       "tag": "read",
-      "basis": "read at 835.1 s (the planning entry has no own frame time; Frame A time equals t_planning_s); frame shows 28; OCR agrees; previous master read 29 at the same time, superseded by the frame",
-      "prev_read": {
-       "value": 29,
-       "t_s": 835.1,
-       "superseded_by_frame": true
-      }
+      "basis": "planning read, planning frame 844 s (timer 4), as recorded before"
      },
      "streak": 4,
      "panel": {
@@ -2164,7 +2162,13 @@
       "Ezreal",
       "Sejuani"
      ],
-     "note": "Ezreal is in the shop, not on the board (no Executioner in the panel)"
+     "note": "Ezreal is in the shop, not on the board (no Executioner in the panel)",
+     "gold_frame_a_read": {
+      "value": 28,
+      "tag": "read",
+      "frame_s": 835.1,
+      "basis": "Frame A frame at 835.1 s shows 28; digit OCR agrees"
+     }
     },
     "tag": "read"
    },
@@ -2672,7 +2676,7 @@
      "gold": {
       "value": 40,
       "tag": "derived",
-      "basis": "no gold box visible at 956.3 s (augment screen); value from an earlier derived read, not verified against a frame"
+      "basis": "no gold box visible at 956.3 s (augment screen); earlier derived value, not verified against a frame"
      },
      "level": {
       "value": null,
@@ -4481,8 +4485,8 @@
      "P5",
      "P6"
     ],
-    "attempt": "1503 s full frame: combat (timer 13); no name visible in the top HUD or arena. HP-flag pool kept: P2, P4, P5, P6",
-    "reason": "no legible opponent name in the checked frame"
+    "attempt": "1503 s full frame, plus frames at 1488, 1496, 1504, 1512 and 1518 s (top 90 px checked): no opponent plate with a level is legible; the top right shows a tactician sprite under the rank overlay. HP-flag pool kept: P2, P4, P5, P6",
+    "reason": "no legible opponent plate in the top strip across five frames"
    },
    "combat_frame_t_s": null,
    "result": {
@@ -5138,7 +5142,7 @@
    "opponent": {
     "value": "P5",
     "tag": "derived",
-    "basis": "1685.8 s rail badges: P5 level 7 matches plate 7; P3 level 6 and P6 level 8 do not; the P2 and P4 rows both show 8. Unique in the pool."
+    "basis": "1685.8 s rail badges: P5 level 7 matches plate 7; P3 level 6, P6 level 8 do not; P4 level 8 does not. The streamer's own plate is visible at left in the same frame. Unique in the pool."
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -6247,7 +6251,7 @@
    "opponent": {
     "value": "P3",
     "tag": "derived",
-    "basis": "1952.9 s rail badges: P3 level 6 matches plate 6; P6 level 9 and P7 level 8 do not. Unique in the pool."
+    "basis": "1952.9 s rail badges: P3 level 6 matches plate 6; P6 level 9 and P7 level 8 do not. The streamer's own plate (9) is visible top-left in the same frame. Unique in the pool."
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -7006,7 +7010,7 @@
    "opponent": {
     "value": "P4",
     "tag": "derived",
-    "basis": "2132.5 s rail: P4 is the only pool member whose row can read 9; P7 reads 8 in the same frame, so it is out."
+    "basis": "2132.5 s rail: P4 level 9 matches plate 9; P7 level 8 in the same frame does not. The streamer's own plate (9) is visible at left in the same frame."
    },
    "combat_frame_t_s": null,
    "planning": {
@@ -7017,14 +7021,9 @@
      "level": 9,
      "xp": "6/68",
      "gold": {
-      "value": 9,
+      "value": 7,
       "tag": "read",
-      "basis": "2094 s frame shows 9 (planning entry frame 2094 s); previous read 7 kept as prev_read at 2087.5 s, superseded by the frame",
-      "prev_read": {
-       "value": 7,
-       "t_s": 2087.5,
-       "superseded_by_frame": true
-      }
+      "basis": "earlier planning read; its frame time is not recorded"
      },
      "streak": 2,
      "counter": "9/9",
@@ -7046,7 +7045,13 @@
       "Kha'Zix",
       null
      ],
-     "gold_prev_read": 7
+     "gold_prev_read": 7,
+     "gold_frame_a_read": {
+      "value": 9,
+      "tag": "read",
+      "frame_s": 2094,
+      "basis": "2094 s frame shows 9; digit OCR agrees"
+     }
     }
    },
    "combat": {
@@ -9421,7 +9426,7 @@
   "source": "round_results_derived.json eliminations; 1 and 2 from 6-6 frames"
  },
  "blind_reread": {
-  "summary": "Blind re-read of the 10 sampled rounds: gold 9/10 against the master as it stood (5-5 master read 7 at 2087.5 s, frame at 2094 s shows 9), streak 9/10 (one empty OCR read at 6-2; the frame shows 1). Over the other 28 Frame A frames: 13 of 21 gold values matched the master at the master time. Four mismatches with a visible gold box (2-2, 2-5, 2-6, 2-7) are kept as prev_read with their times, and the frame value is recorded as the read at the same time. Four frames show no gold box (2-4, 3-2, 6-1, 6-6); 3-2 gold 40 is derived and unverified."
+  "summary": "Blind re-read of the 10 sampled rounds: gold 9/10 against the master as it stood (5-5 planning read 7; Frame A frame at 2094 s shows 9), streak 9/10 (one empty OCR read at 6-2; frame shows 1). Out-of-sample run over the other 21 frames with a master gold value: 13 matched the planning read; 4 disagree with the Frame A frame (2-2, 2-5, 2-6, 2-7), where the planning read and the Frame A frame are at different times (planning frames 532, 712, 766, 844 s; Frame A 526.1, 700.7, 759.3, 835.1 s). Both values are kept. 4 frames show no gold box (2-4, 3-2, 6-1, 6-6)."
  },
  "final_comps": {
   "P1_6-6": {
