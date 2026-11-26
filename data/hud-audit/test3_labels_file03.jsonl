@@ -1,0 +1,60 @@
+{"idx": 0, "t_file_s": 21.7, "hud_visible": false, "stage": null, "timer": null, "timer_kind": null, "gold": null, "level": null, "xp": null, "streak": null, "note": "carousel/portal; no HUD"}
+{"idx": 1, "t_file_s": 31.7, "hud_visible": false, "stage": null, "timer": null, "timer_kind": null, "gold": null, "level": null, "xp": null, "streak": null, "note": "carousel/portal; no HUD"}
+{"idx": 2, "t_file_s": 34.9, "hud_visible": false, "stage": null, "timer": null, "timer_kind": null, "gold": null, "level": null, "xp": null, "streak": null, "note": "carousel/portal; no HUD"}
+{"idx": 3, "t_file_s": 66.8, "hud_visible": false, "stage": null, "timer": null, "timer_kind": null, "gold": null, "level": null, "xp": null, "streak": null, "note": "carousel/portal; no HUD"}
+{"idx": 4, "t_file_s": 77.2, "hud_visible": false, "stage": null, "timer": null, "timer_kind": null, "gold": null, "level": null, "xp": null, "streak": null, "note": "carousel/portal; no HUD"}
+{"idx": 5, "t_file_s": 78.5, "hud_visible": false, "stage": null, "timer": null, "timer_kind": null, "gold": null, "level": null, "xp": null, "streak": null, "note": "carousel/portal; no HUD"}
+{"idx": 6, "t_file_s": 86.5, "hud_visible": false, "stage": null, "timer": null, "timer_kind": null, "gold": null, "level": null, "xp": null, "streak": null, "note": "augment/reward carousel; no HUD"}
+{"idx": 7, "t_file_s": 113.7, "hud_visible": false, "stage": null, "timer": null, "timer_kind": null, "gold": null, "level": null, "xp": null, "streak": null, "note": "augment selection; no HUD"}
+{"idx": 8, "t_file_s": 152.8, "hud_visible": "partial", "stage": "1-2", "timer": 15, "timer_kind": "clock", "gold": null, "level": null, "xp": null, "streak": null, "note": "top stage bar only; bottom HUD not visible"}
+{"idx": 9, "t_file_s": 357.5, "hud_visible": true, "stage": "2-2", "timer": 25, "timer_kind": "clock", "gold": 0, "level": 4, "xp": "2/10", "streak": 1, "note": "rail not read"}
+{"idx": 10, "t_file_s": 412.8, "hud_visible": true, "stage": "2-3", "timer": 29, "timer_kind": "clock", "gold": 8, "level": 4, "xp": "4/10", "streak": 2, "note": "rail not read"}
+{"idx": 11, "t_file_s": 417.0, "hud_visible": true, "stage": "2-3", "timer": 25, "timer_kind": "clock", "gold": 8, "level": 4, "xp": "4/10", "streak": 2, "note": "rail not read"}
+{"idx": 12, "t_file_s": 473.9, "hud_visible": "partial", "stage": "2-4", "timer": 9, "timer_kind": "clock", "gold": null, "level": null, "xp": null, "streak": null, "note": "top stage bar only; bottom HUD not visible"}
+{"idx": 13, "t_file_s": 505.8, "hud_visible": true, "stage": "2-5", "timer": 8, "timer_kind": "clock", "gold": 11, "level": 5, "xp": "0/20", "streak": 3, "note": "rail not read"}
+{"idx": 14, "t_file_s": 700.9, "hud_visible": true, "stage": "3-1", "timer": 23, "timer_kind": "clock", "gold": 30, "level": 5, "xp": "6/20", "streak": 5, "note": "rail not read"}
+{"idx": 15, "t_file_s": 721.2, "hud_visible": true, "stage": "3-1", "timer": 3, "timer_kind": "clock", "gold": 31, "level": 5, "xp": "6/20", "streak": 6, "note": "rail not read"}
+{"idx": 16, "t_file_s": 818.9, "hud_visible": true, "stage": "3-2", "timer": 3, "timer_kind": "clock", "gold": 40, "level": 6, "xp": "0/36", "streak": 7, "note": "rail not read"}
+{"idx": 17, "t_file_s": 846.4, "hud_visible": true, "stage": "3-3", "timer": 9, "timer_kind": "clock", "gold": 40, "level": 6, "xp": "2/36", "streak": 7, "note": "rail not read"}
+{"idx": 18, "t_file_s": 965.2, "hud_visible": true, "stage": "3-5", "timer": 1, "timer_kind": "clock", "gold": 19, "level": 7, "xp": "0/56", "streak": 8, "note": "rail not read"}
+{"idx": 19, "t_file_s": 998.2, "hud_visible": true, "stage": "3-5", "timer": 3, "timer_kind": "clock", "gold": 19, "level": 7, "xp": "0/56", "streak": 8, "note": "rail not read"}
+{"idx": 20, "t_file_s": 1006.9, "hud_visible": true, "stage": "3-5", "timer": 0, "timer_kind": "clock", "gold": 30, "level": 7, "xp": "0/56", "streak": 9, "note": "rail not read"}
+{"idx": 21, "t_file_s": 1082.8, "hud_visible": true, "stage": "3-6", "timer": 2, "timer_kind": "clock", "gold": 40, "level": 7, "xp": "2/56", "streak": 10, "note": "rail not read"}
+{"idx": 22, "t_file_s": 1098.6, "hud_visible": true, "stage": "3-7", "timer": 4, "timer_kind": "clock", "gold": 52, "level": 7, "xp": "4/56", "streak": 10, "note": "rail not read"}
+{"idx": 23, "t_file_s": 1104.7, "hud_visible": true, "stage": "3-7", "timer": 1, "timer_kind": "clock", "gold": 49, "level": 7, "xp": "4/56", "streak": 10, "note": "rail not read"}
+{"idx": 24, "t_file_s": 1112.4, "hud_visible": true, "stage": "3-7", "timer": 24, "timer_kind": "clock", "gold": 49, "level": 7, "xp": "4/56", "streak": 10, "note": "rail not read"}
+{"idx": 25, "t_file_s": 1149.6, "hud_visible": true, "stage": "4-1", "timer": 10, "timer_kind": "clock", "gold": 19, "level": 8, "xp": "2/68", "streak": 10, "note": "rail not read"}
+{"idx": 26, "t_file_s": 1205.4, "hud_visible": "partial", "stage": "4-2", "timer": 42, "timer_kind": "clock", "gold": null, "level": null, "xp": null, "streak": null, "note": "item carousel covers bottom HUD"}
+{"idx": 27, "t_file_s": 1226.4, "hud_visible": "partial", "stage": "4-2", "timer": 21, "timer_kind": "clock", "gold": null, "level": null, "xp": null, "streak": null, "note": "augment carousel covers bottom HUD"}
+{"idx": 28, "t_file_s": 1248.2, "hud_visible": true, "stage": "4-2", "timer": 4, "timer_kind": "clock", "gold": 31, "level": 8, "xp": "4/68", "streak": 1, "note": "rail not read"}
+{"idx": 29, "t_file_s": 1249.8, "hud_visible": true, "stage": "4-2", "timer": 2, "timer_kind": "clock", "gold": 31, "level": 8, "xp": "4/68", "streak": 1, "note": "rail not read"}
+{"idx": 30, "t_file_s": 1282.3, "hud_visible": true, "stage": "4-3", "timer": 29, "timer_kind": "clock", "gold": 40, "level": 8, "xp": "6/68", "streak": 2, "note": "rail not read"}
+{"idx": 31, "t_file_s": 1308.7, "hud_visible": true, "stage": "4-3", "timer": 3, "timer_kind": "clock", "gold": 45, "level": 8, "xp": "6/68", "streak": 2, "note": "rail not read"}
+{"idx": 32, "t_file_s": 1394.0, "hud_visible": "partial", "stage": "4-5", "timer": 21, "timer_kind": "clock", "gold": null, "level": null, "xp": null, "streak": null, "note": "augment carousel covers bottom HUD"}
+{"idx": 33, "t_file_s": 1429.7, "hud_visible": true, "stage": "4-5", "timer": 20, "timer_kind": "clock", "gold": 60, "level": 8, "xp": "8/68", "streak": 1, "note": "rail not read"}
+{"idx": 34, "t_file_s": 1444.2, "hud_visible": true, "stage": "4-5", "timer": 5, "timer_kind": "clock", "gold": 60, "level": 8, "xp": "8/68", "streak": 1, "note": "rail not read"}
+{"idx": 35, "t_file_s": 1445.7, "hud_visible": true, "stage": "4-5", "timer": 4, "timer_kind": "clock", "gold": 60, "level": 8, "xp": "8/68", "streak": 1, "note": "rail not read"}
+{"idx": 36, "t_file_s": 1482.6, "hud_visible": true, "stage": "4-6", "timer": 2, "timer_kind": "clock", "gold": 55, "level": 8, "xp": "10/68", "streak": 1, "note": "rail not read"}
+{"idx": 37, "t_file_s": 1516.6, "hud_visible": true, "stage": "4-6", "timer": 1, "timer_kind": "clock", "gold": 55, "level": 8, "xp": "10/68", "streak": 2, "note": "rail not read"}
+{"idx": 38, "t_file_s": 1525.1, "hud_visible": true, "stage": "4-7", "timer": 10, "timer_kind": "clock", "gold": 66, "level": 8, "xp": "12/68", "streak": 2, "note": "rail not read"}
+{"idx": 39, "t_file_s": 1541.9, "hud_visible": true, "stage": "4-7", "timer": 27, "timer_kind": "clock", "gold": 69, "level": 8, "xp": "12/68", "streak": 2, "note": "rail not read"}
+{"idx": 40, "t_file_s": 1623.6, "hud_visible": true, "stage": "5-1", "timer": 3, "timer_kind": "clock", "gold": 90, "level": 8, "xp": "14/68", "streak": 3, "note": "rail not read"}
+{"idx": 41, "t_file_s": 1699.9, "hud_visible": true, "stage": "5-2", "timer": 1, "timer_kind": "clock", "gold": 13, "level": 9, "xp": "0/68", "streak": 4, "note": "rail not read"}
+{"idx": 42, "t_file_s": 1701.9, "hud_visible": "partial", "stage": "5-3", "timer": 29, "timer_kind": "clock", "gold": null, "level": null, "xp": null, "streak": null, "note": "augment carousel covers bottom HUD"}
+{"idx": 43, "t_file_s": 1715.1, "hud_visible": true, "stage": "5-3", "timer": 16, "timer_kind": "clock", "gold": 0, "level": 9, "xp": "2/68", "streak": 4, "note": "rail not read"}
+{"idx": 44, "t_file_s": 1818.2, "hud_visible": true, "stage": "5-5", "timer": 14, "timer_kind": "clock", "gold": 10, "level": 9, "xp": "4/68", "streak": 1, "note": "rail not read"}
+{"idx": 45, "t_file_s": 1838.9, "hud_visible": true, "stage": "5-5", "timer": 28, "timer_kind": "clock", "gold": 10, "level": 9, "xp": "4/68", "streak": 1, "note": "rail not read"}
+{"idx": 46, "t_file_s": 1847.7, "hud_visible": true, "stage": "5-5", "timer": 20, "timer_kind": "clock", "gold": 10, "level": 9, "xp": "4/68", "streak": 1, "note": "rail not read"}
+{"idx": 47, "t_file_s": 1852.8, "hud_visible": true, "stage": "5-5", "timer": 15, "timer_kind": "clock", "gold": 10, "level": 9, "xp": "4/68", "streak": 1, "note": "rail not read"}
+{"idx": 48, "t_file_s": 1862.4, "hud_visible": true, "stage": "5-5", "timer": 5, "timer_kind": "clock", "gold": 18, "level": 9, "xp": "4/68", "streak": 2, "note": "rail not read"}
+{"idx": 49, "t_file_s": 1940.6, "hud_visible": false, "stage": null, "timer": null, "timer_kind": null, "gold": null, "level": null, "xp": null, "streak": null, "note": "blank transition; no HUD"}
+{"idx": 50, "t_file_s": 1978.9, "hud_visible": true, "stage": "5-7", "timer": 2, "timer_kind": "clock", "gold": 24, "level": 9, "xp": "8/68", "streak": 3, "note": "rail not read"}
+{"idx": 51, "t_file_s": 1985.0, "hud_visible": "partial", "stage": "6-1", "timer": 26, "timer_kind": "clock", "gold": null, "level": null, "xp": null, "streak": null, "note": "item carousel covers bottom HUD"}
+{"idx": 52, "t_file_s": 1987.1, "hud_visible": "partial", "stage": "6-1", "timer": 24, "timer_kind": "clock", "gold": null, "level": null, "xp": null, "streak": null, "note": "item carousel covers bottom HUD"}
+{"idx": 53, "t_file_s": 2095.0, "hud_visible": true, "stage": "6-2", "timer": 23, "timer_kind": "clock", "gold": 32, "level": 9, "xp": "12/68", "streak": 4, "note": "rail not read"}
+{"idx": 54, "t_file_s": 2306.4, "hud_visible": true, "stage": "6-6", "timer": 1, "timer_kind": "clock", "gold": 1, "level": 10, "xp": null, "streak": 1, "note": "max level: XP not shown"}
+{"idx": 55, "t_file_s": 2315.6, "hud_visible": true, "stage": "6-6", "timer": 22, "timer_kind": "clock", "gold": 1, "level": 10, "xp": null, "streak": 1, "note": "max level: XP not shown"}
+{"idx": 56, "t_file_s": 2341.4, "hud_visible": true, "stage": "6-7", "timer": 10, "timer_kind": "clock", "gold": 2, "level": 10, "xp": null, "streak": 1, "note": "max level: XP not shown"}
+{"idx": 57, "t_file_s": 2391.9, "hud_visible": "partial", "stage": "7-1", "timer": 7, "timer_kind": "clock", "gold": null, "level": null, "xp": null, "streak": null, "note": "augment carousel covers bottom HUD"}
+{"idx": 58, "t_file_s": 2425.0, "hud_visible": true, "stage": "7-1", "timer": 9, "timer_kind": "clock", "gold": 0, "level": 10, "xp": null, "streak": 1, "note": "max level: XP not shown"}
+{"idx": 59, "t_file_s": 2495.7, "hud_visible": false, "stage": null, "timer": null, "timer_kind": null, "gold": null, "level": null, "xp": null, "streak": null, "note": "purple transition; no HUD"}
