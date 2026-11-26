@@ -98,3 +98,39 @@
 {"schemaVersion": 1, "t_file_s": 1790.0, "field": "gold", "value": 79, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
 {"schemaVersion": 1, "t_file_s": 1793.0, "field": "stage", "value": "4-7", "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
 {"schemaVersion": 1, "t_file_s": 1804.0, "field": "gold", "value": 86, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 1830.0, "field": "stage", "value": "5-1", "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 1831.0, "field": "streak", "value": 3, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 1833.0, "field": "level", "value": 9, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 1835.0, "field": "gold", "value": 57, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 1884.0, "field": "streak", "value": 1, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 1887.0, "field": "gold", "value": 14, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 1908.0, "field": "stage", "value": "5-2", "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 1908.0, "field": "xp", "value": [2, 68], "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 1914.0, "field": "gold", "value": 11, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 1972.0, "field": "gold", "value": 2, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 1993.0, "field": "stage", "value": "5-3", "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2065.0, "field": "stage", "value": "5-4", "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2090.0, "field": "stage", "value": "5-5", "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2095.0, "field": "xp", "value": [6, 68], "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2125.0, "field": "streak", "value": 2, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2165.0, "field": "stage", "value": "5-6", "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2192.0, "field": "xp", "value": [8, 68], "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2214.0, "field": "streak", "value": 3, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2231.0, "field": "stage", "value": "5-7", "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2238.0, "field": "streak", "value": 1, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2244.0, "field": "xp", "value": [10, 68], "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2258.0, "field": "gold", "value": 14, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2269.0, "field": "stage", "value": "6-1", "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2272.0, "field": "gold", "value": 16, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2330.0, "field": "gold", "value": 17, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2335.0, "field": "stage", "value": "6-2", "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2380.0, "field": "xp", "value": [14, 68], "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2399.0, "field": "stage", "value": "6-3", "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2399.0, "field": "xp", "value": [16, 68], "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2432.0, "field": "gold", "value": 3, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2456.0, "field": "streak", "value": 2, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2467.0, "field": "stage", "value": "6-4", "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2482.0, "field": "stage", "value": "6-5", "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2493.0, "field": "gold", "value": 10, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2547.0, "field": "stage", "value": "6-6", "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
+{"schemaVersion": 1, "t_file_s": 2550.0, "field": "streak", "value": 3, "src": "ocr", "k": 3, "reader_commit": "b2640b5", "source": "01-boxbox-2924500482-00210.mp4"}
