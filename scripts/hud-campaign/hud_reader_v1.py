@@ -77,7 +77,30 @@ def _level(im):
     return int(s) if s is not None else None
 
 
+def _raw_any(im, box, scale, pad):
+    """OCR with no character whitelist, so the slash can survive."""
+    c = ImageOps.grayscale(im.crop(box))
+    if pad:
+        c = ImageOps.expand(c, border=pad, fill=0)
+    c = ImageOps.autocontrast(c.resize((c.width * scale, c.height * scale)))
+    return ''.join(w[4] for w in _nr().words(c, True, False))
+
+
+def _xp_slash(im):
+    """Accept x/yy only when two unrestricted reads give the same text."""
+    box = XP_BOXES[0][0] if isinstance(XP_BOXES[0], tuple) and isinstance(XP_BOXES[0][0], tuple) else XP_BOXES[0]
+    reads = [_raw_any(im, box, 4, 0), _raw_any(im, box, 3, 8)]
+    m = [re.fullmatch(r'(\d{1,2})/(\d{2})', x) for x in reads]
+    if not all(m) or reads[0] != reads[1]:
+        return None
+    x, y = int(m[0].group(1)), int(m[0].group(2))
+    return [x, y] if x < y and y in XP_DENOMS else None
+
+
 def _xp(im):
+    slash = _xp_slash(im)
+    if slash is not None:
+        return slash
     s = _agree(im, XP_BOXES, lambda v: re.fullmatch(r'\d{2,4}', v) is not None)
     if s is None:
         return None
