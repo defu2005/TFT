@@ -1,7 +1,7 @@
 # Kết quả trận 01 (mùa 18, `01-boxbox`) — phần đã xác minh
 
 dataset: kết quả cuối trận cho trận 01. Không có log mẫu theo thời gian trong file này.
-status: một phần. Chỉ có kết quả cuối trận đã xác minh bằng mắt, các phần khác chưa trích xuất.
+status: đã giao. Dữ liệu đầy đủ 38 vòng nằm ở `data/hud-audit/match01_full.json`; xem `docs/handoffs/match01-audit.md` để biết các trường còn chưa giải.
 
 ## Đã xác minh
 
@@ -13,7 +13,13 @@ status: một phần. Chỉ có kết quả cuối trận đã xác minh bằng 
 
 P1–P8: streamer là một trong các bí danh này. Không lưu tên người chơi thật hoặc Riot ID trong bất kỳ file nào của repo.
 
-## Chưa có
+## Đã giao (cập nhật)
+
+- path: `data/hud-audit/match01_full.json` (38 vòng, kiểm tra bằng `data/hud-audit/check_match01_full.py`)
+- schema: không có phiên bản chính thức; cấu trúc theo checker tại commit giao
+- commit: commit mới nhất chạm `data/hud-audit/match01_full.json` trên nhánh `claude/nifty-lovelace-252i30` (xem `git log -1 -- data/hud-audit/match01_full.json`)
+
+## Chưa có (cũ, đã cập nhật ở trên)
 
 - Thứ hạng của 7 đối thủ còn lại.
 - Đội hình cuối của 8 người chơi (màn hình bảng xếp hạng chỉ hiện biểu tượng tướng và sao, một số hàng bị cắt "+2"/"+1").
@@ -21,4 +27,4 @@ P1–P8: streamer là một trong các bí danh này. Không lưu tên người 
 
 ## Lưu ý
 
-Đây là file phản hồi nháp, chưa commit. Không đẩy lên nhánh dữ liệu khi chưa được duyệt.
+Tệp này đã được commit trên nhánh `hud` và cập nhật theo `docs/agents/data-contracts.md`.
