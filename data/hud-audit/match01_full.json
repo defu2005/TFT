@@ -65,13 +65,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 316 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 316 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -197,13 +197,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 340 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 340 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -365,13 +365,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 364.1 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 364.1 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -562,13 +562,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 399.9 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 399.9 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -790,13 +790,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 438.8 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 438.8 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -888,7 +888,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 438.8 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 438.8,
@@ -969,13 +969,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 526.1 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 526.1 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -1109,7 +1109,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 526.1 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "panel_visual_check": {
     "value": "8 rows, no marker, ninth slot empty on the frame read at t_planning_s + 3",
@@ -1216,13 +1216,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 597.9 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 597.9 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -1334,7 +1334,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 597.9 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "panel_visual_check": {
     "value": "8 rows, no marker, ninth slot empty on the frame read at t_planning_s + 3",
@@ -1441,13 +1441,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 664.0 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 664.0 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -1630,13 +1630,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 700.7 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 700.7 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -1764,7 +1764,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 700.7 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 700.7,
@@ -1894,13 +1894,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 759.3 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 759.3 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -2031,7 +2031,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 759.3 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "panel_visual_check": {
     "value": null,
@@ -2147,13 +2147,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 835.1 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 835.1 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -2272,7 +2272,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 835.1 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "planning_frame_check": {
     "frame_s": 838,
@@ -2396,13 +2396,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 881.1 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 881.1 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -2530,7 +2530,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 881.1 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 881.1,
@@ -2627,13 +2627,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 956.3 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 956.3 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -2823,7 +2823,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 956.3 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 956.3,
@@ -2918,13 +2918,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1048.2 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1048.2 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -3076,7 +3076,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 1048.2 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 1048.2,
@@ -3182,7 +3182,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1128.5 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -3362,13 +3362,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1186 s viewed; no star pips read on any unit at 720p",
-    "reason": "star pips not legible in this frame"
+    "reason": "star pips not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1186 s viewed; no item icons read at 720p",
-    "reason": "item icons not legible in this frame"
+    "reason": "item icons not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -3589,7 +3589,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 1186 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 1186,
@@ -3715,13 +3715,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1250 s viewed; no star pips read on any unit at 720p",
-    "reason": "star pips not legible in this frame"
+    "reason": "star pips not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1250 s viewed; no item icons read at 720p",
-    "reason": "item icons not legible in this frame"
+    "reason": "item icons not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -3864,7 +3864,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 1250 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 1250,
@@ -3976,13 +3976,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1316 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1316 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -4101,7 +4101,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 1316 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 1316,
@@ -4239,13 +4239,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1364 s viewed; no star pips read on any unit at 720p",
-    "reason": "star pips not legible in this frame"
+    "reason": "star pips not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1364 s viewed; no item icons read at 720p",
-    "reason": "item icons not legible in this frame"
+    "reason": "item icons not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -4420,7 +4420,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 1364 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 1364,
@@ -4536,13 +4536,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1468 s viewed; no star pips read on any unit at 720p",
-    "reason": "star pips not legible in this frame"
+    "reason": "star pips not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1468 s viewed; no item icons read at 720p",
-    "reason": "item icons not legible in this frame"
+    "reason": "item icons not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -4675,7 +4675,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 1468 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 1468,
@@ -4789,13 +4789,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1540 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1540 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -4925,7 +4925,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 1540 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 1540,
@@ -5048,7 +5048,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1604.0 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -5204,13 +5204,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1652 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1652 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -5348,7 +5348,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 1652 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 1652,
@@ -5464,13 +5464,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1722 s viewed; no star pips read on any unit at 720p",
-    "reason": "star pips not legible in this frame"
+    "reason": "star pips not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1722 s viewed; no item icons read at 720p",
-    "reason": "item icons not legible in this frame"
+    "reason": "item icons not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -5601,7 +5601,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 1722 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 1722,
@@ -5730,13 +5730,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A bench strip (1816 s, the 4-7 bench sheet) checked: units are visible but star pips are not legible at 720p in the strip crop.",
-    "reason": "star pips are too small to read on the bench strip at 720p"
+    "reason": "star pips are too small to read on the bench strip at 720p Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1816 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -5831,7 +5831,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 1816 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 1816,
@@ -6194,7 +6194,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 1836 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 1836,
@@ -6331,13 +6331,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1914 s viewed; no star pips read on any unit at 720p",
-    "reason": "star pips not legible in this frame"
+    "reason": "star pips not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 1914 s viewed; no item icons read at 720p",
-    "reason": "item icons not legible in this frame"
+    "reason": "item icons not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -6524,7 +6524,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 1914 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 1914,
@@ -6654,13 +6654,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2000 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2000 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -6831,7 +6831,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 2000 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 2000,
@@ -6950,7 +6950,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2062.8 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -7118,13 +7118,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2094 s viewed; no star pips read on any unit at 720p",
-    "reason": "star pips not legible in this frame"
+    "reason": "star pips not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2094 s viewed; no item icons read at 720p",
-    "reason": "item icons not legible in this frame"
+    "reason": "item icons not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -7319,7 +7319,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 2094 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 2094,
@@ -7450,7 +7450,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2172 s viewed; no star pips read on any unit at 720p",
-    "reason": "star pips not legible in this frame"
+    "reason": "star pips not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": {
@@ -7619,7 +7619,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 2172 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 2172,
@@ -7764,7 +7764,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2236 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -7888,7 +7888,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 2236 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 2236,
@@ -8025,13 +8025,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2296 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2296 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -8257,13 +8257,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2342 s viewed; no star pips read on any unit at 720p",
-    "reason": "star pips not legible in this frame"
+    "reason": "star pips not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2342 s viewed; no item icons read at 720p",
-    "reason": "item icons not legible in this frame"
+    "reason": "item icons not legible in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -8421,7 +8421,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 2342 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 2342,
@@ -8551,13 +8551,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2404 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2404 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -8699,7 +8699,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 2404 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "planning_rail_observation": {
     "frame_s": 2410,
@@ -8834,13 +8834,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2463.3 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2463.3 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -9003,13 +9003,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2488 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2488 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -9209,7 +9209,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 2488 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 2488,
@@ -9336,13 +9336,13 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2554 s viewed; stars not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "items": {
     "value": null,
     "tag": "unresolved",
     "attempt": "frame at 2554 s viewed; items not resolvable at 720p in this frame",
-    "reason": "not legible at 720p in this frame"
+    "reason": "not legible at 720p in this frame Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "shop_purchases": {
     "value": null,
@@ -9531,7 +9531,7 @@
     "value": null,
     "tag": "unresolved",
     "attempt": "Frame A at 2554 s. No usable grid reading was made; the sweep hovers one unit per hit, so one card gives one champion and at most one hex, never the full board map. The 1835 s check (5-1) shows an 8/9 board count and one hovered card (Sett, 1 hex), which confirms the limit. No hex coordinates are recorded for this round.",
-    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded"
+    "reason": "sprites cannot be matched to champions at 720p (pilot_board_labels.json and board_bench_probe), so no hex coordinate is recorded Source on disk is 1280x720 H.264 (ffprobe); no higher rendition of this VOD is on disk."
    },
    "frame_A_read": {
     "frame_s": 2554,
