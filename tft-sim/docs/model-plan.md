@@ -682,3 +682,26 @@ Không đo độ chính xác, không chấm điểm, không đọc lại thư m�
 **Thay đổi mã trong commit này:** `usable.py` (kiểm `items`/`augments` thiếu, khung hình ở cấp unit), `fidelity.py` (`inconclusive` khi rỗng), `selftest_usable.py`, prompt và tài liệu handoff, các script `check_*.py`, `selftest_empty_scoring.py`, và các file kết quả JSON. Không đổi PRIMARY, SECONDARY hay n.
 
 **Còn mở:** quyết định generic item (trên); n=20 hay n=400; augment Set 18 chưa có handler; vị trí, carousel, apiName; ba giả định trait còn mở (Defender lấy max hay cộng dồn, gốc của Brawler theo pct, Spellweaver cộng dồn); nhãn "18.7" của snapshot CDragon là sai (bản vá thực tế chưa rõ); khung hình chỉ kiểm tra tồn tại, không kiểm tra nội dung.
+
+### 11.26 Quyết định: generic item giữ nguyên; n đổi sang 400 (2026-11-26, không dùng dữ liệu VOD)
+
+**Kiểm tra đã làm (nội dung Set 18, PRIMARY, không dùng VOD):** trong 776 item, đếm item có hiệu ứng thật (`effects` khác rỗng):
+- `TFT_Item_*`: 94/109 có hiệu ứng.
+- `DA_*` khác (không ghép, không thành phần): 245/440 có hiệu ứng.
+- `DA_*` có `composition` (item hoàn chỉnh): 0/55 có hiệu ứng.
+- `DA_Component_*`: 0/10 có hiệu ứng.
+
+Nghĩa là 65 item (khoảng 8% nội dung) không có hiệu ứng thật trong PRIMARY, và với các item này khối `_GENERIC_ITEM` là phần đóng góp duy nhất. Phần lớn item có hiệu ứng, nên giả định "phần lớn item không có hiệu ứng" của 11.25 không đúng.
+
+**Quyết định: giữ nguyên `items=len(item_apis)` (không đổi `boards_of`).**
+- Đặt `items=0` sẽ làm 65 item trên mất toàn bộ giá trị, tức là đổi một nhóm item hoàn chỉnh thành không có tác dụng. Đây là lỗi lớn hơn lỗi đang có.
+- Phương án "chỉ cộng khối chung cho item không có hiệu ứng" là một biến thể thứ ba, không có căn cứ engine. Quy ước `_equip` của engine chưa được xác nhận, nên chọn biến thể nào cũng là đoán.
+- Việc cần làm: hỏi tác giả engine (`tft_goat`) xem `_GENERIC_ITEM` có chủ đích cộng cho mọi item hay không. Nếu được xác nhận là chủ đích, mục này đóng; nếu không, đổi theo câu trả lời và đăng ký lại.
+
+**Thay đổi cấu hình đông lạnh: n từ 20 lên 400.**
+- Quy tắc 11.24 mục 1: tỷ lệ đảo > 5% ở n=20 thì tăng n và ghi thành thay đổi cấu hình. Ở n=20 tỷ lệ là 9,7% (31/319); n=100 là 5,8% (17/294). Mốc n=400 đạt 4,08% (13/319, mục 11.25).
+- Đã đổi mặc định `score(path, n=400, ...)` và mặc định dòng lệnh trong `scripts/combat/fidelity.py`.
+- Cái giá: CPU tăng khoảng 20 lần so với n=20 khi chấm dữ liệu thật. Chưa có dữ liệu thật để đo thời gian thực tế.
+- Kết quả chạy lại: `selftest.py`, `selftest_empty_scoring.py`, `selftest_ingest_vod.py`, `selftest_usable.py` đều PASS.
+
+**Phạm vi:** đây là kết luận về cấu hình mô phỏng, không phải độ đúng so với trận thật. Mọi con số dự đoán vẫn cần dữ liệu thật để đánh giá.

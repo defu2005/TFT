@@ -164,7 +164,7 @@ def _engine_dir() -> Path:
     return Path(tft_goat.__file__).resolve().parents[2]
 
 
-def score(path, n=20, seed0=0, allow_dryrun=False):
+def score(path, n=400, seed0=0, allow_dryrun=False):  # n=400: 11.24/11.25 (quy tac dang ky truoc)
     good, skipped, unk = read_real(path, allow_dryrun)
     if not good:
         return {"skipped": dict(skipped), "unknown_items": dict(unk), "n_min_games": MIN_GAMES,
@@ -219,6 +219,6 @@ def score(path, n=20, seed0=0, allow_dryrun=False):
 
 
 if __name__ == "__main__":
-    n = int(sys.argv[2]) if len(sys.argv) > 2 else 20
+    n = int(sys.argv[2]) if len(sys.argv) > 2 else 400
     s0 = int(sys.argv[3]) if len(sys.argv) > 3 else 0
     print(json.dumps(score(sys.argv[1], n, s0), ensure_ascii=False, indent=1))
