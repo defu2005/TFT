@@ -4,19 +4,30 @@ Mục tiêu "100%" được định nghĩa để kiểm tra được: trên mộ
 
 Nguồn: `docs/hud-reader.md` (trường bộ đọc phát ra), `data/hud-audit/match01_full.json` (cách đã chứng minh bằng tay trên trận 01), `data/hud-audit/blind_oos28_rates.json` và các số đo đọc lại mù trong `docs/sim/match01-rounds.md`.
 
-| Trường trong file sim | Bộ đọc hiện tại phát ra | Phương pháp đã chứng minh trên trận 01 | Độ đúng đo được | Việc cần làm |
-|---|---|---|---|---|
-| HP 8 người theo thời gian | Không thấy trường HP trong `hud_ocr.py` / `hud-reader.py` | HP đọc từ rail, 38/38 vòng, 8 giá trị mỗi vòng | Chưa đo. Một lần kiểm tra thấy 39 thay vì 59 | Thêm trường HP có nhãn; đo trên nhãn mù |
-| Stage/round | Có `stage` trong `hud-reader.py` | Bảng stage đơn điệu từ đọc thanh stage | Chưa đo độc lập | Đo trên nhãn mù |
-| Timer | Không thấy trường timer trong bộ đọc | Đọc từ hộp timer, 28/38 vòng | Chưa đo | Thêm trường timer |
-| Vàng | Có (`gold`, đọc chỉ số) | Đọc lại mù | Trong mẫu 10/10; ngoài mẫu 13/16 (3 khung không có ô vàng) | Giữ; đo thêm |
-| Cấp | Có (`level`) | Đọc lại mù | Trong mẫu 10/10; ngoài mẫu 11/15 | Đo thêm, sửa lỗi OCR (13 thay cho 5 ở 2-6) |
-| XP | Có (`xp`) | Đọc lại mù | Trong mẫu 10/10; ngoài mẫu 13/14 | Giữ; đo thêm |
-| Streak | Không thấy trường streak | Đọc từ badge; 24/38 vòng | Ngoài mẫu 4/14; lỗi chủ yếu OCR trả rỗng khi đúng là 1 | Cần bộ đọc riêng và đo lại |
-| Bàn (tướng và số) | Có `board` trong `hud-reader.py` | Suy ra từ panel và phép giải; 33 vòng suy ra, 5 chưa giải | Chưa đo | Đo trên nhãn mù |
-| Bàn chờ (bench) | Không thấy trường bench | Đếm sprite bằng mắt; 25 vòng, độ tin cậy thấp | Chưa đo | Cần bộ đọc và nhãn |
-| Sao của tướng | Không rõ (`star` chỉ thấy trong ngữ cảnh khác) | Không đọc được ở 720p; 2/38 vòng | Không có | Đọc ở 1080p; cần thử nghiệm đọc |
-| Trang bị | Không rõ (`item` chỉ thấy trong ngữ cảnh khác) | Không đọc được ở 720p; 2/38 vòng | Không có | Đọc ở 1080p; cần thử nghiệm đọc |
+| Trường trong file sim | Bộ đọc trong repo phát ra (khóa thật trong `results/*.jsonl.gz`) | Bộ đọc ngoài repo `ocrtest/extract/fields4.py` | Phương pháp đã chứng minh trên trận 01 (tay, không phải bộ đọc) | Độ đúng đo được (bộ đọc nào) | Việc cần làm |
+|---|---|---|---|---|---|
+| HP 8 người theo thời gian | Không có khóa HP | Không có | HP từ rail, 38/38 vòng | Chưa đo | Thêm bộ đọc HP có nhãn |
+| Stage/round | Không có khóa stage | Có stage | Bảng stage đơn điệu | Chưa đo trên bộ đọc | Đo trên nhãn mù |
+| Timer | Không có | Có timer | Hộp timer, 28/38 vòng | Chưa đo trên bộ đọc | Đo trên nhãn mù |
+| Vàng | `gold` | Có gold | Đọc lại mù, planning | Trên `blind_ocr_planning.py`: trong mẫu 10/10; ngoài mẫu 13/16 (3 khung không có ô vàng). Chưa đo trên `hud_ocr.py` | Đo trên bộ đọc trong repo |
+| Cấp | `level` (kèm `levelRetry`) | Có level | Đọc lại mù, planning | Trên `blind_ocr_planning.py`: trong mẫu 10/10; ngoài mẫu 11/15 (lỗi 13 thay cho 5 ở 2-6). Chưa đo trên `hud_ocr.py` | Đo trên bộ đọc trong repo |
+| XP | Không có khóa XP | Có XP | Đọc lại mù, planning | Trên `blind_ocr_planning.py`: trong mẫu 10/10; ngoài mẫu 13/14. Không áp dụng cho bộ đọc trong repo | Thêm vào bộ đọc trong repo |
+| Streak | Không có | Có streak | Badge, 24/38 vòng | Ngoài mẫu (`blind_ocr_planning.py`) 4/14; chưa đo trên bộ đọc khác | Cần bộ đọc riêng và đo lại |
+| Bàn (tướng và số) | Không có khóa bàn (`board` chỉ là từ trong `hud-reader.py`) | Không có | Panel và phép giải, 33 vòng suy ra | Chưa đo | Cần bộ đọc và nhãn |
+| Bàn chờ | Không có | Không có | Đếm sprite bằng mắt, 25 vòng | Chưa đo | Cần bộ đọc và nhãn |
+| Sao của tướng | Không có | Không có | Không đọc được ở 720p, 2/38 vòng | Không có | Thử đọc ở 1080p sau khi kiểm tra vị trí badge |
+| Trang bị | Không có khóa trang bị (`item` chỉ là từ trong `hud_ocr.py`) | Không có | Không đọc được ở 720p, 2/38 vòng | Không có | Cần bộ đọc và nhãn |
+| Augment kèm tier | Không có | Không có | Chỉ ở vòng có màn chọn, 3/38 vòng | Không có | Cần bộ đọc và nhãn |
+| Kết quả combat từng round | Không có | Không có | Suy ra từ màu biểu tượng, 33/38 vòng | Chưa đo | Đo trên nhãn mù |
+| Thứ hạng cuối trận | Không có | Không có | Suy ra từ thứ tự rail | Chưa đo | Đo trên nhiều trận |
+| HP đối thủ | Không có | Không có | Cùng trường HP 8 người | Chưa đo | Như dòng HP |
+| Đối thủ (mã P) | Không có | Không có | Tên qua tooltip và nameplate, đối chiếu bảng alias riêng | Không đo | Cần bộ đọc và nhãn |
+| Cửa hàng (không có trong file sim, nhưng bộ đọc phát ra) | `shop`, `shopSlots` | Không có | Không áp dụng | Chưa đo | Đo nếu cần |
+| Log set thứ hai | Không có | Không có | Không có | Không có | Ngoài phạm vi trận này |
+
+**Lưu ý nguồn:** `scripts/hud-campaign/` và `docs/agents/sources/collector-claude-seed.md` ghi rằng bộ 45 nguồn seed, gồm VOD `2924500482-210000` của trận 01, thuộc một collector khác (`claude/hud-data-set18`, trạng thái `đang tải`). Trận 01 trên nhánh này dùng file đã có sẵn trên đĩa, không claim, nên cần người điều phối xác nhận quyền trước khi thu thêm từ VOD này.
+
+hiệm đọc |
 | Augment kèm tier | Không thấy | Chỉ có ở vòng có màn chọn; 3/38 vòng | Không có | Cần bộ đọc và nhãn |
 | Kết quả combat từng round | Không thấy | Suy ra từ màu biểu tượng, 33/38 vòng | Chưa đo | Đo trên nhãn mù |
 | Thứ hạng cuối trận | Không thấy | Suy ra từ thứ tự rail, 8 vị trí | Chưa đo | Đo trên nhiều trận |
@@ -26,7 +37,7 @@ Nguồn: `docs/hud-reader.md` (trường bộ đọc phát ra), `data/hud-audit/
 
 ## Kết luận
 
-- Bộ đọc hiện tại phát ra vàng, cấp, XP, tên tướng và cửa hàng, cùng `hudSchema` và `oddsRow`. Hầu hết trường sim chưa có.
-- Chỉ vàng, cấp, XP có tỉ lệ đo được, và chỉ trong mẫu nhỏ.
+- Bộ đọc trong repo phát ra vàng, cấp, cửa hàng và `hudDetected`. Không có HP, timer, streak, XP, bàn, sao, trang bị, combat hay thứ hạng.
+- Tỉ lệ đo được là của `blind_ocr_planning.py` (ngoài repo bộ đọc), không phải của `hud_ocr.py`.
 - Các trường lớn nhất còn thiếu: HP, streak, timer, bàn chờ, sao, trang bị, augment, kết quả combat, đối thủ.
 - Đường đi để có 100% độ đúng là đo trên nhãn mù từng trường, không phải tuyên bố.
