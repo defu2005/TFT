@@ -1,6 +1,6 @@
 # Yêu cầu sửa roadmap (nhánh claude/nifty-lovelace-252i30): quyết định ghi sai
 
-Ngày: 2026-11-26. Người gửi: nhánh `claude/claude-fable-5-2-awwmf5`. Chưa được áp dụng.
+Ngày: 2026-11-26. Người gửi: nhánh `claude/claude-fable-5-2-awwmf5`. Đã áp dụng tại commit `79e47620` trên `claude/nifty-lovelace-252i30`.
 
 ## Sửa cần làm trong `docs/roadmap.md`
 
