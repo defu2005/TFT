@@ -1,0 +1,52 @@
+{
+ "data/hud-audit/collector_labels_file01.jsonl": {
+  "fields": {
+   "stage": {
+    "labelled": 59,
+    "covered": 42,
+    "correct": 42,
+    "boundary": 0,
+    "wrong": 0
+   },
+   "gold": {
+    "labelled": 47,
+    "covered": 17,
+    "correct": 17,
+    "boundary": 0,
+    "wrong": 0
+   },
+   "level": {
+    "labelled": 48,
+    "covered": 30,
+    "correct": 30,
+    "boundary": 0,
+    "wrong": 0
+   },
+   "xp": {
+    "labelled": 48,
+    "covered": 11,
+    "correct": 11,
+    "boundary": 0,
+    "wrong": 0
+   },
+   "streak": {
+    "labelled": 48,
+    "covered": 14,
+    "correct": 14,
+    "boundary": 0,
+    "wrong": 0
+   },
+   "timer_raw": {
+    "labelled": 48,
+    "covered": 48,
+    "correct": 45,
+    "boundary": 0,
+    "wrong": 3
+   }
+  },
+  "no_hud": {
+   "frames": 1,
+   "emissions": 0
+  }
+ }
+}
