@@ -570,3 +570,37 @@ Bản đầu của mục này kết luận "CDragon thiếu chỉ số item". K�
   - n = 20 lượt mặc định, seed0 = 0, MIN_GAMES = 30, BOOT = 2000
   - Commit: ghi ở commit chứa mục này. Snapshot CDragon: `data/cdragon/cdragon_18.7_2026-11-23.json.gz`, sha256 = d02fa168934b24abdcc2dfe523b3d4ca04861cb171c373128214cc762c4498c9
 - Quy tắc prompt: bản ghi `fight` cần đủ hai bàn quan sát được. Chỉ thấy bàn của streamer thì ghi `state` vào `others.jsonl`, không ghi `fight`.
+
+### 11.23 Phát triển không cần dữ liệu VOD (2026-11-26, theo advisor; dữ liệu VOD tạm gác)
+
+Không đo độ chính xác, không chấm điểm, không đọc lại thư mục `vod_out` để đếm kết quả. Các thay đổi dưới đây kiểm thử bằng fixture và snapshot.
+
+**1. Bộ lọc fight dùng được, đăng ký trước (`scripts/combat/usable.py`).** Điều kiện loại theo thứ tự: `winner_null`, `nombre_placeholder`, `level_khong_ro` (level không phải số nguyên), `board_<bên>_khong_phan_giai`, `board_<bên>_thieu` (số unit < level), `board_<bên>_vuot_level` (số unit > level), `frame_thieu`. Không có ngưỡng nào do dữ liệu quyết định.
+- Lưu ý chi phí: điều kiện `số unit >= level` loại cả những bàn thật nhưng có ít unit hơn level. Đây là đánh đổi có chủ ý (không bao giờ nhận bàn có khả năng sai), không phải bằng chứng rằng các bàn đó sai. Chi phí này phải được báo cáo cùng số lượng.
+- `vuot_level` là kiểm tra bổ sung của bản này: trong TFT số unit trên bàn không vượt level, nên vượt là lỗi dữ liệu.
+- `scoreable_yield.py` dùng chung module này. Selftest: `selftest_usable.py` (9 ca, gồm bàn b một unit ở level 5 bị loại, level null bị loại, bàn đủ được qua).
+
+**2. File chấm điểm.** `ingest_vod.py` ghi thêm `scoring.jsonl` (chỉ fight qua bộ lọc, kiểm khung hình theo thư mục VOD của bản giữ lại) và `ingest_report.json` có `scoring_fights`, `scoring_games`. `run_vod_pipeline.sh` có bước 4 in hai số này. Đường thành công đã chạy trên fixture (exit 0, không tính điểm). Lý do đặt trong ingest: ingest bỏ đường dẫn thư mục VOD, nên bước sau không kiểm được khung hình.
+
+**3. Trạng thái handoff.** `merge_check_vod.py` thêm mã ERR `bad_status`: `handoff.status` ngoài (`pending`, `working`, `done`, `blocked`, `stale`). Agent đang dùng `ok`, `partial`, `skipped`, nên cổng gộp sẽ đỏ thêm cho đến khi agent sửa. Selftest `trang_thai_ngoai_spec` đã pass.
+
+**4. Bảng trait (`TRAIT_TABLE`).** Không thêm trait nào. Lý do theo từng nhóm:
+- Engine đã đọc khóa có tên (named keys) cho mọi trait. Bảng chỉ bổ sung khóa hash mà engine không đọc được, và hiện chỉ có 7 trait trong bảng (không phải "7 trên 36 trait được xử lý": các trait còn lại có thể đã được engine xử lý qua khóa có tên, hoặc nằm trong `SKIP18_TABLE`).
+- Các khóa hash còn lại chưa ánh xạ được vì mô tả là điều kiện hoặc cơ chế, không phải chỉ số đơn giản: Adaptor (max AD/AP), Summoner (phụ thuộc loại summon), Riftbeast, Coven, Inferno, Rival, Solar, Sprykin, Eclipse, Greenfather, Invoker, Blossom, Maokai, Lunar, Vanguard, Zyra, Elderwood, Slayer. Thêm chúng là đoán cơ chế.
+- Đối chiếu snapshot (`selftest_traits.py`, 10 khóa): giá trị theo tier trong engine khớp snapshot. Defender 25/60/115 khớp; Brawler 120 và 25/40/65 khớp; Spellweaver 10/30/55 khớp.
+- Vẫn mở, snapshot không ghi: cộng dồn hay lấy max khi Defender (12 đội + 25 thành viên có thể là 37, hiện đang lấy max là 25); phần trăm máu của Brawler áp trên máu gốc hay sau khi cộng; Spellweaver cộng dồn với TeamwideAP.
+- Không có thay đổi số: PRIMARY và SECONDARY không đổi vì bảng không đổi.
+
+**5. Alias item (thay đổi SECONDARY).** Nguồn alias dùng khi chấm là `data/set18_names.json` (trường `twin_tft_item`), không phải `alias_map` trong `item_alias.py`. Hai nguồn trước đây lệch nhau: `alias_map` có 37 mục, file tên không có mục nào cho `DA_Component_*`.
+- Đã thêm 8 mục `DA_Component_*` có twin `TFT_Item_*` có hiệu ứng, theo đúng quy tắc tên: BFSword, ChainVest, GiantsBelt, NeedlesslyLargeRod, NegatronCloak, RecurveBow, SparringGloves, Spatula. `alias_map` mở rộng cùng phạm vi (45 mục).
+- Chưa alias: `DA_Component_FryingPan` (twin không có hiệu ứng, nên alias không thay đổi gì); `DA_Component_TearOfTheGoddess` (không có twin, cần dữ liệu khác).
+- Kiểm tra trên fixture: SECONDARY từ 0.45 lên 0.5 khi hai bàn có cùng item; PRIMARY giữ 0.45. Đây là kiểm tra logic, không phải đo độ chính xác.
+- Giả định giữ nguyên như craftable: hiệu ứng của `DA_Component_X` cùng tên với `TFT_Item_X` có hiệu ứng. Chưa kiểm chứng trên Set 18 thật.
+- Đây là thay đổi baseline SECONDARY. Mọi so sánh SECONDARY trước đó không còn áp dụng; ghi rõ khi có điểm.
+
+**6. Những gì chưa xử lý và lý do.**
+- `_GENERIC_ITEM` (`tft_goat/src/tft_goat/engine/unit.py`): chú thích trong `unit.py` nói dùng cho bộ đếm item trừu tượng của môi trường. Nhưng `batch_6.py` (augment Kayle scrapper) dùng nó như xấp xỉ "+1 item trung bình" cho `NumComponents` unit. Augment có trong PRIMARY (`augments=True`), nên PRIMARY đang có một bonus không có trong dữ liệu thật. Chưa sửa vì nằm trong tft_goat và sẽ đổi PRIMARY; cần quyết định riêng.
+- `pos`, mapping carousel, apiName của item: giữ mở (không kiểm chứng được nếu không có frame hoặc dữ liệu thật).
+- `side_of_streamer`: vẫn là quy ước, chưa kiểm bằng khung hình.
+
+**Chặn trước lần chấm điểm đầu tiên:** cổng gộp xanh (còn lỗi `placeholder_name` và `bad_status` của agent), ≥ 30 ván dùng được theo bộ lọc 11.23 mục 1, và đếm lại sản lượng với điều kiện số unit.

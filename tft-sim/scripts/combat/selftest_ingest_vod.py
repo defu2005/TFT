@@ -32,7 +32,7 @@ def _game(gid, lobby):
 
 
 def _fight(gid, stage, a, b):
-    unit = [{"api": "DA_Krug18", "star": 1, "items": [], "pos": None}]
+    unit = [{"api": "DA_Krug18", "star": 1, "items": [], "pos": None} for _ in range(6)]  # ban day du level 6
     return {"schema": "fight-v1", "set": 18, "label": "real", "source": f"{gid}:{stage}",
             "fight_key": f"{gid}|{stage}|{a}|{b}",
             "a": {"level": 6, "augments": [], "units": unit}, "b": {"level": 6, "augments": [], "units": unit},
@@ -88,6 +88,9 @@ def main() -> int:
         print(f"{'PASS' if c1 else 'FAIL'} khu trung: fight={len(fights)} (3), extra={len(extra)} (1), "
               f"cum={len(clusters)} (2); cum raw={len(raw_clusters)} (3)")
         ok &= c1
+        c5 = rep["scoring_fights"] == 3 and len(list((dest / "scoring.jsonl").read_text(encoding="utf-8").splitlines())) == 3
+        print(f"{'PASS' if c5 else 'FAIL'} scoring.jsonl qua bo loc: {rep['scoring_fights']} (3)")
+        ok &= c5
         v = subprocess.run([sys.executable, str(HERE / "validate_vod.py"), str(dest / "fights.jsonl")],
                            capture_output=True, text=True)
         c2 = v.returncode == 0

@@ -16,6 +16,7 @@ Ma loi (ERR chan ghep; WARN chi bao):
   hud_processed_output        co dau ra cho vod thuoc slot "none"
   stray_output                thu muc khong khop dong manifest (WARN)
   handoff_mismatch            handoff.json co vod_id/slot khac duong dan thu muc
+  bad_status                  handoff.status ngoai bo tu vung spec (pending, working, done, blocked, stale): ERR
   bad_range                   covered_ranges_s khong phai [a, b] voi a < b
   overlap_within_slot         cac khoang covered trong mot handoff chong nhau
   covered_remaining_overlap   covered va remaining cung handoff chong nhau
@@ -46,6 +47,8 @@ import re
 import unicodedata
 from collections import defaultdict
 from pathlib import Path
+
+HANDOFF_STATUS = ("pending", "working", "done", "blocked", "stale")
 
 PH_NAME = re.compile(r"(unknown_|unk_)", re.I)  # ten giu cho (placeholder): khong duoc gop
 VOD_RE = re.compile(r"^(twitch-\d+|youtube-[A-Za-z0-9_-]+)$")
@@ -148,6 +151,8 @@ def main() -> int:
             if h.get("vod_id") != vid or h.get("slot") != slot:
                 err("handoff_mismatch", slot=slot, vod_id=vid,
                     handoff_vod=h.get("vod_id"), handoff_slot=h.get("slot"))
+            if h.get("status") not in HANDOFF_STATUS:
+                err("bad_status", slot=slot, vod_id=vid, value=h.get("status"))
             ranges = []
             for x in (h.get("covered_ranges_s") or []):
                 if isinstance(x, list) and len(x) == 2 and x[0] < x[1]:

@@ -14,14 +14,17 @@ _HOOK_TABLES = ["ITEM_COMBAT_START", "ITEM_HP_THRESHOLD", "ITEM_ON_ATTACK", "ITE
 
 
 def alias_map(full) -> dict[str, str]:
-    """DA_* craftable (co thanh phan) -> TFT_Item_* cung ten co effects, chi khi DA rong."""
+    """DA_* -> TFT_Item_* cung ten co effects, chi khi DA rong.
+    Pham vi: craftable (co thanh phan) va DA_Component_* (thanh phan co ban, khong co thanh phan).
+    DA_Component_TearOfTheGoddess khong co twin TFT_Item_* nen khong duoc alias (xem model-plan 11.23)."""
     by_name = {}
     for api, it in full.items.items():
         if api.startswith("TFT_Item_") and it.effects:
             by_name.setdefault(it.name, api)
     out = {}
     for api, it in full.items.items():
-        if api.startswith("DA_") and it.composition and not it.effects and it.name in by_name:
+        in_scope = bool(it.composition) or api.startswith("DA_Component_")
+        if api.startswith("DA_") and in_scope and not it.effects and it.name in by_name:
             out[api] = by_name[it.name]
     return out
 

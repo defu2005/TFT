@@ -24,6 +24,8 @@ from collections import defaultdict
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE.parents[1] / "src"))
 
 
 def _norm(name) -> str:
@@ -68,7 +70,14 @@ def ingest(manifest: Path, out_root: Path, dest: Path) -> dict:
             pair = tuple(sorted(_norm(p) for p in str(f["fight_key"]).split("|")[-2:]))
             groups[(lid, stage, pair)].append((vid, gid, f))
 
-    out, extra = [], []
+    import usable as U
+    import fight as F
+    from tft_sim.real_content import build_real
+    F.set_content(18, build_real("TFTSet18"))
+    champs = F._CONTENT[18].champions
+    vdir_of = {vid: out_root / slot / vid for slot, vid in prim}
+
+    out, extra, scoring = [], [], []
     for (lid, stage, pair), lst in sorted(groups.items()):
         lst.sort(key=lambda x: x[0])
         vod, gid, keep = lst[0]
@@ -76,6 +85,9 @@ def ingest(manifest: Path, out_root: Path, dest: Path) -> dict:
         keep["source"] = f"{lid}:{stage}"
         keep["fight_key"] = f"{lid}|{stage}|{pair[0]}|{pair[1]}"
         out.append(keep)
+        # Bo loc dung chung (usable.py), kiem khung hinh theo thu muc VOD cua ban giu lai.
+        if U.reason(keep, champs, vdir_of[vod]) is None:
+            scoring.append(keep)
         if len(lst) > 1:
             extra.append({"type": "fight_extra", "fight_key": keep["fight_key"],
                           "sources": [{"vod": v, "game_id": g, "source_raw": x["source"]} for v, g, x in lst]})
@@ -87,7 +99,11 @@ def ingest(manifest: Path, out_root: Path, dest: Path) -> dict:
                                             + ("\n" if extra else ""), encoding="utf-8")
     (dest / "held.jsonl").write_text("\n".join(json.dumps(r, ensure_ascii=False) for r in held)
                                      + ("\n" if held else ""), encoding="utf-8")
+    (dest / "scoring.jsonl").write_text("\n".join(json.dumps(r, ensure_ascii=False) for r in scoring)
+                                        + ("\n" if scoring else ""), encoding="utf-8")
     report = {"fights_in": sum(len(v) for v in groups.values()), "fights_out": len(out), "held_incomplete": len(held),
+              "scoring_fights": len(scoring),
+              "scoring_games": len({r["source"].split(":")[0] for r in scoring}),
               "fight_extra": len(extra), "lobbies": len({k[0] for k in groups}),
               "games_clusters_out": len({r["source"].split(":")[0] for r in out}),
               "lobby_vods": {k: sorted(v) for k, v in lobby_vods.items()}}

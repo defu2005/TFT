@@ -1,18 +1,13 @@
 """Sản lượng dùng được để chấm điểm, theo từng slot (chỉ đọc).
 
-Một fight được tính là DÙNG ĐƯỢC khi đủ cả bốn điều kiện:
-  1. winner đã biết (0 hoặc 1);
-  2. cả hai bên có ít nhất một unit với api đã phân giải được trong nội dung Set 18;
-  3. cả hai tên người chơi trong fight_key là tên thật (không unk_/unknown_);
-  4. mọi khung hình được tham chiếu đều tồn tại trong thư mục VOD.
-Một ván (game) dùng được khi có ít nhất một fight dùng được.
+Bộ lọc nằm trong usable.py (dùng chung với bước chấm điểm). Một ván (game) dùng được
+khi có ít nhất một fight dùng được.
 
 Đầu ra: bảng theo slot + JSON. So sánh với mục tiêu 137 ván (±0,10) và 545 ván (±0,05).
 
 Dùng:  PYTHONPATH=<goat>/src:<sim>/src python3 scripts/combat/scoreable_yield.py
 """
 import json
-import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -21,7 +16,6 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 OUT_ROOT = ROOT / "data/vod_out/20261125"
 OUT = ROOT / "results/fixed/combat/scoreable_yield.json"
-PH = re.compile(r"(unknown_|unk_)", re.I)
 TARGET_GAMES = {"h010": 137, "h005": 545}
 
 
@@ -34,6 +28,7 @@ def _jsonl(p: Path):
 def main() -> int:
     sys.path.insert(0, str(HERE))
     sys.path.insert(0, str(ROOT / "src"))
+    import usable as U
     import fight as F
     from tft_sim.real_content import build_real
     F.set_content(18, build_real("TFTSet18"))
@@ -51,26 +46,8 @@ def main() -> int:
             C["games"] += len(games)
             for f in _jsonl(vdir / "fights.jsonl"):
                 C["fights"] += 1
-                gid = str(f.get("source", "")).split(":")[0]
-                why = None
-                w = (f.get("result") or {}).get("winner")
-                pair = str(f.get("fight_key", "")).split("|")[-2:]
-                if w not in (0, 1):
-                    why = "winner_null"
-                elif PH.search("|".join(pair)):
-                    why = "nombre_placeholder"
-                else:
-                    for side in ("a", "b"):
-                        units = (f.get(side) or {}).get("units", [])
-                        if not any(u.get("api") in champs for u in units):
-                            why = f"board_{side}_khong_phan_giai"
-                            break
-                if why is None:
-                    for side in ("a", "b"):
-                        for u in (f.get(side) or {}).get("units", []):
-                            for fr in u.get("frames", []) or []:
-                                if not (vdir / fr).exists():
-                                    why = "frame_thieu"
+                gid = U.game_of(f)
+                why = U.reason(f, champs, vdir)
                 if why is None:
                     C["usable_fights"] += 1
                     usable_games[slot].add((vod, gid))

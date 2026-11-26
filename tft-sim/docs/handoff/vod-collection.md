@@ -112,6 +112,7 @@ tft-sim/data/vod_out/20261125/<S>/<vod_id>/
 | `incomplete_lobby` | WARN | lobby ít hơn 8 tên: không khử trùng, ingest đưa vào `held.jsonl` |
 | `placeholder_name` | ERR | tên `unknown_*` / `unk_*` trong lobby hoặc fight_key |
 | `game_without_fights` | ERR | ván không có fight quan sát được trong cùng thư mục |
+| `bad_status` | ERR | `handoff.status` ngoài `pending`, `working`, `done`, `blocked`, `stale` |
 
 - Ingest không gộp fight của lobby chưa đủ 8 tên. Các fight đó nằm trong `held.jsonl` và được đếm trong `ingest_report.json` (`held_incomplete`).
 - Trạng thái thực tế được ghi trong `results/fixed/combat/vod_provenance_audit.json` (chỉ đọc, `scripts/combat/audit_vod_provenance.py`).

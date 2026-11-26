@@ -70,6 +70,8 @@ def build(root: Path, plant: str | None) -> Path:
     if plant == "dup_source":
         fights1.append(_fight("twitch-1-g0", "3-2", "A", "B"))
     h1 = _handoff("twitch-1", "P1", [[0, 100], [100, 200]])
+    if plant == "bad_status":
+        h1["status"] = "ok"  # trang thai ngoai bo tu spec
     if plant == "handoff_mismatch":
         h1["vod_id"] = "twitch-2"
     if plant == "remaining_overlap":
@@ -147,6 +149,7 @@ CASES = [
     ("placeholder_ten", "placeholder", "placeholder_name", 1),
     ("game_khong_fight", "no_fights", "game_without_fights", 1),
     ("remaining_chong_covered", "remaining_overlap", "covered_remaining_overlap", 1),
+    ("trang_thai_ngoai_spec", "bad_status", "bad_status", 1),
 ]
 
 

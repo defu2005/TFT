@@ -1879,12 +1879,12 @@
   {
    "api": "DA_Component_BFSword",
    "name": "B.F. Sword",
-   "twin_tft_item": null
+   "twin_tft_item": "TFT_Item_BFSword"
   },
   {
    "api": "DA_Component_ChainVest",
    "name": "Chain Vest",
-   "twin_tft_item": null
+   "twin_tft_item": "TFT_Item_ChainVest"
   },
   {
    "api": "DA_Component_FryingPan",
@@ -1894,32 +1894,32 @@
   {
    "api": "DA_Component_GiantsBelt",
    "name": "Giant's Belt",
-   "twin_tft_item": null
+   "twin_tft_item": "TFT_Item_GiantsBelt"
   },
   {
    "api": "DA_Component_NeedlesslyLargeRod",
    "name": "Needlessly Large Rod",
-   "twin_tft_item": null
+   "twin_tft_item": "TFT_Item_NeedlesslyLargeRod"
   },
   {
    "api": "DA_Component_NegatronCloak",
    "name": "Negatron Cloak",
-   "twin_tft_item": null
+   "twin_tft_item": "TFT_Item_NegatronCloak"
   },
   {
    "api": "DA_Component_RecurveBow",
    "name": "Recurve Bow",
-   "twin_tft_item": null
+   "twin_tft_item": "TFT_Item_RecurveBow"
   },
   {
    "api": "DA_Component_SparringGloves",
    "name": "Sparring Gloves",
-   "twin_tft_item": null
+   "twin_tft_item": "TFT_Item_SparringGloves"
   },
   {
    "api": "DA_Component_Spatula",
    "name": "Spatula",
-   "twin_tft_item": null
+   "twin_tft_item": "TFT_Item_Spatula"
   },
   {
    "api": "DA_Component_TearOfTheGoddess",
