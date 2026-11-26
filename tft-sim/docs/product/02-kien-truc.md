@@ -36,7 +36,7 @@ Hai nhánh đi qua engine nhưng **không** nối với nhau: bộ dự đoán c
 | Tài liệu tiến độ | `tft-sim/docs/progress/` | Cập nhật cuối mỗi phiên (`AGENTS.md` gốc). |
 | Lộ trình sản phẩm | `origin/claude/nifty-lovelace-252i30:docs/roadmap.md` | Không nằm trong nhánh sim. |
 | Nhánh `hud` | Đọc HUD/OCR | Ngoài phạm vi nhánh sim. |
-| Nhánh `engine` | Chủ roster Set 18 (`src/data/set18.json`) | Người dùng duyệt 2026-11-24. |
+| Nhánh `engine` | Chủ roster Set 18 (`src/data/set18.json`) | Ghi trong roadmap 2026-11-24 là "người dùng duyệt", chưa xác minh. |
 
 ## Cấu hình dự đoán
 

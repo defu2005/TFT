@@ -5,10 +5,10 @@ Ghi theo thứ tự thời gian. Cột "Nguồn" chỉ tới nơi ghi quyết đ
 | Ngày | Quyết định | Nguồn | Ai quyết |
 |---|---|---|---|
 | 2026-11-23 | Dùng snapshot CDragon làm bảng xác minh | Yêu cầu của người dùng trong phiên | Người dùng |
-| 2026-11-24 | Chủ roster Set 18 là nhánh `engine` | `roadmap.md`, quyết định 3 | Người dùng duyệt |
-| 2026-11-24 | Thứ tự tích hợp PR #1 → dazzling → codex/hud → fable | `roadmap.md`, quyết định 4 | Người dùng duyệt |
+| 2026-11-24 | Chủ roster Set 18 là nhánh `engine` | `roadmap.md`, quyết định 3 | Roadmap ghi "người dùng duyệt"; chưa xác minh |
+| 2026-11-24 | Thứ tự tích hợp PR #1 → dazzling → codex/hud → fable | `roadmap.md`, quyết định 4 | Roadmap ghi "người dùng duyệt"; chưa xác minh |
 | 2026-11-26 | Đường RAM không đóng; người dùng sẽ phát triển sau | Người dùng | Người dùng |
-| 2026-11-24 | Dừng mở rộng chiến dịch VOD | `roadmap.md`, quyết định 5 | Người dùng duyệt |
+| 2026-11-24 | Dừng mở rộng chiến dịch VOD (OCR của `hud`) | `roadmap.md`, quyết định 5 | Roadmap ghi "người dùng duyệt"; chưa xác minh |
 | 2026-11-24 | Dùng VOD streamer cho huấn luyện; rủi ro pháp lý chưa kiểm | `roadmap.md`, bổ sung | Người dùng đã nhận thức và quyết định |
 | 2026-11-25 | Mở lô VOD `2026-11-25-set18-vod` (goal ≥1000 ván) để thu `fight-v1` | `vod-collection.md` | Người dùng yêu cầu trong phiên |
 | 2026-11-25 | Không chuyển các đánh giá cũ sang nội dung đã alias; đường ghi bản ghi thật dùng nội dung đã alias | `model-plan.md` 10.12 | Theo advisor, ghi trong mục 10.12 |
