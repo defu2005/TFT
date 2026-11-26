@@ -102,7 +102,7 @@ tft-sim/data/vod_out/20261125/<S>/<vod_id>/
   - `shared_lobby_needs_ingest`: cùng lobby ở hai VOD, bắt buộc khử trùng khi ingest.
   - `duplicate_fight_key_needs_ingest`: cùng (lobby, stage, cặp) ở hai VOD, giữ một bản.
   - `lobby_partial_overlap`: hai lobby chung 4–7 tên, kiểm tay.
-- **Khử trùng ingest:** `python3 scripts/combat/ingest_vod.py data/vod_manifest_20261125.json data/vod_out/20261125 data/vod_ingest/20261125` (chạy merge check trước, từ chối nếu có ERR). Ghi `fights.jsonl` (source = `<lobby_id>:<stage>`, một bản cho mỗi (lobby, stage, cặp)), `fight_extra.jsonl` (nguồn còn lại) và `ingest_report.json`. Kiểm thử: `selftest_ingest_vod.py`. Chấm điểm chỉ dùng `fights.jsonl` sau khi ingest.
+- **Khử trùng ingest:** `python3 scripts/combat/ingest_vod.py data/vod_manifest_20261125.json data/vod_out/20261125 data/vod_ingest/20261125` (chạy merge check trước, từ chối nếu có ERR). Ghi `fights.jsonl` (source = `<lobby_id>:<stage>`, một bản cho mỗi (lobby, stage, cặp)), `fight_extra.jsonl` (nguồn còn lại) và `ingest_report.json`. Kiểm thử: `selftest_ingest_vod.py`. Chấm điểm chỉ đọc `scoring.jsonl` (fight qua bộ lọc `usable.py`: đủ level, đủ unit, tướng nhận diện được, khung hình tồn tại). `run_vod_pipeline.sh` dừng nếu `scoring.jsonl` có bản ghi không qua `validate_vod.py`. Nếu một bản sao trùng bị loại bộ lọc, bản sao khác của cùng khóa không được thay thế: khóa đó mất.
 
 ## 8a. Cổng kiểm tra gộp (cập nhật)
 

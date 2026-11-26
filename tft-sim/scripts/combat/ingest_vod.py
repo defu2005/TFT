@@ -13,6 +13,8 @@ Ghi ra:
   <dest>/fights.jsonl       fight-v1, nhan real, da khu trung (dau vao cho validate_vod.py va fidelity.read_real)
   <dest>/fight_extra.jsonl  mot dong cho moi khoa co nhieu nguon: {"type": "fight_extra", "fight_key", "sources"}
   <dest>/held.jsonl         fight cua ván lobby thieu ten (khong cham diem, dem trong report)
+  <dest>/scoring.jsonl      fight da khu trung qua bo loc usable.py: DAY LA FILE DUOC CHAM DIEM.
+                            Neu mot ban sao trung bi loai boi bo loc, ban sao khac cung khoa khong duoc thay the.
   <dest>/ingest_report.json so lieu va danh sach lobby
 """
 import hashlib

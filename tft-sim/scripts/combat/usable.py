@@ -7,12 +7,14 @@ Mot fight dung duoc khi du tat ca dieu kien sau, kiem theo ly do dau tien vi pha
   3. level_khong_ro         a.level va b.level la so nguyen (khong null, khong bool);
   4. board_<side>_khong_phan_giai   co it nhat mot unit co api da phan giai duoc trong noi dung Set 18;
   5. board_<side>_thieu     so unit >= level, ca hai ben (ban co day du theo level);
-  6. board_<side>_vuot_level    so unit > level (khong the xay ra trong TFT: that la loi du lieu);
+  6. tuong_la / star_khong_hop_le / items_null   cung dieu kien voi fidelity._validate (scorer tu choi);
   7. frame_thieu            moi khung hinh duoc tham chieu deu ton tai trong thu muc VOD.
 Mot van (game) dung duoc khi co it nhat mot fight dung duoc.
 
 Ghi chu: dieu kien 5 loai bo ca ban co that nhung it unit hon level. Day la chu y co chu dich
 (uu tien khong cham ban co sai), khong phai bang chung rang ban do khong hop le.
+Boards co the vuot level (vi du DA_TacticiansCrown, Sprykin BFF, Elderwood placeable plants), nen
+khong co kiem tra so unit <= level.
 """
 import re
 
@@ -41,11 +43,17 @@ def reason(f: dict, champs, vdir=None) -> str | None:
             return f"board_{side}_khong_phan_giai"
     for side in ("a", "b"):
         units = (f.get(side) or {}).get("units", []) or []
-        lv = f[side]["level"]
-        if len(units) < lv:
+        if len(units) < f[side]["level"]:
             return f"board_{side}_thieu"
-        if len(units) > lv:
-            return f"board_{side}_vuot_level"
+        if (f.get(side) or {}).get("augments", []) is None:
+            return "augments_null"
+        for u in units:
+            if u.get("api") not in champs:
+                return "tuong_la"
+            if not _is_int(u.get("star")):
+                return "star_khong_hop_le"
+            if u.get("items") is None and "items" in u:
+                return "items_null"
     if vdir is not None:
         for side in ("a", "b"):
             for u in (f.get(side) or {}).get("units", []) or []:

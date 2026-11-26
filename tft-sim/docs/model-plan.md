@@ -575,12 +575,13 @@ Bản đầu của mục này kết luận "CDragon thiếu chỉ số item". K�
 
 Không đo độ chính xác, không chấm điểm, không đọc lại thư mục `vod_out` để đếm kết quả. Các thay đổi dưới đây kiểm thử bằng fixture và snapshot.
 
-**1. Bộ lọc fight dùng được, đăng ký trước (`scripts/combat/usable.py`).** Điều kiện loại theo thứ tự: `winner_null`, `nombre_placeholder`, `level_khong_ro` (level không phải số nguyên), `board_<bên>_khong_phan_giai`, `board_<bên>_thieu` (số unit < level), `board_<bên>_vuot_level` (số unit > level), `frame_thieu`. Không có ngưỡng nào do dữ liệu quyết định.
+**1. Bộ lọc fight dùng được, đăng ký trước (`scripts/combat/usable.py`).** Điều kiện loại theo thứ tự: `winner_null`, `nombre_placeholder`, `level_khong_ro` (level không phải số nguyên), `board_<bên>_khong_phan_giai`, `board_<bên>_thieu` (số unit < level), `augments_null`, `tuong_la`, `star_khong_hop_le`, `items_null` (bốn mã cuối khớp `fidelity._validate`, để số đếm không lớn hơn những gì scorer nhận), `frame_thieu`. Không có ngưỡng nào do dữ liệu quyết định.
 - Lưu ý chi phí: điều kiện `số unit >= level` loại cả những bàn thật nhưng có ít unit hơn level. Đây là đánh đổi có chủ ý (không bao giờ nhận bàn có khả năng sai), không phải bằng chứng rằng các bàn đó sai. Chi phí này phải được báo cáo cùng số lượng.
-- `vuot_level` là kiểm tra bổ sung của bản này: trong TFT số unit trên bàn không vượt level, nên vượt là lỗi dữ liệu.
-- `scoreable_yield.py` dùng chung module này. Selftest: `selftest_usable.py` (9 ca, gồm bàn b một unit ở level 5 bị loại, level null bị loại, bàn đủ được qua).
+- Đã bỏ kiểm tra `số unit > level`. Bàn có thể vượt level (ví dụ DA_TacticiansCrown, Sprykin BFF, Elderwood placeable plants), nên đây không phải lỗi dữ liệu.
+- `scoreable_yield.py` dùng chung module này. Selftest: `selftest_usable.py` (12 ca, gồm bàn b một unit ở level 5 bị loại, level null bị loại, tướng lạ trong bàn đủ bị loại, bàn vượt level vẫn qua).
 
-**2. File chấm điểm.** `ingest_vod.py` ghi thêm `scoring.jsonl` (chỉ fight qua bộ lọc, kiểm khung hình theo thư mục VOD của bản giữ lại) và `ingest_report.json` có `scoring_fights`, `scoring_games`. `run_vod_pipeline.sh` có bước 4 in hai số này. Đường thành công đã chạy trên fixture (exit 0, không tính điểm). Lý do đặt trong ingest: ingest bỏ đường dẫn thư mục VOD, nên bước sau không kiểm được khung hình.
+**2. File chấm điểm.** `ingest_vod.py` ghi thêm `scoring.jsonl` (chỉ fight qua bộ lọc, kiểm khung hình theo thư mục VOD của bản giữ lại) và `ingest_report.json` có `scoring_fights`, `scoring_games`. `run_vod_pipeline.sh` có bốn bước: gộp, khử trùng, `validate_vod.py` trên `fights.jsonl` (thông tin), và `validate_vod.py` trên `scoring.jsonl` với điều kiện dừng nếu có bản ghi bị bỏ. Đường thành công đã chạy trên fixture (exit 0, không tính điểm).
+- Khi bản sao trùng khóa bị bộ lọc loại, ingest không thay bằng bản sao khác của cùng khóa. Khóa đó mất khỏi `scoring.jsonl`. Lý do đặt trong ingest: ingest bỏ đường dẫn thư mục VOD, nên bước sau không kiểm được khung hình.
 
 **3. Trạng thái handoff.** `merge_check_vod.py` thêm mã ERR `bad_status`: `handoff.status` ngoài (`pending`, `working`, `done`, `blocked`, `stale`). Agent đang dùng `ok`, `partial`, `skipped`, nên cổng gộp sẽ đỏ thêm cho đến khi agent sửa. Selftest `trang_thai_ngoai_spec` đã pass.
 
@@ -596,11 +597,21 @@ Không đo độ chính xác, không chấm điểm, không đọc lại thư m�
 - Chưa alias: `DA_Component_FryingPan` (twin không có hiệu ứng, nên alias không thay đổi gì); `DA_Component_TearOfTheGoddess` (không có twin, cần dữ liệu khác).
 - Kiểm tra trên fixture: SECONDARY từ 0.45 lên 0.5 khi hai bàn có cùng item; PRIMARY giữ 0.45. Đây là kiểm tra logic, không phải đo độ chính xác.
 - Giả định giữ nguyên như craftable: hiệu ứng của `DA_Component_X` cùng tên với `TFT_Item_X` có hiệu ứng. Chưa kiểm chứng trên Set 18 thật.
+- Hệ quả trên tra tên: `names18.candidates("items", "B.F. Sword")` trước đây trả về hai id (`DA_Component_BFSword`, `TFT_Item_BFSword`), nay chỉ trả `DA_Component_BFSword` (đã kiểm tra bằng `HEAD~1` và `HEAD`). Tra tên sang id sẽ không còn mơ hồ, và id được trả về không có hiệu ứng dưới PRIMARY, giống craftable. Cùng kiểu đã xảy ra với craftable từ trước.
 - Đây là thay đổi baseline SECONDARY. Mọi so sánh SECONDARY trước đó không còn áp dụng; ghi rõ khi có điểm.
 
 **6. Những gì chưa xử lý và lý do.**
-- `_GENERIC_ITEM` (`tft_goat/src/tft_goat/engine/unit.py`): chú thích trong `unit.py` nói dùng cho bộ đếm item trừu tượng của môi trường. Nhưng `batch_6.py` (augment Kayle scrapper) dùng nó như xấp xỉ "+1 item trung bình" cho `NumComponents` unit. Augment có trong PRIMARY (`augments=True`), nên PRIMARY đang có một bonus không có trong dữ liệu thật. Chưa sửa vì nằm trong tft_goat và sẽ đổi PRIMARY; cần quyết định riêng.
+- **Rút lại (kiểm tra 2026-11-26):** một khẳng định trước đó nói augment Kayle scrapper làm PRIMARY có bonus item không có trong dữ liệu. Sai. Handler `_kayle_scrapper` đăng ký dưới khóa `TFT17_Augment_KayleGodAugment_Scrapper`, khóa này không có trong nội dung Set 18 (`TFTSet18`), nên không augment Set 18 nào tới được handler. `_GENERIC_ITEM` cũng không tới đường record: `fight.py` không truyền `generic_items`, nên luôn là 0 khi chấm bản ghi. Không có thay đổi mã cho mục này.
 - `pos`, mapping carousel, apiName của item: giữ mở (không kiểm chứng được nếu không có frame hoặc dữ liệu thật).
 - `side_of_streamer`: vẫn là quy ước, chưa kiểm bằng khung hình.
 
 **Chặn trước lần chấm điểm đầu tiên:** cổng gộp xanh (còn lỗi `placeholder_name` và `bad_status` của agent), ≥ 30 ván dùng được theo bộ lọc 11.23 mục 1, và đếm lại sản lượng với điều kiện số unit.
+
+**Kiểm tra đối xứng bên và ổn định theo seed (2026-11-26, `scripts/combat/check_symmetry_seed.py`, không dùng dữ liệu VOD).** Bàn tổng hợp từ nội dung Set 18, level 6–8, số unit = level, không item, không augment; PRIMARY, n = 20.
+- Ngưỡng đăng ký trước khi chạy: tỷ lệ đảo dự đoán giữa seed 0 và seed 1000 > 5% thì tăng n và ghi thành thay đổi cấu hình đông lạnh.
+- 40 bàn: 0 đảo. Cận trên 95% của tỷ lệ đảo khoảng 7,5%, vượt ngưỡng, nên 40 bàn chưa đủ.
+- 300 bàn: 1 đảo (0,33%), cận trên khoảng 1%, dưới ngưỡng. Quy tắc không kích hoạt, giữ n = 20.
+- Đối xứng: độ lệch trung bình của p_ab + p_ba − 1 là +0,0012 (không đáng kể). Theo từng bàn, 12/300 bàn lệch trên 0,1 và lớn nhất là 0,3 (3 bàn từ 0,2 trở lên). Đây là nhiễu từng bàn của n = 20, không phải thiên vị hệ thống.
+- Chênh lệch seed trung bình 0,0098, lớn nhất 0,3.
+- Đây là chẩn đoán nhiễu mô phỏng. Không phải đo độ chính xác dự đoán, không dùng để chọn cấu hình.
+- Giới hạn: bàn tổng hợp không có item và augment, nên không đại diện cho bàn thật.

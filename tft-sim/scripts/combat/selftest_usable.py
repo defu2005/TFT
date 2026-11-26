@@ -38,7 +38,10 @@ CASES = [
     ("b_mot_unit_lv5_bi_loai", fight(FULL5, [unit()]), "board_b_thieu"),
     ("level_null_bi_loai", fight(FULL5, FULL5, a_lv=None), "level_khong_ro"),
     ("level_bool_bi_loai", fight(FULL5, FULL5, b_lv=True), "level_khong_ro"),
-    ("vuot_level_bi_loai", fight(FULL5 + [unit()], FULL5), "board_a_vuot_level"),
+    ("vuot_level_van_pass", fight(FULL5 + [unit()], FULL5), None),  # ban vuot level la hop le (xem usable.py)
+    ("tuong_la_trong_ban_day_du_bi_loai", fight([unit("KHONG_CO_TUONG")] + FULL5[1:], FULL5), "tuong_la"),
+    ("star_khong_hop_le_bi_loai", fight([unit(star="2")] + FULL5[1:], FULL5), "star_khong_hop_le"),
+    ("items_null_bi_loai", fight([dict(unit(), items=None)] + FULL5[1:], FULL5), "items_null"),
     ("winner_null_bi_loai", fight(FULL5, FULL5, winner=None), "winner_null"),
     ("placeholder_bi_loai", fight(FULL5, FULL5, key="g|3-2|unk_1|Beta"), "nombre_placeholder"),
     ("api_la_bi_loai", fight([unit("KHONG_CO_TUONG")] * 5, FULL5), "board_a_khong_phan_giai"),
