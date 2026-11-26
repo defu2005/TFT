@@ -80,6 +80,12 @@ def build(root: Path, plant: str | None) -> Path:
     g1 = _game("twitch-1-g0", LOBBY1)
     if plant == "bad_source_url":
         g1["vod_url"] = "https://kick.com/videos/1"
+    if plant == "short_lobby":
+        g1["lobby_names"] = LOBBY1[:7]
+    if plant == "lobby_over8":
+        g1["lobby_names"] = LOBBY1 + ["Extra9"]
+    if plant == "placeholder":
+        g1["lobby_names"] = ["unknown_1_0"] + LOBBY1[1:]
     if plant == "bad_game_id":
         g1["game_id"] = "twitch-9-g0"  # sai vod_id
         fights1 = [_fight("twitch-1-g0", "3-2", "A", "B")]
@@ -88,7 +94,10 @@ def build(root: Path, plant: str | None) -> Path:
 
     d2 = out / p2_slot / "twitch-2"
     _w(d2 / "handoff.json", json.dumps(_handoff("twitch-2", p2_slot, [[0, 300]])))
-    _w(d2 / "games.jsonl", _jl([_game("twitch-2-g0", LOBBY2)]))
+    games2 = [_game("twitch-2-g0", LOBBY2)]
+    if plant == "no_fights":
+        games2.append(_game("twitch-2-g9", LOBBY2))  # khong co fight nao
+    _w(d2 / "games.jsonl", _jl(games2))
     _w(d2 / "fights.jsonl", _jl([_fight("twitch-2-g0", "1-1", "C", "D")]))
 
     if plant in ("dup_fight_key", "lobby_case", "lobby_partial"):
@@ -133,6 +142,10 @@ CASES = [
     ("khoang_sai", "bad_range", "bad_range", 1),
     ("bad_id", "bad_id", "bad_id", 1),
     ("nguon_khac", "bad_source_url", "bad_source_url", 1),
+    ("lobby_thieu_7_ten", "short_lobby", "incomplete_lobby", 0),
+    ("lobby_qua_8_ten", "lobby_over8", "bad_lobby", 1),
+    ("placeholder_ten", "placeholder", "placeholder_name", 1),
+    ("game_khong_fight", "no_fights", "game_without_fights", 1),
     ("remaining_chong_covered", "remaining_overlap", "covered_remaining_overlap", 1),
 ]
 

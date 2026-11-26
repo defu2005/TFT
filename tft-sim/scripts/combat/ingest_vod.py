@@ -12,6 +12,7 @@ Dieu kien: merge_check_vod.py phai thoat 0 (khong co ERR). Chi doc dong role=pri
 Ghi ra:
   <dest>/fights.jsonl       fight-v1, nhan real, da khu trung (dau vao cho validate_vod.py va fidelity.read_real)
   <dest>/fight_extra.jsonl  mot dong cho moi khoa co nhieu nguon: {"type": "fight_extra", "fight_key", "sources"}
+  <dest>/held.jsonl         fight cua ván lobby thieu ten (khong cham diem, dem trong report)
   <dest>/ingest_report.json so lieu va danh sach lobby
 """
 import hashlib
@@ -44,13 +45,17 @@ def ingest(manifest: Path, out_root: Path, dest: Path) -> dict:
     man = json.loads(manifest.read_text(encoding="utf-8"))
     prim = [(r["slot"], r["vod_id"]) for r in man["vods"] if r["role"] == "primary"]
 
+    held = []                     # fight cua ván lobby thieu ten: khong vao file cham diem
     lobby_of = {}                 # (vod, game_id) -> lobby_id
     lobby_vods = defaultdict(set)
     groups = defaultdict(list)    # (lobby, stage, pair) -> [(vod, game_id, record)]
     for slot, vid in sorted(prim, key=lambda x: x[1]):
         vdir = out_root / slot / vid
         for g in _jsonl(vdir / "games.jsonl"):
-            names = sorted(_norm(n) for n in g["lobby_names"])
+            raw = [_norm(n) for n in g.get("lobby_names") or []]
+            if len(raw) != 8 or len(set(raw)) != 8:
+                continue  # lobby chua day du 8 ten: giu lai, khong khu trung
+            names = sorted(raw)
             lid = hashlib.sha1("|".join(names).encode("utf-8")).hexdigest()[:12]
             lobby_of[(vid, g["game_id"])] = lid
             lobby_vods[lid].add(vid)
@@ -58,7 +63,8 @@ def ingest(manifest: Path, out_root: Path, dest: Path) -> dict:
             gid, stage = str(f["source"]).split(":")
             lid = lobby_of.get((vid, gid))
             if lid is None:
-                raise SystemExit(f"thieu game {gid} trong {vid}")
+                held.append({"vod": vid, "game_id": gid, "source": f["source"], "reason": "incomplete_lobby"})
+                continue
             pair = tuple(sorted(_norm(p) for p in str(f["fight_key"]).split("|")[-2:]))
             groups[(lid, stage, pair)].append((vid, gid, f))
 
@@ -79,7 +85,9 @@ def ingest(manifest: Path, out_root: Path, dest: Path) -> dict:
                                        encoding="utf-8")
     (dest / "fight_extra.jsonl").write_text("\n".join(json.dumps(r, ensure_ascii=False) for r in extra)
                                             + ("\n" if extra else ""), encoding="utf-8")
-    report = {"fights_in": sum(len(v) for v in groups.values()), "fights_out": len(out),
+    (dest / "held.jsonl").write_text("\n".join(json.dumps(r, ensure_ascii=False) for r in held)
+                                     + ("\n" if held else ""), encoding="utf-8")
+    report = {"fights_in": sum(len(v) for v in groups.values()), "fights_out": len(out), "held_incomplete": len(held),
               "fight_extra": len(extra), "lobbies": len({k[0] for k in groups}),
               "games_clusters_out": len({r["source"].split(":")[0] for r in out}),
               "lobby_vods": {k: sorted(v) for k, v in lobby_vods.items()}}

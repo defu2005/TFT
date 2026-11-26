@@ -522,3 +522,36 @@ Bản đầu của mục này kết luận "CDragon thiếu chỉ số item". K�
 - `scripts/combat/ingest_vod.py`: lobby_id = sha1 của 8 tên đã chuẩn hóa (12 ký tự đầu); khử trùng theo (lobby_id, stage, cặp); viết lại `source` thành `lobby_id:stage`; nguồn còn lại vào `fight_extra.jsonl`. Từ chối nếu `merge_check_vod.py` có ERR.
 - Kiểm thử `selftest_ingest_vod.py`: hai VOD cùng lobby + một lobby khác → 3 fight, 1 fight_extra, 2 cụm (raw: 3 cụm). Dầu ra qua `validate_vod.py` thoát 0. Ca gộp có lỗi bị từ chối.
 - Chọn VOD có `vod_id` nhỏ nhất khi trùng; không dùng chất lượng khung hình vì chưa có số đo.
+
+### 11.21 Kiểm tra nguồn gốc dữ liệu VOD và cổng gộp (2026-11-26, theo advisor)
+- Công cụ chỉ đọc: `scripts/combat/audit_vod_provenance.py` -> `results/fixed/combat/vod_provenance_audit.json`; `scripts/combat/audit_overlap_pairs.py` -> `results/fixed/combat/overlap_pairs_audit.json`.
+- Kết quả theo slot (tại thời điểm chạy, 1.026 ván, 12.488 fight):
+
+| Slot | ván | fight | ván có placeholder | fight có placeholder key | ván ghi chú stub/densify | bàn cờ lặp giữa VOD | ván thiếu fight |
+|---|---|---|---|---|---|---|---|
+| P1 | 95 | 1.722 | 7 | 848 | 9 | 0 | 0 |
+| P2 | 34 | 388 | 32 | 0 | 33 | 0 | 0 |
+| P3 | 93 | 363 | 0 | 286 | 88 | 2 | 0 |
+| P4 | 322 | 4.179 | 240 | 3.501 | 94 | 0 | 0 |
+| P5 | 109 | 1.460 | 72 | 153 | 106 | 0 | 0 |
+| P6 | 41 | 431 | 9 | 302 | 23 | 0 | 0 |
+| P7 | 27 | 267 | 8 | 235 | 27 | 0 | 0 |
+| P8 | 39 | 490 | 23 | 126 | 38 | 0 | 0 |
+| P9 | 126 | 1.631 | 45 | 794 | 61 | 0 | 2 |
+| P10 | 140 | 1.557 | 40 | 1.101 | 112 | 0 | 0 |
+
+- Quan sát chính:
+  - `side_of_streamer` là `a` ở toàn bộ 12.488 fight. Trường này không được quan sát, nên số "streamer thắng/thua" không có ý nghĩa.
+  - Ván có giây bắt đầu chia hết cho 60 chiếm 26%–77% tùy slot. Dấu hiệu mốc tròn, cần kiểm tra thủ công.
+  - Khung hình được tham chiếu gần như đều tồn tại (chỉ 1–16 file thiếu mỗi slot). Phần này không phải lo ngại.
+  - Chỉ 21 ván có kết quả biết được (trong 12.488 fight). Tỉ lệ `winner_null` là 71%.
+  - Cặp lobby lệch (chung 4–7 tên): 2.999 cặp; 2.583 cặp khác streamer; 2.852 cặp chung ≥6 tên; 796 cặp có bàn cờ giống hệt nhau ở cùng stage. Đây là dấu hiệu cùng một ván bị ghi hai lần, không khớp với các lobby riêng biệt.
+- Kết luận: không slot nào đạt tiêu chí (không placeholder, không ghi chú stub, không mốc tròn, quan sát được bên thắng). Theo chỉ dẫn, toàn bộ 10 slot không được coi là dữ liệu `real`. Không có ván nào được chấm điểm từ các slot này.
+- Cổng gộp đã đổi:
+  - `bad_lobby` chỉ còn ERR khi trùng tên hoặc hơn 8 tên.
+  - `incomplete_lobby` là WARN; ingest giữ fight của các lobby này trong `held.jsonl`.
+  - `placeholder_name` là ERR (tên `unknown_*`, `unk_*` trong lobby hoặc fight_key).
+  - `game_without_fights` là ERR.
+  - Kết quả hiện tại: `merge_check_vod.py` thoát 1 (7.822 `placeholder_name`, 2 `game_without_fights`). Đây là trạng thái đúng; không sửa dữ liệu của các slot ở phiên này.
+- Điểm sản lượng (theo 11.14): ngưỡng 137 ván và 545 ván. Hiện có 0 ván đạt tiêu chí, nên chưa có số nào để so.
+- Việc còn lại (không làm ở đây): các agent phải thay placeholder bằng tên thật, hoặc ghi lỗi và để trống; xác minh bàn cờ lặp và mốc tròn; xác định nguồn `winner` và `side_of_streamer`.

@@ -104,6 +104,18 @@ tft-sim/data/vod_out/20261125/<S>/<vod_id>/
   - `lobby_partial_overlap`: hai lobby chung 4–7 tên, kiểm tay.
 - **Khử trùng ingest:** `python3 scripts/combat/ingest_vod.py data/vod_manifest_20261125.json data/vod_out/20261125 data/vod_ingest/20261125` (chạy merge check trước, từ chối nếu có ERR). Ghi `fights.jsonl` (source = `<lobby_id>:<stage>`, một bản cho mỗi (lobby, stage, cặp)), `fight_extra.jsonl` (nguồn còn lại) và `ingest_report.json`. Kiểm thử: `selftest_ingest_vod.py`. Chấm điểm chỉ dùng `fights.jsonl` sau khi ingest.
 
+## 8a. Cổng kiểm tra gộp (cập nhật)
+
+| Mã | Mức | Ý nghĩa |
+|---|---|---|
+| `bad_lobby` | ERR | lobby có tên trùng hoặc nhiều hơn 8 tên |
+| `incomplete_lobby` | WARN | lobby ít hơn 8 tên: không khử trùng, ingest đưa vào `held.jsonl` |
+| `placeholder_name` | ERR | tên `unknown_*` / `unk_*` trong lobby hoặc fight_key |
+| `game_without_fights` | ERR | ván không có fight quan sát được trong cùng thư mục |
+
+- Ingest không gộp fight của lobby chưa đủ 8 tên. Các fight đó nằm trong `held.jsonl` và được đếm trong `ingest_report.json` (`held_incomplete`).
+- Trạng thái thực tế được ghi trong `results/fixed/combat/vod_provenance_audit.json` (chỉ đọc, `scripts/combat/audit_vod_provenance.py`).
+
 ## 9. Không làm
 
 - Không ghi vào thư mục slot khác, không ghi vào `none`, không sửa `vod_manifest_20261125.json`.

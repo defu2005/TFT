@@ -1,0 +1,13 @@
+{
+ "pairs_total": 2999,
+ "shared_histogram": {
+  "4": 91,
+  "5": 56,
+  "6": 247,
+  "7": 2605
+ },
+ "same_streamer": 416,
+ "cross_streamer": 2583,
+ "pairs_shared_ge6": 2852,
+ "pairs_ge6_identical_board_same_stage": 796
+}

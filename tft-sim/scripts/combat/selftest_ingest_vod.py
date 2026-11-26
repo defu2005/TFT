@@ -45,7 +45,7 @@ def _handoff(vid, slot, ranges):
             "validator": None, "needs_review": 0, "commit": None, "remaining": ""}
 
 
-def build(root: Path, dup_source=False) -> Path:
+def build(root: Path, dup_source=False, short=False) -> Path:
     root.mkdir(parents=True, exist_ok=True)
     out = root / "out"
     rows = [{"vod_id": "twitch-1", "slot": "P1", "role": "primary", "streamer": "twitch-1", "url": "x"},
@@ -67,7 +67,7 @@ def build(root: Path, dup_source=False) -> Path:
     _w(d2 / "fights.jsonl", [_fight("twitch-22-g0", "3-2", "A", "B")])
     (d2 / "handoff.json").write_text(json.dumps(_handoff("twitch-22", "P2", [[0, 900]])), encoding="utf-8")
     d3 = out / "P3" / "twitch-2"
-    _w(d3 / "games.jsonl", [_game("twitch-2-g0", L2)])
+    _w(d3 / "games.jsonl", [_game("twitch-2-g0", L2[:7] if short else L2)])
     _w(d3 / "fights.jsonl", [_fight("twitch-2-g0", "1-1", "G", "H")])
     (d3 / "handoff.json").write_text(json.dumps(_handoff("twitch-2", "P3", [[0, 900]])), encoding="utf-8")
     return root
@@ -95,6 +95,11 @@ def main() -> int:
         if not c2:
             print(v.stdout + v.stderr)
         ok &= c2
+        sh = build(base / "short", short=True)
+        rs = ingest_vod.ingest(sh / "manifest.json", sh / "out", base / "short_dest")
+        c4 = rs["held_incomplete"] == 1 and rs["fights_out"] == 2
+        print(f"{'PASS' if c4 else 'FAIL'} lobby 7 ten: giu lai 1 fight, dau ra 2 (held={rs['held_incomplete']}, out={rs['fights_out']})")
+        ok &= c4
         bad = build(base / "bad", dup_source=True)
         try:
             ingest_vod.ingest(bad / "manifest.json", bad / "out", base / "bad_dest")

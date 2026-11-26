@@ -391,6 +391,7 @@ Việc này thuộc bước **ingest**, chạy sau khi gộp (`merge_check_vod.p
 - Với mỗi (`lobby_id`, `stage_round`, cặp người chơi): giữ **một** bản ghi `fight`, ưu tiên khung hình rõ hơn. Các nguồn còn lại ghi vào `fight_extra.sources`.
 - Viết lại `source` thành `lobby_id:stage_round`. Đây là khóa dùng cho cụm ván (mục 10.1).
 - `merge_check_vod.py` báo WARN `shared_lobby_needs_ingest` và `duplicate_fight_key_needs_ingest` để ingest biết cần khử trùng ở đâu.
+- Lobby thiếu tên: WARN `incomplete_lobby`, ingest giữ lại trong `held.jsonl`. Tên placeholder (`unknown_*`, `unk_*`) là lỗi `placeholder_name`. Ván không có fight là lỗi `game_without_fights`.
 
 ### 10.3 Kiểm tra chéo (ngưỡng tạm thời, do người viết đặt; **PROVISIONAL**)
 

@@ -21,7 +21,10 @@ Ma loi (ERR chan ghep; WARN chi bao):
   covered_remaining_overlap   covered va remaining cung handoff chong nhau
   overlap_across_slots        khoang cua hai thu muc cung vod_id chong nhau (thu muc cu chua duoc go)
   bad_game_id                 game_id hoac phan game cua source khong dung dang <vod_id>-g<so>
-  bad_lobby                   lobby_names khong co 8 ten duy nhat sau chuan hoa
+  bad_lobby                   lobby_names trung ten hoac nhieu hon 8 ten
+  incomplete_lobby            (WARN) lobby it hon 8 ten: khong gop, ingest giu lai (held)
+  placeholder_name            ten unknown_/unk_ trong lobby_names hoac fight_key: ERR
+  game_without_fights         game khong co fight nao trong cung thu muc: ERR
   bad_source_url               vod_url khong phai Twitch hoac YouTube (xem SRC_RE)
   duplicate_source            hai dong fight cung 'source' (cung vod: ERR; khac vod: ERR)
   missing_handoff             co du lieu nhung thieu handoff.json
@@ -44,6 +47,7 @@ import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
+PH_NAME = re.compile(r"(unknown_|unk_)", re.I)  # ten giu cho (placeholder): khong duoc gop
 VOD_RE = re.compile(r"^(twitch-\d+|youtube-[A-Za-z0-9_-]+)$")
 SRC_RE = re.compile(r"^https://(www\.twitch\.tv/videos/\d+|www\.youtube\.com/watch\?v=[A-Za-z0-9_-]+|youtu\.be/[A-Za-z0-9_-]+)$")
 
@@ -165,6 +169,7 @@ def main() -> int:
 
         gid_re = re.compile(rf"^{re.escape(vid)}-g\d+$")
         games = {}
+        incomplete = set()
         for g in _jsonl(vdir / "games.jsonl"):
             gid = g.get("game_id")
             if not isinstance(gid, str) or not gid_re.match(gid):
@@ -173,9 +178,19 @@ def main() -> int:
             if g.get("vod_url") is not None and not SRC_RE.match(str(g["vod_url"])):
                 err("bad_source_url", vod_id=vid, slot=slot, game_id=gid, url=g["vod_url"])
             games[gid] = g
-            names = [_norm(n) for n in (g.get("lobby_names") or [])]
-            if len(names) != 8 or len(set(names)) != 8:
-                err("bad_lobby", vod_id=vid, slot=slot, game_id=gid, n=len(names))
+            raw = [str(n) for n in (g.get("lobby_names") or [])]
+            if any(PH_NAME.search(n) for n in raw):
+                err("placeholder_name", vod_id=vid, slot=slot, game_id=gid,
+                    names=[n for n in raw if PH_NAME.search(n)])
+            names = [_norm(n) for n in raw]
+            if len(set(names)) != len(names) or len(names) > 8:
+                err("bad_lobby", vod_id=vid, slot=slot, game_id=gid, n=len(names),
+                    note="trung ten hoac nhieu hon 8")
+                incomplete.add(gid)
+                continue
+            if len(names) < 8:
+                warn("incomplete_lobby", vod_id=vid, slot=slot, game_id=gid, n=len(names))
+                incomplete.add(gid)
                 continue
             if role == "primary":
                 sig = hashlib.sha1("|".join(sorted(names)).encode("utf-8")).hexdigest()[:12]
@@ -184,6 +199,7 @@ def main() -> int:
         if role != "primary":
             continue  # second_label chi doi chieu, khong vao gop
 
+        counted = defaultdict(int)
         for f in _jsonl(vdir / "fights.jsonl"):
             src = str(f.get("source", ""))
             if src.count(":") != 1:
@@ -194,14 +210,22 @@ def main() -> int:
                 err("bad_game_id", where="source", vod_id=vid, slot=slot, source=src)
                 continue
             sources_seen[src].append((vid, slot))
+            counted[game_part] += 1
             g = games.get(game_part)
             if g is None:
                 err("missing_game", vod_id=vid, slot=slot, source=src)
                 continue
+            pair = str(f.get("fight_key", "")).split("|")[-2:]
+            if any(PH_NAME.search(p) for p in pair):
+                err("placeholder_name", vod_id=vid, slot=slot, source=src, pair=pair)
+            if game_part in incomplete:
+                continue
             names = sorted(_norm(n) for n in g.get("lobby_names") or [])
             sig = hashlib.sha1("|".join(names).encode("utf-8")).hexdigest()[:12]
-            pair = str(f.get("fight_key", "")).split("|")[-2:]
             fight_sigs[(sig, stage, tuple(sorted(_norm(p) for p in pair)))].append((vid, slot, src))
+        for gid in games:
+            if counted.get(gid, 0) == 0:
+                err("game_without_fights", vod_id=vid, slot=slot, game_id=gid)
 
     for (vid, group), lst in overlap_pool.items():
         for i in range(len(lst)):

@@ -46,6 +46,15 @@ Phạm vi ghi: `tft-sim/data/vod_out/20261125/<S>/` và `CLAIM.json` của slot.
 - Thông tin chưa xác nhận (`pos`, carousel, apiName item): ghi `null` hoặc `*_display`. Không đoán.
 - Chỉ lấy dữ liệu trận theo spec. Không tải lại, không đăng lại nội dung video.
 
+## 3a. Quy tắc không bịa (bắt buộc)
+
+- Thông tin không nhìn thấy: ghi `null` hoặc `unseen`. Không điền để qua kiểm tra. Không dùng tên giữ chỗ (`unknown_*`, `unk_*`).
+- Lobby phải có 8 tên người chơi thật. Nếu chỉ đọc được ít hơn 8 tên: ghi đúng số tên đọc được, ghi `capture_notes: "lobby_incomplete"`. Không thêm tên nào.
+- Không tạo bản ghi game mà không có fight quan sát được trong cùng thư mục.
+- Mỗi fight phải có khung hình hoặc mốc thời gian làm bằng chứng (`frames` hoặc `timestamp_s`).
+- `side_of_streamer` phải xác định từ màn hình, không gán mặc định. Nếu không xác định được, ghi `null`.
+- Ghi chú `stub` hoặc `densify` không phải là lý do để nhận dữ liệu thiếu. Nếu ván còn thiếu, ghi rõ thiếu gì trong `remaining`.
+
 ## 4. Mỗi ván xong
 
 1. Ghi `games.jsonl`, `fights.jsonl`, `others.jsonl` vào `<vod_id>/`. Cập nhật `handoff.json` (`covered_ranges_s`, `remaining_ranges_s`, `game_ids`, `counts`, `validator`).
@@ -69,5 +78,6 @@ Phạm vi ghi: `tft-sim/data/vod_out/20261125/<S>/` và `CLAIM.json` của slot.
 
 - Không ghi vào slot khác, không ghi vào `none`, không sửa manifest.
 - Không ghi dòng primary vào V1. Second_label không được gộp.
+- Không điền placeholder vào lobby hoặc fight_key để qua kiểm tra gộp.
 - Không xóa dữ liệu đã commit để làm lại. Muốn làm lại thì báo điều phối.
 - Không báo cáo độ chính xác của mô phỏng. Chỉ dùng dữ liệu thật.
