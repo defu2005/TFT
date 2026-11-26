@@ -6351,7 +6351,7 @@
    "opponent": {
     "value": "P3",
     "tag": "read",
-    "basis": "Combat tooltip at sweep 809 (stage 5-2 timer 4, inside the 5-2 span of sweeps 773-815) names P3 (name match 1.0).",
+    "basis": "1952.9 s rail badges: P3 level 6 matches plate 6; P6 level 9 and P7 level 8 do not. The streamer's own plate (9) is visible top-left in the same frame. Unique in the pool. Combat tooltip at sweep 809 (stage 5-2 timer 4, inside the 5-2 span of sweeps 773-815) names P3 (name match 1.0).",
     "attempt": "Read from the combat tooltip at sweep 809, which matches P3."
    },
    "combat_frame_t_s": null,
@@ -7475,7 +7475,7 @@
      "P2",
      "ghost"
     ],
-    "attempt": "checked 2210.3 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost Stage span from the stage read table: sweeps 902-933 (2164-2226 s). Tooltip OCR over every sweep in that span returned no combat tooltip, so no opponent was read from it.",
+    "attempt": "checked 2210.3 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost Plates at sweeps 924 and 1009 show a level 9 badge and a bar with no readable name; sweeps 921 and 926 show no plate; sweeps 1006 and 1011 show a level 9 badge with the name cut off. No name was read, so the opponent stays unresolved. 2235/2260 s and 2405/2430 s fall in stages 5-7 and 6-3.",
     "reason": "no legible opponent nameplate in the checked frame"
    },
    "combat_frame_t_s": null,
@@ -7526,7 +7526,7 @@
      "streamer_hp_loss": 15
     },
     "tag": "derived",
-    "note": "opponent alias not yet read from frame"
+    "note": "Combat frames at 2202-2212 s and 2372-2382 s checked for a second plate; no name readable, opponent unresolved."
    },
    "actions": {
     "value": {
@@ -8281,7 +8281,7 @@
      "P2",
      "ghost"
     ],
-    "attempt": "checked 2380.2 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost Stage span from the stage read table: sweeps 987-1017 (2334-2394 s). Tooltip OCR over every sweep in that span returned no combat tooltip, so no opponent was read from it.",
+    "attempt": "checked 2380.2 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost Plates at sweeps 924 and 1009 show a level 9 badge and a bar with no readable name; sweeps 921 and 926 show no plate; sweeps 1006 and 1011 show a level 9 badge with the name cut off. No name was read, so the opponent stays unresolved. 2235/2260 s and 2405/2430 s fall in stages 5-7 and 6-3.",
     "reason": "no legible opponent nameplate in the checked frame"
    },
    "combat_frame_t_s": null,
@@ -8332,7 +8332,7 @@
      "streamer_hp_loss": 16
     },
     "tag": "derived",
-    "note": "opponent alias not yet read from frame"
+    "note": "Combat frames at 2202-2212 s and 2372-2382 s checked for a second plate; no name readable, opponent unresolved."
    },
    "actions": {
     "value": {
