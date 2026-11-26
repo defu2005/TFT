@@ -12,7 +12,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import hud_reader_v1 as reader
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
+FRESH_S = 5.0          # a settled value is withdrawn if not re-confirmed for this long
+
 FIELDS = ['stage', 'timer', 'gold', 'level', 'xp', 'streak']
 
 
@@ -64,6 +66,7 @@ def main():
     commit = git_commit()
     history = {f: [] for f in FIELDS}
     settled = {f: None for f in FIELDS}
+    confirmed_at = {f: None for f in FIELDS}   # last time the settled value was re-confirmed
     n = 0
     skipped_layout = 0
     with open(a.out, 'w') as out:
@@ -78,14 +81,33 @@ def main():
                 v = res[f]
                 history[f].append(v)
                 h = history[f][-a.k:]
-                if len(h) == a.k and h[0] is not None and all(x == h[0] for x in h):
-                    if settled[f] != h[0]:
-                        settled[f] = h[0]
-                        out.write(json.dumps({
-                            'schemaVersion': SCHEMA_VERSION, 't_file_s': round(t, 1),
-                            'field': f, 'value': h[0], 'src': 'ocr',
-                            'k': a.k, 'reader_commit': commit,
-                            'source': os.path.basename(a.video)}, ensure_ascii=False) + '\n')
+                if f == 'timer':
+                    # timer ticks each second: accept only k reads falling by exactly 1 per second
+                    ok = len(h) == a.k and all(x is not None for x in h) and all(
+                        h[i] - h[i + 1] == 1 for i in range(a.k - 1))
+                    new = h[-1] if ok else None
+                    confirm = ok
+                else:
+                    ok = len(h) == a.k and h[0] is not None and all(x == h[0] for x in h)
+                    new = h[0] if ok else None
+                    confirm = ok
+                if confirm:
+                    confirmed_at[f] = t
+                if new is not None and settled[f] != new:
+                    settled[f] = new
+                    out.write(json.dumps({
+                        'schemaVersion': SCHEMA_VERSION, 't_file_s': round(t, 1),
+                        'field': f, 'value': new, 'src': 'ocr',
+                        'k': a.k, 'reader_commit': commit,
+                        'source': os.path.basename(a.video)}, ensure_ascii=False) + '\n')
+                elif settled[f] is not None and confirmed_at[f] is not None and t - confirmed_at[f] > FRESH_S:
+                    # withdraw a stale value: record null rather than report an old read as current
+                    settled[f] = None
+                    out.write(json.dumps({
+                        'schemaVersion': SCHEMA_VERSION, 't_file_s': round(t, 1),
+                        'field': f, 'value': None, 'src': 'ocr', 'k': a.k,
+                        'reader_commit': commit, 'source': os.path.basename(a.video)},
+                        ensure_ascii=False) + '\n')
     print(json.dumps({'frames': n, 'skipped_layout': skipped_layout, 'out': a.out}))
 
 

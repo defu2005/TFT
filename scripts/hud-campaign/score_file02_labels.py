@@ -9,7 +9,7 @@ and heldout2 (fresh set). Counts only; no per-frame text written.
 """
 import json, sys
 COLLECT = 'data/hud-audit/collect/file02_collect_v1.jsonl'
-WINDOW = 60.0  # state semantics: last settled value before t, stale after WINDOW s
+WINDOW = 5.0  # state semantics: last settled value before t, stale after WINDOW s
 FIELDS = ['stage', 'timer', 'gold', 'level', 'xp', 'streak']
 recs = [json.loads(l) for l in open(COLLECT) if l.strip()]
 by_field = {f: [] for f in FIELDS}
@@ -24,7 +24,9 @@ def fresh(field, t):
     if not prior:
         return []
     tt, v = max(prior, key=lambda x: x[0])
-    return [v] if t - tt <= WINDOW else []
+    if v is None or t - tt > WINDOW:
+        return []   # withdrawn or stale: not covered
+    return [v]
 
 report = {}
 for name, lab in [('heldout1', 'data/hud-audit/heldout_labels_file02.jsonl'),
