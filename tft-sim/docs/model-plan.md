@@ -665,7 +665,7 @@ Không đo độ chính xác, không chấm điểm, không đọc lại thư m�
 - **Đối xứng và seed tiệm cận** (`check_adaptive_n.py`): 1000 cặp gần nhau, 319 cặp có 0,1 ≤ p(n=20) ≤ 0,9, chạy n=400 với seed 0 và seed 1000. Đảo 13/319 = 4,08%, ngưỡng 5% → đạt. Bàn trong kiểm tra này không có item (`check_symmetry_seed._board` đặt `items: []`), nên kết quả không áp dụng cho bản ghi có item và không phụ thuộc lỗi generic item.
 - **Lệch bên** (`check_mirror.py`): A đấu A, 50 bàn không item, n=400. Lệch trung bình +0,0075 (SE 0,0059), ngưỡng 0,01 → không bị đánh dấu. Độ chính xác khoảng ±0,012, nên chỉ kết luận được "không thấy lệch vượt 0,01", không kết luận engine không thiên vị.
 - **Augment** (`check_augment_sweep.py`): 252 augment `DA_*` trên một bàn cân bằng (chọn trong khoảng 0,3–0,7), n=200, không item. Số augment làm đổi p: 0/252. Đây là một bàn, một seed; cùng với việc Set 18 không có handler (11.24 mục 5) thì PRIMARY không mô hình hóa augment.
-- **Số lượt mô phỏng n:** quy tắc 11.24 mục 1 yêu cầu tăng n khi tỷ lệ đảo ở n=20 vượt 5%. Tỷ lệ đảo là 9,7% (n=20) và 5,8% (n=100). Kết quả n=400 ở trên đạt 4,08%, nhưng cấu hình đông lạnh trong `fidelity.py` vẫn là **n=20**. Chưa đổi `fidelity.py`. Đạt ở n=400 không có nghĩa là n=20 đủ; việc chuyển sang n=400 (chi phí CPU khoảng 20 lần) và đăng ký lại là quyết định còn lại.
+- **Số lượt mô phỏng n:** (đã đóng ở 11.28) quy tắc 11.24 mục 1 yêu cầu tăng n khi tỷ lệ đảo ở n=20 vượt 5%. Tỷ lệ đảo là 9,7% (n=20) và 5,8% (n=100). Kết quả n=400 ở trên đạt 4,08%, nhưng cấu hình đông lạnh trong `fidelity.py` vẫn là **n=20**. Chưa đổi `fidelity.py`. Đạt ở n=400 không có nghĩa là n=20 đủ; việc chuyển sang n=400 (chi phí CPU khoảng 20 lần) và đăng ký lại là quyết định còn lại. **Đã đóng ở 11.28 (n=800).**
 
 **Mô hình PRIMARY hiện làm gì** (tham chiếu, không phải kết luận về độ đúng):
 
@@ -679,6 +679,8 @@ Không đo độ chính xác, không chấm điểm, không đọc lại thư m�
 | Item alias | tắt (SECONDARY bật, 45 alias) | `selftest.py` |
 | Vị trí, carousel, apiName phía client | chưa mô hình | — |
 
+*Ghi chú (11.29): ba câu hỏi "n=20 hay n=400" và "(a)/(b)" ở đây đã đóng: n=800 theo 11.28, quy ước generic item đã bàn giao cho tác giả `tft_goat` (xem 11.26 và `docs/agents/requests/20261126-engine-generic-item-convention.md`).*
+
 **Thay đổi mã trong commit này:** `usable.py` (kiểm `items`/`augments` thiếu, khung hình ở cấp unit), `fidelity.py` (`inconclusive` khi rỗng), `selftest_usable.py`, prompt và tài liệu handoff, các script `check_*.py`, `selftest_empty_scoring.py`, và các file kết quả JSON. Không đổi PRIMARY, SECONDARY hay n.
 
 **Còn mở:** quyết định generic item (trên); n=20 hay n=400; augment Set 18 chưa có handler; vị trí, carousel, apiName; ba giả định trait còn mở (Defender lấy max hay cộng dồn, gốc của Brawler theo pct, Spellweaver cộng dồn); nhãn "18.7" của snapshot CDragon là sai (bản vá thực tế chưa rõ); khung hình chỉ kiểm tra tồn tại, không kiểm tra nội dung.
@@ -687,7 +689,7 @@ Không đo độ chính xác, không chấm điểm, không đọc lại thư m�
 
 **Đính chính.** Bản trước của 11.26 có ba sai: (a) "65/776 item không có hiệu ứng, khoảng 8%" đếm sai phạm vi; (b) "cộng trùng chỉ ở SECONDARY" là sai; PRIMARY cũng có 9 item `DA_*` đổi chỉ số, nên cộng trùng xảy ra ở cả hai; (c) đo chỉ số thiếu cờ `can_ability_crit` và bảng hook chưa đúng.
 
-**Cách đo** (`scripts/combat/check_item_effects.py`, kết quả `results/fixed/combat/item_effect_classes.json`). 731 api item mà `names18` xuất ra (bỏ ba mục alias twin). Với mỗi api: `build_unit` một unit cố định, có và không có item, không tính khối chung; đo chín giá trị, gồm cả `can_ability_crit`. Hook: khóa chính xác của bảng `ITEM_ON_ATTACK`, `ITEM_ON_CAST`, `ITEM_ON_DAMAGED`, `ITEM_HP_THRESHOLD`, `ITEM_REVIVE`, `ITEM_COMBAT_START`, `ITEM_ON_TICK` trong `tft_goat.engine.simulate` (khớp tuyệt đối, không chuỗi con).
+**Cách đo** (`scripts/combat/check_item_effects.py`, kết quả `results/fixed/combat/item_effect_classes.json`). 731 api item mà `names18` xuất ra (bỏ 45 mục alias twin trong tổng 776). Với mỗi api: `build_unit` một unit cố định, có và không có item, không tính khối chung; đo chín giá trị, gồm cả `can_ability_crit`. Hook: khóa chính xác của bảng `ITEM_ON_ATTACK`, `ITEM_ON_CAST`, `ITEM_ON_DAMAGED`, `ITEM_HP_THRESHOLD`, `ITEM_REVIVE`, `ITEM_COMBAT_START`, `ITEM_ON_TICK` trong `tft_goat.engine.simulate` (khớp tuyệt đối, không chuỗi con).
 
 **Kết quả.**
 
@@ -702,7 +704,7 @@ Không đo độ chính xác, không chấm điểm, không đọc lại thư m�
 
 Trong 113 item `stat` của PRIMARY: 104 có tiền tố `TFT*_Item_*`, 9 là `DA_*` (`DA_Flow18`, `DA_Flow18_Upgrade`, `DA_Hugify18`, `DA_InfinityEdge`, `DA_InfinityEdgeRadiant`, `DA_JeweledGauntlet`, `DA_JeweledGauntletRadiant`, `DA_MarksmensGale18`, `DA_StandAlone18`).
 
-Trong 617 "không gì" của PRIMARY: 328 không có hiệu ứng trong nội dung; 289 có hiệu ứng nhưng khóa không được `_apply_effects` nhận (ví dụ `DamageAmp`, `NumUnits`, `starLevel`, `Duration`, `UnitTier`, khóa băm `{...}`).
+Trong 617 "không gì" của PRIMARY: 324 không có hiệu ứng trong nội dung; 293 có hiệu ứng nhưng khóa không được `_apply_effects` nhận (ví dụ `DamageAmp`, `NumUnits`, `starLevel`, `Duration`, `UnitTier`, khóa băm `{...}`).
 
 **Cộng trùng (chỉ số thật + khối chung).** Với `items=len`, mọi item trên bản ghi đều nhận khối `_GENERIC_ITEM`. Vì vậy cộng trùng xảy ra cho cả 114 item có tác động ở PRIMARY và 155 ở SECONDARY. Với 617 item PRIMARY còn lại, khối chung là toàn bộ tác động. Mô hình item của PRIMARY gần như không phân biệt item nào.
 
@@ -726,7 +728,7 @@ Trong 617 "không gì" của PRIMARY: 328 không có hiệu ứng trong nội du
 **n đổi từ 20 sang 400.** Quy tắc 11.24 mục 1 yêu cầu tăng n khi tỷ lệ đảo ở n=20 vượt 5%. Tỷ lệ là 9,7% (31/319); n=100 là 5,8% (17/294).
 - Kiểm tra thích ứng n=400 chạy lại tại `58f26fce`: kết quả giống hệt lần đầu (13/319 = 4,08%, `git diff` rỗng), nên tái lập được.
 - Với mẫu số theo p ở n=400 (X = 269 cặp có 0,1 ≤ p ≤ 0,9): 13/269 = 4,83%, vẫn dưới 5%. Hai cách đếm đều đạt, nhưng biên khá mỏng.
-- Đã đổi mặc định `score(path, n=400, ...)` và dòng lệnh trong `scripts/combat/fidelity.py`.
+- Đã đổi mặc định `score(path, n=400, ...)` và dòng lệnh trong `scripts/combat/fidelity.py`. **Đã thay bằng n=800 ở 11.28 (xem 11.29).**
 - **Lưu ý:** kiểm tra chỉ dùng bàn không có item (`check_symmetry_seed._board` đặt `items: []`), nên chưa được xác nhận cho bản ghi có item.
 - Chi phí CPU khoảng 20 lần so với n=20 khi chấm dữ liệu thật; chưa đo thời gian thực.
 
@@ -773,4 +775,19 @@ Lý do: 11.24 mục 1 yêu cầu tăng n khi tỷ lệ đảo trên 5%. Bản gh
 - Luật dừng: đạt → đổi mặc định n sang 800 trong `fidelity.py` và cập nhật 11.26; không đạt → giữ n = 400, ghi cả hai con số là giới hạn đã biết. Cả hai trường hợp đóng câu hỏi về n; không tăng n thêm.
 - Kết quả ghi ra `results/fixed/combat/adaptive_n_items_n800.json`.
 - Chỉ chạy trên PRIMARY.
+
+### 11.29 Đóng danh sách advisor và đo chi phí (2026-11-26, không dùng VOD)
+
+**Đã đóng.**
+1. **n = 800, đúng cách.** Lần chạy `check_adaptive_n_items.py --n-full 800` (398 cặp có item, seed 0 và 1000): 16/398 = **4,02%**, đạt ngưỡng 5%. Mẫu số thay thế (cặp có p(n=800) trong 0,1–0,9, 346 cặp): 4,62%, vẫn đạt. Xác minh tiến trình con đã dùng 800: mọi p (794/794) đều là bội của 1/800; ở n=400 chỉ 195/397 là bội. Đã đổi mặc định `fidelity.score` và dòng lệnh sang n=800. Selftest pass. Đây là bước tăng cuối; không tăng n nữa.
+2. **Sửa số trong plan.** 11.26: "324 / 293" (không phải 328 / 289); "bỏ 45 mục alias twin" (không phải ba). 11.26 đo chín giá trị, không phải tám.
+3. **Chi phí CPU (đo thật, một luồng, 20 cặp bàn không item, một seed):** n=400 là 2,71 s mỗi cặp; n=800 là 5,57 s mỗi cặp (gấp ~2,05 lần n=400). Đây là phép đo so sánh 400 với 800; chưa đo lại n=20 cùng cách nên không suy ra tỷ lệ với n=20 từ con số cũ (0,23 s/trận ở 443 là đơn vị khác). Với 1000 cặp × 2 seed ở n=800, ước khoảng 3 giờ CPU một luồng (không tính item); nên song song hóa bằng nhiều tiến trình.
+4. **Ba câu hỏi cho tác giả** đã tách sang `docs/agents/requests/20261126-engine-generic-item-convention.md` (tự đủ, có đường dẫn và số dòng tại `d5358e9`).
+5. **Ứng viên alias SECONDARY (chỉ đo, không đổi alias)**: `scripts/combat/check_alias_candidates.py` đếm 41 item `DA_*` không có hiệu ứng nhưng có một twin `TFT_*` cùng tên có hiệu ứng và chưa có trong alias: 21 Radiant, 20 Artifact. Một số Radiant có nhiều twin cùng tên (trong đó có item Set 5 `TFT5_*`), nên cần chọn twin trước khi đổi alias. Đây là ứng viên cho một thay đổi SECONDARY sau này, không phải thay đổi đã làm.
+
+**Đã quyết và bàn giao.** Quy ước `_GENERIC_ITEM`: giữ `items=len` theo đường combat hiện tại của engine tại `d5358e9`. Câu hỏi về (a) và (b) đã gửi tác giả. Không hỏi lại người dùng.
+
+**Phạm vi.** Mọi kiểm tra n chỉ chạy trên PRIMARY. Bể item của 11.27/11.28 lấy từ mọi api item có nội dung, không theo phân bố item thật trong bản ghi. Mọi con số là độ ổn định mô phỏng, không phải độ đúng so với trận thật.
+
+**Chưa làm (ngoài danh sách):** câu trả lời của tác giả engine; cổng VOD xanh; mô hình hóa augment và item Set 18.
 
