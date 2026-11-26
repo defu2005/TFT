@@ -14,7 +14,7 @@ import hud_reader_v1 as reader
 reader.XP_DENOMS = set(range(2, 100))
 LEARN_N = 3   # reads of a (level, denominator) pair before it is locked for this match
 
-SCHEMA_VERSION = 4
+SCHEMA_VERSION = 5
 FIELDS = ['stage', 'timer', 'gold', 'level', 'xp', 'streak']
 ACCEPT_FIELDS = [f for f in FIELDS if f != 'timer']
 
@@ -87,6 +87,8 @@ def main():
                 row['accepted'][f] = last[0] if (ok and f in ACCEPT_FIELDS) else None
             # XP: accept only when the denominator is the one learned for this level in this match
             x = row['accepted'].get('xp'); lv = row['accepted'].get('level')
+            if x and lv is None:
+                row['accepted']['xp'] = None   # no level, no denominator check: reject
             if x and lv is not None:
                 y = int(x.split('/')[1])
                 pair_count[(lv, y)] = pair_count.get((lv, y), 0) + 1
