@@ -4,20 +4,23 @@
   "khac": {
    "P:khong_gi": 484,
    "S:khong_gi": 484,
-   "P:stat": 73,
-   "S:stat": 73
+   "P:stat": 72,
+   "S:stat": 72,
+   "P:stat+proc": 1,
+   "S:stat+proc": 1
   },
   "composition": {
-   "P:khong_gi": 57,
+   "P:khong_gi": 55,
    "S:khong_gi": 21,
    "S:stat": 9,
-   "S:stat+proc": 27
+   "S:stat+proc": 27,
+   "P:stat": 2
   },
   "Radiant": {
-   "P:khong_gi": 39,
-   "S:khong_gi": 39,
-   "P:stat": 37,
-   "S:stat": 37
+   "P:khong_gi": 37,
+   "S:khong_gi": 37,
+   "P:stat": 39,
+   "S:stat": 39
   },
   "DA_Artifact": {
    "P:khong_gi": 31,
@@ -30,13 +33,14 @@
   }
  },
  "primary_totals": {
-  "khong_gi": 621,
-  "stat": 110
+  "khong_gi": 617,
+  "stat": 113,
+  "stat+proc": 1
  },
  "secondary_totals": {
-  "khong_gi": 578,
-  "stat": 126,
-  "stat+proc": 27
+  "khong_gi": 576,
+  "stat": 127,
+  "stat+proc": 28
  },
  "rows": [
   {
@@ -2268,16 +2272,16 @@
   {
    "api": "DA_InfinityEdge",
    "layer": "composition",
-   "primary": "khong_gi",
+   "primary": "stat",
    "secondary_target": "TFT_Item_InfinityEdge",
    "secondary": "stat"
   },
   {
    "api": "DA_InfinityEdgeRadiant",
    "layer": "Radiant",
-   "primary": "khong_gi",
+   "primary": "stat",
    "secondary_target": "DA_InfinityEdgeRadiant",
-   "secondary": "khong_gi"
+   "secondary": "stat"
   },
   {
    "api": "DA_IonicSpark",
@@ -2331,16 +2335,16 @@
   {
    "api": "DA_JeweledGauntlet",
    "layer": "composition",
-   "primary": "khong_gi",
+   "primary": "stat",
    "secondary_target": "TFT_Item_JeweledGauntlet",
    "secondary": "stat"
   },
   {
    "api": "DA_JeweledGauntletRadiant",
    "layer": "Radiant",
-   "primary": "khong_gi",
+   "primary": "stat",
    "secondary_target": "DA_JeweledGauntletRadiant",
-   "secondary": "khong_gi"
+   "secondary": "stat"
   },
   {
    "api": "DA_Journeyman18",
@@ -3689,9 +3693,9 @@
   {
    "api": "TFT4_Item_OrnnZhonyasParadox",
    "layer": "khac",
-   "primary": "stat",
+   "primary": "stat+proc",
    "secondary_target": "TFT4_Item_OrnnZhonyasParadox",
-   "secondary": "stat"
+   "secondary": "stat+proc"
   },
   {
    "api": "TFT5_Item_AdaptiveHelmRadiant",

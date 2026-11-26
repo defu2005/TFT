@@ -672,7 +672,7 @@ Không đo độ chính xác, không chấm điểm, không đọc lại thư m�
 | Thành phần | Trạng thái trong PRIMARY | Kiểm thử hoặc kết quả |
 |---|---|---|
 | Ability | generic | chưa có kiểm thử hành vi riêng |
-| Item | đếm số item cộng `_GENERIC_ITEM`; chỉ 110/731 item đổi thêm chỉ số thật, còn lại không phân biệt được item nào (xem 11.26) | `check_item_effects.py` |
+| Item | đếm số item cộng `_GENERIC_ITEM`; chỉ 114/731 item có tác động thật (chỉ số hoặc hook), còn lại không phân biệt được item nào (xem 11.26) | `check_item_effects.py` |
 | Augment | bật, nhưng không có handler Set 18 nên không tác động | augment sweep 0/252 |
 | Trait | bật, bảng theo tier | `selftest_trait_tiers.py`, 27 ca |
 | Emblem | tắt (SECONDARY bật) | — |
@@ -685,46 +685,49 @@ Không đo độ chính xác, không chấm điểm, không đọc lại thư m�
 
 ### 11.26 Phân loại item theo tác động trong engine; giữ `items=len`; n đổi sang 400 (2026-11-26, không dùng dữ liệu VOD)
 
-**Đính chính.** Phiên bản 11.26 trước đó nói "65/776 item không có hiệu ứng, khoảng 8%, phần lớn item có hiệu ứng". Con số đó sai về phạm vi: đếm trên nội dung thô (776 dòng, gồm cả emblem, item cũ TFT4–TFT11, dòng không gắn vào unit). Không dùng con số đó nữa.
+**Đính chính.** Bản trước của 11.26 có ba sai: (a) "65/776 item không có hiệu ứng, khoảng 8%" đếm sai phạm vi; (b) "cộng trùng chỉ ở SECONDARY" là sai; PRIMARY cũng có 9 item `DA_*` đổi chỉ số, nên cộng trùng xảy ra ở cả hai; (c) đo chỉ số thiếu cờ `can_ability_crit` và bảng hook chưa đúng.
 
-**Cách đo** (`scripts/combat/check_item_effects.py`, kết quả `results/fixed/combat/item_effect_classes.json`). 731 api item mà `names18` xuất ra (bỏ ba mục alias twin). Với mỗi api, đo `build_unit` một unit cố định, có và không có item, không tính khối chung. Đánh dấu:
-- `stat`: đổi ít nhất một chỉ số (máu, AD, AP, giáp, kháng phép, tốc đánh, tỷ lệ chí mạng, mana);
-- `proc`: api có hook trong các bảng `items_set17` (khóa `TFT_Item_*`);
-- `khong_gi`: không có cả hai.
-
-Hook proc được khóa theo `TFT_Item_*`, nên dưới PRIMARY (không alias) không item `DA_*` nào chạm hook. Đây là lý do cột PRIMARY không có `proc`.
+**Cách đo** (`scripts/combat/check_item_effects.py`, kết quả `results/fixed/combat/item_effect_classes.json`). 731 api item mà `names18` xuất ra (bỏ ba mục alias twin). Với mỗi api: `build_unit` một unit cố định, có và không có item, không tính khối chung; đo tám chỉ số, gồm cả `can_ability_crit`. Hook: khóa chính xác của bảng `ITEM_ON_ATTACK`, `ITEM_ON_CAST`, `ITEM_ON_DAMAGED`, `ITEM_HP_THRESHOLD`, `ITEM_REVIVE`, `ITEM_COMBAT_START`, `ITEM_ON_TICK` trong `tft_goat.engine.simulate` (khớp tuyệt đối, không chuỗi con).
 
 **Kết quả.**
 
-| Lớp | PRIMARY: stat / không gì | SECONDARY (alias): stat / stat+proc / không gì |
+| Lớp | PRIMARY: stat / stat+proc / không gì | SECONDARY (alias): stat / stat+proc / không gì |
 |---|---|---|
-| khác (không thuộc lớp dưới) | 73 / 484 | 73 / 0 / 484 |
-| composition | 0 / 57 | 9 / 27 / 21 |
-| DA_Component_* | 0 / 10 | 7 / 0 / 3 |
-| DA_Artifact* | 0 / 31 | 0 / 0 / 31 |
-| *Radiant | 37 / 39 | 37 / 0 / 39 |
-| **Tổng** | **110 / 621** | **126 / 27 (stat+proc) / 578** |
+| khác | 72 / 1 / 484 | 72 / 1 / 484 |
+| composition | 2 / 0 / 55 | 9 / 27 / 21 |
+| DA_Component_* | 0 / 0 / 10 | 7 / 0 / 3 |
+| DA_Artifact* | 0 / 0 / 31 | 0 / 0 / 31 |
+| *Radiant | 39 / 0 / 37 | 39 / 0 / 37 |
+| **Tổng** | **113 / 1 / 617** | **127 / 28 / 576** |
 
-Trong nhóm 621 "không gì" của PRIMARY: 328 không có hiệu ứng trong nội dung; 293 có hiệu ứng nhưng khóa không được `_apply_effects` nhận (ví dụ `DamageAmp`, `NumUnits`, `starLevel`, `Duration`, `UnitTier`, khóa băm `{...}`), nên không đổi chỉ số đo được.
+Trong 113 item `stat` của PRIMARY: 104 có tiền tố `TFT*_Item_*`, 9 là `DA_*` (`DA_Flow18`, `DA_Flow18_Upgrade`, `DA_Hugify18`, `DA_InfinityEdge`, `DA_InfinityEdgeRadiant`, `DA_JeweledGauntlet`, `DA_JeweledGauntletRadiant`, `DA_MarksmensGale18`, `DA_StandAlone18`).
 
-**Ý nghĩa cho PRIMARY.** Với `items=len`, mọi item trên bản ghi đều nhận khối `_GENERIC_ITEM` (+150 HP, +15 AP, +15 giáp, +15 kháng phép, +0,15 AD). Với 621/731 api, đó là toàn bộ tác động của item. Mô hình item của PRIMARY vì vậy gần như không phân biệt item: đó là một đơn giản hóa lớn, không phải một chi tiết nhỏ. Ghi nhận như giới hạn đã biết; không sửa trong commit này.
+Trong 617 "không gì" của PRIMARY: 328 không có hiệu ứng trong nội dung; 289 có hiệu ứng nhưng khóa không được `_apply_effects` nhận (ví dụ `DamageAmp`, `NumUnits`, `starLevel`, `Duration`, `UnitTier`, khóa băm `{...}`).
 
-**Quyết định: giữ `items=len` (không đổi `boards_of`).** Lý do:
-- `items=0` sẽ xóa toàn bộ khối chung khỏi 621 api, tức là thay đổi lớn nhất trong PRIMARY, và không có dữ liệu thật để kiểm tra hướng nào đúng.
-- Chưa xác nhận được `_GENERIC_ITEM` có chủ đích cộng cho mọi item hay không. Đây là câu hỏi cho tác giả `tft_goat`.
+**Cộng trùng (chỉ số thật + khối chung).** Với `items=len`, mọi item trên bản ghi đều nhận khối `_GENERIC_ITEM`. Vì vậy cộng trùng xảy ra cho cả 114 item có tác động ở PRIMARY và 155 ở SECONDARY. Với 617 item PRIMARY còn lại, khối chung là toàn bộ tác động. Mô hình item của PRIMARY gần như không phân biệt item nào.
 
-**Cộng trùng chỉ áp dụng ở SECONDARY.** Chỉ 126 item có `stat` và 27 `stat+proc` sau alias mới nhận cả chỉ số thật lẫn khối chung. Probe −0,041 trong `check_generic_items.py` lấy từ `TFT_Item_*` có hiệu ứng, nên mô tả đúng trường hợp SECONDARY, không phải PRIMARY.
+**Bằng chứng nguồn cho quy ước.**
+- `unit.py:14` ghi khối chung là "item trung bình khi không biết identity".
+- `surrogate/dataset.py:92` dùng đúng trường hợp đó: `BoardUnit(..., items=len(u.items))` không có `item_apis`.
+- Đường combat của engine (`simulate.py:321`, `generic_items=bu.items`) và đường env (`env/actions.py:223-224`, `items += 1` cùng lúc với `item_apis`) đều cộng khối chung cho item có identity.
+- Kết luận: `boards_of` của chúng ta làm đúng như đường combat của engine tại `d5358e94`. Chú thích của `unit.py` lại gợi ý khối chung chỉ dành cho item không có identity. Hai điều này mâu thuẫn; đó là câu hỏi cho tác giả `tft_goat`, không phải lỗi của wrapper.
 
-**Alias SECONDARY chưa phủ** (item trang bị được, không có tác động sau alias):
-- `DA_TacticiansCrown`, `DA_TacticiansShield`, `TFT_Item_ForceOfNature`, `TFT_Item_TacticiansScepter`: không có alias hoặc alias không có hiệu ứng;
-- `DA_Component_FryingPan`, `DA_Component_Spatula`, `DA_Component_TearOfTheGoddess`: thiếu hiệu ứng hoặc không có twin;
-- `DA_TacticiansCape` được alias sang `TFT_Item_TacticiansRing` nhưng alias đó không có hiệu ứng.
+**Quyết định: giữ `items=len` (không đổi `boards_of`).** Lý do: đổi sang `items=0` hoặc sang "chỉ khối chung khi không có identity" là thay đổi cấu hình đông lạnh, không có dữ liệu thật để chọn, và phải ghi thành mục mới với kiểm tra lại. Việc này chờ tác giả engine.
 
-**Emblem không thuộc nhóm item.** 16 mục `DA_18_Emblem*` nằm trong danh sách item của `names18` và được gắn lớp `composition` ở bảng trên. Chúng do cờ `emblems` xử lý (PRIMARY tắt, SECONDARY bật), không tính là item trang bị. Các con số trong bảng bao gồm chúng trong nhóm composition; khi báo cáo, nên trừ 16 mục này.
+**Hook (chỉ ở SECONDARY, và PRIMARY gần như không có).** Hook khóa theo `TFT_Item_*` nên 27 item composition ở SECONDARY có proc. Dưới PRIMARY chỉ 1 item có proc.
 
-**n đổi từ 20 sang 400.** Quy tắc 11.24 mục 1 yêu cầu tăng n khi tỷ lệ đảo ở n=20 vượt 5%. Tỷ lệ là 9,7% (31/319); n=100 là 5,8% (17/294); n=400 là 4,08% (13/319, mục 11.25).
+**Alias SECONDARY chưa phủ** (không có tác động sau alias):
+- `DA_TacticiansCrown`, `DA_TacticiansShield`, `TFT_Item_ForceOfNature`, `TFT_Item_TacticiansScepter`;
+- `DA_Component_FryingPan`, `DA_Component_Spatula`, `DA_Component_TearOfTheGoddess`;
+- `DA_TacticiansCape` được alias sang `TFT_Item_TacticiansRing`, nhưng alias đó không có hiệu ứng.
+
+**Emblem không thuộc nhóm item.** 16 mục `DA_18_Emblem*` nằm trong danh sách item của `names18` và được gắn lớp `composition`. Chúng do cờ `emblems` xử lý, không phải item trang bị. Khi báo cáo, trừ 16 mục này.
+
+**n đổi từ 20 sang 400.** Quy tắc 11.24 mục 1 yêu cầu tăng n khi tỷ lệ đảo ở n=20 vượt 5%. Tỷ lệ là 9,7% (31/319); n=100 là 5,8% (17/294).
+- Kiểm tra thích ứng n=400 chạy lại tại `58f26fce`: kết quả giống hệt lần đầu (13/319 = 4,08%, `git diff` rỗng), nên tái lập được.
+- Với mẫu số theo p ở n=400 (X = 269 cặp có 0,1 ≤ p ≤ 0,9): 13/269 = 4,83%, vẫn dưới 5%. Hai cách đếm đều đạt, nhưng biên khá mỏng.
 - Đã đổi mặc định `score(path, n=400, ...)` và dòng lệnh trong `scripts/combat/fidelity.py`.
-- **Lưu ý:** kiểm tra 4,08% chỉ dùng bàn không có item (`check_symmetry_seed._board` đặt `items: []`), nên chưa được xác nhận cho bản ghi có item.
+- **Lưu ý:** kiểm tra chỉ dùng bàn không có item (`check_symmetry_seed._board` đặt `items: []`), nên chưa được xác nhận cho bản ghi có item.
 - Chi phí CPU khoảng 20 lần so với n=20 khi chấm dữ liệu thật; chưa đo thời gian thực.
 
 **Kiểm thử.** `selftest.py`, `selftest_empty_scoring.py`, `selftest_ingest_vod.py`, `selftest_usable.py` đều PASS sau khi đổi n.

@@ -4,6 +4,7 @@ Voi moi api item ma names18 xuat ra (tru ban alias twin), do:
   - stat: build_unit co doi chi so don vi (khong tinh khoi chung _GENERIC_ITEM) hay khong;
   - proc: api (sau alias khi SECONDARY) co hook trong cac bang *_set17 hay khong.
 Chay o hai cau hinh: PRIMARY (khong alias) va SECONDARY (alias names18.item_alias_map).
+Cot flag: can_ability_crit (IE/Jeweled Gauntlet, so chuoi con trong build_unit) duoc tinh vao 'stat'.
 Phan lop: composition, DA_Component_*, DA_Artifact*, *Radiant, con lai.
 Dung:  PYTHONPATH=<goat>/src:<sim>/src python3 scripts/combat/check_item_effects.py
 """
@@ -27,14 +28,17 @@ from tft_goat.engine.unit import build_unit  # noqa: E402
 OUT = ROOT / "results/fixed/combat/item_effect_classes.json"
 
 
+HOOK_TABLES = ("ITEM_ON_ATTACK", "ITEM_ON_CAST", "ITEM_ON_DAMAGED", "ITEM_HP_THRESHOLD",
+               "ITEM_REVIVE", "ITEM_COMBAT_START", "ITEM_ON_TICK")
+
+
 def _hook_keys():
+    """Khoa CHINH XAC cua cac bang hook ma simulate.py tra cuu (khop tuyet doi, khong chuoi con)."""
+    from tft_goat.engine import simulate as S
     keys = set()
-    pkg = importlib.import_module("tft_goat.engine.items_set17")
-    for m in pkgutil.iter_modules(pkg.__path__):
-        mod = importlib.import_module(f"tft_goat.engine.items_set17.{m.name}")
-        for v in vars(mod).values():
-            if isinstance(v, dict):
-                keys.update(k for k in v if isinstance(k, str) and k.startswith("TFT_Item_"))
+    for name in HOOK_TABLES:
+        tbl = getattr(S, name, None) or {}
+        keys.update(k for k in tbl if isinstance(k, str))
     return keys
 
 
@@ -62,7 +66,7 @@ def main() -> int:
     hooks = _hook_keys()
 
     def stats(u):
-        return (u.max_hp, u.ad, u.ap, u.armor, u.mr, u.attack_speed, u.crit_chance, u.max_mana)
+        return (u.max_hp, u.ad, u.ap, u.armor, u.mr, u.attack_speed, u.crit_chance, u.max_mana, u.can_ability_crit)
     base = stats(build_unit(champ, 1, 0, c, (), 0))
 
     def classify(api):
