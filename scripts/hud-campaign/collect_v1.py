@@ -25,26 +25,30 @@ def git_commit():
 
 
 def frames(video, start, duration, fps):
+    """Stream PNG frames from ffmpeg one at a time (no whole-segment buffering)."""
     cmd = ['ffmpeg', '-v', 'error', '-ss', str(start), '-t', str(duration), '-i', video,
            '-vf', f'fps={fps},scale=1280:720', '-f', 'image2pipe', '-vcodec', 'png', '-']
-    data = subprocess.run(cmd, capture_output=True, check=True).stdout
-    buf = io.BytesIO(data)
-    while True:
-        head = buf.read(8)
-        if len(head) < 8:
-            return
-        # split PNG stream: read chunks until IEND
-        chunks = [head]
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+    try:
+        stream = proc.stdout
         while True:
-            ln = buf.read(4)
-            if len(ln) < 4:
-                return
-            typ = buf.read(4)
-            body = buf.read(int.from_bytes(ln, 'big') + 4)
-            chunks.append(ln + typ + body)
-            if typ == b'IEND':
+            sig = stream.read(8)
+            if len(sig) < 8:
                 break
-        yield Image.open(io.BytesIO(b''.join(chunks))).convert('RGB')
+            chunks = [sig]
+            while True:
+                ln = stream.read(4)
+                if len(ln) < 4:
+                    return
+                typ = stream.read(4)
+                body = stream.read(int.from_bytes(ln, 'big') + 4)
+                chunks.append(ln + typ + body)
+                if typ == b'IEND':
+                    break
+            yield Image.open(io.BytesIO(b''.join(chunks))).convert('RGB')
+    finally:
+        proc.stdout.close()
+        proc.wait()
 
 
 def main():
