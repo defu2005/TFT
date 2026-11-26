@@ -1,0 +1,78 @@
+{
+ "heldout1": {
+  "fields": {
+   "stage": {
+    "labelled": 50,
+    "covered": 41,
+    "wrong": 1
+   },
+   "timer": {
+    "labelled": 51,
+    "covered": 0,
+    "wrong": 0
+   },
+   "gold": {
+    "labelled": 40,
+    "covered": 35,
+    "wrong": 2
+   },
+   "level": {
+    "labelled": 40,
+    "covered": 7,
+    "wrong": 0
+   },
+   "xp": {
+    "labelled": 40,
+    "covered": 12,
+    "wrong": 1
+   },
+   "streak": {
+    "labelled": 40,
+    "covered": 23,
+    "wrong": 0
+   }
+  },
+  "no_hud": {
+   "frames": 9,
+   "wrong_emissions": 1
+  }
+ },
+ "heldout2": {
+  "fields": {
+   "stage": {
+    "labelled": 47,
+    "covered": 39,
+    "wrong": 2
+   },
+   "timer": {
+    "labelled": 47,
+    "covered": 0,
+    "wrong": 0
+   },
+   "gold": {
+    "labelled": 38,
+    "covered": 24,
+    "wrong": 6
+   },
+   "level": {
+    "labelled": 39,
+    "covered": 10,
+    "wrong": 0
+   },
+   "xp": {
+    "labelled": 39,
+    "covered": 13,
+    "wrong": 2
+   },
+   "streak": {
+    "labelled": 38,
+    "covered": 11,
+    "wrong": 0
+   }
+  },
+  "no_hud": {
+   "frames": 13,
+   "wrong_emissions": 1
+  }
+ }
+}

@@ -1,7 +1,7 @@
 """Score collector output (file 02) against the held-out frame labels by timestamp.
 
-For a labelled frame at file time t, the collector value is the record for the
-same field with t_file_s in [t - WINDOW, t]. A label with a value and no fresh
+For a labelled frame at file time t, the collector value is the last settled record
+for the same field at or before t, if it is no older than WINDOW seconds. A label with a value and no fresh
 record is 'not covered'. A fresh record that disagrees is 'wrong'. A label with
 hud_visible false and any fresh record is a wrong emission. Two label sets are
 scored separately: heldout1 (used once for reader v1 before the XP slash rule)
@@ -9,7 +9,7 @@ and heldout2 (fresh set). Counts only; no per-frame text written.
 """
 import json, sys
 COLLECT = 'data/hud-audit/collect/file02_collect_v1.jsonl'
-WINDOW = 3.0
+WINDOW = 60.0  # state semantics: last settled value before t, stale after WINDOW s
 FIELDS = ['stage', 'timer', 'gold', 'level', 'xp', 'streak']
 recs = [json.loads(l) for l in open(COLLECT) if l.strip()]
 by_field = {f: [] for f in FIELDS}
@@ -20,7 +20,11 @@ for r in recs:
     by_field[r['field']].append((r['t_file_s'], v))
 
 def fresh(field, t):
-    return [v for (tt, v) in by_field[field] if t - WINDOW <= tt <= t]
+    prior = [(tt, v) for (tt, v) in by_field[field] if tt <= t]
+    if not prior:
+        return []
+    tt, v = max(prior, key=lambda x: x[0])
+    return [v] if t - tt <= WINDOW else []
 
 report = {}
 for name, lab in [('heldout1', 'data/hud-audit/heldout_labels_file02.jsonl'),
