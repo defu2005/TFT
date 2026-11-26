@@ -15,7 +15,7 @@ Mục đích: tìm các chỗ ghi quyết định mà người dùng chưa nói,
 | `62b5d077` (2026-11-24) | "RAM: đóng theo bài hỗ trợ của Riot"; quyết định 1 "RAM đóng" ghi "Đã ghi" | Agent tự ghi quyết định đóng RAM. Không có câu nào của người dùng trong các nguồn kiểm được. | **Sai.** Người dùng đã xác nhận: RAM không đóng, sẽ phát triển sau. |
 | `8ce7e7f2` (2026-11-24) | Bỏ quyết định 1 (RAM đóng); ghi "Người dùng đã duyệt các mục 3–6" và nhãn "Đã duyệt" | Việc bỏ RAM khớp với lời người dùng ngày 26/11. Nhãn "người dùng đã duyệt" cho 3–6 chưa xác minh. | Đã sửa ở `ba387bf9`: mục 3, 5 là advisor quyết theo ủy quyền; mục 4 đã thực hiện; mục 6 là việc chờ. |
 | `72780092` (2026-11-24) | "Bổ sung (người dùng duyệt)": dùng VOD cho huấn luyện; người dùng đã nhận thức | Ý này có căn cứ trong phiên hiện tại: người dùng đã nói "cho phép 1, còn 2 thì cứ dùng dữ liệu ko sao". | Có căn cứ. Cần đối chiếu lại nếu cần. |
-| `8ce7e7f2` | "Đường RAM không còn cần giải quyết" bị đổi thành "mâu thuẫn cần giải quyết" | Đúng hướng, nhưng dòng Lịch sử "2026-11-24: đóng nhánh RAM" vẫn còn | **Cần sửa** |
+| `8ce7e7f2` | Đổi "RAM đã đóng" thành "mâu thuẫn cần giải quyết" | Dòng Lịch sử "2026-11-24: đóng nhánh RAM" còn sót | Đã sửa ở `79e47620` |
 
 ## Sửa trong nhánh sim (đã làm)
 
