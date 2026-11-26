@@ -9,7 +9,7 @@ Cập nhật: 2026-11-23. Tài liệu này dựa trên `docs/data-sources.md`, `
   1. **Live Client `127.0.0.1:2999`**: `ECONNREFUSED` với client TFT Standalone (`data-sources.md`). Hướng này không dùng được với bản hiện tại.
   2. **Snapshot và log client** (`src/ingest/standaloneSource.js`, `TFTEoGStats.json`, `TFT.log`): có HP, bàn cờ, trang bị. **Không có shop, vàng, và chưa kiểm chứng đủ.**
   3. **HUD OCR** (`scripts/hud-reader.py` trên master, `scripts/hud_*.py` và chiến dịch VOD trên nhánh codex): đọc vàng, cấp, tên và giá shop. Đây là hướng duy nhất có kết quả đo, nhưng độ chính xác chưa đạt mục tiêu.
-- **Mâu thuẫn cần giải quyết trên master:** `data-sources.md` ghi RAM bị Vanguard chặn (lỗi `ACCESS_DENIED`), còn `network-and-ram-layer.md` ghi `OpenProcess` với `PROCESS_VM_READ` thành công. Hai kết luận không thể cùng đúng. Ngoài ra cả hai tài liệu ghi "100% chính xác real-time" cho các trường, nhưng không có số đo nào đi kèm. Các con số này không được dùng làm căn cứ. Ghi chú 2026-11-24: bài hỗ trợ của Riot (29/9/2026, hiệu lực 6/10/2026) chặn truy cập bộ nhớ mặc định với ứng dụng bên thứ ba chưa được biết đến, gồm TFT. Quyết định đóng đường RAM đã được bỏ.
+- **Mâu thuẫn cần giải quyết trên master:** `data-sources.md` ghi RAM bị Vanguard chặn (lỗi `ACCESS_DENIED`), còn `network-and-ram-layer.md` ghi `OpenProcess` với `PROCESS_VM_READ` thành công. Hai kết luận không thể cùng đúng. Ngoài ra cả hai tài liệu ghi "100% chính xác real-time" cho các trường, nhưng không có số đo nào đi kèm. Các con số này không được dùng làm căn cứ. Ghi chú 2026-11-24: bài hỗ trợ của Riot (29/9/2026, hiệu lực 6/10/2026) chặn truy cập bộ nhớ mặc định với ứng dụng bên thứ ba chưa được biết đến, gồm TFT. Đường RAM không đóng: người dùng sẽ tự phát triển đường này sau (2026-11-26). Chính sách này chặn đọc bộ nhớ của app chưa được phê duyệt, gồm TFT; cần đối chiếu khi phát triển.
 - **Dữ liệu tướng và bảng odds chưa khớp:** `rules.js` chưa được xác minh cho Set 18, và `needs.md` U2 vẫn mở. Live dùng id `DA_18_*`, còn `set17.json` dùng `TFT17_*`, nên line tự động chưa có tác dụng trong game.
 - `tft-coach` MCP đã kết nối (2026-11-24). `tft_status` cho thấy nguồn live `ECONNREFUSED` tại `127.0.0.1:2999`, khớp với `data-sources.md`. Việc sửa đường live vẫn là đường găng ở Phase 3.
 
@@ -27,7 +27,7 @@ Mỗi phase kết thúc bằng một cổng đo được. Không chuyển phase 
 - **Việc:**
   1. Đưa quy tắc agent (`docs/agents/`) lên `master` qua PR. **Đã xong:** PR #1 (2026-11-24).
   2. Xác định set đang chạy: `set17.json` và tóm tắt Set 17 trên master, nhánh codex đọc Set 18, nhánh fable ghi CDragon latest là 18.7. Kiểm chứng từ nguồn chính thức trước khi chọn.
-  3. Giải quyết mâu thuẫn RAM (xem trên). Ghi rõ chính sách với từng đường: Riot API, log client, đọc bộ nhớ, sniff mạng, OCR màn hình. Đọc bộ nhớ và sniff mạng có rủi ro về điều khoản và anti-cheat, nên đây là quyết định của người dùng, không phải của agent.
+  3. Xác định kế hoạch phát triển đường RAM và cách xử lý chính sách Riot (xem trên). Ghi rõ chính sách với từng đường: Riot API, log client, đọc bộ nhớ, sniff mạng, OCR màn hình. Đọc bộ nhớ và sniff mạng có rủi ro về điều khoản và anti-cheat, nên đây là quyết định của người dùng, không phải của agent.
   4. Chọn một đường dữ liệu làm chính.
 - **Cổng:** set đang chạy đã xác định; một đường live đã chọn và chính sách đã được xác nhận; quy tắc agent đã lên `master`.
 - **Phụ thuộc:** PR (người dùng), chính sách (người dùng).
@@ -79,22 +79,22 @@ Mỗi phase kết thúc bằng một cổng đo được. Không chuyển phase 
 
 ## Quyết định 2026-11-24
 
-Người dùng đã duyệt các mục 3–6 dưới đây. Mục 1, 2 và 2b đã bị bỏ, không áp dụng vào lộ trình.
+Các mục 3–6 do người điều phối ghi; người dùng chưa xác nhận trong các nguồn đã kiểm. Đường RAM không đóng (xem trên). Mục 1, 2 và 2b không áp dụng vào lộ trình.
 
 | # | Quyết định | Trạng thái |
 |---|---|---|
-| 3 | **Chủ roster Set 18: `engine`** (`src/data/set18.json`). Chi tiết ở `docs/agents/data-contracts.md` mục 5. | Đã duyệt |
-| 4 | **Thứ tự tích hợp:** PR #1, rồi `dazzling`, rồi `codex/hud-realtime-progress`, rồi `fable`. Mỗi nhánh một PR, chạy test sau mỗi lần merge. | Đã duyệt |
-| 5 | **Dừng mở rộng chiến dịch VOD.** `hud` làm tiếp: 16 khung nhãn mù, tỷ lệ phủ và tỷ lệ sai tự tin cho từng trường, một phiên Windows. | Đã duyệt |
-| 6 | **Ảnh chụp EoG giữa trận** do người dùng thực hiện (3–5 file, đã ẩn tên và PUUID). | Đã duyệt. Chờ người dùng gửi file. |
+| 3 | **Chủ roster Set 18: `engine`** (`src/data/set18.json`). Chi tiết ở `docs/agents/data-contracts.md` mục 5. | Ghi bởi điều phối; chưa xác nhận |
+| 4 | **Thứ tự tích hợp:** PR #1, rồi `dazzling`, rồi `codex/hud-realtime-progress`, rồi `fable`. Mỗi nhánh một PR, chạy test sau mỗi lần merge. | Ghi bởi điều phối; chưa xác nhận |
+| 5 | **Dừng mở rộng chiến dịch VOD.** `hud` làm tiếp: 16 khung nhãn mù, tỷ lệ phủ và tỷ lệ sai tự tin cho từng trường, một phiên Windows. | Ghi bởi điều phối; chưa xác nhận |
+| 6 | **Ảnh chụp EoG giữa trận** do người dùng thực hiện (3–5 file, đã ẩn tên và PUUID). | Ghi bởi điều phối; chưa xác nhận. Chờ người dùng gửi file. |
 
 Đã bỏ: 1 (đóng đường RAM), 2 (sản phẩm sau trận là mặc định), 2b (công cụ mô tả trong trận).
 
-**Bổ sung 2026-11-24 (người dùng duyệt):**
+**Bổ sung 2026-11-24 (người dùng đã cho phép dùng dữ liệu):**
 - **Dữ liệu huấn luyện:** dùng VOD của streamer cho việc huấn luyện. Rủi ro pháp lý chưa được kiểm tra. Người dùng đã nhận thức và quyết định.
 - **Giai đoạn hiện tại:** thu thập và làm sạch dữ liệu. Yêu cầu `hud` commit log OCR theo mẫu: `docs/agents/requests/20261124-user-to-hud-vod-sample-logs.md`.
 - **Mô hình:** quyết định mô hình học gì trước do một phiên chuyên trách đảm nhiệm. Chưa thuộc phạm vi của phiên này.
 ## Lịch sử
 
 - 2026-11-23: bản đầu tiên, dựa trên các nhánh hiện có.
-- 2026-11-24: đóng nhánh RAM, chuyển sản phẩm sang sau trận làm mặc định, chốt chủ roster, thứ tự tích hợp (xem mục Quyết định 2026-11-24).
+- 2026-11-24: RAM được ghi là đóng; ngày 2026-11-26 người dùng xác nhận đường RAM không đóng. Ghi sản phẩm sau trận, chủ roster, thứ tự tích hợp (xem mục Quyết định 2026-11-24).
