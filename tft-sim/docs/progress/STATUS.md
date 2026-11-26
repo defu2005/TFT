@@ -23,7 +23,7 @@ Bộ tài liệu đầy đủ (product): [`docs/product/README.md`](../product/R
 
 - **Tác giả `tft_goat`:** trả lời ba câu hỏi về `_GENERIC_ITEM`.
 - **Bạn:** xác nhận việc bàn giao câu hỏi trên là đủ để đóng mục (hoặc để mở tiếp). Quyết định dữ liệu VOD: dùng lại hay bỏ.
-- **Bạn:** xác nhận lô VOD `2026-11-25-set18-vod` (đảo quyết định dừng mở rộng của 2026-11-24); xác nhận lại số liệu blitz đã commit; cấp khóa Riot API nếu muốn Phase 2 Set 18; chọn nguồn live.
+- **Bạn:** trạng thái đường RAM (roadmap mâu thuẫn); cấp khóa Riot API nếu muốn Phase 2 Set 18; chọn nguồn live.
 - **Agent thu dữ liệu (Codex/Cursor):** chưa có dữ liệu đạt. Cần chạy lại theo `docs/handoff/vod-collection-prompt.md` nếu muốn tiếp tục thu.
 
 ## Cấu hình đang dùng

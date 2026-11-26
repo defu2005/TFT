@@ -38,7 +38,7 @@ Một luồng, 20 cặp bàn không item: n=400 khoảng 2,71 giây/cặp; n=800
 
 ## Ngưỡng cho trận thật (chưa áp dụng)
 
-Chưa có ngưỡng nào được đăng ký cho đánh giá trên trận thật. Trước khi có dữ liệu đạt, không đặt ngưỡng vì không có gì để đo.
+Roadmap Phase 4 không nêu ngưỡng số, chỉ yêu cầu báo cáo tỷ lệ đồng ý kèm cỡ mẫu. Kế hoạch Set 18 Phase 2 yêu cầu commit pre-registration trước khi thu, nhưng nội dung chưa được viết. **Chưa có ngưỡng nào đăng ký cho trận thật.**
 
 ## Selftest
 

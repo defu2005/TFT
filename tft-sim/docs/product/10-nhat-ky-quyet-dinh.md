@@ -7,10 +7,10 @@ Ghi theo thứ tự thời gian. Cột "Nguồn" chỉ tới nơi ghi quyết đ
 | 2026-11-23 | Dùng snapshot CDragon làm bảng xác minh | Yêu cầu của người dùng trong phiên | Người dùng |
 | 2026-11-24 | Chủ roster Set 18 là nhánh `engine` | `roadmap.md`, quyết định 3 | Người dùng duyệt |
 | 2026-11-24 | Thứ tự tích hợp PR #1 → dazzling → codex/hud → fable | `roadmap.md`, quyết định 4 | Người dùng duyệt |
-| 2026-11-24 | Đóng đường RAM; bỏ quyết định 1 | `roadmap.md`, quyết định 1 và ghi chú | Người dùng (sau bài hỗ trợ Riot) |
+| 2026-11-24 | Quyết định 1 (đóng đường RAM): roadmap ghi "đã bỏ" và "đã bỏ việc đóng" ở hai chỗ | `roadmap.md` | **Chưa rõ** |
 | 2026-11-24 | Dừng mở rộng chiến dịch VOD | `roadmap.md`, quyết định 5 | Người dùng duyệt |
 | 2026-11-24 | Dùng VOD streamer cho huấn luyện; rủi ro pháp lý chưa kiểm | `roadmap.md`, bổ sung | Người dùng đã nhận thức và quyết định |
-| 2026-11-25 | Mở lô VOD `2026-11-25-set18-vod` (goal ≥1000 ván), đảo quyết định dừng mở rộng | `vod-collection.md` | **Chưa rõ.** Cần xác nhận. |
+| 2026-11-25 | Mở lô VOD `2026-11-25-set18-vod` (goal ≥1000 ván) để thu `fight-v1` | `vod-collection.md` | Người dùng yêu cầu trong phiên |
 | 2026-11-25 | Không chuyển các đánh giá cũ sang nội dung đã alias; đường ghi bản ghi thật dùng nội dung đã alias | `model-plan.md` 10.12 | Theo advisor, ghi trong mục 10.12 |
 | 2026-11-25 | Kế hoạch Set 18 Phase 0–4, lý do là Set 19 đang PBE | `model-plan.md` mục 11 | Theo advisor, ghi trong mục 11 |
 | 2026-11-25 | Đóng thí nghiệm mask (10.6), giải đấu v2 (10.9), dropout (10.10) | `model-plan.md` 10.6–10.10 | Đăng ký trước, chạy theo đăng ký |
@@ -23,9 +23,9 @@ Ghi theo thứ tự thời gian. Cột "Nguồn" chỉ tới nơi ghi quyết đ
 
 ## Chưa xác nhận
 
-- **Lô VOD 2026-11-25:** đảo quyết định dừng mở rộng của 2026-11-24. Người duyệt không có trong tài liệu.
+- **Đường RAM:** trạng thái chưa rõ (xem [3](03-lo-trinh.md)).
 - **Bàn giao `_GENERIC_ITEM`:** advisor xác nhận bàn giao là chấp nhận được. Người dùng chưa xác nhận.
-- **Tên file `tieu-do`:** advisor đề xuất đổi thành `tien-do`. Chưa làm, vì đổi tên file phiên là sửa tài liệu cũ.
+
 
 ## Đính chính (những điều đã nói sai)
 

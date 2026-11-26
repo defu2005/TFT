@@ -15,9 +15,9 @@ Ba hướng live đã xét, chưa hướng nào được xác nhận đủ:
 
 Mỗi phase kết thúc bằng một cổng đo được. Không chuyển phase khi cổng chưa đạt.
 
-| Phase | Mục tiêu | Trạng thái (2026-11-26) |
+| Phase | Mục tiêu | Trạng thái (theo roadmap 2026-11-24; chưa kiểm lại nhánh hud) |
 |---|---|---|
-| 1. Củng cố | Nền chung; xác định set; chọn đường live và chính sách | **Một phần.** Quy tắc agent đã lên master (PR #1, 2026-11-24). Set 18 xác định theo CDragon 18.7 và Blitz (chưa kiểm chứng nguồn chính thức). Đường RAM đã đóng (xem dưới). Chưa chọn đường live chính. |
+| 1. Củng cố | Nền chung; xác định set; chọn đường live và chính sách | **Một phần.** Quy tắc agent đã lên master (PR #1, 2026-11-24). Set 18 xác định theo CDragon 18.7 và Blitz (chưa kiểm chứng nguồn chính thức). Trạng thái đường RAM chưa rõ (xem dưới). Chưa chọn đường live chính. |
 | 2. Tích hợp nhánh | Master có đủ nội dung, test xanh | **Xong** (2026-11-24): PR #1–#4 merge; 182 test Node, 8 pytest. |
 | 3. Đường live | Đọc đúng trạng thái trận trên dữ liệu thật | **Chưa xong, bị chặn.** Việc còn: ghi tay 5 ô từ 16 ảnh HUD, đo độ chính xác trên trận giữ lại, kiểm Windows. Mục tiêu "100% trong 250 ms" cần người dùng xác nhận vì 100% rất chặt. |
 | 4. Engine đúng trên dữ liệu thật | Engine ra quyết định hợp lý trên trạng thái thật | **Chưa bắt đầu.** Cần Phase 3. Có việc xác minh bảng odds, pool, XP (`needs.md` U1, U2). |
@@ -30,7 +30,7 @@ Mỗi phase kết thúc bằng một cổng đo được. Không chuyển phase 
 
 | # | Quyết định |
 |---|---|
-| 1, 2, 2b | Đã bỏ: 1 đóng đường RAM (xem dưới), 2 sản phẩm sau trận là mặc định, 2b công cụ mô tả trong trận. |
+| 1, 2, 2b | Đã bỏ: 1 (đóng đường RAM; xem dưới), 2 sản phẩm sau trận là mặc định, 2b công cụ mô tả trong trận. |
 | 3 | Chủ roster Set 18: `engine`. |
 | 4 | Thứ tự tích hợp: PR #1, rồi `dazzling`, rồi `codex/hud-realtime-progress`, rồi `fable`. |
 | 5 | **Dừng mở rộng chiến dịch VOD.** `hud` làm tiếp: 16 khung nhãn mù, tỷ lệ phủ và tỷ lệ sai tự tin cho từng trường, một phiên Windows. |
@@ -38,12 +38,13 @@ Mỗi phase kết thúc bằng một cổng đo được. Không chuyển phase 
 
 Bổ sung cùng ngày (người dùng duyệt): dùng VOD streamer cho huấn luyện, rủi ro pháp lý chưa kiểm và người dùng đã nhận thức; giai đoạn hiện tại là thu thập và làm sạch dữ liệu; quyết định mô hình học gì trước do một phiên chuyên trách.
 
-**Mâu thuẫn cần ghi nhận:** quyết định 5 (dừng mở rộng VOD, 2026-11-24) bị đảo bởi lô `2026-11-25-set18-vod` (goal ≥1000 ván, 10 slot P1–P10 và V1, theo `docs/handoff/vod-collection.md`). Trong các tài liệu hiện có không thấy ai duyệt việc đảo này. Cần người dùng xác nhận.
+Lô VOD `2026-11-25-set18-vod` (`vod-collection.md`) là thu `fight-v1` do người dùng yêu cầu trong phiên, không phải chiến dịch OCR của quyết định 5.
 
-## Đường RAM đã đóng
+## Đường RAM: roadmap có hai câu trái nhau
 
 - `docs/data-sources.md` ghi RAM bị Vanguard chặn; `network-and-ram-layer.md` ghi `OpenProcess` thành công. Hai kết luận mâu thuẫn; cả hai ghi "100% chính xác" mà không có số đo.
-- Ghi chú 2026-11-24 trong roadmap: bài hỗ trợ của Riot (29/9/2026, hiệu lực 6/10/2026) chặn truy cập bộ nhớ mặc định với ứng dụng bên thứ ba chưa biết, gồm TFT. Quyết định đóng đường RAM đã được bỏ (quyết định 1).
+- Ghi chú 2026-11-24 trong roadmap (tóm tắt): bài hỗ trợ của Riot (29/9/2026, hiệu lực 6/10/2026) chặn truy cập bộ nhớ mặc định với ứng dụng bên thứ ba chưa biết, gồm TFT.
+- Roadmap viết hai câu: "Đã bỏ: 1 (đóng đường RAM)" và "Quyết định đóng đường RAM đã được bỏ". Mục Lịch sử lại ghi "2026-11-24: đóng nhánh RAM". Đọc hai câu đầu là quyết định đóng bị rút, nhưng nguồn không nói rõ. **Trạng thái: chưa xác định. Cần người dùng trả lời.**
 
 ## Kế hoạch Set 18 (model-plan mục 11, 2026-11-25)
 

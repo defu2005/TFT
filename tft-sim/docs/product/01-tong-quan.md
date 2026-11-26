@@ -21,7 +21,7 @@ Trả lời hai câu hỏi cho từng set mới:
 | Câu hỏi | Trả lời | Nguồn |
 |---|---|---|
 | Đã đối chiếu dự đoán với trận thật chưa? | **Chưa.** Không có trận nào đủ điều kiện. | `../progress/STATUS.md` |
-| Mô hình học có vượt giáo viên scripted có ý nghĩa thống kê không? | **Chưa.** Clone đầy đủ ngang giáo viên trên mô phỏng Set 17. | [4. Mô hình](04-mo-hinh.md) |
+| Mô hình học có vượt giáo viên (luật viết tay v4) có ý nghĩa thống kê không? | **Chưa.** Clone đầy đủ ngang giáo viên trên mô phỏng Set 17. | [4. Mô hình](04-mo-hinh.md) |
 | Engine Set 18 đã mô hình hóa đủ để dự đoán chưa? | **Chưa.** Item, augment, ability Set 18 còn thiếu. | [5. Engine Set 18](05-engine-set18.md) |
 | Dữ liệu thật đã dùng được chưa? | **Chưa.** Cổng VOD đang đỏ. | [6. Dữ liệu](06-du-lieu.md) |
 | Đường găng của sản phẩm là gì? | Nguồn dữ liệu live đủ trạng thái (vàng, cấp, HP, giai đoạn, shop). Chưa chốt. | [3. Lộ trình](03-lo-trinh.md) |

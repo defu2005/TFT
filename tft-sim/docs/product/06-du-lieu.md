@@ -21,7 +21,7 @@ Thứ tự kiểm trong `usable.reason`: kết quả thắng rỗng → tên pla
 
 ## Hiện trạng VOD
 
-- **1026 ván, 12.488 fight, 336 VOD Twitch** đã được thu.
+- **1026 ván, 12.488 fight** đã được thu (số tại thời điểm chạy, `model-plan.md` mục liên quan đến VOD; **336 VOD Twitch chưa đối chiếu lại**).
 - **Cổng gộp đỏ:** không slot nào đạt. Nghĩa là không bản ghi nào đủ chất lượng để vào `scoring.jsonl`.
 - Lý do cụ thể từng slot nằm trong báo cáo của cổng (`merge_check_vod.py`). Đừng suy đoán lý do.
 
@@ -30,7 +30,7 @@ Trạng thái bàn giao (`HANDOFF_STATUS`): `pending`, `working`, `done`, `block
 ## Quyền và rủi ro pháp lý
 
 - Dữ liệu VOD thu từ video công khai của streamer. Người dùng đã nhận thức rủi ro về quyền và điều khoản dịch vụ.
-- Chính sách của Riot về dữ liệu: đường RAM (dữ liệu bộ nhớ) đã bỏ. Chưa có văn bản cho phép cụ thể.
+- Đường RAM (đọc bộ nhớ): trạng thái chưa rõ trong roadmap (xem [3](03-lo-trinh.md)). Chưa có văn bản cho phép cụ thể.
 - Chưa có quyết định cuối về việc dùng VOD. Xem [11. Rủi ro](11-rui-ro-cau-hoi-mo.md).
 
 ## Blitz.gg: trạng thái và việc cần xác nhận

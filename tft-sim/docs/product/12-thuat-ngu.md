@@ -26,7 +26,7 @@
 | SECONDARY | Cấu hình kiểm tra, PRIMARY cộng emblem, traits_table, item_alias. |
 | seed | Số khởi tạo ngẫu nhiên của mô phỏng. |
 | Set 17, Set 18, Set 19 | Các set TFT. Set 18 là set đang chạy; Set 19 đang PBE. |
-| teacher (giáo viên) | Chính sách scripted (v4) mà mô hình học bắt chước. |
+| teacher (giáo viên) | Luật viết tay v4 (`make_aug_rule`), không phải mô hình học. Mô hình học bắt chước nó. |
 | `_GENERIC_ITEM` | Khối chỉ số chung cộng cho item đếm được. Quy ước đang mở. |
 | twin | Item `TFT_Item_*` tương ứng với một `DA_*`; 45 cái trong 776. |
 | `usable.reason` | Bộ lọc chung từ chối bản ghi thiếu dữ liệu. |

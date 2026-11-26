@@ -4,6 +4,12 @@ Bộ tài liệu này không liệt kê lệnh chính xác từng bước, vì c
 
 ## Môi trường
 
+```bash
+bash tft-sim/scripts/cloud_setup.sh   # một lần; ghi ~/work/env.sh
+. ~/work/env.sh                        # trong cùng shell, trước mọi lệnh Python
+PYTHONPATH=src python3 -m pytest -q   # chạy trong tft-sim/
+```
+
 - Repo engine `tft_goat` ở `/root/work/tft_goat`, commit `d5358e9`. Phải cài đúng commit này.
 - Repo TFT, nhánh làm việc `claude/claude-fable-5-2-awwmf5`.
 - Chạy trên một luồng khi đo thời gian. `check_adaptive_n_items.py` có `--workers` để chạy song song.

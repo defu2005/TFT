@@ -9,7 +9,7 @@ Bộ tài liệu tách hai loại thành phần:
 
 ## Teacher và điều kiện
 
-- **Teacher v4:** scripted, dùng `EngineResolver`, `TFTSet17`. Đọc được HUD, bench, board.
+- **Teacher v4:** luật viết tay (`make_aug_rule` trong `tft_sim/params.py`), **không phải mô hình học**. Chạy trên `EngineResolver`, `TFTSet17` (`scripts/collect_v4.py`). Đọc được HUD, bench, board. Clone học bắt chước teacher này.
 - **Điều kiện mask** (`scripts/mask_exp.py`, 185 chiều):
   - a: gold, level, xp, streak, slot filled, cost (14 chiều).
   - b: a + HP, round (16 chiều).
@@ -32,7 +32,7 @@ Bộ tài liệu tách hai loại thành phần:
 | v3 | +0,65 | |
 | mask_a | +2,07 | |
 | scripted | +2,26 | |
-| valuemax | −1,05 | |
+| valuemax (v4 với luật trang bị valuemax ở một ghế; không phải mô hình học) | −1,05 | |
 
 Tiêu chí harness (v4 − v4_null có CI chứa 0) **đạt**. Số +0,015 là **kiểm công bằng của harness**, không phải "mô hình vượt teacher". Các bản tóm tắt cũ gọi nó như vậy là sai, đã đính chính.
 
