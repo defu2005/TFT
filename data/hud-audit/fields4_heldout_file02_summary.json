@@ -1,0 +1,78 @@
+{
+ "fields": {
+  "stage": {
+   "labelled": 49,
+   "emitted": 47,
+   "wrong_emitted": 0
+  },
+  "timer": {
+   "labelled": 50,
+   "emitted": 48,
+   "wrong_emitted": 6
+  },
+  "gold": {
+   "labelled": 40,
+   "emitted": 40,
+   "wrong_emitted": 1
+  },
+  "level": {
+   "labelled": 40,
+   "emitted": 29,
+   "wrong_emitted": 0
+  },
+  "xp": {
+   "labelled": 40,
+   "emitted": 0,
+   "wrong_emitted": 0
+  },
+  "streak": {
+   "labelled": 40,
+   "emitted": 34,
+   "wrong_emitted": 0
+  }
+ },
+ "mismatches": [
+  {
+   "idx": 12,
+   "field": "timer",
+   "label": 2,
+   "emitted": "9"
+  },
+  {
+   "idx": 15,
+   "field": "timer",
+   "label": 2,
+   "emitted": "9"
+  },
+  {
+   "idx": 30,
+   "field": "timer",
+   "label": 2,
+   "emitted": "9"
+  },
+  {
+   "idx": 49,
+   "field": "timer",
+   "label": 2,
+   "emitted": "9"
+  },
+  {
+   "idx": 52,
+   "field": "timer",
+   "label": 2,
+   "emitted": "9"
+  },
+  {
+   "idx": 54,
+   "field": "timer",
+   "label": 2,
+   "emitted": "4"
+  },
+  {
+   "idx": 57,
+   "field": "gold",
+   "label": 8,
+   "emitted": "5"
+  }
+ ]
+}
