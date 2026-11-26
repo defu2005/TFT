@@ -13,8 +13,8 @@
 | Thuật ngữ | Nghĩa |
 |---|---|
 | Engine | Phần mô phỏng trận TFT (`tft_goat`), đóng vai trò "luật chơi" để chạy thử. |
-| Mô hình | Thành phần học từ dữ liệu để đưa ra quyết định. Hiện chưa có mô hình nào vượt giáo viên một cách có ý nghĩa. |
-| Dự đoán thắng/thua | Xác suất bên A thắng một cặp bàn, tính bằng mô phỏng. |
+| Mô hình | Thành phần học từ dữ liệu để đưa ra quyết định (học chính sách). Hiện clone đầy đủ ngang giáo viên; chưa có mô hình nào vượt giáo viên một cách có ý nghĩa. Con số +0,015 là kiểm công bằng của harness (v4 − v4_null), không phải kết quả mô hình. |
+| Dự đoán thắng/thua | Xác suất bên A thắng một cặp bàn, tính bằng mô phỏng engine (không phải mô hình học, không phải trận thật). |
 | PRIMARY | Cấu hình dự đoán đang dùng (xem `STATUS.md`). |
 | n | Số lượt mô phỏng cho mỗi xác suất. Hiện n = 800. |
 | Tỷ lệ đảo | Tỷ lệ cặp mà dự đoán đổi bên thắng khi đổi seed. Dùng để kiểm độ ổn định. |

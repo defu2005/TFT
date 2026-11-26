@@ -1,6 +1,6 @@
 # Tiến độ dự án (cập nhật 2026-11-26)
 
-**Commit:** `4ff53c71` (nhánh `claude/claude-fable-5-2-awwmf5`). **Cập nhật bởi:** agent Claude, phiên 2026-11-26.
+**Nhánh:** `claude/claude-fable-5-2-awwmf5`. Hash commit không ghi ở đây (xem `git log -1`). **Cập nhật bởi:** agent Claude, phiên 2026-11-26.
 
 **Đã đối chiếu dự đoán với trận thật chưa?** **Chưa.** Không có trận nào đủ điều kiện để chấm điểm.
 
@@ -11,7 +11,7 @@
 | Engine combat (`tft_goat`, Set 17 và nền Set 18) | Ổn định nội bộ; chưa đối chiếu trận thật | `results/fixed/combat/` (đối xứng, seed, n) | Trả lời câu hỏi `_GENERIC_ITEM` (xem "Đang chờ") |
 | Quy ước item (khối chung `_GENERIC_ITEM`) | Bàn giao, chưa có câu trả lời | `docs/agents/requests/20261126-engine-generic-item-convention.md` | Chờ tác giả `tft_goat` |
 | Cấu hình dự đoán PRIMARY, n | Đã chốt n=800 cho bản ghi có item (4,02%) | `docs/model-plan.md` mục 11.28, 11.29 | Không tăng n nữa |
-| Mô hình học chính sách (bắt chước giáo viên) | Có kết quả mô phỏng; chưa vượt giáo viên có ý nghĩa | `docs/model-plan.md` mục 10.6–10.10 | Chưa có bước tiếp theo được duyệt |
+| Mô hình học chính sách (bắt chước giáo viên) | Clone đầy đủ ngang giáo viên trên mô phỏng Set 17; chưa vượt giáo viên có ý nghĩa. Mức +0,015 là kiểm công bằng harness (v4 − v4_null), không phải kết quả mô hình | `docs/model-plan.md` mục 10.6–10.10 | Chưa có bước tiếp theo được duyệt |
 | Dự đoán thắng/thua Set 18 | Chưa có mô hình học; dùng mô phỏng PRIMARY | `docs/model-plan.md` mục 11.23–11.29 | Cần dữ liệu thật đủ điều kiện |
 | Dữ liệu VOD (Twitch/YouTube) | Bị chặn: cổng gộp đỏ, chưa slot nào đạt | `docs/handoff/vod-collection.md` | Sửa lỗi dữ liệu nguồn hoặc đợi dữ liệu mới |
 | Item và augment Set 18 | Item: 617/731 không có tác động dưới PRIMARY. Augment: chưa mô hình hóa | `results/fixed/combat/item_effect_classes.json`, `augment_sweep.json` | Đăng ký cấu hình mới nếu muốn mô hình hóa |
