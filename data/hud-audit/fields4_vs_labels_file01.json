@@ -1,0 +1,80 @@
+{
+ "source": "fields4.read (ocrtest/extract) on scratchpad frames f00-f59 (1280x720), compared with single-read labels in collector_labels_file01.jsonl",
+ "caveat": "labels are single-read, not double-read; counts are a first measurement, not a held-out accuracy",
+ "fields": {
+  "stage": {
+   "labelled": 59,
+   "emitted": 58,
+   "wrong_emitted": 0
+  },
+  "timer": {
+   "labelled": 59,
+   "emitted": 56,
+   "wrong_emitted": 1
+  },
+  "gold": {
+   "labelled": 47,
+   "emitted": 41,
+   "wrong_emitted": 3
+  },
+  "level": {
+   "labelled": 48,
+   "emitted": 38,
+   "wrong_emitted": 0
+  },
+  "xp": {
+   "labelled": 48,
+   "emitted": 30,
+   "wrong_emitted": 3
+  },
+  "streak": {
+   "labelled": 48,
+   "emitted": 42,
+   "wrong_emitted": 0
+  }
+ },
+ "mismatches": [
+  {
+   "idx": 48,
+   "field": "timer",
+   "label": 2,
+   "emitted": "9"
+  },
+  {
+   "idx": 10,
+   "field": "gold",
+   "label": 6,
+   "emitted": "2"
+  },
+  {
+   "idx": 43,
+   "field": "gold",
+   "label": 5,
+   "emitted": "2"
+  },
+  {
+   "idx": 49,
+   "field": "gold",
+   "label": 6,
+   "emitted": "60"
+  },
+  {
+   "idx": 43,
+   "field": "xp",
+   "label": "4/68",
+   "emitted": "41/68"
+  },
+  {
+   "idx": 44,
+   "field": "xp",
+   "label": "4/68",
+   "emitted": "41/68"
+  },
+  {
+   "idx": 50,
+   "field": "xp",
+   "label": "12/68",
+   "emitted": "1/68"
+  }
+ ]
+}
