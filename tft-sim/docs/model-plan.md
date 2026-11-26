@@ -567,7 +567,7 @@ Bản đầu của mục này kết luận "CDragon thiếu chỉ số item". K�
 - Đóng băng cấu hình (để so sánh về sau):
   - PRIMARY = `dict(ability="generic", items=True, augments=True, traits=True, emblems=False, traits_table=False, item_alias=False)`
   - SECONDARY = PRIMARY với `emblems=True, traits_table=True, item_alias=True`
-  - n = 400 lượt mặc định (đổi từ 20 ở 11.26; kiểm tra thích ứng chỉ trên bàn không có item), seed0 = 0, MIN_GAMES = 30, BOOT = 2000
+  - n = 800 lượt mặc định (20 → 400 ở 11.26 → 800 ở 11.28 sau khi n=400 không đạt trên bàn có item), seed0 = 0, MIN_GAMES = 30, BOOT = 2000
   - Commit: ghi ở commit chứa mục này. Snapshot CDragon: `data/cdragon/cdragon_18.7_2026-11-23.json.gz`, sha256 = d02fa168934b24abdcc2dfe523b3d4ca04861cb171c373128214cc762c4498c9
 - Quy tắc prompt: bản ghi `fight` cần đủ hai bàn quan sát được. Chỉ thấy bàn của streamer thì ghi `state` vào `others.jsonl`, không ghi `fight`.
 
