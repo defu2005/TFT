@@ -1,0 +1,116 @@
+{
+ "heldout1": {
+  "fields": {
+   "stage": {
+    "labelled": 50,
+    "covered": 7,
+    "wrong": 0
+   },
+   "timer": {
+    "labelled": 51,
+    "covered": 45,
+    "wrong": 28
+   },
+   "gold": {
+    "labelled": 40,
+    "covered": 10,
+    "wrong": 0
+   },
+   "level": {
+    "labelled": 40,
+    "covered": 5,
+    "wrong": 0
+   },
+   "xp": {
+    "labelled": 40,
+    "covered": 2,
+    "wrong": 0
+   },
+   "streak": {
+    "labelled": 40,
+    "covered": 8,
+    "wrong": 0
+   }
+  },
+  "no_hud": {
+   "frames": 9,
+   "wrong_emissions": 1
+  }
+ },
+ "heldout2": {
+  "fields": {
+   "stage": {
+    "labelled": 47,
+    "covered": 7,
+    "wrong": 0
+   },
+   "timer": {
+    "labelled": 47,
+    "covered": 33,
+    "wrong": 16
+   },
+   "gold": {
+    "labelled": 38,
+    "covered": 3,
+    "wrong": 0
+   },
+   "level": {
+    "labelled": 39,
+    "covered": 2,
+    "wrong": 0
+   },
+   "xp": {
+    "labelled": 39,
+    "covered": 2,
+    "wrong": 0
+   },
+   "streak": {
+    "labelled": 38,
+    "covered": 4,
+    "wrong": 0
+   }
+  },
+  "no_hud": {
+   "frames": 13,
+   "wrong_emissions": 1
+  }
+ },
+ "val3": {
+  "fields": {
+   "stage": {
+    "labelled": 49,
+    "covered": 3,
+    "wrong": 0
+   },
+   "timer": {
+    "labelled": 49,
+    "covered": 43,
+    "wrong": 13
+   },
+   "gold": {
+    "labelled": 43,
+    "covered": 4,
+    "wrong": 0
+   },
+   "level": {
+    "labelled": 43,
+    "covered": 4,
+    "wrong": 0
+   },
+   "xp": {
+    "labelled": 43,
+    "covered": 0,
+    "wrong": 0
+   },
+   "streak": {
+    "labelled": 43,
+    "covered": 8,
+    "wrong": 0
+   }
+  },
+  "no_hud": {
+   "frames": 11,
+   "wrong_emissions": 1
+  }
+ }
+}
