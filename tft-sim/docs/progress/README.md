@@ -7,6 +7,7 @@
 1. `STATUS.md`: dự án đang ở đâu, cái gì đang chờ ai.
 2. `sessions/`: mỗi phiên làm việc một file, theo ngày. Đọc file mới nhất để biết việc vừa làm.
 3. `../model-plan.md`: hồ sơ kỹ thuật đầy đủ, dài. Chỉ mở khi cần chi tiết một quyết định.
+4. `../product/README.md`: bộ tài liệu product (tổng quan, kiến trúc, lộ trình, rủi ro, nhật ký quyết định).
 
 ## Thuật ngữ
 

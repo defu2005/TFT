@@ -12,11 +12,13 @@ Engine là repo `tft_goat` (commit `d5358e9`). Nhánh sim không sửa engine; m
 
 ## Chưa mô hình hóa (dưới PRIMARY)
 
-- **Ability riêng từng tướng:** `ability=generic`. Mỗi tướng không có kỹ năng riêng.
+- **Ability riêng từng tướng:** `ability=generic`. Mỗi tướng không có kỹ năng riêng. Số Blitz (74 trang, 58 căn chỉnh được với mô tả CDragon) đã có trong `data/blitz_set18_numbers.json` nhưng **chưa nối vào Set 18** vì chưa có bản ghi thật để chấm.
 - **Emblem:** tắt.
-- **Alias item (twin, Radiant/Artifact):** tắt. SECONDARY bật, nhưng chỉ đo, chưa dùng.
+- **Alias item:** tắt trong PRIMARY. SECONDARY bật alias cho item có thành phần và `DA_Component_*` (`src/tft_sim/item_alias.py`). 41 ứng viên Radiant/Artifact chỉ được đếm, chưa alias.
 - **617 trên 731 item không có tác động nào** trong mô hình. Trong số này 324 không có hiệu ứng trong nội dung; 293 có hiệu ứng nhưng khóa không được `_apply_effects` nhận.
-- **Hook proc cho `DA_*`:** không có. Hook chỉ khóa theo `TFT_Item_*`.
+- **Hook proc cho `DA_*`:** không có. Hook chỉ khóa theo `TFT_Item_*`, trừ khi có alias SECONDARY.
+- **Độ phủ item Set 18:** 40,6% slot có hiệu ứng rỗng; 91,8% trong số đó là emblem (`model-plan` 11.x, mục 12).
+- **Template ability Set 18:** không đạt cổng (17,1% so với 15,9% generic, CI [−0,0066; +0,0297]). Set 18 không làm template.
 - **Vị trí (positioning):** chưa có trong nhánh sim.
 
 ## Quy ước chưa xác nhận: `_GENERIC_ITEM`

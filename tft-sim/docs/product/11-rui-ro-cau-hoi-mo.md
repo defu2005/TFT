@@ -2,44 +2,52 @@
 
 ## Rủi ro kỹ thuật
 
-| # | Rủi ro | Mức | Hậu quả | Đang làm gì |
-|---|---|---|---|---|
-| R1 | Quy ước `_GENERIC_ITEM` mâu thuẫn giữa chú thích và đường combat | Cao | Mọi số combat có item có thể đổi nếu chọn hướng (b) | Đã gửi câu hỏi, chờ trả lời |
-| R2 | 617/731 item không có tác động dưới PRIMARY | Cao | Dự đoán có item không phản ánh đúng item thật | Phân loại xong; chưa mô hình hóa |
-| R3 | Augment không tạo khác biệt đo được (0/252) | Trung bình | Có thể là lỗi mô hình, không phải tác động thật | Chưa điều tra sâu |
-| R4 | Ability generic, không có kỹ năng riêng từng tướng | Cao | Mô phỏng sai ở các tướng có kỹ năng mạnh | Chưa làm |
-| R5 | Số patch 18.7 chưa xác minh (tên file CDragon có thể sai) | Trung bình | Nội dung có thể lệch patch thật | Chưa xác minh |
-| R6 | Đường RAM đã bỏ; dữ liệu nguồn chưa có văn bản cho phép | Cao | Dữ liệu có thể không dùng được về mặt pháp lý | Người dùng đã nhận thức |
+| # | Rủi ro | Mức | Đang làm gì |
+|---|---|---|---|
+| R1 | `_GENERIC_ITEM`: chú thích và đường combat mâu thuẫn. Chọn hướng (b) sẽ đổi mọi số có item. | Cao | Đã gửi câu hỏi; chờ tác giả |
+| R2 | 617/731 item không có tác động dưới PRIMARY | Cao | Đã phân loại; chưa mô hình hóa |
+| R3 | Ability generic: không có kỹ năng riêng từng tướng. Set 18 rơi về `ad*2` cho 88/91 tướng. | Cao | Chưa làm |
+| R4 | Vị trí không có trong dữ liệu và engine (`pos=(0,0)`) | Cao | Chưa làm |
+| R5 | Augment không đổi xác suất (0/252): có thể là lỗi mô hình, không phải tác động thật | Trung bình | Chưa điều tra sâu |
+| R6 | Số patch 18.7 chưa được kiểm chứng từ nguồn chính thức. Tên file CDragon là "18.7" nhưng snapshot ngày 2026-11-23. | Trung bình | Roadmap yêu cầu kiểm chứng trước khi chọn |
+| R7 | Mô phỏng có thể "học" đúng cái engine làm, không phải cái game làm | Cao | Cần dữ liệu thật |
 
-## Rủi ro về phương pháp
+## Rủi ro phương pháp
 
 | # | Rủi ro | Mức | Ghi chú |
 |---|---|---|---|
-| M1 | n=800 được chọn sau khi n=400 không đạt (lần thử thứ hai) | Trung bình | Phải ghi rõ khi báo cáo (xem [07](07-danh-gia.md)) |
-| M2 | Chưa có kết quả nào đối chiếu trận thật | Rất cao | Mọi dự đoán hiện chỉ đúng với engine, không chắc đúng với game |
-| M3 | Số "+0,015" dễ bị hiểu nhầm là kết quả mô hình | Trung bình | Đã đính chính trong các tài liệu |
-| M4 | Mô hình học có thể "học" đúng cái engine làm, không phải cái game làm | Cao | Đây là lý do cần dữ liệu thật |
+| M1 | n=800 chọn sau khi n=400 không đạt: đây là lần thử thứ hai trên cùng dữ liệu | Trung bình | Phải nói rõ khi báo cáo ([7](07-danh-gia.md)) |
+| M2 | Chưa có kết quả nào đối chiếu trận thật | Rất cao | Mọi dự đoán chỉ đúng với engine |
+| M3 | +0,015 dễ bị đọc là kết quả mô hình | Trung bình | Đã đính chính trong tài liệu |
+| M4 | Mô hình học mới chỉ đo trên Set 17 với bot teacher v4 | Cao | Chưa đo Set 18 |
 
-## Rủi ro về dữ liệu
+## Rủi ro dữ liệu và pháp lý
 
-| # | Rủi ro | Ghi chú |
-|---|---|---|
-| D1 | Cổng VOD đỏ; không có bản ghi đạt | Cần sửa nguồn hoặc thu lại |
-| D2 | `data/blitz_set18_numbers.json` đã commit trong repo, mâu thuẫn quy tắc "không lưu nội dung blitz" | **Cần người dùng quyết** (xem dưới) |
-| D3 | Nguồn live chưa chốt | Đường găng của sản phẩm |
+| # | Rủi ro | Mức | Ghi chú |
+|---|---|---|---|
+| D1 | Cổng VOD đỏ; không slot nào đạt | Cao | Cần sửa nguồn hoặc thu lại |
+| D2 | Số liệu blitz.gg đã commit. Điều khoản: chỉ cá nhân phi thương mại; robots.txt chặn ClaudeBot/GPTBot. Người dùng đã cho phép theo ghi chú nghiên cứu. | Cao | **Cần người dùng xác nhận lại** |
+| D3 | Dữ liệu VOD dùng cho huấn luyện; rủi ro pháp lý chưa kiểm | Cao | Người dùng đã nhận thức và quyết định |
+| D4 | Đường RAM đã đóng do chính sách Riot (hiệu lực 6/10/2026) | Đã chốt | Không thể đảo nếu không đổi chính sách |
+| D5 | Nguồn live chưa chốt; không có shop/vàng từ log client | Cao | Đường găng sản phẩm |
+| D6 | Mục tiêu "100% trong 250 ms" cho đường live chưa được xác nhận | Trung bình | Người dùng xác nhận |
 
-## Câu hỏi cần người dùng trả lời
+## Câu hỏi cho người dùng
 
-1. **Tệp blitz đã commit:** giữ, xóa, hay chuyển sang dạng khác? Agent chưa xóa vì đó là thao tác không đảo ngược và chưa có chỉ đạo.
-2. **Dữ liệu VOD:** dùng lại sau khi sửa cổng, hay bỏ hẳn?
-3. **Bàn giao `_GENERIC_ITEM`:** xác nhận đóng mục (chấp nhận bàn giao) hay mở tiếp?
-4. **Nguồn live:** ai cung cấp, định dạng gì?
+1. **Blitz:** xác nhận cho phép giữ số liệu đã commit, cả cho mô hình? (Điều khoản phi thương mại vẫn áp dụng.)
+2. **Lô VOD 2026-11-25:** ai duyệt việc mở lại lô sau quyết định dừng mở rộng?
+3. **VOD:** dùng lại sau khi sửa cổng, hay bỏ?
+4. **`_GENERIC_ITEM`:** chấp nhận bàn giao và đóng mục, hay mở tiếp?
+5. **Nguồn live:** chọn hướng nào trong ba hướng? Ai cung cấp?
+6. **Khóa Riot API:** cho phép cấp để làm Phase 2 Set 18 không? Nếu không, Phase 0, 1, 3 vẫn chạy.
+7. **Mục tiêu 250 ms và 100%:** có giữ không?
 
-## Câu hỏi cần tác giả engine trả lời
+## Câu hỏi cho tác giả engine
 
-Xem `docs/agents/requests/20261126-engine-generic-item-convention.md`: quy ước `_GENERIC_ITEM`, phạm vi hiệu ứng cho `DA_*`, và thiết kế hook.
+Xem `docs/agents/requests/20261126-engine-generic-item-convention.md`: quy ước `_GENERIC_ITEM` (a hay b); `composition`, `DA_Component_*`, `DA_Artifact*`, `*Radiant` có trong phạm vi không; hook khóa `TFT_Item_*` có chủ đích không; `DA_*` có identity qua alias không.
 
-## Câu hỏi cần advisor hoặc nghiên cứu thêm
+## Câu hỏi nghiên cứu
 
-- Có cần cấu hình mới để mô hình hóa item và augment Set 18 không?
-- Cách xác minh patch thật của snapshot CDragon.
+- Cần cấu hình mới nào để mô hình hóa item và augment Set 18?
+- Xác minh patch thật của snapshot CDragon từ nguồn chính thức.
+- Logic ability Set 18: thứ tự ưu tiên khi có số Blitz.

@@ -1,33 +1,58 @@
 # 3. Lộ trình
 
-## Vị trí trong sản phẩm lớn (TFT Coach)
+Nguồn: `docs/roadmap.md` trên `origin/claude/nifty-lovelace-252i30`, cập nhật 2026-11-23, ghi chú 2026-11-24. Bản sao đầy đủ nằm trên nhánh đó; bộ tài liệu này tóm tắt.
 
-Lộ trình sản phẩm có 6 giai đoạn. Nguồn: `docs/roadmap.md` trên nhánh `origin/claude/nifty-lovelace-252i30` (cập nhật 2026-11-23). **Bộ tài liệu này chưa sao chép toàn văn lộ trình**; nội dung Phase 1–3 cần đọc trực tiếp từ nguồn đó.
+## Đường găng
 
-| Phase | Nội dung (tóm tắt) | Trạng thái nhánh sim |
+**Không phase nào đo được trên dữ liệu thật cho đến khi có một nguồn live tạo đủ trạng thái engine cần: vàng, cấp, HP, giai đoạn, shop.** Ưu tiên cao nhất là chốt nguồn đó.
+
+Ba hướng live đã xét, chưa hướng nào được xác nhận đủ:
+1. Live Client `127.0.0.1:2999`: `ECONNREFUSED` với client TFT Standalone. Không dùng được với bản hiện tại.
+2. Snapshot và log client: có HP, bàn cờ, trang bị. Không có shop, vàng; chưa kiểm chứng đủ.
+3. HUD OCR (nhánh `hud`): đọc vàng, cấp, tên, giá shop. Là hướng duy nhất có kết quả đo, nhưng độ chính xác chưa đạt mục tiêu.
+
+## Các phase
+
+Mỗi phase kết thúc bằng một cổng đo được. Không chuyển phase khi cổng chưa đạt.
+
+| Phase | Mục tiêu | Trạng thái (2026-11-26) |
 |---|---|---|
-| 1–3 | Xem nguồn lộ trình. | Ngoài phạm vi nhánh sim. |
-| 4 | Harness đánh giá trên dữ liệu thật. | **Bị chặn**: chưa có trận thật đủ điều kiện. |
-| 5 | Nghiên cứu chính sách và dự đoán combat (tft-sim). | **Đang làm** ở mức mô phỏng. |
-| 6 | Triển khai sản phẩm. | Chưa bắt đầu. |
+| 1. Củng cố | Nền chung; xác định set; chọn đường live và chính sách | **Một phần.** Quy tắc agent đã lên master (PR #1, 2026-11-24). Set 18 xác định theo CDragon 18.7 và Blitz (chưa kiểm chứng nguồn chính thức). Đường RAM đã đóng (xem dưới). Chưa chọn đường live chính. |
+| 2. Tích hợp nhánh | Master có đủ nội dung, test xanh | **Xong** (2026-11-24): PR #1–#4 merge; 182 test Node, 8 pytest. |
+| 3. Đường live | Đọc đúng trạng thái trận trên dữ liệu thật | **Chưa xong, bị chặn.** Việc còn: ghi tay 5 ô từ 16 ảnh HUD, đo độ chính xác trên trận giữ lại, kiểm Windows. Mục tiêu "100% trong 250 ms" cần người dùng xác nhận vì 100% rất chặt. |
+| 4. Engine đúng trên dữ liệu thật | Engine ra quyết định hợp lý trên trạng thái thật | **Chưa bắt đầu.** Cần Phase 3. Có việc xác minh bảng odds, pool, XP (`needs.md` U1, U2). |
+| 5. Nghiên cứu chính sách (`tft-sim`) | Tìm quy tắc tốt hơn; không đưa vào engine khi chưa kiểm chứng | **Đang làm ở mức mô phỏng.** Đây là phạm vi của nhánh sim. |
+| 6. Sản phẩm | Đóng gói Windows, đo độ trễ, trải nghiệm MCP | Chưa bắt đầu. Do người dùng quyết khi đến lúc. |
 
-## Quy tắc cổng
+**Cổng Phase 5 → engine:** quy tắc chỉ vào engine sau khi thắng trên harness Phase 4 (dữ liệu thật). Mô phỏng với bot scripted không đủ.
 
-- **Đường găng:** dữ liệu live (đủ trạng thái: vàng, cấp độ, HP, giai đoạn, cửa hàng). Chưa chốt nguồn.
-- **tft-sim không vào engine sản phẩm** trước khi qua harness Phase 4 trên dữ liệu thật.
-- Số liệu mô phỏng không được dùng làm bằng chứng cho sản phẩm.
+## Quyết định ngày 2026-11-24 (người dùng duyệt)
 
-## Cái gì đang chặn (theo thứ tự ảnh hưởng)
+| # | Quyết định |
+|---|---|
+| 1, 2, 2b | Đã bỏ: 1 đóng đường RAM (xem dưới), 2 sản phẩm sau trận là mặc định, 2b công cụ mô tả trong trận. |
+| 3 | Chủ roster Set 18: `engine`. |
+| 4 | Thứ tự tích hợp: PR #1, rồi `dazzling`, rồi `codex/hud-realtime-progress`, rồi `fable`. |
+| 5 | **Dừng mở rộng chiến dịch VOD.** `hud` làm tiếp: 16 khung nhãn mù, tỷ lệ phủ và tỷ lệ sai tự tin cho từng trường, một phiên Windows. |
+| 6 | Ảnh chụp EoG giữa trận do người dùng gửi (3–5 file, đã ẩn tên và PUUID). Chờ người dùng gửi. |
 
-1. Dữ liệu thật đủ điều kiện: cổng VOD đang đỏ, chưa slot nào đạt.
-2. Nguồn live chưa chốt (ai cung cấp, định dạng gì).
-3. Quy ước `_GENERIC_ITEM` chưa được tác giả engine xác nhận. Ảnh hưởng mọi số combat có item.
-4. Item và augment Set 18 chưa mô hình hóa đủ (617/731 item không có tác động dưới PRIMARY).
+Bổ sung cùng ngày (người dùng duyệt): dùng VOD streamer cho huấn luyện, rủi ro pháp lý chưa kiểm và người dùng đã nhận thức; giai đoạn hiện tại là thu thập và làm sạch dữ liệu; quyết định mô hình học gì trước do một phiên chuyên trách.
 
-## Việc có thể làm khi chưa có dữ liệu
+**Mâu thuẫn cần ghi nhận:** quyết định 5 (dừng mở rộng VOD, 2026-11-24) bị đảo bởi lô `2026-11-25-set18-vod` (goal ≥1000 ván, 10 slot P1–P10 và V1, theo `docs/handoff/vod-collection.md`). Trong các tài liệu hiện có không thấy ai duyệt việc đảo này. Cần người dùng xác nhận.
 
-Danh sách do advisor đề xuất và nhánh đã làm (mục 11.29 của `model-plan.md`): kiểm công cụ, đăng ký cấu hình, phân loại item, đo chi phí, tài liệu. Việc nào cần trận thật thì để lại, không làm giả.
+## Đường RAM đã đóng
 
-## Cái chưa có ngày
+- `docs/data-sources.md` ghi RAM bị Vanguard chặn; `network-and-ram-layer.md` ghi `OpenProcess` thành công. Hai kết luận mâu thuẫn; cả hai ghi "100% chính xác" mà không có số đo.
+- Ghi chú 2026-11-24 trong roadmap: bài hỗ trợ của Riot (29/9/2026, hiệu lực 6/10/2026) chặn truy cập bộ nhớ mặc định với ứng dụng bên thứ ba chưa biết, gồm TFT. Quyết định đóng đường RAM đã được bỏ (quyết định 1).
 
-Không có mốc ngày nào được cam kết trong bộ tài liệu này. Mỗi mốc cần nguồn dữ liệu và quyết định của chủ sản phẩm.
+## Kế hoạch Set 18 (model-plan mục 11, 2026-11-25)
+
+Lý do có hạn: Set 19 đang PBE. Khi Set 19 lên sóng, trận Set 18 mới sẽ dừng, nên bản ghi thật phải thu sớm.
+
+- **Phase 0 (chặn):** sửa đường ghi bản ghi thật dùng nội dung đã alias. **Đã làm:** selftest item `TFT_Item_*` không phải twin cho `items_unknown == 0`.
+- **Phase 1 (rẻ):** xếp hạng đòn bẩy trên Set 17 (sim) theo tỷ lệ đảo so với `hand`. Chỉ là sim.
+- **Phase 2 (cổng):** bản ghi trận Set 18 thật. Cần khóa API Riot, **do người dùng cấp**; chưa có yêu cầu nào được gửi.
+- **Phase 3 (phủ):** wrapper theo set, không sửa `tft_goat`. Đã sửa 2 khóa trait sai (Vanguard `MaxHealthShield`, Spellweaver `APPerCast`). Còn: ánh xạ 25 trait, ability (số Blitz, 58/74 căn chỉnh được), augment khi có tần suất.
+- **Phase 4 (đánh giá):** mỗi thay đổi đo bằng chênh lệch cặp trên bộ Set 18 thật. Nếu Set 19 lên mà chưa có bản ghi thật: ghi nhãn "chưa kiểm chứng" và dừng.
+
+Nếu người dùng từ chối khóa Riot, Phase 0, 1 và 3 vẫn chạy.

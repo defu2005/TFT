@@ -6,7 +6,7 @@ Bộ tài liệu này không liệt kê lệnh chính xác từng bước, vì c
 
 - Repo engine `tft_goat` ở `/root/work/tft_goat`, commit `d5358e9`. Phải cài đúng commit này.
 - Repo TFT, nhánh làm việc `claude/claude-fable-5-2-awwmf5`.
-- Chạy trên một luồng. Không song song hóa nếu chưa đo.
+- Chạy trên một luồng khi đo thời gian. `check_adaptive_n_items.py` có `--workers` để chạy song song.
 
 ## Các việc hay làm
 
@@ -21,11 +21,11 @@ Bộ tài liệu này không liệt kê lệnh chính xác từng bước, vì c
 
 ## Pipeline VOD (4 bước)
 
-Chạy theo `run_vod_pipeline.sh`:
-1. Ingest (`ingest_vod.py`).
-2. Validate (`validate_vod.py`).
-3. Cổng gộp (`merge_check_vod.py`).
-4. Ghi `scoring.jsonl` nếu đạt.
+Chạy theo `scripts/combat/run_vod_pipeline.sh <manifest> <out_root> <dest_dir>`:
+1. Cổng gộp (`merge_check_vod.py`). Đỏ thì dừng.
+2. Ingest và khử trùng, ghi `scoring.jsonl` qua `usable.py` (`ingest_vod.py`).
+3. `validate_vod.py` trên `fights.jsonl` (thông tin).
+4. `validate_vod.py` trên `scoring.jsonl` (dừng nếu có bản ghi lỗi).
 
 Kiểm thư mục bằng `check_vod_dir.py`. **Cổng hiện đỏ**, nên bước 4 không sinh bản ghi dùng được.
 

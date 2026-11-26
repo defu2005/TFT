@@ -7,7 +7,7 @@
 | BoardUnit | Một unit trên bàn, gồm tướng, sao, items, item_apis, augments. |
 | CDragon | Nguồn dữ liệu nội dung game (tướng, item, trait). Dùng làm bảng xác minh. |
 | cổng gộp (merge gate) | Kiểm tra VOD trước khi ghi vào `scoring.jsonl`. |
-| `DA_*` | Tiền tố tên item trong CDragon, không có hook proc trong engine. |
+| `DA_*` | Tiền tố id item trong CDragon Set 18. Không có hook proc trừ khi qua alias. |
 | đăng ký trước | Quy tắc ghi trước khi chạy thí nghiệm. |
 | engine | Mô phỏng trận TFT, repo `tft_goat`. |
 | `EngineResolver` | Bộ giải combat của engine, dùng cho Set 17 trong mô hình học. |
@@ -16,7 +16,7 @@
 | HUD | Giao diện trong game, nguồn dữ liệu live đề xuất. |
 | `HANDOFF_STATUS` | Trạng thái bàn giao: pending, working, done, blocked, stale. |
 | inconclusive | Kết quả không đủ dữ liệu để kết luận. |
-| item_alias | Bật alias item (twin, Radiant/Artifact). Tắt trong PRIMARY. |
+| item_alias | Bật alias `DA_*` sang `TFT_Item_*` cho item có thành phần và `DA_Component_*`. Tắt trong PRIMARY. |
 | mirror | Kiểm đảo bên A và B để đo thiên lệch. |
 | MIN_GAMES | Số ván tối thiểu để chấm điểm (30). |
 | mô phỏng | Dữ liệu sinh từ engine, không phải trận thật. |
@@ -28,7 +28,7 @@
 | Set 17, Set 18, Set 19 | Các set TFT. Set 18 là set đang chạy; Set 19 đang PBE. |
 | teacher (giáo viên) | Chính sách scripted (v4) mà mô hình học bắt chước. |
 | `_GENERIC_ITEM` | Khối chỉ số chung cộng cho item đếm được. Quy ước đang mở. |
-| twin | Item trùng lặp alias; 45 cái trong 776. |
+| twin | Item `TFT_Item_*` tương ứng với một `DA_*`; 45 cái trong 776. |
 | `usable.reason` | Bộ lọc chung từ chối bản ghi thiếu dữ liệu. |
 | VOD | Video xem lại trận (Twitch/YouTube). |
 | v4_null | Biến thể đối chứng của v4, dùng để kiểm harness. |

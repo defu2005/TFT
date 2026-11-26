@@ -4,6 +4,8 @@
 
 **Đã đối chiếu dự đoán với trận thật chưa?** **Chưa.** Không có trận nào đủ điều kiện để chấm điểm.
 
+Bộ tài liệu đầy đủ (product): [`docs/product/README.md`](../product/README.md).
+
 ## Các mảng việc
 
 | Mảng | Trạng thái | Bằng chứng | Việc kế tiếp |
@@ -21,6 +23,7 @@
 
 - **Tác giả `tft_goat`:** trả lời ba câu hỏi về `_GENERIC_ITEM`.
 - **Bạn:** xác nhận việc bàn giao câu hỏi trên là đủ để đóng mục (hoặc để mở tiếp). Quyết định dữ liệu VOD: dùng lại hay bỏ.
+- **Bạn:** xác nhận lô VOD `2026-11-25-set18-vod` (đảo quyết định dừng mở rộng của 2026-11-24); xác nhận lại số liệu blitz đã commit; cấp khóa Riot API nếu muốn Phase 2 Set 18; chọn nguồn live.
 - **Agent thu dữ liệu (Codex/Cursor):** chưa có dữ liệu đạt. Cần chạy lại theo `docs/handoff/vod-collection-prompt.md` nếu muốn tiếp tục thu.
 
 ## Cấu hình đang dùng
@@ -35,3 +38,5 @@
 - Đổi mặc định `fidelity.score` từ n=20 sang n=800.
 - Phân loại 731 item theo tác động; ghi số liệu vào mục 11.26.
 - Thêm file yêu cầu gửi tác giả `tft_goat`.
+- Thêm bộ tài liệu product (`docs/product/`, 12 mục). Đối chiếu lại với roadmap, model-plan 10.6–10.10 và handoff trước khi ghi.
+- Sửa STATUS: bỏ hash tự ghi; làm rõ +0,015 là kiểm harness.

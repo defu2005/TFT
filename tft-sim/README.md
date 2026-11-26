@@ -687,4 +687,4 @@ Chặn cần biết: augment Set 18 không có hook; 81/91 tướng Set 18 thi�
 
 ## Tiến độ
 
-Đọc `docs/progress/STATUS.md` trước. Xem `docs/progress/README.md` để hiểu cách đọc bộ tài liệu.
+Đọc `docs/progress/STATUS.md` trước. Xem `docs/progress/README.md` để hiểu cách đọc bộ tài liệu. Bộ tài liệu đầy đủ: `docs/product/README.md`.

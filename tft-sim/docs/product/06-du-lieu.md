@@ -13,7 +13,9 @@ Phần này nói dữ liệu **cần gì**, **đang có gì**, và **cổng ch�
 
 ## Định dạng `fight-v1`
 
-Một bản ghi = một lần đánh nhau tại một round giữa hai bàn, kèm kết quả. Mỗi bàn có danh sách unit với `items`, `item_apis`, `augments`, `frames`, cấp, sao. Thiếu khóa thì bị từ chối (xem `usable.reason`).
+Một bản ghi = một lần đánh nhau tại một round giữa hai bàn, kèm kết quả (`result.winner`), `fight_key`, `source`. Mỗi bàn có `level` và `units`. Mỗi unit có `api`, `star`, `items`, `frames`. Ở cấp bàn có `augments`.
+
+Quy tắc khóa, đúng theo `usable.py`: thiếu khóa `items` hoặc `augments` là **không biết**, bị từ chối (`items_thieu`, `augments_thieu`), không coi là rỗng. Giá trị `null` bị từ chối riêng (`items_null`, `augments_null`). Mỗi unit phải có ít nhất một khung hình (`unit_khong_khung_hinh`).
 
 Thứ tự kiểm trong `usable.reason`: kết quả thắng rỗng → tên placeholder → cấp không rõ → bàn không phân giải được → bàn thiếu → thiếu augment → tướng lạ → sao không hợp lệ → thiếu item → unit không có khung hình → thiếu frame.
 
@@ -31,8 +33,15 @@ Trạng thái bàn giao (`HANDOFF_STATUS`): `pending`, `working`, `done`, `block
 - Chính sách của Riot về dữ liệu: đường RAM (dữ liệu bộ nhớ) đã bỏ. Chưa có văn bản cho phép cụ thể.
 - Chưa có quyết định cuối về việc dùng VOD. Xem [11. Rủi ro](11-rui-ro-cau-hoi-mo.md).
 
+## Blitz.gg: trạng thái và việc cần xác nhận
+
+- Đã crawl 74 trang blitz.gg Set 18 (patch 18.7). Văn bản thô ở scratchpad, **không vào repo**. Số liệu đã rút ra được commit ở `data/blitz_set18_numbers.json` (`docs/research/combat-public-data.md` mục 10c).
+- Điều khoản Blitz: chỉ dùng cá nhân phi thương mại. `robots.txt` chặn ClaudeBot/GPTBot.
+- `combat-public-data.md` ghi người dùng đã chấp nhận rủi ro điều khoản và cho phép dùng, kể cả cho mô hình. Ghi nhận đó có trong tài liệu nghiên cứu; không tìm thấy quy tắc "không lưu blitz" nào trong `docs/`.
+- **Cần người dùng xác nhận lại** vì file đã nằm trong repo. Tài liệu `combat-public-data.md` mục 10 vẫn ghi "chưa commit" trước khi mục 10c ghi đã commit; đây là mâu thuẫn trong ghi chú cũ.
+- Vì mục 10c nói số Blitz giữ nguyên, không tự sửa chúng.
+
 ## Điều cần tránh
 
 - Không dùng dữ liệu mô phỏng làm dữ liệu thật.
 - Không dùng bản ghi chưa qua cổng.
-- Không lưu nội dung từ blitz.gg vào repo. Xem mục rủi ro về `data/blitz_set18_numbers.json`.

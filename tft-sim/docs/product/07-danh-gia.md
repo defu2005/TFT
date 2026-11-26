@@ -11,7 +11,7 @@
 - `fidelity.score`: so dự đoán với kết quả thật trên `scoring.jsonl`.
 - `MIN_GAMES = 30`, `BOOT = 2000` (số lần bootstrap).
 - `predict_win`: hòa không tính cho p_a.
-- Mặc định **n = 800, seed0 = 0** (đổi từ 20 ở mục 11.28).
+- Mặc định **n = 800, seed0 = 0**. Lịch sử: 20 → 400 (mục 11.26) → 800 (mục 11.28).
 - Kết quả thiếu dữ liệu được gắn **inconclusive**, không được coi là đạt.
 
 ## Kết quả kiểm tra nội bộ (mô phỏng, không phải trận thật)
@@ -23,7 +23,7 @@
 | Tỷ lệ đảo, có item | n=400 | 20/398 = 5,03% | 5% | **Không đạt** |
 | Tỷ lệ đảo, có item | n=800 | 16/398 = 4,02% | 5% | Đạt |
 
-Ghi chú về mẫu số: thử với mẫu số thay thế cho thấy 344/20 = 5,81% ở n=400 và 346 → 4,62% ở n=800. Kết luận không đổi về hướng, nhưng phải ghi rõ mẫu số nào đang dùng.
+Ghi chú về mẫu số: với mẫu số thay thế, n=400 cho 20/344 = 5,81% và n=800 cho 16/346 = 4,62%. Kết luận không đổi về hướng; phải ghi rõ mẫu số đang dùng. Kết luận không đổi về hướng, nhưng phải ghi rõ mẫu số nào đang dùng.
 
 ## Phải đọc kỹ: quyết định n=800 được đưa ra sau khi thấy n=400 không đạt
 
