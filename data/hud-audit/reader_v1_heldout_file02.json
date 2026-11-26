@@ -1,0 +1,38 @@
+{
+ "reader": "scripts/hud-campaign/hud_reader_v1.py",
+ "run": "single run on held-out file 02 after dev tuning on file 01",
+ "fields": {
+  "stage": {
+   "labelled": 49,
+   "emitted": 40,
+   "wrong": 0
+  },
+  "timer": {
+   "labelled": 50,
+   "emitted": 37,
+   "wrong": 0
+  },
+  "gold": {
+   "labelled": 40,
+   "emitted": 32,
+   "wrong": 0
+  },
+  "level": {
+   "labelled": 40,
+   "emitted": 23,
+   "wrong": 0
+  },
+  "xp": {
+   "labelled": 40,
+   "emitted": 8,
+   "wrong": 0
+  },
+  "streak": {
+   "labelled": 40,
+   "emitted": 27,
+   "wrong": 0
+  }
+ },
+ "mismatches": [],
+ "caveat": "labels single-read; tuning on file 01 finished before this run"
+}
