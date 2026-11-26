@@ -28,13 +28,13 @@
 | D1 | Cổng VOD đỏ; không slot nào đạt | Cao | Cần sửa nguồn hoặc thu lại |
 | D2 | Số liệu blitz.gg đã commit. Điều khoản: chỉ cá nhân phi thương mại; robots.txt chặn ClaudeBot/GPTBot. Người dùng đã cho phép theo ghi chú nghiên cứu. | Cao | Ghi nhận cho phép; cần xác nhận lại |
 | D3 | Dữ liệu VOD dùng cho huấn luyện; rủi ro pháp lý chưa kiểm | Cao | Người dùng đã nhận thức và quyết định |
-| D4 | Đường RAM: roadmap có hai câu trái nhau về việc đã đóng hay đã bỏ việc đóng; chính sách Riot (hiệu lực 6/10/2026) chặn đọc bộ nhớ với app bên thứ ba | Cao | Cần người dùng xác nhận trạng thái |
+| D4 | Đường RAM sẽ do người dùng phát triển; chính sách Riot chặn app chưa được phê duyệt từ 6/10/2026 (gồm TFT) | Cao | Chưa đối chiếu với kế hoạch; xem [3](03-lo-trinh.md) |
 | D5 | Nguồn live chưa chốt; không có shop/vàng từ log client | Cao | Đường găng sản phẩm |
 | D6 | Mục tiêu "100% trong 250 ms" cho đường live chưa được xác nhận | Trung bình | Người dùng xác nhận |
 
 ## Câu hỏi cho người dùng
 
-1. **Đường RAM:** đã đóng hay đã bỏ việc đóng? (Xem [3](03-lo-trinh.md).)
+1. **Đường RAM:** kế hoạch phát triển và cách xử lý chính sách Riot từ 6/10/2026 là gì? (Xem [3](03-lo-trinh.md).)
 2. **Lô VOD 2026-11-25:** xác nhận lô này là thu `fight-v1` do người dùng yêu cầu, tách khỏi chiến dịch OCR đã dừng.
 3. **VOD:** dùng lại sau khi sửa cổng, hay bỏ?
 4. **`_GENERIC_ITEM`:** chấp nhận bàn giao và đóng mục, hay mở tiếp?

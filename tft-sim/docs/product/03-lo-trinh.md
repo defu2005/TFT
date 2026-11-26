@@ -30,7 +30,7 @@ Mỗi phase kết thúc bằng một cổng đo được. Không chuyển phase 
 
 | # | Quyết định |
 |---|---|
-| 1, 2, 2b | Đã bỏ: 1 (đóng đường RAM; xem dưới), 2 sản phẩm sau trận là mặc định, 2b công cụ mô tả trong trận. |
+| 1, 2, 2b | Đã bỏ khỏi bảng: 1 (đề xuất đóng đường RAM; đường RAM không đóng, xem dưới), 2 sản phẩm sau trận là mặc định, 2b công cụ mô tả trong trận. |
 | 3 | Chủ roster Set 18: `engine`. |
 | 4 | Thứ tự tích hợp: PR #1, rồi `dazzling`, rồi `codex/hud-realtime-progress`, rồi `fable`. |
 | 5 | **Dừng mở rộng chiến dịch VOD.** `hud` làm tiếp: 16 khung nhãn mù, tỷ lệ phủ và tỷ lệ sai tự tin cho từng trường, một phiên Windows. |
@@ -40,11 +40,12 @@ Bổ sung cùng ngày (người dùng duyệt): dùng VOD streamer cho huấn lu
 
 Lô VOD `2026-11-25-set18-vod` (`vod-collection.md`) là thu `fight-v1` do người dùng yêu cầu trong phiên, không phải chiến dịch OCR của quyết định 5.
 
-## Đường RAM: roadmap có hai câu trái nhau
+## Đường RAM: không đóng, người dùng sẽ phát triển sau
 
-- `docs/data-sources.md` ghi RAM bị Vanguard chặn; `network-and-ram-layer.md` ghi `OpenProcess` thành công. Hai kết luận mâu thuẫn; cả hai ghi "100% chính xác" mà không có số đo.
-- Ghi chú 2026-11-24 trong roadmap (tóm tắt): bài hỗ trợ của Riot (29/9/2026, hiệu lực 6/10/2026) chặn truy cập bộ nhớ mặc định với ứng dụng bên thứ ba chưa biết, gồm TFT.
-- Roadmap viết hai câu: "Đã bỏ: 1 (đóng đường RAM)" và "Quyết định đóng đường RAM đã được bỏ". Mục Lịch sử lại ghi "2026-11-24: đóng nhánh RAM". Đọc hai câu đầu là quyết định đóng bị rút, nhưng nguồn không nói rõ. **Trạng thái: chưa xác định. Cần người dùng trả lời.**
+- **Quyết định:** đường RAM (đọc bộ nhớ của tiến trình game) **không bị đóng**. Người dùng sẽ tự phát triển đường này sau. Đây là quyết định của người dùng (2026-11-26), thay cho cách hiểu trước đó trong phiên.
+- **Rủi ro cần tính khi phát triển:** trang hỗ trợ Riot "game memory access removed for third party apps" ghi chính sách chặn đọc bộ nhớ của app bên thứ ba chưa được phê duyệt từ 6/10/2026, gồm TFT. Không có thông báo riêng cho TFT. Chính sách này chưa được đối chiếu với kế hoạch của người dùng.
+- **Mâu thuẫn kỹ thuật chưa giải:** `data-sources.md` ghi Vanguard chặn `PROCESS_VM_READ`; `network-and-ram-layer.md` ghi `OpenProcess` thành công ngày 2026-11-22. Kết quả 22/11 không chứng minh trạng thái hiện tại.
+- **Trạng thái trên nhánh roadmap:** dòng Lịch sử 2026-11-24 ghi "đóng nhánh RAM", và quyết định 1 ghi "đã bỏ". Hai chỗ này cần người dùng đối chiếu lại với ý định trên.
 
 ## Kế hoạch Set 18 (model-plan mục 11, 2026-11-25)
 

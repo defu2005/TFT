@@ -7,7 +7,7 @@ Ghi theo thứ tự thời gian. Cột "Nguồn" chỉ tới nơi ghi quyết đ
 | 2026-11-23 | Dùng snapshot CDragon làm bảng xác minh | Yêu cầu của người dùng trong phiên | Người dùng |
 | 2026-11-24 | Chủ roster Set 18 là nhánh `engine` | `roadmap.md`, quyết định 3 | Người dùng duyệt |
 | 2026-11-24 | Thứ tự tích hợp PR #1 → dazzling → codex/hud → fable | `roadmap.md`, quyết định 4 | Người dùng duyệt |
-| 2026-11-24 | Quyết định 1 (đóng đường RAM): roadmap ghi "đã bỏ" và "đã bỏ việc đóng" ở hai chỗ | `roadmap.md` | **Chưa rõ** |
+| 2026-11-26 | Đường RAM không đóng; người dùng sẽ phát triển sau | Người dùng | Người dùng |
 | 2026-11-24 | Dừng mở rộng chiến dịch VOD | `roadmap.md`, quyết định 5 | Người dùng duyệt |
 | 2026-11-24 | Dùng VOD streamer cho huấn luyện; rủi ro pháp lý chưa kiểm | `roadmap.md`, bổ sung | Người dùng đã nhận thức và quyết định |
 | 2026-11-25 | Mở lô VOD `2026-11-25-set18-vod` (goal ≥1000 ván) để thu `fight-v1` | `vod-collection.md` | Người dùng yêu cầu trong phiên |
@@ -23,7 +23,7 @@ Ghi theo thứ tự thời gian. Cột "Nguồn" chỉ tới nơi ghi quyết đ
 
 ## Chưa xác nhận
 
-- **Đường RAM:** trạng thái chưa rõ (xem [3](03-lo-trinh.md)).
+- **Roadmap nhánh nifty:** dòng Lịch sử "đóng nhánh RAM" và quyết định 1 cần đối chiếu với ý định (xem [3](03-lo-trinh.md)).
 - **Bàn giao `_GENERIC_ITEM`:** advisor xác nhận bàn giao là chấp nhận được. Người dùng chưa xác nhận.
 
 
