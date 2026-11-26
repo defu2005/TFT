@@ -1,0 +1,45 @@
+{
+ "reader": "scripts/hud-campaign/hud_reader_v1.py @4d7ea67",
+ "set": "held-out2: 60 frames of file 02, seed 20261127, drawn before any reader run",
+ "labels": "single-read, labelled before the reader ran",
+ "run": "one run, no changes after",
+ "fields": {
+  "stage": {
+   "labelled": 47,
+   "emitted": 40,
+   "wrong": 0,
+   "emit_rate": 0.851
+  },
+  "timer": {
+   "labelled": 47,
+   "emitted": 36,
+   "wrong": 0,
+   "emit_rate": 0.766
+  },
+  "gold": {
+   "labelled": 38,
+   "emitted": 23,
+   "wrong": 0,
+   "emit_rate": 0.605
+  },
+  "level": {
+   "labelled": 39,
+   "emitted": 26,
+   "wrong": 0,
+   "emit_rate": 0.667
+  },
+  "xp": {
+   "labelled": 39,
+   "emitted": 10,
+   "wrong": 0,
+   "emit_rate": 0.256
+  },
+  "streak": {
+   "labelled": 38,
+   "emitted": 18,
+   "wrong": 0,
+   "emit_rate": 0.474
+  }
+ },
+ "mismatches": []
+}
