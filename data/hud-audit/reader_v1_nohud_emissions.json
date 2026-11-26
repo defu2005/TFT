@@ -1,0 +1,38 @@
+{
+ "file01_dev": {
+  "no_hud_frames": 2,
+  "no_hud_frames_with_emission": 1,
+  "details": [
+   {
+    "idx": 17,
+    "emitted": {
+     "stage": "3-2"
+    }
+   }
+  ]
+ },
+ "heldout1_file02": {
+  "no_hud_frames": 11,
+  "no_hud_frames_with_emission": 2,
+  "details": [
+   {
+    "idx": 31,
+    "emitted": {
+     "stage": "3-5",
+     "timer": 11
+    }
+   },
+   {
+    "idx": 59,
+    "emitted": {
+     "stage": "5-6"
+    }
+   }
+  ]
+ },
+ "heldout2_file02": {
+  "no_hud_frames": 13,
+  "no_hud_frames_with_emission": 0,
+  "details": []
+ }
+}
