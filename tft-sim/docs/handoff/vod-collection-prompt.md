@@ -64,6 +64,11 @@ Phạm vi ghi: `tft-sim/data/vod_out/20261125/<S>/` và `CLAIM.json` của slot.
    cd /home/user/TFT/tft-sim && python3 scripts/combat/validate_vod.py data/vod_out/20261125/<S>/<vod_id>/fights.jsonl --out data/vod_out/20261125/<S>/<vod_id>/validate.json
    ```
    Lỗi khác `winner_null` phải sửa trước khi commit.
+   Trước khi commit, chạy thêm để xem lý do loại của từng fight (cùng bộ lọc với bước chấm điểm):
+   ```bash
+   cd /home/user/TFT/tft-sim && python3 scripts/combat/check_vod_dir.py data/vod_out/20261125/<S>/<vod_id>
+   ```
+   Các fight bị loại không sai dữ liệu, chúng chỉ không dùng được để chấm điểm. Không sửa cho khỏi bị loại bằng cách điền giá trị giả.
 3. Commit một lần cho một ván, rồi push:
    ```bash
    cd /home/user/TFT && git add tft-sim/data/vod_out/20261125/<S>/<vod_id> && git commit -m "vod <vod_id> <S>: ván <game_id>" && git push -u origin claude/claude-fable-5-2-awwmf5

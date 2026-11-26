@@ -1,0 +1,2027 @@
+{
+ "n": 200,
+ "board_seed_rng": 3,
+ "attempts": 3,
+ "p_a_no_augment": 0.68,
+ "augments": 252,
+ "changed_count": 0,
+ "changed": [],
+ "rows": [
+  {
+   "augment": "DA_18_BlossomTraitAugment",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "When you buy a Wisp, gain a random Blossom champion based on the Wisp's cost. Gain a Yunara, a Yorick, and a Karma."
+  },
+  {
+   "augment": "DA_18_CaretakersAlly",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a random 2-cost champion now. Gain the same one again every time you level up.   Champion: 0 "
+  },
+  {
+   "augment": "DA_18_CovenTraitAugment",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "When you choose to continue gathering Coven essence, heal @Health@ Tactician health. Gain a Camille, an Elise, and a Caitlyn."
+  },
+  {
+   "augment": "DA_18_CovenTraitAugment_LootToAP",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Converting Coven Essence to rewards grants Coven champions Ability Power instead of loot. Gain a Camille, an Elise, and a Caitlyn."
+  },
+  {
+   "augment": "DA_18_DuoQueue",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain 2 random 5-cost champions and 2 copies of a random component."
+  },
+  {
+   "augment": "DA_18_ElderwoodTraitAugment",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Champions that start combat adjacent to an Elderwood plant gain @AS*100@% Attack Speed and heal @heal*100@% of their maximum Health every @HealInterval@ seconds"
+  },
+  {
+   "augment": "DA_18_FOURcing",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a random 4-cost champion. For each item equipped to that champion, your team gains @Health@ health."
+  },
+  {
+   "augment": "DA_18_FaeTraitAugment",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Fae pixies are now larger and grant @BonusMultiplier*100@% more Attack Damage and Ability Power. Fae champions gain @UpfrontADAP*100@% Attack Damage and Ability"
+  },
+  {
+   "augment": "DA_18_FloraFatalisAugment",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a Flora Fatalis emblem. The champion holding the emblem gains @ExtraEffectiveness*100@% increased benefits from Flora Fatalis. Gain @Gold@ gold."
+  },
+  {
+   "augment": "DA_18_InfernoTraitAugment",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Your 1 and 2-cost Inferno champions gain @ADAP@ Attack Damage and Ability Power. The one who did the most damage last combat gains double. Gain a Varus and an A"
+  },
+  {
+   "augment": "DA_18_LunarTraitAugment",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your Lunar champions gain @Health@ Health and @DamageAmp*100@% Damage Amp for each unique Solar champion fielded. Gain a Leona, a Kayle, and a Diana."
+  },
+  {
+   "augment": "DA_18_LunarTraitAugmentPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your Lunar champions gain @Health@ Health and @DamageAmp*100@% Damage Amp for each unique Solar champion fielded. Gain a Leona, a Kayle, and an Aphelios."
+  },
+  {
+   "augment": "DA_18_LuxAugmentII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Open an armory and choose one of  @ArmoryChoices@ traits. Gain a Lux with that trait and a Spear of Shojin.   Traits on your board are more likely to appear in "
+  },
+  {
+   "augment": "DA_18_OnesTwosThree",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Gain @OneCosts@ 1-cost champions, @TwoCosts@ 2-cost champion, and @ThreeCosts@ 3-cost champion."
+  },
+  {
+   "augment": "DA_18_PrimalAugmentPlus_Nidalee",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Primal grants an additional Blessing. Gain a Vi and a Nidalee."
+  },
+  {
+   "augment": "DA_18_PrimalAugmentPlus_Sivir",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Primal grants an additional Blessing. Gain a Vi and a Sivir."
+  },
+  {
+   "augment": "DA_18_PrimalAugment_Nidalee",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Primal grants an additional Blessing. Gain a Vi now and a Nidalee after @AugmentRoundDelay@ rounds."
+  },
+  {
+   "augment": "DA_18_PrimalAugment_Sivir",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Primal grants an additional Blessing.  Gain a Vi now and a Sivir after @AugmentRoundDelay@ rounds."
+  },
+  {
+   "augment": "DA_18_ResidualMagic",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your team gains @InitialHealth@ Health. Each time you purchase a Wisp, increase this by @HealthPerSprite@."
+  },
+  {
+   "augment": "DA_18_ResidualMagicPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your team gains @InitialHealth@ Health. Each time you purchase a Wisp, increase this by @HealthPerSprite@."
+  },
+  {
+   "augment": "DA_18_ResidualMagicPlusPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your team gains @InitialHealth@ Health. Each time you purchase a Wisp, increase this by @HealthPerSprite@."
+  },
+  {
+   "augment": "DA_18_RiftbeastTraitAugment",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "You can now choose a second Alpha Riftbeast. Alpha Riftbeasts gain @BonusHP*100@% max Health and @BonusAS*100@% Attack Speed. Gain a Scuttlecrab, a Cinderling, "
+  },
+  {
+   "augment": "DA_18_RivalsAugment",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "You can field Rengar and Kha'Zix together with no penalties, and they gain bonuses when the other casts. Gain a Rengar and a Kha'Zix."
+  },
+  {
+   "augment": "DA_18_SolarTraitAugment",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a Leona, a Kayle, and a Sejuani. Leona gains @FlatHealth@ permanent max Health each round, increased by @HealthPerThreeStar@ for each unique 3-star champio"
+  },
+  {
+   "augment": "DA_18_SprykinAugment",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "While Sprykin is active, gain a second BFF summon that is @Effectiveness_DoesntIncludeSummonSpell*100@% as powerful. Gain a Teemo, a Veigar, and a Kobuko."
+  },
+  {
+   "augment": "DA_18_WeightTheWorth",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "The first time you 3-star a champion, gain a copy of them each round for the rest of the game. 3-starring the same champion again grants additional copies. Gain"
+  },
+  {
+   "augment": "DA_18_WispRebatePlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Each time you purchase a Wisp, gain @Gold@ gold. Gain @StartingGold@ gold now."
+  },
+  {
+   "augment": "DA_18_WispRebatePlusPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Each time you purchase a Wisp, gain @Gold@ gold. Gain @StartingGold@ gold now."
+  },
+  {
+   "augment": "DA_AdvancedLoan",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @GoldInstantBasic@ Gold. Your next augment is one tier lower."
+  },
+  {
+   "augment": "DA_AdvancedLoanPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @GoldInstantPlus@ Gold. Your next augment is one tier lower."
+  },
+  {
+   "augment": "DA_ArcaneViktory",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "After @InitialStunDelayInSeconds@ seconds of combat, stun the enemy team for @StunDuration@ seconds. Repeat this after @RepeatStunDelayInSeconds@ seconds of com"
+  },
+  {
+   "augment": "DA_Ascension",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "After @ActivationDelay@ seconds of combat, your units gain @DamageAmp*100@% Damage Amp."
+  },
+  {
+   "augment": "DA_AugmentedPower",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Your next augment is one tier higher."
+  },
+  {
+   "augment": "DA_BacklineBlueprint",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Gain a 3-cost non-Tank champion and an Emblem that matches their class."
+  },
+  {
+   "augment": "DA_BackupBows",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a Recurve Bow. After your champions attack @AttackCount@ times, get @NumBows@ more."
+  },
+  {
+   "augment": "DA_BandOfThieves",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Gain @AmountOfGlovesAtStart@ Thief's Gloves."
+  },
+  {
+   "augment": "DA_BandOfThievesII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @AmountOfGlovesAtStartII@ Thief's Gloves. After @CombatsUntilNextRewardII@ player combats, gain another."
+  },
+  {
+   "augment": "DA_BandOfThievesIIPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @AmountOfGlovesAtStartIIPlus@ Thief's Gloves. After @CombatsUntilNextRewardIIPlus@ player combats, gain another."
+  },
+  {
+   "augment": "DA_BandOfThievesIIPlusPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @AmountOfGlovesAtStartIIPlusPlus@ Thief's Gloves. After @CombatsUntilNextRewardIIPlusPlus@ player combats, gain another."
+  },
+  {
+   "augment": "DA_BaronsLair",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a random Tank item. After @StartSeconds@ seconds of combat, your team gains @Stats*100@% bonus Attack Damage and Ability Power every second for the rest of"
+  },
+  {
+   "augment": "DA_BeltOverflow",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Gain @NumBelts@ Giant's Belts. Your Giant's Belts grant +@BonusHealthPerBelt@ bonus Health."
+  },
+  {
+   "augment": "DA_BigGrabBag",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain 3 random components, @Gold@ gold, and 1 Reforger."
+  },
+  {
+   "augment": "DA_BirthdayPresent",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a 2-star champion and @Gold@ gold each time you level up. The champion's cost tier is your level minus @LevelDiff@ (max: @MaxTier@-cost)."
+  },
+  {
+   "augment": "DA_BirthdayReunion",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a random @ChampLevel@-star @FirstRewardShopTier@-cost champion. At Level @MiddleRewardLevel@, gain a random item component. At Level @LastRewardLevel@, gai"
+  },
+  {
+   "augment": "DA_BlackthornTraitAugment",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "The first @NumComponents@ times you sacrifice a champion in the Blackthorn hex, gain a copy of a random component they're holding. Gain an Azir and a Rek'Sai."
+  },
+  {
+   "augment": "DA_BodyguardTraining",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Allies gain @ArmorBonus@ Armor and Magic Resist, increased by @PlayerLevelBonus@ per player level.   Gizmos & Gadgets Championship, 2022 "
+  },
+  {
+   "augment": "DA_BonusGift",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Whenever you open a loot orb, you have a @Chance*100@% chance to gain a gray loot orb. Gain @StartingOrbs@ gray loot orbs."
+  },
+  {
+   "augment": "DA_BonusGiftPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Whenever you open a loot orb, you have a @Chance*100@% chance to gain a gray loot orb. Gain @StartingOrbs@ gray loot orbs."
+  },
+  {
+   "augment": "DA_BoosterPack",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @CombinedChampsValueNormal@ gold of random champions. (At least one @GuaranteedChampValueNormal@-cost guaranteed!)"
+  },
+  {
+   "augment": "DA_BoosterPackPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @CombinedChampsValuePlus@ gold of random champions. (At least one @GuaranteedChampValuePlus@-cost guaranteed!)"
+  },
+  {
+   "augment": "DA_BoosterPackPlusPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @CombinedChampsValuePlusPlus@ gold of random champions. (At least one @GuaranteedChampValuePlusPlus@-cost guaranteed!)"
+  },
+  {
+   "augment": "DA_BoxingLessons",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your team gains @HealthIncreasePerFrontLiner@ Health for each champion that starts combat in the front row."
+  },
+  {
+   "augment": "DA_BranchingOut",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Gain a random Emblem."
+  },
+  {
+   "augment": "DA_BranchingOutPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Gain a random Emblem and a Reforger."
+  },
+  {
+   "augment": "DA_BronzeForLifeI",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your team gains @DamageAmp*100@% Damage Amp for each Bronze-tier trait."
+  },
+  {
+   "augment": "DA_BronzeForLifeII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your team gains @DamageAmp*100@% Damage Amp and @Armor@ Armor and Magic Resist for each Bronze-tier trait."
+  },
+  {
+   "augment": "DA_BuildABud",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a random @ActorLevel@-star @UnitCost@-cost champion. Gain @NumGold@ gold."
+  },
+  {
+   "augment": "DA_BuriedTreasuresIII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a random item component now and at the start of the next @RoundsDuration@ rounds."
+  },
+  {
+   "augment": "DA_CalculatedLoss",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "After losing your combat, gain @Gold@ gold and a free Shop reroll."
+  },
+  {
+   "augment": "DA_CallToChaos",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Gain a powerful and random reward."
+  },
+  {
+   "augment": "DA_CalledShot",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Set your win streak to +@WinStreakCount@. Gain @Gold@ gold."
+  },
+  {
+   "augment": "DA_CapitalGainsI",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Store gold equal to the interest you earn. On @Stage@-@Round@, gain gold equal to @InterestRatio*100@% of the stored gold. Gain @StartingGold@ gold now."
+  },
+  {
+   "augment": "DA_CapitalGainsII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Store gold equal to the interest you earn. On @Stage@-@Round@, gain gold equal to @InterestRatio*100@% of the stored gold. Gain @StartingGold@ gold now."
+  },
+  {
+   "augment": "DA_CaretakersFavor",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a component anvil when you reach level 5, 6, 7, and 8.   Component anvils offer 4 choices. "
+  },
+  {
+   "augment": "DA_CarveAPath",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a B.F. Sword. After your champions deal @PhysicalDamageUntilCompletion@ physical damage, gain @NumCompletionRewards@ more."
+  },
+  {
+   "augment": "DA_CelestialBlessingI",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Your team gains @OmnivampI*100@% Omnivamp. Excess healing is converted to a shield up to @ShieldMaxI@ Health."
+  },
+  {
+   "augment": "DA_CelestialBlessingII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Your team gains @OmnivampII*100@% Omnivamp. Excess healing is converted to a shield up to @ShieldMaxII@ Health."
+  },
+  {
+   "augment": "DA_CelestialBlessingIII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Your team gains @OmnivampIII*100@% Omnivamp. Excess healing is converted to a shield up to @ShieldMaxIII@ Health."
+  },
+  {
+   "augment": "DA_ChallengersGrace",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "At the start of combat, allies gain @AttackSpeedMultiplier*100@% Attack Speed for @BuffDuration@ seconds. On takedown, allies dash to their next target and gain"
+  },
+  {
+   "augment": "DA_ChampDelivery",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @NumInitialChamps@ @ChampCost@-cost champions. After @Delay@ rounds, gain @NumDelayedChamps@ more."
+  },
+  {
+   "augment": "DA_ChampDeliveryPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @NumInitialChamps@ @ChampCost@-cost champions. After @Delay@ rounds, gain @NumDelayedChamps@ more."
+  },
+  {
+   "augment": "DA_ChampDeliveryPlusPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @NumInitialChamps@ @ChampCost@-cost champions. After @Delay@ rounds, gain @NumDelayedChamps@ more."
+  },
+  {
+   "augment": "DA_ClearMind",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "If there are no champions on your bench at the end of player combat, gain @XPGain@ XP."
+  },
+  {
+   "augment": "DA_ClockworkAccelerator",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your team gains @AttackSpeed*100@% Attack Speed every @FrequencySeconds@ seconds in combat."
+  },
+  {
+   "augment": "DA_ClutteredMind",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @NumChamps@ @CostChamps@-cost champions now. If your bench is full at the end of player combat, gain @XPGain@ XP."
+  },
+  {
+   "augment": "DA_CognitiveOverload",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @NumGold@ gold, @NumChamp@ @ChampLevel@-star @ChampCost@-cost champion, @NumChamp2@ @ChampCost2@-cost champion, @NumChamp3@ @ChampCost3@-cost champions, @N"
+  },
+  {
+   "augment": "DA_CognitiveTax",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @NumGold@ gold and @NumXp@ XP."
+  },
+  {
+   "augment": "DA_CognitiveTaxPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @NumGoldPlus@ gold and @NumXpPlus@ XP."
+  },
+  {
+   "augment": "DA_ComebackStory",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your team gains @HPPerMissingHP@ Health and @ASMultiplyPerMissingHP*100@% Attack Speed per missing player Health."
+  },
+  {
+   "augment": "DA_CommerceCore",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @InitRerolls@ free Shop rerolls now and @PerTurnRerolls@ every round for the rest of the game."
+  },
+  {
+   "augment": "DA_ComponentBuffet",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Whenever you would get a component, gain a component anvil instead. Gain a random component.The anvil offers 4 choices."
+  },
+  {
+   "augment": "DA_ComponentQuest",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a random component and @NumGold@ gold. The next 7 times you win a player combat, gain a different random component. Afterwards, gain @CompletionGold@ gold."
+  },
+  {
+   "augment": "DA_ConstructACompanion",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "The next @UnitCost@-cost champion you buy is @ActorLevel@-star. Gain @NumGold@ gold."
+  },
+  {
+   "augment": "DA_CookingPot",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "At the start of each turn, all allies holding a Frying Pan or Spatula item grant the nearest champion @HealthIncrease@ permanent Health. Gain a Frying Pan."
+  },
+  {
+   "augment": "DA_Coronation",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Gain a Tactician's Crown. Tactician's Crown, Cape, and Shield grant the holder @AttackSpeed*100@% Attack Speed, @AttackDamage*100@% Attack Damage, and @AbilityP"
+  },
+  {
+   "augment": "DA_Corrosion",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Enemies in the first two rows lose @ResistLoss@ Armor and Magic Resist every @Time@ seconds."
+  },
+  {
+   "augment": "DA_CraftedCrafting",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Whenever you craft a completed item, gain @NumFreeRerolls@ rerolls."
+  },
+  {
+   "augment": "DA_CryMeARiver",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a Tear of the Goddess. Your team gains @RegenBonus@ Mana Regen. After @UpgradeDelay@ seconds in combat, increase this to @UpgradedRegenBonus@."
+  },
+  {
+   "augment": "DA_CyberneticImplants_Gold",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Your champions holding an item gain @HPFromGold@ Health and @ADFromGold*100@% Attack Damage. Gain a B.F. Sword."
+  },
+  {
+   "augment": "DA_CyberneticUplink_Gold",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Your champions holding an item gain @HPFromGold@ Health and @ManaRegenFromGold@ Mana Regen. Gain a Tear of the Goddess."
+  },
+  {
+   "augment": "DA_DeadlierBlades",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a Deathblade. Deathblades permanently gain @AttackDamagePercent*100@% Attack Damage whenever their holders score a takedown."
+  },
+  {
+   "augment": "DA_DeadlierCaps",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a Rabadon's Deathcap. Rabadon's Deathcaps grant @ManaGen@ Mana Regen and permanently gain @AbilityPowerPercent*100@% Ability Power whenever their holders s"
+  },
+  {
+   "augment": "DA_Dummify",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Lose all champions on your board and bench. Gain a Training Dummy with @CombinedHealthPercentage*100@% of their combined health. The dummy gains @HealthGainPerS"
+  },
+  {
+   "augment": "DA_EarlyLearnings",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your team gains @InitialStacks@% Attack Damage & Ability Power. This increases by @StacksPerCombat@% after each player combat. 1-cost champions gain double."
+  },
+  {
+   "augment": "DA_ElectrochargeI",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Every @ProcAttackCount@ attacks an ally takes, they deal @DamageI@-@DamageI_2@ (based on current Stage) magic damage to nearby enemies (@Cooldown@ second cooldo"
+  },
+  {
+   "augment": "DA_ElectrochargeII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Every @ProcAttackCount@ attacks an ally takes, they deal @DamageII@-@DamageII_4@ (based on current Stage) magic damage to nearby enemies (@Cooldown@ second cool"
+  },
+  {
+   "augment": "DA_EpicRolldown",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "When you reach Level @Level@, gain @Rerolls@ Shop rerolls.   Runeterra Reforged Championship, 2023 "
+  },
+  {
+   "augment": "DA_Epoch",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Now, and at the start of every stage, gain @EpochXP@ XP and @EpochRerolls@ free rerolls."
+  },
+  {
+   "augment": "DA_EpochPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Now, and at the start of every stage, gain @EpochPlusXP@ XP and @EpochPlusRerolls@ free rerolls."
+  },
+  {
+   "augment": "DA_ExclusiveCustomization",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a Lucky Item Chest, a Magnetic Remover and @Gold@ gold."
+  },
+  {
+   "augment": "DA_ExpectedUnexpectedness",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Now and at the start of the next 2 stages, roll 3 dice. Gain various rewards based on their total."
+  },
+  {
+   "augment": "DA_Expedition",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "At the start of every round, lose the champion in the rightmost bench slot. After losing @CashoutCost@ gold of champions in this way, gain a powerful reward. Ga"
+  },
+  {
+   "augment": "DA_ExplosiveGrowth",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Now and at the start of the next @Rounds@ rounds, gain @XPPerRound@ XP."
+  },
+  {
+   "augment": "DA_ExplosiveGrowthPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Now and at the start of the next @Rounds@ rounds, gain @XPPerRound_Plus@ XP."
+  },
+  {
+   "augment": "DA_ExtraBuckles",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a Giant's Belt. After your champions take @DamageTakenReq@ damage, get @NumCashoutLoot@ more."
+  },
+  {
+   "augment": "DA_FeelingLucky",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @GoldUpFront@ gold, then flip a coin. If heads, gain @GoldIfHeads@ more gold."
+  },
+  {
+   "augment": "DA_FindYourCenter",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Your champion that starts combat in the center of the front row gains @DamageAmpPercent*100@% Damage Amp and @MaxHealthMultiplier*100@% max Health."
+  },
+  {
+   "augment": "DA_Flexible",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain 1 random Emblem. At the start of every Stage, gain a random Emblem. Your team gains @Health@ Health for each Emblem they are holding."
+  },
+  {
+   "augment": "DA_FlowingTears",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a Tear of the Goddess. After your champions spend @CompletionManaRequired@ Mana, gain @CompletionNumRewards@ more."
+  },
+  {
+   "augment": "DA_FocusedFire",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your team gains @AD*100@% Attack Damage. Every @Timer@ seconds, they gain @StackAD*100@% more."
+  },
+  {
+   "augment": "DA_ForgeAFriend",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "The next @UnitCost@-cost champion you buy is @ActorLevel@-star. Gain @NumGold@ gold."
+  },
+  {
+   "augment": "DA_ForgedInStrength",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @InitialArtifacts@ random Artifact. When you drop below @Health@ Health, gain @MoreArtifacts@ more random Artifact, @MoreCompletedItems@ random completed i"
+  },
+  {
+   "augment": "DA_FrontlineFoundation",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Gain a 2-star 1-cost Tank champion and an Emblem that matches their class."
+  },
+  {
+   "augment": "DA_FutureFocused",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your Tactician loses @HealthLoss@ Health, but after @NumRounds@ player combats, gain @NumChampions@ 4-cost champions and @RewardGold@ gold."
+  },
+  {
+   "augment": "DA_GainGold",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @NumGold@ gold."
+  },
+  {
+   "augment": "DA_GiantAndMighty",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Your team becomes large, gaining @FlatHealth@ Health and @HealthMultiplier*100@% max Health."
+  },
+  {
+   "augment": "DA_GildedSteel",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain two 5-cost champions. If you field at least one 5-cost champion, your 1 to 4-cost champions gain @Durability*100@% Durability.   K.O. Coliseum Tactician's "
+  },
+  {
+   "augment": "DA_GlassCannon_Gold",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Allies that start combat in the back row begin combat at @StartingHP_Gold*100@% Health but gain @DamageAmp_Gold*100@% Damage Amp."
+  },
+  {
+   "augment": "DA_GlassCannon_Silver",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Allies that start combat in the back row begin combat at @StartingHP*100@% Health but gain @DamageAmp*100@% Damage Amp."
+  },
+  {
+   "augment": "DA_GoingLong",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "You no longer gain interest. Gain @GoldInstant@ gold now. Gain @RoundStartBonusXp@ XP after every player combat.   Interest is extra gold you gain per  @OldInte"
+  },
+  {
+   "augment": "DA_GoldDestiny",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a random Gold Augment and @Gold@ gold."
+  },
+  {
+   "augment": "DA_GoldDestinyPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a random Gold Augment and @Gold@ gold."
+  },
+  {
+   "augment": "DA_GoldenEgg",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a golden egg that hatches in @Rounds@ turns for a huge amount of loot. Winning player combat speeds up the hatch timer by an extra turn."
+  },
+  {
+   "augment": "DA_GoldenGamble",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @Gold@ gold and flip a coin. If heads, gain a Radiant Lucky Item Chest. If tails, gain @NumAnvils@ Completed Item anvils."
+  },
+  {
+   "augment": "DA_GoldenGamblePlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @Gold@ gold and flip a coin. If heads, gain a Radiant Lucky Item Chest. If tails, gain @NumAnvils@ Completed Item anvils."
+  },
+  {
+   "augment": "DA_GoldenGamblePlusPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @Gold@ gold and flip a coin. If heads, gain a Radiant Lucky Item Chest. If tails, gain @NumAnvils@ Completed Item anvils."
+  },
+  {
+   "augment": "DA_GoodForSomethingI",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Champions that aren't holding items have a @ChangeDrop*100@% chance to drop @GoldReward@ gold on death."
+  },
+  {
+   "augment": "DA_GroupHugI",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Combat start: Champions grant other adjacent champions @Armor_Silver@ Armor and Magic Resist. This effect stacks."
+  },
+  {
+   "augment": "DA_GroupHugII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Combat start: Champions grant other adjacent champions @Armor_Gold@ Armor and Magic Resist. This effect stacks."
+  },
+  {
+   "augment": "DA_HardBargain",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "You cannot choose your Carousel rewards. Gain an additional @PlayerHealth@ player health and @Gold@ gold each carousel round.  When you do not pick a Carousel R"
+  },
+  {
+   "augment": "DA_HardCommit",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a random emblem. Now and at the start of each stage, gain a 1-star champion of that trait with a cost equal to the Stage (max 5) and 3 gold."
+  },
+  {
+   "augment": "DA_HealingOrbsI",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "When an enemy dies, a nearby ally is healed for @HealthFromHealingOrbSilver@ Health."
+  },
+  {
+   "augment": "DA_HealingOrbsII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "When an enemy dies, a nearby ally is healed for @HealthFromHealingOrbGold@ Health."
+  },
+  {
+   "augment": "DA_HedgeFund",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @InstantGold@ gold. Your max interest is increased to 10."
+  },
+  {
+   "augment": "DA_HeroicGrabBag",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain 2 Lesser Champion Duplicators. Gain @Gold@ gold."
+  },
+  {
+   "augment": "DA_HeroicGrabBagPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain 2 Lesser Champion Duplicators. Gain @Gold@ gold."
+  },
+  {
+   "augment": "DA_HeroicGrabBagPlusPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain 2 Lesser Champion Duplicators. Gain @Gold@ gold."
+  },
+  {
+   "augment": "DA_HoldTheLine",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Champions in your back 2 rows gain @AbilityPowerPcntPerFrontLiner*100@% Ability Power and @AttackDamagePcntPerFrontLiner*100@% Attack Damage for each champion t"
+  },
+  {
+   "augment": "DA_Hustler",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "You no longer gain interest but gain @RoundStartBonusGold@ gold at the start of every player combat round. Gain @GoldInstant@ gold now.   Interest is extra gold"
+  },
+  {
+   "augment": "DA_InfinityProtection",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Gain @GoldAmount@ gold now. On Stage @UnlockStage@-@UnlockRound@, gain an Infinity Force. Infinity Force gives allies in the same row a @HealthPercent*100@% Hea"
+  },
+  {
+   "augment": "DA_InvestedPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain 26 gold. At the start of each round, gain 1 Shop reroll for every 10 gold above 50 (max 80 gold)."
+  },
+  {
+   "augment": "DA_InvestedPlusPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain 45 gold. At the start of each round, gain 1 Shop reroll for every 10 gold above 50 (max 80 gold)."
+  },
+  {
+   "augment": "DA_InvestmentStrategy",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your champions gain @MaxHealthPerInterest@ permanent max health per interest you earn. Your max interest is increased by @MaxInterestInc@. Gain @InstantGold@ go"
+  },
+  {
+   "augment": "DA_InvestmentStrategyI",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your champions gain @MaxHealthPerInterest@ permanent max health per interest you earn. Gain @InstantGold@ gold now."
+  },
+  {
+   "augment": "DA_IronAssets",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a component anvil and @NumCoins@ gold."
+  },
+  {
+   "augment": "DA_ItemGrabBag",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Gain 1 random completed item."
+  },
+  {
+   "augment": "DA_ItsMeBaby",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a championship hex in the bottom right corner. The champion in it gains @DamageAmpPercent*100@% Damage Amp and @AttackSpeed*100@% Attack Speed, and drops @"
+  },
+  {
+   "augment": "DA_JeweledLotus_I",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Your team gains @CritChance_I@% Critical Strike Chance and  Precision.    Precision: Ability damage can critically strike. Additional Precision grants 10% Criti"
+  },
+  {
+   "augment": "DA_JeweledLotus_II",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Your team gains @CritChance_II@% Critical Strike Chance, @CritDamage_II@% Critical Strike Damage, and  Precision .   Precision: Ability damage can critically st"
+  },
+  {
+   "augment": "DA_KickStart",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a random @StarLevel@-star @ChampCost@-cost champion and @NumGold@ gold."
+  },
+  {
+   "augment": "DA_Kingslayer",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "After winning player combat, gain @BaseGoldAfterCombat@ gold. If they had more health than you, gain @ModifiedGoldAfterCombat@ Gold instead. Gain @InitialGold@ "
+  },
+  {
+   "augment": "DA_KnowYourEnemy",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "You can see who you will fight next. Your team gains @DefaultDamageAmp*100@% Damage Amp, increased to @SharedTraitDamageAmp*100@% if you and your opponent have "
+  },
+  {
+   "augment": "DA_LateGameScaling",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Gain @XPGain@ XP at the start of player combat rounds. Your 5-cost champions gain @ChampBuff*100@% Health and @ChampBuff*100@% Attack Speed.   Cyber City Tactic"
+  },
+  {
+   "augment": "DA_LateGameSpecialist",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "When you reach Level @LevelReq@, gain @NumGold@ gold."
+  },
+  {
+   "augment": "DA_LatentForge",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "After @WaitRounds@  player combats, gain an Artifact anvil."
+  },
+  {
+   "augment": "DA_LegionOfThrees",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Gain a random Emblem. Your 3-cost champions and all allies equipped with an Emblem gain @HealthMaxAdd@ Health and @AttackSpeedPercent*100@% Attack Speed.   Reck"
+  },
+  {
+   "augment": "DA_LevelUp",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "When you buy XP, gain an additional @AdditionalXP@. Gain @InstantXP@ immediately."
+  },
+  {
+   "augment": "DA_LivingForge",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain an Artifact Anvil now and after every @RoundCounter@ player combats."
+  },
+  {
+   "augment": "DA_LoadedDice",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your dice and coins are luckier.  Roll a die and gain gold equal to the number rolled. Then flip a coin and gain @Gold@ gold if you flip heads."
+  },
+  {
+   "augment": "DA_LuckyGloves",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Thief's Gloves will always give your champions ideal items. Gain @StartSparringGlovesAmount@ Sparring Gloves and @gold@ gold."
+  },
+  {
+   "augment": "DA_LuckyGlovesPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Thief's Gloves will always give your champions ideal items. Gain @StartSparringGlovesAmount@ Sparring Gloves now, then another after @CombatsUntilNextRewardPlus"
+  },
+  {
+   "augment": "DA_LuxurySubscription",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a package containing a @1StarCost@-cost champion, a 2-star @2StarCost@-cost champion, and @Gold@ gold.  At the start of the next @Stages@ stages, gain the "
+  },
+  {
+   "augment": "DA_MagicRoll",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Roll 3 dice. Gain rewards based on their total."
+  },
+  {
+   "augment": "DA_MakeshiftArmorI",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Champions without items equipped gain @Armor_Silver@ Armor and Magic Resist."
+  },
+  {
+   "augment": "DA_MakeshiftArmorII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Champions without items equipped gain @Armor_Gold@ Armor and Magic Resist."
+  },
+  {
+   "augment": "DA_MaliciousMonetization",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @InstantGold@ gold. For the next @Duration@ rounds, enemy champions drop @GoldPerEnemy@ gold when killed."
+  },
+  {
+   "augment": "DA_MaxBuild",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @Rerolls@ free Shop rerolls. When you reach level @Level@, gain @RewardRolls@ free Shop rerolls and a Champion Duplicator.   Galaxies Championship, 2020 "
+  },
+  {
+   "augment": "DA_Min_Max",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a Golden Item Remover, 4 random components, and @GoldAmount@ gold."
+  },
+  {
+   "augment": "DA_MissedConnections",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a copy of each 1-cost champion."
+  },
+  {
+   "augment": "DA_MoneyHungryPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @InitialGoldPlus@ gold now, then @GoldPerStagePlus@ gold at the start of every stage. Picking up gold makes your Tactician larger."
+  },
+  {
+   "augment": "DA_MoneyHungry_NotBroken",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @InitialGold@ gold now, then @GoldPerStage@ gold at the start of every stage. Picking up gold makes your Tactician larger."
+  },
+  {
+   "augment": "DA_MoneyMonsoon",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @GoldPerRoundMonsoon@ gold now and every round for the rest of the game."
+  },
+  {
+   "augment": "DA_NestingAnvils",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain an Artifact Anvil. After you open it, gain a Component Anvil. After you open that, gain @Gold@ gold."
+  },
+  {
+   "augment": "DA_NestingAnvilsPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain an Artifact Anvil. After you open it, gain a Component Anvil. After you open that, gain @Gold@ gold."
+  },
+  {
+   "augment": "DA_NoScoutNoPivot",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Champions that fight in player combat cannot be benched or sold. Your team gains @PostCombatHealthBoost*100@% Health, and @PostCombatApBoost*100@% Attack Damage"
+  },
+  {
+   "augment": "DA_OneBuffTwoBuff",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Gain a Red Buff, a Blue Buff, and a Champion Duplicator."
+  },
+  {
+   "augment": "DA_OneTwoFive",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain 1 random component, 2 gold, and 1 random 5-cost champion"
+  },
+  {
+   "augment": "DA_PandorasBench",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "At the start of every round, champions on the @NumBenchSlots@ rightmost bench slots transform into random champions of the same cost. Gain @GoldGain@ gold."
+  },
+  {
+   "augment": "DA_PandorasItemsI",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Round start: items on your bench are randomized.   Gain @NumberOfComponentsI@ random component."
+  },
+  {
+   "augment": "DA_PandorasItemsIII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Round start: items on your bench are randomized.   Gain @NumberOfRadiantItemsIII@ Radiant item."
+  },
+  {
+   "augment": "DA_PandorasItemsIIMinus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Round start: items on your bench are randomized.   Gain @NumberOfComponentsII@ random components and @GoldAmountII@ gold."
+  },
+  {
+   "augment": "DA_PandorasItemsIIPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Round start: items on your bench are randomized.   Gain @NumberOfComponentsII@ random components and @GoldAmountIIPlus@ gold."
+  },
+  {
+   "augment": "DA_PandorasItemsIIPlusPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Round start: items on your bench are randomized.   Gain @NumberOfComponentsII@ random components and @GoldAmountIIPlusPlus@ gold."
+  },
+  {
+   "augment": "DA_PartialAscension",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "After @ActivationDelay@ seconds of combat, your units gain @DamageAmp*100@% Damage Amp."
+  },
+  {
+   "augment": "DA_PatienceIsAVirtue",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @RerollsUpfront@ rerolls now. Each round, gain @Rerolls@ free reroll if you did not buy a champion last round."
+  },
+  {
+   "augment": "DA_PatientStudy",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "After player combat, gain @XPBonusWin@ XP if you won or @XPBonusLose@ XP if you lost."
+  },
+  {
+   "augment": "DA_Pilfer",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Each round, gain a 1-star copy of the first champion you killed last combat. The first time you gain @GoldForGloves@ gold worth of champions in this way, gain a"
+  },
+  {
+   "augment": "DA_PlotArmor",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your team gains @ArmorInstant@ Armor and Magic Resist. After falling below @HealthDropThreshold*100@% Health, increase this to @ThresholdArmorBoostCombined@ for"
+  },
+  {
+   "augment": "DA_PortableForge",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Choose 1 of 4 Artifacts. Artifacts are more powerful items with a unique effect."
+  },
+  {
+   "augment": "DA_PrismaticDestiny",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a random Prismatic Augment and @Gold@ gold."
+  },
+  {
+   "augment": "DA_PrismaticDestinyPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a random Prismatic Augment and @Gold@ gold."
+  },
+  {
+   "augment": "DA_PrismaticTicket",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Each time your shop is rerolled you have a @PrismaticChance@% chance to gain a free reroll."
+  },
+  {
+   "augment": "DA_PromisedProtection",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Gain a Protector's Vow. Protector's Vow grants its holder @IncomingManaIncreasePercentage*100@% additional Mana from all sources and @FlatHP@ max Health."
+  },
+  {
+   "augment": "DA_QuickStreaks",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "You gain twice as much progress towards win and loss streaks. Gain @Gold@ gold."
+  },
+  {
+   "augment": "DA_RadiantRascal",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a Radiant Thief's Gloves item. This equips 2 random Radiant items every round."
+  },
+  {
+   "augment": "DA_RadiantRelic",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Choose 1 of 5 Radiant Items. Gain a Magnetic Remover."
+  },
+  {
+   "augment": "DA_Recombobulator",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Champions on your board permanently transform into random champions 1 cost tier higher (max 5). Gain @NumRemovers@ Magnetic Removers and @NumRolls@ free rerolls"
+  },
+  {
+   "augment": "DA_Replication",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Choose 1 of 3 components. For the next @NumberOfRoundsToGrantLoot@ rounds, gain a copy of that component."
+  },
+  {
+   "augment": "DA_Retribution",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Gain @NumItemsToGrant@ Hands of Justice. Allies equipped with Hand of Justice gain  Precision  and @CriticalStrikeChance*100@% Critical Strike Chance.   Precisi"
+  },
+  {
+   "augment": "DA_RollingForDays",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @NumFreeRerolls@ free Shop rerolls."
+  },
+  {
+   "augment": "DA_SalvageBin",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain 1 random completed item now, and 1 component after @Rounds@ player combats. Selling champions breaks completed items into components (excluding Tactician's"
+  },
+  {
+   "augment": "DA_SalvageBinPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain 1 random completed item now, and 1 component after @RoundsPlus@ player combats. Selling champions breaks completed items into components (excluding Tactici"
+  },
+  {
+   "augment": "DA_SeraphimsStaff",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain an Archangel's Staff. Archangel's Staff grants @ManaPerSecond@ additional Mana Regen if its holder has @APThreshold*100@% or more Ability Power."
+  },
+  {
+   "augment": "DA_ShimmerscaleEssence",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a Gambler's Blade. After @NumberOfRoundsToWait@ player combats, gain a Mogul's Mail."
+  },
+  {
+   "augment": "DA_ShoppingSpree",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "When you level up, gain a number of Shop refreshes equal to your level +@BonusRollPerLevel@. Gain @GoldGain@ gold."
+  },
+  {
+   "augment": "DA_SilverDestiny",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a random Silver Augment and @Gold@ gold."
+  },
+  {
+   "augment": "DA_SilverDestinyPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a random Silver Augment and @Gold@ gold."
+  },
+  {
+   "augment": "DA_SilverDestinyPlusPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain a random Silver Augment and @Gold@ gold."
+  },
+  {
+   "augment": "DA_SilverSpoon",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @XP@ XP."
+  },
+  {
+   "augment": "DA_Slammin",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @NumGold@ gold. After each player combat, if there are no items on your bench (other than consumables), gain @NoItemsXP@ XP."
+  },
+  {
+   "augment": "DA_SlamminPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain @NumGoldPlus@ gold and @InstantXPPlus@ XP now. After each player combat, if there are no items on your bench (other than consumables), gain @NoItemsXPPlus@"
+  },
+  {
+   "augment": "DA_SliceOfLife",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Twice per stage, gain a random champion. Its cost increases by Stage. This effect ends after receiving @NumOfMaxCosts@ @MaxChampCost@-cost champion."
+  },
+  {
+   "augment": "DA_SlightlyMagicRoll",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Roll a die. Gain rewards based on the number rolled."
+  },
+  {
+   "augment": "DA_SmallGrabBag",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Gain @NumberOfComponents@ random item components."
+  },
+  {
+   "augment": "DA_SoloLeveling",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "For the next @NumCombats@ combats, your team size is @MaxTeamSize@, but the champion you field has massively increased stats. Gain @XPPerKill@ XP for every kill"
+  },
+  {
+   "augment": "DA_SoloPlate",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a Gargoyle Stoneplate. Allies holding Gargoyle Stoneplate gain @MaxHealthPercent*100@% max Health if they start combat alone in their row."
+  },
+  {
+   "augment": "DA_SoulAwakening",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Combat start: Your team gains @CombatStartAdBoost*100@% Attack Damage and Ability Power per second for @NumRepeatsAfterInitialApplication@ seconds. At max stack"
+  },
+  {
+   "augment": "DA_SpeedyDoubleKill",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a Guinsoo's Rageblade. When @NumEliminationsRequired@ players are eliminated, gain @GoldAmount@ gold.   Fates Championship, 2021 "
+  },
+  {
+   "augment": "DA_SpiritOfRedemption",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a Spirit Visage. Every @TimeIntervalSeconds@ seconds, Spirit Visage heals allies within @HexRange@ hex for @PercentMissingHealth*100@% of their missing Hea"
+  },
+  {
+   "augment": "DA_SpreadingRoots",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a random Emblems. After @Delay@ combats, gain another."
+  },
+  {
+   "augment": "DA_SpreadingRootsPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @EmblemAmountPlus@ random Emblems and @GoldAmountPlus@ gold."
+  },
+  {
+   "augment": "DA_Staffsmith",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Gain @ItemQuantity@ random completed items that build from Needlessly Large Rod."
+  },
+  {
+   "augment": "DA_StandUnited",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Your units gain @AttackDamagePercentagePerTrait*100@% Attack Damage and @AbilityPowerPerTrait*100@% Ability Power for each non-unique Trait active across your t"
+  },
+  {
+   "augment": "DA_SweetTreats",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain an Artifact anvil. Your team gains @BonusHealth@ Health for each item equipped on champions."
+  },
+  {
+   "augment": "DA_SwordOverflow",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Gain @NumBFSwords@ BF Swords. Your BF Swords grant +@AttackSpeedPerSword*100@% Attack Speed."
+  },
+  {
+   "augment": "DA_Swordsmith",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "khac",
+   "desc": "Gain @ItemQuantity@ random completed items that build from B.F. Sword."
+  },
+  {
+   "augment": "DA_TacticiansKitchen",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a random Emblem. After @Rounds@ rounds, gain a Tactician's Cape."
+  },
+  {
+   "augment": "DA_TeamBuilding",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a Lesser Champion Duplicator. Gain another after @PlayerRounds@ player combats.   This item allows you to copy a 3-cost or less champion. "
+  },
+  {
+   "augment": "DA_TheGoldenDragon",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Gain a Mogul's Mail. Champions holding Mogul's Mail take up +@IncreasedTeamSizeContribution@ team slot but gain @BonusHealth@ Health and @BonusDurability*100@% "
+  },
+  {
+   "augment": "DA_TheTower",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a giant Training Dummy. Every @TowerAttackInterval@ seconds, it zaps the @TowerNumTargets@ nearest enemies dealing @MaxHealthDamageMultiplier*100@% max Hea"
+  },
+  {
+   "augment": "DA_TheTraitTree",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @EmblemAmount@ random Emblems and @GoldAmount@ gold."
+  },
+  {
+   "augment": "DA_TheTraitTreePlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @EmblemAmountPlus@ random Emblems, a Reforger, and @GoldAmountPlus@ gold."
+  },
+  {
+   "augment": "DA_TimeSkip",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Disable your Shop for the next @RoundsSkipped@ rounds. Then gain @ExperienceToAdd@ XP."
+  },
+  {
+   "augment": "DA_TonsOfStatsI",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Your team gains @Health@ Health, @ADAP*100@% Attack Damage, @ADAP*100@% Ability Power, @Resists@ Armor, @Resists@ Magic Resist, @AttackSpeed*100@% Attack Speed,"
+  },
+  {
+   "augment": "DA_TonsOfStatsII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Your team gains @Health@ Health, @ADAP*100@% Attack Damage, @ADAP*100@% Ability Power, @Resists@ Armor, @Resists@ Magic Resist, @AttackSpeed*100@% Attack Speed,"
+  },
+  {
+   "augment": "DA_TradeSector",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a Shop reroll every round. Gain @NumGold@ gold."
+  },
+  {
+   "augment": "DA_TradeSectorPlus",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a Shop reroll every round. Gain @NumGoldPlus@ gold."
+  },
+  {
+   "augment": "DA_TraitLadder",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a random emblem. After fielding @LowestTraitBreakpoint@ non-unique traits in a player combat, gain a reward. Then increase the number of traits needed and "
+  },
+  {
+   "augment": "DA_TwinGuardians",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "If you have exactly @NumMultiples@ allies in your first row, grant them @BonusHealth@ Health, @ArmorInstant@ Armor, and @MagicResistInstant@ Magic Resist."
+  },
+  {
+   "augment": "DA_URF",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Gain a Spatula. Champions holding Spatula or Frying Pan items gain @AS*100@% Attack Speed and @ManaRegen@ Mana Regen."
+  },
+  {
+   "augment": "DA_UpwardMobility",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Buying XP costs @ReducedXPCost@ less. Gain @HealthOnLevelUp@ Health and @RerollsOnLevelUp@ Shop rerolls whenever you level up."
+  },
+  {
+   "augment": "DA_UrfsGrabBag",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "Gain @NumSpats@ Spatula, @NumComponents@ random components, and @Gold@ gold."
+  },
+  {
+   "augment": "DA_VerticalityI",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Champions gain @ADAP*100@% Attack Damage, @ADAP*100@% Ability Power, @resists@ Armor, and @resists@ Magic Resist for each ally that shares a trait with them."
+  },
+  {
+   "augment": "DA_VerticalityII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Champions gain @ADAP*100@% Attack Damage, @ADAP*100@% Ability Power, @resists@ Armor, and @resists@ Magic Resist for each ally that shares a trait with them."
+  },
+  {
+   "augment": "DA_VerticalityIII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Champions gain @ADAP*100@% Attack Damage, @ADAP*100@% Ability Power, @resists@ Armor, and @resists@ Magic Resist for each ally that shares a trait with them."
+  },
+  {
+   "augment": "DA_WandOverflow",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Gain @NumRods@ Needlessly Large Rods. Your Needlessly Large Rods grant +@AttackSpeedPerRod*100@% Attack Speed."
+  },
+  {
+   "augment": "DA_Warpath",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a 2-star 2-cost champion. After dealing @PlayerDamage@ player damage, gain a chest of high cost champions and items."
+  },
+  {
+   "augment": "DA_WeStickTogether",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "chi_so_bat_dau_combat",
+   "desc": "Gain an Emblem of a random trait and a completed item anvil. Allies with that trait gain @AttackSpeed*100@% Attack Speed. 0 0   Into The Arcane Tactician's Crow"
+  },
+  {
+   "augment": "DA_WorththeWait",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a random 1-cost champion. Gain another copy of them at the start of each round for the rest of the game."
+  },
+  {
+   "augment": "DA_WorththeWaitII",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain 2 copies of a random 2-cost champion. Gain another copy of them at the start of each round for the rest of the game."
+  },
+  {
+   "augment": "DA_WovenMagic",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "co_dieu_kien",
+   "desc": "Gain a random item component. Every @ManaPerComponent@ Mana spent by your champions, grants an additional component (max: 0/@NumberOfComponents@)."
+  },
+  {
+   "augment": "DA_YoungAndWildAndFree",
+   "p_a": 0.68,
+   "delta": 0.0,
+   "changed": false,
+   "category_heuristic": "kinh_te",
+   "desc": "You can always move freely on Carousel rounds. Gain @InstantGold@ gold."
+  }
+ ]
+}

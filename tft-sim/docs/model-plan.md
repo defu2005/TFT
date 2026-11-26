@@ -601,7 +601,7 @@ Không đo độ chính xác, không chấm điểm, không đọc lại thư m�
 - Đây là thay đổi baseline SECONDARY. Mọi so sánh SECONDARY trước đó không còn áp dụng; ghi rõ khi có điểm.
 
 **6. Những gì chưa xử lý và lý do.**
-- **Rút lại (kiểm tra 2026-11-26):** một khẳng định trước đó nói augment Kayle scrapper làm PRIMARY có bonus item không có trong dữ liệu. Sai. Handler `_kayle_scrapper` đăng ký dưới khóa `TFT17_Augment_KayleGodAugment_Scrapper`, khóa này không có trong nội dung Set 18 (`TFTSet18`), nên không augment Set 18 nào tới được handler. `_GENERIC_ITEM` cũng không tới đường record: `fight.py` không truyền `generic_items`, nên luôn là 0 khi chấm bản ghi. Không có thay đổi mã cho mục này.
+- **Rút lại (kiểm tra 2026-11-26):** một khẳng định trước đó nói augment Kayle scrapper làm PRIMARY có bonus item không có trong dữ liệu. Sai. Handler `_kayle_scrapper` đăng ký dưới khóa `TFT17_Augment_KayleGodAugment_Scrapper`, khóa này không có trong nội dung Set 18 (`TFTSet18`), nên không augment Set 18 nào tới được handler. (Phần về `_GENERIC_ITEM` trong câu này là SAI; đã sửa ở 11.25.)
 - `pos`, mapping carousel, apiName của item: giữ mở (không kiểm chứng được nếu không có frame hoặc dữ liệu thật).
 - `side_of_streamer`: vẫn là quy ước, chưa kiểm bằng khung hình.
 
@@ -642,10 +642,43 @@ Không đo độ chính xác, không chấm điểm, không đọc lại thư m�
 - Thử trực tiếp: một bàn có augment `DA_18_BlossomTraitAugment` cho cùng `p_a` với bàn không có augment (PRIMARY). Augment không có hiệu ứng trong PRIMARY.
 - 70 khóa có handler đều là augment của set cũ (TFT6–TFT11 và các khóa `TFT_`). Cả 70 có mặt trong nội dung Set 17, và mô tả cùng khóa biến giữa Set 17 và Set 18 (0/70 khác nhau).
 - **Giới hạn engine:** PRIMARY bật `augments=True` nhưng không mô hình hóa augment Set 18. Đây là giới hạn chính, cần nêu khi báo bất kỳ điểm nào.
-- Đính chính mục 11.23: khẳng định về Kayle scrapper đã rút lại đúng. Thêm: `_GENERIC_ITEM` không chạm tới đường record.
+- Đính chính mục 11.23: khẳng định về Kayle scrapper đã rút lại đúng. Thêm: câu về `_GENERIC_ITEM` không chạm tới đường record là SAI; đã sửa ở 11.25.
 
 **6. Tên item.** Giữ nguyên thay đổi đã ghi ở 11.23 (`B.F. Sword` nay chỉ còn `DA_Component_BFSword`).
 
 **7. Chạy thử fidelity trên `scoring.jsonl` của fixture.** Thoát 0; báo `inconclusive` (2 ván dưới ngưỡng 30). Không có số điểm nào được báo.
 
 **Chưa xử lý:** n chưa ổn định theo quy tắc (xem mục 1). Khung hình chỉ kiểm tra tồn tại, không kiểm tra nội dung. `pos`, carousel, apiName item vẫn mở.
+
+### 11.25 Đính chính và kết quả không cần dữ liệu VOD (2026-11-26)
+
+**Đính chính.** Khẳng định "`_GENERIC_ITEM` luôn là 0 khi chấm bản ghi" (11.23 và 11.24 mục 5) là SAI. `fight.boards_of` đặt `items=len(item_apis)` cho mọi unit có item, nên `build_unit` cộng `_GENERIC_ITEM` (+150 HP, +15 AP, +15 giáp, +15 kháng phép, +0,15 AD) một lần cho mỗi item trên bản ghi. Mục 475 đã ghi đây là quy ước của engine (`_equip` tăng `items`), giữ nguyên và chờ tác giả engine xác nhận. Không sửa mã trong commit này.
+
+**Đo tác động của generic item** (`check_generic_items.py`, không dùng VOD). 20 bàn ngẫu nhiên, mỗi unit 0–2 item lấy từ `TFT_Item_*` có hiệu ứng, n=60, PRIMARY. So `items=len` (hiện tại) với `items=0`:
+- Δp trung bình −0,041; |Δp| lớn nhất 0,9; 8/20 bàn có |Δp| ≥ 0,1.
+- File: `results/fixed/combat/generic_items_effect.json`.
+- Đây là đo độ nhạy trên mẫu nhỏ, không chứng minh cách nào đúng, và chưa có khoảng tin cậy.
+
+**Chưa quyết, chưa sửa.** Nội dung Set 18 có 776 item, 448 có hiệu ứng. Nhiều item hoàn chỉnh (ví dụ `DA_GuinsoosRageblade`, `DA_InfinityEdge`) có `composition` nhưng không có hiệu ứng, và PRIMARY tắt `item_alias`. Với `items=0` các item này mất hết giá trị, nên không thể bỏ `_GENERIC_ITEM` mà không đổi nền PRIMARY. Hai hướng: (a) giữ nguyên, hoặc (b) chỉ cộng generic cho item không có hiệu ứng thật. Quyết định cần kiểm tra thêm bằng danh sách api item trong nội dung và quy tắc engine. Mọi thay đổi là đổi cấu hình đông lạnh (mục 357) và phải ghi thành mục mới.
+
+**Kết quả các kiểm tra và phạm vi của từng kết quả:**
+- **Đối xứng và seed tiệm cận** (`check_adaptive_n.py`): 1000 cặp gần nhau, 319 cặp có 0,1 ≤ p(n=20) ≤ 0,9, chạy n=400 với seed 0 và seed 1000. Đảo 13/319 = 4,08%, ngưỡng 5% → đạt. Bàn trong kiểm tra này không có item (`check_symmetry_seed._board` đặt `items: []`), nên kết quả không áp dụng cho bản ghi có item và không phụ thuộc lỗi generic item.
+- **Lệch bên** (`check_mirror.py`): A đấu A, 50 bàn không item, n=400. Lệch trung bình +0,0075 (SE 0,0059), ngưỡng 0,01 → không bị đánh dấu. Độ chính xác khoảng ±0,012, nên chỉ kết luận được "không thấy lệch vượt 0,01", không kết luận engine không thiên vị.
+- **Augment** (`check_augment_sweep.py`): 252 augment `DA_*` trên một bàn cân bằng (chọn trong khoảng 0,3–0,7), n=200, không item. Số augment làm đổi p: 0/252. Đây là một bàn, một seed; cùng với việc Set 18 không có handler (11.24 mục 5) thì PRIMARY không mô hình hóa augment.
+- **Số lượt mô phỏng n:** quy tắc 11.24 mục 1 yêu cầu tăng n khi tỷ lệ đảo ở n=20 vượt 5%. Tỷ lệ đảo là 9,7% (n=20) và 5,8% (n=100). Kết quả n=400 ở trên đạt 4,08%, nhưng cấu hình đông lạnh trong `fidelity.py` vẫn là **n=20**. Chưa đổi `fidelity.py`. Đạt ở n=400 không có nghĩa là n=20 đủ; việc chuyển sang n=400 (chi phí CPU khoảng 20 lần) và đăng ký lại là quyết định còn lại.
+
+**Mô hình PRIMARY hiện làm gì** (tham chiếu, không phải kết luận về độ đúng):
+
+| Thành phần | Trạng thái trong PRIMARY | Kiểm thử hoặc kết quả |
+|---|---|---|
+| Ability | generic | chưa có kiểm thử hành vi riêng |
+| Item | bật: hiệu ứng thật + `_GENERIC_ITEM` theo số item | mục generic item ở trên |
+| Augment | bật, nhưng không có handler Set 18 nên không tác động | augment sweep 0/252 |
+| Trait | bật, bảng theo tier | `selftest_trait_tiers.py`, 27 ca |
+| Emblem | tắt (SECONDARY bật) | — |
+| Item alias | tắt (SECONDARY bật, 45 alias) | `selftest.py` |
+| Vị trí, carousel, apiName phía client | chưa mô hình | — |
+
+**Thay đổi mã trong commit này:** `usable.py` (kiểm `items`/`augments` thiếu, khung hình ở cấp unit), `fidelity.py` (`inconclusive` khi rỗng), `selftest_usable.py`, prompt và tài liệu handoff, các script `check_*.py`, `selftest_empty_scoring.py`, và các file kết quả JSON. Không đổi PRIMARY, SECONDARY hay n.
+
+**Còn mở:** quyết định generic item (trên); n=20 hay n=400; augment Set 18 chưa có handler; vị trí, carousel, apiName; ba giả định trait còn mở (Defender lấy max hay cộng dồn, gốc của Brawler theo pct, Spellweaver cộng dồn); nhãn "18.7" của snapshot CDragon là sai (bản vá thực tế chưa rõ); khung hình chỉ kiểm tra tồn tại, không kiểm tra nội dung.

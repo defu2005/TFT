@@ -168,7 +168,7 @@ def score(path, n=20, seed0=0, allow_dryrun=False):
     good, skipped, unk = read_real(path, allow_dryrun)
     if not good:
         return {"skipped": dict(skipped), "unknown_items": dict(unk), "n_min_games": MIN_GAMES,
-                "fights": 0, "games": 0, "note": "chua co ban ghi real co ket qua"}
+                "fights": 0, "games": 0, "inconclusive": True, "note": "chua co ban ghi real co ket qua"}
     rows = []
     for r in good:
         try:

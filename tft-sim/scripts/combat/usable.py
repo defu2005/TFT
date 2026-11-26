@@ -46,14 +46,18 @@ def reason(f: dict, champs, vdir=None) -> str | None:
         units = (f.get(side) or {}).get("units", []) or []
         if len(units) < f[side]["level"]:
             return f"board_{side}_thieu"
-        if (f.get(side) or {}).get("augments", []) is None:
+        if "augments" not in (f.get(side) or {}):
+            return "augments_thieu"  # spec 4.2: khoa thieu = khong biet, khong coi la rong
+        if (f.get(side) or {}).get("augments") is None:
             return "augments_null"
         for u in units:
             if u.get("api") not in champs:
                 return "tuong_la"
             if not _is_int(u.get("star")):
                 return "star_khong_hop_le"
-            if u.get("items") is None and "items" in u:
+            if "items" not in u:
+                return "items_thieu"  # spec 4.2: bo hang khoa items khi khong biet; thieu khoa = khong biet
+            if u.get("items") is None:
                 return "items_null"
             if not u.get("frames"):
                 return "unit_khong_khung_hinh"  # spec 4.2 va muc 10: moi unit can it nhat mot khung hinh
