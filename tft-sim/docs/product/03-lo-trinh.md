@@ -26,7 +26,7 @@ Mỗi phase kết thúc bằng một cổng đo được. Không chuyển phase 
 
 **Cổng Phase 5 → engine:** quy tắc chỉ vào engine sau khi thắng trên harness Phase 4 (dữ liệu thật). Mô phỏng với bot scripted không đủ.
 
-## Quyết định ngày 2026-11-24 (ghi trong roadmap nhánh nifty; "người dùng duyệt" chưa xác minh, xem progress/sessions/2026-11-26-truy-vet-quyet-dinh-roadmap.md)
+## Quyết định ngày 2026-11-24 (bảng cập nhật 2026-11-26 theo ủy quyền của người dùng; xem progress/sessions/2026-11-26-truy-vet-quyet-dinh-roadmap.md)
 
 | # | Quyết định |
 |---|---|
@@ -36,7 +36,7 @@ Mỗi phase kết thúc bằng một cổng đo được. Không chuyển phase 
 | 5 | **Dừng mở rộng chiến dịch VOD.** `hud` làm tiếp: 16 khung nhãn mù, tỷ lệ phủ và tỷ lệ sai tự tin cho từng trường, một phiên Windows. |
 | 6 | Ảnh chụp EoG giữa trận do người dùng gửi (3–5 file, đã ẩn tên và PUUID). Chờ người dùng gửi. |
 
-Bổ sung cùng ngày (ghi trong roadmap, chưa xác minh): dùng VOD streamer cho huấn luyện, rủi ro pháp lý chưa kiểm và người dùng đã nhận thức; giai đoạn hiện tại là thu thập và làm sạch dữ liệu; quyết định mô hình học gì trước do một phiên chuyên trách.
+Bổ sung cùng ngày (người dùng đã cho phép dùng dữ liệu cho huấn luyện): dùng VOD streamer cho huấn luyện, rủi ro pháp lý chưa kiểm và người dùng đã nhận thức; giai đoạn hiện tại là thu thập và làm sạch dữ liệu; quyết định mô hình học gì trước do một phiên chuyên trách.
 
 Lô VOD `2026-11-25-set18-vod` (`vod-collection.md`) là thu `fight-v1` do người dùng yêu cầu trong phiên, không phải chiến dịch OCR của quyết định 5.
 

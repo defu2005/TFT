@@ -53,3 +53,7 @@ Xem `docs/agents/requests/20261126-engine-generic-item-convention.md`: quy ướ
 - Cần cấu hình mới nào để mô hình hóa item và augment Set 18?
 - Xác minh patch thật của snapshot CDragon từ nguồn chính thức.
 - Logic ability Set 18: thứ tự ưu tiên khi có số Blitz.
+
+## Ghi chú chưa xác minh
+
+- Quyết định 2 cũ (sản phẩm sau trận là mặc định) có trích chính sách Riot về gợi ý dựa trên trạng thái trận hiện tại. Chưa xác minh trích dẫn này. Không coi là quyết định đã có hiệu lực.
