@@ -79,14 +79,14 @@ Mỗi phase kết thúc bằng một cổng đo được. Không chuyển phase 
 
 ## Quyết định 2026-11-24
 
-Các mục 3–6 do người điều phối ghi; người dùng chưa xác nhận trong các nguồn đã kiểm. Đường RAM không đóng (xem trên). Mục 1, 2 và 2b không áp dụng vào lộ trình.
+Người dùng ủy quyền advisor quyết các mục còn treo (2026-11-26). Đây không phải là người dùng duyệt. Đường RAM không đóng (xem trên). Mục 1, 2 và 2b không áp dụng vào lộ trình.
 
 | # | Quyết định | Trạng thái |
 |---|---|---|
-| 3 | **Chủ roster Set 18: `engine`** (`src/data/set18.json`). Chi tiết ở `docs/agents/data-contracts.md` mục 5. | Ghi bởi điều phối; chưa xác nhận |
-| 4 | **Thứ tự tích hợp:** PR #1, rồi `dazzling`, rồi `codex/hud-realtime-progress`, rồi `fable`. Mỗi nhánh một PR, chạy test sau mỗi lần merge. | Ghi bởi điều phối; chưa xác nhận |
-| 5 | **Dừng mở rộng chiến dịch VOD.** `hud` làm tiếp: 16 khung nhãn mù, tỷ lệ phủ và tỷ lệ sai tự tin cho từng trường, một phiên Windows. | Ghi bởi điều phối; chưa xác nhận |
-| 6 | **Ảnh chụp EoG giữa trận** do người dùng thực hiện (3–5 file, đã ẩn tên và PUUID). | Ghi bởi điều phối; chưa xác nhận. Chờ người dùng gửi file. |
+| 3 | **Chủ roster Set 18: `engine`** (`src/data/set18.json`, có trên `master`). Chi tiết ở `docs/agents/data-contracts.md` mục 5. | Giữ hiệu lực. Advisor quyết, ủy quyền người dùng (2026-11-26) |
+| 4 | **Thứ tự tích hợp:** PR #1, rồi `dazzling`, rồi `codex/hud-realtime-progress`, rồi `fable`. Mỗi nhánh một PR, chạy test sau mỗi lần merge. | Đã thực hiện: PR #1–#4 merge đúng thứ tự 2026-11-24 (15:09–15:11 UTC). Người merge chưa xác minh |
+| 5 | **Dừng mở rộng chiến dịch OCR VOD của `hud`.** `hud` làm tiếp: 16 khung nhãn mù, tỷ lệ phủ và tỷ lệ sai tự tin cho từng trường, một phiên Windows. Không áp cho lô `fight-v1` 2026-11-25. | Giữ hiệu lực. Advisor quyết, ủy quyền người dùng (2026-11-26) |
+| — | **Việc chờ người dùng (không phải quyết định):** gửi 3–5 file ảnh EoG giữa trận (đã ẩn tên và PUUID). | Chờ người dùng |
 
 Đã bỏ: 1 (đóng đường RAM), 2 (sản phẩm sau trận là mặc định), 2b (công cụ mô tả trong trận).
 
