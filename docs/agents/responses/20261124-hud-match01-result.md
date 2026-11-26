@@ -1,7 +1,9 @@
 # Kết quả trận 01 (mùa 18, `01-boxbox`) — phần đã xác minh
 
 dataset: kết quả cuối trận cho trận 01. Không có log mẫu theo thời gian trong file này.
-status: đã giao. Dữ liệu đầy đủ 38 vòng nằm ở `data/hud-audit/match01_full.json`; xem `docs/handoffs/match01-audit.md` để biết các trường còn chưa giải.
+status: đã giao
+
+Dữ liệu đầy đủ 38 vòng nằm ở `data/hud-audit/match01_full.json`; xem `docs/handoffs/match01-audit.md` để biết các trường còn chưa giải.
 
 ## Đã xác minh
 

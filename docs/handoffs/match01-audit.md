@@ -40,12 +40,12 @@ Trích đầy đủ dữ liệu trận 01 của Set 18 từ VOD livestream vào 
 | Cấp | 11/15 |
 | XP | 13/14 |
 
-Chuỗi thắng ngoài mẫu hỏng chủ yếu vì OCR trả rỗng khi giá trị đúng là 1. Tỉ lệ 9/10 trong mẫu không đại diện cho trường này. Vàng, chuỗi thắng, cấp và XP không có tỉ lệ đáng tin ngoài mẫu hơn ngoài số liệu trên. Panel, cửa hàng và bộ đếm chưa đọc lại mù.
+Chuỗi thắng ngoài mẫu hỏng chủ yếu vì OCR trả rỗng khi giá trị đúng là 1; tỉ lệ 9/10 trong mẫu không đại diện cho trường này. Ba lần vàng sai ở ngoài mẫu (2-4, 6-1, 6-6) đều là OCR trả rỗng, và các khung này được ghi là không có ô vàng trong audit trước; tính trên khung có ô vàng thì vàng là 13/13. Hai lần cấp sai (2-6 đọc 13, đúng là 5; 3-7 chuỗi thắng đọc 2, đúng là 9) được kiểm tra bằng mắt: giá trị trong JSON đúng, lỗi thuộc OCR. Panel, cửa hàng và bộ đếm chưa đọc lại mù.
 
 ## Chưa xong / bị chặn
 
-1. **Hexes, stars, items (107 mục):** nguồn trên đĩa là H.264 1280×720. VOD trên Twitch có bản 1080p60 (`yt-dlp -F` liệt kê được). Đã tải một đoạn 20 giây 1080p quanh vòng 1-2 làm đối chứng. Khung 1080p tại 340 s không khớp khung 720p cùng thời điểm (một bên là đấu trường, một bên là trang web), nên chưa xác nhận được căn thời gian và chưa có bằng chứng về độ rõ. Việc tiếp theo: căn thời gian đoạn 1080p bằng khung đã biết, rồi đọc lại một vòng đã giải làm đối chứng trước khi đọc lại 107 mục.
-2. **5-6 và 6-2 (đối thủ):** chưa giải. Ứng viên P2 và ghost. Sweep 924 không có badge; sweep 1009 (6-2) có badge cấp 9. Lý do loại P4 nằm trong ghi chú attempt (người mất HP cùng với người thắng không thể là đối thủ của nhau). Thử nghiệm thanh máu không hoàn tất bằng script: chỉ có một điểm đối chứng và không đo được chiều rộng đầy đủ của thanh.
+1. **Hexes, stars, items (107 mục):** file trên đĩa là đoạn cắt 720p, bắt đầu lúc 210 s của VOD (`intendedStartSec` trong `scripts/hud-campaign/seed-sources.json`), nên thời gian file + 210 = thời gian VOD. VOD có bản 1080p60. Đối chứng: vòng 5-1 (khung kế hoạch, file 1836 s = VOD 2046 s) được cắt ở 1080p, khớp khung 720p theo dải giai đoạn và bàn cờ. Sprite ở 1080p rõ hơn, nhưng chưa đo được lợi ích khi đọc sao và item, và chưa đọc lại 107 mục. Việc tiếp theo: đọc lại một vòng có sao và item trước, rồi quyết định có tải cả trận ở 1080p không (khoảng 1,8 GB).
+2. **5-6 và 6-2 (đối thủ):** chưa giải. Ứng viên P2 và ghost. Sweep 924 không có badge; sweep 1009 (6-2) có badge cấp 9. Loại P4 dựa trên `result` (streamer thua) và việc P4 cũng mất HP, xem ghi chú attempt. Thanh máu: chưa hoàn tất bằng script (`not completed by script`); số đo ghi trong attempt.
 3. **Bàn đối thủ 21 vòng PvP:** chưa có panel rõ được gắn với đối thủ. Mỗi attempt ghi các frame đã kiểm tra và mã chủ sở hữu quan sát được.
 4. **Panel, cửa hàng, bộ đếm:** chưa có đọc lại mù, nên không có tỉ lệ.
 
@@ -60,7 +60,7 @@ Phản hồi cho kết quả trận 01 nằm ở `docs/agents/responses/20261124
 
 ## Quyết định đã chốt
 
-- Không gắn đối thủ từ thanh máu (chỉ một điểm đối chứng).
+- Không gắn đối thủ từ thanh máu (thử nghiệm chưa hoàn tất bằng script).
 - Không đổi gắn 5-2 → P3 trừ khi có bằng chứng mới.
 - Không viết lại lịch sử git. Lý do và chi tiết nằm ngoài tệp này.
 
