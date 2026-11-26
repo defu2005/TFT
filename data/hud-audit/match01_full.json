@@ -7473,9 +7473,10 @@
     "tag": "unresolved",
     "candidates": [
      "P2",
+     "P4",
      "ghost"
     ],
-    "attempt": "checked 2210.3 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost Plates at sweeps 924 and 1009 show a level 9 badge and a bar with no readable name; sweeps 921 and 926 show no plate; sweeps 1006 and 1011 show a level 9 badge with the name cut off. No name was read, so the opponent stays unresolved. 2235/2260 s and 2405/2430 s fall in stages 5-7 and 6-3. Rail-row check at sweeps 924 and 1009: the plate's level-9 badge matches two living rail rows at level 9 in each frame (rows 2 and 3, below the streamer row), so one row cannot be chosen; candidates stay P2 and ghost and the round stays unresolved.",
+    "attempt": "checked 2210.3 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost Plates at sweeps 924 and 1009 show a level 9 badge and a bar with no readable name; sweeps 921 and 926 show no plate; sweeps 1006 and 1011 show a level 9 badge with the name cut off. No name was read, so the opponent stays unresolved. 2235/2260 s and 2405/2430 s fall in stages 5-7 and 6-3. Rail-row check, second pass: the top strip of sweep 924 has no level-9 badge (the crop at x 800-960, y 0-40 is empty), so only sweep 1009 carries the badge (x about 845-930, y about 8-20). Alias-matched rail names, codes only: the second-from-top living row matches P2 at sweeps 924 and 1009 (scores 0.61-0.70). The other living level-9 row has no reliable match (P4 at 0.67 at one crop scale, P5 at 0.42 at another), so its code is not fixed. A bar-fill control was not possible: the 975 plate has no bar in the same region, and 753 has no recorded HP to calibrate against, so no bar claim is made. Candidates are P2, P4 and ghost; the round stays unresolved.",
     "reason": "no legible opponent nameplate in the checked frame"
    },
    "combat_frame_t_s": null,
@@ -8279,9 +8280,10 @@
     "tag": "unresolved",
     "candidates": [
      "P2",
+     "P4",
      "ghost"
     ],
-    "attempt": "checked 2380.2 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost Plates at sweeps 924 and 1009 show a level 9 badge and a bar with no readable name; sweeps 921 and 926 show no plate; sweeps 1006 and 1011 show a level 9 badge with the name cut off. No name was read, so the opponent stays unresolved. 2235/2260 s and 2405/2430 s fall in stages 5-7 and 6-3. Rail-row check at sweeps 924 and 1009: the plate's level-9 badge matches two living rail rows at level 9 in each frame (rows 2 and 3, below the streamer row), so one row cannot be chosen; candidates stay P2 and ghost and the round stays unresolved.",
+    "attempt": "checked 2380.2 s full frame: combat centre; no legible nameplate. HP-flag pool kept: P2, ghost Plates at sweeps 924 and 1009 show a level 9 badge and a bar with no readable name; sweeps 921 and 926 show no plate; sweeps 1006 and 1011 show a level 9 badge with the name cut off. No name was read, so the opponent stays unresolved. 2235/2260 s and 2405/2430 s fall in stages 5-7 and 6-3. Rail-row check, second pass: the top strip of sweep 924 has no level-9 badge (the crop at x 800-960, y 0-40 is empty), so only sweep 1009 carries the badge (x about 845-930, y about 8-20). Alias-matched rail names, codes only: the second-from-top living row matches P2 at sweeps 924 and 1009 (scores 0.61-0.70). The other living level-9 row has no reliable match (P4 at 0.67 at one crop scale, P5 at 0.42 at another), so its code is not fixed. A bar-fill control was not possible: the 975 plate has no bar in the same region, and 753 has no recorded HP to calibrate against, so no bar claim is made. Candidates are P2, P4 and ghost; the round stays unresolved.",
     "reason": "no legible opponent nameplate in the checked frame"
    },
    "combat_frame_t_s": null,
