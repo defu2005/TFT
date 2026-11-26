@@ -40,18 +40,11 @@ Bổ sung cùng ngày (người dùng duyệt): dùng VOD streamer cho huấn lu
 
 Lô VOD `2026-11-25-set18-vod` (`vod-collection.md`) là thu `fight-v1` do người dùng yêu cầu trong phiên, không phải chiến dịch OCR của quyết định 5.
 
-## Đường RAM: chốt trạng thái (2026-11-26)
+## Đường RAM: roadmap có hai câu trái nhau
 
-**Kết luận: không dùng đường đọc bộ nhớ cho sản phẩm.**
-
-- Chính sách Riot chặn mặc định việc đọc bộ nhớ của app bên thứ ba chưa được phê duyệt, từ 6/10/2026, gồm TFT. Trang hỗ trợ Riot: "game memory access removed for third party apps" (`support.riotgames.com/en-us/riot/performance/game-memory-access-removed-for-third-party-apps`). Không có thông báo riêng cho TFT; áp dụng theo chính sách chung. App đã được phê duyệt có thời gian chuyển sang API chính thức đến tháng 4/2027.
-- Quyết định "đóng đường RAM" (quyết định 1 của roadmap, 2026-11-24) **không được duyệt**; roadmap đã bỏ nó khỏi bảng quyết định. Việc bỏ quyết định này **không mở lại** đường RAM: chính sách vẫn chặn app của dự án.
-- Mâu thuẫn kỹ thuật cũ (`data-sources.md`: Vanguard chặn `PROCESS_VM_READ`; `network-and-ram-layer.md`: `OpenProcess` thành công ngày 2026-11-22) **vẫn chưa được giải**. Kết quả 2026-11-22 xảy ra trước ngày chặn mặc định, nên không chứng minh gì về trạng thái hiện tại.
-- Đường mạng (sniff UDP, Iris, mã hóa phiên) cũng không dùng: gãy khi game cập nhật và có rủi ro điều khoản.
-
-**Hệ quả:** đường live còn lại là snapshot/log client (thiếu vàng và shop), HUD OCR (chưa đạt độ chính xác), hoặc API chính thức (chưa đánh giá). Chọn đường nào là quyết định của người dùng.
-
-**Việc cần làm trên nhánh roadmap (không phải nhánh sim):** sửa dòng "Lịch sử" 2026-11-24 từ "đóng nhánh RAM" thành "RAM: chính sách Riot chặn, quyết định đóng bị bỏ khỏi bảng"; và dòng Phase 1 mục 3 cần bỏ "Giải quyết mâu thuẫn RAM" nếu người dùng xác nhận kết luận trên.
+- `docs/data-sources.md` ghi RAM bị Vanguard chặn; `network-and-ram-layer.md` ghi `OpenProcess` thành công. Hai kết luận mâu thuẫn; cả hai ghi "100% chính xác" mà không có số đo.
+- Ghi chú 2026-11-24 trong roadmap (tóm tắt): bài hỗ trợ của Riot (29/9/2026, hiệu lực 6/10/2026) chặn truy cập bộ nhớ mặc định với ứng dụng bên thứ ba chưa biết, gồm TFT.
+- Roadmap viết hai câu: "Đã bỏ: 1 (đóng đường RAM)" và "Quyết định đóng đường RAM đã được bỏ". Mục Lịch sử lại ghi "2026-11-24: đóng nhánh RAM". Đọc hai câu đầu là quyết định đóng bị rút, nhưng nguồn không nói rõ. **Trạng thái: chưa xác định. Cần người dùng trả lời.**
 
 ## Kế hoạch Set 18 (model-plan mục 11, 2026-11-25)
 

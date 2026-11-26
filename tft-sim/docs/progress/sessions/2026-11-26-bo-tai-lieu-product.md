@@ -9,5 +9,5 @@
   - Thêm link tới `docs/product/` từ STATUS, progress/README, README.
 - **Kết quả:** không có số liệu mới. Các số trong bộ tài liệu lấy từ file kết quả hoặc `model-plan.md`.
 - **Đính chính:** "+0,015 là mô hình vượt teacher" (sai, là kiểm harness); "65/776 item" (sai phạm vi, đúng 617/731); hash tự ghi trong STATUS; mô tả alias là twin (đúng: DA_* craftable và DA_Component_*); mâu thuẫn "không lưu blitz" (không tìm thấy quy tắc đó; có ghi nhận người dùng cho phép).
-- **Còn mở:** xem `docs/product/11-rui-ro-cau-hoi-mo.md`, mục "Câu hỏi cho người dùng". Đường RAM: chốt không dùng (chính sách Riot), chờ người dùng xác nhận; roadmap nhánh nifty cần sửa dòng Lịch sử.
+- **Còn mở:** xem `docs/product/11-rui-ro-cau-hoi-mo.md`, mục "Câu hỏi cho người dùng". Trạng thái đường RAM chưa rõ trong roadmap (hai câu trái nhau).
 - **Cập nhật `STATUS.md`:** có.
