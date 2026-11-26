@@ -17,9 +17,9 @@ P1–P8: streamer là một trong các bí danh này. Không lưu tên người 
 
 ## Đã giao (cập nhật)
 
-- path: `data/hud-audit/match01_full.json` (38 vòng, kiểm tra bằng `data/hud-audit/check_match01_full.py`)
-- schema: không có phiên bản chính thức; cấu trúc theo checker tại commit giao
-- commit: commit mới nhất chạm `data/hud-audit/match01_full.json` trên nhánh `claude/nifty-lovelace-252i30` (xem `git log -1 -- data/hud-audit/match01_full.json`)
+path: `data/hud-audit/match01_full.json` (38 vòng, kiểm tra bằng `data/hud-audit/check_match01_full.py`)
+schema: không có phiên bản chính thức; cấu trúc theo checker tại commit giao
+commit: (điền ở commit tiếp theo)
 
 ## Chưa có (cũ, đã cập nhật ở trên)
 
