@@ -615,3 +615,37 @@ Không đo độ chính xác, không chấm điểm, không đọc lại thư m�
 - Chênh lệch seed trung bình 0,0098, lớn nhất 0,3.
 - Đây là chẩn đoán nhiễu mô phỏng. Không phải đo độ chính xác dự đoán, không dùng để chọn cấu hình.
 - Giới hạn: bàn tổng hợp không có item và augment, nên không đại diện cho bàn thật.
+
+### 11.24 Sửa theo advisor: đối xứng, seed, lọc khung hình, prompt, kiểm thử hành vi trait, augment (2026-11-26, không dùng dữ liệu VOD)
+
+**Đính chính mục 11.23 và câu trả lời trước.**
+- Đã rút lại "giữ n = 20" và "không phải thiên vị hệ thống" nói về bộ 300 bàn ngẫu nhiên. Bộ đó gần như bão hòa: chỉ 28/300 bàn có 0,1 ≤ p ≤ 0,9, nên hầu hết không thể đảo và số hạng đối xứng bằng 0. Kết luận trên chỉ đúng cho 28 bàn đó (xem dưới), không đúng cho toàn bộ bộ mẫu.
+- Đã rút lại khẳng định "70 augment có handler cho Set 18" nếu hiểu là pool Set 18. Xem mục 5.
+
+**1. Kiểm tra đối xứng và seed trên cặp gần nhau** (`check_symmetry_seed.py --mode close`). B là bản sao của A, đổi một unit sang tướng khác (chỉ tướng có cost và trait) hoặc đổi sao 1↔2. 1000 cặp, PRIMARY. Quy tắc đăng ký trước: tỷ lệ đảo dự đoán giữa seed 0 và seed 1000 trên các bàn không bão hòa (0,1 ≤ p ≤ 0,9) > 5% thì tăng n và ghi thành thay đổi cấu hình đông lạnh.
+- n = 20: 319 bàn không bão hòa, 31 đảo, tỷ lệ 9,7%. **Quy tắc kích hoạt.** Kết quả: `results/fixed/combat/symmetry_seed_close_n20.json`.
+- n = 100 (bước tăng duy nhất theo quy tắc): 294 bàn không bão hòa, 17 đảo, tỷ lệ 5,8%. **Quy tắc vẫn kích hoạt.** Kết quả: `results/fixed/combat/symmetry_seed_close_n100.json`.
+- Trạng thái: n = 100 chưa đủ theo quy tắc. Chưa đổi `n` trong `fidelity.py` (cấu hình đông lạnh vẫn ghi n = 20 đến khi có quyết định). Bước tiếp theo nếu cần: n = 400, ước khoảng một giờ CPU cho 1000 cặp. Đây là nhiễu mô phỏng, không phải độ chính xác.
+
+**2. Bộ lọc fight: khung hình ở cấp unit.** Spec 4.2 đặt `frames` ở cấp unit, không có `frames` ở cấp fight của bản ghi `fight`. Bộ lọc nay yêu cầu mọi unit có ít nhất một khung hình (`unit_khong_khung_hinh`) và mọi khung hình tồn tại (`frame_thieu`). Trước đó bộ lọc chỉ kiểm khung hình đã có, nên cho qua fight không có bằng chứng nào. Selftest 13 ca pass.
+
+**3. Prompt và tài liệu handoff.**
+- Prompt: slot `P1–P10 hoặc V1` (trước là P1–P6). `fight` chỉ được ghi khi level hai bên là số nguyên và mọi unit có `api`, `star`, `frames`. `timestamp_s` không thay thế khung hình.
+- Trạng thái hợp lệ: `pending`, `working`, `done`, `blocked`, `stale`. `ok`, `partial`, `skipped` không hợp lệ và bị `bad_status` báo lỗi. Quy đổi: đang làm dở → `working`; bỏ qua vì lý do nêu trong `remaining` → `blocked`.
+
+**4. Kiểm thử hành vi theo tier** (`selftest_trait_tiers.py`, 27 ca, pass). Với mỗi trait trong bảng và mỗi tier, đo chênh lệch on/off trên engine và so với snapshot. Các giá trị khớp: Brawler (120 đội, v·base thành viên), Juggernaut (0,20/0,30/0,42 thành viên; 0,04/0,06/0,08 phi thành viên), Defender (25/60/115 thành viên; 12 phi thành viên), Rapidfire (×1,10 cả đội), Hunter (×(1+v) thành viên), Spellweaver (100·v chênh lệch), Executioner (+0,15 tier 1).
+- Defender kiểm tra quy tắc max (25, không phải 37). Đây là hồi quy của giả định mở, không xác nhận quy tắc đó đúng.
+- `selftest_traits.py` (so loader với snapshot) vẫn giữ nguyên, bổ sung cho kiểm thử trên.
+
+**5. Độ phủ augment (đã kiểm chứng).**
+- Nội dung Set 18 có 252 augment `DA_*`. **Không có augment `DA_*` nào có handler** trong `augments_set17`.
+- Thử trực tiếp: một bàn có augment `DA_18_BlossomTraitAugment` cho cùng `p_a` với bàn không có augment (PRIMARY). Augment không có hiệu ứng trong PRIMARY.
+- 70 khóa có handler đều là augment của set cũ (TFT6–TFT11 và các khóa `TFT_`). Cả 70 có mặt trong nội dung Set 17, và mô tả cùng khóa biến giữa Set 17 và Set 18 (0/70 khác nhau).
+- **Giới hạn engine:** PRIMARY bật `augments=True` nhưng không mô hình hóa augment Set 18. Đây là giới hạn chính, cần nêu khi báo bất kỳ điểm nào.
+- Đính chính mục 11.23: khẳng định về Kayle scrapper đã rút lại đúng. Thêm: `_GENERIC_ITEM` không chạm tới đường record.
+
+**6. Tên item.** Giữ nguyên thay đổi đã ghi ở 11.23 (`B.F. Sword` nay chỉ còn `DA_Component_BFSword`).
+
+**7. Chạy thử fidelity trên `scoring.jsonl` của fixture.** Thoát 0; báo `inconclusive` (2 ván dưới ngưỡng 30). Không có số điểm nào được báo.
+
+**Chưa xử lý:** n chưa ổn định theo quy tắc (xem mục 1). Khung hình chỉ kiểm tra tồn tại, không kiểm tra nội dung. `pos`, carousel, apiName item vẫn mở.

@@ -1,4 +1,4 @@
-# Prompt cho agent thu thập VOD (dán nguyên khối; thay `<S>` bằng slot được giao: P1–P6 hoặc V1)
+# Prompt cho agent thu thập VOD (dán nguyên khối; thay `<S>` bằng slot được giao: P1–P10 hoặc V1, theo manifest)
 
 Bạn là agent thu thập dữ liệu trận PvP Set 18 từ VOD của streamer. Chỉ làm việc với VOD **Twitch** và **YouTube**. Báo cáo ngắn bằng tiếng Việt.
 
@@ -48,11 +48,11 @@ Phạm vi ghi: `tft-sim/data/vod_out/20261125/<S>/` và `CLAIM.json` của slot.
 
 ## 3a. Quy tắc không bịa (bắt buộc)
 
-- Bản ghi `fight` cần đủ hai bàn quan sát được (mỗi bàn ít nhất một unit). Chỉ thấy bàn của streamer thì ghi `state` vào `others.jsonl`, không ghi `fight`.
+- Bản ghi `fight` chỉ được ghi khi: `level` của **cả hai** bên là số nguyên (không để `null`); **mọi unit** của cả hai bên có `api`, `star` và `frames` (ít nhất một khung hình đã lưu). Thiếu một trong các điều kiện này thì không ghi `fight`; chỉ ghi `state` vào `others.jsonl` và ghi rõ thiếu gì trong `remaining`.
 - Thông tin không nhìn thấy: ghi `null` hoặc `unseen`. Không điền để qua kiểm tra. Không dùng tên giữ chỗ (`unknown_*`, `unk_*`).
 - Lobby phải có 8 tên người chơi thật. Nếu chỉ đọc được ít hơn 8 tên: ghi đúng số tên đọc được, ghi `capture_notes: "lobby_incomplete"`. Không thêm tên nào.
 - Không tạo bản ghi game mà không có fight quan sát được trong cùng thư mục.
-- Mỗi fight phải có khung hình hoặc mốc thời gian làm bằng chứng (`frames` hoặc `timestamp_s`).
+- Bằng chứng của `fight` là `frames` ở cấp unit. `timestamp_s` không thay thế khung hình: fight không có khung hình được ghi vào `others.jsonl`, không vào `fights.jsonl`.
 - `side_of_streamer` phải xác định từ màn hình, không gán mặc định. Nếu không xác định được, ghi `null`.
 - Ghi chú `stub` hoặc `densify` không phải là lý do để nhận dữ liệu thiếu. Nếu ván còn thiếu, ghi rõ thiếu gì trong `remaining`.
 
@@ -71,6 +71,7 @@ Phạm vi ghi: `tft-sim/data/vod_out/20261125/<S>/` và `CLAIM.json` của slot.
 
 ## 5. Khi xong hoặc bị chặn
 
+- Trạng thái handoff chỉ được là `pending`, `working`, `done`, `blocked`, `stale` (`stale` do điều phối đặt). Không dùng `ok`, `partial`, `skipped` (merge check báo `bad_status`). Quy đổi: đang làm dở → `working`; bỏ qua một khoảng hoặc VOD vì lý do nêu trong `remaining` → `blocked`.
 - Xong VOD: `status: done`, `remaining_ranges_s: []`, commit và push.
 - Bị chặn (URL sai, không mở được VOD, nguồn ngoài phạm vi, lỗi dữ liệu): `status: blocked`, ghi lý do, commit và push, rồi báo cáo. Không chờ người dùng quyết định. Chọn phương án an toàn và nêu lý do.
 - Kết thúc: chạy `cd /home/user/TFT/tft-sim && python3 scripts/combat/merge_check_vod.py data/vod_manifest_20261125.json data/vod_out/20261125`. Lỗi của slot khác có thể còn; chỉ báo lỗi của slot bạn. Báo cáo: số VOD done và blocked (kèm lý do), số ván, số fight hợp lệ, số bị bỏ theo lý do, các commit đã push.

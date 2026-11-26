@@ -8,7 +8,8 @@ Mot fight dung duoc khi du tat ca dieu kien sau, kiem theo ly do dau tien vi pha
   4. board_<side>_khong_phan_giai   co it nhat mot unit co api da phan giai duoc trong noi dung Set 18;
   5. board_<side>_thieu     so unit >= level, ca hai ben (ban co day du theo level);
   6. tuong_la / star_khong_hop_le / items_null   cung dieu kien voi fidelity._validate (scorer tu choi);
-  7. frame_thieu            moi khung hinh duoc tham chieu deu ton tai trong thu muc VOD.
+  7. unit_khong_khung_hinh  moi unit co it nhat mot khung hinh (spec 4.2: frames nam o cap unit);
+  8. frame_thieu            moi khung hinh duoc tham chieu deu ton tai trong thu muc VOD.
 Mot van (game) dung duoc khi co it nhat mot fight dung duoc.
 
 Ghi chu: dieu kien 5 loai bo ca ban co that nhung it unit hon level. Day la chu y co chu dich
@@ -54,6 +55,8 @@ def reason(f: dict, champs, vdir=None) -> str | None:
                 return "star_khong_hop_le"
             if u.get("items") is None and "items" in u:
                 return "items_null"
+            if not u.get("frames"):
+                return "unit_khong_khung_hinh"  # spec 4.2 va muc 10: moi unit can it nhat mot khung hinh
     if vdir is not None:
         for side in ("a", "b"):
             for u in (f.get(side) or {}).get("units", []) or []:

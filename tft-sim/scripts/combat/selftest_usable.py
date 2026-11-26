@@ -19,7 +19,7 @@ API = next(iter(CH))  # mot tuong that trong noi dung Set 18
 
 
 def unit(api=API, star=1):
-    return {"api": api, "star": star, "items": [], "pos": None}
+    return {"api": api, "star": star, "items": [], "pos": None, "frames": ["frames/f.png"]}
 
 
 def fight(a_units, b_units, a_lv=5, b_lv=5, winner=0, key="g|3-2|Alpha|Beta", frames=None):
@@ -42,6 +42,7 @@ CASES = [
     ("tuong_la_trong_ban_day_du_bi_loai", fight([unit("KHONG_CO_TUONG")] + FULL5[1:], FULL5), "tuong_la"),
     ("star_khong_hop_le_bi_loai", fight([unit(star="2")] + FULL5[1:], FULL5), "star_khong_hop_le"),
     ("items_null_bi_loai", fight([dict(unit(), items=None)] + FULL5[1:], FULL5), "items_null"),
+    ("unit_khong_frames_bi_loai", fight([dict(unit(), frames=[])] + FULL5[1:], FULL5), "unit_khong_khung_hinh"),
     ("winner_null_bi_loai", fight(FULL5, FULL5, winner=None), "winner_null"),
     ("placeholder_bi_loai", fight(FULL5, FULL5, key="g|3-2|unk_1|Beta"), "nombre_placeholder"),
     ("api_la_bi_loai", fight([unit("KHONG_CO_TUONG")] * 5, FULL5), "board_a_khong_phan_giai"),

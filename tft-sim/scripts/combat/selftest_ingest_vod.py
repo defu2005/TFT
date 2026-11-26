@@ -32,11 +32,16 @@ def _game(gid, lobby):
 
 
 def _fight(gid, stage, a, b):
-    unit = [{"api": "DA_Krug18", "star": 1, "items": [], "pos": None} for _ in range(6)]  # ban day du level 6
+    unit = [{"api": "DA_Krug18", "star": 1, "items": [], "pos": None, "frames": ["frames/f.png"]} for _ in range(6)]  # ban day du level 6, co khung hinh
     return {"schema": "fight-v1", "set": 18, "label": "real", "source": f"{gid}:{stage}",
             "fight_key": f"{gid}|{stage}|{a}|{b}",
             "a": {"level": 6, "augments": [], "units": unit}, "b": {"level": 6, "augments": [], "units": unit},
             "result": {"winner": 0}}
+
+
+def _touch_frames(vdir: Path) -> None:
+    (vdir / "frames").mkdir(parents=True, exist_ok=True)
+    (vdir / "frames" / "f.png").write_bytes(b"")
 
 
 def _handoff(vid, slot, ranges):
@@ -61,14 +66,17 @@ def build(root: Path, dup_source=False, short=False) -> Path:
         f1.append(_fight("twitch-1-g0", "3-2", "A", "B"))
     _w(d1 / "games.jsonl", [_game("twitch-1-g0", L1)])
     _w(d1 / "fights.jsonl", f1)
+    _touch_frames(d1)
     (d1 / "handoff.json").write_text(json.dumps(_handoff("twitch-1", "P1", [[0, 900]])), encoding="utf-8")
     d2 = out / "P2" / "twitch-22"
     _w(d2 / "games.jsonl", [_game("twitch-22-g0", ["  PLAYER1 "] + L1[1:])])  # ten lobby khac hoa/thuong, khoang trang
     _w(d2 / "fights.jsonl", [_fight("twitch-22-g0", "3-2", "A", "B")])
+    _touch_frames(d2)
     (d2 / "handoff.json").write_text(json.dumps(_handoff("twitch-22", "P2", [[0, 900]])), encoding="utf-8")
     d3 = out / "P3" / "twitch-2"
     _w(d3 / "games.jsonl", [_game("twitch-2-g0", L2[:7] if short else L2)])
     _w(d3 / "fights.jsonl", [_fight("twitch-2-g0", "1-1", "G", "H")])
+    _touch_frames(d3)
     (d3 / "handoff.json").write_text(json.dumps(_handoff("twitch-2", "P3", [[0, 900]])), encoding="utf-8")
     return root
 

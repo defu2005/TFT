@@ -14,7 +14,7 @@
 ## 2. Manifest: chỉ điều phối ghi, agent chỉ đọc
 
 - File: `tft-sim/data/vod_manifest_20261125.json`. Chỉ người điều phối commit file này. Agent không sửa, không đọc nó để quyết định ghi đè.
-- Mỗi streamer nằm ở **đúng một slot primary** (`P1`…`P6` và các slot primary khác trong manifest). Kiểm bằng `streamer_multi_slot`.
+- Mỗi streamer nằm ở **đúng một slot primary** (`P1`…`P10` theo manifest). Kiểm bằng `streamer_multi_slot`.
 - **Mở rộng 2026-11-25 (goal ≥1000 ván):** điều phối thêm slot `P4` (wasianiverson), `P5` (souless), `P6` (cambulee) — không trùng streamer P1–P3. Agent thu thập nhận slot qua `CLAIM.json` như cũ.
 - `role`:
   - `primary`: ghi dữ liệu thô vào slot của mình.
@@ -62,7 +62,7 @@ tft-sim/data/vod_out/20261125/<S>/<vod_id>/
 }
 ```
 
-- `status`: `pending` | `working` | `done` | `blocked` | `stale`. Chỉ agent của slot đó được đặt `done` hoặc `working`. `stale` do điều phối đặt khi reassign.
+- `status`: `pending` | `working` | `done` | `blocked` | `stale`. Chỉ agent của slot đó được đặt `done` hoặc `working`. `stale` do điều phối đặt khi reassign. Các giá trị `ok`, `partial`, `skipped` không hợp lệ (`merge_check_vod.py` báo `bad_status`).
 - `covered_ranges_s` là các khoảng **đã xử lý xong** (đã commit). `remaining_ranges_s` là phần còn lại của `candidate_ranges_s` trong manifest. Trong cùng handoff, các khoảng covered không chồng nhau (`overlap_within_slot`), các khoảng remaining không chồng nhau, và covered không chồng remaining (`covered_remaining_overlap`).
 - Tiến độ chỉ đọc từ `handoff.json`, **không** đọc trường `status` trong manifest.
 - `needs_review`: số fight để sang `*_needs_review` (xem spec 11.1).
