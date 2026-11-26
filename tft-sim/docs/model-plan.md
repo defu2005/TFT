@@ -687,7 +687,7 @@ Không đo độ chính xác, không chấm điểm, không đọc lại thư m�
 
 **Đính chính.** Bản trước của 11.26 có ba sai: (a) "65/776 item không có hiệu ứng, khoảng 8%" đếm sai phạm vi; (b) "cộng trùng chỉ ở SECONDARY" là sai; PRIMARY cũng có 9 item `DA_*` đổi chỉ số, nên cộng trùng xảy ra ở cả hai; (c) đo chỉ số thiếu cờ `can_ability_crit` và bảng hook chưa đúng.
 
-**Cách đo** (`scripts/combat/check_item_effects.py`, kết quả `results/fixed/combat/item_effect_classes.json`). 731 api item mà `names18` xuất ra (bỏ ba mục alias twin). Với mỗi api: `build_unit` một unit cố định, có và không có item, không tính khối chung; đo tám chỉ số, gồm cả `can_ability_crit`. Hook: khóa chính xác của bảng `ITEM_ON_ATTACK`, `ITEM_ON_CAST`, `ITEM_ON_DAMAGED`, `ITEM_HP_THRESHOLD`, `ITEM_REVIVE`, `ITEM_COMBAT_START`, `ITEM_ON_TICK` trong `tft_goat.engine.simulate` (khớp tuyệt đối, không chuỗi con).
+**Cách đo** (`scripts/combat/check_item_effects.py`, kết quả `results/fixed/combat/item_effect_classes.json`). 731 api item mà `names18` xuất ra (bỏ ba mục alias twin). Với mỗi api: `build_unit` một unit cố định, có và không có item, không tính khối chung; đo chín giá trị, gồm cả `can_ability_crit`. Hook: khóa chính xác của bảng `ITEM_ON_ATTACK`, `ITEM_ON_CAST`, `ITEM_ON_DAMAGED`, `ITEM_HP_THRESHOLD`, `ITEM_REVIVE`, `ITEM_COMBAT_START`, `ITEM_ON_TICK` trong `tft_goat.engine.simulate` (khớp tuyệt đối, không chuỗi con).
 
 **Kết quả.**
 
@@ -765,3 +765,12 @@ Quy tắc đăng ký trước, không đổi sau khi chạy:
 - Đổi n từ 20 sang 400 ở 11.26 được kiểm trên bàn không có item (4,08%, đạt) nhưng **không được xác nhận cho bàn có item**: trên bàn có item, n=400 vẫn vượt ngưỡng 5% (5,03%).
 - Theo quy tắc, không đổi n thêm lần nào mà không đăng ký mới. Chưa đổi cấu hình; `fidelity.py` giữ n=400 như đã ghi ở 11.26.
 - Việc cần quyết định: (a) đăng ký một mức n cao hơn (ví dụ 800) với quy tắc mới, hoặc (b) chấp nhận rủi ro đảo ~5% ở n=400 và ghi rõ là giới hạn đã biết khi báo cáo số liệu. Không tự chọn trong lúc chưa có đăng ký.
+
+### 11.28 Đăng ký trước: n=800 trên bàn có item (quyết định của advisor, 2026-11-26, không dùng VOD)
+
+Lý do: 11.24 mục 1 yêu cầu tăng n khi tỷ lệ đảo trên 5%. Bản ghi thật có item nên kết quả trên bàn có item là kết quả quyết định. 11.27 ở n=400 không đạt (20/398 = 5,03%).
+- Tập: đúng 398 cặp của 11.27 (seed0 = 0 và 1000), cùng định nghĩa đảo chiều, mẫu số chính 398, ngưỡng 5%. Script assert `len(mid) == 398`.
+- Luật dừng: đạt → đổi mặc định n sang 800 trong `fidelity.py` và cập nhật 11.26; không đạt → giữ n = 400, ghi cả hai con số là giới hạn đã biết. Cả hai trường hợp đóng câu hỏi về n; không tăng n thêm.
+- Kết quả ghi ra `results/fixed/combat/adaptive_n_items_n800.json`.
+- Chỉ chạy trên PRIMARY.
+

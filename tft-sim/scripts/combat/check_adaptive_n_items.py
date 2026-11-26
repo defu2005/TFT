@@ -22,7 +22,8 @@ import fidelity as Fd  # noqa: E402
 import fight as F  # noqa: E402
 from tft_sim import names18 as N  # noqa: E402
 
-N_BASE, N_FULL, SEED_A, SEED_B, THRESH = 20, 400, 0, 1000, 0.05
+N_BASE, SEED_A, SEED_B, THRESH = 20, 0, 1000, 0.05
+N_FULL = 400  # ghi de bang --n-full
 OUT = ROOT / "results/fixed/combat/adaptive_n_items_check.json"
 
 
@@ -69,13 +70,20 @@ def _work(args):
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--workers", type=int, default=3)
+    ap.add_argument("--n-full", type=int, default=400)
+    ap.add_argument("--out", default=str(OUT))
     args = ap.parse_args()
+    global N_FULL
+    N_FULL = args.n_full
+    out = Path(args.out)
     F.set_content(18, Fd._C18)
     c = F._CONTENT[18]
     pairs = _pairs(c, c.champions)
     mid = [i for i, (A, B) in enumerate(pairs)
            if 0.1 <= C._p(C._rec(A, B), SEED_A, N_BASE) <= 0.9]
     print("cap giu lai:", len(mid), flush=True)
+    if args.n_full == 800:
+        assert len(mid) == 398, len(mid)
     jobs = [(i, pairs[i][0], pairs[i][1]) for i in mid]
     res = []
     with ProcessPoolExecutor(max_workers=args.workers, initializer=_init) as ex:
@@ -99,8 +107,8 @@ def main() -> int:
            "flip_rate_over_mid": round(rate, 4), "threshold": THRESH, "passed": rate <= THRESH,
            "alt_denominator_mid_at_n400": x_mid,
            "flip_rate_over_alt": round(flips / x_mid, 4) if x_mid else None, "rows": rows}
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(rep, ensure_ascii=False, indent=1), encoding="utf-8")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(rep, ensure_ascii=False, indent=1), encoding="utf-8")
     print({k: v for k, v in rep.items() if k != "rows"}, flush=True)
     return 0
 
