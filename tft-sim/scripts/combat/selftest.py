@@ -131,6 +131,12 @@ rec_nt["a"]["units"][0]["items"] = [nontwin]
 cov_nt = F.coverage(rec_nt)
 print("records content: non-twin", nontwin, "items_unknown", cov_nt["a"]["items_unknown"])
 ok &= cov_nt["a"]["items_unknown"] == 0
+# 8a) Ban trong bi tu choi (predict_win tra p_a=1.0 gia cho ban trong)
+import fidelity as _Fd
+_emp = json.loads(json.dumps(rec_nt)); _emp["label"] = "real"; _emp["source"] = "twitch-1-g0:1-1"; _emp["result"] = {"winner": 0}; _emp["b"]["units"] = []
+_r = _Fd._validate(_emp)
+print("board trong bi tu choi:", _r)
+ok &= (_r or "").startswith("board_trong")
 # 8b) Khong dang ky hook DA_* toan cuc (gay doi PRIMARY, xem order_check_items.py)
 from tft_goat.engine import simulate as S_h
 from tft_sim.item_alias import _HOOK_TABLES as _HT

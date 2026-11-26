@@ -1,0 +1,114 @@
+{
+ "usable_games_total": 12,
+ "targets": {
+  "h010_games": 137,
+  "h005_games": 545
+ },
+ "slots": {
+  "P1": {
+   "games": 95,
+   "fights": 1722,
+   "usable_games": 0,
+   "reject_reasons": {
+    "nombre_placeholder": 697,
+    "board_b_khong_phan_giai": 818,
+    "winner_null": 207
+   }
+  },
+  "P10": {
+   "games": 140,
+   "fights": 1557,
+   "usable_fights": 1,
+   "usable_games": 1,
+   "reject_reasons": {
+    "winner_null": 1094,
+    "board_b_khong_phan_giai": 151,
+    "nombre_placeholder": 311
+   }
+  },
+  "P2": {
+   "games": 34,
+   "fights": 388,
+   "usable_games": 0,
+   "reject_reasons": {
+    "winner_null": 248,
+    "board_b_khong_phan_giai": 140
+   }
+  },
+  "P3": {
+   "games": 93,
+   "fights": 363,
+   "usable_fights": 10,
+   "usable_games": 4,
+   "reject_reasons": {
+    "winner_null": 335,
+    "board_b_khong_phan_giai": 16,
+    "nombre_placeholder": 2
+   }
+  },
+  "P4": {
+   "games": 322,
+   "fights": 4179,
+   "usable_games": 0,
+   "reject_reasons": {
+    "winner_null": 4061,
+    "nombre_placeholder": 107,
+    "board_b_khong_phan_giai": 11
+   }
+  },
+  "P5": {
+   "games": 109,
+   "fights": 1460,
+   "usable_fights": 1,
+   "usable_games": 1,
+   "reject_reasons": {
+    "winner_null": 676,
+    "board_a_khong_phan_giai": 763,
+    "board_b_khong_phan_giai": 20
+   }
+  },
+  "P6": {
+   "games": 41,
+   "fights": 431,
+   "usable_fights": 4,
+   "usable_games": 3,
+   "reject_reasons": {
+    "board_b_khong_phan_giai": 92,
+    "winner_null": 139,
+    "nombre_placeholder": 196
+   }
+  },
+  "P7": {
+   "games": 27,
+   "fights": 267,
+   "usable_games": 0,
+   "reject_reasons": {
+    "winner_null": 166,
+    "nombre_placeholder": 88,
+    "board_b_khong_phan_giai": 13
+   }
+  },
+  "P8": {
+   "games": 39,
+   "fights": 490,
+   "usable_fights": 3,
+   "usable_games": 3,
+   "reject_reasons": {
+    "winner_null": 362,
+    "board_b_khong_phan_giai": 113,
+    "nombre_placeholder": 12
+   }
+  },
+  "P9": {
+   "games": 126,
+   "fights": 1631,
+   "usable_games": 0,
+   "reject_reasons": {
+    "winner_null": 1607,
+    "board_a_khong_phan_giai": 12,
+    "board_b_khong_phan_giai": 5,
+    "nombre_placeholder": 7
+   }
+  }
+ }
+}

@@ -541,11 +541,11 @@ Bản đầu của mục này kết luận "CDragon thiếu chỉ số item". K�
 | P10 | 140 | 1.557 | 40 | 1.101 | 112 | 0 | 0 |
 
 - Quan sát chính:
-  - `side_of_streamer` là `a` ở toàn bộ 12.488 fight. Trường này không được quan sát, nên số "streamer thắng/thua" không có ý nghĩa.
+  - `side_of_streamer` là `a` ở toàn bộ 12.488 fight. [Đính chính 11.22] Đây là quy ước (bàn của streamer luôn là `a`), chưa được kiểm chứng bằng khung hình; nên `winner_0` = tỉ lệ streamer thắng. Tỉ lệ đó lệch rõ: P10 397/463 (86%), P8 38/128 (30%).
   - Ván có giây bắt đầu chia hết cho 60 chiếm 26%–77% tùy slot. Dấu hiệu mốc tròn, cần kiểm tra thủ công.
   - Khung hình được tham chiếu gần như đều tồn tại (chỉ 1–16 file thiếu mỗi slot). Phần này không phải lo ngại.
-  - Chỉ 21 ván có kết quả biết được (trong 12.488 fight). Tỉ lệ `winner_null` là 71%.
-  - Cặp lobby lệch (chung 4–7 tên): 2.999 cặp; 2.583 cặp khác streamer; 2.852 cặp chung ≥6 tên; 796 cặp có bàn cờ giống hệt nhau ở cùng stage. Đây là dấu hiệu cùng một ván bị ghi hai lần, không khớp với các lobby riêng biệt.
+  - [Đính chính 11.22] Số 21 ván là SAI. Có 399 ván (trên 1.026) có ít nhất một fight biết người thắng. Tỉ lệ `winner_null` theo fight là 71%.
+  - Cặp lobby lệch (chung 4–7 tên): 2.999 cặp; 2.583 cặp khác streamer; 2.852 cặp chung ≥6 tên. [Đính chính 11.22] Con số 796 cặp "ghi hai lần" là ARTEFACT: sau khi bỏ placeholder và bàn rỗng, còn 1.423 cặp sạch và 0 cặp có bàn giống hệt ở cùng stage.
 - Kết luận: không slot nào đạt tiêu chí (không placeholder, không ghi chú stub, không mốc tròn, quan sát được bên thắng). Theo chỉ dẫn, toàn bộ 10 slot không được coi là dữ liệu `real`. Không có ván nào được chấm điểm từ các slot này.
 - Cổng gộp đã đổi:
   - `bad_lobby` chỉ còn ERR khi trùng tên hoặc hơn 8 tên.
@@ -555,3 +555,18 @@ Bản đầu của mục này kết luận "CDragon thiếu chỉ số item". K�
   - Kết quả hiện tại: `merge_check_vod.py` thoát 1 (7.822 `placeholder_name`, 2 `game_without_fights`). Đây là trạng thái đúng; không sửa dữ liệu của các slot ở phiên này.
 - Điểm sản lượng (theo 11.14): ngưỡng 137 ván và 545 ván. Hiện có 0 ván đạt tiêu chí, nên chưa có số nào để so.
 - Việc còn lại (không làm ở đây): các agent phải thay placeholder bằng tên thật, hoặc ghi lỗi và để trống; xác minh bàn cờ lặp và mốc tròn; xác định nguồn `winner` và `side_of_streamer`.
+
+
+### 11.22 Đo sản lượng dùng được, đính chính và đóng băng cấu hình (2026-11-26, theo advisor)
+- Đính chính 11.21: (a) số 21 ván sai, đúng là 399 ván có ≥1 fight biết người thắng; (b) 796 cặp trùng là artefact của placeholder và bàn rỗng, đã loại, còn 0; (c) `side_of_streamer = a` là quy ước, không phải bằng chứng bỏ sót. Chưa kiểm chứng quy ước này.
+- Lỗ hổng đã sửa: `fidelity._validate` chấp nhận bàn rỗng, và `predict_win` trả `p_a = 1.0` giả cho bàn rỗng (đã kiểm chứng). Thêm lý do `board_trong:<bên>`; ca kiểm thử trong `selftest.py`.
+- Sản lượng dùng được (`scripts/combat/scoreable_yield.py`; điều kiện: winner biết, cả hai bên có unit với api phân giải được, tên người chơi thật, khung hình tồn tại):
+  - Tổng: 19 fight, **12 ván** trên 1.026. Mục tiêu 137 (±0,10) và 545 (±0,05) đều chưa đạt.
+  - Lý do loại chủ yếu: winner null (rất lớn ở P4, P9, P10), bên bàn không phân giải được (P1, P5), tên placeholder (P1, P6, P10).
+- Kiểm tra khung hình (7 khung đọc được, 1 đường dẫn sai): chỉ quan sát được băng ghế và một phần bàn, không đủ để đối chiếu từng unit với bản ghi. Không ghi tỉ lệ khớp, vì phương pháp hiện tại không đo đúng thứ cần đo. Cần một phương pháp khác (ví dụ chụp đúng lúc bắt đầu combat, độ phân giải cao).
+- Đóng băng cấu hình (để so sánh về sau):
+  - PRIMARY = `dict(ability="generic", items=True, augments=True, traits=True, emblems=False, traits_table=False, item_alias=False)`
+  - SECONDARY = PRIMARY với `emblems=True, traits_table=True, item_alias=True`
+  - n = 20 lượt mặc định, seed0 = 0, MIN_GAMES = 30, BOOT = 2000
+  - Commit: ghi ở commit chứa mục này. Snapshot CDragon: `data/cdragon/cdragon_18.7_2026-11-23.json.gz`, sha256 = d02fa168934b24abdcc2dfe523b3d4ca04861cb171c373128214cc762c4498c9
+- Quy tắc prompt: bản ghi `fight` cần đủ hai bàn quan sát được. Chỉ thấy bàn của streamer thì ghi `state` vào `others.jsonl`, không ghi `fight`.

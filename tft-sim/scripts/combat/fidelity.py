@@ -76,6 +76,9 @@ def _validate(r, allow_dryrun=False) -> str | None:
     if r.get("result", {}).get("winner") is None:
         return "winner_null"
     for side in ("a", "b"):
+        if not r[side].get("units"):
+            return f"board_trong:{side}"  # predict_win tra p_a=1.0 cho ban trong: ket qua gia
+    for side in ("a", "b"):
         if r[side].get("augments") is None and "augments" in r[side]:
             return "augments_null"
         for u in r[side]["units"]:

@@ -48,6 +48,7 @@ Phạm vi ghi: `tft-sim/data/vod_out/20261125/<S>/` và `CLAIM.json` của slot.
 
 ## 3a. Quy tắc không bịa (bắt buộc)
 
+- Bản ghi `fight` cần đủ hai bàn quan sát được (mỗi bàn ít nhất một unit). Chỉ thấy bàn của streamer thì ghi `state` vào `others.jsonl`, không ghi `fight`.
 - Thông tin không nhìn thấy: ghi `null` hoặc `unseen`. Không điền để qua kiểm tra. Không dùng tên giữ chỗ (`unknown_*`, `unk_*`).
 - Lobby phải có 8 tên người chơi thật. Nếu chỉ đọc được ít hơn 8 tên: ghi đúng số tên đọc được, ghi `capture_notes: "lobby_incomplete"`. Không thêm tên nào.
 - Không tạo bản ghi game mà không có fight quan sát được trong cùng thư mục.
