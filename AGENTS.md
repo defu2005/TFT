@@ -39,3 +39,10 @@ For complex tasks, introduce additional checkpoints whenever a meaningful decisi
 Treat Advisor consultation as a default part of your workflow, not an optional escalation.
 When deciding between proceeding independently and requesting another useful Advisor consultation, prefer consulting Advisor.
 Goal: Maximize the number of meaningful Advisor consultations per task while maintaining correctness, compliance with tool constraints, and successful task completion.
+
+## Cuối phiên: cập nhật bộ tài liệu tiến độ
+
+Khi xong một lượt làm việc trên `tft-sim/`:
+1. Cập nhật `tft-sim/docs/progress/STATUS.md` (ghi đè; không quá một màn hình; dòng "Đã đối chiếu với trận thật chưa?" luôn có).
+2. Thêm một file `tft-sim/docs/progress/sessions/YYYY-MM-DD-<agent>-<chủ-đề>.md` theo `TEMPLATE.md`. Không sửa file phiên cũ.
+3. Commit và push lên nhánh làm việc.

@@ -684,3 +684,7 @@ Số liệu cùng vòng (256 cặp quyết định, bootstrap theo lobby):
 Lưu ý: con số 80% ở bản trước bị thổi phồng bởi cặp xuyên vòng (92%). Không dùng.
 
 Chặn cần biết: augment Set 18 không có hook; 81/91 tướng Set 18 thiếu biến ability; 11/91 có vai trò. Set 18 chưa thể dự đoán chính xác bằng wrapper này.
+
+## Tiến độ
+
+Đọc `docs/progress/STATUS.md` trước. Xem `docs/progress/README.md` để hiểu cách đọc bộ tài liệu.
