@@ -1,42 +1,39 @@
-# Tiến độ dự án (cập nhật 2026-11-26)
+# Tiến độ (dev) · cập nhật 2026-11-26
 
-**Nhánh:** `claude/claude-fable-5-2-awwmf5`. Hash commit không ghi ở đây (xem `git log -1`). **Cập nhật bởi:** agent Claude, phiên 2026-11-26.
+**Nhánh:** `claude/claude-fable-5-2-awwmf5`. Hash: xem `git log -1`. Bản cho người không chuyên: [STATUS-cho-nguoi-dung.md](STATUS-cho-nguoi-dung.md).
 
-**Đã đối chiếu dự đoán với trận thật chưa?** **Chưa.** Không có trận nào đủ điều kiện để chấm điểm.
+**Đã đối chiếu dự đoán với trận thật?** Chưa. Không có trận nào đủ điều kiện.
 
-Bộ tài liệu đầy đủ (product): [`docs/product/README.md`](../product/README.md).
+## Mảng việc
 
-## Các mảng việc
-
-| Mảng | Trạng thái | Bằng chứng | Việc kế tiếp |
+| Mảng | Trạng thái | Bằng chứng | Kế tiếp |
 |---|---|---|---|
-| Engine combat (`tft_goat`, Set 17 và nền Set 18) | Ổn định nội bộ; chưa đối chiếu trận thật | `results/fixed/combat/` (đối xứng, seed, n) | Trả lời câu hỏi `_GENERIC_ITEM` (xem "Đang chờ") |
-| Quy ước item (khối chung `_GENERIC_ITEM`) | Bàn giao, chưa có câu trả lời | `docs/agents/requests/20261126-engine-generic-item-convention.md` | Chờ tác giả `tft_goat` |
-| Cấu hình dự đoán PRIMARY, n | Đã chốt n=800 cho bản ghi có item (4,02%) | `docs/model-plan.md` mục 11.28, 11.29 | Không tăng n nữa |
-| Mô hình học chính sách (bắt chước giáo viên) | Clone đầy đủ ngang giáo viên trên mô phỏng Set 17; chưa vượt giáo viên có ý nghĩa. Mức +0,015 là kiểm công bằng harness (v4 − v4_null), không phải kết quả mô hình | `docs/model-plan.md` mục 10.6–10.10 | Chưa có bước tiếp theo được duyệt |
-| Dự đoán thắng/thua Set 18 | Chưa có mô hình học; dùng mô phỏng PRIMARY | `docs/model-plan.md` mục 11.23–11.29 | Cần dữ liệu thật đủ điều kiện |
-| Dữ liệu VOD (Twitch/YouTube) | Bị chặn: cổng gộp đỏ, chưa slot nào đạt | `docs/handoff/vod-collection.md` | Sửa lỗi dữ liệu nguồn hoặc đợi dữ liệu mới |
-| Item và augment Set 18 | Item: 617/731 không có tác động dưới PRIMARY. Augment: chưa mô hình hóa | `results/fixed/combat/item_effect_classes.json`, `augment_sweep.json` | Đăng ký cấu hình mới nếu muốn mô hình hóa |
-| Công cụ và bộ kiểm tra | Xong, selftest PASS | `scripts/combat/selftest*.py` | Chạy lại khi đổi mã |
+| Engine combat (`tft_goat` d5358e9) | Ổn định nội bộ | `results/fixed/combat/` | Trả lời `_GENERIC_ITEM` |
+| Bộ dự đoán PRIMARY | n=800, bàn có item 16/398 = 4,02% (đạt) | `model-plan` 11.28 | Không tăng n |
+| Lệch bên (mirror) | +0,0075, SE 0,0059, ngưỡng 0,01 | `mirror_check.json` | — |
+| Item | 617/731 không có tác động dưới PRIMARY | `item_effect_classes.json` | Mô hình hóa nếu có cấu hình mới |
+| Augment | 0/252 đổi xác suất (1 bàn, 1 seed, n=200, không item) | `augment_sweep.json` | Điều tra sâu |
+| Học chính sách (Set 17 mô phỏng) | Clone ≈ teacher v4 (luật viết tay). Chưa vượt teacher | `model-plan` 10.6–10.10 | Chưa duyệt bước tiếp |
+| Dữ liệu VOD fight-v1 | Cổng đỏ, chưa slot nào đạt. Lô 2026-11-25 đang thu (P1–P10, V1). PR #6 (P4) đã merge 25/11 | `vod-collection.md` | Chờ bản ghi đạt cổng |
+| Roadmap Phase 1–6 | P2 xong; P3 bị chặn (chưa chốt nguồn live); P4 chưa bắt đầu; P5 đang làm (mô phỏng); P6 chưa | `nifty` `docs/roadmap.md` | Chốt nguồn live |
+| Đường RAM | Không đóng. Người dùng sẽ tự phát triển. Rủi ro: chính sách Riot từ 6/10/2026 chặn app chưa duyệt. Mâu thuẫn Vanguard/OpenProcess mở | `data-sources.md`, trang hỗ trợ Riot | Người dùng quyết khi phát triển |
+| Roster Set 18 | Chủ `engine`, advisor quyết (ủy quyền người dùng). `set18.json` trên master | roadmap mục 3 | — |
+| Thứ tự tích hợp PR | Đã thực hiện, PR #1–#4 merge 24/11 | GitHub API | — |
 
 ## Đang chờ ai
 
-- **Tác giả `tft_goat`:** trả lời ba câu hỏi về `_GENERIC_ITEM`.
-- **Bạn:** xác nhận việc bàn giao câu hỏi trên là đủ để đóng mục (hoặc để mở tiếp). Quyết định dữ liệu VOD: dùng lại hay bỏ.
-- **Bạn:** kế hoạch phát triển đường RAM (không đóng; chính sách Riot cần đối chiếu); cấp khóa Riot API nếu muốn Phase 2 Set 18; chọn nguồn live.
-- **Agent thu dữ liệu (Codex/Cursor):** chưa có dữ liệu đạt. Cần chạy lại theo `docs/handoff/vod-collection-prompt.md` nếu muốn tiếp tục thu.
+- **Tác giả `tft_goat`:** trả lời `_GENERIC_ITEM` (đã gửi `docs/agents/requests/20261126-engine-generic-item-convention.md`).
+- **Người dùng:** chọn nguồn live; cấp khóa Riot API nếu làm Phase 2 Set 18; gửi ảnh EoG (mục 6); xác nhận lại số liệu blitz đã commit; xác nhận lô VOD 2026-11-25 (người duyệt chưa rõ trong tài liệu).
+- **Set 19 đang PBE:** cửa sổ thu bản ghi Set 18 thật đang đóng dần.
 
 ## Cấu hình đang dùng
 
-- Cấu hình dự đoán: **PRIMARY** (`ability=generic`, items, augments, traits bật; emblem và alias tắt).
-- Số lượt mô phỏng: **n = 800**, seed0 = 0.
-- Engine commit: `d5358e9`.
+PRIMARY (`ability=generic`, items, augments, traits; emblem và alias tắt). n=800, seed0=0. Engine `d5358e9`.
 
-## Thay đổi so với lần trước
+## Thay đổi lần này
 
-- Thêm kiểm tra n=800 trên bàn có item: 16/398 = 4,02%, đạt.
-- Đổi mặc định `fidelity.score` từ n=20 sang n=800.
-- Phân loại 731 item theo tác động; ghi số liệu vào mục 11.26.
-- Thêm file yêu cầu gửi tác giả `tft_goat`.
-- Thêm bộ tài liệu product (`docs/product/`, 12 mục). Đối chiếu lại với roadmap, model-plan 10.6–10.10 và handoff trước khi ghi.
-- Sửa STATUS: bỏ hash tự ghi; làm rõ +0,015 là kiểm harness.
+- Thêm bộ tài liệu product (`docs/product/`).
+- Chốt trạng thái RAM: không đóng (sửa lỗi phiên trước).
+- Truy vết và sửa quyết định roadmap ghi sai (`sessions/2026-11-26-truy-vet-quyet-dinh-roadmap.md`).
+- Sửa bảng quyết định roadmap (nhánh nifty, `ba387bf9`).
+- Tách STATUS thành bản dev và bản người dùng.
