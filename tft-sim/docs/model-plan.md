@@ -733,3 +733,15 @@ Trong 617 "không gì" của PRIMARY: 328 không có hiệu ứng trong nội du
 **Kiểm thử.** `selftest.py`, `selftest_empty_scoring.py`, `selftest_ingest_vod.py`, `selftest_usable.py` đều PASS sau khi đổi n.
 
 **Phạm vi.** Đây là kết luận về cấu hình mô phỏng và về mô hình engine, không phải độ đúng so với trận thật.
+
+### 11.26 (bổ sung) Câu hỏi bàn giao cho tác giả `tft_goat`
+
+Mục generic item được coi là **bàn giao**, không còn treo ở phía chúng ta. Câu hỏi:
+
+1. `unit.py:14` ghi `_GENERIC_ITEM` là "item trung bình khi không biết identity", và `surrogate/dataset.py:92` chỉ dùng khối này khi `items` không kèm `item_apis`. Nhưng `env/actions.py:223-224` và `simulate.py:321` lại cộng khối này cho cả item có identity. Quy ước đúng là gì: (a) khối chung cho mọi item (như hiện tại), hay (b) chỉ cho phần item không có identity (`items - len(item_apis)`)?
+2. Nếu (b), đường record của chúng ta sẽ không còn khối chung nào, và 617 item trong PRIMARY sẽ không có tác động nào (xem bảng 11.26). Có chấp nhận được không, hay cần bổ sung hiệu ứng cho các lớp `composition`, `DA_Component_*`, `DA_Artifact*`, `*Radiant` không có chỉ số?
+3. Hook proc khóa theo `TFT_Item_*`, còn `DA_*` không có hook. Đây có phải thiết kế có chủ đích?
+
+Bằng chứng để tái hiện: `scripts/combat/check_item_effects.py`, kết quả `results/fixed/combat/item_effect_classes.json`.
+
+**Giới hạn chưa kiểm:** kiểm tra thích ứng n=400 (13/319, 4,08%) chỉ dùng bàn không có item. Chưa đo cho bàn có item; kết luận đổi n chưa được xác nhận cho bản ghi có item.
