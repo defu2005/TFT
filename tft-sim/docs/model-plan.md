@@ -745,3 +745,23 @@ Mục generic item được coi là **bàn giao**, không còn treo ở phía ch
 Bằng chứng để tái hiện: `scripts/combat/check_item_effects.py`, kết quả `results/fixed/combat/item_effect_classes.json`.
 
 **Giới hạn chưa kiểm:** kiểm tra thích ứng n=400 (13/319, 4,08%) chỉ dùng bàn không có item. Chưa đo cho bàn có item; kết luận đổi n chưa được xác nhận cho bản ghi có item.
+
+### 11.27 Đăng ký trước: kiểm tra thích ứng n=400 trên bàn CÓ item (2026-11-26, không dùng VOD)
+
+Quy tắc đăng ký trước, không đổi sau khi chạy:
+- Tập cặp: 1000 cặp gần nhau như `check_adaptive_n.py` (Random(7), B là bản sao của A với một unit đổi tướng hoặc sao). Khác: mỗi unit của A được gắn 0–2 item lấy ngẫu nhiên (Random(13)) từ item Set 18 có nội dung, không tính emblem và mục alias twin. B kế thừa item của A, rồi đổi một unit như cũ.
+- Chọn cặp: p ở n=20, seed0=0, giữ 0,1 ≤ p ≤ 0,9.
+- Đo: với mỗi cặp giữ lại, p ở n=400 với seed0=0 và seed0=1000. Đếm đảo chiều (khác phía 0,5, cả hai khác 0,5 chính xác).
+- Ngưỡng: tỷ lệ đảo ≤ 5% trên mẫu số là số cặp giữ lại. Mẫu số thứ hai: cặp có p(seed0=0, n=400) trong 0,1–0,9 (ghi kèm, không dùng để quyết định).
+- Nếu vượt 5%: ghi rõ, không đổi n lần nữa mà không đăng ký mới.
+- Script: `scripts/combat/check_adaptive_n_items.py`; kết quả: `results/fixed/combat/adaptive_n_items_check.json`.
+
+**Kết quả (chạy tại commit hiện tại; `results/fixed/combat/adaptive_n_items_check.json`):**
+- 398 cặp có item giữ lại (0,1 ≤ p(n=20) ≤ 0,9); 4 cặp p = 0,5 chính xác bị loại; 20 cặp đảo chiều.
+- Tỷ lệ đảo trên mẫu số chính: 20/398 = **5,03%**, vượt ngưỡng 5%. **KHÔNG ĐẠT.**
+- Mẫu số thay thế (p(n=400) trong 0,1–0,9): 20/344 = 5,81%, cũng không đạt.
+
+**Hệ quả theo quy tắc đã đăng ký:**
+- Đổi n từ 20 sang 400 ở 11.26 được kiểm trên bàn không có item (4,08%, đạt) nhưng **không được xác nhận cho bàn có item**: trên bàn có item, n=400 vẫn vượt ngưỡng 5% (5,03%).
+- Theo quy tắc, không đổi n thêm lần nào mà không đăng ký mới. Chưa đổi cấu hình; `fidelity.py` giữ n=400 như đã ghi ở 11.26.
+- Việc cần quyết định: (a) đăng ký một mức n cao hơn (ví dụ 800) với quy tắc mới, hoặc (b) chấp nhận rủi ro đảo ~5% ở n=400 và ghi rõ là giới hạn đã biết khi báo cáo số liệu. Không tự chọn trong lúc chưa có đăng ký.
